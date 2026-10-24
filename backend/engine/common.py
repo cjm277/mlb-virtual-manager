@@ -37,6 +37,27 @@ def opening_day() -> date:
     return to_date(db.one("SELECT value FROM meta WHERE key = 'opening_day'")["value"])
 
 
+@lru_cache(maxsize=1)
+def last_played_day() -> str:
+    """Last day of the 2026 regular season. Anything later is a 2027 (not yet played) game."""
+    return db.one("SELECT value FROM meta WHERE key = 'last_regular_season_day'")["value"]
+
+
+def is_future(game_date: str | date) -> bool:
+    return to_date(game_date).isoformat() > last_played_day()
+
+
+def stats_basis(game_date: str | date) -> str:
+    """Plain-English description of which stats a plan for this date is built on."""
+    if is_future(game_date):
+        return ("Full 2026 season (2025 for players with no 2026 data). The 2027 season has not been played, "
+                "so no 2027 stats exist yet.")
+    w = prior_weight(game_date)
+    if w == 0:
+        return "2026 season through the day before the game."
+    return f"2026 season through the day before the game, blended with 2025 ({round(w * 100)}% weight on 2025)."
+
+
 def prior_weight(game_date: str | date, opening: date | None = None, fade_days: int = FADE_DAYS) -> float:
     """Share of weight on 2025 stats for a game on game_date.
 

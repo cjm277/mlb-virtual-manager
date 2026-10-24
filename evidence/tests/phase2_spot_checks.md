@@ -1,6 +1,6 @@
 # Phase 2 data spot-checks
 
-Run 2026-10-24 07:09 by `scripts/spot_check.py` against `data/mlb.sqlite` (43.8 MB). Published figures come live from the MLB Stats API and Baseball Savant.
+Run 2026-10-24 08:15 by `scripts/spot_check.py` against `data/mlb.sqlite` (45.0 MB). Published figures come live from the MLB Stats API and Baseball Savant.
 
 **30 of 30 checks passed.**
 
@@ -35,7 +35,7 @@ Run 2026-10-24 07:09 by `scripts/spot_check.py` against `data/mlb.sqlite` (43.8 
 | Gausman 2026 Split-Finger: pitches / usage % / whiff % | 1177 / 39.2 / 42.9 | 1177 / 39.2 / 42.9 | PASS |
 | Gausman 2026 Slider: pitches / usage % / whiff % | 244 / 8.1 / 36.2 | 244 / 8.1 / 36.2 | PASS |
 | Vladdy 2025 season from Statcast rollup: PA/H/HR | 680/172/23 | 680/172/23 | PASS |
-| data/mlb.sqlite file size | 43.8 MB | < 50 MB (GitHub limit 100 MB) | PASS |
+| data/mlb.sqlite file size | 45.0 MB | < 50 MB (GitHub limit 100 MB) | PASS |
 
 ## Notes
 
@@ -47,8 +47,9 @@ Run 2026-10-24 07:09 by `scripts/spot_check.py` against `data/mlb.sqlite` (43.8 
 |---|---|
 | `batting_lines` | 51,706 |
 | `catcher_framing` | 113 |
+| `future_games` | 2,430 |
 | `games` | 2,429 |
-| `meta` | 6 |
+| `meta` | 7 |
 | `outs_above_average` | 1,131 |
 | `pitching_lines` | 20,802 |
 | `players` | 1,841 |

@@ -5,8 +5,8 @@ from __future__ import annotations
 from datetime import timedelta
 
 from backend import db
-from backend.engine.common import (GROUP_NAMES, SUM_SELECT, blend_rates, effective_n, prior_weight, rates,
-                                   sample_flag, sum_counts, tidy, to_date)
+from backend.engine.common import (GROUP_NAMES, SUM_SELECT, blend_rates, effective_n, is_future, prior_weight,
+                                   rates, sample_flag, sum_counts, tidy, to_date)
 from backend.engine.roster import player_info
 
 HITTER_KEYS = ["avg", "obp", "slg", "woba", "xwoba", "k_pct", "bb_pct", "hard_hit_pct", "barrel_pct",
@@ -55,6 +55,8 @@ def season_line(batter_id: int, game_date: str) -> dict:
 
 
 def recent_form(batter_id: int, game_date: str, days: int = 14) -> dict:
+    if is_future(game_date):
+        return {"note": "No 2027 games played yet, so there is no recent form."}
     start = (to_date(game_date) - timedelta(days=days)).isoformat()
     c = sum_counts(f"SELECT {SUM_SELECT} FROM statcast_batter_game WHERE batter_id = ? AND game_date >= ? AND game_date < ?",
                    batter_id, start, game_date)
@@ -90,7 +92,7 @@ def hitter_profile(batter_id: int, game_date: str) -> dict:
         "vs_LHP": batter_split(batter_id, game_date, "L"),
         "vs_RHP": batter_split(batter_id, game_date, "R"),
         "vs_pitch_types": vs_pitch_groups(batter_id, game_date),
-        "season_2026_so_far": season_line(batter_id, game_date),
+        ("season_2026_full" if is_future(game_date) else "season_2026_so_far"): season_line(batter_id, game_date),
         "last_14_days": recent_form(batter_id, game_date),
         "speed_and_defense": speed_and_defense(batter_id),
     }

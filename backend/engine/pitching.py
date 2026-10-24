@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 from backend import db
-from backend.engine.common import (COUNTS, PITCH_GROUP, SUM_SELECT, blend_rates, effective_n, prior_weight, rates,
-                                   sample_flag, sum_counts, tidy)
+from backend.engine.common import (COUNTS, PITCH_GROUP, SUM_SELECT, blend_rates, effective_n, is_future,
+                                   prior_weight, rates, sample_flag, sum_counts, tidy)
 from backend.engine.roster import player_info
 
 ALLOWED_KEYS = ["avg", "obp", "slg", "woba", "xwoba", "k_pct", "bb_pct", "whiff_pct", "chase_pct", "csw_pct",
@@ -123,7 +123,7 @@ def pitcher_profile(pitcher_id: int, game_date: str) -> dict:
     info = player_info(pitcher_id) or {}
     profile = {
         "player_id": pitcher_id, "name": info.get("full_name"), "throws": info.get("pitch_hand"),
-        "season_2026_so_far": season_line(pitcher_id, game_date),
+        ("season_2026_full" if is_future(game_date) else "season_2026_so_far"): season_line(pitcher_id, game_date),
         "overall": pitcher_split(pitcher_id, game_date),
         "vs_LHB": pitcher_split(pitcher_id, game_date, "L"),
         "vs_RHB": pitcher_split(pitcher_id, game_date, "R"),

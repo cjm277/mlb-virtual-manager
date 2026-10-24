@@ -13,7 +13,7 @@ Docstrings are written as tool descriptions: the agent reads them to decide what
 from __future__ import annotations
 
 from backend.engine import bullpen, games, hitting, lineup, matchups, pitching, rotation, roster
-from backend.engine.common import tidy
+from backend.engine.common import is_future, tidy
 
 
 def _game(game_pk: int, team_id: int | None = None) -> dict:
@@ -41,19 +41,29 @@ def get_game_context(game_pk: int, team_id: int) -> dict:
 
 
 def get_roster_and_injuries(game_pk: int, team_id: int) -> dict:
-    """A team's active roster for this game (hitters and pitchers, with position and handedness) and the
-    players who are out: injured list (with the injury and since when) or other lists. Only players on the
-    active roster can play in this game."""
+    """A team's available players for this game (hitters and pitchers, with position and handedness) and the
+    players who are out: injured list (with the injury and since when) or other lists. Only available players
+    can play. For a 2027 game the roster is the end-of-2026 roster, and players who ended 2026 injured are
+    included with a health_note to confirm."""
     g = _game(game_pk, team_id)
     active = roster.active_roster(team_id, g["game_date"])
-    short = lambda r: {"player_id": r["player_id"], "name": r["full_name"], "position": r["position"],  # noqa: E731
-                       "bats": r["bat_side"], "throws": r["pitch_hand"]}
+
+    def short(r: dict) -> dict:
+        row = {"player_id": r["player_id"], "name": r["full_name"], "position": r["position"],
+               "bats": r["bat_side"], "throws": r["pitch_hand"]}
+        if r.get("health_note"):
+            row["health_note"] = r["health_note"]
+        return row
+
+    future = is_future(g["game_date"])
     return {
         "team": games.team(team_id)["name"],
         "hitters": [short(r) for r in active if not roster.is_pitcher(r)],
         "pitchers": [short(r) for r in active if roster.is_pitcher(r)],
         "out": roster.unavailable_list(team_id, g["game_date"]),
-        "note": "Active roster as reported by MLB for the game date.",
+        "note": ("2027 game: end-of-2026 roster; offseason moves are not modeled. Players with a health_note "
+                 "ended 2026 injured and are assumed healthy." if future
+                 else "Active roster as reported by MLB for the game date."),
     }
 
 
@@ -142,7 +152,8 @@ def get_starter_options(game_pk: int, team_id: int) -> list[dict]:
 def predict_opponent_starter(game_pk: int, opponent_id: int) -> dict:
     """Predict who will start for the opponent, from their rotation order and rest (MLB's announced probable
     is not used). Returns the pick, a confidence label, the next most likely, and how the call was made.
-    Historically right about 75% of the time, and 87% of the time it is one of the top two."""
+    For 2026 games it was right about 75% of the time (87% within the top two). For 2027 games it is a
+    projection from the closing 2026 rotation, so treat it as a best guess."""
     g = _game(game_pk, opponent_id)
     p = rotation.predict_starter(opponent_id, g["game_date"], g["game_number"])
     return {"predicted": p["predicted"], "confidence": p["confidence"], "next_most_likely": p["next_most_likely"],

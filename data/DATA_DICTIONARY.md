@@ -2,13 +2,20 @@
 
 One SQLite file holds everything the app reads. It is built once by `scripts/build_dataset.py` from free public sources and committed to the repo. **The app never downloads data**, so graders don't need internet access to run it (only the LLM calls go out).
 
-**Sources:** MLB Stats API (`statsapi.mlb.com`) and Baseball Savant / Statcast (`baseballsavant.mlb.com`). **Seasons:** the 2026 regular season (the games the app plans) and 2025 (used to steady early-2026 stats with a gradual fade over the first 6 weeks).
+**Sources:** MLB Stats API (`statsapi.mlb.com`) and Baseball Savant / Statcast (`baseballsavant.mlb.com`). **Seasons:** the 2026 regular season (played), 2025 (used to steady early-2026 stats with a gradual fade over the first 6 weeks), and the published 2027 schedule (not yet played).
 
 ## How the app uses it
 
 - **"Stats as of the game"**: the per-game tables (`batting_lines`, `pitching_lines`, `statcast_*_game`) are summed over every game *before* the chosen date, so a June 16 plan never sees June 16 or later.
 - **Who is available**: `roster_stints` says who was on a team's active roster on any date; `transactions` says why someone wasn't (injured list and reason, optioned, etc.).
 - **Rates are computed, not stored**: tables keep raw counts and sums so any date range adds up correctly. For example, whiff % = `whiffs / swings` and wOBA = `woba_num / woba_den`.
+
+## Planning 2027 games
+
+The 2027 season hasn't been played, so a 2027 plan uses the same engine with three rules:
+- **Stats:** the full 2026 season, and 2025 for players with no 2026 data. ("Everything before the game date" for a 2027 game is all of 2026.)
+- **Rosters:** each team's active roster at the end of 2026. Players who ended 2026 on the injured list are included and flagged "assumed healthy, confirm with medical staff." Free agency and trades aren't known, so they aren't modeled.
+- **Opposing starter:** a projection. The team's established starters (most 2026 starts first, plus half credit for 2025 starts) are cycled through its 2027 schedule, 5 or 6 deep to match the team's 2026 rotation.
 
 ## Reference tables
 
@@ -17,6 +24,7 @@ One SQLite file holds everything the app reads. It is built once by `scripts/bui
 | `meta` | build fact | `key`, `value` (build time, seasons, opening day, sources) |
 | `teams` | MLB team (30) | `team_id`, `name`, `abbrev`, `team_name`, `league`, `division`, `venue` |
 | `players` | player in 2025 or 2026 | `player_id`, `full_name`, `primary_position`, `bat_side` (L/R/S), `pitch_hand` (L/R), `birth_date`, `mlb_debut`, `end_of_season_team_id` |
+| `future_games` | scheduled 2027 regular-season game (2,430, published by MLB in July 2026) | `game_pk`, `season`, `game_date`, `game_number`, `home_team_id`, `away_team_id`, `venue`, `day_night`, `series_game_number` |
 | `games` | completed 2026 regular-season game (2,429: BAL @ NYY on Sept 27 was cancelled and never made up, so those two teams played 161) | `game_pk`, `game_date`, `game_number` (doubleheaders), `home_team_id`, `away_team_id`, `home_probable_id`, `away_probable_id` (listed probable starters), `home_score`, `away_score`, `venue` |
 
 ## Availability

@@ -15,7 +15,7 @@ from __future__ import annotations
 from datetime import timedelta
 
 from backend import db
-from backend.engine.common import to_date
+from backend.engine.common import is_future, to_date
 from backend.engine.roster import active_roster, is_pitcher
 
 MIN_START_REST = 4
@@ -91,6 +91,12 @@ def bullpen_status(team_id: int, game_date: str) -> dict:
                               ("pitches_yesterday", "consecutive_days", "pitches_last_3_days", "appearances_last_7_days")}})
     order = {"available": 0, "limited": 1, "unavailable": 2}
     relievers.sort(key=lambda r: (order[r["status"]], -(r["saves"] + r["holds"])))
-    return {"relievers": relievers, "starters": starters,
+    if is_future(game_date):
+        for s in starters:
+            s["ready_to_start"] = True
+        note = "2027 game: every pitcher is treated as fully rested (no 2027 games played yet)."
+    else:
+        note = "Workload from games before this one."
+    return {"relievers": relievers, "starters": starters, "note": note,
             "rules": "RP unavailable: 3 straight days, 30+ pitches yesterday, or back-to-back with 35+; "
                      "limited: pitched yesterday or 50+ pitches in 3 days. SP ready with 4+ days rest."}

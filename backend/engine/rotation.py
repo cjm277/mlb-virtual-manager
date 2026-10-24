@@ -14,12 +14,17 @@ The rule a manager would use:
 Early in the season (fewer than 5 turns taken), the rotation is filled out with the active pitchers who
 started the most games in 2025. MLB's listed probable starter is never used here; it is only used
 afterwards to measure accuracy.
+
+2027 games (not yet played) are a projection instead: the team's established starters on its 2027 roster
+(most 2026 starts first, the workhorse on Opening Day), cycled through the team's 2027 schedule in order.
 """
 
 from __future__ import annotations
 
+from datetime import timedelta
+
 from backend import db
-from backend.engine.common import to_date
+from backend.engine.common import is_future, last_played_day, to_date
 from backend.engine.roster import active_roster, is_pitcher, player_info
 
 ROTATION_SIZE = 5
@@ -90,7 +95,60 @@ def _cycle_length(turns: list[tuple[int, str]]) -> int:
     return gaps[len(gaps) // 2] if gaps else ROTATION_SIZE
 
 
+def _starts_2026(player_id: int) -> tuple[int, int]:
+    r = db.one("SELECT SUM(is_starter) gs, SUM(outs) outs FROM pitching_lines WHERE player_id = ?", player_id)
+    return (r["gs"] or 0, r["outs"] or 0)
+
+
+def _starter_weight(player_id: int) -> float:
+    """2026 starts plus half credit for 2025 starts (so a starter hurt all of 2026 still counts)."""
+    p = db.one("SELECT MAX(gs) gs FROM season_pitching WHERE season = 2025 AND player_id = ?", player_id)
+    return _starts_2026(player_id)[0] + 0.5 * ((p["gs"] or 0) if p else 0)
+
+
+def projected_rotation(team_id: int) -> list[int]:
+    """Projected 2027 rotation: the team's established starters on its 2027 roster, workhorse first.
+
+    The 2027 roster is the end-of-2026 roster plus players who ended 2026 injured (assumed healthy), so the
+    rotation is built from everyone's starting record rather than the injury-depleted September rotation.
+    The number of starters (5 or 6) is the team's 2026 cycle length.
+    """
+    after_season = (to_date(last_played_day()) + timedelta(days=1)).isoformat()
+    cycle = min(max(_cycle_length(_turns_before(team_id, after_season, 1, limit=30)), 5), 6)
+    pool = {r["player_id"] for r in active_roster(team_id, after_season) if is_pitcher(r)}
+    weights = {pid: _starter_weight(pid) for pid in pool}
+    starters = sorted((pid for pid, w in weights.items() if w >= 5), key=lambda pid: -weights[pid])
+    return starters[:cycle]
+
+
+def _project_2027(team_id: int, game_date: str, game_number: int) -> dict:
+    rot = projected_rotation(team_id)
+    n = db.one("""SELECT COUNT(*) n FROM future_games WHERE (home_team_id = ?1 OR away_team_id = ?1)
+                  AND (game_date < ?2 OR (game_date = ?2 AND game_number < ?3))""", team_id, game_date, game_number)["n"]
+    if not rot:
+        return {"predicted": None, "confidence": "low", "method": "no 2026 starters on the end-of-season roster",
+                "cycle_length": 0, "next_most_likely": [], "rotation_considered": []}
+    candidates = []
+    for i, pid in enumerate(rot):
+        info = player_info(pid) or {}
+        gs, outs = _starts_2026(pid)
+        candidates.append({"player_id": pid, "name": info.get("full_name"), "throws": info.get("pitch_hand"),
+                           "rotation_spot": i + 1, "starts_2026": gs, "ip_2026": f"{outs // 3}.{outs % 3}"})
+    pick = candidates[n % len(rot)]
+    neighbors = [candidates[(n - 1) % len(rot)]["name"], candidates[(n + 1) % len(rot)]["name"]]
+    return {
+        "predicted": pick, "confidence": "projection",
+        "method": (f"2027 projection: the team's established starters ({len(rot)}, most 2026 starts first) cycled through "
+                   f"the 2027 schedule; this is the team's game {n + 1} of 2027. Off days, injuries and offseason "
+                   "moves can change the real order."),
+        "cycle_length": len(rot), "next_most_likely": list(dict.fromkeys(neighbors)),
+        "rotation_considered": candidates,
+    }
+
+
 def predict_starter(team_id: int, game_date: str, game_number: int = 1) -> dict:
+    if is_future(game_date):
+        return _project_2027(team_id, game_date, game_number)
     turns = _turns_before(team_id, game_date, game_number, limit=30)
     cycle = _cycle_length(turns)
     rotation: list[tuple[int, str | None]] = []

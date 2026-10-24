@@ -1,6 +1,6 @@
 # Phase 3 predictor accuracy
 
-Run 2026-10-24 07:57 by `scripts/evaluate_predictors.py` over every 2026 regular-season game (2,429 games, 4,858 team-games). Each prediction uses only data from before that game; no LLM is involved, so this costs nothing to run.
+Run 2026-10-24 08:14 by `scripts/evaluate_predictors.py` over every 2026 regular-season game (2,429 games, 4,858 team-games). Each prediction uses only data from before that game; no LLM is involved, so this costs nothing to run.
 
 ## Starting pitcher (rotation predictor)
 
@@ -35,4 +35,4 @@ By confidence label and month:
 | Correct position, for players we got right | 81.0% |
 | Exact batting-order slot, for players we got right | 49.7% |
 
-Lineups scored: 4,858 team-games. Runtime 48s.
+Lineups scored: 4,858 team-games. Runtime 71s.

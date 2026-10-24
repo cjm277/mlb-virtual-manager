@@ -43,6 +43,7 @@ DEFAULT_RAW_DIR = Path.home() / ".cache" / "mlb-virtual-manager" / "raw"
 
 SEASON = 2026          # the season the app plans games in
 PRIOR_SEASON = 2025    # blended in over the first 6 weeks of SEASON
+FUTURE_SEASON = 2027   # published schedule only; planned with historical stats and end-of-2026 rosters
 STATS_API = "https://statsapi.mlb.com/api/v1"
 SAVANT = "https://baseballsavant.mlb.com"
 COMPLETED = {"Final", "Completed Early"}
@@ -134,6 +135,8 @@ def fetch(raw: Path, test: bool) -> None:
     print("Fetching small reference files...")
     small = [
         (f"{STATS_API}/teams?sportId=1&season={SEASON}", raw / f"teams_{SEASON}.json.gz"),
+        (f"{STATS_API}/schedule?sportId=1&season={FUTURE_SEASON}&gameType=R",
+         raw / f"schedule_{FUTURE_SEASON}.json.gz"),
     ]
     for season in (SEASON, PRIOR_SEASON):
         small += [
@@ -357,6 +360,23 @@ def build_reference(raw: Path, con: sqlite3.Connection) -> None:
         })
     pd.DataFrame(rows).to_sql("games", con, index=False)
 
+    # The published 2027 schedule (not yet played).
+    future, seen_pk = [], set()
+    sched = read_json(raw / f"schedule_{FUTURE_SEASON}.json.gz")
+    for d in sched["dates"]:
+        for g in d["games"]:
+            if g["gamePk"] in seen_pk or g["status"]["detailedState"] in ("Postponed", "Cancelled"):
+                continue
+            seen_pk.add(g["gamePk"])
+            future.append({
+                "game_pk": g["gamePk"], "season": FUTURE_SEASON, "game_date": g["officialDate"],
+                "game_number": g.get("gameNumber", 1), "doubleheader": g.get("doubleHeader", "N"),
+                "day_night": g.get("dayNight"), "home_team_id": g["teams"]["home"]["team"]["id"],
+                "away_team_id": g["teams"]["away"]["team"]["id"], "venue": g.get("venue", {}).get("name"),
+                "series_game_number": g.get("seriesGameNumber"), "games_in_series": g.get("gamesInSeries"),
+            })
+    pd.DataFrame(future).to_sql("future_games", con, index=False)
+
     seen, txns = set(), []
     for f in sorted((raw / "transactions").glob("*.json.gz")):
         for t in read_json(f).get("transactions", []):
@@ -488,6 +508,8 @@ INDEXES = [
     "CREATE INDEX ix_games_date ON games(game_date)",
     "CREATE INDEX ix_games_home ON games(home_team_id, game_date)",
     "CREATE INDEX ix_games_away ON games(away_team_id, game_date)",
+    "CREATE INDEX ix_future_home ON future_games(home_team_id, game_date)",
+    "CREATE INDEX ix_future_away ON future_games(away_team_id, game_date)",
     "CREATE INDEX ix_roster ON roster_stints(team_id, start_date, end_date)",
     "CREATE INDEX ix_txn_player ON transactions(player_id, txn_date)",
     "CREATE INDEX ix_bat_player ON batting_lines(player_id, game_date)",
@@ -512,7 +534,7 @@ def build(raw: Path) -> None:
     games = pd.read_sql("SELECT MIN(game_date) AS first, MAX(game_date) AS last FROM games", con).iloc[0]
     pd.DataFrame([
         ("built_at_utc", datetime.now(timezone.utc).isoformat(timespec="seconds")),
-        ("season", str(SEASON)), ("prior_season", str(PRIOR_SEASON)),
+        ("season", str(SEASON)), ("prior_season", str(PRIOR_SEASON)), ("future_season", str(FUTURE_SEASON)),
         ("opening_day", games["first"]), ("last_regular_season_day", games["last"]),
         ("sources", "MLB Stats API (statsapi.mlb.com); Baseball Savant / Statcast (baseballsavant.mlb.com)"),
     ], columns=["key", "value"]).to_sql("meta", con, index=False)
