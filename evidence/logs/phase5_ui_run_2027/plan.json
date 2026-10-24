@@ -1,0 +1,1016 @@
+{
+  "run_id": "2027-09-06_TOR-vs-BOS_20261024-093444",
+  "status": "approved",
+  "game": {
+    "game_pk": 852198,
+    "season": 2027,
+    "game_date": "2027-09-06",
+    "game_number": 1,
+    "day_night": "day",
+    "venue": "Rogers Centre",
+    "team": "Toronto Blue Jays",
+    "team_id": 141,
+    "team_2026_final_record": "79-83",
+    "opponent": "Boston Red Sox",
+    "opponent_id": 111,
+    "opponent_2026_final_record": "87-75",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "Full 2026 season (2025 for players with no 2026 data). The 2027 season has not been played, so no 2027 stats exist yet.",
+    "roster_basis": "Each team's active roster at the end of the 2026 season. Offseason moves (free agency, trades) are not known and are not modeled."
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 543243,
+        "name": "Sonny Gray"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 703520,
+          "name": "Brett Bateman",
+          "position": "CF",
+          "bats": "L",
+          "reason": "His .402 OBP leads the regular options, and his matchup projection gives him a batter edge; offspeed data is small."
+        },
+        {
+          "slot": 2,
+          "player_id": 664770,
+          "name": "Nathan Lukes",
+          "position": "RF",
+          "bats": "L",
+          "reason": "Established left-handed regular with a batter platoon advantage and solid projected matchup."
+        },
+        {
+          "slot": 3,
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "position": "1B",
+          "bats": "R",
+          "reason": "Everyday power bat with low strikeout rate; keep him in the heart of the order."
+        },
+        {
+          "slot": 4,
+          "player_id": 672960,
+          "name": "Kazuma Okamoto",
+          "position": "3B",
+          "bats": "R",
+          "reason": "His .452 slugging leads the lineup; established power bat despite the same-handed matchup."
+        },
+        {
+          "slot": 5,
+          "player_id": 543807,
+          "name": "George Springer",
+          "position": "DH",
+          "bats": "R",
+          "reason": "Regular with a near-even projection and .362 xwOBA against fastballs."
+        },
+        {
+          "slot": 6,
+          "player_id": 678218,
+          "name": "Brandon Valenzuela",
+          "position": "C",
+          "bats": "S",
+          "reason": "Switch-hitter with an even matchup projection and a regular share of catching starts."
+        },
+        {
+          "slot": 7,
+          "player_id": 665926,
+          "name": "Andr\u00e9s Gim\u00e9nez",
+          "position": "SS",
+          "bats": "L",
+          "reason": "Everyday shortstop and left-handed option; keep his strong glove at short."
+        },
+        {
+          "slot": 8,
+          "player_id": 676391,
+          "name": "Ernie Clement",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Regular at second with reliable contact, though Gray's matchup projection favors the pitcher."
+        },
+        {
+          "slot": 9,
+          "player_id": 676914,
+          "name": "Davis Schneider",
+          "position": "LF",
+          "bats": "R",
+          "reason": "Use his established left-field role; matchup data flags a small breaking-ball sample."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 672386,
+          "name": "Alejandro Kirk",
+          "role": "backup_catcher",
+          "note": "Backup catcher; use his low-strikeout bat if a late right-handed matchup calls for a pinch hitter."
+        },
+        {
+          "player_id": 664702,
+          "name": "Myles Straw",
+          "role": "pinch_runner",
+          "note": "Speed option and defensive replacement in center field."
+        },
+        {
+          "player_id": 669701,
+          "name": "Josh Smith",
+          "role": "utility",
+          "note": "Left-handed utility option with starts at second, third, and left."
+        },
+        {
+          "player_id": 807727,
+          "name": "Charles McAdoo",
+          "role": "utility",
+          "note": "Multi-position cover at second, first, third, and left."
+        },
+        {
+          "player_id": 649966,
+          "name": "Luis Ur\u00edas",
+          "role": "pinch_hitter",
+          "note": "Right-handed pinch-hit option; limited season sample and cleared with caution."
+        },
+        {
+          "player_id": 657675,
+          "name": "Rudy Martin Jr.",
+          "role": "pinch_runner",
+          "note": "Speed option only; matchup sample is small and he is cleared with caution after a hamstring strain."
+        },
+        {
+          "player_id": 815873,
+          "name": "Sean Keys",
+          "role": "pinch_hitter",
+          "note": "Left-handed pinch-hit option against a right-handed reliever; matchup carries pitcher edge."
+        },
+        {
+          "player_id": 680718,
+          "name": "Addison Barger",
+          "role": "pinch_hitter",
+          "note": "Left-handed pinch-hit option; limited sample and cleared with caution."
+        },
+        {
+          "player_id": 682729,
+          "name": "Jonatan Clase",
+          "role": "pinch_runner",
+          "note": "Speed option; sample is small and he is cleared with caution after plantar fasciitis."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning with a runner in scoring position against a right-handed reliever",
+          "bench_player_id": 669701,
+          "replaces_player_id": 676914,
+          "reason": "Smith offers a left-handed bat against the right-handed arm."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning when the tying or go-ahead run reaches base",
+          "bench_player_id": 664702,
+          "replaces_player_id": 676391,
+          "reason": "Straw adds speed and can stay in as a defensive replacement."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead with a ball in play or a need to protect the outfield",
+          "bench_player_id": 664702,
+          "replaces_player_id": 676914,
+          "reason": "Move Straw into left field for stronger outfield defense."
+        },
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning against a left-handed reliever with a key at-bat",
+          "bench_player_id": 672386,
+          "replaces_player_id": 678218,
+          "reason": "Kirk's established contact profile makes him a ready catching-position bat."
+        }
+      ],
+      "summary": "Gray is the projected starter, so the order leans on established left-handed bats without elevating the small-sample matchup leaders. Keep an eye on Bateman\u2019s small offspeed matchup sample; Martin Jr. and the other caution-cleared players remain available, but Martin Jr.\u2019s matchup sample is small."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 656302,
+        "name": "Dylan Cease",
+        "throws": "R",
+        "reason": "Best combination of 2026 run prevention and swing-and-miss: 2.4 ERA, 34.9% strikeouts and 0.265 xwOBA allowed; against this lineup, Trevor Story projects at 0.254 expected xwOBA and Caleb Durbin at 0.267. Cleared with caution after right shoulder inflammation; confirm with medical staff.",
+        "expected_innings": 5.5,
+        "pitch_count_limit": 90,
+        "pitch_mix": [
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 35.0,
+            "vs_rhb_pct": 30.0,
+            "purpose": "Establish the pitch without leaving it over the middle."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 30.0,
+            "vs_rhb_pct": 40.0,
+            "purpose": "Primary chase and miss pitch, especially to right-handers."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 20.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Change speeds against left-handed bats; use selectively to right-handers."
+          },
+          {
+            "pitch": "knuckle curve",
+            "vs_lhb_pct": 10.0,
+            "vs_rhb_pct": 10.0,
+            "purpose": "Vary the breaking-ball look and keep hitters from sitting slider."
+          },
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 5.0,
+            "vs_rhb_pct": 5.0,
+            "purpose": "Occasional ground-ball look and change of fastball shape."
+          }
+        ],
+        "keys": [
+          "Use changeups and breaking balls against Anthony and Gasper; avoid predictable fastballs, and note the offspeed weakness for Gasper is based on a moderate sample.",
+          "Abreu\u2019s lowest pitch-type mark is against offspeed; change speeds and stay out of the middle.",
+          "Rutschman has no clear pitch-type weakness, so vary location and sequencing.",
+          "Get ahead of Story, Durbin and Kiner-Falefa; finish with chase pitches when the count allows."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 686973,
+          "name": "Louis Varland",
+          "throws": "R",
+          "role": "closer",
+          "note": "Primary closer; available and rested, with 35 saves."
+        },
+        {
+          "player_id": 643511,
+          "name": "Tyler Rogers",
+          "throws": "R",
+          "role": "setup",
+          "note": "High-leverage setup option; available and rested, with 33 holds."
+        },
+        {
+          "player_id": 623149,
+          "name": "Paul Sewald",
+          "throws": "R",
+          "role": "setup",
+          "note": "Late-inning option; available and rested, with 24 saves."
+        },
+        {
+          "player_id": 689254,
+          "name": "Mason Fluharty",
+          "throws": "L",
+          "role": "setup",
+          "note": "Left-handed setup option; available and rested, with 20 holds."
+        },
+        {
+          "player_id": 680755,
+          "name": "Braydon Fisher",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available middle-inning option with 13 holds."
+        },
+        {
+          "player_id": 693686,
+          "name": "Spencer Miles",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available middle relief; use to bridge innings."
+        },
+        {
+          "player_id": 663893,
+          "name": "Brendon Little",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Available left-handed matchup option."
+        },
+        {
+          "player_id": 689149,
+          "name": "Chad Dallas",
+          "throws": "R",
+          "role": "long",
+          "note": "Available length for an early exit or extended middle innings."
+        },
+        {
+          "player_id": 695445,
+          "name": "Chase Lee",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available middle-inning option."
+        },
+        {
+          "player_id": 676454,
+          "name": "Brendan Cellucci",
+          "throws": "L",
+          "role": "mop_up",
+          "note": "Available low-leverage coverage."
+        },
+        {
+          "player_id": 804619,
+          "name": "John Klein",
+          "throws": "R",
+          "role": "mop_up",
+          "note": "Available low-leverage coverage."
+        },
+        {
+          "player_id": 554340,
+          "name": "Yimi Garc\u00eda",
+          "throws": "R",
+          "role": "unavailable",
+          "note": "Out per the Team Doctor; do not use."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the best rested high-leverage arms to cover the final innings, with Varland closing.",
+          "pitcher_ids": [
+            643511,
+            689254,
+            686973
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Match up through the heart of the order, then use the closer if the game remains within reach.",
+          "pitcher_ids": [
+            689254,
+            643511,
+            623149,
+            686973
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Save the top leverage arms and cover the remaining innings with middle relief.",
+          "pitcher_ids": [
+            693686,
+            680755,
+            695445,
+            676454
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use low-leverage arms for length and preserve the late-inning group.",
+          "pitcher_ids": [
+            676454,
+            804619,
+            689149,
+            693686
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Use Dallas for length, then bridge with available middle relief before the leverage arms.",
+          "pitcher_ids": [
+            689149,
+            693686,
+            680755,
+            643511,
+            686973
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use the remaining setup arms first, then Varland; hold the lefty for a key left-handed pocket.",
+          "pitcher_ids": [
+            643511,
+            689254,
+            623149,
+            686973,
+            680755
+          ]
+        }
+      ],
+      "summary": "Start Cease, with the shoulder caution checked before the game, and target roughly five and a half innings on a 90-pitch limit. Attack the left-handed threats with offspeed and breaking balls, then let the rested bullpen cover the late innings; Garc\u00eda is out and will not be used."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 543243,
+        "name": "Sonny Gray",
+        "throws": "R",
+        "confidence": "projection",
+        "alternatives": [
+          "Connelly Early",
+          "Ranger Suarez"
+        ]
+      },
+      "arsenal": [
+        {
+          "pitch": "sinker",
+          "usage_pct": 21.7,
+          "velo": 92.0,
+          "whiff_pct": 15.4,
+          "note": "A regular part of his fastball mix; keep hands ready for arm-side movement."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 20.5,
+          "velo": 84.8,
+          "whiff_pct": 38.3,
+          "note": "His best whiff pitch; recognize it early and avoid chasing it off the plate."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 18.8,
+          "velo": 88.3,
+          "whiff_pct": 14.7,
+          "note": "He mixes it with the sinker and four-seamer; stay through the pitch rather than opening early."
+        },
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 17.3,
+          "velo": 91.5,
+          "whiff_pct": 12.7,
+          "note": "Part of a varied fastball mix; be ready to hit it when he works in the zone."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 15.9,
+          "velo": 79.6,
+          "whiff_pct": 30.9,
+          "note": "A second breaking-ball threat; track the slower shape and protect against it with two strikes."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 5.7,
+          "velo": 86.2,
+          "whiff_pct": 22.2,
+          "note": "Used sparingly overall; do not rule it out against left-handed hitters."
+        }
+      ],
+      "how_to_attack": [
+        "Stay disciplined against the sweeper: it gets a 38.3% whiff rate and is used 20.5% of the time overall.",
+        "Expect more breaking balls against left-handed hitters: 39.1% of his mix is breaking balls, against 31.1% to righties.",
+        "Against right-handed hitters, prepare for fastballs: they make up 68.9% of his mix.",
+        "Make him execute his varied fastball mix; the cutter and 4-seam have xwOBA allowed of 0.369 and 0.382, respectively."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 657675,
+          "name": "Rudy Martin Jr.",
+          "expected_xwoba": 0.376,
+          "edge": "batter",
+          "note": "Best projected edge, but his matchup data is a small sample; cleared with caution after a hamstring strain."
+        },
+        {
+          "player_id": 703520,
+          "name": "Brett Bateman",
+          "expected_xwoba": 0.338,
+          "edge": "batter",
+          "note": "Left-handed hitter with a projected batter edge; matchup data flags a small offspeed sample."
+        },
+        {
+          "player_id": 543807,
+          "name": "George Springer",
+          "expected_xwoba": 0.316,
+          "edge": "even",
+          "note": "Near-even projection; matchup data gives him a 0.362 xwOBA against fastballs."
+        },
+        {
+          "player_id": 664770,
+          "name": "Nathan Lukes",
+          "expected_xwoba": 0.314,
+          "edge": "even",
+          "note": "Near-even projection; the matchup data shows a 0.346 xwOBA against breaking balls."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 815873,
+          "name": "Sean Keys",
+          "expected_xwoba": 0.287,
+          "edge": "pitcher",
+          "note": "Pitcher edge; matchup data flags small breaking-ball and offspeed samples."
+        },
+        {
+          "player_id": 665926,
+          "name": "Andr\u00e9s Gim\u00e9nez",
+          "expected_xwoba": 0.297,
+          "edge": "even",
+          "note": "Near-even projection; Gray uses breaking balls 39.1% of the time to left-handed hitters."
+        },
+        {
+          "player_id": 676914,
+          "name": "Davis Schneider",
+          "expected_xwoba": 0.298,
+          "edge": "even",
+          "note": "Near-even projection; matchup data flags a small breaking-ball sample."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 547973,
+          "name": "Aroldis Chapman",
+          "throws": "L",
+          "note": "Available; primary late-inning watch with 35 saves."
+        },
+        {
+          "player_id": 676477,
+          "name": "Garrett Whitlock",
+          "throws": "R",
+          "note": "Available; setup option with 26 holds."
+        },
+        {
+          "player_id": 669062,
+          "name": "Erik Miller",
+          "throws": "L",
+          "note": "Available left-handed option with 14 holds."
+        },
+        {
+          "player_id": 594027,
+          "name": "Tyron Guerrero",
+          "throws": "R",
+          "note": "Available right-handed option with 19 holds."
+        }
+      ],
+      "summary": "Sonny Gray is the projected starter (projection); Connelly Early and Ranger Suarez are the alternatives. His mix features a high-whiff sweeper and frequent fastballs, with more breaking balls to left-handed hitters. Rudy Martin Jr. and Brett Bateman lead the matchup projections, but Martin Jr.\u2019s data is a small sample and he is cleared with caution."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 701350,
+          "name": "Roman Anthony",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 681508,
+          "name": "Mickey Gasper",
+          "position": "DH",
+          "bats": "S"
+        },
+        {
+          "slot": 3,
+          "player_id": 668939,
+          "name": "Adley Rutschman",
+          "position": "C",
+          "bats": "S"
+        },
+        {
+          "slot": 4,
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 596115,
+          "name": "Trevor Story",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 686765,
+          "name": "Nick Sogard",
+          "position": "1B",
+          "bats": "S"
+        },
+        {
+          "slot": 7,
+          "player_id": 702332,
+          "name": "Caleb Durbin",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 680776,
+          "name": "Jarren Duran",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 643396,
+          "name": "Isiah Kiner-Falefa",
+          "position": "2B",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 701350,
+          "name": "Roman Anthony",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 663330,
+          "name": "Jahmai Jones",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 668939,
+          "name": "Adley Rutschman",
+          "position": "C",
+          "bats": "S"
+        },
+        {
+          "slot": 6,
+          "player_id": 686765,
+          "name": "Nick Sogard",
+          "position": "1B",
+          "bats": "S"
+        },
+        {
+          "slot": 7,
+          "player_id": 596115,
+          "name": "Trevor Story",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 702332,
+          "name": "Caleb Durbin",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 655316,
+          "name": "Andruw Monasterio",
+          "position": "2B",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 701350,
+          "name": "Roman Anthony",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.341,
+          "weakness": "Breaking balls (xwOBA 0.292); offspeed weakness is based on a moderate sample.",
+          "how_to_pitch": "Use breaking balls and offspeed; avoid feeding fastballs he can drive."
+        },
+        {
+          "player_id": 681508,
+          "name": "Mickey Gasper",
+          "bats": "S",
+          "threat": "high",
+          "xwoba": 0.353,
+          "weakness": "Against left-handers, xwOBA is 0.181 in a small sample; offspeed has xwOBA 0.236.",
+          "how_to_pitch": "If right-handed, work breaking and offspeed rather than fastballs; a left-hander has the favorable split, but that split is small."
+        },
+        {
+          "player_id": 668939,
+          "name": "Adley Rutschman",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.327,
+          "weakness": "No clear pitch-type weakness available.",
+          "how_to_pitch": "Mix locations and avoid predictable patterns; his overall contact profile offers no obvious attack pitch."
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.347,
+          "weakness": "Offspeed xwOBA 0.321 is his lowest pitch-type mark.",
+          "how_to_pitch": "Change speeds and keep the ball out of the middle; he remains productive against either hand."
+        },
+        {
+          "player_id": 596115,
+          "name": "Trevor Story",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.248,
+          "weakness": "xwOBA is 0.248 overall with a 32.3% strikeout rate.",
+          "how_to_pitch": "Challenge the zone and finish with chase pitches when ahead."
+        },
+        {
+          "player_id": 686765,
+          "name": "Nick Sogard",
+          "bats": "S",
+          "threat": "low",
+          "xwoba": 0.311,
+          "weakness": "No clear pitch-type weakness available.",
+          "how_to_pitch": "Stay disciplined in sequencing and attack the edges."
+        },
+        {
+          "player_id": 702332,
+          "name": "Caleb Durbin",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.292,
+          "weakness": "No clear pitch-type weakness available.",
+          "how_to_pitch": "Work ahead and avoid giving him a clean running opportunity."
+        },
+        {
+          "player_id": 680776,
+          "name": "Jarren Duran",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.302,
+          "weakness": "xwOBA is 0.302 overall and strikeout rate is 27.1%.",
+          "how_to_pitch": "Get ahead, then use pitches outside the zone to invite a chase."
+        },
+        {
+          "player_id": 643396,
+          "name": "Isiah Kiner-Falefa",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.298,
+          "weakness": "xwOBA is 0.298 overall; slugging is 0.311.",
+          "how_to_pitch": "Attack the zone and make him earn his way on."
+        },
+        {
+          "player_id": 663330,
+          "name": "Jahmai Jones",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.328,
+          "weakness": "xwOBA is 0.16 vs right-handers, though his sample is moderate.",
+          "how_to_pitch": "A left-hander is the better matchup by his splits; with a right-hander, use his strikeout tendency and expand late."
+        },
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.375,
+          "weakness": "Breaking-ball xwOBA is 0.318 with 41.0% whiffs; split vs LHP is moderate.",
+          "how_to_pitch": "Favor breaking balls and avoid fastballs, especially against left-handers, where his xwOBA is 0.419."
+        },
+        {
+          "player_id": 655316,
+          "name": "Andruw Monasterio",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.287,
+          "weakness": "xwOBA is 0.287 overall; his xwOBA vs RHP is 0.253.",
+          "how_to_pitch": "Stay ahead and make him hit a pitch on the edges."
+        }
+      ],
+      "summary": "The heart is Anthony, Gasper, Rutschman and Abreu against a right-hander; Contreras joins Abreu and Rutschman near the middle against a left-hander. The splits favor a left-handed starter for Gasper and Jones, but Contreras has a stronger xwOBA vs LHP (0.419); on balance, the numbers do not show a clear overall hand preference."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 623993,
+          "name": "Anthony Santander",
+          "status": "out",
+          "reason": "Ended 2026 on the 60-day injured list (Left shoulder labral tear.). Assumed healthy for 2027; confirm with the medical staff. Labrum tear rule applied."
+        },
+        {
+          "player_id": 621244,
+          "name": "Jos\u00e9 Berr\u00edos",
+          "status": "out",
+          "reason": "Ended 2026 on the 60-day injured list (Right elbow stress fracture.). Assumed healthy for 2027; confirm with the medical staff. Fracture rule applied."
+        },
+        {
+          "player_id": 554340,
+          "name": "Yimi Garc\u00eda",
+          "status": "out",
+          "reason": "Ended 2026 on the 60-day injured list (Right elbow ulnar nerve and AC joint surgery.). Assumed healthy for 2027; confirm with the medical staff. Surgery rule applied."
+        },
+        {
+          "player_id": 664074,
+          "name": "Cody Ponce",
+          "status": "out",
+          "reason": "Ended 2026 on the 60-day injured list (Right knee ACL sprain.). Assumed healthy for 2027; confirm with the medical staff. Ligament injury rule applied."
+        },
+        {
+          "player_id": 670102,
+          "name": "Bowden Francis",
+          "status": "out",
+          "reason": "Ended 2026 on the 60-day injured list (Right elbow surgery.). Assumed healthy for 2027; confirm with the medical staff. Surgery rule applied."
+        },
+        {
+          "player_id": 657675,
+          "name": "Rudy Martin Jr.",
+          "status": "cleared_with_caution",
+          "reason": "Ended 2026 on the 10-day injured list (Left hamstring strain.). Assumed healthy for 2027; confirm with the medical staff."
+        },
+        {
+          "player_id": 682729,
+          "name": "Jonatan Clase",
+          "status": "cleared_with_caution",
+          "reason": "Ended 2026 on the 60-day injured list (Left plantar fasciitis.). Assumed healthy for 2027; confirm with the medical staff."
+        },
+        {
+          "player_id": 649966,
+          "name": "Luis Ur\u00edas",
+          "status": "cleared_with_caution",
+          "reason": "Ended 2026 on the 10-day injured list (Right quad strain.). Assumed healthy for 2027; confirm with the medical staff."
+        },
+        {
+          "player_id": 680718,
+          "name": "Addison Barger",
+          "status": "cleared_with_caution",
+          "reason": "Ended 2026 on the 60-day injured list (Right elbow inflammation.). Assumed healthy for 2027; confirm with the medical staff."
+        },
+        {
+          "player_id": 656302,
+          "name": "Dylan Cease",
+          "status": "cleared_with_caution",
+          "reason": "Ended 2026 on the 15-day injured list (Right shoulder inflammation.). Assumed healthy for 2027; confirm with the medical staff."
+        },
+        {
+          "player_id": 592791,
+          "name": "Jameson Taillon",
+          "status": "cleared_with_caution",
+          "reason": "Ended 2026 on the 15-day injured list (Right elbow inflammation.). Assumed healthy for 2027; confirm with the medical staff."
+        },
+        {
+          "player_id": 669456,
+          "name": "Shane Bieber",
+          "status": "cleared_with_caution",
+          "reason": "Ended 2026 on the 15-day injured list (Right teres major inflammation.). Assumed healthy for 2027; confirm with the medical staff."
+        },
+        {
+          "player_id": 571578,
+          "name": "Patrick Corbin",
+          "status": "cleared_with_caution",
+          "reason": "Ended 2026 on the 60-day injured list (Left teres major strain.). Assumed healthy for 2027; confirm with the medical staff."
+        }
+      ],
+      "summary": "Five players are out under the long-term injury rules for surgery, fracture, ligament injury, or labrum tear. The other listed players are assumed healthy for 2027 but should be checked by medical staff; no relievers are limited or unavailable."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Start Dylan Cease with a 90-pitch limit and target 5.5 innings; his 2.4 ERA, 34.9% strikeouts and 0.265 xwOBA allowed support the choice, with his shoulder caution checked before the game.",
+        "Build the lineup for projected starter Sonny Gray, with left-handed bats Brett Bateman and Nathan Lukes near the top; Bateman has the best matchup projection at 0.338, but the offspeed sample is small.",
+        "Use breaking balls and offspeed against Gray\u2019s left-handed threats; his sweeper has a 38.3% whiff rate and he uses breaking balls 39.1% of the time to left-handed hitters.",
+        "Keep the rested late-inning group available, with Louis Varland closing; Yimi Garc\u00eda is out and excluded."
+      ],
+      "keys_to_the_game": [
+        "Stay disciplined against Gray\u2019s sweeper and make him execute his varied fastball mix.",
+        "Cease should vary location and sequencing against Adley Rutschman, who has no clear pitch-type weakness, and attack Anthony and Gasper with offspeed and breaking balls.",
+        "Check Cease\u2019s shoulder caution before the game and stay within the 90-pitch plan.",
+        "Use the rested bullpen to cover the late innings, with Varland closing a lead."
+      ],
+      "summary": "Start Cease with the shoulder caution checked, and use the left-handed bats near the top of the order against projected starter Sonny Gray. Stay patient against Gray\u2019s sweeper, target the left-handed threats with offspeed and breaking balls, and rely on the available late-inning arms to finish."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Make Gray bring the sweeper into the zone",
+      "message": "Sonny Gray is the projected starter (projection). Stay disciplined against his sweeper\u2014it has a 38.3% whiff rate\u2014and be ready for his varied fastball mix. Expect more breaking balls against left-handed hitters. Brett Bateman and Nathan Lukes lead off; Bateman\u2019s projected batter edge comes with a small offspeed sample. Make Gray execute in the zone, then attack mistakes.",
+      "reminders": [
+        "Don\u2019t chase the sweeper off the plate.",
+        "Be ready for sinkers, cutters and four-seamers.",
+        "Aroldis Chapman is their primary late-inning watch."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Change speeds, vary the look, finish together",
+      "message": "Dylan Cease starts with a 90-pitch limit and a target of 5.5 innings. Check his shoulder caution with medical staff before the game. Use changeups and breaking balls against Roman Anthony and Mickey Gasper; Gasper\u2019s offspeed weakness is based on a moderate sample. Abreu\u2019s lowest pitch-type mark is against offspeed. Rutschman has no clear pitch-type weakness, so vary location and sequencing. The rested late-inning group is available, with Louis Varland closing a lead.",
+      "reminders": [
+        "Get ahead of Story, Durbin and Kiner-Falefa.",
+        "Use Dallas for length if Cease exits early.",
+        "Yimi Garc\u00eda is out; do not use him."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Confirm Cease\u2019s shoulder, then deploy the rested arms",
+      "message": "Cease is cleared with caution after right shoulder inflammation: confirm with medical staff and stay within the 90-pitch limit, targeting 5.5 innings. Gray is the projected opposing starter (projection). Keep Bateman and Lukes near the top; Bateman\u2019s offspeed matchup sample is small. Use available rested arms late, with Varland closing a lead. Garc\u00eda is out and excluded. Rudy Martin Jr. remains available with caution, but his matchup sample is small.",
+      "reminders": [
+        "Use Tyler Rogers and Mason Fluharty in the close-late-lead plan before Varland.",
+        "Save top leverage arms in a blowout.",
+        "Monitor caution-cleared players with medical staff."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 0,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 36.9,
+    "total": {
+      "model_steps": 18,
+      "gateway_cache_hits": 4,
+      "input_tokens": 98502,
+      "cached_tokens": 42655,
+      "output_tokens": 7327,
+      "cost_usd": 0.01272
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 1,
+        "input_tokens": 5155,
+        "cached_tokens": 0,
+        "output_tokens": 844,
+        "seconds": 6.3,
+        "cost_usd": 0.0012
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 21831,
+        "cached_tokens": 12678,
+        "output_tokens": 1169,
+        "seconds": 9.9,
+        "cost_usd": 0.00267
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 15283,
+        "cached_tokens": 6473,
+        "output_tokens": 1655,
+        "seconds": 0.7,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 18658,
+        "cached_tokens": 9093,
+        "output_tokens": 1319,
+        "seconds": 8.8,
+        "cost_usd": 0.00275
+      },
+      "bench_coach": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 24226,
+        "cached_tokens": 14411,
+        "output_tokens": 1294,
+        "seconds": 10.5,
+        "cost_usd": 0.0029
+      },
+      "manager": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 6612,
+        "cached_tokens": 0,
+        "output_tokens": 559,
+        "seconds": 5.0,
+        "cost_usd": 0.0016
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 6737,
+        "cached_tokens": 0,
+        "output_tokens": 487,
+        "seconds": 4.5,
+        "cost_usd": 0.00159
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

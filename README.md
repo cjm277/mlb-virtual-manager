@@ -2,7 +2,6 @@
 
 A multi-agent app that prepares an MLB manager for a game: it picks the lineup, fielding positions, starting pitcher and pitch mix, bullpen plan, and pinch-hit/pinch-run scenarios, and writes scouting reports on both teams, for any game on the 2026 schedule (stats up to the day before the game) or the published 2027 schedule (full-2026 stats and end-of-2026 rosters).
 
-> **Status:** under construction. Setup steps below will be finalized before submission.
 
 ## Quick start
 
@@ -25,10 +24,17 @@ Requires **Python 3.11+**. No other software is needed.
    .venv/Scripts/python -m backend.config   # Windows
    .venv/bin/python -m backend.config       # macOS / Linux
    ```
-5. **Build a game plan from the command line** (the web app comes next):
+5. **Start the app.**
    ```bash
-   .venv/Scripts/python run_plan.py --team TOR --opp BOS --list                # see their games
-   .venv/Scripts/python run_plan.py --team TOR --opp BOS --date 2026-08-12     # build a plan (about 1 minute)
+   .venv/Scripts/python app.py      # Windows
+   .venv/bin/python app.py          # macOS / Linux
+   ```
+   Your browser opens to **http://localhost:8000**. Pick your team, an opponent and a game, then press **Build game plan** (about 1 minute and 2 cents). Review and edit the plan, then **Download packets (ZIP)**. Saved plans under "Recent game plans" open instantly without using the API.
+
+   Command-line alternative:
+   ```bash
+   .venv/Scripts/python run_plan.py --team TOR --opp BOS --list
+   .venv/Scripts/python run_plan.py --team TOR --opp BOS --date 2027-05-03
    ```
    Each run writes `runs/<run_id>/plan.json` and `runs/<run_id>/audit.jsonl` (every agent step, tool call, token count, timing and cost).
 
@@ -49,6 +55,10 @@ Requires **Python 3.11+**. No other software is needed.
 | `backend/models.py` | Typed outputs for every element of the plan |
 | `backend/checker.py` | The consistency checker: plan rules, plus "every quoted stat must come from a tool" |
 | `run_plan.py` | Command-line runner |
+| `app.py`, `backend/main.py` | Web app: FastAPI routes, and it serves the prebuilt React app |
+| `frontend/` | React + Vite + TypeScript source; `frontend/dist/` is the prebuilt app (Node is only needed to change it) |
+| `backend/edits.py`, `backend/export.py` | Manager edits + re-check; ZIP export (HTML + PDF by audience) |
+| `design.md` | Look-and-feel choices |
 | `scripts/` | One-time data build, data spot-checks, and predictor evaluation (graders do not need to run these) |
 | `data/` | The prebuilt 2026 stats snapshot the app reads |
 | `tests/` | Automated tests |

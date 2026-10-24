@@ -93,7 +93,7 @@ def bullpen_status(team_id: int, game_date: str) -> dict:
     relievers.sort(key=lambda r: (order[r["status"]], -(r["saves"] + r["holds"])))
     if is_future(game_date):
         for s in starters:
-            s["ready_to_start"] = True
+            s["ready_to_start"], s["days_rest"] = True, None   # offseason: rest is not a factor
         note = "2027 game: every pitcher is treated as fully rested (no 2027 games played yet)."
     else:
         note = "Workload from games before this one."

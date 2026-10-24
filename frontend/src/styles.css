@@ -1,0 +1,147 @@
+/* MLB Virtual Manager. Theme colors are CSS variables: league navy/red until a team is picked,
+   then that team's colors (set from App.tsx). */
+:root {
+  --primary: #041E42;
+  --secondary: #BF0D3E;
+  --on-primary: #ffffff;
+  --paper: #f4f2ec;
+  --card: #ffffff;
+  --ink: #1b1f24;
+  --muted: #6b6f76;
+  --line: #e3dfd5;
+  --good: #1f8a4c;
+  --warn: #c98a06;
+  --bad: #c0362c;
+  --led: #ffd23f;
+  font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 980px; }
+button, select, textarea, input { font: inherit; }
+.theme-fade { transition: background-color .6s ease, border-color .6s ease, color .6s ease; }
+
+/* --- top bar ------------------------------------------------------------------ */
+.topbar {
+  display: flex; align-items: center; gap: 18px; padding: 10px 24px;
+  background: var(--primary); color: var(--on-primary); border-bottom: 5px solid var(--secondary);
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.brand img { width: 30px; height: 30px; }
+.brand b { letter-spacing: 3px; font-size: 15px; }
+.brand small { display: block; font-size: 10px; letter-spacing: 1.5px; opacity: .75; }
+.matchup-chip { font-weight: 600; font-size: 14px; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,.14); }
+.spacer { flex: 1; }
+
+/* scoreboard counter */
+.scoreboard { display: flex; gap: 2px; background: #0d0f12; border: 2px solid #2b2f36; border-radius: 6px; padding: 4px; }
+.scoreboard div { min-width: 92px; padding: 2px 10px; text-align: center; background: #16191e; }
+.scoreboard label { display: block; font-size: 9px; letter-spacing: 2px; color: #9aa0a8; }
+.scoreboard span { font-family: 'Consolas', 'Courier New', monospace; font-size: 17px; color: var(--led); font-weight: 700; }
+.scoreboard .live span { text-shadow: 0 0 6px rgba(255, 210, 63, .55); }
+
+/* --- layout -------------------------------------------------------------------- */
+main { max-width: 1240px; margin: 0 auto; padding: 22px 24px 60px; }
+.card { background: var(--card); border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,.08); padding: 18px 20px; margin-bottom: 18px; }
+h2 { margin: 0 0 12px; font-size: 18px; color: var(--primary); }
+h2 .step { display: inline-block; width: 26px; height: 26px; line-height: 26px; text-align: center; border-radius: 50%;
+  background: var(--secondary); color: #fff; font-size: 13px; margin-right: 8px; }
+h3 { font-size: 15px; color: var(--primary); margin: 18px 0 8px; border-bottom: 2px solid var(--secondary); padding-bottom: 4px; }
+.muted { color: var(--muted); font-size: 13px; }
+.row { display: flex; gap: 18px; }
+.grow { flex: 1; min-width: 0; }
+
+/* --- landing ------------------------------------------------------------------ */
+.hero { background: var(--primary); color: var(--on-primary); border-radius: 12px; padding: 26px 30px; margin-bottom: 20px;
+  position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; right: -60px; top: -60px; width: 260px; height: 260px; border-radius: 50%;
+  border: 3px dashed var(--secondary); opacity: .5; }
+.hero h1 { margin: 0 0 6px; font-size: 30px; letter-spacing: .5px; }
+.hero p { margin: 4px 0; max-width: 720px; line-height: 1.5; opacity: .92; }
+.hero blockquote { margin: 16px 0 0; font-style: italic; opacity: .8; font-size: 14px; }
+
+.team-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.team-tile { display: flex; align-items: center; gap: 8px; padding: 8px; border: 1px solid var(--line); border-radius: 8px;
+  background: #fff; cursor: pointer; text-align: left; font-size: 12.5px; line-height: 1.2; }
+.team-tile:hover { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(0,0,0,.05); }
+.team-tile.selected { border: 2px solid var(--secondary); box-shadow: 0 0 0 3px rgba(0,0,0,.06); }
+.team-tile:disabled { opacity: .35; cursor: default; }
+.badge { flex: none; width: 40px; height: 28px; border-radius: 5px; display: grid; place-items: center; font-weight: 800;
+  font-size: 12px; letter-spacing: .5px; color: #fff; border-bottom: 3px solid; }
+
+.seasons { display: flex; gap: 6px; margin-bottom: 10px; }
+.pill { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 14px; cursor: pointer; font-size: 13px; }
+.pill.on { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
+.game-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.game { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: #fff; cursor: pointer; text-align: left; }
+.game.selected { border: 2px solid var(--secondary); }
+.game b { display: block; font-size: 14px; }
+.game span { font-size: 12px; color: var(--muted); }
+
+textarea { width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 10px; resize: vertical; min-height: 64px; }
+.btn { border: none; border-radius: 8px; padding: 10px 18px; font-weight: 700; cursor: pointer; background: var(--secondary); color: #fff; }
+.btn.big { font-size: 16px; padding: 13px 26px; }
+.btn.ghost { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.error { background: #fdecea; color: var(--bad); border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+
+.recent { width: 100%; border-collapse: collapse; font-size: 13px; }
+.recent td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
+.recent tr { cursor: pointer; }
+.recent tr:hover td { background: #faf8f3; }
+
+/* --- build (live agent activity) ------------------------------------------------ */
+.pipeline { display: grid; grid-template-columns: 1fr 1fr 1fr .8fr .8fr .8fr; gap: 10px; align-items: stretch; }
+.stage { display: flex; flex-direction: column; gap: 8px; }
+.stage-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-align: center; }
+.agent { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px; position: relative; flex: 1; }
+.agent .icon { font-size: 22px; }
+.agent b { display: block; font-size: 13.5px; margin-top: 2px; }
+.agent .state { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+.agent .meta { font-size: 11.5px; color: var(--muted); margin-top: 4px; min-height: 30px; }
+.agent.waiting { opacity: .55; }
+.agent.working { border: 2px solid var(--secondary); box-shadow: 0 0 0 4px rgba(0,0,0,.04); }
+.agent.working .state { color: var(--secondary); }
+.agent.working::after { content: ''; position: absolute; top: 10px; right: 10px; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--secondary); animation: pulse 1s infinite; }
+.agent.done { border-left: 5px solid var(--good); }
+.agent.done .state { color: var(--good); }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .3; transform: scale(1.5); } }
+.feed { font-family: 'Consolas', 'Courier New', monospace; font-size: 12px; background: #12151a; color: #d7dbe0; border-radius: 10px;
+  padding: 12px 14px; height: 300px; overflow-y: auto; line-height: 1.55; }
+.feed .t { color: #7f8790; } .feed .ok { color: #7bd88f; } .feed .warn { color: #ffcf5c; } .feed .bad { color: #ff7b72; }
+.feed .agent-name { color: var(--led); }
+
+/* --- review -------------------------------------------------------------------- */
+.status { display: flex; align-items: center; gap: 14px; border-radius: 10px; padding: 12px 18px; margin-bottom: 16px; color: #fff; }
+.status.approved { background: var(--good); } .status.review { background: var(--warn); } .status.edited { background: #2a6fb0; }
+.status b { font-size: 17px; }
+.issues { margin: 6px 0 0; padding-left: 18px; font-size: 13px; }
+.tabs { display: flex; gap: 4px; border-bottom: 2px solid var(--line); margin-bottom: 14px; flex-wrap: wrap; }
+.tab { border: none; background: none; padding: 9px 14px; cursor: pointer; font-weight: 600; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -2px; }
+.tab.on { color: var(--primary); border-bottom-color: var(--secondary); }
+table.grid { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.grid th { text-align: left; background: var(--primary); color: var(--on-primary); padding: 7px 8px; font-weight: 600; }
+table.grid td { padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.grid tr.changed td { background: #fff7e0; }
+table.grid select { padding: 4px 6px; border: 1px solid var(--line); border-radius: 6px; background: #fff; max-width: 100%; }
+.lineup-card { background: #fffdf6; border: 2px solid var(--primary); border-radius: 10px; padding: 0 0 6px; }
+.lineup-card .head { background: var(--primary); color: var(--on-primary); padding: 8px 14px; border-radius: 7px 7px 0 0;
+  display: flex; justify-content: space-between; font-weight: 700; letter-spacing: 1px; }
+.slot { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--secondary); color: #fff; font-weight: 700; font-size: 12px; }
+.chip { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 700; background: #eef0f3; }
+.chip.batter, .chip.high { background: #fde3e1; color: var(--bad); }
+.chip.pitcher, .chip.low { background: #e1f3e7; color: var(--good); }
+.chip.out { background: #fde3e1; color: var(--bad); } .chip.limited, .chip.cleared_with_caution { background: #fff1cf; color: #8a5d00; }
+.note { font-size: 13px; line-height: 1.5; }
+ul.tight { margin: 4px 0; padding-left: 18px; } ul.tight li { margin: 3px 0; font-size: 13.5px; line-height: 1.45; }
+.brief { border-left: 5px solid var(--secondary); padding: 6px 14px; margin-bottom: 12px; background: #faf9f5; border-radius: 0 8px 8px 0; }
+.brief h4 { margin: 4px 0; color: var(--primary); }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 12px; }
+.kpi { background: #faf9f5; border-radius: 8px; padding: 10px 12px; }
+.kpi label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+.kpi div { font-size: 20px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; font-size: 12px; color: var(--muted); padding: 24px; }

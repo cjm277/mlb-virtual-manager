@@ -223,11 +223,16 @@ def _tasks(r: dict) -> dict[str, str]:
 # The whole run
 # ---------------------------------------------------------------------------
 
-async def build_game_plan(game_pk: int, team_id: int, notes: str | None = None,
-                          on_event: Callable[[dict], None] | None = None) -> dict:
+def new_run_id(game_pk: int, team_id: int) -> str:
     ctx = tools.get_game_context(game_pk, team_id)
     our, opp = team_info(team_id)["abbrev"], team_info(ctx["opponent_id"])["abbrev"]
-    run_id = f"{ctx['game_date']}_{our}-vs-{opp}_{datetime.now():%Y%m%d-%H%M%S}"
+    return f"{ctx['game_date']}_{our}-vs-{opp}_{datetime.now():%Y%m%d-%H%M%S}"
+
+
+async def build_game_plan(game_pk: int, team_id: int, notes: str | None = None,
+                          on_event: Callable[[dict], None] | None = None, run_id: str | None = None) -> dict:
+    ctx = tools.get_game_context(game_pk, team_id)
+    run_id = run_id or new_run_id(game_pk, team_id)
     audit = Audit(config.RUNS_DIR / run_id, on_event)
     deps = PlanDeps(game_pk=game_pk, team_id=team_id, opponent_id=ctx["opponent_id"], game_date=ctx["game_date"],
                     audit=audit, context=ctx, notes=notes)
@@ -312,6 +317,8 @@ async def build_game_plan(game_pk: int, team_id: int, notes: str | None = None,
 
     plan = assemble(run_id, ctx, r, status, rounds, issues, tally, time.perf_counter() - started, notes)
     (audit.run_dir / "plan.json").write_text(json.dumps(plan, indent=2, default=str), encoding="utf-8")
+    # The tool results behind every number, so edits can be re-checked later without new model calls.
+    (audit.run_dir / "ledger.json").write_text(json.dumps(deps.ledger, default=str), encoding="utf-8")
     audit.log("run_end", status=status, fix_rounds=rounds, seconds=plan["usage"]["seconds"], totals=plan["usage"]["total"],
               by_agent=plan["usage"]["by_agent"], run_requests=usage.requests, run_tool_calls=usage.tool_calls)
     return plan
