@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { api } from '../api'
 import type { Game, RunSummary, Team } from '../types'
+import { Mosaic, PhotoCredit, photoUrl, thumbUrl, useCredits } from './Photos'
 
 interface Props {
   teams: Team[]
@@ -54,16 +55,23 @@ export function SetupView({ teams, team, opponent, onTeam, onOpponent, onBuild, 
   useEffect(() => { if (game) scrollTo('step-notes') }, [game])
 
   const shown = useMemo(() => games.filter((g) => g.season === season), [games, season])
+  const credits = useCredits()
   const sorted = useMemo(() => [...teams].sort((a, b) => a.name.localeCompare(b.name)), [teams])
 
   return (
     <main>
-      <section className="hero theme-fade">
+      <section className={`hero theme-fade ${team ? 'with-photo' : ''}`}
+        style={team ? { backgroundImage: `url(${photoUrl(team.team_id)})` } : undefined}>
+        {!team && <Mosaic teamIds={sorted.map((x) => x.team_id)} />}
+        <div className="hero-shade" />
+        <div className="hero-content">
         <h1>{team ? `${team.name}: game-day prep` : 'Your pre-game coaching staff'}</h1>
         <p>Pick your club, your opponent, and a game. Seven AI staff members (a team doctor, two advance scouts, a pitching coach,
           a bench coach, the manager and clubhouse comms) build the lineup, the pitching plan and both scouting reports from
           Statcast data. Code checks every plan, and you review and edit it before anything goes to the players.</p>
         <blockquote>"Yale, economics and baseball. You're funny, Pete." (Moneyball, 2011)</blockquote>
+        </div>
+        {team && <PhotoCredit teamId={team.team_id} credits={credits} />}
       </section>
 
       {keyMissing && <div className="error">No PORTKEY_API_KEY found. Saved plans below can still be opened, but building a new plan needs the key in a .env file (see the README).</div>}
@@ -93,7 +101,8 @@ export function SetupView({ teams, team, opponent, onTeam, onOpponent, onBuild, 
           {shown.length === 0 ? <p className="muted">These teams do not meet in {season}.</p> : (
             <div className="game-list">
               {shown.map((g) => (
-                <button key={g.game_pk} className={`game ${game?.game_pk === g.game_pk ? 'selected' : ''}`} onClick={() => setGame(g)}>
+                <button key={g.game_pk} className={`game ${game?.game_pk === g.game_pk ? 'selected' : ''}`} onClick={() => setGame(g)}
+                  style={{ backgroundImage: `url(${thumbUrl(g.home_away === 'home' ? team.team_id : opponent.team_id)})` }}>
                   <b>{dateLabel(g.game_date)}{g.game_number > 1 ? ` (game ${g.game_number})` : ''}</b>
                   <span>{g.home_away === 'home' ? 'vs' : 'at'} {opponent.abbrev} | {g.venue}</span>
                 </button>

@@ -87,3 +87,15 @@ def test_api_routes(run_dir):
     assert c.get("/api/runs/..%2F..%2Fsecrets/plan").status_code in (400, 404)
     assert c.get("/api/not-a-route").status_code == 404
     assert c.post("/api/runs", json={"game_pk": 1, "team_id": 141}).status_code == 400   # unknown game
+
+
+def test_every_team_has_a_freely_licensed_credited_photo():
+    import re
+    teams_dir = Path(__file__).resolve().parents[1] / "frontend" / "public" / "teams"
+    credits = json.loads((teams_dir / "credits.json").read_text(encoding="utf-8"))
+    team_ids = {str(t["team_id"]) for t in TestClient(app).get("/api/teams").json()["teams"]}
+    assert set(credits) == team_ids
+    for tid, c in credits.items():
+        assert (teams_dir / f"{tid}.jpg").exists() and (teams_dir / "thumbs" / f"{tid}.jpg").exists()
+        assert re.match(r"^(CC BY(-SA)? \d|CC0|Public domain)", c["license"]), c["license"]
+        assert c["author"] and c["source"].startswith("https://commons.wikimedia.org/")

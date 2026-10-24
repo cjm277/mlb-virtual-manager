@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { api } from './api'
-import { BuildView } from './components/BuildView'
+import { BuildView, type Matchup } from './components/BuildView'
 import { ReviewView } from './components/ReviewView'
 import { SetupView } from './components/SetupView'
 import { TopBar } from './components/TopBar'
@@ -8,11 +8,18 @@ import type { Colors, Game, Plan, RunEvent, Team, Totals } from './types'
 
 type Screen = 'setup' | 'build' | 'review'
 
+// Dark text on light team colors (e.g. Brewers gold, Padres yellow), white text on dark ones.
+function textOn(hex: string) {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4))
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.4 ? '#14181d' : '#ffffff'
+}
+
 function applyTheme(c: Colors) {
   const root = document.documentElement.style
   root.setProperty('--primary', c.primary)
   root.setProperty('--secondary', c.secondary)
-  root.setProperty('--on-primary', c.on_primary)
+  root.setProperty('--on-primary', textOn(c.primary))
+  root.setProperty('--on-secondary', textOn(c.secondary))
 }
 
 function totalsFrom(events: RunEvent[]): Totals {
@@ -49,6 +56,7 @@ export default function App() {
   const [busy, setBusy] = useState(false)
   const [keyMissing, setKeyMissing] = useState(false)
   const [clock, setClock] = useState(0)
+  const [matchup, setMatchup] = useState<Matchup | null>(null)
   const startedAt = useRef<number>(0)
 
   useEffect(() => {
@@ -88,6 +96,10 @@ export default function App() {
     setBusy(true); setError(null)
     try {
       const { run_id } = await api.start(game.game_pk, team.team_id, notes)
+      const home = game.home_away === 'home'
+      setMatchup({ homeTeamId: home ? team.team_id : (opponent?.team_id ?? team.team_id),
+        title: `${team.name} ${home ? 'vs' : 'at'} ${opponent?.name ?? ''}`,
+        subtitle: `${new Date(`${game.game_date}T12:00:00`).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })} · ${game.venue}` })
       setRunId(run_id); setEvents([]); setPlan(null); startedAt.current = Date.now(); setClock(0); setScreen('build')
     } catch (e) { setError(String((e as Error).message)) } finally { setBusy(false) }
   }
@@ -111,7 +123,7 @@ export default function App() {
       <TopBar team={team} opponent={opponent} totals={totals} seconds={seconds} live={screen === 'build'} onHome={home} />
       {screen === 'setup' && <SetupView teams={teams} team={team} opponent={opponent} onTeam={setTeam} onOpponent={setOpponent}
         onBuild={build} onOpenRun={openRun} busy={busy} error={error} keyMissing={keyMissing} />}
-      {screen === 'build' && <BuildView events={events} error={error} />}
+      {screen === 'build' && <BuildView events={events} error={error} matchup={matchup} />}
       {screen === 'review' && plan && <ReviewView plan={plan} onPlan={setPlan} />}
       <footer>MLB Virtual Manager · data: MLB Stats API and Baseball Savant (Statcast) · model: gpt-6-luna · every number comes from the data, never from the model</footer>
     </>

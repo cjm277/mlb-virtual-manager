@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import type { RunEvent } from '../types'
 import AgentFigure from './AgentFigure'
+import { VenueBanner } from './Photos'
 
 export const AGENTS: Record<string, { title: string; icon: string; job: string }> = {
   team_doctor: { title: 'Team Doctor', icon: '🩺', job: 'Who is out or limited' },
@@ -65,13 +66,16 @@ function line(e: RunEvent): { cls: string; text: string } | null {
   }
 }
 
-export function BuildView({ events, error }: { events: RunEvent[]; error: string | null }) {
+export interface Matchup { homeTeamId: number; title: string; subtitle: string }
+
+export function BuildView({ events, error, matchup }: { events: RunEvent[]; error: string | null; matchup: Matchup | null }) {
   const { s, checker } = useMemo(() => agentStates(events), [events])
   const feedRef = useRef<HTMLDivElement>(null)
   useEffect(() => { feedRef.current?.scrollTo({ top: feedRef.current.scrollHeight }) }, [events.length])
 
   return (
     <main>
+      {matchup && <VenueBanner homeTeamId={matchup.homeTeamId} title={matchup.title} subtitle={matchup.subtitle} />}
       <section className="card">
         <h2>The staff is building your game plan</h2>
         <p className="muted">Scouts and coaches work in parallel. Code checks the plan before the manager signs off; problems go back to whoever owns them (at most two rounds).</p>

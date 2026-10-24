@@ -3,6 +3,7 @@ import { api } from '../api'
 import type { EditOptions, Plan } from '../types'
 import { AGENTS } from './BuildView'
 import { ChatPanel } from './ChatPanel'
+import { VenueBanner } from './Photos'
 
 const TABS = ['Lineup card', 'Pitching plan', 'Their pitchers', 'Their hitters', 'Medical', 'Game plan & briefings', 'Run details'] as const
 type Tab = (typeof TABS)[number]
@@ -59,10 +60,12 @@ export function ReviewView({ plan, onPlan }: { plan: Plan; onPlan: (p: Plan) => 
   return (
     <main>
       <ChatPanel plan={plan} onPlan={onPlan} blocked={dirty} />
+      <VenueBanner homeTeamId={plan.game.home_away === 'home' ? plan.game.team_id : plan.game.opponent_id}
+        title={`${plan.game.team} ${where} ${plan.game.opponent}`}
+        subtitle={`${new Date(`${plan.game.game_date}T12:00:00`).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })} · ${plan.game.venue} · ${plan.game.day_night === 'night' ? 'night game' : 'day game'}`} />
       <div className={`status ${banner}`}>
         <div className="grow">
-          <b>{plan.game.team} {where} {plan.game.opponent} · {plan.game.game_date} · {plan.game.venue}</b>
-          <div>{headline}</div>
+          <b>{headline}</b>
           {issues.length > 0 && <ul className="issues">{issues.map((i, k) => <li key={k}>[{AGENTS[i.owner]?.title ?? i.owner}] {i.message}</li>)}</ul>}
         </div>
         <div className="actions">

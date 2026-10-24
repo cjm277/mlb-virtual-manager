@@ -59,6 +59,7 @@ Requires **Python 3.11+**. No other software is needed.
 | `frontend/` | React + Vite + TypeScript source; `frontend/dist/` is the prebuilt app (Node is only needed to change it) |
 | `backend/edits.py`, `backend/chat.py`, `backend/export.py` | Manager edits (dropdowns or chat) + re-check; ZIP export (HTML + PDF by audience) |
 | `design.md` | Look-and-feel choices |
+| `frontend/public/teams/` | Ballpark photos (freely licensed, from Wikimedia Commons); photographer and license for each are in `credits.json` and shown in the app |
 | `scripts/` | One-time data build, data spot-checks, and predictor evaluation (graders do not need to run these) |
 | `data/` | The prebuilt 2026 stats snapshot the app reads |
 | `tests/` | Automated tests |

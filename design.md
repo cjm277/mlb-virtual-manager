@@ -19,8 +19,30 @@ The app is for a person who loves the game and trusts the numbers. It should fee
 ## Colors: league first, then your club
 
 - **Before a team is picked**, the app wears **MLB navy (#041E42) and red (#BF0D3E)** with a generic baseball mark. It is neutral ground. No official logos are used.
-- **Once you pick your team**, the whole app changes to **that club's colors** (`phase5_02`): the top bar, the hero, the step markers, the lineup card's header, table headings, and the exported PDFs and HTML. The fade takes about half a second. All 30 clubs have a primary and secondary color.
+- **Once you pick your team**, the whole app changes to **that club's colors** (`phase5_02`, `phase5_16`). The fade takes about half a second. All 30 clubs have a primary and secondary color. The color reaches:
+  - the top bar and footer, and a tinted page background;
+  - the card borders and shadows, the active tab, and the scrollbars;
+  - the step markers, buttons, and batting-slot circles;
+  - the live feed's background, the lineup card, and the table headings;
+  - the exported PDFs and HTML.
+- **Readable on every club:** text on team colors switches between white and near-black based on how light the color is. The Brewers' gold buttons get dark text (`phase5_19`), and the Blue Jays' blue gets white.
 - **Why:** it is your dugout. A Blue Jays manager sees Blue Jays blue on every screen and every printout. This is the clearest signal that the tool works for one specific club, not a generic stats site.
+
+## Ballpark photos (`phase5_15` to `19`)
+
+Logos are trademarked, so the app uses **photos of each club's home ballpark** instead:
+- **Landing page:** before a team is picked, the banner is a faded **mosaic of all 30 ballparks** behind league navy.
+- **After you pick a team:** the banner becomes **your ballpark** (for the Blue Jays, Rogers Centre under the lights at the 2016 Wild Card Game).
+- **Game tiles:** each tile shows the park the game is played in (Fenway Park for road games at Boston).
+- **Build and review screens:** both open with a wide banner of **that game's ballpark**.
+
+Every photo is **freely licensed on Wikimedia Commons**: Creative Commons BY / BY-SA, or public domain. Each one shows its photographer, license, and source link, as those licenses require. `scripts/fetch_team_photos.py` picked them in four steps:
+1. It takes each ballpark article's main photo.
+2. If that photo isn't usable, it searches Commons for other free landscape photos.
+3. Only then does it fall back to a city skyline. (All 30 ended up as ballparks.)
+4. I reviewed a contact sheet and hand-picked three replacements: the automatic Citi Field pick was an anthem singer, Great American Ball Park's was a thin panorama, and Rogers Centre's was a grey exterior.
+
+The photos are committed, about 200 KB each, so the app works offline. A test checks that all 30 have a free license and a credit.
 
 ## How each element reads
 

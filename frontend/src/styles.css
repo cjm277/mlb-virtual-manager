@@ -4,7 +4,8 @@
   --primary: #041E42;
   --secondary: #BF0D3E;
   --on-primary: #ffffff;
-  --paper: #f4f2ec;
+  --on-secondary: #ffffff;
+  --paper: color-mix(in srgb, var(--primary) 8%, #f4f2ec);
   --card: #ffffff;
   --ink: #1b1f24;
   --muted: #6b6f76;
@@ -15,7 +16,9 @@
   --led: #ffd23f;
   font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: var(--ink);
-  background: var(--paper);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 18%, #f4f2ec) 0, var(--paper) 520px) no-repeat, var(--paper);
+  scrollbar-color: var(--primary) color-mix(in srgb, var(--primary) 10%, #eee);
+  transition: background .6s ease;
 }
 * { box-sizing: border-box; }
 body { margin: 0; min-width: 980px; }
@@ -50,20 +53,37 @@ button, select, textarea, input { font: inherit; }
 
 /* --- layout -------------------------------------------------------------------- */
 main { max-width: 1240px; margin: 0 auto; padding: 22px 24px 60px; }
-.card { background: var(--card); border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,.08); padding: 18px 20px; margin-bottom: 18px; }
+.card { background: var(--card); border-radius: 10px; box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 14%, transparent);
+  border-top: 4px solid var(--primary); padding: 18px 20px; margin-bottom: 18px; }
 h2 { margin: 0 0 12px; font-size: 18px; color: var(--primary); }
 h2 .step { display: inline-block; width: 26px; height: 26px; line-height: 26px; text-align: center; border-radius: 50%;
-  background: var(--secondary); color: #fff; font-size: 13px; margin-right: 8px; }
+  background: var(--secondary); color: var(--on-secondary); font-size: 13px; margin-right: 8px; }
 h3 { font-size: 15px; color: var(--primary); margin: 18px 0 8px; border-bottom: 2px solid var(--secondary); padding-bottom: 4px; }
 .muted { color: var(--muted); font-size: 13px; }
 .row { display: flex; gap: 18px; }
 .grow { flex: 1; min-width: 0; }
 
 /* --- landing ------------------------------------------------------------------ */
-.hero { background: var(--primary); color: var(--on-primary); border-radius: 12px; padding: 26px 30px; margin-bottom: 20px;
-  position: relative; overflow: hidden; }
-.hero::after { content: ''; position: absolute; right: -60px; top: -60px; width: 260px; height: 260px; border-radius: 50%;
-  border: 3px dashed var(--secondary); opacity: .5; }
+.hero { background: var(--primary) center 55% / cover no-repeat; color: #fff; border-radius: 12px; padding: 30px 32px 40px;
+  margin-bottom: 20px; position: relative; overflow: hidden; border-bottom: 6px solid var(--secondary); min-height: 210px; }
+.hero .hero-shade { position: absolute; inset: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 94%, transparent) 0%, color-mix(in srgb, var(--primary) 72%, transparent) 50%,
+  color-mix(in srgb, var(--primary) 8%, transparent) 100%); }
+.hero:not(.with-photo) .hero-shade { background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 93%, transparent) 0%,
+  color-mix(in srgb, var(--primary) 72%, transparent) 55%, color-mix(in srgb, var(--primary) 45%, transparent) 100%); }
+.hero .hero-content { position: relative; z-index: 1; }
+.hero h1 { text-shadow: 0 2px 12px rgba(0,0,0,.35); }
+.mosaic { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(10, 1fr); grid-template-rows: repeat(3, 1fr); }
+.mosaic div { background: center / cover no-repeat; filter: grayscale(.4); }
+.photo-credit { position: absolute; right: 12px; bottom: 6px; z-index: 2; font-size: 10.5px; color: rgba(255,255,255,.78); text-shadow: 0 1px 3px rgba(0,0,0,.6); }
+.photo-credit a { color: inherit; }
+.venue-banner { position: relative; height: 150px; border-radius: 12px; overflow: hidden; margin-bottom: 16px;
+  background: var(--primary) center 55% / cover no-repeat; border-bottom: 6px solid var(--secondary); }
+.venue-shade { position: absolute; inset: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 95%, transparent) 0%,
+  color-mix(in srgb, var(--primary) 70%, transparent) 45%, transparent 100%); }
+.venue-text { position: absolute; left: 26px; bottom: 22px; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,.4); }
+.venue-text b { display: block; font-size: 26px; letter-spacing: .3px; }
+.venue-text span { font-size: 14px; opacity: .92; }
 .hero h1 { margin: 0 0 6px; font-size: 30px; letter-spacing: .5px; }
 .hero p { margin: 4px 0; max-width: 720px; line-height: 1.5; opacity: .92; }
 .hero blockquote { margin: 16px 0 0; font-style: italic; opacity: .8; font-size: 14px; }
@@ -72,7 +92,7 @@ h3 { font-size: 15px; color: var(--primary); margin: 18px 0 8px; border-bottom: 
 .team-tile { display: flex; align-items: center; gap: 8px; padding: 8px; border: 1px solid var(--line); border-radius: 8px;
   background: #fff; cursor: pointer; text-align: left; font-size: 12.5px; line-height: 1.2; }
 .team-tile:hover { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(0,0,0,.05); }
-.team-tile.selected { border: 2px solid var(--secondary); box-shadow: 0 0 0 3px rgba(0,0,0,.06); }
+.team-tile.selected { border: 2px solid var(--secondary); background: color-mix(in srgb, var(--primary) 9%, #fff); box-shadow: 0 0 0 3px rgba(0,0,0,.06); }
 .team-tile:disabled { opacity: .35; cursor: default; }
 .badge { flex: none; width: 40px; height: 28px; border-radius: 5px; display: grid; place-items: center; font-weight: 800;
   font-size: 12px; letter-spacing: .5px; color: #fff; border-bottom: 3px solid; }
@@ -81,13 +101,14 @@ h3 { font-size: 15px; color: var(--primary); margin: 18px 0 8px; border-bottom: 
 .pill { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 14px; cursor: pointer; font-size: 13px; }
 .pill.on { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 .game-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-.game { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: #fff; cursor: pointer; text-align: left; }
-.game.selected { border: 2px solid var(--secondary); }
+.game { border: 1px solid var(--line); border-radius: 8px; padding: 8px 104px 8px 10px; background: #fff right center / 92px 100% no-repeat;
+  cursor: pointer; text-align: left; min-height: 58px; overflow: hidden; }
+.game.selected { border: 2px solid var(--secondary); background-color: color-mix(in srgb, var(--primary) 9%, #fff); }
 .game b { display: block; font-size: 14px; }
 .game span { font-size: 12px; color: var(--muted); }
 
 textarea { width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 10px; resize: vertical; min-height: 64px; }
-.btn { border: none; border-radius: 8px; padding: 10px 18px; font-weight: 700; cursor: pointer; background: var(--secondary); color: #fff; }
+.btn { border: none; border-radius: 8px; padding: 10px 18px; font-weight: 700; cursor: pointer; background: var(--secondary); color: var(--on-secondary); }
 .btn.big { font-size: 16px; padding: 13px 26px; }
 .btn.ghost { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
 .btn:disabled { opacity: .45; cursor: not-allowed; }
@@ -236,3 +257,15 @@ footer { text-align: center; font-size: 12px; color: var(--muted); padding: 24px
 .chat-input { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--line); }
 .chat-input input { flex: 1; border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; }
 .typing { font-size: 12.5px; color: var(--muted); align-self: flex-start; }
+
+
+/* --- more of the page in team colors ------------------------------------------------------- */
+.stage-label { color: var(--primary) !important; font-weight: 700; }
+.tab.on { background: var(--primary); color: var(--on-primary); border-radius: 8px 8px 0 0; border-bottom-color: var(--secondary); }
+.tab:hover:not(.on) { color: var(--primary); }
+.slot { color: var(--on-secondary) !important; }
+.feed { background: color-mix(in srgb, var(--primary) 28%, #0b0d10) !important; }
+.recent tr:hover td { background: color-mix(in srgb, var(--primary) 7%, #fff) !important; }
+footer { background: var(--primary); color: var(--on-primary) !important; border-top: 5px solid var(--secondary); opacity: .97; margin-top: 30px; }
+.agent { border-color: color-mix(in srgb, var(--primary) 18%, #e3dfd5); }
+.lineup-card { box-shadow: 0 2px 10px color-mix(in srgb, var(--primary) 18%, transparent); }
