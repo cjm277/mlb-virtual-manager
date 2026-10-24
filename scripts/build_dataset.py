@@ -494,6 +494,8 @@ INDEXES = [
     "CREATE INDEX ix_bat_team ON batting_lines(team_id, game_date)",
     "CREATE INDEX ix_pitch_player ON pitching_lines(player_id, game_date)",
     "CREATE INDEX ix_pitch_team ON pitching_lines(team_id, game_date)",
+    "CREATE INDEX ix_pitch_game ON pitching_lines(game_pk, team_id)",
+    "CREATE INDEX ix_bat_game ON batting_lines(game_pk, team_id)",
     "CREATE INDEX ix_sc_pitcher ON statcast_pitcher_game(pitcher_id, game_date)",
     "CREATE INDEX ix_sc_batter ON statcast_batter_game(batter_id, game_date)",
 ]

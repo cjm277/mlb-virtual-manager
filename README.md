@@ -37,8 +37,9 @@ Requires **Python 3.11+**. No other software is needed.
 
 | Path | What it holds |
 |---|---|
-| `backend/` | Python backend: settings, stats engine, agents, API |
-| `scripts/` | One-time data build script (graders do not need to run it) |
+| `backend/engine/` | Stats engine: stats as of the game (with the 2025 fade), splits, arsenals, matchups, rotation and lineup predictors, bullpen availability |
+| `backend/tools.py` | The tools the agents call (plain Python over the data, no LLM inside) |
+| `scripts/` | One-time data build, data spot-checks, and predictor evaluation (graders do not need to run these) |
 | `data/` | The prebuilt 2026 stats snapshot the app reads |
 | `tests/` | Automated tests |
 | `evidence/` | Screenshots, logs, and test output that back up the report |

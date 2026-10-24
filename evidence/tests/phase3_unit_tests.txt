@@ -1,0 +1,47 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.7, pytest-9.1.1, pluggy-1.7.0 -- C:\Users\conra\OneDrive\Desktop\AI Foundations\Final Project\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\conra\OneDrive\Desktop\AI Foundations\Final Project
+collecting ... collected 39 items
+
+tests/test_blend.py::test_prior_weight_fades_linearly_over_six_weeks[2026-03-25-1.0] PASSED
+tests/test_blend.py::test_prior_weight_fades_linearly_over_six_weeks[2026-04-15-0.5] PASSED
+tests/test_blend.py::test_prior_weight_fades_linearly_over_six_weeks[2026-05-06-0.0] PASSED
+tests/test_blend.py::test_prior_weight_fades_linearly_over_six_weeks[2026-07-01-0.0] PASSED
+tests/test_blend.py::test_prior_weight_fades_linearly_over_six_weeks[2026-03-20-1.0] PASSED
+tests/test_blend.py::test_prior_weight_one_week_in PASSED               
+tests/test_blend.py::test_blend_weights_each_stat PASSED                
+tests/test_blend.py::test_rookie_with_no_2025_uses_2026_only PASSED     
+tests/test_blend.py::test_no_2026_games_yet_uses_2025_only PASSED       
+tests/test_blend.py::test_missing_stat_in_one_season_falls_back_to_the_other PASSED
+tests/test_blend.py::test_effective_sample_weights_each_season PASSED   
+tests/test_blend.py::test_sample_flags_for_plate_appearances[10-small] PASSED
+tests/test_blend.py::test_sample_flags_for_plate_appearances[59-small] PASSED
+tests/test_blend.py::test_sample_flags_for_plate_appearances[60-moderate] PASSED
+tests/test_blend.py::test_sample_flags_for_plate_appearances[199-moderate] PASSED
+tests/test_blend.py::test_sample_flags_for_plate_appearances[200-ok] PASSED
+tests/test_blend.py::test_rates_from_counts PASSED                      
+tests/test_config.py::test_parent_env_is_used_when_repo_has_none PASSED 
+tests/test_config.py::test_repo_env_wins_over_parent PASSED             
+tests/test_config.py::test_missing_key_stops_with_clear_message PASSED  
+tests/test_engine.py::test_stats_stop_the_day_before_the_game PASSED    
+tests/test_engine.py::test_no_2025_weight_by_june PASSED                
+tests/test_engine.py::test_early_season_leans_on_2025 PASSED            
+tests/test_engine.py::test_before_a_players_first_2026_game_it_is_all_2025 PASSED
+tests/test_engine.py::test_injured_player_is_listed_with_reason_and_not_active PASSED
+tests/test_engine.py::test_rotation_predictor_names_the_starter_who_pitched PASSED
+tests/test_engine.py::test_starter_options_respect_rest PASSED          
+tests/test_engine.py::test_predicted_lineup_is_a_legal_lineup PASSED    
+tests/test_engine.py::test_bullpen_availability_rules[workload0-unavailable] PASSED
+tests/test_engine.py::test_bullpen_availability_rules[workload1-unavailable] PASSED
+tests/test_engine.py::test_bullpen_availability_rules[workload2-unavailable] PASSED
+tests/test_engine.py::test_bullpen_availability_rules[workload3-limited] PASSED
+tests/test_engine.py::test_bullpen_availability_rules[workload4-limited] PASSED
+tests/test_engine.py::test_bullpen_availability_rules[workload5-available] PASSED
+tests/test_engine.py::test_switch_hitters_bat_opposite_the_pitcher PASSED
+tests/test_engine.py::test_matchup_platoon_and_flags PASSED             
+tests/test_engine.py::test_tools_reject_bad_inputs PASSED               
+tests/test_engine.py::test_every_tool_returns_json PASSED               
+tests/test_engine.py::test_game_context_hides_the_final_score PASSED    
+
+============================= 39 passed in 0.32s ==============================
