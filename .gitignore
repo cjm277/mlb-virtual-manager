@@ -1,0 +1,22 @@
+# Secrets: never commit a real .env
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Raw downloads (large; only the built SQLite snapshot in data/ is committed)
+data/raw/
+
+# Frontend dependencies (the built frontend/dist IS committed so graders only need Python)
+node_modules/
+
+# OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
