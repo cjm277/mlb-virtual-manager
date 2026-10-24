@@ -1,0 +1,926 @@
+{
+  "run_id": "2026-08-12_TOR-vs-BOS_20261024-084603",
+  "status": "approved",
+  "game": {
+    "game_pk": 822779,
+    "season": 2026,
+    "game_date": "2026-08-12",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Rogers Centre",
+    "team": "Toronto Blue Jays",
+    "team_id": 141,
+    "team_record_going_in": "58-63",
+    "opponent": "Boston Red Sox",
+    "opponent_id": 111,
+    "opponent_record_going_in": "64-55",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 801139,
+        "name": "Payton Tolle"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 672386,
+          "name": "Alejandro Kirk",
+          "position": "C",
+          "bats": "R",
+          "reason": "Manager-requested leadoff hitter; the matchup report shows a batter platoon advantage, though his LHP sample is small."
+        },
+        {
+          "slot": 2,
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "position": "1B",
+          "bats": "R",
+          "reason": "Strong matchup option; the report notes his fastball-group xwoba is 0.389."
+        },
+        {
+          "slot": 3,
+          "player_id": 672960,
+          "name": "Kazuma Okamoto",
+          "position": "3B",
+          "bats": "R",
+          "reason": "The matchup shows a batter platoon advantage, and he brings power behind Guerrero."
+        },
+        {
+          "slot": 4,
+          "player_id": 543807,
+          "name": "George Springer",
+          "position": "DH",
+          "bats": "R",
+          "reason": "Right-handed bat in the middle of an order built to face the left-handed starter."
+        },
+        {
+          "slot": 5,
+          "player_id": 664702,
+          "name": "Myles Straw",
+          "position": "CF",
+          "bats": "R",
+          "reason": "Right-handed bat and center-field option behind the middle of the order."
+        },
+        {
+          "slot": 6,
+          "player_id": 676391,
+          "name": "Ernie Clement",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Right-handed bat to help break up the left-handed hitters lower in the order."
+        },
+        {
+          "slot": 7,
+          "player_id": 665926,
+          "name": "Andr\u00e9s Gim\u00e9nez",
+          "position": "SS",
+          "bats": "L",
+          "reason": "Best available shortstop defense; Tolle has the edge against left-handed hitters."
+        },
+        {
+          "slot": 8,
+          "player_id": 660821,
+          "name": "Jes\u00fas S\u00e1nchez",
+          "position": "RF",
+          "bats": "L",
+          "reason": "Has started in right field; the left-on-left matchup is tough and its samples are small."
+        },
+        {
+          "slot": 9,
+          "player_id": 664770,
+          "name": "Nathan Lukes",
+          "position": "LF",
+          "bats": "L",
+          "reason": "Has started in left field; the left-on-left matchup is tough."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 678218,
+          "name": "Brandon Valenzuela",
+          "role": "backup_catcher",
+          "note": "Backup catcher if Kirk needs to leave the game."
+        },
+        {
+          "player_id": 669701,
+          "name": "Josh Smith",
+          "role": "pinch_hitter",
+          "note": "Right-handed pinch-hit option against a left-handed reliever."
+        },
+        {
+          "player_id": 703520,
+          "name": "Brett Bateman",
+          "role": "pinch_runner",
+          "note": "Speed option; his matchup sample versus left-handed pitching is small."
+        },
+        {
+          "player_id": 807727,
+          "name": "Charles McAdoo",
+          "role": "utility",
+          "note": "Utility infield option; matchup samples are small."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning with a runner on base and a need for speed.",
+          "bench_player_id": 703520,
+          "replaces_player_id": 672386,
+          "reason": "Use the available speed option for the slower catcher."
+        },
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning against a left-handed reliever, with a key plate appearance.",
+          "bench_player_id": 669701,
+          "replaces_player_id": 664770,
+          "reason": "Josh Smith is the bench option for a right-handed matchup against the left-handed reliever."
+        }
+      ],
+      "summary": "Payton Tolle is the high-confidence opposing-starter prediction. The order uses the manager's requested batting slots and positions, with right-handed hitters concentrated near the top; Tolle's matchup report favors him against the left-handed hitters."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 667755,
+        "name": "Jos\u00e9 Soriano",
+        "throws": "R",
+        "reason": "Only ready option; the matchup model gives him pitcher edges over Rafaela (0.291), Wong (0.291), Monasterio (0.287), and Durbin (0.276).",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 95,
+        "pitch_mix": [
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 25.0,
+            "purpose": "Establish the fastball down and in; do not let Abreu or Contreras sit on it."
+          },
+          {
+            "pitch": "knuckle curve",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 35.0,
+            "purpose": "Use as the main chase and miss pitch, especially to right-handed hitters."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 25.0,
+            "purpose": "Change eye level and get ahead; vary location rather than leaving it middle."
+          },
+          {
+            "pitch": "splitter",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Finish left-handed hitters with the offspeed pitch and keep it below the zone."
+          }
+        ],
+        "keys": [
+          "Against Abreu, mix in offspeed; Soriano's pitch-group results show 0.244 xwOBA allowed on offspeed and 0.431 on fastballs.",
+          "Use breaking balls to Contreras rather than feeding him fastballs; he has a 0.322 expected xwOBA in this matchup.",
+          "Rafaela chases outside the zone; stay patient and expand with breaking stuff, noting the matchup's offspeed sample is small.",
+          "Attack right-handed Durbin and Monasterio; the model gives Soriano edges with expected xwOBA values of 0.276 and 0.287."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 686973,
+          "name": "Louis Varland",
+          "throws": "R",
+          "role": "closer",
+          "note": "Primary closer; leads the staff with 25 saves and is rested."
+        },
+        {
+          "player_id": 643511,
+          "name": "Tyler Rogers",
+          "throws": "R",
+          "role": "setup",
+          "note": "Top setup option with 24 holds; rested."
+        },
+        {
+          "player_id": 689254,
+          "name": "Mason Fluharty",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Available left-handed matchup option; has 12 holds."
+        },
+        {
+          "player_id": 663362,
+          "name": "Matt Waldron",
+          "throws": "R",
+          "role": "long",
+          "note": "Rested length option if Soriano exits early or the game opens up."
+        },
+        {
+          "player_id": 680755,
+          "name": "Braydon Fisher",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed."
+        },
+        {
+          "player_id": 693686,
+          "name": "Spencer Miles",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; keep usage brief."
+        },
+        {
+          "player_id": 663893,
+          "name": "Brendon Little",
+          "throws": "L",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; available for a short left-handed matchup."
+        },
+        {
+          "player_id": 695445,
+          "name": "Chase Lee",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; avoid routine use."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the rested high-leverage arms first; Varland closes.",
+          "pitcher_ids": [
+            643511,
+            686973
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use Rogers for the highest-leverage pocket, then Varland if the game remains close.",
+          "pitcher_ids": [
+            643511,
+            686973
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Save the leverage arms; Waldron handles length, with Fisher only if needed despite his limited status.",
+          "pitcher_ids": [
+            663362,
+            680755
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use Waldron for length and protect the top leverage relievers.",
+          "pitcher_ids": [
+            663362,
+            693686
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Waldron absorbs innings first; turn to rested Rogers if the game tightens.",
+          "pitcher_ids": [
+            663362,
+            643511
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Start with Rogers, then use Varland; keep lefty Fluharty available for a key left-handed hitter.",
+          "pitcher_ids": [
+            643511,
+            686973,
+            689254
+          ]
+        }
+      ],
+      "summary": "Start Soriano, the only option marked ready, and plan for about six innings with a 95-pitch limit. Prioritize breaking balls to right-handed threats and offspeed to Abreu; protect the four limited relievers and lean on the rested high-leverage arms."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 801139,
+        "name": "Payton Tolle",
+        "throws": "L",
+        "confidence": "high",
+        "alternatives": [
+          "Ranger Suarez"
+        ]
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 46.9,
+          "velo": 96.1,
+          "whiff_pct": 29.7,
+          "note": "His primary pitch; be ready for high velocity."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 21.6,
+          "velo": 95.0,
+          "whiff_pct": 14.5,
+          "note": "A hard fastball look with less swing-and-miss."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 19.5,
+          "velo": 88.4,
+          "whiff_pct": 31.8,
+          "note": "Meaningful cutter usage with strong miss potential."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 8.5,
+          "velo": 82.6,
+          "whiff_pct": 48.5,
+          "note": "Limited-use breaking ball with the arsenal\u2019s highest whiff rate; sample flagged moderate."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 3.5,
+          "velo": 88.6,
+          "whiff_pct": 20.0,
+          "note": "Rare offering; sample flagged moderate."
+        }
+      ],
+      "how_to_attack": [
+        "Expect fastballs: he uses fastball groups 86.7% of the time against right-handed hitters and 92.0% against left-handed hitters.",
+        "Right-handed hitters: stay disciplined against the curve; his curveball has a 48.5% whiff rate, with a moderate sample.",
+        "Look for damage on fastballs: Vladimir Guerrero Jr.\u2019s fastball xwoba is 0.389 in the matchup data.",
+        "Left-handed hitters face a tough profile: Tolle\u2019s strikeout rate against left-handed hitters is 18.9%, and the matchup data favors him against our left-handed hitters."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "expected_xwoba": 0.321,
+          "edge": "even",
+          "note": "Top expected xwoba among our hitters here; his fastball-group xwoba is 0.389."
+        },
+        {
+          "player_id": 672960,
+          "name": "Kazuma Okamoto",
+          "expected_xwoba": 0.304,
+          "edge": "even",
+          "note": "The matchup shows a batter platoon advantage, though the overall edge is even."
+        },
+        {
+          "player_id": 672386,
+          "name": "Alejandro Kirk",
+          "expected_xwoba": 0.297,
+          "edge": "even",
+          "note": "Batter platoon advantage, but the matchup is even; batter sample versus LHP is small."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 660821,
+          "name": "Jes\u00fas S\u00e1nchez",
+          "expected_xwoba": 0.199,
+          "edge": "pitcher",
+          "note": "Left-on-left matchup; samples versus LHP, fastballs, and breaking balls are small."
+        },
+        {
+          "player_id": 703520,
+          "name": "Brett Bateman",
+          "expected_xwoba": 0.207,
+          "edge": "pitcher",
+          "note": "Left-on-left matchup; samples versus LHP and pitch groups are small."
+        },
+        {
+          "player_id": 807727,
+          "name": "Charles McAdoo",
+          "expected_xwoba": 0.241,
+          "edge": "pitcher",
+          "note": "The matchup samples versus LHP and each pitch group are small."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 547973,
+          "name": "Aroldis Chapman",
+          "throws": "L",
+          "note": "Available and the bullpen\u2019s save leader with 27 saves."
+        },
+        {
+          "player_id": 686580,
+          "name": "Justin Slaten",
+          "throws": "R",
+          "note": "Available; leads the bullpen with 17 holds."
+        },
+        {
+          "player_id": 669062,
+          "name": "Erik Miller",
+          "throws": "L",
+          "note": "Available, with 4 saves and 10 holds."
+        },
+        {
+          "player_id": 663558,
+          "name": "Jovani Mor\u00e1n",
+          "throws": "L",
+          "note": "Available left-handed option with 4 holds."
+        }
+      ],
+      "summary": "Payton Tolle is the high-confidence starter prediction; Ranger Suarez is the alternative. Plan for a fastball-heavy approach, especially against right-handed hitters, but stay alert for the cutter and curve. If the game reaches the bullpen, Chapman and Slaten are key available arms."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 678882,
+          "name": "Ceddanne Rafaela",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 686765,
+          "name": "Nick Sogard",
+          "position": "2B",
+          "bats": "S"
+        },
+        {
+          "slot": 3,
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 807799,
+          "name": "Masataka Yoshida",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 702332,
+          "name": "Caleb Durbin",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 655316,
+          "name": "Andruw Monasterio",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 680776,
+          "name": "Jarren Duran",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 657136,
+          "name": "Connor Wong",
+          "position": "C",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 678011,
+          "name": "Anthony Seigler",
+          "position": "2B",
+          "bats": "S"
+        },
+        {
+          "slot": 2,
+          "player_id": 678882,
+          "name": "Ceddanne Rafaela",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 663330,
+          "name": "Jahmai Jones",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 702332,
+          "name": "Caleb Durbin",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 655316,
+          "name": "Andruw Monasterio",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 680776,
+          "name": "Jarren Duran",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 657136,
+          "name": "Connor Wong",
+          "position": "C",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 678882,
+          "name": "Ceddanne Rafaela",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.288,
+          "weakness": "Chases often, especially outside the zone.",
+          "how_to_pitch": "Stay patient and expand with breaking stuff; avoid giving him a pitch to drive."
+        },
+        {
+          "player_id": 686765,
+          "name": "Nick Sogard",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.324,
+          "weakness": "Against left-handers, his xwOBA is 0.258 (moderate sample).",
+          "how_to_pitch": "If facing him left-handed, challenge him in the zone; against right-handers, work carefully."
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.352,
+          "weakness": "Offspeed results are less strong; that pitch-type sample is moderate.",
+          "how_to_pitch": "Mix in offspeed pitches and avoid predictable fastballs."
+        },
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.382,
+          "weakness": "Breaking balls draw more misses than fastballs.",
+          "how_to_pitch": "Use breaking balls to get him to chase; do not feed him fastballs."
+        },
+        {
+          "player_id": 807799,
+          "name": "Masataka Yoshida",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.323,
+          "weakness": "Breaking balls are his weakest pitch type; results sample is moderate.",
+          "how_to_pitch": "Use breaking balls for weak contact, and avoid offspeed pitches he handles well."
+        },
+        {
+          "player_id": 702332,
+          "name": "Caleb Durbin",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.285,
+          "weakness": "No pitch-type profile available.",
+          "how_to_pitch": "Get ahead in the zone, then change speeds to keep him from timing you."
+        },
+        {
+          "player_id": 655316,
+          "name": "Andruw Monasterio",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.317,
+          "weakness": "Against right-handers, xwOBA is 0.284.",
+          "how_to_pitch": "With a right-hander, attack the zone; do not give him free passes."
+        },
+        {
+          "player_id": 680776,
+          "name": "Jarren Duran",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.299,
+          "weakness": "Strikeouts are frequent, with limited walks.",
+          "how_to_pitch": "Get ahead, then use quality secondary pitches to finish the at-bat."
+        },
+        {
+          "player_id": 657136,
+          "name": "Connor Wong",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.296,
+          "weakness": "No pitch-type profile available.",
+          "how_to_pitch": "Attack the zone and make him earn his way on."
+        },
+        {
+          "player_id": 678011,
+          "name": "Anthony Seigler",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.31,
+          "weakness": "Limited track record; overview sample is moderate.",
+          "how_to_pitch": "Challenge him in the zone and avoid giving him a free pass."
+        },
+        {
+          "player_id": 663330,
+          "name": "Jahmai Jones",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.309,
+          "weakness": "Against right-handers, xwOBA is 0.144.",
+          "how_to_pitch": "If facing him right-handed, attack the zone and use breaking pitches to finish."
+        }
+      ],
+      "summary": "Contreras and Abreu are the main power threats, with Yoshida also a concern against left-handers (that split is a small sample). The numbers favor a right-handed starter: Abreu's xwOBA is 0.345 versus right-handers, while Contreras is stronger against left-handers at 0.432."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 592791,
+          "name": "Jameson Taillon",
+          "status": "out",
+          "reason": "Right forearm tendinits."
+        },
+        {
+          "player_id": 649966,
+          "name": "Luis Ur\u00edas",
+          "status": "out",
+          "reason": "Right quad strain."
+        },
+        {
+          "player_id": 702056,
+          "name": "Trey Yesavage",
+          "status": "out",
+          "reason": "Left knee inflammation."
+        },
+        {
+          "player_id": 571578,
+          "name": "Patrick Corbin",
+          "status": "out",
+          "reason": "Left teres major strain."
+        },
+        {
+          "player_id": 672820,
+          "name": "Lenyn Sosa",
+          "status": "out",
+          "reason": "Right wrist contusion."
+        },
+        {
+          "player_id": 680718,
+          "name": "Addison Barger",
+          "status": "out",
+          "reason": "Right elbow inflammation."
+        },
+        {
+          "player_id": 682729,
+          "name": "Jonatan Clase",
+          "status": "out",
+          "reason": "Left plantar fasciitis."
+        },
+        {
+          "player_id": 573009,
+          "name": "Joe Mantiply",
+          "status": "out",
+          "reason": "Left knee inflammation."
+        },
+        {
+          "player_id": 621244,
+          "name": "Jos\u00e9 Berr\u00edos",
+          "status": "out",
+          "reason": "Right elbow stress fracture."
+        },
+        {
+          "player_id": 554340,
+          "name": "Yimi Garc\u00eda",
+          "status": "out",
+          "reason": "Right elbow ulnar nerve and AC joint surgery."
+        },
+        {
+          "player_id": 623993,
+          "name": "Anthony Santander",
+          "status": "out",
+          "reason": "Left shoulder labral tear."
+        },
+        {
+          "player_id": 664074,
+          "name": "Cody Ponce",
+          "status": "out",
+          "reason": "Right knee ACL sprain."
+        },
+        {
+          "player_id": 670102,
+          "name": "Bowden Francis",
+          "status": "out",
+          "reason": "Right elbow surgery."
+        },
+        {
+          "player_id": 680755,
+          "name": "Braydon Fisher",
+          "status": "limited",
+          "reason": "pitched yesterday (22 pitches)"
+        },
+        {
+          "player_id": 693686,
+          "name": "Spencer Miles",
+          "status": "limited",
+          "reason": "pitched yesterday (14 pitches)"
+        },
+        {
+          "player_id": 663893,
+          "name": "Brendon Little",
+          "status": "limited",
+          "reason": "pitched yesterday (6 pitches)"
+        },
+        {
+          "player_id": 695445,
+          "name": "Chase Lee",
+          "status": "limited",
+          "reason": "pitched yesterday (25 pitches)"
+        }
+      ],
+      "summary": "Work around the 13 players on the injured list and four relievers who pitched yesterday. Fisher, Miles, Little, and Lee are limited; no reliever is marked unavailable."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Use Jos\u00e9 Soriano, the only option marked ready, with a 95-pitch limit and a target of six innings; his matchup model gives edges over Rafaela, Wong, Monasterio, and Durbin.",
+        "Keep Kirk, Guerrero Jr., and Okamoto near the top against left-handed Payton Tolle; the matchup report identifies each as a best matchup, though Kirk\u2019s LHP sample is small.",
+        "Build the attack around Tolle\u2019s fastballs: he uses fastball groups 86.7% of the time against right-handed hitters and 92.0% against left-handed hitters; stay alert for his cutter and curve.",
+        "Use rested Rogers and Varland in close games, with Waldron available for length; limit routine use of Fisher, Miles, Little, and Lee because they pitched yesterday."
+      ],
+      "keys_to_the_game": [
+        "Make Tolle work while staying ready for high-velocity fastballs and his cutter; do not chase his curve, whose 48.5% whiff rate comes from a moderate sample.",
+        "Use breaking balls against Contreras and offspeed against Abreu; avoid predictable fastballs to the main power threats.",
+        "Attack the zone against right-handed Durbin and Monasterio, while using breaking stuff to expand on Rafaela when he chases.",
+        "Get length from Soriano, then preserve the rested leverage arms and avoid routine use of the limited relievers."
+      ],
+      "summary": "The plan fits the high-confidence prediction of left-hander Payton Tolle: use the right-handed bats at the top, make him work, and attack his fastballs without overlooking the cutter and curve. Start Soriano with a 95-pitch limit, target six innings, and protect the rested high-leverage bullpen arms while keeping the four limited relievers for need-only situations."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Make Tolle work; be ready for heat",
+      "message": "Payton Tolle is the high-confidence starter prediction. Expect fastballs\u2014he uses fastball groups 86.7% of the time against right-handed hitters and 92.0% against left-handed hitters\u2014but stay alert for the cutter and curve. The curve\u2019s 48.5% whiff rate comes from a moderate sample. Kirk, Guerrero Jr., and Okamoto lead the order; Guerrero Jr.\u2019s fastball-group xwoba is 0.389. If Tolle exits, watch for Aroldis Chapman and Justin Slaten.",
+      "reminders": [
+        "Stay disciplined against the curve; make Tolle earn outs.",
+        "Look for fastballs without getting caught sitting on one pitch.",
+        "Prepare for Chapman and Slaten if Boston turns to the bullpen."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Soriano sets the tone; attack with intent",
+      "message": "Jos\u00e9 Soriano starts, with a 95-pitch limit and a target of six innings. Use breaking balls to keep Willson Contreras from sitting on fastballs, and mix offspeed to Wilyer Abreu. Against Ceddanne Rafaela, stay patient and expand with breaking stuff; the matchup\u2019s offspeed sample is small. Attack Caleb Durbin and Andruw Monasterio in the zone. In close games, lean on rested Tyler Rogers and Louis Varland; Matt Waldron is available for length. Keep the limited relievers for need-only situations.",
+      "reminders": [
+        "Use breaking balls to Contreras and offspeed to Abreu.",
+        "Get ahead of Durbin and Monasterio; expand carefully to Rafaela.",
+        "Save the rested leverage arms for close situations."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Execute the fastball plan and protect leverage",
+      "message": "The high-confidence prediction is left-hander Payton Tolle, so the order opens with Kirk, Guerrero Jr., and Okamoto. Make Tolle work, prepare for high-velocity fastballs, and stay alert for his cutter and curve; the curve\u2019s 48.5% whiff rate comes from a moderate sample. Soriano is the only option marked ready: plan for six innings with a 95-pitch limit. Use rested Rogers and Varland in close games, Waldron for length, and limit routine use of Fisher, Miles, Little, and Lee, who are limited after pitching yesterday.",
+      "reminders": [
+        "Keep Kirk\u2019s LHP sample caution in mind.",
+        "Use the available speed option late when a runner is on and speed is needed.",
+        "Save the rested leverage arms and reserve limited relievers for need."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 1,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 63.3,
+    "total": {
+      "model_steps": 21,
+      "gateway_cache_hits": 0,
+      "input_tokens": 100318,
+      "cached_tokens": 40838,
+      "output_tokens": 9160,
+      "cost_usd": 0.01729
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4258,
+        "cached_tokens": 0,
+        "output_tokens": 541,
+        "seconds": 8.0,
+        "cost_usd": 0.00112
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 17433,
+        "cached_tokens": 8889,
+        "output_tokens": 1018,
+        "seconds": 9.4,
+        "cost_usd": 0.0024
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 21847,
+        "cached_tokens": 11929,
+        "output_tokens": 2749,
+        "seconds": 20.4,
+        "cost_usd": 0.0036
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 13866,
+        "cached_tokens": 6370,
+        "output_tokens": 1081,
+        "seconds": 8.7,
+        "cost_usd": 0.00217
+      },
+      "bench_coach": {
+        "calls": 2,
+        "model_steps": 5,
+        "gateway_cache_hits": 0,
+        "input_tokens": 26120,
+        "cached_tokens": 13650,
+        "output_tokens": 1724,
+        "seconds": 14.5,
+        "cost_usd": 0.00363
+      },
+      "manager": {
+        "calls": 2,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 11228,
+        "cached_tokens": 0,
+        "output_tokens": 1488,
+        "seconds": 14.1,
+        "cost_usd": 0.00299
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 5566,
+        "cached_tokens": 0,
+        "output_tokens": 559,
+        "seconds": 5.7,
+        "cost_usd": 0.00139
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

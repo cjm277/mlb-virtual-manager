@@ -25,7 +25,12 @@ Requires **Python 3.11+**. No other software is needed.
    .venv/Scripts/python -m backend.config   # Windows
    .venv/bin/python -m backend.config       # macOS / Linux
    ```
-5. **Run the app:** _coming soon._
+5. **Build a game plan from the command line** (the web app comes next):
+   ```bash
+   .venv/Scripts/python run_plan.py --team TOR --opp BOS --list                # see their games
+   .venv/Scripts/python run_plan.py --team TOR --opp BOS --date 2026-08-12     # build a plan (about 1 minute)
+   ```
+   Each run writes `runs/<run_id>/plan.json` and `runs/<run_id>/audit.jsonl` (every agent step, tool call, token count, timing and cost).
 
 ## API keys
 
@@ -39,6 +44,11 @@ Requires **Python 3.11+**. No other software is needed.
 |---|---|
 | `backend/engine/` | Stats engine: stats as of the game (with the 2025 fade), splits, arsenals, matchups, rotation and lineup predictors, bullpen availability |
 | `backend/tools.py` | The tools the agents call (plain Python over the data, no LLM inside) |
+| `backend/agents/` | The seven-agent staff, the run order and fix loop (`team.py`), and context-bound tools (`toolkit.py`) |
+| `backend/prompts/` | One prompt file per agent, plus the shared rules |
+| `backend/models.py` | Typed outputs for every element of the plan |
+| `backend/checker.py` | The consistency checker: plan rules, plus "every quoted stat must come from a tool" |
+| `run_plan.py` | Command-line runner |
 | `scripts/` | One-time data build, data spot-checks, and predictor evaluation (graders do not need to run these) |
 | `data/` | The prebuilt 2026 stats snapshot the app reads |
 | `tests/` | Automated tests |

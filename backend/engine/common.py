@@ -149,7 +149,7 @@ def effective_n(n_cur: float, n_prior: float, w_prior: float) -> float:
 # Output helpers
 # ---------------------------------------------------------------------------
 
-THREE_PLACES = {"avg", "obp", "slg", "woba", "xwoba"}
+THREE_PLACES = {"avg", "obp", "slg", "woba", "xwoba", "expected_xwoba", "league_xwoba", "xwoba_allowed"}
 
 
 def tidy(r: dict) -> dict:

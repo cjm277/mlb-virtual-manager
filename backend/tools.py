@@ -13,7 +13,7 @@ Docstrings are written as tool descriptions: the agent reads them to decide what
 from __future__ import annotations
 
 from backend.engine import bullpen, games, hitting, lineup, matchups, pitching, rotation, roster
-from backend.engine.common import is_future, tidy
+from backend.engine.common import is_future
 
 
 def _game(game_pk: int, team_id: int | None = None) -> dict:
@@ -183,9 +183,7 @@ def get_matchups(game_pk: int, pitcher_id: int, batter_ids: list[int]) -> list[d
     for pid in [pitcher_id, *batter_ids]:
         if not roster.player_info(pid):
             raise ValueError(f"Unknown player_id {pid}.")
-    out = matchups.matchups(batter_ids, pitcher_id, g["game_date"])
-    return [tidy({k: v for k, v in m.items() if k != "by_pitch_group"}) | {"by_pitch_group": m["by_pitch_group"]}
-            for m in out]
+    return matchups.matchups(batter_ids, pitcher_id, g["game_date"])
 
 
 TOOLS = [get_game_context, get_roster_and_injuries, get_bullpen_status, get_hitter_profile, get_pitcher_profile,
