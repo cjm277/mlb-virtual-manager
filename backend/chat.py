@@ -22,10 +22,10 @@ from pydantic_ai.exceptions import UsageLimitExceeded
 from pydantic_ai.usage import RunUsage
 
 from backend import tools
-from backend.agents.team import AgentStepLimit, Tally, run_agent
+from backend.agents.team import AgentStepLimit, Tally, clean_notes, run_agent
 from backend.agents.toolkit import PlanDeps
 from backend.audit import Audit
-from backend.checker import check_numbers, ledger_numbers
+from backend.checker import check_numbers, check_prompt_leak, ledger_numbers
 from backend.edits import LineupEdit, PlanEdits, apply_to_plan, load_ledger, recheck, save
 from backend.models import ChatReply
 
@@ -80,7 +80,7 @@ async def chat_turn(run_dir: Path, message: str) -> dict:
     convo = "\n".join(f"{t['role']}: {t['text']}" for t in past) or "(none)"
     audit.log("chat_message", message=message)
     task = (f"Current plan (JSON): {_state(plan)}\n\nConversation so far:\n{convo}\n\n"
-            f"The manager now says:\n<manager_message>\n{message}\n</manager_message>")
+            f"The manager now says:\n<manager_message>\n{clean_notes(message)}\n</manager_message>")
 
     status, applied, issues, reply = "answered", [], [], None
     try:
@@ -94,6 +94,7 @@ async def chat_turn(run_dir: Path, message: str) -> dict:
             # A change must leave the whole plan passing the checker; a pure answer only has its numbers checked.
             issues = recheck(new_plan, deps.ledger if run_ledger is not None else None) if log else []
             issues += [i.as_dict() for i in check_numbers("assistant", reply, ledger_numbers(deps.ledger))]
+            issues += [i.as_dict() for i in check_prompt_leak("assistant", reply)]
             audit.log("chat_check", attempt=attempt, changes=log, passed=not issues, issues=issues)
             if not issues:
                 if log:

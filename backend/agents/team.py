@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import re
 import time
 from dataclasses import dataclass, field, replace
 from datetime import datetime
@@ -34,7 +35,7 @@ from backend import config, tools
 from backend.agents import toolkit as tk
 from backend.agents.toolkit import PlanDeps
 from backend.audit import Audit, preview
-from backend.checker import Issue, check_numbers, check_plan, ledger_numbers
+from backend.checker import Issue, check_briefing_leaks, check_numbers, check_plan, check_prompt_leak, ledger_numbers
 from backend.engine.games import team as team_info
 from backend.models import (ChatReply, CommsPackage, HittersScoutingReport, LineupPlan, ManagerReview,
                             MedicalReport, PitchersScoutingReport, PitchingPlan)
@@ -75,6 +76,15 @@ PACKETS = {
 }
 
 
+NOTES_MAX = 1000
+
+
+def clean_notes(notes: str) -> str:
+    """Manager notes are data: cap the length and strip anything tag-like, so a note can't close the
+    <manager_notes> block and pose as instructions."""
+    return re.sub(r"<[^>]*>", "", notes)[:NOTES_MAX].strip()
+
+
 class AgentStepLimit(RuntimeError):
     pass
 
@@ -108,7 +118,7 @@ def build_agent(name: str) -> Agent:
         if c.get("roster_basis"):
             lines.append(f"Roster basis: {c['roster_basis']}")
         if ctx.deps.notes:
-            lines.append(f"<manager_notes>\n{ctx.deps.notes}\n</manager_notes>")
+            lines.append(f"<manager_notes>\n{clean_notes(ctx.deps.notes)}\n</manager_notes>")
         return "\n".join(lines)
 
     return agent
@@ -325,14 +335,18 @@ async def build_game_plan(game_pk: int, team_id: int, notes: str | None = None,
                       f"Scout, opposing pitchers: {_j(r['scout_pitchers'])}\nScout, opposing hitters: {_j(r['scout_hitters'])}\n"
                       f"Team Doctor: {_j(r['medical'])}")
         r["comms"] = await call("clubhouse_comms", comms_task)
-        comms_issues = check_numbers("clubhouse_comms", r["comms"], ledger_numbers(deps.ledger))
+        def comms_check(c: CommsPackage) -> list[Issue]:
+            return (check_numbers("clubhouse_comms", c, ledger_numbers(deps.ledger))
+                    + check_prompt_leak("clubhouse_comms", c) + check_briefing_leaks(c, r["medical"], r["pitching"]))
+
+        comms_issues = comms_check(r["comms"])
         audiences = sorted(b.audience for b in r["comms"].briefings)
         if audiences != ["coaches", "hitters", "pitchers"]:
             comms_issues.append(Issue("clubhouse_comms", "briefings", f"Need one briefing per audience, got {audiences}."))
         if comms_issues:
             audit.log("checker", round="comms", passed=False, issues=[i.as_dict() for i in comms_issues])
             r["comms"] = await call("clubhouse_comms", _fix_task(comms_task, r["comms"], [i.message for i in comms_issues]))
-            issues += check_numbers("clubhouse_comms", r["comms"], ledger_numbers(deps.ledger))
+            issues += comms_check(r["comms"])
     except (UsageLimitExceeded, AgentStepLimit) as exc:
         status = "stopped_by_budget"
         audit.log("budget_stop", reason=str(exc))

@@ -57,6 +57,8 @@ export default function App() {
   const [keyMissing, setKeyMissing] = useState(false)
   const [clock, setClock] = useState(0)
   const [matchup, setMatchup] = useState<Matchup | null>(null)
+  const [lastRequest, setLastRequest] = useState<{ game: Game; notes: string } | null>(null)
+  const [reusedNotice, setReusedNotice] = useState(false)
   const startedAt = useRef<number>(0)
 
   useEffect(() => {
@@ -91,11 +93,15 @@ export default function App() {
 
   const liveTotals = useMemo(() => totalsFrom(events), [events])
 
-  async function build(game: Game, notes: string) {
+  async function build(game: Game, notes: string, force = false) {
     if (!team) return
-    setBusy(true); setError(null)
+    setBusy(true); setError(null); setLastRequest({ game, notes }); setReusedNotice(false)
     try {
-      const { run_id } = await api.start(game.game_pk, team.team_id, notes)
+      const { run_id, reused } = await api.start(game.game_pk, team.team_id, notes, force)
+      if (reused) {   // the same plan was built recently: reopen it instead of paying for it again
+        setPlan(await api.plan(run_id)); setRunId(run_id); setReusedNotice(true); setScreen('review')
+        return
+      }
       const home = game.home_away === 'home'
       setMatchup({ homeTeamId: home ? team.team_id : (opponent?.team_id ?? team.team_id),
         title: `${team.name} ${home ? 'vs' : 'at'} ${opponent?.name ?? ''}`,
@@ -124,7 +130,9 @@ export default function App() {
       {screen === 'setup' && <SetupView teams={teams} team={team} opponent={opponent} onTeam={setTeam} onOpponent={setOpponent}
         onBuild={build} onOpenRun={openRun} busy={busy} error={error} keyMissing={keyMissing} />}
       {screen === 'build' && <BuildView events={events} error={error} matchup={matchup} />}
-      {screen === 'review' && plan && <ReviewView plan={plan} onPlan={setPlan} />}
+      {screen === 'review' && plan && <ReviewView plan={plan} onPlan={setPlan}
+        notice={reusedNotice ? 'You built this exact plan within the last 24 hours, so it was reopened at no cost.' : null}
+        onRebuild={reusedNotice && lastRequest ? () => build(lastRequest.game, lastRequest.notes, true) : null} />}
       <footer>MLB Virtual Manager · data: MLB Stats API and Baseball Savant (Statcast) · model: gpt-6-luna · every number comes from the data, never from the model</footer>
     </>
   )

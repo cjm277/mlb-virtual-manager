@@ -36,7 +36,7 @@ function Certainty({ sp }: { sp: { probability_pct?: number | null; probability_
   )
 }
 
-export function ReviewView({ plan, onPlan }: { plan: Plan; onPlan: (p: Plan) => void }) {
+export function ReviewView({ plan, onPlan, notice, onRebuild }: { plan: Plan; onPlan: (p: Plan) => void; notice?: string | null; onRebuild?: (() => void) | null }) {
   const [tab, setTab] = useState<Tab>('Lineup card')
   const [opts, setOpts] = useState<EditOptions | null>(null)
   const [draft, setDraft] = useState<Draft>(() => draftFrom(plan))
@@ -88,6 +88,7 @@ export function ReviewView({ plan, onPlan }: { plan: Plan; onPlan: (p: Plan) => 
           <a className="btn" style={{ background: '#111', textDecoration: 'none' }} href={api.exportUrl(plan.run_id)} download>⬇ Download packets (ZIP)</a>
         </div>
       </div>
+      {notice && <div className="notice">{notice} {onRebuild && <button className="btn ghost" onClick={onRebuild}>Rebuild anyway</button>}</div>}
       <p className="muted">Stats: {plan.game.stats_basis} {plan.game.roster_basis ?? ''}</p>
       {err && <div className="error">{err}</div>}
 
@@ -236,8 +237,11 @@ export function ReviewView({ plan, onPlan }: { plan: Plan; onPlan: (p: Plan) => 
       {tab === 'Game plan & briefings' && (
         <div className="row">
           <div className="grow card">
+            {plan.manager_notes && <div className="notes-given">
+              <b>Your notes to the staff</b> <span className="muted">(passed to the agents as information; they can't change the rules)</span>
+              <p>{plan.manager_notes}</p></div>}
             {s.manager_review && <>
-              <h3 style={{ marginTop: 0 }}>The manager's game plan</h3><p className="note">{s.manager_review.summary}</p>
+              <h3 style={{ marginTop: plan.manager_notes ? undefined : 0 }}>The manager's game plan</h3><p className="note">{s.manager_review.summary}</p>
               <h3>Keys to the game</h3><ul className="tight">{s.manager_review.keys_to_the_game.map((k, i) => <li key={i}>{k}</li>)}</ul>
               <h3>Key decisions</h3><ul className="tight">{s.manager_review.key_decisions.map((k, i) => <li key={i}>{k}</li>)}</ul>
             </>}

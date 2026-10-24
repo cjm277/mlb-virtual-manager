@@ -25,7 +25,7 @@ from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from backend import config, tools
+from backend import budget, config, tools
 from backend.edits import ROLES, PlanEdits, apply_edits
 from backend.engine.games import game, games_between, teams
 from backend.export import export_zip
@@ -60,6 +60,7 @@ def health() -> dict:
     config.load_env()
     import os
     return {"ok": True, "model": config.MODEL_NAME, "api_key_found": bool(os.getenv(config.API_KEY_NAME)),
+            "spent_today_usd": budget.spent_today(), "daily_budget_usd": config.DAILY_BUDGET_USD,
             "pricing_per_million": {"input": config.PRICE_INPUT_PER_M, "cached_input": config.PRICE_CACHED_INPUT_PER_M,
                                     "output": config.PRICE_OUTPUT_PER_M}}
 
@@ -80,17 +81,23 @@ class StartRun(BaseModel):
     game_pk: int
     team_id: int
     notes: str | None = Field(default=None, max_length=1000)
+    force: bool = False   # rebuild even if this exact plan was built in the last 24 hours
 
 
 @app.post("/api/runs")
 async def start_run(req: StartRun) -> dict:
-    active = sum(not r["done"] for r in RUNS.values())
-    if active >= MAX_ACTIVE_RUNS:
-        raise HTTPException(429, f"{active} plans are already being built. Wait for one to finish.")
     try:
         tools.get_game_context(req.game_pk, req.team_id)      # validates the game and team
     except ValueError as exc:
         raise HTTPException(400, str(exc)) from exc
+    notes = (req.notes or "").strip() or None
+    if not req.force and (existing := budget.existing_plan(req.game_pk, req.team_id, notes)):
+        return {"run_id": existing, "reused": True}            # same request as a recent plan: no new cost
+    if reason := budget.over_daily_cap():
+        raise HTTPException(429, reason)
+    active = sum(not r["done"] for r in RUNS.values())
+    if active >= MAX_ACTIVE_RUNS:
+        raise HTTPException(429, f"{active} plans are already being built. Wait for one to finish.")
     from backend.agents.team import build_game_plan, new_run_id
 
     run_id = new_run_id(req.game_pk, req.team_id)
@@ -98,7 +105,7 @@ async def start_run(req: StartRun) -> dict:
 
     async def go() -> None:
         try:
-            await build_game_plan(req.game_pk, req.team_id, notes=(req.notes or "").strip() or None,
+            await build_game_plan(req.game_pk, req.team_id, notes=notes,
                                   on_event=state["events"].append, run_id=run_id)
         except SystemExit as exc:                               # e.g. missing API key
             state["error"] = str(exc)
@@ -108,7 +115,7 @@ async def start_run(req: StartRun) -> dict:
             state["done"] = True
 
     state["task"] = asyncio.create_task(go())
-    return {"run_id": run_id}
+    return {"run_id": run_id, "reused": False}
 
 
 @app.get("/api/runs")
@@ -181,6 +188,8 @@ async def chat(run_id: str, msg: ChatMessage) -> dict:
     from backend.chat import chat_turn
 
     _plan(run_id)
+    if reason := budget.over_daily_cap():
+        raise HTTPException(429, reason)
     try:
         return await chat_turn(_run_dir(run_id), msg.message.strip())
     except SystemExit as exc:                                   # e.g. missing API key

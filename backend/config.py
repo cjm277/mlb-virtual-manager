@@ -36,6 +36,10 @@ MAX_TOKENS_PER_RUN = 600_000       # input + output; at list prices this caps a 
 MAX_STEPS_PER_AGENT = 12           # model calls inside one agent's loop
 MAX_OUTPUT_TOKENS_PER_RESPONSE = 6_000
 MAX_FIX_ROUNDS = 2                 # consistency-checker fix loop
+
+# --- Budget across runs (backend/budget.py) ---------------------------------------
+DAILY_BUDGET_USD = 2.00            # all plans + chat in one day; then new builds and chat are refused
+REUSE_HOURS = 24                   # the same request within this window reopens the saved plan (no new cost)
 AGENT_TIMEOUT_SECONDS = 240        # one agent's whole loop
 MODEL_REQUEST_TIMEOUT_SECONDS = 90
 MODEL_MAX_RETRIES = 2

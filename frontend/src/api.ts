@@ -15,8 +15,8 @@ export const api = {
   teams: () => call<{ league: Colors; teams: Team[] }>('/api/teams'),
   games: (teamId: number, oppId: number) => call<Game[]>(`/api/games?team_id=${teamId}&opponent_id=${oppId}`),
   runs: () => call<RunSummary[]>('/api/runs'),
-  start: (game_pk: number, team_id: number, notes: string) =>
-    call<{ run_id: string }>('/api/runs', { method: 'POST', body: JSON.stringify({ game_pk, team_id, notes: notes || null }) }),
+  start: (game_pk: number, team_id: number, notes: string, force = false) =>
+    call<{ run_id: string; reused: boolean }>('/api/runs', { method: 'POST', body: JSON.stringify({ game_pk, team_id, notes: notes || null, force }) }),
   events: (runId: string, since: number) =>
     call<{ events: RunEvent[]; next: number; done: boolean; error: string | null }>(`/api/runs/${runId}/events?since=${since}`),
   plan: (runId: string) => call<Plan>(`/api/runs/${runId}/plan`),
