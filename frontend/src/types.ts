@@ -55,7 +55,7 @@ export interface Plan {
 }
 
 export interface EditOptions {
-  hitters: { player_id: number; name: string; bats: string; position: string; starts_by_position: Record<string, number>; xwoba: number | null }[]
+  hitters: { player_id: number; name: string; bats: string; position: string; starts_by_position: Record<string, number>; xwoba: number | null; consecutive_starts: number | null; rest_suggested: boolean }[]
   starters: { player_id: number; name: string; throws: string; days_rest: number | null; ready_to_start: boolean; era: number | null; starts: number }[]
   roles: string[]; positions: string[]
 }

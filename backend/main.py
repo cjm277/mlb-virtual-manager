@@ -158,7 +158,8 @@ def edit_options(run_id: str) -> dict:
                if s["status"] == "out"}
     overview = tools.get_hitters_overview(g["game_pk"], g["team_id"])
     hitters = [{"player_id": h["player_id"], "name": h["name"], "bats": h["bats"], "position": h["position"],
-                "starts_by_position": h["starts_by_position"], "xwoba": h["xwoba"]}
+                "starts_by_position": h["starts_by_position"], "xwoba": h["xwoba"],
+                "consecutive_starts": h["consecutive_starts"], "rest_suggested": h["rest_suggested"]}
                for h in overview if h["player_id"] not in out_ids]
     starters = [s for s in tools.get_starter_options(g["game_pk"], g["team_id"]) if s["player_id"] not in out_ids]
     return {"hitters": hitters, "starters": starters, "roles": ROLES,

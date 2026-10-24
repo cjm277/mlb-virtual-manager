@@ -108,13 +108,15 @@ export function ReviewView({ plan, onPlan, notice, onRebuild }: { plan: Plan; on
                   <tr key={d.slot} className={changed ? 'changed' : ''}>
                     <td><span className="slot">{d.slot}</span></td>
                     <td><select value={d.player_id} onChange={(e) => setDraft({ ...draft, lineup: draft.lineup.map((x, j) => j === i ? { ...x, player_id: Number(e.target.value) } : x) })}>
-                      {(opts?.hitters ?? []).map((h) => <option key={h.player_id} value={h.player_id}>{h.name} ({h.bats}) · xwOBA {x3(h.xwoba)}</option>)}
+                      {(opts?.hitters ?? []).map((h) => <option key={h.player_id} value={h.player_id}>{h.name} ({h.bats}) · xwOBA {x3(h.xwoba)}{h.rest_suggested ? ` · ${h.consecutive_starts} straight starts, rest suggested` : ''}</option>)}
                       {!opts?.hitters.some((h) => h.player_id === d.player_id) && <option value={d.player_id}>{spot?.name}</option>}
                     </select></td>
                     <td><select value={d.position} onChange={(e) => setDraft({ ...draft, lineup: draft.lineup.map((x, j) => j === i ? { ...x, position: e.target.value } : x) })}>
                       {(opts?.positions ?? [d.position]).map((p) => <option key={p}>{p}</option>)}
                     </select></td>
-                    <td className="note">{changed ? <i>Your change. Save to re-check.</i> : spot?.reason}</td>
+                    <td className="note">{changed ? <i>Your change. Save to re-check.</i> : spot?.reason}
+                      {(() => { const h = opts?.hitters.find((x) => x.player_id === d.player_id); return h?.rest_suggested
+                        ? <div><span className="chip rest_suggested">rest suggested: {h.consecutive_starts} straight starts</span></div> : null })()}</td>
                   </tr>
                 )
               })}

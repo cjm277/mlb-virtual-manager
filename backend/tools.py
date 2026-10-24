@@ -12,7 +12,7 @@ Docstrings are written as tool descriptions: the agent reads them to decide what
 
 from __future__ import annotations
 
-from backend.engine import bullpen, games, hitting, lineup, matchups, pitching, rotation, roster
+from backend.engine import bullpen, games, hitting, lineup, matchups, pitching, rotation, roster, workload
 from backend.engine.common import is_future
 
 
@@ -55,10 +55,17 @@ def get_roster_and_injuries(game_pk: int, team_id: int) -> dict:
             row["health_note"] = r["health_note"]
         return row
 
+    def hitter(r: dict) -> dict:
+        w = workload.rest_check(team_id, r["player_id"], g["game_date"], r["position"])
+        row = short(r) | {"consecutive_starts": w["consecutive_starts"]}
+        if w["rest_suggested"]:
+            row |= {"rest_suggested": True, "rest_note": w["rest_note"]}
+        return row
+
     future = is_future(g["game_date"])
     return {
         "team": games.team(team_id)["name"],
-        "hitters": [short(r) for r in active if not roster.is_pitcher(r)],
+        "hitters": [hitter(r) for r in active if not roster.is_pitcher(r)],
         "pitchers": [short(r) for r in active if roster.is_pitcher(r)],
         "out": roster.unavailable_list(team_id, g["game_date"]),
         "note": ("2027 game: end-of-2026 roster; offseason moves are not modeled. Players with a health_note "
@@ -100,7 +107,8 @@ def get_pitcher_profile(game_pk: int, player_id: int) -> dict:
 
 def get_hitters_overview(game_pk: int, team_id: int) -> list[dict]:
     """A one-row-per-hitter table for a team's active hitters: xwOBA overall and vs LHP/RHP, K %, BB %,
-    positions started this season, sprint speed, and a sample flag. Use this before asking for single
+    positions started this season, sprint speed, games started in a row (rest_suggested past 6 for catchers,
+    10 for others), and a sample flag. Use this before asking for single
     profiles; it is much cheaper."""
     g = _game(game_pk, team_id)
     d = g["game_date"]
@@ -114,6 +122,7 @@ def get_hitters_overview(game_pk: int, team_id: int) -> list[dict]:
         vs_r = hitting.batter_split(pid, d, "R", keys=["xwoba"])
         line = hitting.season_line(pid, d)
         sd = hitting.speed_and_defense(pid)
+        w = workload.rest_check(team_id, pid, d, r["position"])
         out.append({
             "player_id": pid, "name": r["full_name"], "position": r["position"], "bats": r["bat_side"],
             "pa": overall["sample"]["pa"], "flag": overall["sample"]["flag"],
@@ -121,6 +130,7 @@ def get_hitters_overview(game_pk: int, team_id: int) -> list[dict]:
             "obp": overall["obp"], "slg": overall["slg"], "k_pct": overall["k_pct"], "bb_pct": overall["bb_pct"],
             "starts_by_position": line["starts_by_position"], "sb": line["sb"],
             "sprint_speed": sd["sprint_speed_ft_s"], "outs_above_average": sd.get("outs_above_average"),
+            "consecutive_starts": w["consecutive_starts"], "rest_suggested": w["rest_suggested"],
         })
     return sorted(out, key=lambda x: -(x["xwoba"] or 0))
 

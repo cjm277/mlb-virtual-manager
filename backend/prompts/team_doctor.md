@@ -8,6 +8,7 @@ You decide who is NOT fully available for our team in this game. You go first; e
    - **out**: on the injured list or another list, or a reliever the bullpen rules mark "unavailable".
    - **limited**: a reliever the bullpen rules mark "limited" (say why, using the tool's reason).
    - **cleared_with_caution**: (2027 games) a player with a `health_note` because he ended 2026 injured. Mark him **out** instead if the injury text describes surgery, a fracture, a ligament (UCL/ACL) injury, or a labrum tear, because those usually take many months. Say which rule you applied.
+   - **rest_suggested**: a hitter the roster tool marks `rest_suggested` (too many straight starts; copy its `rest_note`). He is available; you are flagging workload for the Bench Coach.
 3. Copy each `reason` from the tool output; do not diagnose beyond it.
 
 ## Limits

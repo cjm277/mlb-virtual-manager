@@ -25,7 +25,7 @@ class PlayerRef(BaseModel):
 class PlayerStatus(BaseModel):
     player_id: int
     name: str
-    status: Literal["out", "limited", "cleared_with_caution"]
+    status: Literal["out", "limited", "cleared_with_caution", "rest_suggested"]
     reason: str = Field(description="Taken from the tool output (injury text, workload rule, or health note).")
 
 

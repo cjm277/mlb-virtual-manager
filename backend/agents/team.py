@@ -225,6 +225,20 @@ def stamp_probability(report: PitchersScoutingReport | None, ctx: dict) -> None:
         sp.probability_basis = "The scout picked someone other than the rotation model's choice, so no track record applies."
 
 
+def stamp_rest_days(medical: MedicalReport | None, ctx: dict) -> None:
+    """Make sure every hitter past the rest-day threshold is in the medical report (added by code if the
+    Team Doctor missed him), so the Bench Coach and the human always see the workload flag."""
+    if medical is None:
+        return
+    from backend.models import PlayerStatus
+
+    listed = {s.player_id for s in medical.statuses}
+    for h in tools.get_roster_and_injuries(ctx["game_pk"], ctx["team_id"])["hitters"]:
+        if h.get("rest_suggested") and h["player_id"] not in listed:
+            medical.statuses.append(PlayerStatus(player_id=h["player_id"], name=h["name"], status="rest_suggested",
+                                                 reason=h["rest_note"]))
+
+
 def _j(model: BaseModel | None) -> str:
     return model.model_dump_json(exclude_none=True) if model else "null"
 
@@ -287,6 +301,7 @@ async def build_game_plan(game_pk: int, team_id: int, notes: str | None = None,
 
     try:
         r["medical"] = await call("team_doctor", _tasks(r)["team_doctor"])
+        stamp_rest_days(r["medical"], ctx)
         r["scout_pitchers"], r["scout_hitters"] = await asyncio.gather(
             call("scout_pitchers", _tasks(r)["scout_pitchers"]), call("scout_hitters", _tasks(r)["scout_hitters"]))
         stamp_probability(r["scout_pitchers"], ctx)
