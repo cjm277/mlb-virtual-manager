@@ -38,3 +38,26 @@ def test_code_adds_a_rest_flag_the_doctor_missed():
     assert any(s.player_id == BELLINGER and s.status == "rest_suggested" for s in report.statuses)
     stamp_rest_days(report, ctx)                         # idempotent: never listed twice
     assert sum(s.player_id == BELLINGER for s in report.statuses) == 1
+
+
+def test_a_tired_hitter_is_never_out_and_the_manager_can_start_him():
+    import json
+    from pathlib import Path
+    from backend import tools
+    from backend.agents.team import stamp_rest_days
+    from backend.checker import check_plan
+    from backend.models import LineupPlan, MedicalReport, PlayerStatus
+    ctx = tools.get_game_context(823499, NYY)
+    # The Doctor wrongly marks the tired Bellinger "out": code turns it back into a rest suggestion.
+    report = MedicalReport(statuses=[PlayerStatus(player_id=BELLINGER, name="Cody Bellinger", status="out",
+                                                  reason="Tired.")], summary="s")
+    stamp_rest_days(report, ctx)
+    assert [s.status for s in report.statuses if s.player_id == BELLINGER] == ["rest_suggested"]
+    # And a lineup that starts him (the manager overriding the rest day) passes the checker.
+    saved = Path(__file__).resolve().parents[1] / "evidence" / "logs" / "phase7_rest_rule_run"
+    plan = json.loads((saved / "plan.json").read_text(encoding="utf-8"))
+    lineup = LineupPlan.model_validate(plan["sections"]["lineup_card"])
+    assert BELLINGER in {s.player_id for s in lineup.lineup}
+    issues = check_plan(823499, NYY, ctx["opponent_id"], medical=report, scout_pitchers=None, scout_hitters=None,
+                        pitching=None, lineup=lineup, ledger=json.loads((saved / "ledger.json").read_text(encoding="utf-8")))
+    assert not any(i.code == "unavailable_starter" for i in issues)

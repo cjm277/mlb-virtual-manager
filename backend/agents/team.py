@@ -232,8 +232,14 @@ def stamp_rest_days(medical: MedicalReport | None, ctx: dict) -> None:
         return
     from backend.models import PlayerStatus
 
+    roster = tools.get_roster_and_injuries(ctx["game_pk"], ctx["team_id"])
+    tired = {h["player_id"]: h for h in roster["hitters"] if h.get("rest_suggested")}
+    # Fatigue is never "out" for a hitter: tired is the manager's call, injured is not.
+    for s in medical.statuses:
+        if s.status == "out" and s.player_id in tired:
+            s.status, s.reason = "rest_suggested", tired[s.player_id]["rest_note"]
     listed = {s.player_id for s in medical.statuses}
-    for h in tools.get_roster_and_injuries(ctx["game_pk"], ctx["team_id"])["hitters"]:
+    for h in roster["hitters"]:
         if h.get("rest_suggested") and h["player_id"] not in listed:
             medical.statuses.append(PlayerStatus(player_id=h["player_id"], name=h["name"], status="rest_suggested",
                                                  reason=h["rest_note"]))
