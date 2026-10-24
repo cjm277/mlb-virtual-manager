@@ -21,7 +21,9 @@ afterwards to measure accuracy.
 
 from __future__ import annotations
 
+import json
 from datetime import timedelta
+from functools import lru_cache
 
 from backend import db
 from backend.engine.common import is_future, last_played_day, to_date
@@ -31,6 +33,39 @@ ROTATION_SIZE = 5
 MIN_REST = 4      # days of rest between starts (pitched day X, next start X+5)
 REAL_START_OUTS = 9
 REAL_START_PITCHES = 50
+CALIBRATION_FILE = db.DB_PATH.parent / "starter_calibration.json"   # built by scripts/calibrate_starter.py
+PROJECTION_BUCKETS = ((1, 10), (11, 25), (26, 50), (51, 100), (101, 162))
+
+
+def turn_taker(game_pk: int, team_id: int) -> int | None:
+    """Who took the team's rotation turn in a played game: the starter if he went 3+ innings or threw 50+
+    pitches, otherwise the "bulk" pitcher who followed an opener."""
+    lines = db.rows("SELECT player_id, is_starter, outs, pitches FROM pitching_lines WHERE game_pk = ? AND team_id = ?",
+                    game_pk, team_id)
+    real = [p for p in lines if p["outs"] >= REAL_START_OUTS or p["pitches"] >= REAL_START_PITCHES]
+    starter = next((p for p in lines if p["is_starter"]), None)
+    if starter and starter in real:
+        return starter["player_id"]
+    return max(real, key=lambda p: p["pitches"])["player_id"] if real else None
+
+
+@lru_cache(maxsize=1)
+def _calibration() -> dict:
+    return json.loads(CALIBRATION_FILE.read_text(encoding="utf-8")) if CALIBRATION_FILE.exists() else {}
+
+
+def projection_bucket(game_index: int) -> str:
+    return next(f"{lo}-{hi}" for lo, hi in PROJECTION_BUCKETS if lo <= game_index <= hi)
+
+
+def _probability(key: str, table: str, what: str) -> dict | None:
+    """How often predictions like this one were right in 2026 (started, or pitched the bulk innings)."""
+    cell = _calibration().get(table, {}).get(key)
+    if not cell or cell["n"] < 30:   # too few past predictions to quote a rate
+        return None
+    return {"pct": round(100 * cell["rate"]), "n": cell["n"],
+            "basis": f"Right {round(100 * cell['rate'])}% of the time in {cell['n']:,} similar {what} "
+                     "(he started, or pitched the bulk innings after an opener)."}
 
 
 def _turns_before(team_id: int, game_date: str, game_number: int, limit: int = 20) -> list[tuple[int, str]]:
@@ -138,6 +173,8 @@ def _project_2027(team_id: int, game_date: str, game_number: int) -> dict:
     neighbors = [candidates[(n - 1) % len(rot)]["name"], candidates[(n + 1) % len(rot)]["name"]]
     return {
         "predicted": pick, "confidence": "projection",
+        "probability": _probability(projection_bucket(n + 1), "projection_by_games_in",
+                                    f"preseason projections of 2026 games {projection_bucket(n + 1)} games into the season"),
         "method": (f"2027 projection: the team's established starters ({len(rot)}, most 2026 starts first) cycled through "
                    f"the 2027 schedule; this is the team's game {n + 1} of 2027. Off days, injuries and offseason "
                    "moves can change the real order."),
@@ -202,6 +239,8 @@ def predict_starter(team_id: int, game_date: str, game_number: int = 1) -> dict:
         pick, confidence = (spot[0] if spot else None), "low"
         arrivals = spot[:2]
         method += "; no rotation starter fully rested, so a spot starter or bullpen game is likely"
-    return {"predicted": pick, "confidence": confidence, "method": method, "cycle_length": cycle,
+    key = confidence + ("_early" if "early season" in method else "")
+    probability = _probability(key, "live_2026", "2026 predictions") or _probability(confidence, "live_2026", "2026 predictions")
+    return {"predicted": pick, "confidence": confidence, "probability": probability, "method": method, "cycle_length": cycle,
             "next_most_likely": [c["name"] for c in (arrivals + eligible) if c is not pick][:2],
             "rotation_considered": candidates + arrivals}

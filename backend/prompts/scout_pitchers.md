@@ -12,4 +12,5 @@ You scout the OPPONENT'S pitchers and write the report OUR HITTERS will read.
 - **arsenal**: his main pitches with usage %, velocity, whiff % copied from the profile, and a one-line note on how it plays.
 - **how_to_attack**: 3-5 concrete points (e.g. "sit fastball early: he throws it 55% of the time to righties").
 - **best_matchups / toughest_matchups**: from the matchups tool (expected_xwoba and edge exactly as given).
+- **hitter_plans**: one plan for EVERY hitter you ran through the matchups tool, written to that hitter. Copy `hunt` from the tool's `hunt_pitch` and `beware` from `beware_pitch`, plus expected_xwoba and edge. The `approach` is one or two sentences that explain the call with the numbers from that hitter's `by_pitch_group`, the way a hitting coach would say it. Example: "Sit on the breaking ball: you're at .380 against them and he allows .340 with his. His fastball is his best pitch (.250 allowed) and your weakest group (.280), so don't chase it early." Mention a small sample when the tool flags one.
 - **bullpen_to_watch** and a 2-3 sentence **summary**.

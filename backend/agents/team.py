@@ -199,6 +199,22 @@ async def run_agent(name: str, task: str, deps: PlanDeps, usage: RunUsage, tally
 # Task prompts (upstream reports are passed in as JSON data)
 # ---------------------------------------------------------------------------
 
+def stamp_probability(report: PitchersScoutingReport | None, ctx: dict) -> None:
+    """Attach the starter predictor's historical hit rate to the scout's pick (set by code, never by the model)."""
+    if report is None:
+        return
+    from backend.engine.rotation import predict_starter
+
+    pred = predict_starter(ctx["opponent_id"], ctx["game_date"], ctx["game_number"])
+    sp = report.opposing_starter
+    prob = pred.get("probability")
+    if pred["predicted"] and pred["predicted"]["player_id"] == sp.player_id and prob:
+        sp.probability_pct, sp.probability_basis = prob["pct"], prob["basis"]
+    else:
+        sp.probability_pct = None
+        sp.probability_basis = "The scout picked someone other than the rotation model's choice, so no track record applies."
+
+
 def _j(model: BaseModel | None) -> str:
     return model.model_dump_json(exclude_none=True) if model else "null"
 
@@ -263,6 +279,7 @@ async def build_game_plan(game_pk: int, team_id: int, notes: str | None = None,
         r["medical"] = await call("team_doctor", _tasks(r)["team_doctor"])
         r["scout_pitchers"], r["scout_hitters"] = await asyncio.gather(
             call("scout_pitchers", _tasks(r)["scout_pitchers"]), call("scout_hitters", _tasks(r)["scout_hitters"]))
+        stamp_probability(r["scout_pitchers"], ctx)
         r["pitching"], r["lineup"] = await asyncio.gather(
             call("pitching_coach", _tasks(r)["pitching_coach"]), call("bench_coach", _tasks(r)["bench_coach"]))
 
@@ -301,6 +318,7 @@ async def build_game_plan(game_pk: int, team_id: int, notes: str | None = None,
             results = await asyncio.gather(*(call(n, _fix_task(_tasks(r)[n], r[key[n]], todo[n])) for n in names))
             for n, out in zip(names, results):
                 r[key[n]] = out
+            stamp_probability(r["scout_pitchers"], ctx)
 
         comms_task = (f"Write the three briefings for this plan.\nManager review: {_j(r['review'])}\n"
                       f"Lineup plan: {_j(r['lineup'])}\nPitching plan: {_j(r['pitching'])}\n"

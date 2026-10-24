@@ -150,6 +150,10 @@ def check_plan(game_pk: int, team_id: int, opponent_id: int, *, medical: Medical
             if m.player_id not in our_hitters:
                 issues.append(Issue("scout_pitchers", "unavailable_hitter",
                                     f"Matchup note for {m.name} ({m.player_id}), who is not one of our available hitters."))
+        for h in scout_pitchers.hitter_plans:
+            if h.player_id not in our_hitters:
+                issues.append(Issue("scout_pitchers", "unavailable_hitter",
+                                    f"Hitter plan for {h.name} ({h.player_id}), who is not one of our available hitters."))
         for r in scout_pitchers.bullpen_to_watch:
             if r.player_id not in their_pitchers:
                 issues.append(Issue("scout_pitchers", "bad_reliever", f"{r.name} ({r.player_id}) is not on their staff."))

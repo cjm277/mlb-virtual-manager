@@ -79,8 +79,14 @@ def blocks_for(name: str, plan: dict) -> list[Block]:
         sp = s["opposing_starter"]
         alt = f" Alternatives: {', '.join(sp['alternatives'])}." if sp.get("alternatives") else ""
         mrow = lambda m: [m["name"], _f(m["expected_xwoba"]), m["edge"], m["note"]]  # noqa: E731
+        sure = (f"{sp['probability_pct']}% likely to start or pitch the bulk innings. {sp.get('probability_basis') or ''}"
+                if sp.get("probability_pct") is not None else (sp.get("probability_basis") or ""))
+        plans = [("h", f"Your plan against {sp['name']}"),
+                 ("table", ["Hitter", "Exp. xwOBA", "Edge", "Hunt", "Beware", "Approach"],
+                  [[h["name"], _f(h["expected_xwoba"]), h["edge"], h["hunt"], h.get("beware") or "-", h["approach"]]
+                   for h in s.get("hitter_plans", [])])] if s.get("hitter_plans") else []
         return [("h", f"Expected starter: {sp['name']} ({sp['throws']}HP), confidence: {sp['confidence']}"),
-                ("p", alt.strip()) if alt else ("p", ""),
+                ("p", sure), ("p", alt.strip()) if alt else ("p", ""), *plans,
                 ("table", ["Pitch", "Usage %", "Velo", "Whiff %", "Note"],
                  [[a["pitch"], _f(a["usage_pct"], 1), _f(a["velo"], 1), _f(a["whiff_pct"], 1), a["note"]] for a in s["arsenal"]]),
                 ("h", "How to attack him"), ("bullets", s["how_to_attack"]),

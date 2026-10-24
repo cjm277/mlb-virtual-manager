@@ -24,7 +24,8 @@ export interface Scenario { scenario: string; plan: string; pitcher_ids: number[
 export interface PitchingPlan { starter: StarterPlan; bullpen: BullpenRole[]; scenarios: Scenario[]; summary: string }
 export interface MatchupNote { player_id: number; name: string; expected_xwoba: number; edge: string; note: string }
 export interface PitchersReport {
-  opposing_starter: { player_id: number; name: string; throws: string; confidence: string; alternatives: string[] }
+  opposing_starter: { player_id: number; name: string; throws: string; confidence: string; alternatives: string[]; probability_pct?: number | null; probability_basis?: string | null }
+  hitter_plans?: { player_id: number; name: string; bats: string; expected_xwoba: number; edge: string; hunt: string; beware?: string | null; approach: string }[]
   arsenal: { pitch: string; usage_pct: number; velo: number | null; whiff_pct: number | null; note: string }[]
   how_to_attack: string[]; best_matchups: MatchupNote[]; toughest_matchups: MatchupNote[]
   bullpen_to_watch: { player_id: number; name: string; throws: string; note: string }[]; summary: string

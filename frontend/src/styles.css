@@ -269,3 +269,12 @@ footer { text-align: center; font-size: 12px; color: var(--muted); padding: 24px
 footer { background: var(--primary); color: var(--on-primary) !important; border-top: 5px solid var(--secondary); opacity: .97; margin-top: 30px; }
 .agent { border-color: color-mix(in srgb, var(--primary) 18%, #e3dfd5); }
 .lineup-card { box-shadow: 0 2px 10px color-mix(in srgb, var(--primary) 18%, transparent); }
+
+/* --- how sure we are about the opposing starter --------------------------------------------- */
+.certainty { margin: 4px 0 10px; font-size: 14px; }
+.certainty .muted { margin-top: 3px; }
+.meter { display: inline-block; vertical-align: middle; width: 160px; height: 10px; border-radius: 5px; background: #e6e3db;
+  overflow: hidden; margin-right: 10px; }
+.meter div { height: 100%; border-radius: 5px; }
+.meter.high div { background: var(--good); } .meter.mid div { background: var(--warn); } .meter.low div { background: var(--bad); }
+.pct-tag { margin-left: 8px; background: rgba(255,255,255,.18); border-radius: 999px; padding: 1px 8px; font-size: 12px; letter-spacing: 0; }

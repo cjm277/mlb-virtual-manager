@@ -42,6 +42,9 @@ class StarterPrediction(BaseModel):
     throws: Literal["L", "R"]
     confidence: str
     alternatives: list[str] = []
+    # Filled in by code from the predictor's 2026 track record, never by the model.
+    probability_pct: int | None = None
+    probability_basis: str | None = None
 
 
 class PitchNote(BaseModel):
@@ -60,6 +63,17 @@ class MatchupNote(BaseModel):
     note: str
 
 
+class HitterPlan(BaseModel):
+    player_id: int
+    name: str
+    bats: Hand
+    expected_xwoba: float
+    edge: Edge
+    hunt: str = Field(description="Pitch group to sit on, copied from the matchups tool's hunt_pitch.")
+    beware: str | None = Field(default=None, description="Pitch group to lay off, copied from beware_pitch (or null).")
+    approach: str = Field(description="One or two sentences tailored to this hitter vs this pitcher, citing the numbers.")
+
+
 class RelieverNote(BaseModel):
     player_id: int
     name: str
@@ -75,6 +89,8 @@ class PitchersScoutingReport(BaseModel):
     best_matchups: list[MatchupNote] = Field(description="Our 3-4 hitters with the best matchup vs their starter.")
     toughest_matchups: list[MatchupNote] = Field(description="Our 2-3 hitters with the toughest matchup.")
     bullpen_to_watch: list[RelieverNote] = Field(description="Up to 4 opposing relievers likely to matter.")
+    hitter_plans: list[HitterPlan] = Field(default_factory=list,
+                                           description="One plan for EVERY hitter of ours you ran through the matchups tool.")
     summary: str
 
 

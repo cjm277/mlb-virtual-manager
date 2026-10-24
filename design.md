@@ -75,6 +75,11 @@ At rest everyone breathes and blinks. Waiting agents are greyed out. The **consi
 
 **Why:** a manager runs a staff of people. Seeing a scout raise a radar gun while the scouting report is written makes the multi-agent idea obvious without explanation, and it's simply more fun to watch than a spinner.
 
+## Their starter: how sure are we, and how should each hitter attack him? (`phase5_20`)
+
+- **A real percentage, not a vibe.** Next to the expected starter, a meter reads, for example, "85% likely to start or pitch the bulk innings," with the reason: "right 85% of the time in 3,526 similar 2026 predictions." The number comes from `scripts/calibrate_starter.py`, which replays the predictor on every 2026 game. It is set by code, never by the AI. For 2027 games the meter honestly drops to about 11-22%, because a starter projected months ahead is close to a coin flip among five. The app then suggests re-running the plan once the rotation is set. The lineup card header carries the same percentage.
+- **A plan for every hitter.** "Your plan against [starter]" gives each of our hitters a pitch group to **hunt**, one to **beware**, and a one-to-two-sentence approach that cites the numbers ("Sit on breaking balls: you're at .427 against them, while he allows .305"). Code chooses hunt and beware from the matchup data, weighted by how often the pitcher throws each group. The scout writes the coaching language around them, and the checker verifies every number. Small samples are called out. Hitters get this table in their packet.
+
 ## Editing: the human stays in charge
 
 - Every plan arrives as a recommendation. The manager can change any batting slot, position, the starter, or a bullpen role, then press **Save edits & re-check**.

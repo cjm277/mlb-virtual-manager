@@ -7,6 +7,9 @@ How a score is built (all from data, no LLM):
      and the pitcher's xwOBA allowed with that group (to that side).
   4. Weight those averages by the pitcher's usage, giving an expected xwOBA for the matchup.
   5. Compare to league average: higher = edge to the batter, lower = edge to the pitcher.
+  6. What to hunt / beware: among pitch groups he throws this hitter at least 12% of the time, the group
+     with the best combined number (the hitter's xwOBA vs it and the pitcher's xwOBA allowed with it) is the
+     one to sit on; the worst is the one to lay off, if it is clearly worse (by .030 or more).
 Missing pieces fall back to the player's overall number vs that hand, then to league average.
 """
 
@@ -18,6 +21,8 @@ from backend.engine.pitching import arsenal, pitcher_split, usage_by_group
 from backend.engine.roster import player_info
 
 EDGE = 0.020  # xwOBA points either side of league average before we call it an edge
+HUNT_MIN_USAGE = 12.0
+BEWARE_GAP = 0.030
 
 
 def batting_side(bat_side: str | None, pitch_hand: str | None) -> str:
@@ -66,6 +71,12 @@ def matchup(batter_id: int, pitcher_id: int, game_date: str) -> dict:
         flags.add(f"pitcher has a small sample vs {'LHB' if side == 'L' else 'RHB'}")
 
     diff = expected - league
+    combined = {name: (v["batter_xwoba"] + v["pitcher_xwoba_allowed"]) / 2 for name, v in parts.items()
+                if v["pitcher_usage_pct"] >= HUNT_MIN_USAGE}
+    hunt = max(combined, key=combined.get) if combined else None
+    beware = min(combined, key=combined.get) if combined else None
+    if beware == hunt or (hunt and combined[hunt] - combined[beware] < BEWARE_GAP):
+        beware = None
     return {
         "batter": b.get("full_name"), "batter_id": batter_id, "bats": side,
         "pitcher": p.get("full_name"), "pitcher_id": pitcher_id, "throws": hand,
@@ -74,6 +85,7 @@ def matchup(batter_id: int, pitcher_id: int, game_date: str) -> dict:
         "edge": "batter" if diff > EDGE else "pitcher" if diff < -EDGE else "even",
         "batter_k_pct_vs_hand": b_vs_hand["k_pct"], "pitcher_k_pct_vs_side": p_vs_side["k_pct"],
         "by_pitch_group": parts,
+        "hunt_pitch": hunt, "beware_pitch": beware,
         "flags": sorted(flags),
     }
 

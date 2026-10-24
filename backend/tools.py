@@ -156,7 +156,8 @@ def predict_opponent_starter(game_pk: int, opponent_id: int) -> dict:
     projection from the closing 2026 rotation, so treat it as a best guess."""
     g = _game(game_pk, opponent_id)
     p = rotation.predict_starter(opponent_id, g["game_date"], g["game_number"])
-    return {"predicted": p["predicted"], "confidence": p["confidence"], "next_most_likely": p["next_most_likely"],
+    return {"predicted": p["predicted"], "confidence": p["confidence"], "probability": p.get("probability"),
+            "next_most_likely": p["next_most_likely"],
             "method": p["method"], "rotation_cycle_length": p["cycle_length"]}
 
 

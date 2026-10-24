@@ -22,6 +22,20 @@ function draftFrom(p: Plan): Draft {
   }
 }
 
+/** How sure we are about the opposing starter: a percentage from the predictor's real track record. */
+function Certainty({ sp }: { sp: { probability_pct?: number | null; probability_basis?: string | null } }) {
+  if (sp.probability_pct == null) return sp.probability_basis ? <p className="muted">{sp.probability_basis}</p> : null
+  const p = sp.probability_pct
+  const level = p >= 75 ? 'high' : p >= 45 ? 'mid' : 'low'
+  return (
+    <div className="certainty">
+      <div className={`meter ${level}`}><div style={{ width: `${p}%` }} /></div>
+      <b>{p}% likely</b> to start or pitch the bulk innings
+      <div className="muted">{sp.probability_basis}{p < 45 ? ' Re-run the plan closer to the game, once the rotation is set.' : ''}</div>
+    </div>
+  )
+}
+
 export function ReviewView({ plan, onPlan }: { plan: Plan; onPlan: (p: Plan) => void }) {
   const [tab, setTab] = useState<Tab>('Lineup card')
   const [opts, setOpts] = useState<EditOptions | null>(null)
@@ -82,7 +96,9 @@ export function ReviewView({ plan, onPlan }: { plan: Plan; onPlan: (p: Plan) => 
       {tab === 'Lineup card' && s.lineup_card && (
         <div className="row">
           <div className="grow lineup-card">
-            <div className="head"><span>LINEUP CARD · {plan.game.team.toUpperCase()}</span><span>vs {s.lineup_card.opposing_starter_assumed.name}</span></div>
+            <div className="head"><span>LINEUP CARD · {plan.game.team.toUpperCase()}</span><span>vs {s.lineup_card.opposing_starter_assumed.name}
+              {s.opposing_pitchers_report?.opposing_starter.probability_pct != null && s.opposing_pitchers_report.opposing_starter.player_id === s.lineup_card.opposing_starter_assumed.player_id
+                && <span className="pct-tag" title={s.opposing_pitchers_report.opposing_starter.probability_basis ?? ''}>{s.opposing_pitchers_report.opposing_starter.probability_pct}% likely</span>}</span></div>
             <table className="grid"><thead><tr><th>#</th><th>Player</th><th>Pos</th><th>Why</th></tr></thead><tbody>
               {draft.lineup.map((d, i) => {
                 const spot = s.lineup_card!.lineup.find((x) => x.slot === d.slot)
@@ -162,7 +178,14 @@ export function ReviewView({ plan, onPlan }: { plan: Plan; onPlan: (p: Plan) => 
         return (
           <div className="card">
             <h3 style={{ marginTop: 0 }}>Expected starter: {r.opposing_starter.name} ({r.opposing_starter.throws}HP) <span className="chip">{r.opposing_starter.confidence}</span></h3>
+            <Certainty sp={r.opposing_starter} />
             {r.opposing_starter.alternatives.length > 0 && <p className="muted">Alternatives: {r.opposing_starter.alternatives.join(', ')}</p>}
+            {(r.hitter_plans?.length ?? 0) > 0 && <>
+              <h3>Your plan against {r.opposing_starter.name}</h3>
+              <table className="grid"><thead><tr><th>Hitter</th><th>Exp. xwOBA</th><th>Edge</th><th>Hunt</th><th>Beware</th><th>Approach</th></tr></thead><tbody>
+                {r.hitter_plans!.map((h) => <tr key={h.player_id}><td><b>{h.name}</b> ({h.bats})</td><td>{x3(h.expected_xwoba)}</td>
+                  <td><span className={`chip ${h.edge}`}>{h.edge}</span></td><td><b>{h.hunt}</b></td><td>{h.beware ?? '-'}</td><td className="note">{h.approach}</td></tr>)}
+              </tbody></table></>}
             <table className="grid"><thead><tr><th>Pitch</th><th>Usage %</th><th>Velo</th><th>Whiff %</th><th>Note</th></tr></thead><tbody>
               {r.arsenal.map((a) => <tr key={a.pitch}><td>{a.pitch}</td><td>{a.usage_pct}</td><td>{a.velo ?? '-'}</td><td>{a.whiff_pct ?? '-'}</td><td>{a.note}</td></tr>)}
             </tbody></table>
