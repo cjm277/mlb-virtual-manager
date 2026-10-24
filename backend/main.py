@@ -164,6 +164,29 @@ def edit_plan(run_id: str, edits: PlanEdits) -> dict:
     return apply_edits(_run_dir(run_id), edits)
 
 
+class ChatMessage(BaseModel):
+    message: str = Field(min_length=1, max_length=500)
+
+
+@app.get("/api/runs/{run_id}/chat")
+def chat_history(run_id: str) -> list[dict]:
+    from backend.chat import history
+
+    return history(_run_dir(run_id))
+
+
+@app.post("/api/runs/{run_id}/chat")
+async def chat(run_id: str, msg: ChatMessage) -> dict:
+    """Ask the Manager's Assistant to explain or change the plan. Changes are checked by code before saving."""
+    from backend.chat import chat_turn
+
+    _plan(run_id)
+    try:
+        return await chat_turn(_run_dir(run_id), msg.message.strip())
+    except SystemExit as exc:                                   # e.g. missing API key
+        raise HTTPException(503, str(exc)) from exc
+
+
 @app.get("/api/runs/{run_id}/export")
 def export(run_id: str) -> Response:
     from backend.agents.team import PACKETS

@@ -30,7 +30,13 @@ button, select, textarea, input { font: inherit; }
 }
 .brand { display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .brand img { width: 30px; height: 30px; }
-.brand b { letter-spacing: 3px; font-size: 15px; }
+.brand b { letter-spacing: 3px; font-size: 15px; white-space: nowrap; }
+.brand small { white-space: nowrap; }
+@media (max-width: 1250px) {
+  .scoreboard div { min-width: 70px; padding: 2px 6px; }
+  .scoreboard span { font-size: 14px; }
+  .brand b { letter-spacing: 1.5px; }
+}
 .brand small { display: block; font-size: 10px; letter-spacing: 1.5px; opacity: .75; }
 .matchup-chip { font-weight: 600; font-size: 14px; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,.14); }
 .spacer { flex: 1; }
@@ -145,3 +151,88 @@ ul.tight { margin: 4px 0; padding-left: 18px; } ul.tight li { margin: 3px 0; fon
 .kpi label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
 .kpi div { font-size: 20px; font-weight: 800; color: var(--primary); }
 footer { text-align: center; font-size: 12px; color: var(--muted); padding: 24px; }
+
+/* --- Agent figures: idle life + a job-specific action while working ------------------- */
+.figure { display: block; width: 100%; max-width: 150px; height: auto; margin: 0 auto; }
+.agent.waiting .figure { filter: grayscale(.85); opacity: .7; }
+.agent.working .figure { filter: drop-shadow(0 0 8px rgba(0, 0, 0, .18)); }
+.figure .body { transform-box: view-box; transform-origin: 80px 136px; animation: breathe 4.2s ease-in-out infinite; }
+.figure .eyes { transform-box: fill-box; transform-origin: center; animation: blink 5.5s infinite; }
+.figure-scout_pitchers .eyes { animation-delay: 1.1s; } .figure-bench_coach .eyes { animation-delay: 2.3s; }
+.figure-manager .eyes { animation-delay: 3.4s; } .figure-clubhouse_comms .eyes { animation-delay: .6s; }
+.figure .talk, .figure .soundwaves { opacity: 0; }
+.figure .talk { transform-box: fill-box; transform-origin: center; }
+.figure .arm { transform-box: view-box; }
+.figure .arm-l { transform-origin: 52px 86px; } .figure .arm-r { transform-origin: 108px 86px; }
+.figure .head { transform-box: view-box; transform-origin: 80px 66px; }
+.figure .steam { animation: steam 2.8s ease-in-out infinite; }
+.figure.is-done .smile { stroke-width: 2.4; }
+
+/* working actions */
+.figure.is-working .pen { transform-box: view-box; transform-origin: 112px 122px; animation: scribble .35s ease-in-out infinite alternate; }
+.figure-team_doctor.is-working .arm-r, .figure-scout_hitters.is-working .arm-r,
+.figure-bench_coach.is-working .arm-r { animation: tap .35s ease-in-out infinite alternate; }
+.figure-team_doctor.is-working .head { animation: nod 2.6s ease-in-out infinite; }
+.figure-scout_pitchers.is-working .prop-radar, .figure-scout_pitchers.is-working .arm-r { animation: lift 1.6s ease-in-out infinite; }
+.figure-scout_pitchers.is-working .radar-digits { animation: flicker .7s steps(2) infinite; }
+.figure-scout_hitters.is-working .hand { transform-box: view-box; transform-origin: 28px 112px; animation: spin 1s steps(12) infinite; }
+.figure-pitching_coach.is-working .prop-ball { animation: toss 1.1s ease-in-out infinite; }
+.figure-pitching_coach.is-working .arm-r { animation: tossarm 1.1s ease-in-out infinite; }
+.figure-manager.is-working .arm-r { animation: gesture 2.2s ease-in-out infinite; }
+.figure-manager.is-working .head { animation: nod 2.2s ease-in-out infinite; }
+.figure-clubhouse_comms.is-working .soundwaves { animation: waves 1.2s ease-out infinite; }
+.figure-clubhouse_comms.is-working .talk, .figure-assistant.is-working .talk { animation: talk 1.3s ease-in-out infinite; }
+.figure-clubhouse_comms.is-working .head { animation: tilt 3.2s ease-in-out infinite; }
+.figure-assistant.is-working .arm-l { animation: tap .3s ease-in-out infinite alternate; }
+.figure-assistant.is-working .arm-r { animation: tap .3s ease-in-out .15s infinite alternate; }
+.figure-assistant.is-working .bubble { animation: pop 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: left center; }
+.figure-assistant.is-working .b2 { animation-delay: .7s; }
+.figure-checker.is-working .code-line { animation: flicker .5s steps(2) infinite; }
+.figure-checker.is-working .l1 { animation-delay: .1s; } .figure-checker.is-working .l3 { animation-delay: .25s; }
+.figure-checker .check-mark { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.figure-checker.is-done .check-mark { opacity: 1; animation: popin .4s ease-out; }
+
+@keyframes breathe { 50% { transform: translateY(-1.2px) scaleY(1.008); } }
+@keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
+@keyframes steam { 0% { opacity: 0; transform: translateY(4px); } 50% { opacity: .9; } 100% { opacity: 0; transform: translateY(-6px); } }
+@keyframes tap { from { transform: rotate(-5deg); } to { transform: rotate(3deg); } }
+@keyframes scribble { from { transform: translate(-2px, 1px) rotate(-4deg); } to { transform: translate(3px, -1px) rotate(4deg); } }
+@keyframes nod { 0%, 100% { transform: rotate(0); } 30% { transform: rotate(3deg); } 60% { transform: rotate(-2deg); } }
+@keyframes lift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes flicker { 50% { opacity: .35; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes toss { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(-30px); } }
+@keyframes tossarm { 0%, 100% { transform: rotate(0); } 20% { transform: rotate(-12deg); } }
+@keyframes gesture { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-22deg); } 50% { transform: rotate(-8deg); } 75% { transform: rotate(-20deg); } }
+@keyframes waves { 0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 0; transform: translateX(-4px); } }
+@keyframes talk { 0%, 45%, 100% { opacity: 0; } 15%, 30% { opacity: 1; } }
+@keyframes tilt { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-3deg); } }
+@keyframes pop { 0%, 100% { transform: scaleX(.3); opacity: .4; } 40%, 70% { transform: scaleX(1); opacity: 1; } }
+@keyframes popin { from { transform: scale(0); } to { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .figure * { animation: none !important; } }
+
+/* --- Chat with the Manager's Assistant ----------------------------------------------------- */
+.chat-fab { position: fixed; right: 24px; bottom: 24px; z-index: 20; display: flex; align-items: center; gap: 8px;
+  background: var(--primary); color: var(--on-primary); border: 3px solid var(--secondary); border-radius: 999px;
+  padding: 6px 18px 6px 6px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+.chat-fab .mini { width: 46px; height: 40px; background: #fff; border-radius: 50%; overflow: hidden; }
+.chat-fab .mini .figure { width: 64px; max-width: none; margin: -4px 0 0 -9px; }
+.chat { position: fixed; right: 24px; bottom: 24px; z-index: 20; width: 420px; height: 600px; max-height: calc(100vh - 110px);
+  display: flex; flex-direction: column; background: #fff; border-radius: 14px; box-shadow: 0 10px 34px rgba(0,0,0,.28); overflow: hidden; }
+.chat-head { display: flex; align-items: center; gap: 10px; background: var(--primary); color: var(--on-primary);
+  border-bottom: 4px solid var(--secondary); padding: 6px 12px; }
+.chat-head .who { width: 78px; flex: none; }
+.chat-head b { display: block; } .chat-head small { opacity: .8; font-size: 11.5px; line-height: 1.3; display: block; }
+.chat-head button { margin-left: auto; background: none; border: none; color: inherit; font-size: 22px; cursor: pointer; }
+.chat-body { flex: 1; overflow-y: auto; padding: 12px; background: #f6f5f1; display: flex; flex-direction: column; gap: 8px; }
+.msg { max-width: 86%; padding: 8px 11px; border-radius: 12px; font-size: 13.5px; line-height: 1.45; }
+.msg.manager { align-self: flex-end; background: var(--primary); color: var(--on-primary); border-bottom-right-radius: 3px; }
+.msg.assistant { align-self: flex-start; background: #fff; border: 1px solid var(--line); border-bottom-left-radius: 3px; }
+.msg .changes { margin: 6px 0 0; padding-left: 16px; font-size: 12.5px; color: #2a6fb0; }
+.msg .verdict { margin-top: 6px; font-size: 11.5px; font-weight: 700; }
+.msg .verdict.ok { color: var(--good); } .msg .verdict.no { color: var(--bad); } .msg .verdict.info { color: var(--muted); }
+.chat-suggest { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 12px 8px; background: #f6f5f1; }
+.chat-suggest button { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
+.chat-input { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--line); }
+.chat-input input { flex: 1; border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; }
+.typing { font-size: 12.5px; color: var(--muted); align-self: flex-start; }

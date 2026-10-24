@@ -34,11 +34,41 @@ The app is for a person who loves the game and trusts the numbers. It should fee
 - **The lineup card** looks like the real thing: cream card stock, a team-color header with the opposing starter, numbered red circles for batting slots, and a "Why" column so every choice is explained. Rows you changed turn yellow until you save.
 - **Chips**: red for an edge to the batter or a high threat, green for an edge to the pitcher or a low threat, amber for "limited / cleared with caution". Baseball people scan colors faster than numbers.
 
+## The staff, drawn as people (`phase5_12`, `phase5_13`)
+
+Each agent is a small animated person at a desk, dressed for the job **in your club's colors**. The caps, jerseys and pullovers use the theme colors, so the Blue Jays staff wears Blue Jays blue.
+
+| Agent | Outfit and props | While working |
+|---|---|---|
+| Team Doctor | White lab coat over a team polo, stethoscope, clipboard with a red cross | Writes notes, nods |
+| Scout (their pitchers) | Team cap and polo, sunglasses, a **radar gun** | Raises the gun; the readout flashes "97" |
+| Scout (their hitters) | Visor, scouting notebook, stopwatch | Writes while the stopwatch ticks |
+| Pitching Coach | Home jersey #34, cap, a baseball | Tosses the ball |
+| Bench Coach | Road-grey "COACH" jersey, the lineup card and a pen | Fills in the card |
+| Manager | Team pullover, cap, grey beard, coffee and a bag of seeds | Nods and gives signs |
+| Clubhouse Comms | Headset, cardigan, team lanyard, tablet | Talks; sound waves pulse |
+| Manager's Assistant (chat) | Quarter-zip, glasses, tablet with chat bubbles | Types; bubbles pop |
+
+At rest everyone breathes and blinks. Waiting agents are greyed out. The **consistency checker is drawn as a laptop, not a person**, because it is code, not an AI, and the picture should say so. Animations switch off for people who set "reduce motion".
+
+**Why:** a manager runs a staff of people. Seeing a scout raise a radar gun while the scouting report is written makes the multi-agent idea obvious without explanation, and it's simply more fun to watch than a spinner.
+
 ## Editing: the human stays in charge
 
 - Every plan arrives as a recommendation. The manager can change any batting slot, position, the starter, or a bullpen role, then press **Save edits & re-check**.
 - The same code checker re-runs in about a second, with no AI involved and no cost. A mistake like two center fielders turns the banner amber with the exact problem (`phase5_07`). Fixing it turns the banner blue (`phase5_08`). Moved players go to the bench automatically, and planned substitutions that no longer make sense are dropped and listed.
 - **Why:** coaches will not trust a tool that overrules them, and they should not trust one that lets them make an obvious error. This keeps both sides honest.
+
+### Or just say it: the chat assistant (`phase5_14`)
+
+The **Ask your assistant coach** button (bottom right) opens a chat with the Manager's Assistant. A manager can type what they would say to a bench coach:
+- "I don't like Clement in this matchup." The assistant finds the best available second baseman with the data tools, swaps him in with a one-sentence reason, and moves Clement to the bench.
+- "Who closes if Varland is down?" or "Why is Springer batting 4th?" It answers without changing anything.
+- "Add a note: hold the runner at first late." The note goes into the coaches' packet.
+
+The assistant can change **exactly what the dropdowns can change, and nothing more**. Its change is applied to a copy of the plan and run through the same code checker. If it breaks a rule, the assistant gets one chance to correct itself; otherwise **nothing is saved** and the chat says why ("Santander is out per the Team Doctor"). Every reply shows what changed and a green "Saved: passed every rule check" or a red "Not saved". Chat is disabled while there are unsaved dropdown edits, so the two ways of editing never fight.
+
+**Why:** dropdowns are precise; chat is how managers actually talk. Offering both lets the skipper think out loud while the code keeps the plan legal.
 
 ## Export: who needs to know what
 

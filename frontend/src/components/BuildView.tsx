@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react'
 import type { RunEvent } from '../types'
+import AgentFigure from './AgentFigure'
 
 export const AGENTS: Record<string, { title: string; icon: string; job: string }> = {
   team_doctor: { title: 'Team Doctor', icon: '🩺', job: 'Who is out or limited' },
@@ -83,7 +84,7 @@ export function BuildView({ events, error }: { events: RunEvent[]; error: string
                 const meta = AGENTS[k] ?? { title: 'Consistency checker', icon: '✅', job: 'Rules + every number checked' }
                 return (
                   <div key={k} className={`agent ${a.state}`}>
-                    <div className="icon">{meta.icon}</div>
+                    <AgentFigure agent={k} mood={a.state} />
                     <b>{meta.title}</b>
                     <div className="state">{a.state === 'done' && a.runs > 1 ? `done ×${a.runs}` : a.state}</div>
                     <div className="meta">

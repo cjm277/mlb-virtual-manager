@@ -1,15 +1,19 @@
 """Apply the human manager's edits to a finished plan, then re-check it with the same consistency checker.
 
-No model calls: edits are applied in code and checked against the rules and the run's tool ledger.
+Edits arrive two ways: the dropdowns on the review screen, or the chat assistant (backend/chat.py), which
+turns a request like "I don't like Clement in this matchup" into the same structured PlanEdits. Either
+way the change is applied here in code and re-checked against the rules and the run's tool ledger.
 Every change is recorded in the plan's edit_log, and the original plan is kept as plan_original.json.
 """
 
 from __future__ import annotations
 
+import copy
 import json
 import shutil
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
 from pydantic import BaseModel, Field
 
@@ -25,6 +29,7 @@ class LineupEdit(BaseModel):
     slot: int
     player_id: int
     position: Position
+    reason: str | None = Field(default=None, description="Why this player is here (only for changed spots).")
 
 
 class PlanEdits(BaseModel):
@@ -43,24 +48,25 @@ def _models(plan: dict) -> dict:
             "pitching": load(PitchingPlan, "pitching_plan"), "lineup": load(LineupPlan, "lineup_card")}
 
 
-def recheck(plan: dict, run_dir: Path) -> list[dict]:
-    ledger_file = run_dir / "ledger.json"
-    ledger = json.loads(ledger_file.read_text(encoding="utf-8")) if ledger_file.exists() else []
-    m = _models(plan)
+def load_ledger(run_dir: Path) -> list[Any] | None:
+    f = run_dir / "ledger.json"
+    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else None
+
+
+def recheck(plan: dict, ledger: list[Any] | None) -> list[dict]:
     g = plan["game"]
-    issues = check_plan(g["game_pk"], g["team_id"], g["opponent_id"], ledger=ledger, **m)
-    if not ledger_file.exists():   # plans saved before ledgers were kept: rules are re-checked, numbers can't be
+    issues = check_plan(g["game_pk"], g["team_id"], g["opponent_id"], ledger=ledger or [], **_models(plan))
+    if ledger is None:   # plans saved before ledgers were kept: rules are re-checked, numbers can't be
         issues = [i for i in issues if i.code != "unsupported_number"]
     return [i.as_dict() for i in issues]
 
 
-def apply_edits(run_dir: Path, edits: PlanEdits) -> dict:
-    plan_file = run_dir / "plan.json"
-    plan = json.loads(plan_file.read_text(encoding="utf-8"))
-    if not (run_dir / "plan_original.json").exists():
-        shutil.copy(plan_file, run_dir / "plan_original.json")
+def apply_to_plan(plan: dict, edits: PlanEdits, source: str = "manager") -> tuple[dict, list[str]]:
+    """Apply edits to a COPY of the plan. Returns (new plan, list of changes in plain English)."""
+    plan = copy.deepcopy(plan)
     s = plan["sections"]
     log: list[str] = []
+    who = "the manager" if source == "manager" else "the chat assistant, at the manager's request"
 
     if edits.lineup is not None and s.get("lineup_card"):
         card = s["lineup_card"]
@@ -70,15 +76,17 @@ def apply_edits(run_dir: Path, edits: PlanEdits) -> dict:
         for e in sorted(edits.lineup, key=lambda x: x.slot):
             info = player_info(e.player_id) or {}
             prev = old.get(e.player_id)
-            if not prev or prev["slot"] != e.slot or prev["position"] != e.position:
+            same = prev and prev["slot"] == e.slot and prev["position"] == e.position
+            if not same:
                 log.append(f"Slot {e.slot}: {info.get('full_name')} at {e.position}")
+            reason = (prev["reason"] if same else e.reason or f"Set by {who}.")
             spots.append({"slot": e.slot, "player_id": e.player_id, "name": info.get("full_name"),
-                          "position": e.position, "bats": info.get("bat_side") or "R",
-                          "reason": prev["reason"] if prev and prev["slot"] == e.slot else "Set by the manager."})
+                          "position": e.position, "bats": info.get("bat_side") or "R", "reason": reason})
         bench = [b for b in card["bench"] if b["player_id"] not in new_ids]
         for pid in old.keys() - new_ids:
             bench.append({"player_id": pid, "name": old[pid]["name"], "role": "utility",
-                          "note": "Moved to the bench by the manager."})
+                          "note": f"Moved to the bench by {who}."})
+            log.append(f"{old[pid]['name']} moved to the bench")
         bench_ids = {b["player_id"] for b in bench}
         kept = []
         for sub in card["substitutions"]:
@@ -95,7 +103,7 @@ def apply_edits(run_dir: Path, edits: PlanEdits) -> dict:
             old_name = pp["starter"]["name"]
             pp["starter"].update(player_id=edits.starter_id, name=info.get("full_name"),
                                  throws=info.get("pitch_hand") or "R",
-                                 reason=f"Chosen by the manager (the staff recommended {old_name}).")
+                                 reason=f"Chosen by {who} (the staff recommended {old_name}).")
             pp["starter"]["plan_written_for"] = old_name
             pp["bullpen"] = [b for b in pp["bullpen"] if b["player_id"] != edits.starter_id]
             for sc in pp["scenarios"]:
@@ -109,15 +117,27 @@ def apply_edits(run_dir: Path, edits: PlanEdits) -> dict:
                 log.append(f"{b['name']}: {b['role']} -> {role}")
                 b["role"] = role
 
-    if edits.staff_notes is not None:
+    if edits.staff_notes is not None and edits.staff_notes.strip() != (plan.get("staff_notes") or ""):
         plan["staff_notes"] = edits.staff_notes.strip()
         log.append("Staff notes updated")
+    return plan, log
 
+
+def save(run_dir: Path, plan: dict, log: list[str], issues: list[dict], source: str = "manager") -> dict:
+    if not (run_dir / "plan_original.json").exists():
+        shutil.copy(run_dir / "plan.json", run_dir / "plan_original.json")
     if log:
-        plan.setdefault("edit_log", []).append({"at": datetime.now().isoformat(timespec="seconds"), "changes": log})
-    issues = recheck(plan, run_dir)
+        plan.setdefault("edit_log", []).append({"at": datetime.now().isoformat(timespec="seconds"),
+                                                "source": source, "changes": log})
     plan["checker"]["open_issues"] = issues
     plan["checker"]["rechecked_after_edit"] = True
     plan["edited"] = bool(plan.get("edit_log"))
-    plan_file.write_text(json.dumps(plan, indent=2, default=str), encoding="utf-8")
+    (run_dir / "plan.json").write_text(json.dumps(plan, indent=2, default=str), encoding="utf-8")
     return plan
+
+
+def apply_edits(run_dir: Path, edits: PlanEdits) -> dict:
+    """Dropdown edits: apply, re-check, and save (even with issues, which the review screen then shows)."""
+    plan = json.loads((run_dir / "plan.json").read_text(encoding="utf-8"))
+    plan, log = apply_to_plan(plan, edits)
+    return save(run_dir, plan, log, recheck(plan, load_ledger(run_dir)))

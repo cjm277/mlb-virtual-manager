@@ -29,7 +29,7 @@ Requires **Python 3.11+**. No other software is needed.
    .venv/Scripts/python app.py      # Windows
    .venv/bin/python app.py          # macOS / Linux
    ```
-   Your browser opens to **http://localhost:8000**. Pick your team, an opponent and a game, then press **Build game plan** (about 1 minute and 2 cents). Review and edit the plan, then **Download packets (ZIP)**. Saved plans under "Recent game plans" open instantly without using the API.
+   Your browser opens to **http://localhost:8000**. Pick your team, an opponent and a game, then press **Build game plan** (about 1 minute and 2 cents). Review and edit the plan (with the dropdowns, or by chatting with the assistant coach: "I don't like Clement in this matchup"), then **Download packets (ZIP)**. Saved plans under "Recent game plans" open instantly without using the API.
 
    Command-line alternative:
    ```bash
@@ -57,7 +57,7 @@ Requires **Python 3.11+**. No other software is needed.
 | `run_plan.py` | Command-line runner |
 | `app.py`, `backend/main.py` | Web app: FastAPI routes, and it serves the prebuilt React app |
 | `frontend/` | React + Vite + TypeScript source; `frontend/dist/` is the prebuilt app (Node is only needed to change it) |
-| `backend/edits.py`, `backend/export.py` | Manager edits + re-check; ZIP export (HTML + PDF by audience) |
+| `backend/edits.py`, `backend/chat.py`, `backend/export.py` | Manager edits (dropdowns or chat) + re-check; ZIP export (HTML + PDF by audience) |
 | `design.md` | Look-and-feel choices |
 | `scripts/` | One-time data build, data spot-checks, and predictor evaluation (graders do not need to run these) |
 | `data/` | The prebuilt 2026 stats snapshot the app reads |

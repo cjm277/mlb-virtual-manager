@@ -1,4 +1,4 @@
-import type { EditOptions, Game, Plan, RunEvent, RunSummary, Team, Colors } from './types'
+import type { ChatTurn, EditOptions, Game, Issue, Plan, RunEvent, RunSummary, Team, Colors } from './types'
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(path, { headers: { 'Content-Type': 'application/json' }, ...init })
@@ -22,5 +22,8 @@ export const api = {
   plan: (runId: string) => call<Plan>(`/api/runs/${runId}/plan`),
   options: (runId: string) => call<EditOptions>(`/api/runs/${runId}/options`),
   edit: (runId: string, edits: object) => call<Plan>(`/api/runs/${runId}/edits`, { method: 'POST', body: JSON.stringify(edits) }),
+  chatHistory: (runId: string) => call<ChatTurn[]>(`/api/runs/${runId}/chat`),
+  chat: (runId: string, message: string) => call<{ reply: string; status: string; changes: string[]; issues: Issue[]; plan: Plan; history: ChatTurn[] }>(
+    `/api/runs/${runId}/chat`, { method: 'POST', body: JSON.stringify({ message }) }),
   exportUrl: (runId: string) => `/api/runs/${runId}/export`,
 }

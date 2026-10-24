@@ -29,6 +29,13 @@ function totalsFrom(events: RunEvent[]): Totals {
   return t
 }
 
+function addTotals(a: Totals, b?: Totals): Totals {
+  if (!b) return a
+  return { model_steps: a.model_steps + b.model_steps, gateway_cache_hits: a.gateway_cache_hits + b.gateway_cache_hits,
+    input_tokens: a.input_tokens + b.input_tokens, cached_tokens: a.cached_tokens + b.cached_tokens,
+    output_tokens: a.output_tokens + b.output_tokens, cost_usd: a.cost_usd + b.cost_usd }
+}
+
 export default function App() {
   const [league, setLeague] = useState<Colors | null>(null)
   const [teams, setTeams] = useState<Team[]>([])
@@ -96,7 +103,7 @@ export default function App() {
 
   function home() { setScreen('setup'); setPlan(null); setRunId(null); setEvents([]); setError(null) }
 
-  const totals = screen === 'build' ? liveTotals : screen === 'review' && plan ? plan.usage.total : null
+  const totals = screen === 'build' ? liveTotals : screen === 'review' && plan ? addTotals(plan.usage.total, plan.usage.chat) : null
   const seconds = screen === 'build' ? clock : screen === 'review' && plan ? plan.usage.seconds : null
 
   return (

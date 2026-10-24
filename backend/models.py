@@ -206,3 +206,26 @@ class Briefing(BaseModel):
 
 class CommsPackage(BaseModel):
     briefings: list[Briefing] = Field(description="Exactly one each for hitters, pitchers, and coaches.")
+
+
+# --- Manager's Assistant (chat edits) ------------------------------------------------
+
+class ChatLineupSpot(BaseModel):
+    slot: int
+    player_id: int
+    position: Position
+    reason: str | None = Field(default=None, description="One sentence, only for spots you changed.")
+
+
+class RoleChange(BaseModel):
+    player_id: int
+    role: Literal["closer", "setup", "middle", "long", "lefty_specialist", "mop_up", "unavailable"]
+
+
+class ChatReply(BaseModel):
+    message: str = Field(description="Your answer to the manager, under 80 words.")
+    lineup: list[ChatLineupSpot] | None = Field(
+        default=None, description="ONLY if the batting order or positions change: the complete new 9-man lineup.")
+    starter_id: int | None = Field(default=None, description="ONLY if the starting pitcher changes.")
+    bullpen_roles: list[RoleChange] | None = Field(default=None, description="ONLY relievers whose role changes.")
+    staff_note: str | None = Field(default=None, description="ONLY if the manager asks to add a note for the staff.")

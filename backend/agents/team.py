@@ -36,8 +36,8 @@ from backend.agents.toolkit import PlanDeps
 from backend.audit import Audit, preview
 from backend.checker import Issue, check_numbers, check_plan, ledger_numbers
 from backend.engine.games import team as team_info
-from backend.models import (CommsPackage, HittersScoutingReport, LineupPlan, ManagerReview, MedicalReport,
-                            PitchersScoutingReport, PitchingPlan)
+from backend.models import (ChatReply, CommsPackage, HittersScoutingReport, LineupPlan, ManagerReview,
+                            MedicalReport, PitchersScoutingReport, PitchingPlan)
 
 
 @dataclass(frozen=True)
@@ -59,6 +59,10 @@ SPECS: dict[str, Spec] = {
     "bench_coach": Spec("Bench Coach", LineupPlan, ("hitters_overview", "hitter_profile", "matchups")),
     "manager": Spec("Manager", ManagerReview, ()),
     "clubhouse_comms": Spec("Clubhouse Comms", CommsPackage, ()),
+    # Not part of the build: the chat assistant that edits a finished plan (backend/chat.py).
+    "assistant": Spec("Manager's Assistant", ChatReply,
+                      ("hitters_overview", "hitter_profile", "matchups", "starter_options", "bullpen_status",
+                       "pitcher_profile")),
 }
 FIXABLE = {"pitching_coach", "bench_coach", "scout_pitchers", "scout_hitters"}
 

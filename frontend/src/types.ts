@@ -41,7 +41,7 @@ export interface Briefing { audience: string; headline: string; message: string;
 
 export interface Plan {
   run_id: string; status: string; edited?: boolean; staff_notes?: string; manager_notes?: string | null
-  edit_log?: { at: string; changes: string[] }[]
+  edit_log?: { at: string; source?: string; changes: string[] }[]
   game: { game_pk: number; season: number; game_date: string; venue: string; team: string; team_id: number; opponent: string; opponent_id: number; home_away: string; stats_basis: string; roster_basis?: string; day_night: string }
   sections: {
     lineup_card: LineupPlan | null; pitching_plan: PitchingPlan | null; opposing_pitchers_report: PitchersReport | null
@@ -50,7 +50,7 @@ export interface Plan {
   }
   packets: Record<string, string[]>
   checker: { fix_rounds: number; open_issues: Issue[]; rechecked_after_edit?: boolean }
-  usage: { seconds: number; total: Totals; by_agent: Record<string, AgentUsage>; pricing_source: string }
+  usage: { seconds: number; total: Totals; chat?: Totals; by_agent: Record<string, AgentUsage>; pricing_source: string }
 }
 
 export interface EditOptions {
@@ -59,3 +59,4 @@ export interface EditOptions {
   roles: string[]; positions: string[]
 }
 export interface RunSummary { run_id: string; status: string; game_date: string; team: string; opponent: string; cost_usd: number; edited: boolean }
+export interface ChatTurn { role: 'manager' | 'assistant'; text: string; status?: string; changes?: string[]; issues?: Issue[]; cost_usd?: number }

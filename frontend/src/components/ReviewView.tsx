@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { api } from '../api'
 import type { EditOptions, Plan } from '../types'
 import { AGENTS } from './BuildView'
+import { ChatPanel } from './ChatPanel'
 
 const TABS = ['Lineup card', 'Pitching plan', 'Their pitchers', 'Their hitters', 'Medical', 'Game plan & briefings', 'Run details'] as const
 type Tab = (typeof TABS)[number]
@@ -57,6 +58,7 @@ export function ReviewView({ plan, onPlan }: { plan: Plan; onPlan: (p: Plan) => 
 
   return (
     <main>
+      <ChatPanel plan={plan} onPlan={onPlan} blocked={dirty} />
       <div className={`status ${banner}`}>
         <div className="grow">
           <b>{plan.game.team} {where} {plan.game.opponent} · {plan.game.game_date} · {plan.game.venue}</b>
@@ -216,7 +218,7 @@ export function ReviewView({ plan, onPlan }: { plan: Plan; onPlan: (p: Plan) => 
             <h3>Your notes for the staff packet</h3>
             <textarea maxLength={2000} value={draft.notes} onChange={(e) => setDraft({ ...draft, notes: e.target.value })} placeholder="Anything you want the coaches to see in their packet." />
             {plan.edit_log && plan.edit_log.length > 0 && <>
-              <h3>Your changes</h3><ul className="tight">{plan.edit_log.flatMap((e) => e.changes.map((c, i) => <li key={e.at + i}>{c}</li>))}</ul></>}
+              <h3>Your changes</h3><ul className="tight">{plan.edit_log.flatMap((e) => e.changes.map((c, i) => <li key={e.at + i}>{c}{e.source === 'chat' ? ' (via chat)' : ''}</li>))}</ul></>}
           </div>
           <div className="grow card">
             <h3 style={{ marginTop: 0 }}>Briefings (what each group receives)</h3>
@@ -241,7 +243,8 @@ export function ReviewView({ plan, onPlan }: { plan: Plan; onPlan: (p: Plan) => 
               <div className="kpi"><label>Time · fix rounds</label><div>{u.seconds}s · {plan.checker.fix_rounds}</div></div>
             </div>
             <table className="grid"><thead><tr><th>Agent</th><th>Runs</th><th>Model calls</th><th>Input tokens</th><th>Cached</th><th>Output tokens</th><th>Seconds</th><th>Cost</th></tr></thead><tbody>
-              {Object.entries(u.by_agent).map(([k, a]) => <tr key={k}><td>{AGENTS[k]?.icon} {AGENTS[k]?.title ?? k}</td><td>{a.calls}</td><td>{a.model_steps}</td><td>{a.input_tokens.toLocaleString()}</td><td>{a.cached_tokens.toLocaleString()}</td><td>{a.output_tokens.toLocaleString()}</td><td>{a.seconds}</td><td>${a.cost_usd.toFixed(5)}</td></tr>)}
+              {Object.entries(u.by_agent).map(([k, a]) => <tr key={k}><td>{AGENTS[k]?.title ?? k}</td><td>{a.calls}</td><td>{a.model_steps}</td><td>{a.input_tokens.toLocaleString()}</td><td>{a.cached_tokens.toLocaleString()}</td><td>{a.output_tokens.toLocaleString()}</td><td>{a.seconds}</td><td>${a.cost_usd.toFixed(5)}</td></tr>)}
+              {u.chat && <tr><td>Manager's Assistant (chat edits, after the build)</td><td></td><td>{u.chat.model_steps}</td><td>{u.chat.input_tokens.toLocaleString()}</td><td>{u.chat.cached_tokens.toLocaleString()}</td><td>{u.chat.output_tokens.toLocaleString()}</td><td></td><td>${u.chat.cost_usd.toFixed(5)}</td></tr>}
             </tbody></table>
             <p className="muted">Pricing: {u.pricing_source}. Full audit trail: runs/{plan.run_id}/audit.jsonl</p>
           </div>
