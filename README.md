@@ -10,8 +10,8 @@ Requires **Python 3.11+**. No other software is needed.
 
 1. **Clone the repo.**
    ```bash
-   git clone <repo-url>
-   cd <repo-folder>
+   git clone https://github.com/cjm277/mlb-virtual-manager.git
+   cd mlb-virtual-manager
    ```
 2. **Add your API key.** The app looks for a `.env` file in this folder first, then in the folder above it. Copy `.env.example` and fill in `PORTKEY_API_KEY`.
 3. **Create a virtual environment and install packages.**
