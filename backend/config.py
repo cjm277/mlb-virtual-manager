@@ -41,7 +41,9 @@ MAX_FIX_ROUNDS = 2                 # consistency-checker fix loop
 DAILY_BUDGET_USD = 2.00            # all plans + chat in one day; then new builds and chat are refused
 REUSE_HOURS = 24                   # the same request within this window reopens the saved plan (no new cost)
 AGENT_TIMEOUT_SECONDS = 240        # one agent's whole loop
-MODEL_REQUEST_TIMEOUT_SECONDS = 90
+# One model call normally takes 1-14 s. A call that stalls (it happened once: 89 s for a 700-token answer)
+# is abandoned after 60 s and retried, without cutting off genuinely long but productive work.
+MODEL_REQUEST_TIMEOUT_SECONDS = 60
 MODEL_MAX_RETRIES = 2
 
 # --- Pricing (USD per 1M tokens), for cost in the audit trail -------------------
