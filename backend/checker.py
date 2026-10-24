@@ -152,6 +152,13 @@ def check_plan(game_pk: int, team_id: int, opponent_id: int, *, medical: Medical
         if sp.player_id not in their_pitchers:
             issues.append(Issue("scout_pitchers", "bad_opposing_starter",
                                 f"{sp.name} ({sp.player_id}) is not an available pitcher for {g['opponent']}."))
+        else:
+            role = tools.pitcher_role(sp.player_id, g["game_date"])
+            if role["starts"] == 0 and role["saves"] + role["holds"] >= 10:
+                issues.append(Issue("scout_pitchers", "unlikely_opposing_starter",
+                                    f"{sp.name} is a late-inning reliever ({role['saves']} saves, {role['holds']} holds, no "
+                                    "starts this season) and almost never starts. If no rotation starter is rested, report a "
+                                    "bullpen game and name the likely bulk pitcher instead."))
         for m in scout_pitchers.best_matchups + scout_pitchers.toughest_matchups:
             if m.player_id not in our_hitters:
                 issues.append(Issue("scout_pitchers", "unavailable_hitter",

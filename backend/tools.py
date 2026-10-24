@@ -187,5 +187,13 @@ def get_matchups(game_pk: int, pitcher_id: int, batter_ids: list[int]) -> list[d
     return matchups.matchups(batter_ids, pitcher_id, g["game_date"])
 
 
+def pitcher_role(player_id: int, game_date: str) -> dict:
+    """Starts, saves and holds this season before the game (used by the checker)."""
+    from backend import db
+    r = db.one("SELECT SUM(is_starter) gs, SUM(sv) sv, SUM(hld) hld FROM pitching_lines WHERE player_id = ? "
+               "AND game_date < ?", player_id, game_date)
+    return {"starts": r["gs"] or 0, "saves": r["sv"] or 0, "holds": r["hld"] or 0}
+
+
 TOOLS = [get_game_context, get_roster_and_injuries, get_bullpen_status, get_hitter_profile, get_pitcher_profile,
          get_hitters_overview, get_starter_options, predict_opponent_starter, predict_opponent_lineup, get_matchups]
