@@ -7,12 +7,16 @@ One JSON object per line, in the order things happened: run start, every agent s
 from __future__ import annotations
 
 import json
+import threading
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
 PREVIEW_CHARS = 800
+# Sync tools and output validators run in worker threads, so two records can be written at once; without
+# a lock a long record can be torn in two (seen once in Phase 8).
+_WRITE_LOCK = threading.Lock()
 
 
 def preview(value: Any, limit: int = PREVIEW_CHARS) -> str:

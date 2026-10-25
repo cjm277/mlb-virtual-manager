@@ -29,7 +29,7 @@ Requires **Python 3.11+**. No other software is needed.
    .venv/Scripts/python app.py      # Windows
    .venv/bin/python app.py          # macOS / Linux
    ```
-   Your browser opens to **http://localhost:8000**. Pick your team, an opponent and a game, then press **Build game plan** (about 1 minute and 2 cents). Review and edit the plan (with the dropdowns, or by chatting with the assistant coach: "I don't like Clement in this matchup"), then **Download packets (ZIP)**. Saved plans under "Recent game plans" open instantly without using the API.
+   Your browser opens to **http://localhost:8000**. Pick your team, an opponent and a game, then press **Build game plan** (about 1 minute and under 2 cents). Review and edit the plan (with the dropdowns, or by chatting with the assistant coach: "I don't like Clement in this matchup"), then **Download packets (ZIP)**. Saved plans under "Recent game plans" open instantly without using the API.
 
    Command-line alternative:
    ```bash
@@ -61,6 +61,7 @@ Requires **Python 3.11+**. No other software is needed.
 | `design.md` | Look-and-feel choices |
 | `SAFETY.md` | Threats, the defenses built for each, and the tests and screenshots that prove them |
 | `backend/budget.py` | Daily spending cap and free reuse of a recently built plan |
+| `scripts/tokenomics.py` | Cost per game / month / season / league, the 100 and 10,000 users question, and the cost-cutting A/B test (report: `evidence/tests/phase8_tokenomics.md`) |
 | `frontend/public/teams/` | Ballpark photos (freely licensed, from Wikimedia Commons); photographer and license for each are in `credits.json` and shown in the app |
 | `scripts/` | One-time data build, data spot-checks, and predictor evaluation (graders do not need to run these) |
 | `data/` | The prebuilt 2026 stats snapshot the app reads |

@@ -46,6 +46,17 @@ AGENT_TIMEOUT_SECONDS = 240        # one agent's whole loop
 MODEL_REQUEST_TIMEOUT_SECONDS = 60
 MODEL_MAX_RETRIES = 2
 
+# --- Cost cutters (Phase 8; scripts/tokenomics.py switches them off and on through env vars to A/B test) ---
+# Self-check: a scout's or coach's output runs through the code checker before it is handed in, and the agent
+# fixes its own rule breaks inside its loop, instead of a full Manager review -> fix round -> Manager review.
+SELF_CHECK_RETRIES = int(os.getenv("MVM_SELF_CHECK_RETRIES", "1"))
+# Compact matchups: the pitcher's pitch mix is sent once per batter side, not repeated on every batter's row.
+# Off by default: it cut matchup text 47% but the saving per plan (~2%) was lost in run-to-run noise
+# (evidence/tests/phase8_tokenomics.md), so the measured-best setup (self-check alone) is what ships.
+COMPACT_MATCHUPS = os.getenv("MVM_COMPACT_MATCHUPS", "0") == "1"
+# Experiments only: ask Portkey for a fresh model answer instead of a cached one, so repeat runs are real runs.
+GATEWAY_FORCE_REFRESH = os.getenv("MVM_GATEWAY_FORCE_REFRESH", "0") == "1"
+
 # --- Pricing (USD per 1M tokens), for cost in the audit trail -------------------
 # Source: genai-prices (Pydantic's public price database, shipped with PydanticAI), entry "GPT-6 Luna",
 # verified by its maintainers against https://developers.openai.com/api/docs/pricing on 2026-10-12.
@@ -115,7 +126,10 @@ def build_model():
     key = get_api_key()
     check_model_env()
     http = DefaultAsyncHttpxClient(event_hooks={"response": [_record_gateway_headers]})
-    client = AsyncOpenAI(api_key=key, base_url=PORTKEY_BASE_URL, default_headers={"x-portkey-api-key": key},
+    headers = {"x-portkey-api-key": key}
+    if GATEWAY_FORCE_REFRESH:
+        headers["x-portkey-cache-force-refresh"] = "true"
+    client = AsyncOpenAI(api_key=key, base_url=PORTKEY_BASE_URL, default_headers=headers,
                          timeout=MODEL_REQUEST_TIMEOUT_SECONDS, max_retries=MODEL_MAX_RETRIES, http_client=http)
     return OpenAIResponsesModel(MODEL_NAME, provider=OpenAIProvider(openai_client=client))
 

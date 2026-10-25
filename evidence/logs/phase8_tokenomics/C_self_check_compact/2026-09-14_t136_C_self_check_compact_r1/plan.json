@@ -1,0 +1,1110 @@
+{
+  "run_id": "2026-09-14_t136_C_self_check_compact_r1",
+  "status": "approved",
+  "game": {
+    "game_pk": 823981,
+    "season": 2026,
+    "game_date": "2026-09-14",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Angel Stadium",
+    "team": "Seattle Mariners",
+    "team_id": 136,
+    "team_record_going_in": "70-80",
+    "opponent": "Los Angeles Angels",
+    "opponent_id": 108,
+    "opponent_record_going_in": "56-93",
+    "home_away": "away",
+    "bats_last": false,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 672282,
+        "name": "Reid Detmers"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 640902,
+          "name": "Jhonny Pereda",
+          "position": "C",
+          "bats": "R",
+          "reason": "Expected xwOBA is 0.345 with a batter edge; his results against LHP and pitch groups are small samples."
+        },
+        {
+          "slot": 2,
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "position": "LF",
+          "bats": "R",
+          "reason": "Rest suggested, but his matchup is even at 0.302; retain the established regular and plan rest against a weaker matchup."
+        },
+        {
+          "slot": 3,
+          "player_id": 647304,
+          "name": "Josh Naylor",
+          "position": "1B",
+          "bats": "L",
+          "reason": "Rest suggested, but his matchup is even at 0.307; retain the established first baseman and move his rest to a weaker matchup."
+        },
+        {
+          "slot": 4,
+          "player_id": 677594,
+          "name": "Julio Rodr\u00edguez",
+          "position": "CF",
+          "bats": "R",
+          "reason": "Rest suggested, but his matchup is even at 0.314; retain the established center fielder and move his rest to a weaker matchup."
+        },
+        {
+          "slot": 5,
+          "player_id": 621493,
+          "name": "Taylor Ward",
+          "position": "RF",
+          "bats": "R",
+          "reason": "Established regular with an even 0.305 matchup; his fastball results offer a sensible approach against Detmers."
+        },
+        {
+          "slot": 6,
+          "player_id": 641487,
+          "name": "J.P. Crawford",
+          "position": "SS",
+          "bats": "L",
+          "reason": "Rest suggested, but his matchup is even at 0.32 and he is the available established shortstop; move his rest to a weaker matchup."
+        },
+        {
+          "slot": 7,
+          "player_id": 702284,
+          "name": "Cole Young",
+          "position": "2B",
+          "bats": "L",
+          "reason": "Everyday second baseman; his expected xwOBA is 0.289 with a pitcher edge, so keep him below the middle order."
+        },
+        {
+          "slot": 8,
+          "player_id": 642215,
+          "name": "Weston Wilson",
+          "position": "3B",
+          "bats": "R",
+          "reason": "Has started at third; expected xwOBA is 0.263 with a pitcher edge, so bat him lower."
+        },
+        {
+          "slot": 9,
+          "player_id": 686527,
+          "name": "Dominic Canzone",
+          "position": "DH",
+          "bats": "L",
+          "reason": "Rest suggested, but his matchup is even at 0.326; keep his established bat and move his rest to a weaker matchup."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 663728,
+          "name": "Cal Raleigh",
+          "role": "backup_catcher",
+          "note": "Rest as suggested; Pereda's expected matchup is 0.345, while Raleigh's is 0.278."
+        },
+        {
+          "player_id": 645302,
+          "name": "Victor Robles",
+          "role": "defensive_replacement",
+          "note": "Available for a late outfield defensive change; he has started in left, center, and right field."
+        },
+        {
+          "player_id": 703155,
+          "name": "Lazaro Montes",
+          "role": "pinch_hitter",
+          "note": "His matchup is pitcher-favored at 0.169 and his LHP and pitch-group samples are small; reserve for a favorable late spot."
+        },
+        {
+          "player_id": 703197,
+          "name": "Michael Arroyo",
+          "role": "utility",
+          "note": "His matchup is pitcher-favored at 0.254 and his LHP and pitch-group samples are small."
+        },
+        {
+          "player_id": 801126,
+          "name": "Brock Rodden",
+          "role": "utility",
+          "note": "His matchup is pitcher-favored at 0.271; available for infield coverage."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning with a runner in scoring position against a left-handed reliever",
+          "bench_player_id": 663728,
+          "replaces_player_id": 686527,
+          "reason": "Use the backup catcher's bat in a better late-game situation; his matchup against Detmers is pitcher-favored at 0.278."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning when the tying or go-ahead run reaches base",
+          "bench_player_id": 645302,
+          "replaces_player_id": 647304,
+          "reason": "Robles provides a speed option; Naylor is rest-suggested, so avoid extending his workload."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead, replace the left fielder for defense",
+          "bench_player_id": 645302,
+          "replaces_player_id": 668227,
+          "reason": "Robles has started in left field and can take over defensively."
+        }
+      ],
+      "summary": "Detmers is the high-confidence starter prediction. Raleigh gets the catcher rest day because Pereda has the stronger listed matchup; the other rest-suggested regulars are retained despite even matchups, with their rest moved to a weaker matchup."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 807739,
+        "name": "Kade Anderson",
+        "throws": "L",
+        "reason": "Only ready option; his expected xwOBA against Mike Trout is 0.304 and Zach Neto is 0.302, with breaking balls the best group against both.",
+        "expected_innings": 5.0,
+        "pitch_count_limit": 85,
+        "pitch_mix": [
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 40.0,
+            "vs_rhb_pct": 35.0,
+            "purpose": "Establish the pitch, but avoid predictable fastballs to right-handed hitters."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 30.0,
+            "purpose": "Primary breaking ball to disrupt the right-handed heart of the order."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 25.0,
+            "purpose": "Change the look and keep breaking-ball pressure on."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 10.0,
+            "vs_rhb_pct": 10.0,
+            "purpose": "Change speeds, especially when right-handed hitters are geared for heat."
+          }
+        ],
+        "keys": [
+          "Against Trout and Neto, prioritize breaking balls: their xwOBA against them is 0.161 and 0.175, respectively.",
+          "Siri hunts fastballs; his xwOBA against offspeed is 0.209, so use the changeup when ahead.",
+          "Keep the ball away from the middle against Grissom; no clear pitch-type weakness is available.",
+          "Anderson\u2019s vs-LHB sample is small; avoid overreading the favorable left-handed matchups."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 660825,
+          "name": "Eduard Bazardo",
+          "throws": "R",
+          "role": "setup",
+          "note": "Available and rested; first choice for a high-leverage setup spot."
+        },
+        {
+          "player_id": 678606,
+          "name": "Jos\u00e9 A. Ferrer",
+          "throws": "L",
+          "role": "setup",
+          "note": "Available and rested; use for left-handed pockets or a late setup inning."
+        },
+        {
+          "player_id": 571948,
+          "name": "Hoby Milner",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Available and rested; target left-handed hitters in a key spot."
+        },
+        {
+          "player_id": 681867,
+          "name": "Cooper Criswell",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available and rested; cover the middle innings."
+        },
+        {
+          "player_id": 621074,
+          "name": "Michael Rucker",
+          "throws": "R",
+          "role": "long",
+          "note": "Available and rested; provide length if Anderson exits early."
+        },
+        {
+          "player_id": 662253,
+          "name": "Andr\u00e9s Mu\u00f1oz",
+          "throws": "R",
+          "role": "closer",
+          "note": "Limited after pitching yesterday; use only if needed, preferably for the highest-leverage outs."
+        },
+        {
+          "player_id": 642100,
+          "name": "Gabe Speier",
+          "throws": "L",
+          "role": "setup",
+          "note": "Limited after pitching yesterday; use only if needed or for one key left-handed batter."
+        },
+        {
+          "player_id": 622554,
+          "name": "Seranthony Dom\u00ednguez",
+          "throws": "R",
+          "role": "setup",
+          "note": "Limited after pitching yesterday; use only if needed, behind rested options."
+        },
+        {
+          "player_id": 672841,
+          "name": "Carlos Vargas",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use rested arms first, saving limited Mu\u00f1oz for the highest-leverage finish if necessary.",
+          "pitcher_ids": [
+            660825,
+            678606,
+            662253
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Deploy rested setup options by matchup; reserve limited closer for a decisive spot if needed.",
+          "pitcher_ids": [
+            678606,
+            660825,
+            662253
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Keep the limited high-leverage arms back and use available middle relief.",
+          "pitcher_ids": [
+            681867,
+            621074,
+            571948
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Prioritize length and preserve rested leverage arms.",
+          "pitcher_ids": [
+            621074,
+            681867,
+            672841
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Use Rucker for length, then Criswell; turn to rested leverage arms if the game tightens.",
+          "pitcher_ids": [
+            621074,
+            681867,
+            660825,
+            678606
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Start with rested setup arms and use Mu\u00f1oz only if needed; limited relievers follow rested options.",
+          "pitcher_ids": [
+            660825,
+            678606,
+            571948,
+            662253,
+            622554
+          ]
+        }
+      ],
+      "summary": "Start Kade Anderson, the only ready option, and lean on breaking balls against Trout and Neto. Use rested relievers before the four limited arms; keep Andr\u00e9s Mu\u00f1oz available for a truly high-leverage finish if needed."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 672282,
+        "name": "Reid Detmers",
+        "throws": "L",
+        "confidence": "high",
+        "alternatives": [
+          "Ryan Johnson"
+        ],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 45.4,
+          "velo": 94.1,
+          "whiff_pct": 21.6,
+          "note": "His most-used offering; hitters have a .312 xwOBA against it."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 32.9,
+          "velo": 86.0,
+          "whiff_pct": 35.3,
+          "note": "His main put-away pitch, with a .215 xwOBA allowed."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 11.0,
+          "velo": 72.3,
+          "whiff_pct": 36.8,
+          "note": "A slow breaker that gets swings and misses; .303 xwOBA allowed."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 9.5,
+          "velo": 83.8,
+          "whiff_pct": 37.1,
+          "note": "His changeup draws swings and misses; .308 xwOBA allowed."
+        }
+      ],
+      "how_to_attack": [
+        "Against righties, be ready for fastballs (45.9%) and breaking balls (41.4%); Detmers allows .304 xwOBA on fastballs and .222 on breaking balls.",
+        "Lefties see fastballs 48.1% and breaking balls 51.9%; Detmers allows .332 xwOBA on fastballs and .281 on breaking balls.",
+        "Look for the fastball to hit hard; don't chase the slider, his most-used breaking pitch with a 35.3% whiff rate.",
+        "Stay disciplined against the changeup; it generates a 37.1% whiff rate. The sinker data is flagged small."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 640902,
+          "name": "Jhonny Pereda",
+          "expected_xwoba": 0.345,
+          "edge": "batter",
+          "note": "Best listed expected xwOBA; breaking-ball and fastball results are small samples."
+        },
+        {
+          "player_id": 686527,
+          "name": "Dominic Canzone",
+          "expected_xwoba": 0.326,
+          "edge": "even",
+          "note": "His .392 against fastballs is the stronger pitch-group result; breaking balls are a caution."
+        },
+        {
+          "player_id": 641487,
+          "name": "J.P. Crawford",
+          "expected_xwoba": 0.32,
+          "edge": "even",
+          "note": "His .351 against breaking balls exceeds his .318 against fastballs."
+        },
+        {
+          "player_id": 677594,
+          "name": "Julio Rodr\u00edguez",
+          "expected_xwoba": 0.314,
+          "edge": "even",
+          "note": "His .406 against offspeed is his best pitch-group result."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 703155,
+          "name": "Lazaro Montes",
+          "expected_xwoba": 0.169,
+          "edge": "pitcher",
+          "note": "His results against LHP and pitch groups are small samples; breaking-ball xwOBA is .005."
+        },
+        {
+          "player_id": 703197,
+          "name": "Michael Arroyo",
+          "expected_xwoba": 0.254,
+          "edge": "pitcher",
+          "note": "His results against LHP and pitch groups are small samples; breaking-ball xwOBA is .169."
+        },
+        {
+          "player_id": 642215,
+          "name": "Weston Wilson",
+          "expected_xwoba": 0.263,
+          "edge": "pitcher",
+          "note": "His .285 against fastballs is his best pitch-group result, but Detmers holds righties to .222 xwOBA on breaking balls."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 670245,
+          "name": "Ryan Watson",
+          "throws": "R",
+          "note": "Available and rested; leads this group with 7 holds."
+        },
+        {
+          "player_id": 820862,
+          "name": "Jos\u00e9 Fermin",
+          "throws": "R",
+          "note": "Available and rested with 7 holds."
+        },
+        {
+          "player_id": 690829,
+          "name": "Ben Joyce",
+          "throws": "R",
+          "note": "Available and rested; has 4 saves."
+        },
+        {
+          "player_id": 676620,
+          "name": "Blake Weiman",
+          "throws": "L",
+          "note": "Available and rested; the available left-handed option to watch."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 640902,
+          "name": "Jhonny Pereda",
+          "bats": "R",
+          "expected_xwoba": 0.345,
+          "edge": "batter",
+          "hunt": "offspeed",
+          "beware": null,
+          "approach": "Hunt the offspeed: your .388 is strong, and Detmers allows .320 on offspeed to righties. Your .477 against breaking balls is also promising versus his .222 allowed; these pitch-group samples are small."
+        },
+        {
+          "player_id": 686527,
+          "name": "Dominic Canzone",
+          "bats": "L",
+          "expected_xwoba": 0.326,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .392 against them is better than your .302 against breaking balls, and Detmers allows .332 against lefties on fastballs versus .281 on breakers."
+        },
+        {
+          "player_id": 641487,
+          "name": "J.P. Crawford",
+          "bats": "L",
+          "expected_xwoba": 0.32,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Hunt fastballs: your .318 is close to your .351 against breaking balls, while Detmers allows .332 on fastballs and .281 on breakers to lefties."
+        },
+        {
+          "player_id": 677594,
+          "name": "Julio Rodr\u00edguez",
+          "bats": "R",
+          "expected_xwoba": 0.314,
+          "edge": "even",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Hunt offspeed: your .406 is your best group and Detmers allows .320 to righties. His breaking balls have held righties to .222, so avoid expanding against them."
+        },
+        {
+          "player_id": 647304,
+          "name": "Josh Naylor",
+          "bats": "L",
+          "expected_xwoba": 0.307,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .313 is just ahead of your .303 against breaking balls; Detmers allows lefties .332 on fastballs and .281 on breakers."
+        },
+        {
+          "player_id": 621493,
+          "name": "Taylor Ward",
+          "bats": "R",
+          "expected_xwoba": 0.305,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .414 is your best group, against .304 allowed by Detmers to righties. His breaking balls allow .222, and your result against them is .276."
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "bats": "R",
+          "expected_xwoba": 0.302,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .342 is your best group, against .304 allowed to righties. Detmers has limited righties to .222 on breaking balls; your result there is .323."
+        },
+        {
+          "player_id": 645302,
+          "name": "Victor Robles",
+          "bats": "R",
+          "expected_xwoba": 0.293,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .381 against them is your best result, and Detmers allows .304 to righties. Your LHP and breaking-ball samples are small; he allows .222 on breakers to righties."
+        },
+        {
+          "player_id": 702284,
+          "name": "Cole Young",
+          "bats": "L",
+          "expected_xwoba": 0.289,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .339 tops your .211 against breaking balls; Detmers allows lefties .332 on fastballs and .281 on breakers."
+        },
+        {
+          "player_id": 663728,
+          "name": "Cal Raleigh",
+          "bats": "R",
+          "expected_xwoba": 0.278,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .302 is stronger than your .270 against breakers, while Detmers allows righties .304 on fastballs and .222 on breaking balls."
+        },
+        {
+          "player_id": 801126,
+          "name": "Brock Rodden",
+          "bats": "S",
+          "expected_xwoba": 0.271,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .357 is your best group, but this is a small sample against LHP and pitch groups. Detmers allows righties .304 on fastballs and .222 on breakers."
+        },
+        {
+          "player_id": 642215,
+          "name": "Weston Wilson",
+          "bats": "R",
+          "expected_xwoba": 0.263,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .285 is your best group, but Detmers allows .304 on fastballs and .222 on breakers to righties. Don't give his breaking ball extra chase."
+        },
+        {
+          "player_id": 703197,
+          "name": "Michael Arroyo",
+          "bats": "R",
+          "expected_xwoba": 0.254,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: your .356 is far stronger than your .169 against breaking balls; his fastballs allow .304 to righties. Your LHP and pitch-group samples are small."
+        },
+        {
+          "player_id": 703155,
+          "name": "Lazaro Montes",
+          "bats": "L",
+          "expected_xwoba": 0.169,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .062 against them is better than your .005 against breaking balls, but both are small samples. Detmers allows lefties .332 on fastballs and .281 on breaking balls."
+        }
+      ],
+      "summary": "Reid Detmers is the high-confidence starter prediction, with Ryan Johnson the alternative. His slider is the primary danger, especially to righties; make him prove he can land it before expanding. Pereda and Canzone have the strongest listed expected matchup results, with the sample caveats noted."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 685133,
+          "name": "Wade Meckler",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 694208,
+          "name": "Mois\u00e9s Ballesteros",
+          "position": "C",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 695681,
+          "name": "Christian Moore",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 666139,
+          "name": "Josh Lowe",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 642350,
+          "name": "Jose Siri",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "position": "3B",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 642350,
+          "name": "Jose Siri",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 694208,
+          "name": "Mois\u00e9s Ballesteros",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 695681,
+          "name": "Christian Moore",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 694203,
+          "name": "Denzer Guzman",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 518595,
+          "name": "Travis d'Arnaud",
+          "position": "C",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.309,
+          "weakness": "Breaking balls and offspeed; xwOBA 0.219 against breaking balls and 0.241 against offspeed.",
+          "how_to_pitch": "Mix breaking balls and offspeed below the zone; avoid relying on fastballs."
+        },
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.377,
+          "weakness": "Breaking balls; xwOBA 0.281 against them (offspeed sample is moderate).",
+          "how_to_pitch": "Use breaking balls to disrupt him; don\u2019t challenge him with fastballs."
+        },
+        {
+          "player_id": 685133,
+          "name": "Wade Meckler",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.314,
+          "weakness": "Offspeed; xwOBA 0.265 against it (moderate sample); vs LHP results are small-sample.",
+          "how_to_pitch": "Change speeds and attack the zone; be cautious about reading too much into his small vs-LHP sample."
+        },
+        {
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.306,
+          "weakness": "No clear pitch-type weakness available.",
+          "how_to_pitch": "Work the edges and avoid giving him a steady pattern."
+        },
+        {
+          "player_id": 694208,
+          "name": "Mois\u00e9s Ballesteros",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.293,
+          "weakness": "No clear pitch-type weakness available; xwOBA is lower vs LHP (0.263).",
+          "how_to_pitch": "Favor the matchup with a left-hander and keep pitches out of the middle."
+        },
+        {
+          "player_id": 695681,
+          "name": "Christian Moore",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.245,
+          "weakness": "Lower xwOBA vs RHP (0.208); moderate overall sample.",
+          "how_to_pitch": "A right-hander is the better matchup; stay ahead and make him earn his way on."
+        },
+        {
+          "player_id": 666139,
+          "name": "Josh Lowe",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.287,
+          "weakness": "Markedly lower xwOBA vs LHP (0.176).",
+          "how_to_pitch": "Prefer a left-hander and work carefully in the zone."
+        },
+        {
+          "player_id": 642350,
+          "name": "Jose Siri",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.308,
+          "weakness": "Breaking balls; xwOBA 0.240 and chase rate 58.4% against them (moderate sample).",
+          "how_to_pitch": "Bury breaking balls below the zone once ahead; don\u2019t feed him fastballs in hitter\u2019s counts."
+        },
+        {
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.273,
+          "weakness": "Lower xwOBA vs RHP (0.238).",
+          "how_to_pitch": "Use a right-hander and attack the edges rather than giving him a center-cut pitch."
+        },
+        {
+          "player_id": 694203,
+          "name": "Denzer Guzman",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.269,
+          "weakness": "Lower xwOBA vs RHP (0.254).",
+          "how_to_pitch": "A right-hander is preferable; keep the ball off the middle of the plate."
+        },
+        {
+          "player_id": 518595,
+          "name": "Travis d'Arnaud",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.244,
+          "weakness": "Lower xwOBA vs LHP (0.213); moderate overall sample.",
+          "how_to_pitch": "A left-hander is the better matchup; avoid predictable strikes."
+        }
+      ],
+      "summary": "Mike Trout and Zach Neto anchor the heart of the order, with Trout the clearest power threat; Neto is stronger by xwOBA against LHP (0.339) than RHP (0.298). The numbers favor a left-handed starter overall: Josh Lowe is notably weaker against LHP, though the right-handed Trout is productive against either hand."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 689546,
+          "name": "Nick Davila",
+          "status": "out",
+          "reason": "SC joint sprain."
+        },
+        {
+          "player_id": 806068,
+          "name": "Colt Emerson",
+          "status": "out",
+          "reason": "Left wrist tendon repair."
+        },
+        {
+          "player_id": 676106,
+          "name": "Emerson Hancock",
+          "status": "out",
+          "reason": "Left abductor strain."
+        },
+        {
+          "player_id": 680977,
+          "name": "Brendan Donovan",
+          "status": "out",
+          "reason": "Concussion."
+        },
+        {
+          "player_id": 666374,
+          "name": "Matt Brash",
+          "status": "out",
+          "reason": "Right lat strain."
+        },
+        {
+          "player_id": 670042,
+          "name": "Luke Raley",
+          "status": "out",
+          "reason": "Left forearm strain."
+        },
+        {
+          "player_id": 677961,
+          "name": "Cole Wilcox",
+          "status": "out",
+          "reason": "Left oblique strain."
+        },
+        {
+          "player_id": 669717,
+          "name": "Will Wilson",
+          "status": "out",
+          "reason": "Left thumb fracture."
+        },
+        {
+          "player_id": 688138,
+          "name": "Logan Evans",
+          "status": "out",
+          "reason": "Recovery from torn UCL in right arm."
+        },
+        {
+          "player_id": 662253,
+          "name": "Andr\u00e9s Mu\u00f1oz",
+          "status": "limited",
+          "reason": "pitched yesterday (14 pitches)"
+        },
+        {
+          "player_id": 642100,
+          "name": "Gabe Speier",
+          "status": "limited",
+          "reason": "pitched yesterday (19 pitches)"
+        },
+        {
+          "player_id": 622554,
+          "name": "Seranthony Dom\u00ednguez",
+          "status": "limited",
+          "reason": "pitched yesterday (18 pitches)"
+        },
+        {
+          "player_id": 672841,
+          "name": "Carlos Vargas",
+          "status": "limited",
+          "reason": "pitched yesterday (14 pitches)"
+        },
+        {
+          "player_id": 647304,
+          "name": "Josh Naylor",
+          "status": "rest_suggested",
+          "reason": "16 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 663728,
+          "name": "Cal Raleigh",
+          "status": "rest_suggested",
+          "reason": "10 straight starts; a rest day is suggested after 6 for catchers (2026 data)."
+        },
+        {
+          "player_id": 677594,
+          "name": "Julio Rodr\u00edguez",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 686527,
+          "name": "Dominic Canzone",
+          "status": "rest_suggested",
+          "reason": "16 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 641487,
+          "name": "J.P. Crawford",
+          "status": "rest_suggested",
+          "reason": "18 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Nine Mariners are on the injured list and unavailable. Andr\u00e9s Mu\u00f1oz, Gabe Speier, Seranthony Dom\u00ednguez, and Carlos Vargas are limited after pitching yesterday; no players were flagged cleared with caution."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Keep the catcher rest day: Jhonny Pereda has a listed expected xwOBA of 0.345 with a batter edge, while Cal Raleigh is at 0.278 with a pitcher edge; Pereda\u2019s pitch-group results are small samples.",
+        "Retain the core regulars despite rest suggestions: Randy Arozarena (0.302), Josh Naylor (0.307), Julio Rodr\u00edguez (0.314), J.P. Crawford (0.32), and Dominic Canzone (0.326) all have even matchup labels, and the plan places Canzone\u2019s .392 fastball result against Detmers\u2019 .332 allowed to lefties on fastballs.",
+        "Start left-hander Kade Anderson, the only ready option, and emphasize breaking balls against Mike Trout and Zach Neto; the pitching report gives their breaking-ball xwOBA as 0.161 and 0.175, respectively.",
+        "Use rested bullpen arms first and reserve limited Andr\u00e9s Mu\u00f1oz, Gabe Speier, Seranthony Dom\u00ednguez, and Carlos Vargas for need; Mu\u00f1oz is reserved for the highest-leverage outs if required."
+      ],
+      "keys_to_the_game": [
+        "Make Reid Detmers prove he can land the slider; avoid chasing his slider, which has a 35.3% whiff rate.",
+        "Hunt fastballs where the hitter plans call for them, and stay disciplined against breaking balls and changeups that generate swings and misses.",
+        "Anderson should vary breaking balls against Trout and Neto, while avoiding predictable fastballs to right-handed hitters.",
+        "Use rested relievers before the four arms limited after pitching yesterday, and keep Mu\u00f1oz for a truly high-leverage finish if needed."
+      ],
+      "summary": "Approved: the checker found no issues, and the plans align around the high-confidence Reid Detmers prediction, with the lineup built to attack his fastball while avoiding his breaking-ball chase threat. Start Kade Anderson with breaking-ball emphasis against Trout and Neto; preserve the rested bullpen options and limit reliance on relievers who pitched yesterday."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Make Detmers earn the slider; attack the fastball",
+      "message": "Reid Detmers is the high-confidence starter prediction. Hunt fastballs where planned, and make him prove he can land the slider before expanding: it has a 35.3% whiff rate. Stay disciplined against the changeup, which generates a 37.1% whiff rate. Pereda\u2019s pitch-group results are small samples; Canzone\u2019s fastball result is a promising plan-specific target. Watch rested relievers Ryan Watson, Jos\u00e9 Fermin, Ben Joyce, and Blake Weiman.",
+      "reminders": [
+        "Pereda gets the start at catcher; Cal Raleigh rests.",
+        "Canzone: look for fastballs; avoid chasing breaking balls.",
+        "Late defense: Victor Robles is available in the outfield."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Anderson leads; break the ball to Trout and Neto",
+      "message": "Kade Anderson starts as the only ready option, with a planning target of 5.0 innings and an 85-pitch limit. Prioritize breaking balls against Mike Trout and Zach Neto: their xwOBA against them is 0.161 and 0.175, respectively. Mix in changeups to Jose Siri when ahead, and avoid predictable fastballs to right-handed hitters. Anderson\u2019s vs-LHB sample is small, so do not overread those matchups. Use rested relievers first; reserve limited Andr\u00e9s Mu\u00f1oz for a truly high-leverage finish if needed.",
+      "reminders": [
+        "Eduard Bazardo is first choice for a high-leverage setup spot; Jos\u00e9 A. Ferrer is available for left-handed pockets.",
+        "Hoby Milner targets left-handed hitters; Cooper Criswell covers middle innings.",
+        "Michael Rucker provides length if Anderson exits early."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Approved plan: keep the regulars, preserve rested relief",
+      "message": "The approved lineup starts Jhonny Pereda at catcher and rests Cal Raleigh; retain the rest-suggested regulars despite even matchup labels, with rest moved to a weaker matchup. Detmers remains a high-confidence starter prediction; the hitting focus is fastballs and discipline against his slider and changeup. Start Kade Anderson, the only ready option, and emphasize breaking balls against Trout and Neto. Use rested bullpen arms before the four limited relievers, reserving Andr\u00e9s Mu\u00f1oz for the highest-leverage outs if needed. The doctor lists nine Mariners as out; do not use them.",
+      "reminders": [
+        "Keep the catcher rest day; Pereda\u2019s pitch-group results are small samples.",
+        "Rested relief options: Bazardo, Ferrer, Milner, Criswell, and Rucker.",
+        "Mu\u00f1oz, Speier, Dom\u00ednguez, and Vargas are limited after pitching yesterday."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 0,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 51.1,
+    "total": {
+      "model_steps": 18,
+      "gateway_cache_hits": 0,
+      "input_tokens": 96390,
+      "cached_tokens": 58437,
+      "output_tokens": 9459,
+      "cost_usd": 0.01349
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4613,
+        "cached_tokens": 3379,
+        "output_tokens": 444,
+        "seconds": 6.5,
+        "cost_usd": 0.00054
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 16101,
+        "cached_tokens": 9404,
+        "output_tokens": 2328,
+        "seconds": 14.7,
+        "cost_usd": 0.00269
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 13044,
+        "cached_tokens": 12666,
+        "output_tokens": 1553,
+        "seconds": 12.0,
+        "cost_usd": 0.00111
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 19283,
+        "cached_tokens": 13274,
+        "output_tokens": 1104,
+        "seconds": 10.0,
+        "cost_usd": 0.00202
+      },
+      "bench_coach": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 28708,
+        "cached_tokens": 19714,
+        "output_tokens": 3005,
+        "seconds": 21.3,
+        "cost_usd": 0.0037
+      },
+      "manager": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7227,
+        "cached_tokens": 0,
+        "output_tokens": 436,
+        "seconds": 3.7,
+        "cost_usd": 0.00166
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7414,
+        "cached_tokens": 0,
+        "output_tokens": 589,
+        "seconds": 4.6,
+        "cost_usd": 0.00178
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

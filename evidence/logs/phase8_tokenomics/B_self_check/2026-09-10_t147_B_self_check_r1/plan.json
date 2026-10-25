@@ -1,0 +1,1073 @@
+{
+  "run_id": "2026-09-10_t147_B_self_check_r1",
+  "status": "approved",
+  "game": {
+    "game_pk": 823499,
+    "season": 2026,
+    "game_date": "2026-09-10",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Yankee Stadium",
+    "team": "New York Yankees",
+    "team_id": 147,
+    "team_record_going_in": "83-62",
+    "opponent": "Colorado Rockies",
+    "opponent_id": 115,
+    "opponent_record_going_in": "55-90",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 663372,
+        "name": "Ryan Feltner"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 592450,
+          "name": "Aaron Judge",
+          "position": "RF",
+          "bats": "R",
+          "reason": "Best on-base profile here and a batter edge at expected_xwoba 0.374; look for fastballs."
+        },
+        {
+          "slot": 2,
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "position": "DH",
+          "bats": "L",
+          "reason": "Strong on-base and power profile; batter edge at expected_xwoba 0.377, especially against fastballs."
+        },
+        {
+          "slot": 3,
+          "player_id": 671277,
+          "name": "Luis Garc\u00eda Jr.",
+          "position": "1B",
+          "bats": "L",
+          "reason": "Left-handed power and batter edge at expected_xwoba 0.372; hunt breaking balls."
+        },
+        {
+          "slot": 4,
+          "player_id": 641355,
+          "name": "Cody Bellinger",
+          "position": "CF",
+          "bats": "L",
+          "reason": "Keep him in despite rest suggestion: clear batter edge, expected_xwoba 0.364; move his rest to a weaker matchup soon."
+        },
+        {
+          "slot": 5,
+          "player_id": 642708,
+          "name": "Amed Rosario",
+          "position": "3B",
+          "bats": "R",
+          "reason": "Even matchup at expected_xwoba 0.327; his moderate-sample xwoba_vs_RHP is 0.327."
+        },
+        {
+          "slot": 6,
+          "player_id": 682987,
+          "name": "Spencer Jones",
+          "position": "LF",
+          "bats": "L",
+          "reason": "Established season sample and batter edge at expected_xwoba 0.337; target fastballs and avoid offspeed."
+        },
+        {
+          "slot": 7,
+          "player_id": 669224,
+          "name": "Austin Wells",
+          "position": "C",
+          "bats": "L",
+          "reason": "Regular catcher with an even matchup at expected_xwoba 0.324; target fastballs."
+        },
+        {
+          "slot": 8,
+          "player_id": 683011,
+          "name": "Anthony Volpe",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Use his shortstop defense and on-base profile; matchup is even at expected_xwoba 0.298."
+        },
+        {
+          "slot": 9,
+          "player_id": 671218,
+          "name": "Heliot Ramos",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Even matchup at expected_xwoba 0.317; be ready for fastballs."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 641857,
+          "name": "Ryan McMahon",
+          "role": "utility",
+          "note": "Left-handed infield option; even matchup at expected_xwoba 0.332."
+        },
+        {
+          "player_id": 676609,
+          "name": "Jos\u00e9 Caballero",
+          "role": "pinch_runner",
+          "note": "Speed option and defensive replacement at shortstop or third base."
+        },
+        {
+          "player_id": 691176,
+          "name": "Jasson Dom\u00ednguez",
+          "role": "pinch_hitter",
+          "note": "Switch-hitter with an even matchup at expected_xwoba 0.333; breaking-ball split is small."
+        },
+        {
+          "player_id": 502671,
+          "name": "Paul Goldschmidt",
+          "role": "pinch_hitter",
+          "note": "Right-handed bat; pitcher edge at expected_xwoba 0.287."
+        },
+        {
+          "player_id": 645305,
+          "name": "Ali S\u00e1nchez",
+          "role": "backup_catcher",
+          "note": "Reserve catcher; matchup expected_xwoba 0.262, with small samples across splits."
+        },
+        {
+          "player_id": 806146,
+          "name": "George Lombard Jr.",
+          "role": "defensive_replacement",
+          "note": "Shortstop depth; his matchup is even at expected_xwoba 0.296."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "Late innings versus a right-handed reliever, with a left-handed starter's spot due and a key run needed.",
+          "bench_player_id": 691176,
+          "replaces_player_id": 671218,
+          "reason": "Switch-hitting bat provides a different look; his breaking-ball split is small, so keep the matchup uncertainty in mind."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning, tying or go-ahead run reaches base and speed matters.",
+          "bench_player_id": 676609,
+          "replaces_player_id": 669224,
+          "reason": "Use Caballero's speed to pressure the defense; replace him afterward with the backup catcher if needed."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead, especially if the game moves to shortstop or third base defense.",
+          "bench_player_id": 676609,
+          "replaces_player_id": 642708,
+          "reason": "Caballero supplies an available infield defensive option."
+        }
+      ],
+      "summary": "Ryan Feltner is the high-confidence assumed starter. Keep Bellinger in despite the rest suggestion because his matchup has a clear batter edge; schedule the rest for a weaker matchup. Spencer Jones starts in LF and Bellinger in CF to use each fielding position once."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 608331,
+        "name": "Max Fried",
+        "throws": "L",
+        "reason": "Best fit: Colorado's left-handed threats project at 0.292 (McCarthy), 0.287 (Rumfield), and 0.266 (Johnston), each below the 0.315 league xwOBA; Fried's xwOBA allowed is 0.248.",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 95,
+        "pitch_mix": [
+          {
+            "pitch": "cutter",
+            "vs_lhb_pct": 20.0,
+            "vs_rhb_pct": 22.0,
+            "purpose": "Change the fastball look; locate away from barrels."
+          },
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 22.0,
+            "vs_rhb_pct": 20.0,
+            "purpose": "Get ground balls and work inside."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 18.0,
+            "vs_rhb_pct": 17.0,
+            "purpose": "Elevate selectively and avoid predictable middle-zone fastballs."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 15.0,
+            "vs_rhb_pct": 14.0,
+            "purpose": "Primary breaking-ball weapon; keep it down."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 12.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Change speed below the zone, especially to right-handed hitters."
+          },
+          {
+            "pitch": "sweeper",
+            "vs_lhb_pct": 12.0,
+            "vs_rhb_pct": 11.0,
+            "purpose": "Expand away and induce chase."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 1.0,
+            "vs_rhb_pct": 1.0,
+            "purpose": "Occasional change of shape; limited sample."
+          }
+        ],
+        "keys": [
+          "Use breaking balls down to McCarthy and Rumfield; Fried allowed xwOBA 0.21 on breaking balls versus left-handed hitters.",
+          "Against Goodman, mix offspeed and breaking balls; Fried allowed xwOBA 0.22 on breaking balls and 0.254 on offspeed to right-handed hitters.",
+          "Do not let Goodman dictate with fastballs: his fastball xwOBA is 0.453; Fried's fastball usage against right-handed hitters is 59.8%.",
+          "Treat Veen's favorable matchup cautiously: his results versus LHP are flagged small sample."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 670280,
+          "name": "David Bednar",
+          "throws": "R",
+          "role": "closer",
+          "note": "Primary ninth-inning option; rested, with 32 saves."
+        },
+        {
+          "player_id": 687396,
+          "name": "Brent Headrick",
+          "throws": "L",
+          "role": "setup",
+          "note": "Main left-handed setup arm; rested, with 26 holds."
+        },
+        {
+          "player_id": 657612,
+          "name": "Tim Hill",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Use for left-handed pockets; available and rested."
+        },
+        {
+          "player_id": 642232,
+          "name": "Ryan Yarbrough",
+          "throws": "L",
+          "role": "long",
+          "note": "Available for length or multiple innings; rested."
+        },
+        {
+          "player_id": 670167,
+          "name": "John Schreiber",
+          "throws": "R",
+          "role": "setup",
+          "note": "Limited after pitching yesterday; use only if needed, and prefer rested arms first."
+        },
+        {
+          "player_id": 621112,
+          "name": "Paul Blackburn",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed, and prefer rested arms first."
+        },
+        {
+          "player_id": 605242,
+          "name": "Michael Fulmer",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed, and prefer rested arms first."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use Headrick for the key left-handed pocket, then Bednar to close; Hill can handle another left-handed matchup.",
+          "pitcher_ids": [
+            687396,
+            657612,
+            670280
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Deploy Headrick or Hill for the matchup, then Bednar if the game is still within reach; hold limited arms unless needed.",
+          "pitcher_ids": [
+            687396,
+            657612,
+            670280
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Use Yarbrough for length, then Blackburn if needed; save the leverage arms.",
+          "pitcher_ids": [
+            642232,
+            621112
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use Yarbrough to cover innings, with Fulmer only if needed; preserve the closer and setup arms.",
+          "pitcher_ids": [
+            642232,
+            605242
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Use Yarbrough for length, then Headrick and Bednar if the game becomes close; avoid limited arms unless necessary.",
+          "pitcher_ids": [
+            642232,
+            687396,
+            670280
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use Headrick and Hill for left-handed threats, then Bednar; limited relievers are last-resort options.",
+          "pitcher_ids": [
+            687396,
+            657612,
+            670280
+          ]
+        }
+      ],
+      "summary": "Start Fried for his stronger season line and favorable projections against several Colorado hitters. The plan leans on available rested arms late, with Schreiber, Blackburn, and Fulmer reserved for need because they are limited."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 663372,
+        "name": "Ryan Feltner",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [
+          "Mason Adams"
+        ],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 28.5,
+          "velo": 94.8,
+          "whiff_pct": 13.4,
+          "note": "His most-used single pitch; hitters have produced .421 xwOBA against it."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 23.2,
+          "velo": 89.1,
+          "whiff_pct": 26.5,
+          "note": "Gets the most whiffs among his main offerings; xwOBA allowed is .413."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 17.9,
+          "velo": 85.2,
+          "whiff_pct": 46.3,
+          "note": "His best swing-and-miss pitch, allowing .184 xwOBA; he uses it 28.0% against lefties."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 14.2,
+          "velo": 94.3,
+          "whiff_pct": 14.5,
+          "note": "A second fastball look; xwOBA allowed is .304."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 10.4,
+          "velo": 82.0,
+          "whiff_pct": 17.0,
+          "note": "Breaking-ball option with .350 xwOBA allowed; usage sample is moderate."
+        }
+      ],
+      "how_to_attack": [
+        "Lefties: look for fastballs or breaking balls; Feltner allows .414 xwOBA on fastballs and .489 on breaking balls to lefties.",
+        "Righties: be ready for fastballs and breaking balls; he uses them 47.5% and 46.3% of the time, respectively.",
+        "Do not give away the changeup: it has a 46.3% whiff rate and allows .184 xwOBA.",
+        "Make him work: he averages 81 pitches per start and 4.9 innings per start."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "expected_xwoba": 0.377,
+          "edge": "batter",
+          "note": "His .446 xwOBA against fastballs pairs well with Feltner's .414 allowed to lefties."
+        },
+        {
+          "player_id": 592450,
+          "name": "Aaron Judge",
+          "expected_xwoba": 0.374,
+          "edge": "batter",
+          "note": "He has .419 xwOBA against fastballs; Feltner allows .350 to righties."
+        },
+        {
+          "player_id": 671277,
+          "name": "Luis Garc\u00eda Jr.",
+          "expected_xwoba": 0.372,
+          "edge": "batter",
+          "note": "His .391 xwOBA against breaking balls matches up against .489 allowed to lefties."
+        },
+        {
+          "player_id": 641355,
+          "name": "Cody Bellinger",
+          "expected_xwoba": 0.364,
+          "edge": "batter",
+          "note": "His .391 xwOBA against breaking balls faces Feltner's .489 allowed to lefties; rest suggested after 10 straight starts."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 645305,
+          "name": "Ali S\u00e1nchez",
+          "expected_xwoba": 0.262,
+          "edge": "pitcher",
+          "note": "Small samples versus right-handed pitching and all pitch groups; treat the group splits cautiously."
+        },
+        {
+          "player_id": 502671,
+          "name": "Paul Goldschmidt",
+          "expected_xwoba": 0.287,
+          "edge": "pitcher",
+          "note": "His expected xwOBA is below league xwOBA .315, with a small sample versus offspeed."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 605447,
+          "name": "Jordan Romano",
+          "throws": "R",
+          "note": "Available and rested; leads this group with 15 saves."
+        },
+        {
+          "player_id": 677955,
+          "name": "Jaden Hill",
+          "throws": "R",
+          "note": "Available and rested; has 13 holds."
+        },
+        {
+          "player_id": 657514,
+          "name": "Brennan Bernardino",
+          "throws": "L",
+          "note": "Available and rested left-hander with 12 holds."
+        },
+        {
+          "player_id": 623474,
+          "name": "Jimmy Herget",
+          "throws": "R",
+          "note": "Available and rested; has 10 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "bats": "L",
+          "expected_xwoba": 0.377,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Sit fastball: you're at .446 against them and Feltner allows .414 to lefties. Lay off the changeup; he allows .184 on offspeed."
+        },
+        {
+          "player_id": 592450,
+          "name": "Aaron Judge",
+          "bats": "R",
+          "expected_xwoba": 0.374,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Look for fastballs: you're at .419 against them and he allows .350 to righties. Your .421 against breaking balls is another threat against his .334 allowed."
+        },
+        {
+          "player_id": 671277,
+          "name": "Luis Garc\u00eda Jr.",
+          "bats": "L",
+          "expected_xwoba": 0.372,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "offspeed",
+          "approach": "Hunt breaking balls: you're at .391 and he allows .489 to lefties. His offspeed allows .184, while you're at .252 against it."
+        },
+        {
+          "player_id": 641355,
+          "name": "Cody Bellinger",
+          "bats": "L",
+          "expected_xwoba": 0.364,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "offspeed",
+          "approach": "Hunt breaking balls: you're at .391 and he allows .489 to lefties. Avoid chasing offspeed; he allows .184, and you're at .281 against it. Rest is suggested after 10 straight starts."
+        },
+        {
+          "player_id": 682987,
+          "name": "Spencer Jones",
+          "bats": "L",
+          "expected_xwoba": 0.337,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Sit fastball: you're at .359 and Feltner allows .414 to lefties. Be disciplined on offspeed; he allows .184 and you're at .275 against it."
+        },
+        {
+          "player_id": 691176,
+          "name": "Jasson Dom\u00ednguez",
+          "bats": "L",
+          "expected_xwoba": 0.333,
+          "edge": "even",
+          "hunt": "breaking balls",
+          "beware": "offspeed",
+          "approach": "Look for breaking balls, where Feltner allows .489 to lefties; your .295 split is a small sample. His offspeed allows .184, and you're at .257."
+        },
+        {
+          "player_id": 641857,
+          "name": "Ryan McMahon",
+          "bats": "L",
+          "expected_xwoba": 0.332,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs: you're at .355 and Feltner allows .414 to lefties. Avoid offspeed; he allows .184 and you're at .259."
+        },
+        {
+          "player_id": 642708,
+          "name": "Amed Rosario",
+          "bats": "R",
+          "expected_xwoba": 0.327,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Look for fastballs: you're at .350 and Feltner allows .350 to righties. Offspeed is a small sample for you; he allows .184 to righties."
+        },
+        {
+          "player_id": 669224,
+          "name": "Austin Wells",
+          "bats": "L",
+          "expected_xwoba": 0.324,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Target fastballs: you're at .389 and Feltner allows .414 to lefties. His offspeed allows .184, while you're at .241 against it."
+        },
+        {
+          "player_id": 671218,
+          "name": "Heliot Ramos",
+          "bats": "R",
+          "expected_xwoba": 0.317,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Be ready for fastballs: Feltner uses them 47.5% to righties, and you have .310 against them. Your .252 offspeed split is a small sample."
+        },
+        {
+          "player_id": 676609,
+          "name": "Jos\u00e9 Caballero",
+          "bats": "R",
+          "expected_xwoba": 0.306,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .319 and Feltner allows .350 to righties. Your offspeed split is a small sample; be selective against breaking balls, where you're at .245."
+        },
+        {
+          "player_id": 683011,
+          "name": "Anthony Volpe",
+          "bats": "R",
+          "expected_xwoba": 0.298,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastball: Feltner uses it 47.5% to righties and allows .350; you're at .284. Your breaking-ball split is .231, so avoid expanding there."
+        },
+        {
+          "player_id": 806146,
+          "name": "George Lombard Jr.",
+          "bats": "R",
+          "expected_xwoba": 0.296,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Look for fastballs: Feltner uses them 47.5% to righties and allows .350; you're at .274. Your offspeed split is a small sample."
+        },
+        {
+          "player_id": 502671,
+          "name": "Paul Goldschmidt",
+          "bats": "R",
+          "expected_xwoba": 0.287,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: Feltner uses them 47.5% to righties and allows .350, while you're at .270. Your .224 against breaking balls is a tougher fit; offspeed is a small sample."
+        },
+        {
+          "player_id": 645305,
+          "name": "Ali S\u00e1nchez",
+          "bats": "R",
+          "expected_xwoba": 0.262,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "All your splits against right-handed pitching and each pitch group are small samples. Your fastball mark is .205 against his .350 allowed to righties; avoid overreading those numbers."
+        }
+      ],
+      "summary": "Ryan Feltner is the high-confidence expected starter, with Mason Adams the alternative; his season line includes a 5.82 ERA and 4.9 innings per start. Attack his fastballs and left-handed breaking-ball matchup, but respect the changeup. Cody Bellinger is available, though the Team Doctor suggests rest after 10 straight starts."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "position": "SS",
+          "bats": "S"
+        },
+        {
+          "slot": 3,
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 687859,
+          "name": "Troy Johnston",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 681393,
+          "name": "Connor Norby",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 691728,
+          "name": "Zac Veen",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 678662,
+          "name": "Ezequiel Tovar",
+          "position": "3B",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "position": "CF",
+          "bats": "S"
+        },
+        {
+          "slot": 3,
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 681393,
+          "name": "Connor Norby",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 687597,
+          "name": "Jordan Beck",
+          "position": "RF",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 691182,
+          "name": "Adael Amador",
+          "position": "3B",
+          "bats": "S"
+        },
+        {
+          "slot": 9,
+          "player_id": 678662,
+          "name": "Ezequiel Tovar",
+          "position": "SS",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.322,
+          "weakness": "Breaking balls (xwOBA 0.261); his split xwOBA is 0.334 vs LHP and 0.318 vs RHP.",
+          "how_to_pitch": "Favor breaking balls and keep them down; avoid predictable fastballs he handles well."
+        },
+        {
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.316,
+          "weakness": "More effective vs RHP (xwOBA 0.337) than LHP (0.287).",
+          "how_to_pitch": "Prefer a left-hander; change locations and make him prove he can handle breaking pitches."
+        },
+        {
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.322,
+          "weakness": "Breaking-ball xwOBA is 0.28; offspeed xwOBA is 0.251, with the offspeed sample flagged moderate.",
+          "how_to_pitch": "Use breaking balls and offspeed below the zone; avoid living on fastballs, which he hits hard."
+        },
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.335,
+          "weakness": "Breaking-ball xwOBA is 0.297 versus 0.36 on fastballs.",
+          "how_to_pitch": "Lean on breaking stuff rather than challenging him with fastballs; his split is better vs RHP (0.342) than LHP (0.319)."
+        },
+        {
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.277,
+          "weakness": "xwOBA is lower vs LHP (0.192) than RHP (0.301).",
+          "how_to_pitch": "Use a left-hander when possible and attack the zone; he has limited walk production (BB% 5.0)."
+        },
+        {
+          "player_id": 687859,
+          "name": "Troy Johnston",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.326,
+          "weakness": "xwOBA is lower vs LHP (0.268) than RHP (0.344).",
+          "how_to_pitch": "Favor a left-hander; vary pitches and avoid feeding fastballs in the middle."
+        },
+        {
+          "player_id": 681393,
+          "name": "Connor Norby",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.303,
+          "weakness": "More vulnerable vs RHP (xwOBA 0.293) than LHP (0.322); strikeouts 29.7%.",
+          "how_to_pitch": "A right-hander has the better split; challenge carefully and use breaking pitches to exploit swing-and-miss."
+        },
+        {
+          "player_id": 691728,
+          "name": "Zac Veen",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.301,
+          "weakness": "Small sample (50 PA); xwOBA vs LHP is 0.049, but treat that split cautiously.",
+          "how_to_pitch": "A left-hander is the matchup to try; keep breaking pitches down and do not over-trust the small split sample."
+        },
+        {
+          "player_id": 678662,
+          "name": "Ezequiel Tovar",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.275,
+          "weakness": "xwOBA is lower vs LHP (0.245) than RHP (0.288), with OBP 0.257.",
+          "how_to_pitch": "Prefer a left-hander and make him earn a base; avoid giving him a hittable first-pitch strike."
+        },
+        {
+          "player_id": 687597,
+          "name": "Jordan Beck",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.243,
+          "weakness": "Moderate sample; xwOBA vs RHP is 0.205 versus 0.277 vs LHP.",
+          "how_to_pitch": "A right-hander has the better split; stay ahead and make him handle breaking pitches."
+        },
+        {
+          "player_id": 691182,
+          "name": "Adael Amador",
+          "bats": "S",
+          "threat": "low",
+          "xwoba": 0.273,
+          "weakness": "Small sample (37 PA); split xwOBA is 0.331 vs LHP and 0.234 vs RHP.",
+          "how_to_pitch": "A right-hander is the matchup to try, but treat the small-sample split cautiously."
+        }
+      ],
+      "summary": "Goodman, Rumfield and McCarthy are the central threats; Goodman brings the strongest power, while McCarthy can pressure the bases. The overall split pattern favors a left-handed starter against several left-handed hitters, though the switch-hitter Carrigg has been better vs RHP; use breaking balls against McCarthy, Goodman and Rumfield."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 663757,
+          "name": "Trent Grisham",
+          "status": "out",
+          "reason": "Right hamstring strain."
+        },
+        {
+          "player_id": 665645,
+          "name": "Kervin Castro",
+          "status": "out",
+          "reason": "Right elbow neuritis."
+        },
+        {
+          "player_id": 518585,
+          "name": "Fernando Cruz",
+          "status": "out",
+          "reason": "Right elbow discomfort."
+        },
+        {
+          "player_id": 519317,
+          "name": "Giancarlo Stanton",
+          "status": "out",
+          "reason": "Right calf strain."
+        },
+        {
+          "player_id": 677960,
+          "name": "Ryan Weathers",
+          "status": "out",
+          "reason": "Left forearm flexor strain."
+        },
+        {
+          "player_id": 657376,
+          "name": "Clarke Schmidt",
+          "status": "out",
+          "reason": "Right forearm tightness."
+        },
+        {
+          "player_id": 670167,
+          "name": "John Schreiber",
+          "status": "limited",
+          "reason": "pitched yesterday (15 pitches)"
+        },
+        {
+          "player_id": 621112,
+          "name": "Paul Blackburn",
+          "status": "limited",
+          "reason": "pitched yesterday (11 pitches)"
+        },
+        {
+          "player_id": 605242,
+          "name": "Michael Fulmer",
+          "status": "limited",
+          "reason": "pitched yesterday (14 pitches)"
+        },
+        {
+          "player_id": 641355,
+          "name": "Cody Bellinger",
+          "status": "rest_suggested",
+          "reason": "10 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Six players are on the injured list and unavailable. John Schreiber, Paul Blackburn, and Michael Fulmer are limited after pitching yesterday; no players were flagged for cleared-with-caution status."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Start Max Fried: his xwOBA allowed is 0.248, and the left-handed Colorado threats are projected at 0.292 (McCarthy), 0.287 (Rumfield), and 0.266 (Johnston).",
+        "Use breaking balls down against McCarthy and Rumfield; Fried allowed xwOBA 0.21 on breaking balls versus left-handed hitters.",
+        "Keep Cody Bellinger in the lineup despite the rest suggestion: his expected_xwoba is 0.364 and scouting identifies a batter edge against Feltner. He is available, though rest is suggested after 10 straight starts.",
+        "Attack Ryan Feltner's fastballs and left-handed breaking-ball matchup, but stay disciplined against his changeup, which has a 46.3% whiff rate and allows .184 xwOBA.",
+        "Lean on rested late-inning arms and reserve John Schreiber, Paul Blackburn, and Michael Fulmer because they are limited after pitching yesterday."
+      ],
+      "keys_to_the_game": [
+        "Make Feltner work; he averages 81 pitches per start and 4.9 innings per start.",
+        "Do not chase Feltner's changeup; it has a 46.3% whiff rate and allows .184 xwOBA.",
+        "Keep Goodman from sitting on fastballs; vary breaking balls and offspeed below the zone.",
+        "Use Headrick and Hill for left-handed pockets, with Bednar as the primary ninth-inning option.",
+        "Treat Veen's favorable split against left-handed pitching cautiously because the sample is small."
+      ],
+      "summary": "The plan fits the high-confidence expectation that Ryan Feltner starts: put the strongest matchup bats in the lineup and work counts without chasing his changeup. Max Fried is a strong fit against Colorado's left-handed threats; use rested leverage arms late and keep the limited relievers for need. Checker issues: none."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Make Feltner work\u2014attack the right pitches",
+      "message": "Ryan Feltner is the high-confidence expected starter; Mason Adams is the alternative. Look for fastballs, and lefties can attack breaking balls. Stay disciplined against the changeup: it has a 46.3% whiff rate and allows .184 xwOBA. Make him work\u2014he averages 81 pitches per start and 4.9 innings per start. Ben Rice, Aaron Judge, Luis Garc\u00eda Jr., and Cody Bellinger have batter edges; Bellinger starts despite a rest suggestion. Watch Jordan Romano, Jaden Hill, Brennan Bernardino, and Jimmy Herget in their bullpen.",
+      "reminders": [
+        "Hunt fastballs; lefties can look for breaking balls.",
+        "Do not chase Feltner\u2019s changeup.",
+        "Work counts and make him labor."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Fried sets the tone; trust the rested leverage arms",
+      "message": "Max Fried starts, with a 95 pitch-count limit and a planning target of 6.0 innings. Keep breaking balls down to Jake McCarthy and TJ Rumfield; vary breaking balls and offspeed below the zone against Hunter Goodman instead of letting him sit on fastballs. Treat Zac Veen\u2019s favorable split against left-handed pitching cautiously; the sample is small. In a close late game, use Brent Headrick or Tim Hill for left-handed pockets and David Bednar as the primary ninth-inning option. Ryan Yarbrough is available for length. John Schreiber, Paul Blackburn, and Michael Fulmer are limited after pitching yesterday; save them for need.",
+      "reminders": [
+        "Keep breaking balls down to McCarthy and Rumfield.",
+        "Vary pitches to Goodman; do not let him sit fastball.",
+        "Prefer rested arms; limited relievers are for need."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Execute the approved matchup plan and manage availability",
+      "message": "Keep Cody Bellinger in the lineup despite the rest suggestion; his expected_xwoba is 0.364 and scouting identifies a batter edge against Ryan Feltner. The starter prediction is high confidence, with Mason Adams the alternative. Fried is set for a 95 pitch-count limit and a 6.0-inning planning target. Lean on rested late-inning arms, with Headrick and Hill for left-handed pockets and Bednar as the primary ninth-inning option. Schreiber, Blackburn, and Fulmer are limited after pitching yesterday. Trent Grisham, Kervin Castro, Fernando Cruz, Giancarlo Stanton, Ryan Weathers, and Clarke Schmidt are out.",
+      "reminders": [
+        "Keep Bellinger in; schedule rest for a weaker matchup.",
+        "Use rested leverage arms before limited relievers.",
+        "Keep all listed out players unavailable."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 0,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 49.9,
+    "total": {
+      "model_steps": 19,
+      "gateway_cache_hits": 0,
+      "input_tokens": 112100,
+      "cached_tokens": 63020,
+      "output_tokens": 8863,
+      "cost_usd": 0.01551
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4222,
+        "cached_tokens": 2988,
+        "output_tokens": 338,
+        "seconds": 5.2,
+        "cost_usd": 0.00048
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 20724,
+        "cached_tokens": 10522,
+        "output_tokens": 2427,
+        "seconds": 18.2,
+        "cost_usd": 0.00346
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 12947,
+        "cached_tokens": 12569,
+        "output_tokens": 1684,
+        "seconds": 13.1,
+        "cost_usd": 0.00117
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 18614,
+        "cached_tokens": 8023,
+        "output_tokens": 1262,
+        "seconds": 12.2,
+        "cost_usd": 0.00291
+      },
+      "bench_coach": {
+        "calls": 1,
+        "model_steps": 5,
+        "gateway_cache_hits": 0,
+        "input_tokens": 41135,
+        "cached_tokens": 28918,
+        "output_tokens": 2164,
+        "seconds": 17.4,
+        "cost_usd": 0.0041
+      },
+      "manager": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7145,
+        "cached_tokens": 0,
+        "output_tokens": 402,
+        "seconds": 3.9,
+        "cost_usd": 0.00163
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7313,
+        "cached_tokens": 0,
+        "output_tokens": 586,
+        "seconds": 4.9,
+        "cost_usd": 0.00176
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

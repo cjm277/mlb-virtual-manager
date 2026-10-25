@@ -26,7 +26,7 @@ from functools import lru_cache
 from typing import Any, Callable
 
 from pydantic import BaseModel
-from pydantic_ai import Agent, RunContext
+from pydantic_ai import Agent, ModelRetry, RunContext
 from pydantic_ai.exceptions import UsageLimitExceeded
 from pydantic_ai.messages import BaseToolCallPart, TextPart
 from pydantic_ai.usage import RunUsage
@@ -120,6 +120,22 @@ def build_agent(name: str) -> Agent:
         if ctx.deps.notes:
             lines.append(f"<manager_notes>\n{clean_notes(ctx.deps.notes)}\n</manager_notes>")
         return "\n".join(lines)
+
+    if name in FIXABLE:
+        @agent.output_validator
+        def self_check(ctx: RunContext[PlanDeps], output: Any) -> Any:
+            """Run the code checker on this agent's part before it is handed in. A rule break goes back to the
+            same agent as a retry (one more step in its own loop) instead of costing a whole fix round."""
+            check = ctx.deps.self_check
+            if check is None or ctx.retry >= min(config.SELF_CHECK_RETRIES, ctx.max_retries - 1):
+                return output
+            problems = check(name, output)
+            if problems:
+                ctx.deps.audit.log("self_check", agent=name, retry=ctx.retry, issues=problems)
+                bullets = "\n".join(f"- {p}" for p in problems)
+                raise ModelRetry(f"The code checker found problems in your output:\n{bullets}\n"
+                                 "Fix them and return the complete corrected output.")
+            return output
 
     return agent
 
@@ -273,6 +289,21 @@ def _tasks(r: dict) -> dict[str, str]:
 # The whole run
 # ---------------------------------------------------------------------------
 
+RESULT_KEY = {"team_doctor": "medical", "scout_pitchers": "scout_pitchers", "scout_hitters": "scout_hitters",
+              "pitching_coach": "pitching", "bench_coach": "lineup"}
+
+
+def make_self_check(game_pk: int, team_id: int, opponent_id: int, r: dict, ledger: list) -> Callable[[str, Any], list[str]]:
+    """The checker's problems with one agent's output, judged against what that agent was given (the Team
+    Doctor's report, plus the scouts' predicted starter for the Bench Coach)."""
+    def self_check(name: str, output: BaseModel) -> list[str]:
+        parts = {"medical": r["medical"], "scout_pitchers": r["scout_pitchers"] if name == "bench_coach" else None,
+                 "scout_hitters": None, "pitching": None, "lineup": None}
+        parts[RESULT_KEY[name]] = output
+        return [i.message for i in check_plan(game_pk, team_id, opponent_id, ledger=ledger, **parts) if i.owner == name]
+    return self_check
+
+
 def new_run_id(game_pk: int, team_id: int) -> str:
     ctx = tools.get_game_context(game_pk, team_id)
     our, opp = team_info(team_id)["abbrev"], team_info(ctx["opponent_id"])["abbrev"]
@@ -297,13 +328,15 @@ async def build_game_plan(game_pk: int, team_id: int, notes: str | None = None,
 
     r: dict[str, Any] = {"medical": None, "scout_pitchers": None, "scout_hitters": None,
                          "pitching": None, "lineup": None, "review": None, "comms": None}
-    key = {"team_doctor": "medical", "scout_pitchers": "scout_pitchers", "scout_hitters": "scout_hitters",
-           "pitching_coach": "pitching", "bench_coach": "lineup"}
+    key = RESULT_KEY
     issues: list[Issue] = []
     status, rounds = "incomplete", 0
 
     async def call(name: str, task: str) -> Any:
         return await run_agent(name, task, deps, usage, tally)
+
+    if config.SELF_CHECK_RETRIES > 0:
+        deps.self_check = make_self_check(game_pk, team_id, ctx["opponent_id"], r, deps.ledger)
 
     try:
         r["medical"] = await call("team_doctor", _tasks(r)["team_doctor"])

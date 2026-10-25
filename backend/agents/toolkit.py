@@ -15,7 +15,7 @@ from typing import Any, Callable, Literal
 
 from pydantic_ai import ModelRetry, RunContext
 
-from backend import tools
+from backend import config, tools
 from backend.audit import Audit, preview
 
 Side = Literal["us", "opponent"]
@@ -32,6 +32,8 @@ class PlanDeps:
     notes: str | None = None
     agent: str = ""
     ledger: list[Any] = field(default_factory=list)
+    # (agent name, its output) -> the code checker's problems with it; set by build_game_plan (see team.py)
+    self_check: Callable[[str, Any], list[str]] | None = None
 
 
 def _call(ctx: RunContext[PlanDeps], name: str, args: dict, fn: Callable[[], Any]) -> Any:
@@ -112,11 +114,42 @@ def pitcher_profile(ctx: RunContext[PlanDeps], player_id: int) -> dict:
                  lambda: tools.get_pitcher_profile(d.game_pk, player_id))
 
 
-def matchups(ctx: RunContext[PlanDeps], pitcher_id: int, batter_ids: list[int]) -> list[dict]:
-    """Score up to 15 batters against one pitcher: expected xwOBA vs league, who has the edge, and why."""
+def compact_matchups(rows: list[dict]) -> dict:
+    """The same numbers as tools.get_matchups, without repeating the pitcher on every row. The pitcher's usage
+    and xwOBA allowed per pitch group depend only on which side the batter hits from, so they are listed once
+    per side; each batter keeps his own xwOBA per pitch group. About 40% fewer characters for a full lineup."""
+    if not rows:
+        return {"batters": []}
+    first = rows[0]
+    by_side: dict[str, dict] = {}
+    batters = []
+    for m in rows:
+        by_side.setdefault(m["bats"], {
+            "pitcher_k_pct": m["pitcher_k_pct_vs_side"],
+            "pitch_groups": {g: {"usage_pct": v["pitcher_usage_pct"], "xwoba_allowed": v["pitcher_xwoba_allowed"]}
+                             for g, v in m["by_pitch_group"].items()}})
+        b = {"batter": m["batter"], "batter_id": m["batter_id"], "bats": m["bats"],
+             "platoon_advantage": m["platoon_advantage"], "expected_xwoba": m["expected_xwoba"], "edge": m["edge"],
+             "k_pct_vs_hand": m["batter_k_pct_vs_hand"],
+             "by_pitch_group": {g: v["batter_xwoba"] for g, v in m["by_pitch_group"].items()},
+             "hunt_pitch": m["hunt_pitch"], "beware_pitch": m["beware_pitch"]}
+        if m["flags"]:
+            b["flags"] = m["flags"]
+        batters.append(b)
+    return {"pitcher": first["pitcher"], "pitcher_id": first["pitcher_id"], "throws": first["throws"],
+            "league_xwoba": first["league_xwoba"],
+            "pitcher_vs_batter_side": {f"vs_{s}HB": v for s, v in sorted(by_side.items())},
+            "batters": batters}
+
+
+def matchups(ctx: RunContext[PlanDeps], pitcher_id: int, batter_ids: list[int]) -> list[dict] | dict:
+    """Score up to 15 batters against one pitcher: expected xwOBA vs league, who has the edge, and why.
+    The pitcher's usage and xwOBA allowed per pitch group are under pitcher_vs_batter_side (vs_LHB / vs_RHB);
+    each batter's by_pitch_group is his own xwOBA against each group."""
     d = ctx.deps
+    shape = compact_matchups if config.COMPACT_MATCHUPS else (lambda rows: rows)
     return _call(ctx, "matchups", {"pitcher_id": pitcher_id, "batter_ids": batter_ids},
-                 lambda: tools.get_matchups(d.game_pk, pitcher_id, batter_ids))
+                 lambda: shape(tools.get_matchups(d.game_pk, pitcher_id, batter_ids)))
 
 
 ALL_TOOLS = {f.__name__: f for f in (game_context, roster_and_injuries, bullpen_status, hitters_overview,

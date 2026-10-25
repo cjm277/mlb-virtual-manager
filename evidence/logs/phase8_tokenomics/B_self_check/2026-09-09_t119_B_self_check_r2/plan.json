@@ -1,0 +1,1085 @@
+{
+  "run_id": "2026-09-09_t119_B_self_check_r2",
+  "status": "needs_human_review",
+  "game": {
+    "game_pk": 823900,
+    "season": 2026,
+    "game_date": "2026-09-09",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "UNIQLO Field at Dodger Stadium",
+    "team": "Los Angeles Dodgers",
+    "team_id": 119,
+    "team_record_going_in": "88-57",
+    "opponent": "Cincinnati Reds",
+    "opponent_id": 113,
+    "opponent_record_going_in": "69-76",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 695076,
+        "name": "Rhett Lowder"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "position": "1B",
+          "bats": "L",
+          "reason": "Top on-base option with a batter edge at 0.374; hunt fastballs and stay off the changeup."
+        },
+        {
+          "slot": 2,
+          "player_id": 669257,
+          "name": "Will Smith",
+          "position": "C",
+          "bats": "R",
+          "reason": "Strong on-base profile with a batter edge at 0.341; hunt fastballs, and his offspeed sample is small."
+        },
+        {
+          "slot": 3,
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "position": "3B",
+          "bats": "L",
+          "reason": "Power bat with a batter edge at 0.368; his fastball xwOBA is 0.449."
+        },
+        {
+          "slot": 4,
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "position": "RF",
+          "bats": "L",
+          "reason": "Power threat with a batter edge at 0.348; look for fastballs."
+        },
+        {
+          "slot": 5,
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Everyday shortstop; matchup is even at 0.304, so hunt fastballs and avoid breaking balls."
+        },
+        {
+          "slot": 6,
+          "player_id": 676439,
+          "name": "Hunter Feduccia",
+          "position": "DH",
+          "bats": "L",
+          "reason": "Batter edge at 0.345; target fastballs and avoid making breaking balls the target."
+        },
+        {
+          "slot": 7,
+          "player_id": 690976,
+          "name": "Alex Freeland",
+          "position": "2B",
+          "bats": "S",
+          "reason": "Batter edge at 0.337; starts at second base, and his offspeed mark is 0.279 against 0.314 allowed."
+        },
+        {
+          "slot": 8,
+          "player_id": 669743,
+          "name": "Alex Call",
+          "position": "CF",
+          "bats": "R",
+          "reason": "Has center-field starts; matchup is a pitcher edge at 0.285, but his on-base profile supports the bottom of the order."
+        },
+        {
+          "slot": 9,
+          "player_id": 500743,
+          "name": "Miguel Rojas",
+          "position": "LF",
+          "bats": "R",
+          "reason": "Even matchup at 0.301; he has not started in left field this season, so this position is not supported by his starts."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "role": "pinch_hitter",
+          "note": "Resting after 13 straight starts; matchup is even at 0.302."
+        },
+        {
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "role": "utility",
+          "note": "Resting after 17 straight starts; matchup is a batter edge at 0.337, so move his rest to a weaker matchup soon."
+        },
+        {
+          "player_id": 571771,
+          "name": "Enrique Hern\u00e1ndez",
+          "role": "defensive_replacement",
+          "note": "Third-base defensive option; matchup samples versus right-handed pitching and across pitch groups are small."
+        },
+        {
+          "player_id": 672613,
+          "name": "Eliezer Alfonzo",
+          "role": "backup_catcher",
+          "note": "Backup catcher; matchup samples versus right-handed pitching and across pitch groups are small."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "Late innings with a key run-scoring chance against a right-handed reliever",
+          "bench_player_id": 606192,
+          "replaces_player_id": 669743,
+          "reason": "Use Teoscar for a late chance after his planned rest; his starter matchup was even at 0.302."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning with the tying or go-ahead run on base for a slower runner",
+          "bench_player_id": 669242,
+          "replaces_player_id": 571970,
+          "reason": "Edman offers a fresh running option after resting; he has a batter edge at 0.337 against the starter."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead; replace Muncy at third base",
+          "bench_player_id": 571771,
+          "replaces_player_id": 571970,
+          "reason": "Enrique Hern\u00e1ndez has started at third and can take over there defensively."
+        }
+      ],
+      "summary": "Rhett Lowder is the high-confidence assumed starter. Rest Edman despite his batter edge at 0.337, and use Freeland at second as requested; rest Teoscar against an even 0.302 matchup. Call has center-field starts, so he replaces Rojas there; Rojas is placed at left field, where the available starts data do not support him, and the lineup positions are therefore not fully supported."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 808967,
+        "name": "Yoshinobu Yamamoto",
+        "throws": "R",
+        "reason": "Ready with six days' rest; matchup results favor him against several right-handed bats, including Matt McLain (0.275 expected xwOBA) and Eugenio Su\u00e1rez (0.27).",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 100,
+        "pitch_mix": [
+          {
+            "pitch": "splitter",
+            "vs_lhb_pct": 31.0,
+            "vs_rhb_pct": 23.0,
+            "purpose": "Change speeds and finish below the zone."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 29.0,
+            "vs_rhb_pct": 28.0,
+            "purpose": "Establish strikes; do not become predictable to De La Cruz."
+          },
+          {
+            "pitch": "cutter",
+            "vs_lhb_pct": 15.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Change fastball look and work in on right-handers."
+          },
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 10.0,
+            "vs_rhb_pct": 12.0,
+            "purpose": "Get early-count ground contact."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 10.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Change eye level and finish at the edge."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 5.0,
+            "vs_rhb_pct": 7.0,
+            "purpose": "Use sparingly as a chase option."
+          }
+        ],
+        "keys": [
+          "De La Cruz hunts fastballs (0.405 xwOBA against the group); expand with breaking balls when ahead.",
+          "Keep the splitter in the plan against Bleday and Stephenson; it is Yamamoto's offspeed group.",
+          "Attack Su\u00e1rez with offspeed: his matchup expected xwOBA is 0.27, and he has a 33.0 batter strikeout rate versus right-handed pitching.",
+          "Do not overread Rodr\u00edguez's breaking-ball numbers; his sample against breaking balls is small."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 681911,
+          "name": "Alex Vesia",
+          "throws": "L",
+          "role": "setup",
+          "note": "Available and rested; use for a key left-handed pocket or bridge to the late innings."
+        },
+        {
+          "player_id": 676263,
+          "name": "Jack Dreyer",
+          "throws": "L",
+          "role": "middle",
+          "note": "Available; use to cover left-handed hitters or a middle-inning bridge."
+        },
+        {
+          "player_id": 592779,
+          "name": "Brock Stewart",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available and rested; use for right-handed leverage or a clean inning."
+        },
+        {
+          "player_id": 595014,
+          "name": "Blake Treinen",
+          "throws": "R",
+          "role": "setup",
+          "note": "Available and rested; deploy in high-leverage innings ahead of the closer."
+        },
+        {
+          "player_id": 623465,
+          "name": "Evan Phillips",
+          "throws": "R",
+          "role": "setup",
+          "note": "Available; reserve for a high-leverage inning, especially if Treinen has already worked."
+        },
+        {
+          "player_id": 678020,
+          "name": "Seth Halvorsen",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available and rested; cover a middle inning or extend the bridge."
+        },
+        {
+          "player_id": 656945,
+          "name": "Tanner Scott",
+          "throws": "L",
+          "role": "closer",
+          "note": "Leads the staff with 22 saves; limited after pitching yesterday, so use only if needed."
+        },
+        {
+          "player_id": 683618,
+          "name": "Edgardo Henriquez",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed, preferably for a short assignment."
+        },
+        {
+          "player_id": 605483,
+          "name": "Blake Snell",
+          "throws": "L",
+          "role": "long",
+          "note": "Available to provide length if the starter exits early."
+        },
+        {
+          "player_id": 686218,
+          "name": "Emmet Sheehan",
+          "throws": "R",
+          "role": "long",
+          "note": "Not ready to start after one day of rest; available as emergency length only."
+        },
+        {
+          "player_id": 607192,
+          "name": "Tyler Glasnow",
+          "throws": "R",
+          "role": "unavailable",
+          "note": "Not ready to start after three days of rest; do not use in relief."
+        },
+        {
+          "player_id": 669373,
+          "name": "Tarik Skubal",
+          "throws": "L",
+          "role": "unavailable",
+          "note": "Not ready to start after pitching yesterday; do not use in relief."
+        },
+        {
+          "player_id": 680736,
+          "name": "Justin Wrobleski",
+          "throws": "L",
+          "role": "unavailable",
+          "note": "Not ready to start after two days of rest; do not use in relief."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use rested arms to reach the ninth; save limited Tanner Scott for a must-have save situation.",
+          "pitcher_ids": [
+            592779,
+            681911,
+            595014,
+            623465,
+            656945
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use high-leverage arms by matchup; hold Scott unless the game turns into a save-level spot.",
+          "pitcher_ids": [
+            681911,
+            595014,
+            623465,
+            592779
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Preserve the leverage arms and let available middle relievers cover the final innings.",
+          "pitcher_ids": [
+            678020,
+            676263,
+            592779
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use length first and avoid spending the high-leverage bullpen.",
+          "pitcher_ids": [
+            605483,
+            686218,
+            678020
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Use Snell for length, then bridge with rested relievers; avoid limited arms unless needed.",
+          "pitcher_ids": [
+            605483,
+            678020,
+            676263,
+            592779
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use rested high-leverage relievers first; limited Scott and Henriquez are emergency choices only.",
+          "pitcher_ids": [
+            595014,
+            623465,
+            681911,
+            592779,
+            656945,
+            683618
+          ]
+        }
+      ],
+      "summary": "Start Yamamoto: he is ready and offers a strong route through the Reds' right-handed bats. Keep Scott and Henriquez in reserve after yesterday's work; lean on rested relievers before either."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 695076,
+        "name": "Rhett Lowder",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "sinker",
+          "usage_pct": 29.1,
+          "velo": 93.0,
+          "whiff_pct": 6.9,
+          "note": "His most-used pitch; it has produced contact more often than swings and misses."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 26.5,
+          "velo": 85.0,
+          "whiff_pct": 31.6,
+          "note": "His best swing-and-miss pitch; avoid expanding the zone against it."
+        },
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 21.2,
+          "velo": 93.6,
+          "whiff_pct": 12.5,
+          "note": "A frequent fastball; stay ready to hit it early."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 20.6,
+          "velo": 86.4,
+          "whiff_pct": 24.6,
+          "note": "His changeup can miss bats; track it rather than chasing below the zone."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 2.6,
+          "velo": 80.6,
+          "whiff_pct": 11.8,
+          "note": "An occasional pitch; the sample is moderate."
+        }
+      ],
+      "how_to_attack": [
+        "Left-handed hitters: look for fastballs; Lowder uses them 50.4% of the time and allows 0.399 xwOBA against them.",
+        "Right-handed hitters: look for fastballs; he uses them 50.2% of the time and allows 0.362 xwOBA against them.",
+        "Left-handed hitters can be patient against the changeup: he allows 0.314 xwOBA against offspeed, compared with 0.399 against fastballs.",
+        "Right-handed hitters should avoid giving away at-bats on breaking balls: Lowder allows 0.267 xwOBA against them and gets a 31.6% whiff rate on his slider.",
+        "Lowder has a 5.43 ERA and 47 walks; take competitive pitches and make him work."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "expected_xwoba": 0.374,
+          "edge": "batter",
+          "note": "Fastballs are a good target: Freeman has a 0.405 xwOBA against them, and Lowder allows 0.399 to lefties."
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "expected_xwoba": 0.368,
+          "edge": "batter",
+          "note": "His 0.449 xwOBA against fastballs gives him a strong target against Lowder's 50.4% fastball usage to lefties."
+        },
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "expected_xwoba": 0.348,
+          "edge": "batter",
+          "note": "He has a 0.365 xwOBA against fastballs, the group Lowder uses most against lefties."
+        },
+        {
+          "player_id": 676439,
+          "name": "Hunter Feduccia",
+          "expected_xwoba": 0.345,
+          "edge": "batter",
+          "note": "His 0.386 xwOBA against fastballs lines up with Lowder's most-used group to lefties."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 571771,
+          "name": "Enrique Hern\u00e1ndez",
+          "expected_xwoba": 0.267,
+          "edge": "pitcher",
+          "note": "Small samples across all pitch groups and versus right-handed pitching; his group results are uncertain."
+        },
+        {
+          "player_id": 672613,
+          "name": "Eliezer Alfonzo",
+          "expected_xwoba": 0.264,
+          "edge": "pitcher",
+          "note": "Small samples versus right-handed pitching and across all pitch groups make his matchup read uncertain."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 641941,
+          "name": "Emilio Pag\u00e1n",
+          "throws": "R",
+          "note": "Available and rested; leads this group with 22 saves."
+        },
+        {
+          "player_id": 656271,
+          "name": "Brock Burke",
+          "throws": "L",
+          "note": "Available and rested; has 18 holds and gives Cincinnati a left-handed option."
+        },
+        {
+          "player_id": 663574,
+          "name": "Tony Santillan",
+          "throws": "R",
+          "note": "Available and rested; has 11 holds."
+        },
+        {
+          "player_id": 622088,
+          "name": "Tejay Antone",
+          "throws": "R",
+          "note": "Available and rested; has 9 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "bats": "L",
+          "expected_xwoba": 0.374,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at 0.405 against them, and he allows 0.399 to lefties. His offspeed numbers are closer\u20140.349 for you and 0.314 allowed\u2014so don't chase the changeup."
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "bats": "L",
+          "expected_xwoba": 0.368,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: your 0.449 xwOBA against them tops your groups, and he allows 0.399 to lefties. Lay off offspeed early; your mark is 0.276 against a 0.314 allowed mark."
+        },
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "bats": "L",
+          "expected_xwoba": 0.348,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at 0.365 against them, and he allows 0.399 to lefties. Your offspeed mark is 0.268 against 0.314 allowed, so make him prove he can land it."
+        },
+        {
+          "player_id": 676439,
+          "name": "Hunter Feduccia",
+          "bats": "L",
+          "expected_xwoba": 0.345,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your 0.386 xwOBA is close to his 0.399 allowed to lefties. Your breaking-ball mark is 0.146 despite his 0.372 allowed, so avoid making that your target."
+        },
+        {
+          "player_id": 669257,
+          "name": "Will Smith",
+          "bats": "R",
+          "expected_xwoba": 0.341,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at 0.499 against them, while he allows 0.362 to righties. Your breaking-ball mark is 0.211 against 0.267 allowed; his offspeed is used 11.9% of the time, and your offspeed sample is small."
+        },
+        {
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "bats": "S",
+          "expected_xwoba": 0.337,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Hunt fastballs: Lowder uses them 50.4% of the time to lefties and allows 0.399; your mark against them is 0.289. You're rest-suggested after 17 straight starts, so account for that when deciding whether to play."
+        },
+        {
+          "player_id": 690976,
+          "name": "Alex Freeland",
+          "bats": "S",
+          "expected_xwoba": 0.337,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at 0.336 against them, and he allows 0.399 to lefties. Your offspeed mark is 0.279 against 0.314 allowed, so stay disciplined on it."
+        },
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "bats": "R",
+          "expected_xwoba": 0.304,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your 0.356 xwOBA is near his 0.362 allowed to righties. Your breaking-ball mark is 0.271 against 0.267 allowed; offspeed results are a small sample."
+        },
+        {
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "bats": "R",
+          "expected_xwoba": 0.302,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at 0.341 against them, and he allows 0.362 to righties. Your breaking-ball mark is 0.210 against 0.267 allowed; you're rest-suggested after 13 straight starts."
+        },
+        {
+          "player_id": 500743,
+          "name": "Miguel Rojas",
+          "bats": "R",
+          "expected_xwoba": 0.301,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your 0.321 xwOBA is near his 0.362 allowed to righties. Your breaking-ball mark is 0.268 against 0.267 allowed; both breaking-ball and offspeed samples are small."
+        },
+        {
+          "player_id": 669743,
+          "name": "Alex Call",
+          "bats": "R",
+          "expected_xwoba": 0.285,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: Lowder allows 0.362 to righties and you have a 0.284 mark against them. Your offspeed sample is small, so don't read too much into its 0.147 mark."
+        },
+        {
+          "player_id": 571771,
+          "name": "Enrique Hern\u00e1ndez",
+          "bats": "R",
+          "expected_xwoba": 0.267,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs, his most-used group to righties; you have a 0.244 xwOBA against them, while he allows 0.362. Your samples versus righties and across all groups are small."
+        },
+        {
+          "player_id": 672613,
+          "name": "Eliezer Alfonzo",
+          "bats": "S",
+          "expected_xwoba": 0.264,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: Lowder allows 0.399 to lefties, while your fastball mark is 0.218. Your samples versus righties and across all pitch groups are small, so treat these group results cautiously."
+        }
+      ],
+      "summary": "Rhett Lowder is the high-confidence starter. Left-handed hitters have the clearest fastball target; his slider is the best swing-and-miss pitch, so avoid chasing breaking stuff. Tanner Scott and Edgardo Henriquez are limited after pitching yesterday, while Emilio Pag\u00e1n and Brock Burke are available and rested."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "position": "SS",
+          "bats": "S"
+        },
+        {
+          "slot": 2,
+          "player_id": 701398,
+          "name": "Sal Stewart",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 699302,
+          "name": "H\u00e9ctor Rodr\u00edguez",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 668709,
+          "name": "JJ Bleday",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 663886,
+          "name": "Tyler Stephenson",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 553993,
+          "name": "Eugenio Su\u00e1rez",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 667472,
+          "name": "Dane Myers",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 680574,
+          "name": "Matt McLain",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 663647,
+          "name": "Ke'Bryan Hayes",
+          "position": "3B",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "position": "SS",
+          "bats": "S"
+        },
+        {
+          "slot": 2,
+          "player_id": 667472,
+          "name": "Dane Myers",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 701398,
+          "name": "Sal Stewart",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 663886,
+          "name": "Tyler Stephenson",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 553993,
+          "name": "Eugenio Su\u00e1rez",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 668709,
+          "name": "JJ Bleday",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 680574,
+          "name": "Matt McLain",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 624431,
+          "name": "Jose Trevino",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 699302,
+          "name": "H\u00e9ctor Rodr\u00edguez",
+          "position": "RF",
+          "bats": "L"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "bats": "S",
+          "threat": "high",
+          "xwoba": 0.372,
+          "weakness": "Breaking balls are his clearest weakness; his split versus LHP is only moderate sample.",
+          "how_to_pitch": "Avoid predictable fastballs; expand with breaking balls, especially with two strikes."
+        },
+        {
+          "player_id": 701398,
+          "name": "Sal Stewart",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.35,
+          "weakness": "Breaking balls are his weakest pitch group; his split versus LHP is moderate sample.",
+          "how_to_pitch": "Mix breaking balls below the zone with fastballs; do not give him a predictable strike."
+        },
+        {
+          "player_id": 699302,
+          "name": "H\u00e9ctor Rodr\u00edguez",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.283,
+          "weakness": "His split versus LHP is a moderate sample, and he has struggled against left-handers.",
+          "how_to_pitch": "A left-hander can challenge him in the zone; avoid leaving hittable pitches middle-in."
+        },
+        {
+          "player_id": 668709,
+          "name": "JJ Bleday",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.343,
+          "weakness": "Offspeed pitches are his weakest group; his split versus LHP is moderate sample.",
+          "how_to_pitch": "Change speeds and work offspeed; be careful with fastballs, which he handles well."
+        },
+        {
+          "player_id": 663886,
+          "name": "Tyler Stephenson",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.333,
+          "weakness": "Offspeed is his weakest pitch group, though that sample is moderate; his split versus LHP is also moderate sample.",
+          "how_to_pitch": "Use offspeed below the zone and limit fastballs he can drive."
+        },
+        {
+          "player_id": 553993,
+          "name": "Eugenio Su\u00e1rez",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.29,
+          "weakness": "High strikeout rate and lower xwOBA against RHP than LHP.",
+          "how_to_pitch": "Stay aggressive with quality strikes, then expand late rather than giving him a hittable pitch."
+        },
+        {
+          "player_id": 667472,
+          "name": "Dane Myers",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.312,
+          "weakness": "Weaker results against RHP than LHP.",
+          "how_to_pitch": "A right-hander has the matchup edge; attack the zone and avoid free passes."
+        },
+        {
+          "player_id": 680574,
+          "name": "Matt McLain",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.304,
+          "weakness": "Weaker results against RHP than LHP.",
+          "how_to_pitch": "A right-hander has the matchup edge; use strikes early and finish with breaking pitches."
+        },
+        {
+          "player_id": 663647,
+          "name": "Ke'Bryan Hayes",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.305,
+          "weakness": "Limited on-base and slugging production overall.",
+          "how_to_pitch": "Challenge him with strikes; make him prove he can hurt you before pitching around him."
+        },
+        {
+          "player_id": 624431,
+          "name": "Jose Trevino",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.218,
+          "weakness": "Very low walk rate and limited overall production.",
+          "how_to_pitch": "Work in the zone and avoid giving him free bases."
+        }
+      ],
+      "summary": "Elly De La Cruz and Sal Stewart anchor the order, with JJ Bleday and Tyler Stephenson also capable of damage; De La Cruz is especially dangerous against fastballs. Prefer a right-handed starter if choosing solely from these splits: Bleday, Myers, and McLain have stronger listed xwOBA against RHP, while Rodr\u00edguez is notably weaker against LHP."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 687221,
+          "name": "Dalton Rushing",
+          "status": "out",
+          "reason": "Right elbow discomfort."
+        },
+        {
+          "player_id": 694361,
+          "name": "Will Klein",
+          "status": "out",
+          "reason": "Right elbow discomfort."
+        },
+        {
+          "player_id": 641778,
+          "name": "Eric Lauer",
+          "status": "out",
+          "reason": "Left elbow inflammation."
+        },
+        {
+          "player_id": 808963,
+          "name": "Roki Sasaki",
+          "status": "out",
+          "reason": "Right middle finger blister."
+        },
+        {
+          "player_id": 681624,
+          "name": "Andy Pages",
+          "status": "out",
+          "reason": "Left hand fracture."
+        },
+        {
+          "player_id": 621242,
+          "name": "Edwin D\u00edaz",
+          "status": "out",
+          "reason": "Neck inflammation."
+        },
+        {
+          "player_id": 676508,
+          "name": "Ben Casparius",
+          "status": "out",
+          "reason": "Right shoulder inflammation."
+        },
+        {
+          "player_id": 656945,
+          "name": "Tanner Scott",
+          "status": "limited",
+          "reason": "pitched yesterday (20 pitches)"
+        },
+        {
+          "player_id": 683618,
+          "name": "Edgardo Henriquez",
+          "status": "limited",
+          "reason": "pitched yesterday (10 pitches)"
+        },
+        {
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "status": "rest_suggested",
+          "reason": "17 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "status": "rest_suggested",
+          "reason": "13 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "The seven injured-list players are out. Tanner Scott and Edgardo Henriquez are available but limited after pitching yesterday; no players are flagged cleared with caution."
+    },
+    "manager_review": {
+      "approved": false,
+      "fixes": [
+        {
+          "to": "bench_coach",
+          "instruction": "Replace Miguel Rojas in left field with an available player whose left-field starts are supported; the report says Rojas has not started there this season, so revise the position and batting order accordingly."
+        }
+      ],
+      "key_decisions": [
+        "Start Yoshinobu Yamamoto: the pitching report says he is ready with six days' rest and lists favorable matchup results against Matt McLain (0.275 expected xwOBA) and Eugenio Su\u00e1rez (0.27).",
+        "Target Lowder's fastballs with the left-handed bats: Freddie Freeman, Max Muncy, Kyle Tucker, and Hunter Feduccia all have batter edges, with expected xwOBA marks of 0.374, 0.368, 0.348, and 0.345.",
+        "Rest Teoscar Hern\u00e1ndez after 13 straight starts and Tommy Edman after 17 straight starts, as the lineup plan proposes; Edman still has a batter edge at 0.337, so revisit his rest soon.",
+        "Keep Tanner Scott and Edgardo Henriquez as emergency options after pitching yesterday; use the rested leverage arms first."
+      ],
+      "keys_to_the_game": [
+        "Have Yamamoto avoid predictable fastballs to Elly De La Cruz; use breaking balls when ahead.",
+        "Make Lowder work and hunt fastballs without chasing his slider or changeup.",
+        "Use the splitter and other offspeed pitches against Bleday and Stephenson, and attack Su\u00e1rez with offspeed.",
+        "Protect the late lead with rested leverage arms before turning to limited Scott or Henriquez."
+      ],
+      "summary": "The plan's pitching approach and lineup strategy fit the scouting reports, and the checker found no errors. Do not approve the lineup as written: Miguel Rojas is assigned to left field despite the report saying he has not started there this season; have the bench coach correct that unsupported position."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Hunt Lowder\u2019s fastballs; make him earn the zone",
+      "message": "Rhett Lowder is the high-confidence expected starter. Left-handed bats have the clearest fastball target: Freddie Freeman, Max Muncy, Kyle Tucker and Hunter Feduccia all have batter edges. Stay disciplined against the slider and changeup\u2014make him prove he can land them. If Cincinnati goes to Emilio Pag\u00e1n or Brock Burke late, be ready for rested relief arms.",
+      "reminders": [
+        "Hunt fastballs; don\u2019t chase the slider or changeup below the zone.",
+        "Make Lowder work and take competitive pitches.",
+        "Prepare for rested bullpen options Emilio Pag\u00e1n and Brock Burke."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Yamamoto sets the tone; keep De La Cruz guessing",
+      "message": "Yoshinobu Yamamoto is ready to start. Avoid predictable fastballs to Elly De La Cruz; expand with breaking balls when ahead. Use the splitter and other offspeed below the zone against JJ Bleday and Tyler Stephenson, and attack Eugenio Su\u00e1rez with offspeed. Lean on rested leverage arms first; Tanner Scott and Edgardo Henriquez are limited after pitching yesterday.",
+      "reminders": [
+        "Keep the splitter in the plan against Bleday and Stephenson.",
+        "Use quality strikes on Su\u00e1rez, then expand late.",
+        "Save limited Scott and Henriquez for emergency need; use rested arms first."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Correct left field; execute the matchup plan",
+      "message": "The lineup needs a supported left-field assignment: Miguel Rojas has not started there this season, so do not use the lineup as written. Keep Yoshinobu Yamamoto on the mound and target Lowder\u2019s fastballs with the left-handed bats. Rest Teoscar Hern\u00e1ndez and Tommy Edman as planned. Tanner Scott and Edgardo Henriquez are available but limited after pitching yesterday; prioritize rested leverage arms. Dalton Rushing, Will Klein, Eric Lauer, Roki Sasaki, Andy Pages, Edwin D\u00edaz and Ben Casparius are out.",
+      "reminders": [
+        "Replace Rojas in left with an available player whose left-field starts are supported; revise the order.",
+        "Preserve the planned rest for Teoscar Hern\u00e1ndez and Tommy Edman.",
+        "Use rested leverage arms before limited Scott or Henriquez."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 2,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 86.6,
+    "total": {
+      "model_steps": 25,
+      "gateway_cache_hits": 0,
+      "input_tokens": 145899,
+      "cached_tokens": 75287,
+      "output_tokens": 11848,
+      "cost_usd": 0.02155
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4356,
+        "cached_tokens": 3116,
+        "output_tokens": 324,
+        "seconds": 12.6,
+        "cost_usd": 0.00047
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 19637,
+        "cached_tokens": 11871,
+        "output_tokens": 2442,
+        "seconds": 16.7,
+        "cost_usd": 0.00301
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 12895,
+        "cached_tokens": 12517,
+        "output_tokens": 1453,
+        "seconds": 11.2,
+        "cost_usd": 0.00105
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 16236,
+        "cached_tokens": 7646,
+        "output_tokens": 1396,
+        "seconds": 10.7,
+        "cost_usd": 0.00257
+      },
+      "bench_coach": {
+        "calls": 3,
+        "model_steps": 9,
+        "gateway_cache_hits": 0,
+        "input_tokens": 63940,
+        "cached_tokens": 40137,
+        "output_tokens": 3907,
+        "seconds": 31.2,
+        "cost_usd": 0.00752
+      },
+      "manager": {
+        "calls": 3,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 21472,
+        "cached_tokens": 0,
+        "output_tokens": 1831,
+        "seconds": 16.6,
+        "cost_usd": 0.00521
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7363,
+        "cached_tokens": 0,
+        "output_tokens": 495,
+        "seconds": 9.0,
+        "cost_usd": 0.00172
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}
