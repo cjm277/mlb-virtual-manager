@@ -18,7 +18,7 @@
   - The Manager approved 88% of plans (was 69%).
   - Checker problems at the first full check fell from 1.19 per plan to 0. Every one was fixed inside the agent.
   - Fix rounds fell from 1.31 to 0.44 per plan, and no plan finished with an open problem (was 0.25 per plan).
-  - Against the real games, nothing moved: 7.0 vs 6.9 of the real starting nine, the real starter picked in 14 of 16 games under both, and relievers 50% vs 54%, which is within noise.
+  - The staff's choices didn't shift: agreement with what real managers did stayed flat (7.0 vs 6.9 of the real starting nine, the same starter in 14 of 16 games, relievers 50% vs 54%, within noise). This is only a check that the cost cut didn't change how the staff thinks. Matching real managers is not the goal; the app is built to offer evidence-based alternatives to traditional thinking.
 - *Why it works:* the plan reaches the Manager already legal, so the Manager spends its review on baseball judgment instead of bookkeeping.
 
 **2. Shorter tool outputs: compact matchups (built and tested, off by default).**
@@ -34,4 +34,4 @@
 - Every agent's fixed instructions come first and the game-specific parts come last, so OpenAI can reuse the start of each request. About half of all input tokens (52%) are billed at the cached rate ($0.02 instead of $0.20 per 1M). Without that, the same plan would cost about $0.027 instead of $0.0165, so caching already saves about 38%.
 - The Manager, Comms and Team Doctor get almost no cache hits. Their fixed prompt is under OpenAI's 1,024-token minimum for caching, and the rest of their input is plan text unique to each run. Padding prompts just to reach the minimum isn't worth it: these three agents are only 30% of the bill.
 
-**What's left.** Most remaining fix rounds are now the Manager overruling the Bench Coach on rest days. The Bench Coach keeps a tired hitter in when he has a clear matchup edge, as designed; the Manager sometimes asks to rest him anyway. Giving the Manager the same rest-day rule would remove most of the remaining fix rounds (about 0.4 per plan). That would cut cost again and keep the Moneyball rest policy consistent.
+**What's left, and kept on purpose.** Most remaining fix rounds are the Manager overruling the Bench Coach on rest days. The Bench Coach keeps a tired hitter in when he has a clear matchup edge; the Manager sometimes asks to rest him anyway. That disagreement is deliberate: managers and bench coaches argue about exactly this, and the review step exists to surface it. It costs about 0.4 extra fix rounds per plan, a fraction of a cent, and is not engineered away.

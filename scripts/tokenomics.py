@@ -306,8 +306,10 @@ def report() -> str:
             "",
             "Same 8 September 2026 backtest games (16 teams) for every condition, each game run twice, all three conditions "
             "run side by side at the same time against the same API. Portkey's cache was bypassed so every run was a real, "
-            "billed run. Quality is measured three ways: the code checker (did the plan pass first time, was anything left "
-            "open, any made-up numbers), the Manager (fix rounds), and the Phase 7 backtest against what really happened.",
+            "billed run. Quality is measured by the code checker (did the plan pass first time, was anything left open, any "
+            "made-up numbers) and the Manager (fix rounds). Agreement with what real managers did is shown only as a "
+            "reference that a cost cut did not change the staff's thinking: matching real managers is not the goal, since "
+            "the app is meant to offer evidence-based alternatives to traditional thinking.",
             "",
             "| | " + " | ".join(LABEL[c] for c in sums) + " |",
             "|---|" + "---|" * len(sums),
@@ -339,7 +341,7 @@ def report() -> str:
             row("Open issues at the end", lambda c, s: f"{s['open_issues']:.2f}"),
             row("Made-up-number flags", lambda c, s: f"{s['unsupported_numbers']:.2f}"),
             row("Hitter plans written", lambda c, s: f"{s['hitter_plans']:.1f}"),
-            "| **Quality: vs. real games** | " + " | ".join("" for _ in sums) + " |",
+            "| **Agreement with real managers (reference only, not a target)** | " + " | ".join("" for _ in sums) + " |",
             row("Starting nine that really started", lambda c, s: f"{bt(c, 'nine') / s['n']:.1f} of 9"),
             row("...at the same position", lambda c, s: f"{bt(c, 'same_pos') / max(bt(c, 'nine'), 1):.0%}"),
             row("Our starter = real starter", lambda c, s: f"{bt(c, 'sp_match')} of {s['n']}"),

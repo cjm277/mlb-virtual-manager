@@ -1,6 +1,6 @@
 # Phase 8 tokenomics: what a game plan costs, at every scale
 
-Generated 2026-10-24 20:01 by `scripts/tokenomics.py` from real token counts in the audit trail of every run (input, cached input and output tokens are logged for each model call).
+Generated 2026-10-24 20:17 by `scripts/tokenomics.py` from real token counts in the audit trail of every run (input, cached input and output tokens are logged for each model call).
 
 **Pricing.** gpt-6-luna list price: **$0.20 per 1M input tokens, $0.02 per 1M cached input tokens, $0.50 per 1M output tokens** (genai-prices "GPT-6 Luna", checked against OpenAI's pricing page on 2026-10-12). The course's lecture slide prices a different model (gpt-5.6-luna) at $0.20 in / $1.20 out with no cached rate; that is shown as a worst-case sensitivity line. Model cost only: hosting and data are discussed separately.
 
@@ -54,7 +54,7 @@ A "user" here is one coaching staff that builds a plan before each of its games 
 
 ## 4. Cost-cutting experiments, before and after
 
-Same 8 September 2026 backtest games (16 teams) for every condition, each game run twice, all three conditions run side by side at the same time against the same API. Portkey's cache was bypassed so every run was a real, billed run. Quality is measured three ways: the code checker (did the plan pass first time, was anything left open, any made-up numbers), the Manager (fix rounds), and the Phase 7 backtest against what really happened.
+Same 8 September 2026 backtest games (16 teams) for every condition, each game run twice, all three conditions run side by side at the same time against the same API. Portkey's cache was bypassed so every run was a real, billed run. Quality is measured by the code checker (did the plan pass first time, was anything left open, any made-up numbers) and the Manager (fix rounds). Agreement with what real managers did is shown only as a reference that a cost cut did not change the staff's thinking: matching real managers is not the goal, since the app is meant to offer evidence-based alternatives to traditional thinking.
 
 | | A. Before (Phase 7 app) | B. + Self-check (fewer hops) | C. + Self-check + compact matchups |
 |---|---|---|---|
@@ -77,7 +77,7 @@ Same 8 September 2026 backtest games (16 teams) for every condition, each game r
 | Open issues at the end | 0.25 | 0.00 | 0.06 |
 | Made-up-number flags | 0.00 | 0.00 | 0.00 |
 | Hitter plans written | 13.0 | 13.8 | 13.9 |
-| **Quality: vs. real games** |  |  |  |
+| **Agreement with real managers (reference only, not a target)** |  |  |  |
 | Starting nine that really started | 6.9 of 9 | 7.0 of 9 | 6.9 of 9 |
 | ...at the same position | 75% | 71% | 76% |
 | Our starter = real starter | 14 of 16 | 14 of 16 | 14 of 16 |
@@ -106,7 +106,7 @@ Per-run detail is in `evidence/logs/phase8_tokenomics/results.json`; every run's
   - The Manager approved 88% of plans (was 69%).
   - Checker problems at the first full check fell from 1.19 per plan to 0. Every one was fixed inside the agent.
   - Fix rounds fell from 1.31 to 0.44 per plan, and no plan finished with an open problem (was 0.25 per plan).
-  - Against the real games, nothing moved: 7.0 vs 6.9 of the real starting nine, the real starter picked in 14 of 16 games under both, and relievers 50% vs 54%, which is within noise.
+  - The staff's choices didn't shift: agreement with what real managers did stayed flat (7.0 vs 6.9 of the real starting nine, the same starter in 14 of 16 games, relievers 50% vs 54%, within noise). This is only a check that the cost cut didn't change how the staff thinks. Matching real managers is not the goal; the app is built to offer evidence-based alternatives to traditional thinking.
 - *Why it works:* the plan reaches the Manager already legal, so the Manager spends its review on baseball judgment instead of bookkeeping.
 
 **2. Shorter tool outputs: compact matchups (built and tested, off by default).**
@@ -122,4 +122,4 @@ Per-run detail is in `evidence/logs/phase8_tokenomics/results.json`; every run's
 - Every agent's fixed instructions come first and the game-specific parts come last, so OpenAI can reuse the start of each request. About half of all input tokens (52%) are billed at the cached rate ($0.02 instead of $0.20 per 1M). Without that, the same plan would cost about $0.027 instead of $0.0165, so caching already saves about 38%.
 - The Manager, Comms and Team Doctor get almost no cache hits. Their fixed prompt is under OpenAI's 1,024-token minimum for caching, and the rest of their input is plan text unique to each run. Padding prompts just to reach the minimum isn't worth it: these three agents are only 30% of the bill.
 
-**What's left.** Most remaining fix rounds are now the Manager overruling the Bench Coach on rest days. The Bench Coach keeps a tired hitter in when he has a clear matchup edge, as designed; the Manager sometimes asks to rest him anyway. Giving the Manager the same rest-day rule would remove most of the remaining fix rounds (about 0.4 per plan). That would cut cost again and keep the Moneyball rest policy consistent.
+**What's left, and kept on purpose.** Most remaining fix rounds are the Manager overruling the Bench Coach on rest days. The Bench Coach keeps a tired hitter in when he has a clear matchup edge; the Manager sometimes asks to rest him anyway. That disagreement is deliberate: managers and bench coaches argue about exactly this, and the review step exists to surface it. It costs about 0.4 extra fix rounds per plan, a fraction of a cent, and is not engineered away.
