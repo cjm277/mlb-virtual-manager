@@ -48,11 +48,16 @@ LINEUPS = SAVE / "lineups.json"
 RESULTS = SAVE / "results.json"
 REPORT = ROOT / "evidence" / "tests" / "value_at_scale.md"
 NOTES = ROOT / "evidence" / "tests" / "value_at_scale_interpretation.md"     # hand-written; appended if present
-VERSIONS = {"before": ("fade", False, None), "marcel": ("marcel", False, None), "after": ("marcel", True, None),
-            "calibrated": ("marcel", True, "calibrated"), "strict": ("marcel", True, "strict")}
+VERSIONS = {"before": ("fade", False, None, False), "marcel": ("marcel", False, None, False),
+            "after": ("marcel", True, None, False), "calibrated": ("marcel", True, "calibrated", False),
+            "strict": ("marcel", True, "strict", False)}
+# The app now also lets the cap replace the catchers' 6-straight rest flag (CAP_REPLACES_CATCHER_REST). Built as
+# "capfix" (python scripts/value_at_scale.py build capfix) it changes 82 of 4,801 lineups, so it is not scored separately.
+EXTRA_VERSIONS = {"capfix": ("marcel", True, None, True)}
 LABELS = {"before": "Before (app model this morning)", "marcel": "+ Marcel projection",
           "after": "+ Marcel + catcher cap (now in the app)", "calibrated": "+ cautious fielder pricing, calibrated (tested, not kept)",
-          "strict": "+ cautious fielder pricing, strict (tested, not kept)"}
+          "strict": "+ cautious fielder pricing, strict (tested, not kept)",
+          "capfix": "+ Marcel + catcher cap as the catchers' only workload rule"}
 SEED = 409
 BOOT = 2000
 HOLDOUT = "2026-07-01"
@@ -69,7 +74,7 @@ def team_games(team_id: int) -> list[dict]:
            WHERE home_team_id = ? OR away_team_id = ? ORDER BY game_date, game_number""", team_id, team_id)]
 
 
-def build_team(team_id: int) -> list[dict]:
+def build_team(team_id: int, only: tuple[str, ...] | None = None) -> list[dict]:
     from backend.engine import defense, rotation, winmodel
     games = team_games(team_id)
     out = {g["game_pk"]: {"game_pk": g["game_pk"], "team_id": team_id, "date": g["d"], "home": g["h"] == team_id,
@@ -83,9 +88,12 @@ def build_team(team_id: int) -> list[dict]:
         except Exception:                       # noqa: BLE001 - a game the predictor can't handle is skipped
             preds[g["game_pk"]] = None
         out[g["game_pk"]]["pred_sp"] = preds[g["game_pk"]]
-    for v, (proj, cap, caution) in VERSIONS.items():
+    for v, (proj, cap, caution, cap_rest) in (VERSIONS | EXTRA_VERSIONS).items():
+        if only and v not in only:
+            continue
         winmodel.set_version(proj)
         defense.CAUTION = caution
+        winmodel.CAP_REPLACES_CATCHER_REST = cap_rest
         mine: deque = deque(maxlen=winmodel.CATCHER_WINDOW)      # the catchers this version chose, most recent last
         for g in games:
             sp = preds[g["game_pk"]]
@@ -103,14 +111,25 @@ def build_team(team_id: int) -> list[dict]:
     return list(out.values())
 
 
-def build() -> None:
+def build(only: tuple[str, ...] | None = None) -> None:
+    """Build every version (or only some, merged into the saved lineups)."""
+    from functools import partial
     SAVE.mkdir(parents=True, exist_ok=True)
     teams = [r["team_id"] for r in db.rows("SELECT team_id FROM teams ORDER BY team_id")]
     rows = []
     with Pool(8) as pool:
-        for i, part in enumerate(pool.imap_unordered(build_team, teams), 1):
+        for i, part in enumerate(pool.imap_unordered(partial(build_team, only=only), teams), 1):
             rows += part
             print(f"  {i}/{len(teams)} teams", flush=True)
+    if only and LINEUPS.exists():
+        old = {(r["game_pk"], r["team_id"]): r for r in json.loads(LINEUPS.read_text(encoding="utf-8"))}
+        for r in rows:
+            o = old.get((r["game_pk"], r["team_id"]))
+            if o:
+                o["lineups"].update(r["lineups"])
+            else:
+                old[(r["game_pk"], r["team_id"])] = r
+        rows = list(old.values())
     LINEUPS.write_text(json.dumps(rows), encoding="utf-8")
     print(f"saved {len(rows)} team-games", flush=True)
 
@@ -439,19 +458,22 @@ def render(o: dict) -> str:
         "of games), from that day's active roster. Our starter is the real one: this is the lineup insight only (who plays, "
         "where, and in what order).",
         "",
-        "**The two measures.**",
-        "- **Verified:** each piece valued by what held-out data says it is worth. It assumes the real manager knows only "
-        "what our data knows.",
-        "- **Direct check:** the same lineups scored on what the players did *after* the game (rest-of-2026 wOBA for "
-        "hitters, regressed at 100 PA; 2026 fielding and framing). It is never flattered by the optimizer, and it credits "
-        "the manager for whatever he knew that the data didn't. It comes in two forms:",
+        "**The value metric: verified wins.** Each piece is valued by what held-out data says it is worth: offense "
+        "through the Marcel projection times its rest-of-season calibration slope, fielding by the 2026 calibration by "
+        "experience group, and framing by its 2026 slope. This is the program's value on public data.",
+        "",
+        "**The private-information check (context, not the metric).** The same lineups are scored on what the players "
+        "did *after* the game: rest-of-2026 wOBA for hitters, regressed at 100 PA; 2026 fielding and framing. The real "
+        "managers' choices drew on information no public dataset has: health, medical reports, in-season form, scouting "
+        "of who can really play a position this year. So the gap between this check and the verified wins measures the "
+        "value of that private information. A club running the program would feed it in. It comes in two forms:",
         "  - **raw:** each fielder's 2026 rate taken at face value, however short his stint;",
         "  - **regressed:** each fielder's rate pulled toward his experience group's 2026 average at 600 innings, the "
         "way hitters already are (see `defense_caution.md` on why short stints read badly).",
         "",
-        "## Headline: lineup insight, wins per 162",
+        "## Headline: lineup insight, verified wins per 162",
         "",
-        "| Version | Verified | Direct, raw | Direct, fielding regressed |",
+        "| Version | **Verified wins (the value metric)** | Private-info check, raw | Private-info check, fielding regressed |",
         "|---|---|---|---|",
         *[f"| {LABELS[v]} | {f(V[v]['point']['total'])} ({f(V[v]['ci']['total'][0])} to {f(V[v]['ci']['total'][1])}) | "
           f"{W(o['direct'][v]['total'])} | {W(o['direct_regressed'][v]['total'])} |" for v in VERSIONS],
@@ -535,7 +557,7 @@ def render(o: dict) -> str:
 def main() -> None:
     cmd = sys.argv[1] if len(sys.argv) > 1 else "all"
     if cmd in ("build", "all"):
-        build()
+        build(tuple(sys.argv[2].split(",")) if len(sys.argv) > 2 else None)
     if cmd in ("score", "all"):
         out = score()
         REPORT.write_text(render(out), encoding="utf-8")

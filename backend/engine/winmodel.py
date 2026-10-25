@@ -44,6 +44,7 @@ REST_MAX_COST = 0.0025       # rest a tired hitter only if it costs at most 0.25
 PLATOON_PRIOR_PA = 400       # fade version: a hitter's own platoon split is trusted halfway at this many PA
 AVG_PA = sum(SLOT_PA.values()) / 9      # plate appearances per lineup spot, to put offense in runs per game
 CATCHER_MAX_STARTS, CATCHER_WINDOW = 7, 10      # at most 7 of the team's last 10 games behind the plate
+CAP_REPLACES_CATCHER_REST = True                 # with the cap on, catchers skip the 6-straight-starts rest flag
 
 VERSION = "marcel"           # "marcel" (projection_search.py) or "fade" (the earlier value_model_search.py model)
 
@@ -285,6 +286,12 @@ def best_lineup(team_id: int, d: str, sp_id: int, unavailable: set[int] = frozen
                                     f"{CATCHER_WINDOW}, about the most any 2026 catcher sustained); he can still DH")
     glove = {p: {pos: defense.runs_saved(p, pos, d, priced=True) for pos in elig[p]} for p in values}
     tired = {r["player_id"]: workload.rest_check(team_id, r["player_id"], d, r["position"]) for r in hitters}
+    if catcher_cap and CAP_REPLACES_CATCHER_REST:
+        # The cap is the catchers' workload rule (it already allows at most 7 straight); the 6-straight rest flag
+        # would rest them a second time.
+        for r in hitters:
+            if r["position"] == "C":
+                tired[r["player_id"]] = dict(tired[r["player_id"]], rest_suggested=False)
 
     def build(excluded: set[int]) -> tuple[float, list[tuple[int, int, str]]] | None:
         """(runs scored + runs saved on defense, lineup) for the best legal nine without the excluded players."""
