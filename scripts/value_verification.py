@@ -18,6 +18,10 @@ the season-stats lens, +2.4 wins per 162. The checks:
   6. Dollars: market price of a win, and playoff odds in a 12-team format by team situation.
 
 Usage: python scripts/value_verification.py      (writes evidence/tests/value_verification.md; a few minutes)
+       python scripts/value_verification.py --dollars          (re-price from the saved results only)
+       python scripts/value_verification.py --known-starter    (add: lineup rebuilt for the starter who actually
+                                                                pitched, as MLB's announced probables would allow;
+                                                                run after the full run, which does not keep it)
 """
 
 from __future__ import annotations
@@ -1000,7 +1004,193 @@ def render(o: dict) -> str:
         "illustration, not a market quote.",
         "",
     ]
-    return "\n".join(L)
+    return "\n".join(L + render_known(o))
+
+
+# ---------------------------------------------------------------------------
+# Extension: what if the opposing starter were known (MLB's announced probables)?
+# ---------------------------------------------------------------------------
+
+def rebuilt_case(c: dict, plan: dict, sp_id: int) -> dict:
+    """The case with our lineup rebuilt by the win model against starter sp_id (our starter, the Team Doctor's OUT
+    list and every input as in the plan; pre-game data only)."""
+    from backend.engine import winmodel as wmod
+    out = {x["player_id"] for x in plan["sections"]["medical_report"]["statuses"] if x["status"] == "out"}
+    ml = wmod.best_lineup(c["team_id"], c["date"], sp_id, out, home=c["home"])
+    lineup = [wm.hitter_entry(x["player_id"], x["slot"], c["date"], c["opp_sp"]["pid"]) for x in ml["lineup"]]
+    return dict(c, plan={"lineup": lineup, "sp": c["plan"]["sp"]},
+                plan_pos={x["player_id"]: x["position"] for x in ml["lineup"]})
+
+
+def known_starter(saved: dict) -> dict:
+    """Score the real manager, the plan as built (predicted starter), the model lineup against the predicted starter,
+    and the model lineup rebuilt for the starter who actually pitched, on the season lens and the verified estimate."""
+    wm.load_constants()
+    rng = np.random.default_rng(SEED)
+    S = {"hitter": season_hitter, "pitcher": season_pitcher, "defense": season_defense}
+    folder = wm.VERSIONS["v3"][1]
+    cases = load_cases("v3")
+    versions = {"as_built": [], "model_predicted": [], "model_known": []}
+    right, hand_right = [], []
+    for c in cases:
+        plan = json.loads((folder / c["run"] / "plan.json").read_text(encoding="utf-8"))
+        pred = plan["sections"]["opposing_pitchers_report"]["opposing_starter"]["player_id"]
+        actual = c["opp_sp"]["pid"]
+        right.append(pred == actual)
+        hand_right.append(wm.hand(pred)[1] == wm.hand(actual)[1])
+        versions["as_built"].append(c)
+        versions["model_predicted"].append(rebuilt_case(c, plan, pred))
+        versions["model_known"].append(rebuilt_case(c, plan, actual))
+    right, hand_right = np.array(right), np.array(hand_right)
+    print("lineups rebuilt", flush=True)
+
+    # Verified-estimate ingredients, as in main(): point values plus draws for the interval
+    hit = hitter_calibration()
+    rel = defense_reliability(rng)
+    cal = defense_calibration(rng)
+    a0 = np.array([cal[b]["intercept"] for b in BUCKETS]); s0 = np.array([cal[b]["slope"] for b in BUCKETS])
+    fs0, bs0, kept0 = rel["framing"]["slope"], saved["slopes"]["all"]["point"][1], float(np.mean(KEPT_SHARE))
+    k = np.array([wp_per_run_allowed(c, S) for c in cases])
+    per = {}
+    for v, cs in versions.items():
+        e, sl = edges(cs, S), split_lineup(cs, S)
+        T = [defense_terms(c) for c in cs]
+        per[v] = {"both": e["both"], "lineup": e["lineup"], "off": sl["offense"], "sp": e["starter"],
+                  "resid": e["both"] - e["lineup"] - e["starter"],
+                  "cnt": np.array([t["count"] for t in T]), "rat": np.array([t["rating"] for t in T]),
+                  "frm": np.array([t["framing"] for t in T])}
+
+    def verified(v, hs, a, s, fs, wf, bs, kept, lineup_only=False):
+        p = per[v]
+        d = k * ((p["cnt"] * a).sum(1) + (p["rat"] * s).sum(1) + fs * wf * p["frm"])
+        lin = hs * p["off"] + d
+        return lin if lineup_only else lin + bs * kept * p["sp"] + p["resid"]
+
+    point = {v: {"both": verified(v, hit["slope"], a0, s0, fs0, CATCHER_WORKLOAD[1], bs0, kept0),
+                 "lineup": verified(v, hit["slope"], a0, s0, fs0, CATCHER_WORKLOAD[1], bs0, kept0, True)} for v in per}
+    draws = []
+    for _ in range(BOOT):
+        j = rng.integers(0, 1000)
+        a = np.array([cal[b]["draws"][j][0] for b in BUCKETS]); s = np.array([cal[b]["draws"][j][1] for b in BUCKETS])
+        args = (rng.choice(hit["draws"]), a, s, rng.uniform(*rel["framing"]["ci"]),
+                rng.uniform(CATCHER_WORKLOAD[0], CATCHER_WORKLOAD[2]), bs0, rng.uniform(*KEPT_SHARE))
+        draws.append({v: {"both": verified(v, *args), "lineup": verified(v, *args, lineup_only=True)} for v in per})
+
+    def summary(get, mask=None):
+        """Mean over games (optionally a subgroup) with a 95% range: games bootstrap x parameter draws."""
+        m = np.ones(len(cases), bool) if mask is None else mask
+        idx_all = np.flatnonzero(m)
+        sims = []
+        for dr in draws:
+            idx = rng.choice(idx_all, len(idx_all))
+            sims.append(float(get(dr)[idx].mean()))
+        return [float(get(point)[m].mean()), *np.percentile(sims, [2.5, 97.5]).tolist()]
+
+    groups = {"All 150 games": None, "Predicted starter wrong": ~right, "Wrong, other hand": ~hand_right,
+              "Predicted starter right": right}
+    out = {"n": len(cases), "right": int(right.sum()), "hand_right": int(hand_right.sum()),
+           "wrong_same_hand": int((~right & hand_right).sum()), "groups": {}}
+    for g, m in groups.items():
+        mm = np.ones(len(cases), bool) if m is None else m
+        res = {"n": int(mm.sum())}
+        for v in per:
+            res[v] = {"verified_both": summary(lambda x, v=v: x[v]["both"], m),
+                      "verified_lineup": summary(lambda x, v=v: x[v]["lineup"], m),
+                      "season_both": [float(per[v]["both"][mm].mean()), *boot(per[v]["both"][mm], rng)],
+                      "season_lineup": [float(per[v]["lineup"][mm].mean()), *boot(per[v]["lineup"][mm], rng)]}
+        res["gain_known_vs_predicted"] = {
+            "verified": summary(lambda x: x["model_known"]["both"] - x["model_predicted"]["both"], m),
+            "season": [float((per["model_known"]["both"] - per["model_predicted"]["both"])[mm].mean()),
+                       *boot((per["model_known"]["both"] - per["model_predicted"]["both"])[mm], rng)]}
+        res["gain_known_vs_as_built"] = {
+            "verified": summary(lambda x: x["model_known"]["both"] - x["as_built"]["both"], m),
+            "season": [float((per["model_known"]["both"] - per["as_built"]["both"])[mm].mean()),
+                       *boot((per["model_known"]["both"] - per["as_built"]["both"])[mm], rng)]}
+        out["groups"][g] = res
+    same = [sum(a["pid"] != b["pid"] for a, b in zip(sorted(p["plan"]["lineup"], key=lambda e: e["slot"]),
+                                                      sorted(q["plan"]["lineup"], key=lambda e: e["slot"])))
+            for p, q in zip(versions["model_predicted"], versions["model_known"])]
+    out["lineup_changes"] = {"games_changed": int(sum(x > 0 for x in same)),
+                             "games_changed_when_wrong": int(sum(x > 0 for x, r in zip(same, right) if not r)),
+                             "slots_changed_mean_when_wrong": float(np.mean([x for x, r in zip(same, right) if not r] or [0]))}
+    # Dollars, same assumptions as Check 6
+    g = 162 * out["groups"]["All 150 games"]["gain_known_vs_predicted"]["verified"][0]
+    # A gain this small is below the simulation's resolution, so scale the playoff-odds gain of one full win.
+    out["dollars"] = {"wins": g, "market": {str(p): g * p for p in DOLLARS_PER_WIN},
+                      "typical_playoff_gain": g * typical_team_gain(1.0),
+                      "bubble_playoff_gain": g * playoff_odds([84], 1.0)[84]["gain"]}
+    return out
+
+
+def render_known(o: dict) -> list[str]:
+    if "known_starter" not in o:
+        return []
+    K = o["known_starter"]
+    w = lambda v: f"{162 * v[0]:+.2f} ({162 * v[1]:+.2f} to {162 * v[2]:+.2f})"  # noqa: E731
+    A = K["groups"]["All 150 games"]
+    D = K["dollars"]
+    L = [
+        "## With the opposing starter known",
+        "",
+        "In the 150 v3 plans the code built our lineup against the *predicted* opposing starter (the rotation model). "
+        "MLB announces probable starters a day or two ahead, so a real club would usually know. To test what that is "
+        "worth, the lineup was rebuilt with the same optimizer (`winmodel.best_lineup`: same pre-game data, same Team "
+        "Doctor OUT list, rest days and defense as usual) against the starter who actually pitched. Our own starter is "
+        "kept as in the plan. No LLM calls; the app is unchanged.",
+        "",
+        f"The prediction was right in {K['right']} of {K['n']} games, and the hand was right in {K['hand_right']}. "
+        f"{K['n'] - K['right']} were wrong, {K['wrong_same_hand']} of them with the same hand. Knowing the starter "
+        f"changed the model lineup in {K['lineup_changes']['games_changed']} games "
+        f"({K['lineup_changes']['games_changed_when_wrong']} of the wrong-prediction games, "
+        f"{K['lineup_changes']['slots_changed_mean_when_wrong']:.1f} players on average there).",
+        "",
+        "Edge vs the real manager in wins per 162, with 95% ranges. \"Verified\" is the calibrated estimate from Check 5, "
+        "with its interval redrawing games and scaling factors; \"season lens\" is the original yardstick.",
+        "",
+        "| Version | Verified: lineup + starter | Verified: lineup only | Season lens: lineup + starter |",
+        "|---|---|---|---|",
+        *[f"| {lab} | {w(A[v]['verified_both'])} | {w(A[v]['verified_lineup'])} | {w(A[v]['season_both'])} |"
+          for v, lab in (("as_built", "(b) The plan as built (predicted starter)"),
+                         ("model_predicted", "(b') Model lineup vs the predicted starter, rebuilt now"),
+                         ("model_known", "(c) Model lineup vs the known starter"))],
+        "",
+        "(a), the real manager, is the zero line. (b') isolates the effect of knowing the starter from the few plans "
+        "where the staff edited the model lineup.",
+        "",
+        "**Gain from knowing the starter, (c) minus (b'), paired on the same games:**",
+        "",
+        "| Games | n | Verified | Season lens | (c) minus (b), the plan as built, verified |",
+        "|---|---|---|---|---|",
+        *[f"| {g} | {r['n']} | {w(r['gain_known_vs_predicted']['verified'])} | {w(r['gain_known_vs_predicted']['season'])} | "
+          f"{w(r['gain_known_vs_as_built']['verified'])} |" for g, r in K["groups"].items()],
+        "",
+        f"**In dollars** (same assumptions as Check 6): {D['wins']:+.2f} wins a season is about "
+        f"${D['market']['10.0']:.1f}M at $10M per win (${D['market']['8.0']:.1f}M-${D['market']['12.0']:.1f}M at $8-12M), "
+        f"or {100 * D['typical_playoff_gain']:+.2f} pts of playoff odds for a typical team "
+        f"(${D['typical_playoff_gain'] * 30:.2f}M at $30M per berth) and {100 * D['bubble_playoff_gain']:+.2f} pts for a "
+        f"bubble team (${D['bubble_playoff_gain'] * 30:.2f}M). Subgroup rows are per 162 games *of that kind*; a "
+        "season has only the all-games share of them.",
+        "",
+        "**What it means.**",
+        "",
+        f"- **Knowing the starter adds almost nothing:** {w(A['gain_known_vs_predicted']['verified'])} wins a season on "
+        "the verified estimate, and the range includes zero.",
+        "- **Why it's small:**",
+        f"  - The rotation model is already right in {K['right'] / K['n']:.0%} of games, and right on the hand in "
+        f"{K['hand_right'] / K['n']:.0%}.",
+        f"  - In {K['wrong_same_hand']} of the {K['n'] - K['right']} misses, the wrong guess throws with the same hand, so "
+        "the platoon-driven lineup barely changes.",
+        "  - The lineup's offense is a small part of the edge anyway. Most of the edge is defense and the starter, which "
+        "don't depend on who pitches against us.",
+        f"- **Where it matters:** the gain concentrates where expected, in the {K['n'] - K['hand_right']} games where the "
+        "guess had the wrong hand. Even there it is a few tenths of a win per 162 such games, and they are under a tenth of "
+        "the schedule.",
+        "- **Recommendation:** use MLB's announced probable starters for near-term games when they are available, and keep "
+        "the rotation model as the fallback for games further out. It costs little and removes a known error. Its value in "
+        "wins is too small to claim, so it is a correctness fix, not a selling point. Not built; it needs the user's go-ahead.",
+        "",
+    ]
+    return L
 
 
 if __name__ == "__main__":
@@ -1008,6 +1198,11 @@ if __name__ == "__main__":
         sys.stdout.reconfigure(encoding="utf-8")
         saved = json.loads(OUT_JSON.read_text(encoding="utf-8"))
         dollars(saved)
+        write(saved)
+    elif "--known-starter" in sys.argv:  # extension: lineup rebuilt for the starter who actually pitched
+        sys.stdout.reconfigure(encoding="utf-8")
+        saved = json.loads(OUT_JSON.read_text(encoding="utf-8"))
+        saved["known_starter"] = known_starter(saved)
         write(saved)
     else:
         main()

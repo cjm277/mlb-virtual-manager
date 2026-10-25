@@ -1,6 +1,6 @@
 # Is the win model really worth +2.4 wins a season? A verification
 
-Generated 2026-10-25 00:07 by `scripts/value_verification.py` (no LLM calls, no new plans; the same 150 v3 plans as `win_model_defense.md`). Numbers: `evidence/logs/win_impact/value_verification.json`. Wins are per 162 games; a win-probability point per game is 1.6 wins a season.
+Generated 2026-10-25 00:14 by `scripts/value_verification.py` (no LLM calls, no new plans; the same 150 v3 plans as `win_model_defense.md`). Numbers: `evidence/logs/win_impact/value_verification.json`. Wins are per 162 games; a win-probability point per game is 1.6 wins a season.
 
 ## The claim, split into its pieces (season-stats lens, as reported)
 
@@ -150,6 +150,43 @@ Wins are zero-sum: every game has one winner, so the league's 2,430 wins stay 2,
 - **One early adopter** (above): it gains about +1.4 wins a season, taken from the other 29 teams (about 0.05 wins each). That is the only case where the app's value shows up as wins.
 - **Every team adopts:** the edges cancel. Each team's plan improves, but so does its opponent's, and league-wide wins can't rise. Expected wins per team go back toward 81, and the value in wins shrinks toward zero. What remains is cost and time: a full game plan costs about $0.019 in model calls, about $3 per team-season (Phase 8), against hours of staff preparation. That is a real saving, but it is measured in staff hours, not wins.
 - **What a team might pay (licensing view, kept modest):** a buyer would pay only a slice of the value it expects, because rivals can copy the methods (they are public), and its own analysts could rebuild much of this. At 10%-20% of the expected first-mover value, that is roughly $0.5M-$2.8M per team per season, falling as adoption spreads. This is an illustration, not a market quote.
+
+## With the opposing starter known
+
+In the 150 v3 plans the code built our lineup against the *predicted* opposing starter (the rotation model). MLB announces probable starters a day or two ahead, so a real club would usually know. To test what that is worth, the lineup was rebuilt with the same optimizer (`winmodel.best_lineup`: same pre-game data, same Team Doctor OUT list, rest days and defense as usual) against the starter who actually pitched. Our own starter is kept as in the plan. No LLM calls; the app is unchanged.
+
+The prediction was right in 114 of 150 games, and the hand was right in 136. 36 were wrong, 22 of them with the same hand. Knowing the starter changed the model lineup in 20 games (20 of the wrong-prediction games, 2.9 players on average there).
+
+Edge vs the real manager in wins per 162, with 95% ranges. "Verified" is the calibrated estimate from Check 5, with its interval redrawing games and scaling factors; "season lens" is the original yardstick.
+
+| Version | Verified: lineup + starter | Verified: lineup only | Season lens: lineup + starter |
+|---|---|---|---|
+| (b) The plan as built (predicted starter) | +1.38 (+1.05 to +1.81) | +1.15 (+0.88 to +1.52) | +2.38 (+1.77 to +3.04) |
+| (b') Model lineup vs the predicted starter, rebuilt now | +1.41 (+1.08 to +1.83) | +1.18 (+0.91 to +1.55) | +2.46 (+1.84 to +3.18) |
+| (c) Model lineup vs the known starter | +1.43 (+1.10 to +1.84) | +1.20 (+0.92 to +1.55) | +2.51 (+1.85 to +3.18) |
+
+(a), the real manager, is the zero line. (b') isolates the effect of knowing the starter from the few plans where the staff edited the model lineup.
+
+**Gain from knowing the starter, (c) minus (b'), paired on the same games:**
+
+| Games | n | Verified | Season lens | (c) minus (b), the plan as built, verified |
+|---|---|---|---|---|
+| All 150 games | 150 | +0.01 (-0.02 to +0.05) | +0.05 (-0.02 to +0.11) | +0.05 (+0.00 to +0.10) |
+| Predicted starter wrong | 36 | +0.06 (-0.07 to +0.20) | +0.20 (-0.05 to +0.44) | +0.10 (-0.04 to +0.25) |
+| Wrong, other hand | 14 | +0.22 (-0.07 to +0.54) | +0.63 (+0.16 to +1.14) | +0.28 (-0.04 to +0.59) |
+| Predicted starter right | 114 | +0.00 (+0.00 to +0.00) | +0.00 (+0.00 to +0.00) | +0.03 (+0.00 to +0.08) |
+
+**In dollars** (same assumptions as Check 6): +0.01 wins a season is about $0.1M at $10M per win ($0.1M-$0.2M at $8-12M), or +0.04 pts of playoff odds for a typical team ($0.01M at $30M per berth) and +0.08 pts for a bubble team ($0.02M). Subgroup rows are per 162 games *of that kind*; a season has only the all-games share of them.
+
+**What it means.**
+
+- **Knowing the starter adds almost nothing:** +0.01 (-0.02 to +0.05) wins a season on the verified estimate, and the range includes zero.
+- **Why it's small:**
+  - The rotation model is already right in 76% of games, and right on the hand in 91%.
+  - In 22 of the 36 misses, the wrong guess throws with the same hand, so the platoon-driven lineup barely changes.
+  - The lineup's offense is a small part of the edge anyway. Most of the edge is defense and the starter, which don't depend on who pitches against us.
+- **Where it matters:** the gain concentrates where expected, in the 14 games where the guess had the wrong hand. Even there it is a few tenths of a win per 162 such games, and they are under a tenth of the schedule.
+- **Recommendation:** use MLB's announced probable starters for near-term games when they are available, and keep the rotation model as the fallback for games further out. It costs little and removes a known error. Its value in wins is too small to claim, so it is a correctness fix, not a selling point. Not built; it needs the user's go-ahead.
 
 ## What it means
 
