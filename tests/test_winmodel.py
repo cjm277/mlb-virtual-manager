@@ -45,3 +45,35 @@ def test_matchup_score_keeps_only_the_measured_pitch_type_share(monkeypatch):
     assert half["expected_xwoba"] == pytest.approx((raw["expected_xwoba"] + none["expected_xwoba"]) / 2, abs=0.0011)
     assert raw["by_pitch_group"] == none["by_pitch_group"]          # the scouting detail is kept either way
     assert 0.0 <= matchups.pitch_type_weight() <= 1.0
+
+
+# --- Defense -------------------------------------------------------------------------------------------------
+
+from backend import db  # noqa: E402
+from backend.engine import defense  # noqa: E402
+
+
+def test_defense_never_looks_ahead():
+    """A 2026 game only sees 2023-2025 ratings: a fielder whose only record at a position is from 2026 is rated
+    like any player new to it, not by what he went on to do in 2026."""
+    r = db.one("""SELECT f.player_id, f.position FROM fielding_by_position f
+                  WHERE f.season = 2026 AND f.innings > 300 AND f.fielding_runs_prevented >= 5
+                    AND NOT EXISTS (SELECT 1 FROM fielding_by_position h WHERE h.player_id = f.player_id
+                                    AND h.position = f.position AND h.season < 2026 AND h.innings > 0) LIMIT 1""")
+    assert r, "expected at least one fielder rated only in 2026"
+    value = defense.fielding_per_game(r["player_id"], r["position"], defense.rating_season("2026-08-01"))
+    s = defense.rating_settings()
+    assert value in (s["new_position_per_game"], s["no_history_per_game"])
+
+
+def test_dh_has_no_defense_and_catchers_are_rated_on_framing():
+    kirk = 672386
+    assert defense.runs_saved(kirk, "DH", DATE) == 0.0
+    assert defense.runs_saved(kirk, "C", DATE) == defense.weights()["framing"] * defense.framing_per_game(kirk, 2025)
+
+
+def test_model_lineup_counts_defense():
+    r = tools.get_model_lineup(GAME, TOR, PERKINS)
+    assert r["defense_runs_saved_per_game"] == pytest.approx(sum(s["defense_runs_per_game"] for s in r["lineup"]), abs=0.02)
+    dh = next(s for s in r["lineup"] if s["position"] == "DH")
+    assert dh["defense_runs_per_game"] == 0.0

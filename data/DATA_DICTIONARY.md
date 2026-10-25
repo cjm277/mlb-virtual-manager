@@ -66,7 +66,10 @@ These also power the rotation predictor (who started when, on how much rest), bu
 | `outs_above_average` | season × fielder | `position`, `outs_above_average`, `fielding_runs_prevented`. Defensive choices |
 | `catcher_framing` | season × catcher | `pitches`, `framing_runs`, `strike_rate`. Catcher choice |
 
-These leaderboards are full-season only (Savant doesn't publish them by date), so a June plan sees the full-2026 value. They measure stable skills (speed, range, framing), and this is listed as a known limitation.
+| `fielding_by_position` | season (2023-2026) × player × position | `outs_above_average`, `fielding_runs_prevented` at that position (Savant, one leaderboard per position), `innings`, `games_started` there (MLB Stats API). Added by `scripts/fetch_defense.py`; the win model's defense |
+| `framing_history` | season (2023-2026) × catcher | `framing_runs`, `pitches`. Added by `scripts/fetch_defense.py` |
+
+These leaderboards are full-season only The win model avoids look-ahead by using only seasons BEFORE the game for `fielding_by_position` and `framing_history`. After rebuilding the database with `scripts/build_dataset.py`, re-run `scripts/fetch_defense.py` to add these two tables back. (Savant doesn't publish them by date), so a June plan sees the full-2026 value. They measure stable skills (speed, range, framing), and this is listed as a known limitation.
 
 ## Data quality
 

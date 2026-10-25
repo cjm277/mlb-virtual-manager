@@ -1,0 +1,1101 @@
+{
+  "run_id": "2026-08-01_g822781_t141",
+  "status": "needs_human_review",
+  "game": {
+    "game_pk": 822781,
+    "season": 2026,
+    "game_date": "2026-08-01",
+    "game_number": 1,
+    "day_night": "day",
+    "venue": "Rogers Centre",
+    "team": "Toronto Blue Jays",
+    "team_id": 141,
+    "team_record_going_in": "51-59",
+    "opponent": "St. Louis Cardinals",
+    "opponent_id": 138,
+    "opponent_record_going_in": "54-56",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 669461,
+        "name": "Matthew Liberatore"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "position": "1B",
+          "bats": "R",
+          "reason": "0.0246 runs/PA; -0.031 defense runs/game at 1B; batter edge vs lefty Liberatore."
+        },
+        {
+          "slot": 2,
+          "player_id": 678218,
+          "name": "Brandon Valenzuela",
+          "position": "DH",
+          "bats": "S",
+          "reason": "0.0122 runs/PA; 0.0 defense runs/game at DH; even matchup vs Liberatore."
+        },
+        {
+          "slot": 3,
+          "player_id": 672960,
+          "name": "Kazuma Okamoto",
+          "position": "3B",
+          "bats": "R",
+          "reason": "0.0101 runs/PA; -0.007 defense runs/game at 3B; batter edge vs lefty Liberatore."
+        },
+        {
+          "slot": 4,
+          "player_id": 543807,
+          "name": "George Springer",
+          "position": "RF",
+          "bats": "R",
+          "reason": "0.0133 runs/PA; best-defense rating is 0.0 in LF, with RF rating unavailable; even matchup. Starts per manager despite rest suggestion; resting costs 0.05 win-probability points."
+        },
+        {
+          "slot": 5,
+          "player_id": 664702,
+          "name": "Myles Straw",
+          "position": "LF",
+          "bats": "R",
+          "reason": "0.0073 runs/PA; 0.037 defense runs/game at LF; even matchup. Hitter sample is moderate."
+        },
+        {
+          "slot": 6,
+          "player_id": 649966,
+          "name": "Luis Ur\u00edas",
+          "position": "2B",
+          "bats": "R",
+          "reason": "0.0056 runs/PA; defense runs/game at 2B unavailable; even matchup. Hitter sample is small."
+        },
+        {
+          "slot": 7,
+          "player_id": 672386,
+          "name": "Alejandro Kirk",
+          "position": "C",
+          "bats": "R",
+          "reason": "0.0052 runs/PA; 0.187 defense runs/game at C; even matchup. Hitter sample is moderate."
+        },
+        {
+          "slot": 8,
+          "player_id": 662139,
+          "name": "Daulton Varsho",
+          "position": "CF",
+          "bats": "L",
+          "reason": "runs/PA is below average; 0.068 defense runs/game at CF; even matchup vs lefty Liberatore."
+        },
+        {
+          "slot": 9,
+          "player_id": 676391,
+          "name": "Ernie Clement",
+          "position": "SS",
+          "bats": "R",
+          "reason": "-0.0078 runs/PA; 0.028 defense runs/game at SS; even matchup. Starts despite rest suggestion; resting costs 0.30 win-probability points."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 660821,
+          "name": "Jes\u00fas S\u00e1nchez",
+          "role": "pinch_hitter",
+          "note": "Left-handed bat with a tough left-on-left matchup; better used when a right-handed reliever enters."
+        },
+        {
+          "player_id": 676914,
+          "name": "Davis Schneider",
+          "role": "pinch_hitter",
+          "note": "Right-handed pinch-hit option, especially against a left-handed reliever; his matchup with Liberatore is even."
+        },
+        {
+          "player_id": 664770,
+          "name": "Nathan Lukes",
+          "role": "pinch_hitter",
+          "note": "Left-handed outfield bat; left-on-left matchup favors the pitcher, and his sample against left-handed pitching is small."
+        },
+        {
+          "player_id": 665926,
+          "name": "Andr\u00e9s Gim\u00e9nez",
+          "role": "defensive_replacement",
+          "note": "Shortstop glove for a late lead; best available defensive replacement at the position."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later, runner in scoring position, against a left-handed reliever.",
+          "bench_player_id": 676914,
+          "replaces_player_id": 649966,
+          "reason": "Davis Schneider is the highest-ranked available bench bat after the manager-requested lineup change and bats right-handed."
+        },
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later, runner in scoring position, against a right-handed reliever.",
+          "bench_player_id": 660821,
+          "replaces_player_id": 664702,
+          "reason": "Jes\u00fas S\u00e1nchez bats left-handed and has a stronger platoon opportunity against a right-handed reliever than against Liberatore."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead after Ernie Clement's final plate appearance.",
+          "bench_player_id": 665926,
+          "replaces_player_id": 676391,
+          "reason": "Andr\u00e9s Gim\u00e9nez is the available shortstop defensive replacement."
+        }
+      ],
+      "summary": "The model projects 4.77 expected runs and 0.26 defensive runs saved per game for its original lineup; the manager-requested Springer-for-S\u00e1nchez change and outfield assignments override that model choice. Matthew Liberatore is the medium-confidence expected starter (61%); Springer starts despite the model's rest call, which priced resting him at 0.05 win-probability points."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 453286,
+        "name": "Max Scherzer",
+        "throws": "R",
+        "reason": "He is the only starter ready with 4 days rest; keep him on a short leash given his 9.49 ERA and 0.373 xwoba allowed.",
+        "expected_innings": 4.0,
+        "pitch_count_limit": 75,
+        "pitch_mix": [
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 30.0,
+            "vs_rhb_pct": 40.0,
+            "purpose": "Avoid predictable fastballs, especially to left-handed hitters hunting them."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 38.0,
+            "vs_rhb_pct": 12.0,
+            "purpose": "Use below the zone against Burleson and Nootbaar; their offspeed xwoba is 0.337 and 0.244."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 20.0,
+            "vs_rhb_pct": 32.0,
+            "purpose": "Mix in as chase pitch; do not rely on breaking balls alone against the left-handed threats."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 12.0,
+            "vs_rhb_pct": 16.0,
+            "purpose": "Change eye level and avoid leaving it in the middle of the plate."
+          }
+        ],
+        "keys": [
+          "Burleson projects at 0.397 expected xwoba; keep the ball off his fastball-hunting path and use changeups below the zone, though his offspeed xwoba is 0.337.",
+          "Nootbaar projects at 0.367 expected xwoba; avoid predictable fastballs and use changeups below the zone, where his offspeed xwoba is 0.244.",
+          "Stay away from fastball-heavy patterns to lefties: Scherzer has allowed 0.45 xwoba on fastballs to LHB, while his offspeed xwoba allowed is 0.214.",
+          "Use breaking balls to Walker and avoid repeated fastballs; Scherzer's vs-RHB sample is small."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 643511,
+          "name": "Tyler Rogers",
+          "throws": "R",
+          "role": "setup",
+          "note": "Rested; 23 holds and 2 saves make him a primary late-inning option."
+        },
+        {
+          "player_id": 689254,
+          "name": "Mason Fluharty",
+          "throws": "L",
+          "role": "middle",
+          "note": "Rested; use to change the look against left-handed hitters."
+        },
+        {
+          "player_id": 680755,
+          "name": "Braydon Fisher",
+          "throws": "R",
+          "role": "setup",
+          "note": "Rested; 8 holds and 1 save support a late-inning role."
+        },
+        {
+          "player_id": 689149,
+          "name": "Chad Dallas",
+          "throws": "R",
+          "role": "long",
+          "note": "Rested; use for length if Scherzer exits early."
+        },
+        {
+          "player_id": 663893,
+          "name": "Brendon Little",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Rested; reserve for left-handed pockets, especially when a key lefty is due."
+        },
+        {
+          "player_id": 686973,
+          "name": "Louis Varland",
+          "throws": "R",
+          "role": "closer",
+          "note": "24 saves lead the staff; limited after 15 pitches yesterday, so use only if needed."
+        },
+        {
+          "player_id": 656546,
+          "name": "Jeff Hoffman",
+          "throws": "R",
+          "role": "setup",
+          "note": "12 holds and 5 saves; limited after 11 pitches yesterday, so prefer rested arms first."
+        },
+        {
+          "player_id": 693686,
+          "name": "Spencer Miles",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after 16 pitches yesterday; use only if needed or for one batter."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use rested leverage arms first; turn to limited Varland only if the game demands it.",
+          "pitcher_ids": [
+            643511,
+            680755,
+            686973
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use rested arms first; save limited Hoffman and Varland for a critical spot.",
+          "pitcher_ids": [
+            680755,
+            643511,
+            656546,
+            686973
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Protect leverage arms and cover innings with long relief and rested middle options.",
+          "pitcher_ids": [
+            689149,
+            689254,
+            663893,
+            693686
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use long and rested lower-leverage relief; avoid spending limited late-inning arms.",
+          "pitcher_ids": [
+            689149,
+            689254,
+            663893,
+            693686
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Dallas takes the bulk innings; follow with rested middle relief and save limited arms for necessity.",
+          "pitcher_ids": [
+            689149,
+            689254,
+            663893,
+            643511,
+            693686
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Start with rested leverage and middle relief; use limited arms only for a critical matchup or final out.",
+          "pitcher_ids": [
+            643511,
+            680755,
+            689254,
+            656546,
+            686973
+          ]
+        }
+      ],
+      "summary": "Max Scherzer is the only starter ready, but the projected left-handed threats and his results against them call for a short leash and a changeup-led, not changeup-only, approach. Lean on rested relievers first; Varland, Hoffman and Miles are available but limited after pitching yesterday."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 669461,
+        "name": "Matthew Liberatore",
+        "throws": "L",
+        "confidence": "medium",
+        "alternatives": [],
+        "probability_pct": 61,
+        "probability_basis": "Right 61% of the time in 1,220 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 31.9,
+          "velo": 94.4,
+          "whiff_pct": 11.6,
+          "note": "His frequent fastball has a low whiff rate; attack it when it is in the zone."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 23.5,
+          "velo": 86.5,
+          "whiff_pct": 37.5,
+          "note": "A high-whiff breaking pitch; avoid expanding the zone against it."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 16.7,
+          "velo": 79.6,
+          "whiff_pct": 38.3,
+          "note": "His curve also misses bats; stay disciplined on its drop."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 14.5,
+          "velo": 88.7,
+          "whiff_pct": 22.6,
+          "note": "The changeup is less effective by results than his breaking pitches."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 8.8,
+          "velo": 94.4,
+          "whiff_pct": 7.7,
+          "note": "This fastball variant has a low whiff rate; look for a hittable location."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 4.0,
+          "velo": 90.6,
+          "whiff_pct": 19.4,
+          "note": "A low-use offering; stay ready for it but prioritize his main pitches."
+        }
+      ],
+      "how_to_attack": [
+        "Right-handed hitters: be ready for fastballs, which make up 43.3% of his mix; his fastballs have allowed a .408 xwOBA to righties.",
+        "Left-handed hitters: expect a balanced mix, with breaking balls and fastballs each at 50.0%; avoid chasing his breaking ball.",
+        "Do not give away strikes early against his breaking pitches: his slider and curveball have whiff rates of 37.5% and 38.3%.",
+        "Matthew Liberatore has averaged 4.9 innings per start, so be prepared for St. Louis\u2019s bullpen."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "expected_xwoba": 0.373,
+          "edge": "batter",
+          "note": "He has a batter edge; his fastball xwOBA is .413 against the .408 Liberatore allows to righties."
+        },
+        {
+          "player_id": 672960,
+          "name": "Kazuma Okamoto",
+          "expected_xwoba": 0.337,
+          "edge": "batter",
+          "note": "His fastball xwOBA is .379, and Liberatore allows .408 to right-handed hitters on fastballs."
+        },
+        {
+          "player_id": 543807,
+          "name": "George Springer",
+          "expected_xwoba": 0.33,
+          "edge": "even",
+          "note": "He has an even overall matchup; his offspeed xwOBA is .370 against the .383 Liberatore allows to righties."
+        },
+        {
+          "player_id": 678218,
+          "name": "Brandon Valenzuela",
+          "expected_xwoba": 0.326,
+          "edge": "even",
+          "note": "Even overall; his breaking-ball sample is small, so treat the .381 xwOBA there cautiously."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 660821,
+          "name": "Jes\u00fas S\u00e1nchez",
+          "expected_xwoba": 0.265,
+          "edge": "pitcher",
+          "note": "Left-on-left favors Liberatore; S\u00e1nchez\u2019s sample against left-handed pitching and pitch groups is small."
+        },
+        {
+          "player_id": 664770,
+          "name": "Nathan Lukes",
+          "expected_xwoba": 0.288,
+          "edge": "pitcher",
+          "note": "Left-on-left favors Liberatore; Lukes has small samples against left-handed pitching and breaking balls."
+        },
+        {
+          "player_id": 665926,
+          "name": "Andr\u00e9s Gim\u00e9nez",
+          "expected_xwoba": 0.297,
+          "edge": "even",
+          "note": "His breaking-ball sample is small, and Liberatore allows .284 xwOBA to lefties on breaking balls."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 676617,
+          "name": "Riley O'Brien",
+          "throws": "R",
+          "note": "Available and rested; leads the listed relievers with 26 saves."
+        },
+        {
+          "player_id": 592773,
+          "name": "Ryne Stanek",
+          "throws": "R",
+          "note": "Available and rested; has 17 holds."
+        },
+        {
+          "player_id": 687273,
+          "name": "Quinn Mathews",
+          "throws": "L",
+          "note": "Available and rested; the listed available left-handed reliever."
+        },
+        {
+          "player_id": 666277,
+          "name": "George Soriano",
+          "throws": "R",
+          "note": "Limited after 51 pitches over the last 3 days; has 16 holds, so availability may be constrained."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "bats": "R",
+          "expected_xwoba": 0.373,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your xwOBA is .413 against them and Liberatore allows .408 to righties. His breaking-ball allowance is .256; your sample against breaking balls is small."
+        },
+        {
+          "player_id": 672960,
+          "name": "Kazuma Okamoto",
+          "bats": "R",
+          "expected_xwoba": 0.337,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for the fastball: your xwOBA is .379 against it, while he allows .408 to righties. Be selective on breaking balls; he allows .256, and your offspeed sample is small."
+        },
+        {
+          "player_id": 543807,
+          "name": "George Springer",
+          "bats": "R",
+          "expected_xwoba": 0.33,
+          "edge": "even",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Sit on offspeed: your xwOBA is .370 against it and he allows .383 to righties. His breaking balls have limited opposing hitters to .256; consider the suggested rest after 11 straight starts."
+        },
+        {
+          "player_id": 678218,
+          "name": "Brandon Valenzuela",
+          "bats": "S",
+          "expected_xwoba": 0.326,
+          "edge": "even",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Look for offspeed: your xwOBA is .337 against it and he allows .383 to righties. Your samples against left-handed pitching, breaking balls, and offspeed are small; his breaking-ball allowance is .256."
+        },
+        {
+          "player_id": 664702,
+          "name": "Myles Straw",
+          "bats": "R",
+          "expected_xwoba": 0.324,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your xwOBA is .349 against them and he allows .408 to righties. Your offspeed sample is small, and he allows .256 on breaking balls."
+        },
+        {
+          "player_id": 676391,
+          "name": "Ernie Clement",
+          "bats": "R",
+          "expected_xwoba": 0.315,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Look for fastballs: you have a .260 xwOBA against them, while he allows .408 to righties. The bench should weigh the rest suggestion after 30 straight starts."
+        },
+        {
+          "player_id": 662139,
+          "name": "Daulton Varsho",
+          "bats": "L",
+          "expected_xwoba": 0.312,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your xwOBA is .299 against them and Liberatore allows .386 to lefties. His breaking balls have allowed .284, so do not chase them."
+        },
+        {
+          "player_id": 672386,
+          "name": "Alejandro Kirk",
+          "bats": "R",
+          "expected_xwoba": 0.307,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your xwOBA is .326 against them and he allows .408 to righties. Your samples versus left-handed pitching and all pitch groups are small; his breaking-ball allowance is .256."
+        },
+        {
+          "player_id": 676914,
+          "name": "Davis Schneider",
+          "bats": "R",
+          "expected_xwoba": 0.306,
+          "edge": "even",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Sit on offspeed: your xwOBA is .402 against it and he allows .383 to righties. Your samples against breaking balls and offspeed are small; his breaking-ball allowance is .256."
+        },
+        {
+          "player_id": 649966,
+          "name": "Luis Ur\u00edas",
+          "bats": "R",
+          "expected_xwoba": 0.302,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your xwOBA is .292 against them, versus .408 allowed by Liberatore to righties. Your samples against left-handed pitching and each pitch group are small; his breaking-ball allowance is .256."
+        },
+        {
+          "player_id": 665926,
+          "name": "Andr\u00e9s Gim\u00e9nez",
+          "bats": "L",
+          "expected_xwoba": 0.297,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your xwOBA is .280 against them, while he allows .386 to lefties. Your breaking-ball sample is small; he allows .284 on those pitches."
+        },
+        {
+          "player_id": 664770,
+          "name": "Nathan Lukes",
+          "bats": "L",
+          "expected_xwoba": 0.288,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your xwOBA is .266 against them and he allows .386 to lefties. Your samples against left-handed pitching and breaking balls are small; he allows .284 on breaking balls."
+        },
+        {
+          "player_id": 660821,
+          "name": "Jes\u00fas S\u00e1nchez",
+          "bats": "L",
+          "expected_xwoba": 0.265,
+          "edge": "pitcher",
+          "hunt": "breaking balls",
+          "beware": null,
+          "approach": "The matchup is tough left-on-left; your samples against left-handed pitching and both pitch groups are small. Against breaking balls you have a .248 xwOBA, while he allows .284 to lefties."
+        }
+      ],
+      "summary": "Matthew Liberatore is the medium-confidence expected starter (61%); prepare for his fastball-heavy mix to righties and balanced mix to lefties. His breaking pitches miss bats, but his fastballs have allowed a .408 xwOBA to right-handed hitters. Be ready for the bullpen after his 4.9 average innings per start; George Springer and Ernie Clement have rest suggestions."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 802139,
+          "name": "JJ Wetherholt",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "position": "RF",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 663457,
+          "name": "Lars Nootbaar",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 691026,
+          "name": "Masyn Winn",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 701675,
+          "name": "Nathan Church",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 691458,
+          "name": "Blaze Jordan",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 699625,
+          "name": "Jimmy Crooks",
+          "position": "C",
+          "bats": "L"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 802139,
+          "name": "JJ Wetherholt",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "position": "RF",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 676369,
+          "name": "Nelson Vel\u00e1zquez",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 691026,
+          "name": "Masyn Winn",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 665877,
+          "name": "Jos\u00e9 Ferm\u00edn",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 691458,
+          "name": "Blaze Jordan",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 686780,
+          "name": "Pedro Pag\u00e9s",
+          "position": "C",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 802139,
+          "name": "JJ Wetherholt",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.347,
+          "weakness": "Offspeed is his clearest weakness (xwoba 0.269); that split is flagged moderate.",
+          "how_to_pitch": "Change speeds and finish with offspeed; avoid living on fastballs, where his xwoba is 0.381."
+        },
+        {
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.358,
+          "weakness": "Breaking balls are less effective for him (xwoba 0.319); his vs-LHP split is stronger (xwoba 0.42, moderate sample).",
+          "how_to_pitch": "Use breaking balls to get chase and miss; don't challenge him with repeated fastballs."
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.381,
+          "weakness": "His vs-LHP split is weaker (xwoba 0.327, moderate sample); offspeed xwoba is 0.342.",
+          "how_to_pitch": "Prefer a right-hander; when facing him, vary speeds and avoid fastballs over the plate."
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.334,
+          "weakness": "He is stronger vs LHP (xwoba 0.391, moderate sample) than vs RHP (xwoba 0.31).",
+          "how_to_pitch": "Favor a right-hander and mix breaking balls and offspeed; avoid free passes."
+        },
+        {
+          "player_id": 663457,
+          "name": "Lars Nootbaar",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.331,
+          "weakness": "His vs-LHP xwoba is 0.273 (moderate sample).",
+          "how_to_pitch": "A left-hander is preferable; work breaking stuff below the zone and make him earn his way on."
+        },
+        {
+          "player_id": 691026,
+          "name": "Masyn Winn",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.3,
+          "weakness": "Limited impact overall (xwoba 0.3) and little split difference.",
+          "how_to_pitch": "Attack the zone and induce weak contact; avoid giving him extra bases with mistakes."
+        },
+        {
+          "player_id": 701675,
+          "name": "Nathan Church",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.279,
+          "weakness": "Low overall production (xwoba 0.279), with little difference by pitcher hand.",
+          "how_to_pitch": "Challenge him in the zone and keep the ball down."
+        },
+        {
+          "player_id": 691458,
+          "name": "Blaze Jordan",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.3,
+          "weakness": "Low on-base results (obp 0.254) and xwoba 0.3.",
+          "how_to_pitch": "Stay in the zone and attack early; don't give away walks."
+        },
+        {
+          "player_id": 699625,
+          "name": "Jimmy Crooks",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.324,
+          "weakness": "High strikeout rate (31.6%) and a weaker vs-RHP xwoba (0.313); moderate sample.",
+          "how_to_pitch": "Use a right-hander and expand with breaking pitches once ahead."
+        },
+        {
+          "player_id": 676369,
+          "name": "Nelson Vel\u00e1zquez",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.365,
+          "weakness": "Moderate sample; high strikeout rate (29.1%) and weaker vs-RHP xwoba (0.308).",
+          "how_to_pitch": "Against a right-hander, work offspeed and breaking pitches below the zone; don't feed fastballs in the heart."
+        },
+        {
+          "player_id": 665877,
+          "name": "Jos\u00e9 Ferm\u00edn",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.294,
+          "weakness": "Low overall xwoba (0.294), with little split difference.",
+          "how_to_pitch": "Attack the zone and avoid turning routine contact into walks."
+        },
+        {
+          "player_id": 686780,
+          "name": "Pedro Pag\u00e9s",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.268,
+          "weakness": "Moderate sample and weak overall output (xwoba 0.268).",
+          "how_to_pitch": "Get ahead with strikes and make him hit your pitch."
+        }
+      ],
+      "summary": "The main threats are Burleson, Walker and Herrera; Walker and Herrera are stronger against left-handers, while Burleson is stronger against right-handers. Prefer a right-handed starter overall: Burleson is notably less productive against left-handers, and Herrera's split also favors facing a left-hander. These lineups are predictions based on recent starts."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 680718,
+          "name": "Addison Barger",
+          "status": "out",
+          "reason": "Right elbow inflammation."
+        },
+        {
+          "player_id": 571578,
+          "name": "Patrick Corbin",
+          "status": "out",
+          "reason": "Left teres major strain."
+        },
+        {
+          "player_id": 682729,
+          "name": "Jonatan Clase",
+          "status": "out",
+          "reason": "Left plantar fasciitis."
+        },
+        {
+          "player_id": 573009,
+          "name": "Joe Mantiply",
+          "status": "out",
+          "reason": "Left knee inflammation."
+        },
+        {
+          "player_id": 672820,
+          "name": "Lenyn Sosa",
+          "status": "out",
+          "reason": "Right wrist contusion."
+        },
+        {
+          "player_id": 621244,
+          "name": "Jos\u00e9 Berr\u00edos",
+          "status": "out",
+          "reason": "Right elbow stress fracture."
+        },
+        {
+          "player_id": 554340,
+          "name": "Yimi Garc\u00eda",
+          "status": "out",
+          "reason": "Right elbow ulnar nerve and AC joint surgery."
+        },
+        {
+          "player_id": 623993,
+          "name": "Anthony Santander",
+          "status": "out",
+          "reason": "Left shoulder labral tear."
+        },
+        {
+          "player_id": 664074,
+          "name": "Cody Ponce",
+          "status": "out",
+          "reason": "Right knee ACL sprain."
+        },
+        {
+          "player_id": 670102,
+          "name": "Bowden Francis",
+          "status": "out",
+          "reason": "Right elbow surgery."
+        },
+        {
+          "player_id": 686973,
+          "name": "Louis Varland",
+          "status": "limited",
+          "reason": "pitched yesterday (15 pitches)"
+        },
+        {
+          "player_id": 656546,
+          "name": "Jeff Hoffman",
+          "status": "limited",
+          "reason": "pitched yesterday (11 pitches)"
+        },
+        {
+          "player_id": 693686,
+          "name": "Spencer Miles",
+          "status": "limited",
+          "reason": "pitched yesterday (16 pitches)"
+        },
+        {
+          "player_id": 676391,
+          "name": "Ernie Clement",
+          "status": "rest_suggested",
+          "reason": "30 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 543807,
+          "name": "George Springer",
+          "status": "rest_suggested",
+          "reason": "11 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "The listed injured-list players are out. Louis Varland, Jeff Hoffman, and Spencer Miles are available but limited after pitching yesterday; no players were flagged cleared with caution."
+    },
+    "manager_review": {
+      "approved": false,
+      "fixes": [
+        {
+          "to": "bench_coach",
+          "instruction": "Remove the unsupported 0.031 from Vladimir Guerrero Jr.\u2019s lineup reason; use a rationale supported by the reports, such as his batter edge against the medium-confidence expected starter Matthew Liberatore."
+        }
+      ],
+      "key_decisions": [
+        "Keep the lineup built for Matthew Liberatore, the medium-confidence expected starter (61%); Vladimir Guerrero Jr. and Kazuma Okamoto have batter edges against him.",
+        "Have hitters look for Liberatore\u2019s fastballs: he allows a .408 xwOBA to right-handed hitters, while his slider and curveball have whiff rates of 37.5% and 38.3%.",
+        "Use Max Scherzer on a short leash with a changeup-led mix; the pitching report says he has allowed 0.45 xwoba on fastballs to LHB, while his offspeed xwoba allowed is 0.214.",
+        "Lean on rested relievers first; Louis Varland, Jeff Hoffman, and Spencer Miles are available but limited after pitching yesterday.",
+        "Keep Jes\u00fas S\u00e1nchez available for a right-handed reliever; his left-on-left matchup against Liberatore is flagged as tough, and his sample against left-handed pitching is small."
+      ],
+      "keys_to_the_game": [
+        "Be ready for Liberatore\u2019s bullpen after his 4.9 average innings per start.",
+        "Stay disciplined against Liberatore\u2019s breaking pitches and attack hittable fastballs.",
+        "Change speeds to JJ Wetherholt and use breaking balls against Jordan Walker, avoiding repeated fastballs to Walker.",
+        "Use a right-hander against Alec Burleson when possible; his split is weaker against left-handed pitching, with a moderate sample.",
+        "Protect the bullpen by using rested arms first and reserving limited relievers for need or critical spots."
+      ],
+      "summary": "The plan is strategically coherent: the lineup targets the expected left-handed starter, and Scherzer\u2019s short-leash approach and bullpen plan account for the projected Cardinals threats and limited relievers. Do not approve until the bench coach removes the unsupported number from Vladimir Guerrero Jr.\u2019s reason."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Hunt Liberatore\u2019s hittable fastballs; stay off the breaking ball",
+      "message": "Matthew Liberatore is the medium-confidence expected starter (61%). Right-handed hitters, be ready for fastballs: he has allowed a .408 xwOBA to righties on them, and Vladimir Guerrero Jr. and Kazuma Okamoto have batter edges. Stay disciplined against the slider and curveball; their whiff rates are 37.5% and 38.3%. Be ready for St. Louis\u2019s bullpen after Liberatore\u2019s 4.9 average innings per start.",
+      "reminders": [
+        "Attack fastballs when they are in the zone.",
+        "Do not chase the slider or curveball.",
+        "Jes\u00fas S\u00e1nchez is a better option against a right-handed reliever; his left-on-left matchup with Liberatore is tough, and his left-handed-pitching sample is small."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Change speeds, keep the ball out of their damage zones",
+      "message": "Max Scherzer is on a short leash: the plan calls for 4.0 expected innings and a 75-pitch limit. Lead with changeups below the zone to Burleson and Nootbaar, but avoid becoming changeup-only. Vary speeds to JJ Wetherholt and use breaking balls against Jordan Walker rather than repeated fastballs. Start with rested leverage arms; Louis Varland, Jeff Hoffman, and Spencer Miles are available but limited after pitching yesterday.",
+      "reminders": [
+        "Favor a right-hander against Alec Burleson when possible; his split against left-handed pitching is weaker, with a moderate sample.",
+        "Dallas is the bulk-innings option if Scherzer exits early.",
+        "Save limited relievers for need or critical spots."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Stick to the Liberatore matchup; manage Scherzer and the bullpen carefully",
+      "message": "The lineup is built for Matthew Liberatore, the medium-confidence expected starter (61%); Vladimir Guerrero Jr. and Kazuma Okamoto have batter edges. Keep hitters disciplined against his breaking pitches and ready for fastballs. Max Scherzer gets a short leash and changeup-led mix, with rested relievers first. George Springer starts despite a rest suggestion; Ernie Clement also starts despite a rest suggestion. Louis Varland, Jeff Hoffman, and Spencer Miles are available but limited after pitching yesterday.",
+      "reminders": [
+        "Use Davis Schneider against a left-handed reliever in a late scoring spot; Jes\u00fas S\u00e1nchez is better against a right-hander.",
+        "Use Andr\u00e9s Gim\u00e9nez as the late-lead shortstop replacement after Ernie Clement\u2019s final plate appearance.",
+        "Protect limited relievers; use rested arms first."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 2,
+    "open_issues": [
+      {
+        "owner": "bench_coach",
+        "code": "unsupported_number",
+        "message": "1 number(s) do not appear in any tool result: 0.031 in lineup[0].reason. Copy stats exactly from tool results or remove them."
+      }
+    ]
+  },
+  "usage": {
+    "seconds": 144.2,
+    "total": {
+      "model_steps": 32,
+      "gateway_cache_hits": 13,
+      "input_tokens": 187851,
+      "cached_tokens": 83866,
+      "output_tokens": 16076,
+      "cost_usd": 0.01938
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 2,
+        "input_tokens": 4342,
+        "cached_tokens": 0,
+        "output_tokens": 437,
+        "seconds": 0.5,
+        "cost_usd": 0.0
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 4,
+        "input_tokens": 20060,
+        "cached_tokens": 4434,
+        "output_tokens": 2397,
+        "seconds": 1.4,
+        "cost_usd": 0.0
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 12574,
+        "cached_tokens": 5045,
+        "output_tokens": 1674,
+        "seconds": 0.8,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 2,
+        "model_steps": 7,
+        "gateway_cache_hits": 4,
+        "input_tokens": 37358,
+        "cached_tokens": 15970,
+        "output_tokens": 2316,
+        "seconds": 10.0,
+        "cost_usd": 0.00256
+      },
+      "bench_coach": {
+        "calls": 3,
+        "model_steps": 12,
+        "gateway_cache_hits": 0,
+        "input_tokens": 83947,
+        "cached_tokens": 58417,
+        "output_tokens": 6689,
+        "seconds": 121.0,
+        "cost_usd": 0.00962
+      },
+      "manager": {
+        "calls": 3,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 22016,
+        "cached_tokens": 0,
+        "output_tokens": 1999,
+        "seconds": 16.7,
+        "cost_usd": 0.0054
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7554,
+        "cached_tokens": 0,
+        "output_tokens": 564,
+        "seconds": 4.3,
+        "cost_usd": 0.00179
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

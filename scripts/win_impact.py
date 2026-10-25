@@ -20,6 +20,8 @@ Usage:
   python scripts/win_impact.py report                                     # score the staff's plans, write the report
   python scripts/win_impact.py plans --version v2                         # rebuild the sample with the win-model lineup
   python scripts/win_impact.py compare                                    # before (v1) vs after (v2), same games
+  python scripts/win_impact.py plans --version v3                         # rebuild with the offense + defense lineup
+  python scripts/win_impact.py defense                                    # v1 vs v2 vs v3, with defense counted
 """
 
 from __future__ import annotations
@@ -96,7 +98,7 @@ def build_plans(n_per_team: int, concurrency: int, out: Path = PLANS, limit: int
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
-    ap.add_argument("step", choices=["plans", "features", "report", "compare"])
+    ap.add_argument("step", choices=["plans", "features", "report", "compare", "defense"])
     ap.add_argument("--n-per-team", type=int, default=5)
     ap.add_argument("--concurrency", type=int, default=4)
     ap.add_argument("--version", default="v1", help="v1 = plans/ (before the win-model lineup), v2 = plans_v2/ (after)")
@@ -111,9 +113,12 @@ def main() -> None:
     elif args.step == "report":
         from win_model import write_report
         write_report()
-    else:
+    elif args.step == "compare":
         from win_model import write_comparison
         write_comparison()
+    else:
+        from win_model import write_defense_comparison
+        write_defense_comparison()
 
 
 if __name__ == "__main__":

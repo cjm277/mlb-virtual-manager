@@ -1,0 +1,1043 @@
+{
+  "run_id": "2026-08-19_g823664_t144",
+  "status": "approved",
+  "game": {
+    "game_pk": 823664,
+    "season": 2026,
+    "game_date": "2026-08-19",
+    "game_number": 1,
+    "day_night": "day",
+    "venue": "Target Field",
+    "team": "Atlanta Braves",
+    "team_id": 144,
+    "team_record_going_in": "74-52",
+    "opponent": "Minnesota Twins",
+    "opponent_id": 142,
+    "opponent_record_going_in": "62-65",
+    "home_away": "away",
+    "bats_last": false,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 671737,
+        "name": "Taj Bradley"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "position": "C",
+          "bats": "L",
+          "reason": "Leads the model lineup; he has a fastball edge against Bradley. Plays despite the rest suggestion; sitting costs 1.71 win-probability points."
+        },
+        {
+          "slot": 2,
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "position": "1B",
+          "bats": "L",
+          "reason": "The model places him second, and he has a fastball edge against Bradley. Plays despite the rest suggestion; sitting costs 100.00 win-probability points."
+        },
+        {
+          "slot": 3,
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "position": "LF",
+          "bats": "R",
+          "reason": "The model bats him third; he has an edge on fastballs against Bradley. His offspeed result is a small sample. Plays despite the rest suggestion; sitting costs 1.05 win-probability points."
+        },
+        {
+          "slot": 4,
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "position": "CF",
+          "bats": "L",
+          "reason": "The model bats him cleanup; he has a fastball edge against Bradley. Plays despite the rest suggestion; sitting costs 1.48 win-probability points."
+        },
+        {
+          "slot": 5,
+          "player_id": 573262,
+          "name": "Mike Yastrzemski",
+          "position": "RF",
+          "bats": "L",
+          "reason": "The model places him fifth, with an even matchup and fastball target against Bradley."
+        },
+        {
+          "slot": 6,
+          "player_id": 642086,
+          "name": "Dominic Smith",
+          "position": "DH",
+          "bats": "L",
+          "reason": "The model places him sixth, with an even matchup; his pitch-group results favor targeting fastballs."
+        },
+        {
+          "slot": 7,
+          "player_id": 643289,
+          "name": "Mauricio Dub\u00f3n",
+          "position": "2B",
+          "bats": "R",
+          "reason": "The model places him seventh, with an even matchup against Bradley."
+        },
+        {
+          "slot": 8,
+          "player_id": 805347,
+          "name": "Jim Jarvis",
+          "position": "SS",
+          "bats": "L",
+          "reason": "The model places him eighth; Bradley has the matchup edge, and Jarvis's offspeed and breaking-ball samples are small."
+        },
+        {
+          "slot": 9,
+          "player_id": 663586,
+          "name": "Austin Riley",
+          "position": "3B",
+          "bats": "R",
+          "reason": "The model places him ninth, with an even matchup. Plays despite the rest suggestion; sitting costs 0.66 win-probability points."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 657041,
+          "name": "Lane Thomas",
+          "role": "pinch_runner",
+          "note": "Top-ranked bench option; use his speed to run for a late, slower baserunner."
+        },
+        {
+          "player_id": 645277,
+          "name": "Ozzie Albies",
+          "role": "utility",
+          "note": "Use as a late-inning second-base option; he is rested despite the rest suggestion."
+        },
+        {
+          "player_id": 669221,
+          "name": "Sean Murphy",
+          "role": "backup_catcher",
+          "note": "Backup catcher; his overall 2026 sample and matchup pitch-group results are small."
+        },
+        {
+          "player_id": 673490,
+          "name": "Ha-Seong Kim",
+          "role": "defensive_replacement",
+          "note": "Available at shortstop; use for a late lead if a glove change is needed."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning with the tying or go-ahead run aboard and a slower runner on base.",
+          "bench_player_id": 657041,
+          "replaces_player_id": 642086,
+          "reason": "Lane Thomas is the top-ranked bench bat and offers a speed option."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Protect a late lead after a shortstop reaches base.",
+          "bench_player_id": 673490,
+          "replaces_player_id": 805347,
+          "reason": "Keep a shortstop available for a late defensive change."
+        },
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning against a left-handed reliever, with a key plate appearance due.",
+          "bench_player_id": 645277,
+          "replaces_player_id": 805347,
+          "reason": "As a switch-hitter, Albies can bat right-handed against the lefty."
+        }
+      ],
+      "summary": "The model projects 4.68 runs and 0.05 defensive runs saved per game. Taj Bradley is the high-confidence expected starter; we retain the model's selected order, positions, and rest decisions."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 519242,
+        "name": "Chris Sale",
+        "throws": "L",
+        "reason": "Ready on four days\u2019 rest; his 2.16 ERA and 0.272 xwOBA allowed lead the options. Matchups project 0.275 vs Larnach and 0.289 vs Bell, below the 0.315 league xwOBA.",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 100,
+        "pitch_mix": [
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 45.0,
+            "vs_rhb_pct": 40.0,
+            "purpose": "Change eye level; locate carefully and avoid predictable heaters."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 45.0,
+            "vs_rhb_pct": 40.0,
+            "purpose": "Primary breaking weapon to finish hitters, especially Lewis and Jeffers."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 5.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Change speeds to right-handed bats; use sparingly to lefties."
+          },
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 5.0,
+            "vs_rhb_pct": 5.0,
+            "purpose": "Show a different fastball look and induce ground contact."
+          }
+        ],
+        "keys": [
+          "Use sliders to attack Lewis; his xwOBA against breaking balls is 0.277, with a small sample flagged.",
+          "Jeffers has a 0.33 expected xwOBA; mix pitches and don\u2019t let him sit on the fastball.",
+          "Against Larnach, change speeds and avoid fastballs; the favorable split vs LHP is flagged small.",
+          "Keep traffic off the bases and work efficiently; Sale\u2019s profile shows a 5.4 bb_pct."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 669276,
+          "name": "Dylan Lee",
+          "throws": "L",
+          "role": "setup",
+          "note": "Primary setup lefty; rested, with 28 holds."
+        },
+        {
+          "player_id": 628452,
+          "name": "Raisel Iglesias",
+          "throws": "R",
+          "role": "closer",
+          "note": "Close games; rested, with 25 saves."
+        },
+        {
+          "player_id": 608718,
+          "name": "Brent Suter",
+          "throws": "L",
+          "role": "middle",
+          "note": "Available left-handed bridge option."
+        },
+        {
+          "player_id": 682989,
+          "name": "Victor Mederos",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available right-handed middle relief."
+        },
+        {
+          "player_id": 678061,
+          "name": "Ray Kerr",
+          "throws": "L",
+          "role": "mop_up",
+          "note": "Available for lower-leverage innings."
+        },
+        {
+          "player_id": 800311,
+          "name": "Didier Fuentes",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed and prefer rested arms."
+        },
+        {
+          "player_id": 689266,
+          "name": "Dylan Dodd",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Limited after pitching yesterday; use only if needed, preferably for one batter."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the rested setup arm, then Iglesias to finish; keep the limited relievers out unless needed.",
+          "pitcher_ids": [
+            669276,
+            628452
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use the best rested arms in leverage; hold Iglesias for the highest-pressure late spot.",
+          "pitcher_ids": [
+            669276,
+            682989,
+            628452
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Use middle relief to preserve setup and closer workload; save limited arms for necessity.",
+          "pitcher_ids": [
+            682989,
+            608718,
+            678061
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use available lower-leverage arms and avoid spending the closer or setup man.",
+          "pitcher_ids": [
+            678061,
+            608718,
+            682989
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Cover innings with rested middle relief first; use a limited arm only if the game requires it.",
+          "pitcher_ids": [
+            682989,
+            608718,
+            678061,
+            800311,
+            689266
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use rested arms first, saving the closer for the highest-leverage spot; limited relievers are emergency options.",
+          "pitcher_ids": [
+            669276,
+            682989,
+            628452,
+            608718,
+            800311,
+            689266
+          ]
+        }
+      ],
+      "summary": "Start Chris Sale and attack with his slider, using offspeed against Larnach and a varied approach to Jeffers. Lean on rested arms late; Fuentes and Dodd are available but limited after pitching yesterday."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 671737,
+        "name": "Taj Bradley",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 46.5,
+          "velo": 97.1,
+          "whiff_pct": 16.0,
+          "note": "His most-used individual pitch; hitters have produced .382 xwOBA against it."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 24.2,
+          "velo": 89.8,
+          "whiff_pct": 35.5,
+          "note": "His cutter has generated a 35.5% whiff rate and allowed .220 xwOBA."
+        },
+        {
+          "pitch": "splitter",
+          "usage_pct": 20.0,
+          "velo": 91.5,
+          "whiff_pct": 34.8,
+          "note": "The splitter has generated a 34.8% whiff rate and allowed .266 xwOBA."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 9.3,
+          "velo": 82.5,
+          "whiff_pct": 35.2,
+          "note": "A sparingly used curve with a 35.2% whiff rate and .262 xwOBA allowed."
+        }
+      ],
+      "how_to_attack": [
+        "Lefties: look for fastballs early; he uses the fastball group 64.9% of the time and allows .346 xwOBA against lefties on that group.",
+        "Righties: expect fastballs often\u2014he uses the fastball group 79.0% of the time against them.",
+        "Make him prove he can land the offspeed: against lefties he allows .240 xwOBA on that group, and against righties .335.",
+        "Be ready for swing-and-miss: his overall whiff rate is 26.0%, with a 35.5% whiff rate on the cutter."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "expected_xwoba": 0.355,
+          "edge": "batter",
+          "note": "Fastballs are his best target: .418 xwOBA against them, and Bradley allows .346 to lefties on the fastball group."
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "expected_xwoba": 0.347,
+          "edge": "batter",
+          "note": "His .427 xwOBA against fastballs stands out; Bradley allows lefties .346 on that group."
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "expected_xwoba": 0.339,
+          "edge": "batter",
+          "note": "He has a .416 xwOBA against fastballs; Bradley allows lefties .346 against the fastball group."
+        },
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "expected_xwoba": 0.338,
+          "edge": "batter",
+          "note": "Fastballs are the main target, with .394 xwOBA against them; his offspeed result is a small sample."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 669221,
+          "name": "Sean Murphy",
+          "expected_xwoba": 0.222,
+          "edge": "pitcher",
+          "note": "Small samples across pitch groups and against righties; overall 2026 hitter sample is also flagged small."
+        },
+        {
+          "player_id": 673490,
+          "name": "Ha-Seong Kim",
+          "expected_xwoba": 0.267,
+          "edge": "pitcher",
+          "note": "Small samples against righties and on breaking balls and offspeed; xwOBA is .230 against fastballs."
+        },
+        {
+          "player_id": 805347,
+          "name": "Jim Jarvis",
+          "expected_xwoba": 0.284,
+          "edge": "pitcher",
+          "note": "Small samples against offspeed and breaking balls; his breaking-ball xwOBA is .110."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 656546,
+          "name": "Jeff Hoffman",
+          "throws": "R",
+          "note": "Available and rested; leads the listed available relievers with 5 saves and 15 holds."
+        },
+        {
+          "player_id": 573124,
+          "name": "Taylor Rogers",
+          "throws": "L",
+          "note": "Available and rested; left-handed option with 2 saves and 9 holds."
+        },
+        {
+          "player_id": 667297,
+          "name": "Tommy Nance",
+          "throws": "R",
+          "note": "Available and rested; has 6 holds."
+        },
+        {
+          "player_id": 701519,
+          "name": "Travis Adams",
+          "throws": "R",
+          "note": "Available and rested; has 2 saves."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "bats": "L",
+          "expected_xwoba": 0.355,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Sit fastball: you're at .418 against them and Bradley allows .346 to lefties. Be patient against offspeed, where you're at .372 but he allows .240."
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "bats": "L",
+          "expected_xwoba": 0.347,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at .427 against them and Bradley allows .346 to lefties. Don't chase offspeed; he allows .240 against lefties on that group."
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "bats": "L",
+          "expected_xwoba": 0.339,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs, where you're at .416 and he allows .346 to lefties. Lay off offspeed early: he allows .240 against lefties on that group."
+        },
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "bats": "R",
+          "expected_xwoba": 0.338,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Sit fastball: you're at .394 against them and Bradley allows .304 to righties. Your offspeed result is a small sample, so don't build the plan around it."
+        },
+        {
+          "player_id": 573262,
+          "name": "Mike Yastrzemski",
+          "bats": "L",
+          "expected_xwoba": 0.32,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs: you're at .325 against them, and Bradley allows lefties .346. Be careful with offspeed; you're at .318 while he allows .240."
+        },
+        {
+          "player_id": 642086,
+          "name": "Dominic Smith",
+          "bats": "L",
+          "expected_xwoba": 0.317,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at .352 against them, and Bradley allows .346 to lefties. His offspeed group is tougher, allowing .240 against lefties."
+        },
+        {
+          "player_id": 643289,
+          "name": "Mauricio Dub\u00f3n",
+          "bats": "R",
+          "expected_xwoba": 0.304,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Look for fastballs, where you're at .321 and Bradley allows .304 to righties. Your offspeed sample is small; he allows .335 to righties on that group."
+        },
+        {
+          "player_id": 645277,
+          "name": "Ozzie Albies",
+          "bats": "S",
+          "expected_xwoba": 0.3,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at .316 against them and Bradley allows lefties .346. Be selective on offspeed; you're at .234 and he allows .240 to lefties."
+        },
+        {
+          "player_id": 663586,
+          "name": "Austin Riley",
+          "bats": "R",
+          "expected_xwoba": 0.296,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Look for fastballs, where you're at .317 and Bradley allows .304 to righties. Your offspeed sample is small, so keep the plan simple."
+        },
+        {
+          "player_id": 657041,
+          "name": "Lane Thomas",
+          "bats": "R",
+          "expected_xwoba": 0.295,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Sit fastball: you're at .326 against them and Bradley allows .304 to righties. Your offspeed sample is small, so don't overread the .157 result."
+        },
+        {
+          "player_id": 805347,
+          "name": "Jim Jarvis",
+          "bats": "L",
+          "expected_xwoba": 0.284,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs, where you're at .306 and Bradley allows .346 to lefties. Your offspeed and breaking-ball samples are small; avoid chasing offspeed, where you're at .220."
+        },
+        {
+          "player_id": 673490,
+          "name": "Ha-Seong Kim",
+          "bats": "R",
+          "expected_xwoba": 0.267,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Look for a fastball: your xwOBA is .230 against them, while Bradley allows .304 to righties. Samples against righties and on breaking balls and offspeed are small."
+        },
+        {
+          "player_id": 669221,
+          "name": "Sean Murphy",
+          "bats": "R",
+          "expected_xwoba": 0.222,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Keep the approach simple and look for a fastball: your xwOBA is .173 against them, and Bradley allows .304 to righties. These pitch-group results and your results against righties are small samples."
+        }
+      ],
+      "summary": "Taj Bradley is the high-confidence expected starter, with an 85% prediction probability; his 2026 line includes a 3.98 ERA and 151 strikeouts. Left-handed hitters should focus on his fastball group, while righties should expect it often; prepare for the cutter and splitter to miss bats. Matt Olson, Drake Baldwin, and Michael Harris II have the strongest listed matchup edges; note rest suggestions for those hitters and other affected teammates when setting the lineup."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 663616,
+          "name": "Trevor Larnach",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 680777,
+          "name": "Ryan Jeffers",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 605137,
+          "name": "Josh Bell",
+          "position": "DH",
+          "bats": "S"
+        },
+        {
+          "slot": 4,
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 807712,
+          "name": "Luke Keaschall",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 686797,
+          "name": "Brooks Lee",
+          "position": "3B",
+          "bats": "S"
+        },
+        {
+          "slot": 8,
+          "player_id": 702176,
+          "name": "Alan Roden",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 668952,
+          "name": "Ryan Kreidler",
+          "position": "SS",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 621439,
+          "name": "Byron Buxton",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 680777,
+          "name": "Ryan Jeffers",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 605137,
+          "name": "Josh Bell",
+          "position": "DH",
+          "bats": "S"
+        },
+        {
+          "slot": 5,
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 807712,
+          "name": "Luke Keaschall",
+          "position": "RF",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 686797,
+          "name": "Brooks Lee",
+          "position": "3B",
+          "bats": "S"
+        },
+        {
+          "slot": 8,
+          "player_id": 701785,
+          "name": "Kaelen Culpepper",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 668952,
+          "name": "Ryan Kreidler",
+          "position": "SS",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 663616,
+          "name": "Trevor Larnach",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.336,
+          "weakness": "Offspeed; xwOBA is 0.239 against it. His vs-LHP split is small.",
+          "how_to_pitch": "Use offspeed and change speeds; avoid challenging him with fastballs."
+        },
+        {
+          "player_id": 680777,
+          "name": "Ryan Jeffers",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.36,
+          "weakness": "Breaking balls; xwOBA is 0.316 against them, versus 0.39 against fastballs.",
+          "how_to_pitch": "Mix breaking balls in and avoid predictable fastballs; he handles velocity well."
+        },
+        {
+          "player_id": 605137,
+          "name": "Josh Bell",
+          "bats": "S",
+          "threat": "high",
+          "xwoba": 0.33,
+          "weakness": "More vulnerable to left-handed pitching: xwOBA 0.303 vs LHP and 0.343 vs RHP.",
+          "how_to_pitch": "Prefer a left-handed matchup and keep pitches out of his power zone."
+        },
+        {
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.324,
+          "weakness": "His xwOBA splits are similar: 0.318 vs LHP and 0.326 vs RHP.",
+          "how_to_pitch": "Work carefully in the zone and change speeds; do not give him a hittable fastball."
+        },
+        {
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.322,
+          "weakness": "Breaking balls; xwOBA is 0.262 against them, compared with 0.37 against fastballs.",
+          "how_to_pitch": "Use breaking pitches to finish at-bats and avoid leaving fastballs over the plate."
+        },
+        {
+          "player_id": 807712,
+          "name": "Luke Keaschall",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.31,
+          "weakness": "No clear major weakness in the available splits; xwOBA is 0.32 vs LHP and 0.306 vs RHP.",
+          "how_to_pitch": "Stay off the middle of the plate and vary location; be alert to his ability to reach base."
+        },
+        {
+          "player_id": 686797,
+          "name": "Brooks Lee",
+          "bats": "S",
+          "threat": "low",
+          "xwoba": 0.27,
+          "weakness": "His xwOBA is 0.25 vs LHP and 0.279 vs RHP.",
+          "how_to_pitch": "Attack the zone with quality strikes and avoid giving him a mistake to drive."
+        },
+        {
+          "player_id": 702176,
+          "name": "Alan Roden",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.337,
+          "weakness": "Moderate sample (72 PA); limited power, with a 0.279 SLG.",
+          "how_to_pitch": "Do not let the moderate-sample contact numbers lead to careless strikes; make him prove he can drive the ball."
+        },
+        {
+          "player_id": 668952,
+          "name": "Ryan Kreidler",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.287,
+          "weakness": "Limited production in the overview: 0.281 OBP and 0.371 SLG.",
+          "how_to_pitch": "Attack with strikes and avoid extending the at-bat with pitches over the heart."
+        },
+        {
+          "player_id": 621439,
+          "name": "Byron Buxton",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.344,
+          "weakness": "Breaking balls; xwOBA is 0.278 against them versus 0.394 against fastballs.",
+          "how_to_pitch": "Use breaking pitches and expand carefully; avoid feeding him fastballs in the zone."
+        },
+        {
+          "player_id": 701785,
+          "name": "Kaelen Culpepper",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.309,
+          "weakness": "Small sample (36 PA); his strikeout rate is 30.6%.",
+          "how_to_pitch": "Challenge him with strikes, then use a chase pitch once ahead; treat the numbers cautiously."
+        }
+      ],
+      "summary": "Jeffers, Buxton and Larnach are the main threats; attack Jeffers and Buxton with breaking pitches, and use offspeed against Larnach. The numbers lean toward a right-handed starter: Larnach and Bell have higher xwOBA against right-handers, though Jeffers and Lewis are stronger against left-handers."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 625643,
+          "name": "Reynaldo L\u00f3pez",
+          "status": "out",
+          "reason": "Left knee inflammation."
+        },
+        {
+          "player_id": 663158,
+          "name": "Robert Suarez",
+          "status": "out",
+          "reason": "Right elbow inflammation."
+        },
+        {
+          "player_id": 675911,
+          "name": "Spencer Strider",
+          "status": "out",
+          "reason": "Right elbow inflammation."
+        },
+        {
+          "player_id": 666214,
+          "name": "Joey Wentz",
+          "status": "out",
+          "reason": "Right knee ACL tear."
+        },
+        {
+          "player_id": 680885,
+          "name": "Spencer Schwellenbach",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 800311,
+          "name": "Didier Fuentes",
+          "status": "limited",
+          "reason": "pitched yesterday (15 pitches)"
+        },
+        {
+          "player_id": 689266,
+          "name": "Dylan Dodd",
+          "status": "limited",
+          "reason": "pitched yesterday (9 pitches)"
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 645277,
+          "name": "Ozzie Albies",
+          "status": "rest_suggested",
+          "reason": "11 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 663586,
+          "name": "Austin Riley",
+          "status": "rest_suggested",
+          "reason": "17 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 6 for catchers (2026 data)."
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "status": "rest_suggested",
+          "reason": "10 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "status": "rest_suggested",
+          "reason": "21 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Reynaldo L\u00f3pez, Robert Suarez, Spencer Strider, Joey Wentz, and Spencer Schwellenbach are on the injured list. Didier Fuentes and Dylan Dodd are limited after pitching yesterday; no players qualify for cleared-with-caution."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Keep Chris Sale as the starter: his 2.16 ERA and 0.272 xwOBA allowed lead the options, and the plan targets Larnach and Bell with favorable projected matchups.",
+        "Use Sale\u2019s slider as the main breaking weapon against Lewis and Jeffers; Lewis has a 0.277 xwOBA against breaking balls, with a small sample flagged, and Jeffers has a 0.33 expected xwOBA.",
+        "Keep the four rest-suggested hitters in the lineup: Baldwin, Olson, Acu\u00f1a, and Harris each have a reported fastball edge against Bradley, while the plan gives the respective sitting costs.",
+        "Prioritize rested relievers late, with Dylan Lee setting up and Raisel Iglesias closing; Fuentes and Dodd remain emergency options because they are limited after pitching yesterday."
+      ],
+      "keys_to_the_game": [
+        "Left-handed hitters should look for Bradley\u2019s fastball group and avoid chasing offspeed, which he allows .240 xwOBA against lefties on.",
+        "Sale should use breaking pitches against Jeffers and Lewis and change speeds against Larnach; Larnach\u2019s split against left-handed pitching is small.",
+        "Keep traffic off the bases and work efficiently; Sale\u2019s profile shows a 5.4 bb_pct.",
+        "Use rested bullpen arms in leverage and preserve limited relievers unless the game requires them."
+      ],
+      "summary": "Approved. The plan aligns the lineup with the high-confidence Taj Bradley prediction, starts Chris Sale against Minnesota\u2019s projected right-handed lineup, and reserves rested relief for late leverage. The checker found no issues."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Hunt Bradley\u2019s fastball; make him prove the offspeed",
+      "message": "Taj Bradley is the high-confidence expected starter. Lefties, look for his fastball early and stay disciplined against offspeed; righties should also be ready for fastballs. Be alert for his cutter and splitter, which can miss bats. Our lineup keeps Drake Baldwin, Matt Olson, Ronald Acu\u00f1a Jr., and Michael Harris II in despite rest suggestions because of their fastball edges.",
+      "reminders": [
+        "Baldwin, Olson, and Harris: look fastball; do not chase offspeed.",
+        "Acu\u00f1a\u2019s offspeed result is a small sample; keep the plan simple.",
+        "Watch for rested relievers Jeff Hoffman and Taylor Rogers late."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Sale sets the tone; attack with shape and change of speed",
+      "message": "Chris Sale starts. Use the slider as the main breaking weapon against Royce Lewis and Ryan Jeffers, and vary speeds against Trevor Larnach rather than challenging him with fastballs; Larnach\u2019s split against left-handed pitching is small. Keep traffic off the bases and work efficiently. Dylan Lee is the primary setup arm and Raisel Iglesias closes; lean on rested relief in leverage and preserve Didier Fuentes and Dylan Dodd, who are limited after pitching yesterday.",
+      "reminders": [
+        "Target 6.0 innings with a 100 pitch limit for Sale.",
+        "Mix pitches to Jeffers; do not let him sit on the fastball.",
+        "Use Lee then Iglesias for a close late lead; limited relievers are emergency options."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Approved plan: Sale starts, fastball-focused lineup, rested arms late",
+      "message": "Taj Bradley is the high-confidence expected starter. Keep the approved order: the four rest-suggested hitters\u2014Drake Baldwin, Matt Olson, Ronald Acu\u00f1a Jr., and Michael Harris II\u2014stay in for their fastball edges. Chris Sale starts, with a 6.0-inning target and 100-pitch limit; Dylan Lee sets up and Raisel Iglesias closes. Didier Fuentes and Dylan Dodd are limited after pitching yesterday, so preserve them unless needed. Reynaldo L\u00f3pez, Robert Suarez, Spencer Strider, Joey Wentz, and Spencer Schwellenbach are out.",
+      "reminders": [
+        "Use Lane Thomas to run for a slower runner late with the tying or go-ahead run aboard.",
+        "Consider Ha-Seong Kim for a late shortstop defensive change.",
+        "Fuentes and Dodd are limited; favor rested bullpen arms."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 0,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 25.0,
+    "total": {
+      "model_steps": 18,
+      "gateway_cache_hits": 12,
+      "input_tokens": 92471,
+      "cached_tokens": 29048,
+      "output_tokens": 8324,
+      "cost_usd": 0.0063
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 2,
+        "input_tokens": 4269,
+        "cached_tokens": 0,
+        "output_tokens": 296,
+        "seconds": 0.5,
+        "cost_usd": 0.0
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 4,
+        "input_tokens": 19864,
+        "cached_tokens": 4488,
+        "output_tokens": 2281,
+        "seconds": 1.2,
+        "cost_usd": 0.0
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 12665,
+        "cached_tokens": 5071,
+        "output_tokens": 1782,
+        "seconds": 0.6,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 16762,
+        "cached_tokens": 3200,
+        "output_tokens": 1072,
+        "seconds": 0.8,
+        "cost_usd": 0.0
+      },
+      "bench_coach": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 25012,
+        "cached_tokens": 16289,
+        "output_tokens": 2011,
+        "seconds": 14.6,
+        "cost_usd": 0.00308
+      },
+      "manager": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 6892,
+        "cached_tokens": 0,
+        "output_tokens": 342,
+        "seconds": 3.1,
+        "cost_usd": 0.00155
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7007,
+        "cached_tokens": 0,
+        "output_tokens": 540,
+        "seconds": 5.5,
+        "cost_usd": 0.00167
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

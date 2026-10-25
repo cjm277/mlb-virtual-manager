@@ -1,0 +1,1067 @@
+{
+  "run_id": "2026-06-13_g823369_t146",
+  "status": "approved",
+  "game": {
+    "game_pk": 823369,
+    "season": 2026,
+    "game_date": "2026-06-13",
+    "game_number": 1,
+    "day_night": "day",
+    "venue": "PNC Park",
+    "team": "Miami Marlins",
+    "team_id": 146,
+    "team_record_going_in": "35-35",
+    "opponent": "Pittsburgh Pirates",
+    "opponent_id": 134,
+    "opponent_record_going_in": "35-35",
+    "home_away": "away",
+    "bats_last": false,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 696149,
+        "name": "Bubba Chandler"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 669364,
+          "name": "Xavier Edwards",
+          "position": "2B",
+          "bats": "S",
+          "reason": "Leads off with 0.01 runs per PA and 0.043 defense runs per game; fastball edge vs Chandler. Plays despite rest suggestion: sitting costs 0.99 win-probability points."
+        },
+        {
+          "slot": 2,
+          "player_id": 681715,
+          "name": "Heriberto Hern\u00e1ndez",
+          "position": "RF",
+          "bats": "R",
+          "reason": "Bats second with 0.0071 runs per PA and 0.026 defense runs per game; no stated platoon edge vs RHP."
+        },
+        {
+          "slot": 3,
+          "player_id": 689414,
+          "name": "Liam Hicks",
+          "position": "1B",
+          "bats": "L",
+          "reason": "Bats third with 0.0058 runs per PA and 0.0 defense runs per game; fastball edge against Chandler."
+        },
+        {
+          "slot": 4,
+          "player_id": 677870,
+          "name": "Leo Jim\u00e9nez",
+          "position": "3B",
+          "bats": "R",
+          "reason": "Cleanup with 0.0043 runs per PA and -0.026 defense runs per game; fastball edge vs Chandler, but the sample vs RHP and breaking balls is small."
+        },
+        {
+          "slot": 5,
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "position": "DH",
+          "bats": "L",
+          "reason": "Bats fifth with 0.004 runs per PA and 0.0 defense runs per game; fastball edge vs Chandler. Plays despite rest suggestion: sitting costs 0.40 win-probability points."
+        },
+        {
+          "slot": 6,
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Bats sixth with 0.0035 runs per PA and 0.014 defense runs per game; no platoon edge vs RHP. Plays despite rest suggestion: sitting costs 0.65 win-probability points."
+        },
+        {
+          "slot": 7,
+          "player_id": 805300,
+          "name": "Jakob Marsee",
+          "position": "CF",
+          "bats": "L",
+          "reason": "Bats seventh with 0.036 defense runs per game; even matchup vs RHP, with no clear platoon edge."
+        },
+        {
+          "slot": 8,
+          "player_id": 683357,
+          "name": "Owen Caissie",
+          "position": "LF",
+          "bats": "L",
+          "reason": "Bats eighth with -0.0045 runs per PA and 0.015 defense runs per game; no stated platoon edge vs RHP."
+        },
+        {
+          "slot": 9,
+          "player_id": 691788,
+          "name": "Joe Mack",
+          "position": "C",
+          "bats": "L",
+          "reason": "Bats ninth with -0.0058 runs per PA and 0.0 defense runs per game; no stated platoon edge vs RHP."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 681393,
+          "name": "Connor Norby",
+          "role": "pinch_hitter",
+          "note": "Top-ranked bench bat; can cover 1B, 2B, or 3B."
+        },
+        {
+          "player_id": 665923,
+          "name": "Esteury Ruiz",
+          "role": "pinch_runner",
+          "note": "Use his speed to replace a slower runner late; small samples across pitch groups."
+        },
+        {
+          "player_id": 691594,
+          "name": "Javier Sanoja",
+          "role": "defensive_replacement",
+          "note": "Best bench defense rating; can cover 3B, CF, LF, RF, or SS."
+        },
+        {
+          "player_id": 666624,
+          "name": "Christopher Morel",
+          "role": "utility",
+          "note": "Available at 1B; small samples across pitch groups."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "Late innings vs a left-handed reliever, with the tying or go-ahead run in scoring position.",
+          "bench_player_id": 681393,
+          "replaces_player_id": 683357,
+          "reason": "Norby is the highest-ranked bench bat and has a platoon edge vs LHP; his vs-LHP sample is moderate."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning with the tying or go-ahead run aboard; replace a slower runner on base.",
+          "bench_player_id": 665923,
+          "replaces_player_id": 691788,
+          "reason": "Ruiz adds speed; his sprint speed is 29.9 ft/s and he has 11 steals."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Protect a late lead after Jim\u00e9nez reaches base or exits.",
+          "bench_player_id": 691594,
+          "replaces_player_id": 677870,
+          "reason": "Sanoja has the best bench defense rating and can play third base."
+        }
+      ],
+      "summary": "The model projects 4.59 expected runs and 0.11 defensive runs saved per game. Chandler is the high-confidence starter prediction; hunt his fastball, especially with left-handed hitters. Edwards, Stowers, and Lopez play despite their rest suggestions because sitting them costs more than the model\u2019s rest-day threshold."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 656848,
+        "name": "Michael Petersen",
+        "throws": "R",
+        "reason": "No listed starter is ready; Petersen is the confirmed opener, and his season xwOBA allowed is 0.29 with a moderate sample.",
+        "expected_innings": 1.0,
+        "pitch_count_limit": 30,
+        "pitch_mix": [
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 55.0,
+            "vs_rhb_pct": 50.0,
+            "purpose": "Set up the slider and changeup; avoid predictable middle-of-zone fastballs."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 35.0,
+            "purpose": "Use the breaking ball to Lowe and Reynolds, whose scouting report identifies breaking balls as a weakness."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 20.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Change speeds, especially against Gonzales; Petersen's changeup has a 0.221 xwOBA."
+          }
+        ],
+        "keys": [
+          "Treat this as a one-inning opener; the planned length arm is Lake Bachar, with 36 pitches in the last 3 days, so cap him at 2 innings or 35 pitches and reassess.",
+          "Petersen's expected xwOBA against Callihan is 0.377, but the matchup flags Callihan's sample as small; avoid fastball mistakes.",
+          "Favor sliders below the zone to Lowe and Reynolds; their scouting report flags breaking balls as the weaker group.",
+          "Use the changeup selectively; Petersen's changeup xwOBA is 0.221, while his right-handed split sample is small."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 664126,
+          "name": "Pete Fairbanks",
+          "throws": "R",
+          "role": "closer",
+          "note": "Primary late lead option; available and leads the staff with 8 saves."
+        },
+        {
+          "player_id": 669622,
+          "name": "Anthony Bender",
+          "throws": "R",
+          "role": "setup",
+          "note": "First high-leverage bridge; available and has 7 holds."
+        },
+        {
+          "player_id": 676534,
+          "name": "Calvin Faucher",
+          "throws": "R",
+          "role": "setup",
+          "note": "Next leverage option; available with 6 holds."
+        },
+        {
+          "player_id": 676604,
+          "name": "Tyler Zuber",
+          "throws": "R",
+          "role": "middle",
+          "note": "Fresh middle-inning option for lower leverage."
+        },
+        {
+          "player_id": 669199,
+          "name": "Lake Bachar",
+          "throws": "R",
+          "role": "long",
+          "note": "Confirmed length arm after Petersen; 36 pitches in the last 3 days, so limit to 2 innings or 35 pitches and reassess."
+        },
+        {
+          "player_id": 806188,
+          "name": "Cade Gibson",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Available left-hander for a key left-handed pocket."
+        },
+        {
+          "player_id": 687531,
+          "name": "William Kempner",
+          "throws": "R",
+          "role": "long",
+          "note": "Next length option after Bachar; also had 36 pitches in the last 3 days, so limit to 2 innings or 35 pitches and reassess."
+        },
+        {
+          "player_id": 667463,
+          "name": "John King",
+          "throws": "L",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed or for one batter."
+        },
+        {
+          "player_id": 663969,
+          "name": "Tyler Phillips",
+          "throws": "R",
+          "role": "long",
+          "note": "Limited after 70 pitches over the last 3 days; use only if needed."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use Bender and Faucher to bridge to Fairbanks; turn to Gibson for a left-handed pocket if needed.",
+          "pitcher_ids": [
+            669622,
+            676534,
+            806188,
+            664126
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use Bender first, then Faucher; keep Fairbanks for the highest-leverage finish.",
+          "pitcher_ids": [
+            669622,
+            676534,
+            664126
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Protect leverage arms; use Kempner for length after considering his recent workload, then Zuber and Bachar if needed.",
+          "pitcher_ids": [
+            687531,
+            676604,
+            669199
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use Bachar then Kempner for length, each capped at 2 innings or 35 pitches; follow with Zuber before limited arms.",
+          "pitcher_ids": [
+            669199,
+            687531,
+            676604
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "After Petersen, go to Bachar for up to 2 innings or 35 pitches; then Kempner for up to 2 innings or 35 pitches, followed by Zuber and Faucher.",
+          "pitcher_ids": [
+            669199,
+            687531,
+            676604,
+            676534
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use Zuber first, then Bender and Faucher for leverage; reserve Fairbanks for the decisive frame and avoid limited arms unless necessary.",
+          "pitcher_ids": [
+            676604,
+            669622,
+            676534,
+            664126
+          ]
+        }
+      ],
+      "summary": "No listed starter is ready, so Petersen opens and Lake Bachar is the confirmed first length arm; both Bachar and Kempner had 36 pitches in the last 3 days, so use the stated workload caps and reassess. Attack the main left-handed threats with sliders, and preserve Bender, Faucher, and Fairbanks for leverage."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 696149,
+        "name": "Bubba Chandler",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 50.4,
+          "velo": 98.4,
+          "whiff_pct": 21.8,
+          "note": "His most-used pitch; its .354 xwOBA allowed makes it a good pitch to attack."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 17.8,
+          "velo": 91.8,
+          "whiff_pct": 25.3,
+          "note": "A frequent offspeed look; .268 xwOBA allowed."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 15.5,
+          "velo": 89.4,
+          "whiff_pct": 31.3,
+          "note": "His slider gets swings and misses; .308 xwOBA allowed."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 8.1,
+          "velo": 87.7,
+          "whiff_pct": 27.0,
+          "note": "A breaking-ball option with .227 xwOBA allowed."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 6.5,
+          "velo": 97.8,
+          "whiff_pct": 23.3,
+          "note": "Another fastball look; .415 xwOBA allowed."
+        }
+      ],
+      "how_to_attack": [
+        "Lefties: look for fastballs early; he uses the fastball group 55.0% of the time and allows .399 xwOBA against it.",
+        "Righties: be ready for fastballs, which make up 58.8% of his mix; his fastball-group xwOBA allowed is .328.",
+        "Don't chase the breaking ball: righties have a .275 xwOBA allowed against that group, and lefties .29.",
+        "Make him throw strikes and stay patient: his walk rate is 14.3% overall."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 669364,
+          "name": "Xavier Edwards",
+          "expected_xwoba": 0.351,
+          "edge": "batter",
+          "note": "His fastball-group xwOBA is .386; Chandler allows .399 to lefties on fastballs."
+        },
+        {
+          "player_id": 689414,
+          "name": "Liam Hicks",
+          "expected_xwoba": 0.348,
+          "edge": "batter",
+          "note": "Fastballs are the hunt: his group xwOBA is .353 and Chandler allows .399 to lefties."
+        },
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "expected_xwoba": 0.345,
+          "edge": "batter",
+          "note": "Look fastball; his fastball-group xwOBA is .371 and Chandler allows .399 to lefties."
+        },
+        {
+          "player_id": 677870,
+          "name": "Leo Jim\u00e9nez",
+          "expected_xwoba": 0.343,
+          "edge": "batter",
+          "note": "His fastball-group xwOBA is .425; small sample vs RHP and breaking balls."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 665923,
+          "name": "Esteury Ruiz",
+          "expected_xwoba": 0.27,
+          "edge": "pitcher",
+          "note": "Small samples across pitch groups; his fastball-group xwOBA is .262."
+        },
+        {
+          "player_id": 666624,
+          "name": "Christopher Morel",
+          "expected_xwoba": 0.259,
+          "edge": "pitcher",
+          "note": "Small samples across pitch groups; his fastball-group xwOBA is .248."
+        },
+        {
+          "player_id": 691594,
+          "name": "Javier Sanoja",
+          "expected_xwoba": 0.277,
+          "edge": "pitcher",
+          "note": "His breaking-ball-group xwOBA is .209; the group is used 32.8% against righties."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 642397,
+          "name": "Gregory Soto",
+          "throws": "L",
+          "note": "Available; leads this group with 9 saves and 6 holds."
+        },
+        {
+          "player_id": 676755,
+          "name": "Isaac Mattson",
+          "throws": "R",
+          "note": "Available; has 7 holds."
+        },
+        {
+          "player_id": 682254,
+          "name": "Mason Montgomery",
+          "throws": "L",
+          "note": "Available left-hander with 7 holds."
+        },
+        {
+          "player_id": 642701,
+          "name": "Dennis Santana",
+          "throws": "R",
+          "note": "Available with 2 saves and 4 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 669364,
+          "name": "Xavier Edwards",
+          "bats": "L",
+          "expected_xwoba": 0.351,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your group xwOBA is .386 and he allows .399 to lefties; lay off breaking balls, where you are at .261 and he allows .29."
+        },
+        {
+          "player_id": 689414,
+          "name": "Liam Hicks",
+          "bats": "L",
+          "expected_xwoba": 0.348,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: your group xwOBA is .353 and he allows .399 to lefties; be ready for offspeed, where you are at .288 and he allows .294."
+        },
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "bats": "L",
+          "expected_xwoba": 0.345,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: your group xwOBA is .371 and he allows .399 to lefties; be selective on offspeed, where you are at .267 and he allows .294."
+        },
+        {
+          "player_id": 677870,
+          "name": "Leo Jim\u00e9nez",
+          "bats": "R",
+          "expected_xwoba": 0.343,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your group xwOBA is .425 versus his .328 allowed to righties; small sample versus RHP and breaking balls."
+        },
+        {
+          "player_id": 805300,
+          "name": "Jakob Marsee",
+          "bats": "L",
+          "expected_xwoba": 0.335,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look fastball: you are at .297 and he allows .399 to lefties; don't expand on breaking balls, where you are at .321 and he allows .29."
+        },
+        {
+          "player_id": 683357,
+          "name": "Owen Caissie",
+          "bats": "L",
+          "expected_xwoba": 0.334,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your group xwOBA is .35 and he allows .399 to lefties; avoid breaking balls, where you are at .215 and he allows .29."
+        },
+        {
+          "player_id": 691788,
+          "name": "Joe Mack",
+          "bats": "L",
+          "expected_xwoba": 0.321,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your group xwOBA is .321 and he allows .399 to lefties; small samples versus breaking balls and offspeed, so don't overread those results."
+        },
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "bats": "R",
+          "expected_xwoba": 0.316,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your group xwOBA is .443 and he allows .328 to righties; breaking-ball results are closer (.285 for you, .275 allowed)."
+        },
+        {
+          "player_id": 681715,
+          "name": "Heriberto Hern\u00e1ndez",
+          "bats": "R",
+          "expected_xwoba": 0.314,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your group xwOBA is .364 and he allows .328 to righties; small samples versus breaking balls and offspeed."
+        },
+        {
+          "player_id": 681393,
+          "name": "Connor Norby",
+          "bats": "R",
+          "expected_xwoba": 0.288,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for a fastball to hit: your group xwOBA is .323 and he allows .328 to righties; his breaking-ball allowance is .275 against your .216."
+        },
+        {
+          "player_id": 691594,
+          "name": "Javier Sanoja",
+          "bats": "R",
+          "expected_xwoba": 0.277,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your group xwOBA is .312 and he allows .328 to righties; breaking-ball results favor him (.209 for you, .275 allowed)."
+        },
+        {
+          "player_id": 665923,
+          "name": "Esteury Ruiz",
+          "bats": "R",
+          "expected_xwoba": 0.27,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Small samples across pitch groups; hunt fastballs (your xwOBA .262) and avoid breaking balls (your xwOBA .2)."
+        },
+        {
+          "player_id": 666624,
+          "name": "Christopher Morel",
+          "bats": "R",
+          "expected_xwoba": 0.259,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Small samples across pitch groups; hunt fastballs (your xwOBA .248) and be careful with breaking balls (your xwOBA .195)."
+        }
+      ],
+      "summary": "Bubba Chandler is the high-confidence starter prediction; his fastball is the main target, especially for left-handed hitters. Kyle Stowers and Xavier Edwards are rest-suggested, so make the lineup decision with that workload note in mind."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 687462,
+          "name": "Spencer Horwitz",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 664040,
+          "name": "Brandon Lowe",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "position": "LF",
+          "bats": "S"
+        },
+        {
+          "slot": 4,
+          "player_id": 656811,
+          "name": "Ryan O'Hearn",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 693304,
+          "name": "Nick Gonzales",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 682997,
+          "name": "Tyler Callihan",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 682848,
+          "name": "Endy Rodr\u00edguez",
+          "position": "C",
+          "bats": "S"
+        },
+        {
+          "slot": 8,
+          "player_id": 663968,
+          "name": "Jake Mangum",
+          "position": "CF",
+          "bats": "S"
+        },
+        {
+          "slot": 9,
+          "player_id": 669707,
+          "name": "Jared Triolo",
+          "position": "SS",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 693304,
+          "name": "Nick Gonzales",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "position": "LF",
+          "bats": "S"
+        },
+        {
+          "slot": 3,
+          "player_id": 664040,
+          "name": "Brandon Lowe",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 542303,
+          "name": "Marcell Ozuna",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 656811,
+          "name": "Ryan O'Hearn",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 687462,
+          "name": "Spencer Horwitz",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 669707,
+          "name": "Jared Triolo",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 680779,
+          "name": "Henry Davis",
+          "position": "C",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 687462,
+          "name": "Spencer Horwitz",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.328,
+          "weakness": "Breaking balls (xwOBA 0.279; moderate sample); vs LHP xwOBA 0.304 is from a small sample.",
+          "how_to_pitch": "Mix breaking balls for weak contact; avoid relying on offspeed, where his xwOBA is 0.361 (moderate sample)."
+        },
+        {
+          "player_id": 664040,
+          "name": "Brandon Lowe",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.361,
+          "weakness": "Breaking balls (xwOBA 0.299); vs LHP xwOBA 0.287 (moderate sample).",
+          "how_to_pitch": "Work breaking balls below the zone; his fastball xwOBA is 0.418, so don\u2019t challenge him there."
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "bats": "S",
+          "threat": "high",
+          "xwoba": 0.361,
+          "weakness": "Breaking balls (xwOBA 0.278); vs RHP xwOBA 0.341 versus 0.402 vs LHP.",
+          "how_to_pitch": "Favor breaking stuff over fastballs; he has a 0.412 fastball xwOBA, and be especially cautious with a left-hander."
+        },
+        {
+          "player_id": 656811,
+          "name": "Ryan O'Hearn",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.324,
+          "weakness": "No pitch-type profile available; xwOBA vs LHP is 0.294.",
+          "how_to_pitch": "Use a left-hander when practical and keep pitches out of the middle; his power is reflected in a 0.46 SLG."
+        },
+        {
+          "player_id": 693304,
+          "name": "Nick Gonzales",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.331,
+          "weakness": "Offspeed (xwOBA 0.294; moderate sample); vs LHP xwOBA 0.286 (moderate sample).",
+          "how_to_pitch": "Change speeds and make him earn the strike; his chase rate is 31.0%."
+        },
+        {
+          "player_id": 682997,
+          "name": "Tyler Callihan",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.407,
+          "weakness": "No pitch-type profile available; overall sample is small.",
+          "how_to_pitch": "Do not overreact to the strong line from a small sample; avoid mistakes in the zone."
+        },
+        {
+          "player_id": 682848,
+          "name": "Endy Rodr\u00edguez",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.363,
+          "weakness": "No pitch-type profile available; xwOBA is 0.387 vs LHP and 0.361 vs RHP.",
+          "how_to_pitch": "Stay out of the middle and change the look; his numbers are stronger against left-handed pitching."
+        },
+        {
+          "player_id": 663968,
+          "name": "Jake Mangum",
+          "bats": "S",
+          "threat": "low",
+          "xwoba": 0.287,
+          "weakness": "xwOBA is 0.252 vs LHP, 0.301 vs RHP.",
+          "how_to_pitch": "Challenge carefully with strikes and control the running game; he brings speed on the bases."
+        },
+        {
+          "player_id": 669707,
+          "name": "Jared Triolo",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.27,
+          "weakness": "xwOBA is 0.23 vs RHP versus 0.363 vs LHP.",
+          "how_to_pitch": "Prefer a right-hander and attack the zone; his overall xwOBA is 0.27."
+        },
+        {
+          "player_id": 542303,
+          "name": "Marcell Ozuna",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.305,
+          "weakness": "No pitch-type profile available; xwOBA vs RHP is 0.282.",
+          "how_to_pitch": "A right-hander is preferable; stay composed and make him prove he can handle pitches in the zone."
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.284,
+          "weakness": "Overall sample is small; xwOBA vs RHP is 0.169 (small sample).",
+          "how_to_pitch": "Use the strike zone and make him show discipline; his overall sample is small."
+        },
+        {
+          "player_id": 680779,
+          "name": "Henry Davis",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.294,
+          "weakness": "xwOBA vs LHP is 0.237 versus 0.31 vs RHP.",
+          "how_to_pitch": "A left-hander has the better matchup; attack with strikes rather than giving free passes."
+        }
+      ],
+      "summary": "Brandon Lowe and Bryan Reynolds are the main threats, with Tyler Callihan\u2019s 0.407 xwOBA needing caution because his sample is small. The numbers favor a right-handed starter overall: Reynolds is stronger against left-handers, and Lowe and Jared Triolo have lower xwOBA against right-handers."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 665052,
+          "name": "Griffin Conine",
+          "status": "out",
+          "reason": "Left hamstring strain."
+        },
+        {
+          "player_id": 677053,
+          "name": "Andrew Nardi",
+          "status": "out",
+          "reason": "Left rib cage stress reaction."
+        },
+        {
+          "player_id": 694795,
+          "name": "Josh Ekness",
+          "status": "out",
+          "reason": "Right calf strain."
+        },
+        {
+          "player_id": 691587,
+          "name": "Eury P\u00e9rez",
+          "status": "out",
+          "reason": "Right gracilis strain."
+        },
+        {
+          "player_id": 676083,
+          "name": "Janson Junk",
+          "status": "out",
+          "reason": "Right shin bone inflammation."
+        },
+        {
+          "player_id": 702281,
+          "name": "Robby Snelling",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 800049,
+          "name": "Adam Mazur",
+          "status": "out",
+          "reason": "Right elbow surgery."
+        },
+        {
+          "player_id": 678692,
+          "name": "Ronny Henriquez",
+          "status": "out",
+          "reason": "Right Elbow Surgery."
+        },
+        {
+          "player_id": 667463,
+          "name": "John King",
+          "status": "limited",
+          "reason": "pitched yesterday (18 pitches)"
+        },
+        {
+          "player_id": 663969,
+          "name": "Tyler Phillips",
+          "status": "limited",
+          "reason": "70 pitches over the last 3 days"
+        },
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "status": "rest_suggested",
+          "reason": "20 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 669364,
+          "name": "Xavier Edwards",
+          "status": "rest_suggested",
+          "reason": "32 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "status": "rest_suggested",
+          "reason": "18 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Eight players are on the injured list and unavailable. John King and Tyler Phillips are limited by recent workload; use them cautiously."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Keep Xavier Edwards, Kyle Stowers, and Otto Lopez in the lineup despite rest suggestions: the lineup report says sitting them costs 0.99, 0.40, and 0.65 win-probability points, respectively; all three also have a fastball matchup edge or useful lineup fit against the high-confidence Bubba Chandler prediction.",
+        "Use Michael Petersen as a one-inning opener, then Lake Bachar for length; cap Bachar and William Kempner at 2 innings or 35 pitches and reassess because each had 36 pitches in the last 3 days.",
+        "Attack Brandon Lowe and Bryan Reynolds with sliders below the zone; their reports identify breaking balls as a weakness and fastballs as a strength.",
+        "Preserve Bender, Faucher, and Fairbanks for late leverage, with Gibson available for a left-handed pocket; limit John King and Tyler Phillips because of their recent workload."
+      ],
+      "keys_to_the_game": [
+        "Make Chandler work and hunt his fastball, especially with left-handed hitters; his overall walk rate is 14.3%.",
+        "Keep fastballs out of the middle against Lowe and Reynolds; favor breaking balls below the zone.",
+        "Avoid mistakes against Tyler Callihan, but do not overreact to his 0.407 xwOBA because his sample is small.",
+        "Manage the opener and length arms to their stated limits, then keep the leverage bullpen available for close late innings."
+      ],
+      "summary": "Approved: the lineup is built around the high-confidence Bubba Chandler prediction, and the pitching plan matches the Pirates\u2019 left-handed threats while accounting for recent bullpen workloads. The checker found no issues, and the plan\u2019s workload cautions and late-inning roles fit together."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Be patient, then attack Chandler\u2019s fastball",
+      "message": "Bubba Chandler is the high-confidence starter prediction. Make him throw strikes\u2014his walk rate is 14.3%\u2014and hunt fastballs, especially from the left side. Stay disciplined against breaking balls. Xavier Edwards, Heriberto Hern\u00e1ndez, Liam Hicks, Leo Jim\u00e9nez, Kyle Stowers, Otto Lopez, Jakob Marsee, Owen Caissie, and Joe Mack are in the lineup. Watch for Gregory Soto, Isaac Mattson, Mason Montgomery, and Dennis Santana from their bullpen.",
+      "reminders": [
+        "Hunt fastballs; don\u2019t chase breaking balls.",
+        "Make Chandler work and take walks.",
+        "Stay ready for their available bullpen arms."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Change speeds, keep the breaking ball down",
+      "message": "Michael Petersen opens for one inning; Lake Bachar follows for length, capped at 2 innings or 35 pitches, then reassess. William Kempner has the same cap. Keep sliders below the zone to Brandon Lowe and Bryan Reynolds; avoid fastballs in the middle. Tyler Callihan\u2019s 0.407 xwOBA comes from a small sample, so don\u2019t overreact, but avoid mistakes in the zone. Preserve Anthony Bender and Calvin Faucher to bridge to Pete Fairbanks in close late innings; Cade Gibson is available for a left-handed pocket. John King and Tyler Phillips are limited.",
+      "reminders": [
+        "Use the changeup selectively against Nick Gonzales.",
+        "Reassess Bachar and Kempner at their workload caps.",
+        "Use limited arms only if needed."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Stick to the approved matchup and workload plan",
+      "message": "The approved lineup keeps Xavier Edwards, Kyle Stowers, and Otto Lopez despite rest suggestions, with the reported win-probability costs of sitting them at 0.99, 0.40, and 0.65 points. Chandler is the high-confidence starter prediction: encourage patience and fastball hunting, especially from left-handed hitters. Petersen opens; Bachar follows, with Bachar and Kempner capped at 2 innings or 35 pitches before reassessment. Keep sliders below the zone to Lowe and Reynolds, and treat Callihan\u2019s strong line cautiously because his sample is small. Protect Bender, Faucher, and Fairbanks for leverage; Gibson can cover a left-handed pocket. King and Phillips are limited. Griffin Conine, Andrew Nardi, Josh Ekness, Eury P\u00e9rez, Janson Junk, Robby Snelling, Adam Mazur, and Ronny Henriquez are out.",
+      "reminders": [
+        "Use Connor Norby late against a left-handed reliever with the tying or go-ahead run in scoring position.",
+        "Consider Esteury Ruiz to pinch-run late with the tying or go-ahead run aboard.",
+        "Use Javier Sanoja to protect a late lead after Leo Jim\u00e9nez reaches or exits.",
+        "Reassess length arms at their stated caps."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 2,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 106.0,
+    "total": {
+      "model_steps": 34,
+      "gateway_cache_hits": 13,
+      "input_tokens": 214684,
+      "cached_tokens": 110053,
+      "output_tokens": 16017,
+      "cost_usd": 0.01815
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 2,
+        "input_tokens": 4392,
+        "cached_tokens": 0,
+        "output_tokens": 344,
+        "seconds": 0.6,
+        "cost_usd": 0.0
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 16760,
+        "cached_tokens": 2090,
+        "output_tokens": 2373,
+        "seconds": 0.8,
+        "cost_usd": 0.0
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 12611,
+        "cached_tokens": 5055,
+        "output_tokens": 1744,
+        "seconds": 1.0,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 3,
+        "model_steps": 14,
+        "gateway_cache_hits": 5,
+        "input_tokens": 97786,
+        "cached_tokens": 64749,
+        "output_tokens": 5794,
+        "seconds": 24.9,
+        "cost_usd": 0.00551
+      },
+      "bench_coach": {
+        "calls": 2,
+        "model_steps": 8,
+        "gateway_cache_hits": 0,
+        "input_tokens": 54167,
+        "cached_tokens": 38159,
+        "output_tokens": 3460,
+        "seconds": 22.6,
+        "cost_usd": 0.00569
+      },
+      "manager": {
+        "calls": 3,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 21600,
+        "cached_tokens": 0,
+        "output_tokens": 1598,
+        "seconds": 13.4,
+        "cost_usd": 0.00512
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7368,
+        "cached_tokens": 0,
+        "output_tokens": 704,
+        "seconds": 55.5,
+        "cost_usd": 0.00183
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

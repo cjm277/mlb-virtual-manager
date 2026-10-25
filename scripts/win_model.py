@@ -722,3 +722,146 @@ def render_comparison(o: dict) -> str:
         "",
     ]
     return "\n".join(L)
+
+
+# ---------------------------------------------------------------------------
+# Offense + defense: v1 (staff's lineup) vs v2 (offense-only model lineup) vs v3 (offense + defense model lineup)
+# ---------------------------------------------------------------------------
+
+DEFENSE_REPORT = ROOT / "evidence" / "tests" / "win_model_defense.md"
+DEFENSE_NOTES = ROOT / "evidence" / "tests" / "win_model_defense_interpretation.md"
+VERSIONS = {"v1": ("Staff's own lineup", PLANS), "v2": ("Model lineup, offense only", SAVE / "plans_v2"),
+            "v3": ("Model lineup, offense + defense", SAVE / "plans_v3")}
+
+
+@lru_cache(maxsize=None)
+def real_positions(game_pk: int, team_id: int) -> dict[int, str]:
+    return {r["player_id"]: r["start_position"] for r in db.rows(
+        "SELECT player_id, start_position FROM batting_lines WHERE game_pk = ? AND team_id = ? AND is_starter = 1",
+        game_pk, team_id)}
+
+
+def plan_positions(folder: Path, run: str) -> dict[int, str]:
+    plan = json.loads((folder / run / "plan.json").read_text(encoding="utf-8"))
+    return {x["player_id"]: x["position"] for x in plan["sections"]["lineup_card"]["lineup"]}
+
+
+def defended_prob(c: dict, lineup: list[dict], our_pos: dict[int, str], sp: dict, lens: str) -> float:
+    """Win probability with defense: our fielders' runs saved come off the opponent's runs, theirs off ours."""
+    from backend.engine import defense as dfn
+    from backend.engine import winmodel as wmod
+    opp = c["opp_real"] if sp["pid"] == c["real"]["sp"]["pid"] else c["opp_vs_plan_sp"]
+    ours = dfn.team_runs_saved([(e["pid"], our_pos[e["pid"]]) for e in lineup], c["date"])
+    theirs = dfn.team_runs_saved([(e["pid"], c["opp_pos"][e["pid"]]) for e in opp], c["date"])
+    if lens == "improved":
+        rs = wmod.expected_runs([(e["slot"], e["pid"]) for e in lineup], c["date"], c["opp_sp"]["pid"])
+        ra = wmod.expected_runs([(e["slot"], e["pid"]) for e in opp], c["date"], sp["pid"])
+        return wmod.win_prob(max(rs - theirs, 0.5), max(ra - ours, 0.5), c["home"])
+    P = Params()
+    rs = expected_runs(lineup, c["opp_sp"], c["date"], P, lens)
+    ra = expected_runs(opp, sp, c["date"], P, lens)
+    return win_prob(max(rs - theirs, 0.5), max(ra - ours, 0.5), c["home"], P)
+
+
+def write_defense_comparison() -> None:
+    from backend.engine import defense as dfn
+    load_constants()
+    cases = {v: {c["run"]: c for c in plan_cases(folder)} for v, (_, folder) in VERSIONS.items()}
+    runs = sorted(set.intersection(*(set(x) for x in cases.values())))
+    rng = np.random.default_rng(SEED)
+    lenses = {"results": "Season stats + defense (independent of the optimizer's hitting inputs)",
+              "improved": "Improved lens + defense (what the v3 optimizer maximizes)"}
+    out: dict = {"n": len(runs), "lenses": {}, "defense": {}}
+    per = {lens: {v: {"both": [], "lineup": []} for v in VERSIONS} for lens in lenses}
+    def_runs = {v: [] for v in VERSIONS} | {"real": []}
+    for run in runs:
+        base = cases["v1"][run]
+        team = base["team_id"]
+        gpk = int(run.split("_g")[1].split("_")[0])
+        real_pos = real_positions(gpk, team)
+        opp_id = next(t for t in (db.one("SELECT home_team_id h, away_team_id a FROM games WHERE game_pk = ?", gpk)) if t != team)
+        def_runs["real"].append(dfn.team_runs_saved([(e["pid"], real_pos[e["pid"]]) for e in base["real"]["lineup"]], base["date"]))
+        for v, (_, folder) in VERSIONS.items():
+            c = dict(cases[v][run])
+            c["opp_pos"] = real_positions(gpk, opp_id)
+            pos = plan_positions(folder, run)
+            def_runs[v].append(dfn.team_runs_saved([(e["pid"], pos[e["pid"]]) for e in c["plan"]["lineup"]], c["date"]))
+            for lens in lenses:
+                real = defended_prob(c, c["real"]["lineup"], real_pos, c["real"]["sp"], lens)
+                per[lens][v]["both"].append(defended_prob(c, c["plan"]["lineup"], pos, c["plan"]["sp"], lens) - real)
+                per[lens][v]["lineup"].append(defended_prob(c, c["plan"]["lineup"], pos, c["real"]["sp"], lens) - real)
+    for lens, label in lenses.items():
+        res = {"label": label}
+        for v in VERSIONS:
+            for k in ("both", "lineup"):
+                x = np.array(per[lens][v][k])
+                res[f"{v}_{k}"] = float(x.mean()); res[f"{v}_{k}_ci"] = boot_ci(x, rng)
+            res[f"{v}_better"] = float((np.array(per[lens][v]["both"]) > 0.0005).mean())
+        for a, b in (("v3", "v1"), ("v3", "v2")):
+            d = np.array(per[lens][a]["both"]) - np.array(per[lens][b]["both"])
+            res[f"{a}_minus_{b}"] = float(d.mean()); res[f"{a}_minus_{b}_ci"] = boot_ci(d, rng)
+        out["lenses"][lens] = res
+    out["defense"] = {k: float(np.mean(v)) for k, v in def_runs.items()}
+    out["params"] = json.loads((ROOT / "data" / "lineup_params.json").read_text(encoding="utf-8"))
+    (SAVE / "defense_comparison.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
+    text = render_defense(out)
+    if DEFENSE_NOTES.exists():
+        text += "\n" + DEFENSE_NOTES.read_text(encoding="utf-8")
+    DEFENSE_REPORT.write_text(text, encoding="utf-8")
+    print(text)
+
+
+def render_defense(o: dict) -> str:
+    p = o["params"]
+    fit, dr = p["defense_fit"], p["defense_rating"]
+    rng_ = lambda ci: f"{pct(ci[0])} to {pct(ci[1])}"  # noqa: E731
+    wins = lambda x: f"{162 * x:+.1f}"  # noqa: E731
+    d = o["defense"]
+    L = [
+        "# Offense and defense: the win-model lineup with defense built in",
+        "",
+        f"Generated {datetime.now():%Y-%m-%d %H:%M} by `scripts/win_impact.py defense`. The same {o['n']} sampled games, "
+        "three versions of the staff's plan, each scored against the real manager's lineup and starter with everything "
+        "else held fixed. Both lenses now count defense on both sides: each fielder's runs saved at the position he "
+        "plays, and the catcher's framing.",
+        "",
+        "## How defense was added (all from data)",
+        "",
+        "- **New data:** Outs Above Average and fielding runs prevented *at each position* (Savant, one leaderboard per "
+        "position), innings at each position (MLB Stats API), and catcher framing, for 2023-2026 "
+        "(`scripts/fetch_defense.py`). A game only uses seasons before it, so nothing leaks from the future.",
+        f"- **The rating** weights the last three seasons {dr['season_weights']} and regresses at {dr['k_innings']} innings "
+        f"(framing at {dr['k_pitches']:,} pitches), chosen because it best predicted the next season's defense. "
+        "Players with no history at a position get what such players actually did: "
+        f"{dr['new_position_per_game']:+.3f} runs per game if they have played elsewhere (out of position), "
+        f"{dr['no_history_per_game']:+.3f} with no MLB history (`evidence/tests/defense_rating_search.md`).",
+        f"- **Its weight** was measured on every 2026 team-game: a rated run of fielding moved runs allowed by "
+        f"{fit['coef'][2]:+.2f} ({fit['ci_low'][2]:+.2f} to {fit['ci_high'][2]:+.2f}), and of framing by {fit['coef'][3]:+.2f} "
+        f"({fit['ci_low'][3]:+.2f} to {fit['ci_high'][3]:+.2f}). Both ranges include −1, so a rated run counts as one run "
+        "(`evidence/tests/defense_params.md`).",
+        "- **The optimizer** now values each player at each position as his runs scored plus his runs saved there, so "
+        "the weakest glove tends to DH and the best catcher-framer catches.",
+        "",
+        f"Defensive runs saved per game by our fielders: real managers {d['real']:+.3f}, v1 {d['v1']:+.3f}, v2 "
+        f"{d['v2']:+.3f}, **v3 {d['v3']:+.3f}**.",
+        "",
+    ]
+    for lens, r in o["lenses"].items():
+        L += [
+            f"## {r['label']}",
+            "",
+            "| Edge vs the real manager | v1: staff's own lineup | v2: model lineup, offense only | **v3: offense + defense** |",
+            "|---|---|---|---|",
+            f"| **Lineup + starter, per game** | {pct(r['v1_both'])} | {pct(r['v2_both'])} | **{pct(r['v3_both'])}** |",
+            f"| 95% range | {rng_(r['v1_both_ci'])} | {rng_(r['v2_both_ci'])} | {rng_(r['v3_both_ci'])} |",
+            f"| **Wins per 162** | {wins(r['v1_both'])} | {wins(r['v2_both'])} | **{wins(r['v3_both'])}** "
+            f"({wins(r['v3_both_ci'][0])} to {wins(r['v3_both_ci'][1])}) |",
+            f"| Lineup alone | {pct(r['v1_lineup'])} | {pct(r['v2_lineup'])} | {pct(r['v3_lineup'])} ({rng_(r['v3_lineup_ci'])}) |",
+            f"| Games where our plan is better | {r['v1_better']:.0%} | {r['v2_better']:.0%} | {r['v3_better']:.0%} |",
+            "",
+            f"Paired, same games: v3 minus v1 **{pct(r['v3_minus_v1'])}** ({rng_(r['v3_minus_v1_ci'])}), "
+            f"{wins(r['v3_minus_v1'])} wins; v3 minus v2 **{pct(r['v3_minus_v2'])}** ({rng_(r['v3_minus_v2_ci'])}), "
+            f"{wins(r['v3_minus_v2'])} wins.",
+            "",
+        ]
+    return "\n".join(L)

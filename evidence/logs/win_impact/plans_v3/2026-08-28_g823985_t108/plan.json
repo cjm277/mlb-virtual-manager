@@ -1,0 +1,1097 @@
+{
+  "run_id": "2026-08-28_g823985_t108",
+  "status": "approved",
+  "game": {
+    "game_pk": 823985,
+    "season": 2026,
+    "game_date": "2026-08-28",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Angel Stadium",
+    "team": "Los Angeles Angels",
+    "team_id": 108,
+    "team_record_going_in": "52-82",
+    "opponent": "Philadelphia Phillies",
+    "opponent_id": 143,
+    "opponent_record_going_in": "74-60",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 691725,
+        "name": "Andrew Painter"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 642350,
+          "name": "Jose Siri",
+          "position": "CF",
+          "bats": "R",
+          "reason": "Takes the leadoff spot with 0.007 runs per PA vs average and 0.062 defense runs per game in CF; no platoon edge vs right-hander Painter."
+        },
+        {
+          "slot": 2,
+          "player_id": 685133,
+          "name": "Wade Meckler",
+          "position": "LF",
+          "bats": "L",
+          "reason": "0.0056 runs per PA vs average and 0.0 defense runs per game in LF; no platoon edge, but his fastball fit is his best listed match."
+        },
+        {
+          "slot": 3,
+          "player_id": 694208,
+          "name": "Mois\u00e9s Ballesteros",
+          "position": "1B",
+          "bats": "L",
+          "reason": "0.0025 runs per PA vs average and 0.0 defense runs per game at 1B; no platoon edge vs Painter. Target fastballs and avoid expanding on offspeed."
+        },
+        {
+          "slot": 4,
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "position": "3B",
+          "bats": "R",
+          "reason": "0.0012 runs per PA vs average; no platoon edge. Rest suggested, but playing because resting costs 0.26 win-probability points."
+        },
+        {
+          "slot": 5,
+          "player_id": 666139,
+          "name": "Josh Lowe",
+          "position": "RF",
+          "bats": "L",
+          "reason": "-0.0003 runs per PA vs average; no platoon edge vs Painter. Shifted to RF to keep Siri in CF; hunt fastballs."
+        },
+        {
+          "slot": 6,
+          "player_id": 695681,
+          "name": "Christian Moore",
+          "position": "2B",
+          "bats": "R",
+          "reason": "-0.0014 runs per PA vs average; no platoon edge. His pitch-group samples are small, so treat the fastball fit cautiously."
+        },
+        {
+          "slot": 7,
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Runs per PA vs average and defense runs per game at SS are not provided for this adjusted alignment; no platoon edge. Rest suggested, but playing because resting costs 0.28 win-probability points."
+        },
+        {
+          "slot": 8,
+          "player_id": 623168,
+          "name": "Tyler Heineman",
+          "position": "C",
+          "bats": "S",
+          "reason": "Runs per PA vs average and defense runs per game at C are not provided for this adjusted alignment; no platoon edge. Hunt fastballs; his offspeed pitch-group sample is small."
+        },
+        {
+          "slot": 9,
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "position": "DH",
+          "bats": "R",
+          "reason": "Rested from the field as requested and moved to DH; model statistics are for its original lineup, not this adjusted alignment."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 624428,
+          "name": "Adam Frazier",
+          "role": "pinch_hitter",
+          "note": "Highest-ranked bench bat; overview sample is moderate."
+        },
+        {
+          "player_id": 518595,
+          "name": "Travis d'Arnaud",
+          "role": "backup_catcher",
+          "note": "Catcher coverage; overall sample is moderate and pitch-group samples are small."
+        },
+        {
+          "player_id": 694203,
+          "name": "Denzer Guzman",
+          "role": "utility",
+          "note": "Covers 3B and SS; fastball-first hitter."
+        },
+        {
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "role": "defensive_replacement",
+          "note": "Best listed bench glove at 0.013 defense runs per game; covers 1B, 2B, 3B and SS."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning with a run in scoring position against a right-handed reliever",
+          "bench_player_id": 624428,
+          "replaces_player_id": 695681,
+          "reason": "Frazier is the highest-ranked available bench bat; his overview sample is moderate."
+        },
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning with a run in scoring position against a left-handed reliever",
+          "bench_player_id": 518595,
+          "replaces_player_id": 623168,
+          "reason": "d'Arnaud has the better listed xwOBA vs LHP among available catchers; his overall sample is moderate."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning with the tying or go-ahead run on base",
+          "bench_player_id": 672724,
+          "replaces_player_id": 694208,
+          "reason": "Peraza is a bench option with speed and can cover multiple infield positions."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Protecting a late lead at shortstop",
+          "bench_player_id": 672724,
+          "replaces_player_id": 687263,
+          "reason": "Peraza has the best listed bench defense at 0.013 defense runs per game."
+        }
+      ],
+      "summary": "Mike Trout is rested as requested; Jose Siri takes CF and leadoff, while Josh Lowe moves to RF and Trout serves as DH. The original model projects 4.65 expected runs and 0.04 defense runs saved per game; that projection is for its original lineup, not this adjusted one. Painter is the high-confidence projected starter, so hunt fastballs and expect right-handed hitters to see breaking balls often."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 672282,
+        "name": "Reid Detmers",
+        "throws": "L",
+        "reason": "Best fit: ready after 6 days rest and holds a 0.284 xwoba_allowed; his left-handed look also suits Harper\u2019s weaker results versus LHP (0.335 xwOBA).",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 95,
+        "pitch_mix": [
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 37.0,
+            "vs_rhb_pct": 42.0,
+            "purpose": "Establish the pitch without giving Schwarber a predictable in-zone fastball."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 38.0,
+            "vs_rhb_pct": 34.0,
+            "purpose": "Primary breaking weapon; attack Schwarber\u2019s breaking-ball weakness (0.278 matchup xwOBA)."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 17.0,
+            "vs_rhb_pct": 12.0,
+            "purpose": "Change the eye level and steal strikes."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 7.0,
+            "vs_rhb_pct": 11.0,
+            "purpose": "Use selectively below the zone, especially against right-handed hitters."
+          },
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 1.0,
+            "vs_rhb_pct": 1.0,
+            "purpose": "Show sparingly as a different fastball look."
+          }
+        ],
+        "keys": [
+          "Against Schwarber, lean on breaking balls; his matchup xwOBA against them is 0.278, while he has 0.482 against fastballs.",
+          "Mix breaking balls and offspeed below the zone to Turner; his matchup xwOBA is 0.238 against breaking balls and 0.261 against offspeed.",
+          "Harper\u2019s expected xwoba is 0.324, near the 0.315 league mark; avoid feeding him fastballs and vary locations.",
+          "Use breaking balls to Marsh; his matchup breaking-ball xwOBA is 0.142, and his overall expected xwoba is 0.273."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 820862,
+          "name": "Jos\u00e9 Fermin",
+          "throws": "R",
+          "role": "setup",
+          "note": "High-leverage right-hander; available, with 6 holds."
+        },
+        {
+          "player_id": 670245,
+          "name": "Ryan Watson",
+          "throws": "R",
+          "role": "setup",
+          "note": "Available late-inning option; has 3 holds and 2 saves."
+        },
+        {
+          "player_id": 690829,
+          "name": "Ben Joyce",
+          "throws": "R",
+          "role": "closer",
+          "note": "Primary ninth-inning choice; available with 3 saves."
+        },
+        {
+          "player_id": 684665,
+          "name": "Luke Murphy",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available bridge option; has 4 holds."
+        },
+        {
+          "player_id": 642048,
+          "name": "Tayler Saucedo",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Use for left-handed pockets, especially Schwarber or Harper; available."
+        },
+        {
+          "player_id": 671111,
+          "name": "Sammy Peralta",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Second left-handed matchup option; available."
+        },
+        {
+          "player_id": 694680,
+          "name": "Trevor Martin",
+          "throws": "R",
+          "role": "long",
+          "note": "Available for multi-inning work or to cover an early starter exit."
+        },
+        {
+          "player_id": 696270,
+          "name": "Ryan Johnson",
+          "throws": "R",
+          "role": "long",
+          "note": "Available as a long-relief option after Detmers; reserve for extended coverage."
+        },
+        {
+          "player_id": 579328,
+          "name": "Yusei Kikuchi",
+          "throws": "L",
+          "role": "middle",
+          "note": "Available after 4 days rest; use as a left-handed bridge if needed."
+        },
+        {
+          "player_id": 700712,
+          "name": "Walbert Ure\u00f1a",
+          "throws": "R",
+          "role": "unavailable",
+          "note": "Not ready to start after 2 days rest; do not use."
+        },
+        {
+          "player_id": 680570,
+          "name": "Grayson Rodriguez",
+          "throws": "R",
+          "role": "unavailable",
+          "note": "Not ready to start after 1 day rest; do not use."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the best available matchups through the heart of the order, then Joyce to finish.",
+          "pitcher_ids": [
+            642048,
+            820862,
+            670245,
+            690829
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Hold the lead-prevention arms for the highest-leverage pocket; finish with Joyce if the game turns close.",
+          "pitcher_ids": [
+            820862,
+            642048,
+            670245,
+            690829
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Use lower-leverage innings first and save the closer and setup arms.",
+          "pitcher_ids": [
+            694680,
+            684665,
+            671111,
+            670245
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Preserve premium arms; cover innings with long and middle relief.",
+          "pitcher_ids": [
+            694680,
+            696270,
+            684665,
+            671111
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Go to Martin for length, then Johnson; use the rested middle relievers to bridge if needed.",
+          "pitcher_ids": [
+            694680,
+            696270,
+            684665,
+            642048,
+            820862
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Deploy available arms by matchup and retain Joyce for the final high-leverage inning if possible.",
+          "pitcher_ids": [
+            684665,
+            820862,
+            642048,
+            670245,
+            690829
+          ]
+        }
+      ],
+      "summary": "Start Detmers against Philadelphia\u2019s left-heavy lineup and prioritize breaking balls against Schwarber, with location changes for Harper. Keep Saucedo available for left-handed pockets and reserve Joyce for the highest-leverage finish; do not use Ure\u00f1a or Rodriguez."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 691725,
+        "name": "Andrew Painter",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [
+          "Cristopher S\u00e1nchez"
+        ],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 32.4,
+          "velo": 96.6,
+          "whiff_pct": 14.2,
+          "note": "His most-used pitch; the 4-seam has a .410 xwOBA allowed."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 19.6,
+          "velo": 88.0,
+          "whiff_pct": 37.5,
+          "note": "A hard breaking ball with a .338 xwOBA allowed and his strongest whiff rate among the main pitches."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 15.2,
+          "velo": 82.8,
+          "whiff_pct": 23.6,
+          "note": "Adds another breaking look; it has a .322 xwOBA allowed."
+        },
+        {
+          "pitch": "splitter",
+          "usage_pct": 10.4,
+          "velo": 87.4,
+          "whiff_pct": 38.4,
+          "note": "His best whiff pitch, with a .234 xwOBA allowed; usage sample is moderate."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 9.3,
+          "velo": 95.2,
+          "whiff_pct": 8.4,
+          "note": "A lower-whiff fastball look; xwOBA allowed is .396, with moderate sample."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 7.1,
+          "velo": 81.2,
+          "whiff_pct": 26.3,
+          "note": "A slower breaking option with a .221 xwOBA allowed; usage sample is moderate."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 6.1,
+          "velo": 90.6,
+          "whiff_pct": 31.1,
+          "note": "His least-used listed pitch and lowest xwOBA allowed at .144; usage sample is moderate."
+        }
+      ],
+      "how_to_attack": [
+        "Stay ready for fastballs: Painter uses them 40.1% of the time against lefties and 44.0% against righties; the 4-seam allows a .410 xwOBA.",
+        "Right-handed hitters should expect breaking balls often: they make up 50.2% of his mix against righties.",
+        "Left-handed hitters see a more balanced mix, including 23.6% offspeed; avoid expanding on those pitches, which allow a .205 xwOBA by group.",
+        "Make him work: he averages 83 pitches per start and 4.8 innings per start."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 685133,
+          "name": "Wade Meckler",
+          "expected_xwoba": 0.325,
+          "edge": "even",
+          "note": "Fastball group is his best listed fit: .357 xwOBA against fastballs, while Painter allows .386 to lefties by group."
+        },
+        {
+          "player_id": 518595,
+          "name": "Travis d'Arnaud",
+          "expected_xwoba": 0.324,
+          "edge": "even",
+          "note": "Fastballs are the target: .301 against them, versus Painter's .451 allowed to righties by group; batter pitch-group samples are small."
+        },
+        {
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "expected_xwoba": 0.321,
+          "edge": "even",
+          "note": "Fastball group gives him a path: .333 against fastballs, while Painter allows .451 to righties by group."
+        },
+        {
+          "player_id": 666139,
+          "name": "Josh Lowe",
+          "expected_xwoba": 0.321,
+          "edge": "even",
+          "note": "His .325 against fastballs lines up with Painter allowing .386 to lefties by group; stay off the offspeed group."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "expected_xwoba": 0.288,
+          "edge": "pitcher",
+          "note": "He has a .211 mark against breaking balls, Painter's most-used right-handed group, and a .206 mark against offspeed."
+        },
+        {
+          "player_id": 623168,
+          "name": "Tyler Heineman",
+          "expected_xwoba": 0.292,
+          "edge": "pitcher",
+          "note": "Fastballs are the hunt, but his .163 against breaking balls and .211 against offspeed leave little margin; offspeed sample is small."
+        },
+        {
+          "player_id": 624428,
+          "name": "Adam Frazier",
+          "expected_xwoba": 0.295,
+          "edge": "pitcher",
+          "note": "His fastball-group mark is .289 and breaking-ball mark .262; both pitch-group samples are small for breaking balls and offspeed."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 661395,
+          "name": "Jhoan Duran",
+          "throws": "R",
+          "note": "Available and rested; leads the listed group with 28 saves."
+        },
+        {
+          "player_id": 689147,
+          "name": "Orion Kerkering",
+          "throws": "R",
+          "note": "Available and rested; has 16 holds."
+        },
+        {
+          "player_id": 548384,
+          "name": "Brooks Raley",
+          "throws": "L",
+          "note": "Available and rested left-hander with 15 holds."
+        },
+        {
+          "player_id": 680742,
+          "name": "Jonathan Bowlan",
+          "throws": "R",
+          "note": "Available and rested with 11 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 685133,
+          "name": "Wade Meckler",
+          "bats": "L",
+          "expected_xwoba": 0.325,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Sit fastball: you are at .357 against them and Painter allows .386 to lefties by group. Your offspeed mark is .249, and he allows .205."
+        },
+        {
+          "player_id": 518595,
+          "name": "Travis d'Arnaud",
+          "bats": "R",
+          "expected_xwoba": 0.324,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt the fastball: you are at .301 against it and Painter allows .451 to righties by group. Your pitch-group samples are small; be disciplined against breaking balls, where your mark is .321 and he allows .273."
+        },
+        {
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "bats": "R",
+          "expected_xwoba": 0.321,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for a fastball to drive: you are at .333 against them and Painter allows .451 to righties by group. Your breaking-ball mark is .273, matching his .273 allowed."
+        },
+        {
+          "player_id": 666139,
+          "name": "Josh Lowe",
+          "bats": "L",
+          "expected_xwoba": 0.321,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you are at .325 against them and Painter allows .386 to lefties by group. Lay off offspeed early; you are at .311 and he allows .205."
+        },
+        {
+          "player_id": 642350,
+          "name": "Jose Siri",
+          "bats": "R",
+          "expected_xwoba": 0.319,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look fastball first: you are at .329 against it and Painter allows .451 to righties by group. Your .176 against breaking balls is a caution; your .612 offspeed mark is from a small sample."
+        },
+        {
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "bats": "R",
+          "expected_xwoba": 0.319,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastball: your mark is .371 against fastballs and Painter allows .451 to righties by group. Be careful with breaking balls, where you are at .232 and he allows .273."
+        },
+        {
+          "player_id": 694208,
+          "name": "Mois\u00e9s Ballesteros",
+          "bats": "L",
+          "expected_xwoba": 0.317,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Target fastballs: you are at .300 against them and Painter allows .386 to lefties by group. Your offspeed mark is .339, but he allows just .205 to lefties by group."
+        },
+        {
+          "player_id": 694203,
+          "name": "Denzer Guzman",
+          "bats": "R",
+          "expected_xwoba": 0.304,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt the fastball: you are at .308 against it and Painter allows .451 to righties by group. Your breaking-ball mark is .227 against his .273 allowed; your offspeed mark is .147 from a small sample."
+        },
+        {
+          "player_id": 695681,
+          "name": "Christian Moore",
+          "bats": "R",
+          "expected_xwoba": 0.301,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Fastball is the hunt: your .330 mark compares with Painter's .451 allowed to righties by group. Your pitch-group samples are small, and you are at .168 against breaking balls while he allows .273."
+        },
+        {
+          "player_id": 624428,
+          "name": "Adam Frazier",
+          "bats": "L",
+          "expected_xwoba": 0.295,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs: you are at .289 against them and Painter allows .386 to lefties by group. Your breaking-ball and offspeed samples are small; the marks are .262 and .156, respectively."
+        },
+        {
+          "player_id": 623168,
+          "name": "Tyler Heineman",
+          "bats": "S",
+          "expected_xwoba": 0.292,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you are at .315 against them and Painter allows .386 to lefties by group. Your offspeed mark is .211 against his .205 allowed; that pitch-group sample is small."
+        },
+        {
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "bats": "R",
+          "expected_xwoba": 0.288,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your .262 mark compares with Painter's .451 allowed to righties by group. His breaking balls are used 50.2% of the time to righties; you are at .211 against them."
+        }
+      ],
+      "summary": "Andrew Painter is the high-confidence projected starter, with Cristopher S\u00e1nchez the listed alternative. Painter\u2019s fastball group is the clearest attack point, while right-handed hitters should be ready for a heavy breaking-ball mix; his splitter and changeup have lower xwOBA allowed, though both have moderate usage samples. Mike Trout is rest-suggested, so the bench should make the availability call."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "position": "3B",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 669016,
+          "name": "Brandon Marsh",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 702222,
+          "name": "Justin Crawford",
+          "position": "CF",
+          "bats": "L"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 624641,
+          "name": "Edmundo Sosa",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 669016,
+          "name": "Brandon Marsh",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 656537,
+          "name": "Derek Hill",
+          "position": "CF",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.368,
+          "weakness": "Breaking balls have produced his lowest xwOBA (0.306); he still has power, so avoid fastballs in the zone.",
+          "how_to_pitch": "Lean on breaking balls and expand carefully; avoid predictable fastballs he can drive."
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.292,
+          "weakness": "Breaking balls (0.238 xwOBA) and offspeed (0.261 xwOBA) have been less effective for him than fastballs; offspeed sample is moderate.",
+          "how_to_pitch": "Mix breaking and offspeed below the zone; limit fastballs he handles better."
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.395,
+          "weakness": "Much less productive against left-handed pitching (0.335 xwOBA vs LHP) and on breaking balls (0.371) than fastballs (0.438).",
+          "how_to_pitch": "Prefer a left-handed matchup; work breaking balls and offspeed rather than feeding fastballs."
+        },
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.308,
+          "weakness": "Lower xwOBA against left-handers (0.266) than right-handers (0.326); no pitch-type profile available.",
+          "how_to_pitch": "Prefer a left-handed matchup and change locations; do not count on strikeouts."
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.33,
+          "weakness": "xwOBA is 0.33 against either pitcher hand; no clear hand split or pitch-type weakness.",
+          "how_to_pitch": "Change speeds and keep the ball off the middle; avoid giving him a predictable look."
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.318,
+          "weakness": "Lower xwOBA against left-handers (0.301) than right-handers (0.325); no pitch-type profile available.",
+          "how_to_pitch": "Use the left-handed matchup when available and attack the edges."
+        },
+        {
+          "player_id": 669016,
+          "name": "Brandon Marsh",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.309,
+          "weakness": "Much weaker against left-handers (0.233 xwOBA; moderate sample) and on breaking balls (0.255).",
+          "how_to_pitch": "Favor a left-handed matchup; use breaking balls and avoid leaving fastballs in the zone."
+        },
+        {
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.321,
+          "weakness": "No pronounced hand split in the available xwOBA (0.32 vs LHP; 0.321 vs RHP); no pitch-type profile available.",
+          "how_to_pitch": "Vary locations and speeds; keep him from sitting on a strike in the middle."
+        },
+        {
+          "player_id": 702222,
+          "name": "Justin Crawford",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.285,
+          "weakness": "No clear hand split (0.279 vs LHP; 0.286 vs RHP); no pitch-type profile available.",
+          "how_to_pitch": "Get ahead, then keep the ball down and make him earn his way on."
+        },
+        {
+          "player_id": 624641,
+          "name": "Edmundo Sosa",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.331,
+          "weakness": "His xwOBA is nearly identical against either hand (0.331 vs LHP; 0.332 vs RHP); no pitch-type profile available.",
+          "how_to_pitch": "Attack the edges and avoid giving him a comfortable middle-of-the-plate pitch."
+        },
+        {
+          "player_id": 656537,
+          "name": "Derek Hill",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.288,
+          "weakness": "High strikeout rate (34.2%); overall sample is moderate.",
+          "how_to_pitch": "Challenge the zone early, then use chase pitches to finish."
+        }
+      ],
+      "summary": "The heart of the order is Schwarber and Harper, with Turner setting the table; Harper is substantially stronger against right-handers, so prefer a left-handed starter if other factors are equal. Schwarber remains dangerous against either hand, and his breaking-ball results are his clearest exploitable weakness."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 672569,
+          "name": "Gustavo Campero",
+          "status": "out",
+          "reason": "Right hamstring strain."
+        },
+        {
+          "player_id": 694384,
+          "name": "Nolan Schanuel",
+          "status": "out",
+          "reason": "Right intercostal muscle strain."
+        },
+        {
+          "player_id": 696519,
+          "name": "Samy Natera Jr.",
+          "status": "out",
+          "reason": "Low back muscle spasms."
+        },
+        {
+          "player_id": 665861,
+          "name": "Sebasti\u00e1n Rivero",
+          "status": "out",
+          "reason": "Left hamate fracture."
+        },
+        {
+          "player_id": 641312,
+          "name": "Shaun Anderson",
+          "status": "out",
+          "reason": "Right shoulder inflammation."
+        },
+        {
+          "player_id": 696147,
+          "name": "Sam Bachman",
+          "status": "out",
+          "reason": "Right forearm radial nerve inflammation."
+        },
+        {
+          "player_id": 686799,
+          "name": "Jack Kochanowicz",
+          "status": "out",
+          "reason": "Right elbow inflammation."
+        },
+        {
+          "player_id": 660162,
+          "name": "Yo\u00e1n Moncada",
+          "status": "out",
+          "reason": "Right knee inflammation."
+        },
+        {
+          "player_id": 596112,
+          "name": "Robert Stephenson",
+          "status": "out",
+          "reason": "Right elbow inflammation."
+        },
+        {
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "status": "rest_suggested",
+          "reason": "10 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "status": "rest_suggested",
+          "reason": "39 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "status": "rest_suggested",
+          "reason": "12 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Nine players are on the injured list and unavailable. No relievers were marked limited or unavailable, and no players were flagged cleared with caution."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Start Reid Detmers: his 0.284 xwoba_allowed and left-handed look fit against a lineup with left-handed power, especially Bryce Harper\u2019s 0.335 xwOBA vs LHP.",
+        "Attack Kyle Schwarber with breaking balls; the pitching plan cites 0.278 matchup xwOBA against breaking balls versus 0.482 against fastballs.",
+        "Use Jos\u00e9 Siri in center field and Mike Trout at DH as requested, with Josh Lowe in right; Trout\u2019s rest suggestion is addressed by removing him from the field.",
+        "Keep Tayler Saucedo available for left-handed pockets and Ben Joyce for the highest-leverage finish; the bullpen scenarios reserve them for those roles.",
+        "Build the lineup for the high-confidence Andrew Painter projection: target fastballs, while right-handed hitters prepare for breaking balls that make up 50.2% of his mix against righties."
+      ],
+      "keys_to_the_game": [
+        "Detmers should avoid predictable in-zone fastballs to Schwarber and vary locations to Harper.",
+        "Right-handed hitters should stay disciplined against Painter\u2019s breaking-ball mix and hunt fastballs when they get them.",
+        "Make Painter work; he averages 83 pitches per start and 4.8 innings per start.",
+        "Use Saucedo against left-handed pockets and preserve Joyce for the highest-leverage finish.",
+        "Protect the lead with Peraza\u2019s listed bench defense at 0.013 defense runs per game if a late shortstop replacement is needed."
+      ],
+      "summary": "Approved: the checker found no issues, and the plan is coherent. Detmers\u2019 left-handed look and breaking-ball approach target Philadelphia\u2019s left-handed threats, while the lineup is built for the high-confidence Painter projection; Trout is rested from the field as requested."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Hunt Painter\u2019s fastball; make him work",
+      "message": "Andrew Painter is the high-confidence projected starter. Be ready for fastballs, and right-handed hitters should expect breaking balls often. Stay disciplined when breaking pitches and offspeed are below the zone; make Painter work and take advantage of chances to extend innings. Philadelphia\u2019s bullpen to watch includes Jhoan Duran, Orion Kerkering, Brooks Raley, and Jonathan Bowlan.",
+      "reminders": [
+        "Look for fastballs to drive; do not chase offspeed.",
+        "Right-handed hitters: stay ready for Painter\u2019s breaking-ball mix.",
+        "Be prepared for Duran and Kerkering late."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Detmers leads; break the ball to their left-handed threats",
+      "message": "Reid Detmers starts. Avoid predictable in-zone fastballs to Kyle Schwarber; lean on breaking balls, and vary locations against Bryce Harper. Mix breaking balls and offspeed below the zone to Trea Turner. Tayler Saucedo is available for left-handed pockets, especially Schwarber or Harper; preserve Ben Joyce for the highest-leverage finish. Use the available bridge and long-relief options if Detmers exits early.",
+      "reminders": [
+        "Keep Schwarber off predictable fastballs; attack with breaking balls.",
+        "Change locations and speeds to Harper and Turner.",
+        "Saucedo for left-handed pockets; Joyce for the highest-leverage finish."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Execute the approved plan and protect the late lead",
+      "message": "Approved lineup: Jose Siri leads off in center, Josh Lowe is in right, and Mike Trout is DH as requested. Vaughn Grissom and Zach Neto are playing despite rest suggestions; Trout is also rest-suggested and is kept out of the field. Detmers starts, Saucedo is available for left-handed pockets, and Joyce is reserved for the highest-leverage finish. If protecting a late lead at shortstop, Oswald Peraza is the defensive replacement. Against Painter, the lineup plan is built to hunt fastballs and make him work.",
+      "reminders": [
+        "Keep Trout at DH; Siri in center and Lowe in right.",
+        "Use Peraza for a late shortstop defensive replacement if protecting a lead.",
+        "Follow the approved bullpen scenarios; do not use unavailable relievers."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 1,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 63.9,
+    "total": {
+      "model_steps": 23,
+      "gateway_cache_hits": 12,
+      "input_tokens": 132064,
+      "cached_tokens": 50745,
+      "output_tokens": 12096,
+      "cost_usd": 0.01208
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 2,
+        "input_tokens": 4290,
+        "cached_tokens": 0,
+        "output_tokens": 331,
+        "seconds": 0.5,
+        "cost_usd": 0.0
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 4,
+        "input_tokens": 19814,
+        "cached_tokens": 4311,
+        "output_tokens": 2431,
+        "seconds": 1.6,
+        "cost_usd": 0.0
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 12639,
+        "cached_tokens": 5070,
+        "output_tokens": 1642,
+        "seconds": 1.0,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 16452,
+        "cached_tokens": 3154,
+        "output_tokens": 1323,
+        "seconds": 1.0,
+        "cost_usd": 0.0
+      },
+      "bench_coach": {
+        "calls": 2,
+        "model_steps": 8,
+        "gateway_cache_hits": 0,
+        "input_tokens": 56176,
+        "cached_tokens": 38210,
+        "output_tokens": 5164,
+        "seconds": 47.9,
+        "cost_usd": 0.00694
+      },
+      "manager": {
+        "calls": 2,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 15083,
+        "cached_tokens": 0,
+        "output_tokens": 718,
+        "seconds": 8.9,
+        "cost_usd": 0.00338
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7610,
+        "cached_tokens": 0,
+        "output_tokens": 487,
+        "seconds": 4.7,
+        "cost_usd": 0.00177
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

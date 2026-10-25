@@ -67,9 +67,11 @@ def _numbers_in(value: Any, out: set[float]) -> None:
 
 
 def ledger_numbers(ledger: list[Any]) -> set[float]:
+    """Every number in the tool results, also as its absolute value: a quoted stat is read without its sign
+    ("-0.0038 runs per PA" is checked as 0.0038), so a real negative stat must still match."""
     nums: set[float] = set()
     _numbers_in(ledger, nums)
-    return nums
+    return nums | {abs(n) for n in nums}
 
 
 def _claims(model: BaseModel) -> list[tuple[str, str]]:

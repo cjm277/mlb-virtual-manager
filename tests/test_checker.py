@@ -127,3 +127,11 @@ def test_every_quoted_stat_must_come_from_a_tool():
 @pytest.mark.parametrize("claim, ok", [("0.346", True), (".346", True), ("0.35", True), ("0.347", False)])
 def test_number_matching_respects_rounding(claim, ok):
     assert supported(claim, ledger_numbers([{"expected_xwoba": 0.346}])) is ok
+
+
+def test_a_real_negative_stat_is_not_flagged_as_made_up():
+    """Quoted text drops the sign ("-0.0038 runs per PA" is read as 0.0038); a real negative tool value must match."""
+    from backend.checker import ledger_numbers, supported
+    nums = ledger_numbers([{"runs_per_pa_vs_avg": -0.0038, "defense_runs_per_game": -0.019}])
+    assert supported("0.0038", nums) and supported("0.019", nums)
+    assert not supported("0.0090", nums)          # a number in no tool result is still caught
