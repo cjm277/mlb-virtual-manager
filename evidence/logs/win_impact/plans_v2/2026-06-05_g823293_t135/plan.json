@@ -1,0 +1,1090 @@
+{
+  "run_id": "2026-06-05_g823293_t135",
+  "status": "approved",
+  "game": {
+    "game_pk": 823293,
+    "season": 2026,
+    "game_date": "2026-06-05",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Petco Park",
+    "team": "San Diego Padres",
+    "team_id": 135,
+    "team_record_going_in": "32-29",
+    "opponent": "New York Mets",
+    "opponent_id": 121,
+    "opponent_record_going_in": "27-35",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 681035,
+        "name": "Christian Scott"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 657757,
+          "name": "Gavin Sheets",
+          "position": "LF",
+          "bats": "L",
+          "reason": "Leads the model order; the scout report grades his matchup even."
+        },
+        {
+          "slot": 2,
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Model value is 0.0033 runs per PA vs average; his 0.362 expected xwOBA is a batter edge, though Scott\u2019s RHB sample is small. Resting him costs 0.46 win-probability points, so he plays despite the rest suggestion."
+        },
+        {
+          "slot": 3,
+          "player_id": 664034,
+          "name": "Ty France",
+          "position": "1B",
+          "bats": "R",
+          "reason": "Model value is 0.0019 runs per PA vs average; his 0.375 expected xwOBA is a batter edge, with small samples versus offspeed and RHB."
+        },
+        {
+          "slot": 4,
+          "player_id": 823550,
+          "name": "Sung-Mun Song",
+          "position": "SS",
+          "bats": "L",
+          "reason": "Model value is 0.0001 runs per PA vs average; scout matchup is even, and his pitch-group and RHP samples are small."
+        },
+        {
+          "slot": 5,
+          "player_id": 660710,
+          "name": "Rodolfo Dur\u00e1n",
+          "position": "C",
+          "bats": "R",
+          "reason": "Model value is -0.0 runs per PA vs average; his 0.373 expected xwOBA is a batter edge, but his samples and Scott\u2019s RHB sample are small."
+        },
+        {
+          "slot": 6,
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "position": "CF",
+          "bats": "L",
+          "reason": "Model value is -0.0001 runs per PA vs average; scout matchup is even, with fastball-group xwOBA of 0.343 against Scott\u2019s 0.303 allowed and breaking-ball allowance of 0.12. Resting him costs 0.37 win-probability points, so he plays despite the rest suggestion."
+        },
+        {
+          "slot": 7,
+          "player_id": 669392,
+          "name": "Samad Taylor",
+          "position": "RF",
+          "bats": "R",
+          "reason": "Model order places him here; his expected xwOBA is 0.208 with a pitcher edge, and all batter pitch-group samples plus Scott\u2019s RHB sample are small."
+        },
+        {
+          "slot": 8,
+          "player_id": 687749,
+          "name": "Jase Bowen",
+          "position": "DH",
+          "bats": "R",
+          "reason": "Model order places him here; his expected xwOBA is 0.298 with a pitcher edge, and pitch-group and RHB samples are small."
+        },
+        {
+          "slot": 9,
+          "player_id": 609280,
+          "name": "Miguel Andujar",
+          "position": "3B",
+          "bats": "R",
+          "reason": "Model order places him here; his 0.335 expected xwOBA is even, with Scott\u2019s RHB sample small."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 593428,
+          "name": "Xander Bogaerts",
+          "role": "utility",
+          "note": "Top-ranked bench bat; rests today, with sitting costing 0.23 win-probability points."
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "role": "defensive_replacement",
+          "note": "Rest day costs 0.25 win-probability points; use to protect a lead at third."
+        },
+        {
+          "player_id": 669369,
+          "name": "Bryce Johnson",
+          "role": "pinch_runner",
+          "note": "Outfield speed option; his sample is small."
+        },
+        {
+          "player_id": 666023,
+          "name": "Freddy Fermin",
+          "role": "backup_catcher",
+          "note": "Reserve catcher; available if Dur\u00e1n needs to leave."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "Late innings against a right-handed reliever with a key spot due and a runner in scoring position.",
+          "bench_player_id": 593428,
+          "replaces_player_id": 687749,
+          "reason": "Bogaerts is the highest-ranked bench bat; his rest-day cost is 0.23 win-probability points."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning, tying or go-ahead run on base, with a chance to take an extra base.",
+          "bench_player_id": 669369,
+          "replaces_player_id": 609280,
+          "reason": "Johnson provides an outfield speed option; his sample is small."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Protect a late lead when the opposing lineup is turning over and a stronger third-base defense is needed.",
+          "bench_player_id": 592518,
+          "replaces_player_id": 609280,
+          "reason": "Machado is available after his model-priced rest day and has 12 outs above average at third base in 2026."
+        },
+        {
+          "kind": "defensive",
+          "situation": "If Dur\u00e1n must leave the game, replace him at catcher.",
+          "bench_player_id": 666023,
+          "replaces_player_id": 660710,
+          "reason": "Fermin is the listed reserve catcher."
+        }
+      ],
+      "summary": "The model projects 4.45 expected runs and sets this exact order; Christian Scott is the high-confidence assumed starter. Tatis and Merrill play because resting them costs 0.46 and 0.37 win-probability points, while Bogaerts and Machado take model-priced rest days."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 650633,
+        "name": "Michael King",
+        "throws": "R",
+        "reason": "Best ready option: his expected xwOBA is 0.307 against Bo Bichette and 0.305 against Marcus Semien; Griffin Canning allows 0.359 to Carson Benge and 0.42 to Juan Soto.",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 95,
+        "pitch_mix": [
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 35.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Change speeds and keep lefties from sitting on fastballs."
+          },
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 25.0,
+            "purpose": "Work in on hitters and induce ground contact."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 20.0,
+            "vs_rhb_pct": 25.0,
+            "purpose": "Elevate selectively and disrupt timing."
+          },
+          {
+            "pitch": "sweeper",
+            "vs_lhb_pct": 15.0,
+            "vs_rhb_pct": 25.0,
+            "purpose": "Expand away from right-handed hitters and below the zone."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 5.0,
+            "vs_rhb_pct": 10.0,
+            "purpose": "Use sparingly as a chase pitch."
+          }
+        ],
+        "keys": [
+          "Keep Juan Soto off hittable fastballs; he has expected xwOBA 0.391 against King, a batter edge.",
+          "Use breaking balls below the zone to test Mark Vientos, who whiffs against breaking balls and offspeed.",
+          "Mix in changeups to lefties, but do not rely on small-sample pitch-group results.",
+          "Attack Luis Torrens in the zone; his expected xwOBA against King is 0.281, a pitcher edge."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 695243,
+          "name": "Mason Miller",
+          "throws": "R",
+          "role": "closer",
+          "note": "Primary ninth-inning option; rested and leads the staff with 17 saves."
+        },
+        {
+          "player_id": 592094,
+          "name": "Jason Adam",
+          "throws": "R",
+          "role": "setup",
+          "note": "Top setup choice; rested and has 12 holds."
+        },
+        {
+          "player_id": 699134,
+          "name": "Bradgley Rodriguez",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available middle-inning option with 3 holds."
+        },
+        {
+          "player_id": 688158,
+          "name": "David Morgan",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available for middle relief."
+        },
+        {
+          "player_id": 666745,
+          "name": "Jhony Brito",
+          "throws": "R",
+          "role": "long",
+          "note": "Available for length if the starter exits early or the game opens up."
+        },
+        {
+          "player_id": 670970,
+          "name": "Adrian Morejon",
+          "throws": "L",
+          "role": "setup",
+          "note": "Limited after 28 pitches yesterday; use only if needed, preferably for a key left-handed hitter."
+        },
+        {
+          "player_id": 593974,
+          "name": "Wandy Peralta",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Limited after 16 pitches yesterday; save for a necessary left-on-left matchup."
+        },
+        {
+          "player_id": 676760,
+          "name": "Ron Marinaccio",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after 15 pitches yesterday; use only if needed."
+        },
+        {
+          "player_id": 673513,
+          "name": "Yuki Matsui",
+          "throws": "L",
+          "role": "middle",
+          "note": "Limited after 19 pitches yesterday; use only if needed."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the rested setup arms first, then Miller to finish; avoid limited relievers unless needed.",
+          "pitcher_ids": [
+            592094,
+            699134,
+            695243
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Keep leverage arms available for the highest-pressure spots; Miller closes if we take the lead.",
+          "pitcher_ids": [
+            592094,
+            699134,
+            695243
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Use available middle relief and preserve the leverage arms.",
+          "pitcher_ids": [
+            688158,
+            699134,
+            666745
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use Brito for length, then available middle relief; keep limited arms out unless necessary.",
+          "pitcher_ids": [
+            666745,
+            688158,
+            699134
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Use Brito for length, then Morgan and Rodriguez; reserve the closer for a close finish.",
+          "pitcher_ids": [
+            666745,
+            688158,
+            699134,
+            592094,
+            695243
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use Adam and Rodriguez first; turn to Miller, then limited arms only if necessary.",
+          "pitcher_ids": [
+            592094,
+            699134,
+            695243,
+            670970,
+            593974,
+            676760,
+            673513
+          ]
+        }
+      ],
+      "summary": "Start Michael King, whose matchup estimates are stronger than Griffin Canning\u2019s against this predicted Mets lineup. Attack Soto carefully and use rested relievers ahead of the four limited arms; the opposing lineup remains a prediction."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 681035,
+        "name": "Christian Scott",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [
+          "Nolan McLean"
+        ],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 51.2,
+          "velo": 95.5,
+          "whiff_pct": 20.7,
+          "note": "His most-used pitch; expect it often, especially against lefties."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 22.2,
+          "velo": 81.1,
+          "whiff_pct": 35.1,
+          "note": "His best whiff pitch; use discipline and avoid chasing it off the plate."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 18.2,
+          "velo": 89.0,
+          "whiff_pct": 13.0,
+          "note": "A frequent secondary offering with less miss than the sweeper."
+        },
+        {
+          "pitch": "splitter",
+          "usage_pct": 4.5,
+          "velo": 83.8,
+          "whiff_pct": 10.0,
+          "note": "Rare offering; the sample is small."
+        }
+      ],
+      "how_to_attack": [
+        "Right-handed hitters: look for fastballs; he uses them 64.3% of the time to righties, but his results against righties are a small sample.",
+        "Left-handed hitters: expect fastballs, which make up 76.3% of his mix; his fastball-group xwOBA allowed is 0.303.",
+        "Don't chase the sweeper: it has a 35.1% whiff rate and his breaking-ball-group xwOBA allowed to lefties is 0.12.",
+        "Stay patient for a hittable pitch; Scott's overall walk rate is 11.9%, and he averages 80 pitches per start."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 664034,
+          "name": "Ty France",
+          "expected_xwoba": 0.375,
+          "edge": "batter",
+          "note": "Fastball-group xwOBA is 0.393 against his fastball-group allowance of 0.393; matchup data flags small samples versus offspeed and RHB."
+        },
+        {
+          "player_id": 660710,
+          "name": "Rodolfo Dur\u00e1n",
+          "expected_xwoba": 0.373,
+          "edge": "batter",
+          "note": "Fastball-group xwOBA is 0.41 against his 0.393 allowance; Dur\u00e1n\u2019s batter samples and Scott\u2019s RHB sample are small."
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "expected_xwoba": 0.362,
+          "edge": "batter",
+          "note": "His fastball-group xwOBA is 0.378 against Scott\u2019s 0.393 allowance; Scott\u2019s RHB sample is small."
+        },
+        {
+          "player_id": 593428,
+          "name": "Xander Bogaerts",
+          "expected_xwoba": 0.353,
+          "edge": "batter",
+          "note": "Fastball-group xwOBA is 0.355 against Scott\u2019s 0.393 allowance; Scott\u2019s RHB sample is small."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 669392,
+          "name": "Samad Taylor",
+          "expected_xwoba": 0.208,
+          "edge": "pitcher",
+          "note": "All batter pitch-group samples are small; Scott\u2019s RHB sample is also small."
+        },
+        {
+          "player_id": 669369,
+          "name": "Bryce Johnson",
+          "expected_xwoba": 0.264,
+          "edge": "pitcher",
+          "note": "Johnson\u2019s batter samples by pitch group and versus RHP are small."
+        },
+        {
+          "player_id": 687749,
+          "name": "Jase Bowen",
+          "expected_xwoba": 0.298,
+          "edge": "pitcher",
+          "note": "Bowen\u2019s samples by pitch group and versus RHP are small; Scott\u2019s RHB sample is small."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 642207,
+          "name": "Devin Williams",
+          "throws": "R",
+          "note": "Available and rested; leads the listed relievers with 8 saves."
+        },
+        {
+          "player_id": 548384,
+          "name": "Brooks Raley",
+          "throws": "L",
+          "note": "Available and rested; has 10 holds and gives them a left-handed option."
+        },
+        {
+          "player_id": 596133,
+          "name": "Luke Weaver",
+          "throws": "R",
+          "note": "Available and rested; has 7 holds."
+        },
+        {
+          "player_id": 672335,
+          "name": "Cionel P\u00e9rez",
+          "throws": "L",
+          "note": "Available and rested; has 5 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 664034,
+          "name": "Ty France",
+          "bats": "R",
+          "expected_xwoba": 0.375,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastball: your fastball-group xwOBA is 0.393, matching his 0.393 allowed. Your breaking-ball figure is 0.282 against his 0.291 allowed; your offspeed sample is small, and his RHB sample is small."
+        },
+        {
+          "player_id": 660710,
+          "name": "Rodolfo Dur\u00e1n",
+          "bats": "R",
+          "expected_xwoba": 0.373,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your fastball-group xwOBA is 0.41 against his 0.393 allowed. These samples, including his results versus RHB, are small; breaking balls show 0.343 for you versus 0.291 allowed."
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "bats": "R",
+          "expected_xwoba": 0.362,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt the fastball: your group figure is 0.378 against his 0.393 allowed. Your breaking-ball figure is 0.297 versus his 0.291 allowed; his RHB sample is small."
+        },
+        {
+          "player_id": 593428,
+          "name": "Xander Bogaerts",
+          "bats": "R",
+          "expected_xwoba": 0.353,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for the fastball: your group xwOBA is 0.355 against his 0.393 allowed. Your breaking-ball figure is 0.284 against his 0.291 allowed; his RHB sample is small."
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "bats": "R",
+          "expected_xwoba": 0.344,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your group figure is 0.373 against his 0.393 allowed. Your breaking-ball figure is 0.217 versus his 0.291 allowed; his RHB sample is small."
+        },
+        {
+          "player_id": 609280,
+          "name": "Miguel Andujar",
+          "bats": "R",
+          "expected_xwoba": 0.335,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Stay ready for fastballs: your group xwOBA is 0.332 against his 0.393 allowed. Breaking balls are 0.249 for you and 0.291 allowed; his RHB sample is small."
+        },
+        {
+          "player_id": 657757,
+          "name": "Gavin Sheets",
+          "bats": "L",
+          "expected_xwoba": 0.322,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastball: your group xwOBA is 0.403, while he allows 0.303 against lefties. His breaking-ball allowance is 0.12, so lay off that pitch unless it stays in the zone."
+        },
+        {
+          "player_id": 823550,
+          "name": "Sung-Mun Song",
+          "bats": "L",
+          "expected_xwoba": 0.31,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your group figure is 0.32 against his 0.303 allowed. Your samples across pitch groups and versus RHP are small; his breaking-ball allowance is 0.12."
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "bats": "L",
+          "expected_xwoba": 0.307,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your group xwOBA is 0.343 against his 0.303 allowed. His breaking-ball allowance is 0.12, so avoid expanding the zone to chase it."
+        },
+        {
+          "player_id": 666023,
+          "name": "Freddy Fermin",
+          "bats": "R",
+          "expected_xwoba": 0.301,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Your group figures are 0.241 against fastballs and 0.203 against breaking balls, while he allows 0.393 and 0.291 respectively. His RHB sample is small."
+        },
+        {
+          "player_id": 687749,
+          "name": "Jase Bowen",
+          "bats": "R",
+          "expected_xwoba": 0.298,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Try to get a fastball: your group figure is 0.215 against his 0.393 allowed. Your pitch-group samples and his RHB sample are small, so keep the plan simple and avoid chasing the breaking ball."
+        },
+        {
+          "player_id": 669369,
+          "name": "Bryce Johnson",
+          "bats": "L",
+          "expected_xwoba": 0.264,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your group figure is 0.228 against his 0.303 allowed. Your pitch-group and RHP samples are small; his breaking-ball allowance is 0.12, so don't chase it."
+        },
+        {
+          "player_id": 669392,
+          "name": "Samad Taylor",
+          "bats": "R",
+          "expected_xwoba": 0.208,
+          "edge": "pitcher",
+          "hunt": "breaking balls",
+          "beware": null,
+          "approach": "Your breaking-ball figure is 0.226 against his 0.291 allowed, better than your 0.072 against fastballs and his 0.393 allowance. All your pitch-group samples and his RHB sample are small."
+        }
+      ],
+      "summary": "Christian Scott is the high-confidence expected starter, with Nolan McLean the listed alternative. Scott has averaged 4.3 innings per start, so be ready for the Mets\u2019 available bullpen; Devin Williams and left-handers Brooks Raley and Cionel P\u00e9rez are key options. Rest is suggested for Tatis, Bogaerts, and Machado; this matchup report includes them, but the lineup decision remains the manager\u2019s."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 668901,
+          "name": "Mark Vientos",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 683146,
+          "name": "Brett Baty",
+          "position": "3B",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 805999,
+          "name": "A.J. Ewing",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 543760,
+          "name": "Marcus Semien",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 669004,
+          "name": "MJ Melendez",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 620443,
+          "name": "Luis Torrens",
+          "position": "C",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 668901,
+          "name": "Mark Vientos",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 676724,
+          "name": "Jared Young",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 543760,
+          "name": "Marcus Semien",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 805999,
+          "name": "A.J. Ewing",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 683146,
+          "name": "Brett Baty",
+          "position": "3B",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 620443,
+          "name": "Luis Torrens",
+          "position": "C",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.345,
+          "weakness": "Breaking balls (xwOBA 0.283; moderate sample); vs RHP xwOBA 0.338 (moderate sample).",
+          "how_to_pitch": "Use breaking balls to expand below the zone; avoid predictable fastballs."
+        },
+        {
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.336,
+          "weakness": "Chases pitches (39.0% overall); vs RHP xwOBA 0.31 and vs LHP 0.407 (both moderate samples).",
+          "how_to_pitch": "Get ahead, then expand with breaking stuff; do not challenge him with a left-hander if avoidable."
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.412,
+          "weakness": "Breaking-ball whiff is 29.8% (moderate sample); vs LHP xwOBA 0.334 vs RHP 0.46 (moderate samples).",
+          "how_to_pitch": "Prefer a right-hander; mix breaking balls away and avoid feeding hittable fastballs."
+        },
+        {
+          "player_id": 668901,
+          "name": "Mark Vientos",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.319,
+          "weakness": "Whiffs against breaking balls (39.4%) and offspeed (36.4%); both moderate samples.",
+          "how_to_pitch": "Work breaking and offspeed below the zone; make him prove he can lay off."
+        },
+        {
+          "player_id": 683146,
+          "name": "Brett Baty",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.298,
+          "weakness": "Vs LHP xwOBA 0.251; vs RHP 0.309.",
+          "how_to_pitch": "Attack with a right-hander and change speeds; finish below the zone."
+        },
+        {
+          "player_id": 805999,
+          "name": "A.J. Ewing",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.321,
+          "weakness": "Vs LHP xwOBA 0.223; vs RHP 0.361.",
+          "how_to_pitch": "Favor a right-hander; use offspeed and make him handle pitches down."
+        },
+        {
+          "player_id": 543760,
+          "name": "Marcus Semien",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.321,
+          "weakness": "Vs RHP xwOBA 0.306 compared with 0.367 vs LHP.",
+          "how_to_pitch": "A right-hander has the better matchup; stay out of the middle and change eye levels."
+        },
+        {
+          "player_id": 669004,
+          "name": "MJ Melendez",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.274,
+          "weakness": "Vs LHP xwOBA 0.14; strikeout rate is 34.3%.",
+          "how_to_pitch": "If he starts, use a left-hander and attack with strikes before finishing out of the zone."
+        },
+        {
+          "player_id": 620443,
+          "name": "Luis Torrens",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.258,
+          "weakness": "Limited damage overall (xwOBA 0.258).",
+          "how_to_pitch": "Get ahead and challenge him in the zone; avoid giving away free passes."
+        },
+        {
+          "player_id": 676724,
+          "name": "Jared Young",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.391,
+          "weakness": "Vs LHP xwOBA 0.15 (small sample); overall sample is small.",
+          "how_to_pitch": "Stay cautious with the tiny sample; use a left-hander if available and attack the edges."
+        }
+      ],
+      "summary": "Juan Soto is the main threat, with Bo Bichette and Carson Benge also central to the order. The numbers favor a right-handed starter: Soto and A.J. Ewing are better against right-handers, while Bichette and Semien have higher xwOBA against left-handers. Lineups are predictions based on recent starts."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 601713,
+          "name": "Nick Pivetta",
+          "status": "out",
+          "reason": "Right elbow inflammation."
+        },
+        {
+          "player_id": 657656,
+          "name": "Ram\u00f3n Laureano",
+          "status": "out",
+          "reason": "Right hip inflammtion."
+        },
+        {
+          "player_id": 663362,
+          "name": "Matt Waldron",
+          "status": "out",
+          "reason": "Right brachialis muscle injury."
+        },
+        {
+          "player_id": 605397,
+          "name": "Joe Musgrove",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 669134,
+          "name": "Luis Campusano",
+          "status": "out",
+          "reason": "Left toe fracture."
+        },
+        {
+          "player_id": 630105,
+          "name": "Jake Cronenworth",
+          "status": "out",
+          "reason": "Concussion symptoms."
+        },
+        {
+          "player_id": 608566,
+          "name": "Germ\u00e1n M\u00e1rquez",
+          "status": "out",
+          "reason": "Forearm nerve inflammation."
+        },
+        {
+          "player_id": 663773,
+          "name": "Bryan Hoeing",
+          "status": "out",
+          "reason": "Torn right elbow flexor tendon."
+        },
+        {
+          "player_id": 506433,
+          "name": "Yu Darvish",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 670970,
+          "name": "Adrian Morejon",
+          "status": "limited",
+          "reason": "pitched yesterday (28 pitches)"
+        },
+        {
+          "player_id": 593974,
+          "name": "Wandy Peralta",
+          "status": "limited",
+          "reason": "pitched yesterday (16 pitches)"
+        },
+        {
+          "player_id": 676760,
+          "name": "Ron Marinaccio",
+          "status": "limited",
+          "reason": "pitched yesterday (15 pitches)"
+        },
+        {
+          "player_id": 673513,
+          "name": "Yuki Matsui",
+          "status": "limited",
+          "reason": "pitched yesterday (19 pitches)"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "status": "rest_suggested",
+          "reason": "32 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "status": "rest_suggested",
+          "reason": "11 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "status": "rest_suggested",
+          "reason": "28 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 593428,
+          "name": "Xander Bogaerts",
+          "status": "rest_suggested",
+          "reason": "10 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Nine players are out, including several pitchers and two position players. Adrian Morejon, Wandy Peralta, Ron Marinaccio, and Yuki Matsui are limited after pitching yesterday."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Start Michael King, a right-hander; the scouting report favors a right-handed starter against the predicted Mets order, including Juan Soto\u2019s 0.46 xwOBA against right-handers versus 0.334 against left-handers (moderate samples).",
+        "Use the stated mix to change speeds and avoid hittable fastballs to Soto, whose expected xwOBA against King is 0.391; attack Mark Vientos below the zone, where the report notes breaking-ball and offspeed whiffs of 39.4% and 36.4% (moderate samples).",
+        "Keep Tatis and Merrill in despite rest suggestions: the lineup report says resting them costs 0.46 and 0.37 win-probability points, respectively; Scott\u2019s RHB sample is small, so keep their fastball-focused approach disciplined.",
+        "Lean on rested leverage relievers Adam and Rodriguez before Miller in the listed close-game plans; reserve Morejon, Peralta, Marinaccio, and Matsui for need because all are limited after pitching yesterday."
+      ],
+      "keys_to_the_game": [
+        "Keep Soto from seeing hittable fastballs; favor a right-hander and vary the breaking-ball look.",
+        "Be patient against Scott: his overall walk rate is 11.9%, and he averages 80 pitches per start; do not chase his sweeper, which has a 35.1% whiff rate.",
+        "Stay ready for the Mets bullpen: Scott has averaged 4.3 innings per start.",
+        "Use rested bullpen options in leverage and avoid leaning on the limited arms unless the game requires it.",
+        "Protect the late lead with Machado at third when the situation calls for stronger defense."
+      ],
+      "summary": "Start Michael King against the predicted Mets lineup, attack Soto carefully, and make Scott work without chasing the sweeper. Keep the planned order, then use rested relievers for leverage and bring in limited arms only if needed; the checker found no errors."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Make Scott work; hunt strikes, not sweepers",
+      "message": "Christian Scott is the high-confidence expected starter, but he averages 4.3 innings per start, so be ready for the Mets bullpen, including Devin Williams. Stay patient: Scott\u2019s overall walk rate is 11.9%, and he averages 80 pitches per start. Look for hittable fastballs and do not chase his sweeper, which has a 35.1% whiff rate. Scott\u2019s results against right-handed hitters are a small sample, so keep your approach disciplined.",
+      "reminders": [
+        "Stay with the planned order and compete for a hittable pitch.",
+        "Left-handed hitters: don\u2019t chase breaking balls below the zone.",
+        "Be ready for Devin Williams and the Mets\u2019 available bullpen."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "King sets the tone; keep Soto off the fastball",
+      "message": "Michael King starts. Change speeds and avoid feeding Juan Soto hittable fastballs; his expected xwOBA against King is 0.391. Work breaking balls and offspeed below the zone to Mark Vientos, whose whiffs against those pitches are 39.4% and 36.4% (moderate samples). Use rested leverage arms before Miller in close spots, and keep the limited relievers for need.",
+      "reminders": [
+        "Attack Luis Torrens in the zone; his expected xwOBA against King is 0.281.",
+        "Close-game plan: Adam and Rodriguez before Miller.",
+        "Morejon, Peralta, Marinaccio, and Matsui are limited after pitching yesterday."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Protect the planned leverage path and late defense",
+      "message": "Keep the approved order, including Tatis and Merrill despite rest suggestions; resting them costs 0.46 and 0.37 win-probability points, respectively. Scott is the high-confidence assumed starter, and his right-handed hitter sample is small. King\u2019s plan centers on changing speeds and denying Soto hittable fastballs. In close games, use rested Adam and Rodriguez before Miller; reserve the four limited arms for need. Consider Machado at third to protect a late lead when stronger defense is needed.",
+      "reminders": [
+        "Scott averages 4.3 innings per start; prepare for the Mets bullpen.",
+        "Use Machado as the late defensive replacement at third when appropriate.",
+        "Four relievers are limited after pitching yesterday."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 0,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 34.7,
+    "total": {
+      "model_steps": 17,
+      "gateway_cache_hits": 10,
+      "input_tokens": 91679,
+      "cached_tokens": 26810,
+      "output_tokens": 8802,
+      "cost_usd": 0.01198
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 2,
+        "input_tokens": 4457,
+        "cached_tokens": 0,
+        "output_tokens": 439,
+        "seconds": 0.5,
+        "cost_usd": 0.0
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 3,
+        "input_tokens": 23384,
+        "cached_tokens": 7396,
+        "output_tokens": 2399,
+        "seconds": 10.5,
+        "cost_usd": 0.00301
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 12579,
+        "cached_tokens": 5038,
+        "output_tokens": 1534,
+        "seconds": 0.8,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 2,
+        "input_tokens": 16630,
+        "cached_tokens": 3197,
+        "output_tokens": 1170,
+        "seconds": 6.3,
+        "cost_usd": 0.00243
+      },
+      "bench_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 19748,
+        "cached_tokens": 11179,
+        "output_tokens": 2335,
+        "seconds": 15.7,
+        "cost_usd": 0.0031
+      },
+      "manager": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7362,
+        "cached_tokens": 0,
+        "output_tokens": 418,
+        "seconds": 3.7,
+        "cost_usd": 0.00168
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7519,
+        "cached_tokens": 0,
+        "output_tokens": 507,
+        "seconds": 4.2,
+        "cost_usd": 0.00176
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

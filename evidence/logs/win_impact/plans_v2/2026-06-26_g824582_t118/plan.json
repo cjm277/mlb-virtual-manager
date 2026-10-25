@@ -1,0 +1,1108 @@
+{
+  "run_id": "2026-06-26_g824582_t118",
+  "status": "needs_human_review",
+  "game": {
+    "game_pk": 824582,
+    "season": 2026,
+    "game_date": "2026-06-26",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Rate Field",
+    "team": "Kansas City Royals",
+    "team_id": 118,
+    "team_record_going_in": "34-48",
+    "opponent": "Chicago White Sox",
+    "opponent_id": 145,
+    "opponent_record_going_in": "41-38",
+    "home_away": "away",
+    "bats_last": false,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 663436,
+        "name": "Davis Martin"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Leads off with 0.0202 runs per PA vs average; even edge against Martin, with his fastball xWoba .399."
+        },
+        {
+          "slot": 2,
+          "player_id": 695506,
+          "name": "Jac Caglianone",
+          "position": "1B",
+          "bats": "L",
+          "reason": "Second with 0.02 runs per PA; batter edge, including .42 fastball xwOBA. Plays despite rest suggestion; sitting costs 1.69 win-probability points."
+        },
+        {
+          "slot": 3,
+          "player_id": 670231,
+          "name": "John Rave",
+          "position": "LF",
+          "bats": "L",
+          "reason": "Third in the model order; strong batter edge and .715 fastball xwOBA, though all pitch-group results are small-sample."
+        },
+        {
+          "slot": 4,
+          "player_id": 686555,
+          "name": "Isaac Collins",
+          "position": "RF",
+          "bats": "S",
+          "reason": "Cleanup in the model order; even edge, and his fastball xwOBA is .379."
+        },
+        {
+          "slot": 5,
+          "player_id": 668942,
+          "name": "Josh Rojas",
+          "position": "3B",
+          "bats": "L",
+          "reason": "Fifth in the model order; even edge, with .484 offspeed xwOBA against Martin\u2019s .315 allowed to lefties."
+        },
+        {
+          "slot": 6,
+          "player_id": 657041,
+          "name": "Lane Thomas",
+          "position": "CF",
+          "bats": "R",
+          "reason": "Sixth in the model order; Martin has the edge, so hunt fastballs and avoid breaking balls."
+        },
+        {
+          "slot": 7,
+          "player_id": 686475,
+          "name": "Tyler Tolbert",
+          "position": "DH",
+          "bats": "R",
+          "reason": "Seventh in the model order; even edge, but his pitch-group samples are small."
+        },
+        {
+          "slot": 8,
+          "player_id": 686681,
+          "name": "Michael Massey",
+          "position": "2B",
+          "bats": "L",
+          "reason": "Eighth in the model order; even edge, with an offspeed edge based on a small sample."
+        },
+        {
+          "slot": 9,
+          "player_id": 695600,
+          "name": "Carter Jensen",
+          "position": "C",
+          "bats": "L",
+          "reason": "Ninth in the model order; even edge. Plays despite rest suggestion; sitting costs 0.34 win-probability points."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 679845,
+          "name": "Nick Loftin",
+          "role": "utility",
+          "note": "Model-ranked first bench bat; rest today costs 0.23 win-probability points, within the rest threshold."
+        },
+        {
+          "player_id": 516782,
+          "name": "Starling Marte",
+          "role": "pinch_hitter",
+          "note": "Model-ranked second; fastball xwOBA is .56 against Martin\u2019s .32 allowed to righties, but pitch-group samples are small."
+        },
+        {
+          "player_id": 670224,
+          "name": "Kameron Misner",
+          "role": "pinch_runner",
+          "note": "Model-ranked third; use for late speed; his pitch-group samples are small."
+        },
+        {
+          "player_id": 521692,
+          "name": "Salvador Perez",
+          "role": "backup_catcher",
+          "note": "Model-ranked fourth and available at catcher or first base; rest-suggested."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later versus a left-handed reliever, with a runner in scoring position.",
+          "bench_player_id": 516782,
+          "replaces_player_id": 686475,
+          "reason": "Highest-ranked bench bat with a right-handed bat against a left-handed reliever."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning, tying or go-ahead run on base.",
+          "bench_player_id": 670224,
+          "replaces_player_id": 695600,
+          "reason": "Use him for a potential extra base or scoring chance."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead; protect the outfield.",
+          "bench_player_id": 670224,
+          "replaces_player_id": 670231,
+          "reason": "Misner can replace Rave in the outfield; make the move only to protect a lead."
+        }
+      ],
+      "summary": "The model expects 4.56 runs against Davis Martin, the medium-confidence starter pick (61%). Jac Caglianone and Carter Jensen play because their rest-day costs exceed the threshold; Nick Loftin sits, with a 0.23 win-probability-point cost."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 608379,
+        "name": "Michael Wacha",
+        "throws": "R",
+        "reason": "No eligible starter is listed: Wacha has 3 days rest, Cameron has 1, and Lugo has 0; obtain a new eligible starter or bullpen-game approval.",
+        "expected_innings": 0.0,
+        "pitch_count_limit": 0,
+        "pitch_mix": [
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 25.0,
+            "purpose": "Do not deploy until an eligible assignment is approved."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Do not deploy until an eligible assignment is approved."
+          },
+          {
+            "pitch": "cutter",
+            "vs_lhb_pct": 15.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Do not deploy until an eligible assignment is approved."
+          },
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 10.0,
+            "vs_rhb_pct": 20.0,
+            "purpose": "Do not deploy until an eligible assignment is approved."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 15.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Do not deploy until an eligible assignment is approved."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 10.0,
+            "vs_rhb_pct": 10.0,
+            "purpose": "Do not deploy until an eligible assignment is approved."
+          }
+        ],
+        "keys": [
+          "Escalate before first pitch; no listed starter is ready with 4+ days rest.",
+          "Wacha is not authorized to start; this is a placeholder because the required starter field cannot represent an unresolved assignment.",
+          "Against Vargas, avoid fastballs and favor breaking balls; his breaking-ball xwOBA is 0.35 versus 0.411 on fastballs.",
+          "Use breaking balls and offspeed against Antonacci; his favorable split versus LHP is small."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 668674,
+          "name": "Lucas Erceg",
+          "throws": "R",
+          "role": "closer",
+          "note": "Keep him as closer; available and leads the group with 12 saves."
+        },
+        {
+          "player_id": 663738,
+          "name": "Daniel Lynch IV",
+          "throws": "L",
+          "role": "setup",
+          "note": "Rested left-handed setup option with 9 holds."
+        },
+        {
+          "player_id": 656638,
+          "name": "Alex Lange",
+          "throws": "R",
+          "role": "setup",
+          "note": "Rested late-inning option with 6 saves; bridge to Erceg."
+        },
+        {
+          "player_id": 670167,
+          "name": "John Schreiber",
+          "throws": "R",
+          "role": "middle",
+          "note": "Rested middle-inning bridge and leverage option."
+        },
+        {
+          "player_id": 674444,
+          "name": "Steven Cruz",
+          "throws": "R",
+          "role": "middle",
+          "note": "Rested middle relief; available to cover an inning."
+        },
+        {
+          "player_id": 694360,
+          "name": "Beck Way",
+          "throws": "R",
+          "role": "long",
+          "note": "Length option; workload includes 32 pitches over the last 3 days."
+        },
+        {
+          "player_id": 621381,
+          "name": "Matt Strahm",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Limited after pitching yesterday (15 pitches); use only if needed or for one key matchup."
+        },
+        {
+          "player_id": 657756,
+          "name": "Connor Seabold",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday (24 pitches); use only if needed, after rested options."
+        },
+        {
+          "player_id": 679883,
+          "name": "Luinder Avila",
+          "throws": "R",
+          "role": "long",
+          "note": "Limited after 87 pitches over the last 3 days; avoid unless necessary."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use rested setup arms first, then Erceg to finish; avoid limited arms unless needed.",
+          "pitcher_ids": [
+            663738,
+            656638,
+            668674
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use Lange and Schreiber for leverage; reserve Erceg for the highest-pressure spot.",
+          "pitcher_ids": [
+            656638,
+            670167,
+            668674
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Cover innings with rested middle relief and preserve the closer.",
+          "pitcher_ids": [
+            674444,
+            670167,
+            663738
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use long relief first; keep limited arms out unless necessary.",
+          "pitcher_ids": [
+            694360,
+            674444,
+            679883
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "If bullpen-game approval is granted, begin with long relief and follow with rested middle arms.",
+          "pitcher_ids": [
+            694360,
+            674444,
+            670167,
+            663738,
+            656638,
+            668674
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Sequence rested arms by leverage and save Erceg for the highest-pressure spot.",
+          "pitcher_ids": [
+            670167,
+            663738,
+            656638,
+            668674
+          ]
+        }
+      ],
+      "summary": "No listed pitcher meets the 4+ day rest requirement, so a valid starter cannot be assigned from the available data. Obtain a new eligible starter or explicit bullpen-game approval before play; Erceg remains the closer."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 663436,
+        "name": "Davis Martin",
+        "throws": "R",
+        "confidence": "medium",
+        "alternatives": [],
+        "probability_pct": 61,
+        "probability_basis": "Right 61% of the time in 1,220 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 25.6,
+          "velo": 94.2,
+          "whiff_pct": 27.6,
+          "note": "His four-seamer is the most-used individual pitch; stay ready for it early."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 16.7,
+          "velo": 92.9,
+          "whiff_pct": 9.2,
+          "note": "A lower-whiff fastball option; look to put a hittable one in play."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 14.9,
+          "velo": 90.4,
+          "whiff_pct": 16.7,
+          "note": "He uses it as his main offspeed pitch; avoid expanding on it."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 14.5,
+          "velo": 87.3,
+          "whiff_pct": 44.6,
+          "note": "A high-whiff breaking pitch; make him prove he can land it for a strike."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 13.1,
+          "velo": 89.5,
+          "whiff_pct": 29.8,
+          "note": "A firm cutter that can miss bats; stay through the middle of the field."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 12.9,
+          "velo": 82.0,
+          "whiff_pct": 44.1,
+          "note": "Another high-whiff breaker; do not chase it below the zone."
+        }
+      ],
+      "how_to_attack": [
+        "Lefties: look for fastballs; he uses fastballs 58.7% of the time to left-handed hitters.",
+        "Righties: be ready for breaking balls; they make up 38.1% of his mix to right-handed hitters.",
+        "Righties should hunt a fastball they can drive, but avoid offering at breaking balls out of the zone.",
+        "Make him work: he averages 91 pitches per start and 5.8 innings per start."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 670231,
+          "name": "John Rave",
+          "expected_xwoba": 0.404,
+          "edge": "batter",
+          "note": "Strong projected edge and a .715 xwOBA against fastballs; all pitch-group results are small-sample."
+        },
+        {
+          "player_id": 695506,
+          "name": "Jac Caglianone",
+          "expected_xwoba": 0.362,
+          "edge": "batter",
+          "note": "Fastball and breaking-ball xwOBA are .42 and .436; the fastball is Martin\u2019s most-used group to lefties."
+        },
+        {
+          "player_id": 516782,
+          "name": "Starling Marte",
+          "expected_xwoba": 0.347,
+          "edge": "batter",
+          "note": "Fastball xwOBA is .56 against Martin\u2019s .32 allowed, but Marte\u2019s pitch-group samples are small."
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "expected_xwoba": 0.333,
+          "edge": "even",
+          "note": "His fastball xwOBA is .399, while Martin allows .32; beware the breaking ball, where Martin allows .193."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 657041,
+          "name": "Lane Thomas",
+          "expected_xwoba": 0.296,
+          "edge": "pitcher",
+          "note": "Martin has the edge; Thomas\u2019 breaking-ball xwOBA is .225 against .193 allowed, and the offspeed sample is small."
+        },
+        {
+          "player_id": 521692,
+          "name": "Salvador Perez",
+          "expected_xwoba": 0.277,
+          "edge": "pitcher",
+          "note": "Breaking balls are a tough fit: .203 xwOBA against .193 allowed. Perez is rest-suggested."
+        },
+        {
+          "player_id": 670224,
+          "name": "Kameron Misner",
+          "expected_xwoba": 0.277,
+          "edge": "pitcher",
+          "note": "Small samples across pitch groups; Martin\u2019s fastball group xwOBA allowed is .346 versus Misner\u2019s .217."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 622554,
+          "name": "Seranthony Dom\u00ednguez",
+          "throws": "R",
+          "note": "Available and rested; leads the listed relievers with 12 saves."
+        },
+        {
+          "player_id": 663542,
+          "name": "Bryan Hudson",
+          "throws": "L",
+          "note": "Available and rested; left-handed option with 5 holds."
+        },
+        {
+          "player_id": 691799,
+          "name": "Grant Taylor",
+          "throws": "R",
+          "note": "Available and rested; has 5 holds."
+        },
+        {
+          "player_id": 656794,
+          "name": "Sean Newcomb",
+          "throws": "L",
+          "note": "Available and rested; left-handed option with 5 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 670231,
+          "name": "John Rave",
+          "bats": "L",
+          "expected_xwoba": 0.404,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Sit fastball: your fastball xwOBA is .715 and he allows .346 to lefties. Your offspeed xwOBA is 0.0 against .315 allowed; all pitch-group samples are small."
+        },
+        {
+          "player_id": 695506,
+          "name": "Jac Caglianone",
+          "bats": "L",
+          "expected_xwoba": 0.362,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for a fastball: your xwOBA is .42 and he allows .346 to lefties. Lay off offspeed early; your .287 is below his .315 allowed."
+        },
+        {
+          "player_id": 516782,
+          "name": "Starling Marte",
+          "bats": "R",
+          "expected_xwoba": 0.347,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt the fastball: your xwOBA is .56 against his .32 allowed to righties. Your breaking-ball xwOBA is .19 against .193 allowed; these pitch-group samples are small."
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "bats": "R",
+          "expected_xwoba": 0.333,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look to drive the fastball: your xwOBA is .399 against his .32 allowed. His breaking balls are tougher, with your .332 against .193 allowed."
+        },
+        {
+          "player_id": 686475,
+          "name": "Tyler Tolbert",
+          "bats": "R",
+          "expected_xwoba": 0.331,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for a fastball: your xwOBA is .399 against his .32 allowed. Be selective against breaking balls, where your .32 faces .193 allowed; your pitch-group samples are small."
+        },
+        {
+          "player_id": 686555,
+          "name": "Isaac Collins",
+          "bats": "S",
+          "expected_xwoba": 0.327,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: your xwOBA is .379 and he allows .346 to lefties. Avoid chasing offspeed; your .181 is below his .315 allowed."
+        },
+        {
+          "player_id": 668942,
+          "name": "Josh Rojas",
+          "bats": "L",
+          "expected_xwoba": 0.322,
+          "edge": "even",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Look for an offspeed pitch: your xwOBA is .484 against his .315 allowed to lefties. Your breaking-ball sample is small; your .215 meets .275 allowed."
+        },
+        {
+          "player_id": 686681,
+          "name": "Michael Massey",
+          "bats": "L",
+          "expected_xwoba": 0.318,
+          "edge": "even",
+          "hunt": "offspeed",
+          "beware": null,
+          "approach": "Hunt offspeed: your xwOBA is .333 against .315 allowed to lefties. Your offspeed sample is small; stay ready for fastballs, which he uses 58.7% of the time."
+        },
+        {
+          "player_id": 695600,
+          "name": "Carter Jensen",
+          "bats": "L",
+          "expected_xwoba": 0.315,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your xwOBA is .361 against .346 allowed to lefties. Be patient on breaking balls, where your .248 is below his .275 allowed."
+        },
+        {
+          "player_id": 679845,
+          "name": "Nick Loftin",
+          "bats": "R",
+          "expected_xwoba": 0.304,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for a fastball: your xwOBA is .316 against his .32 allowed. Beware breaking balls, where your .306 is above his .193 allowed; your offspeed sample is small."
+        },
+        {
+          "player_id": 657041,
+          "name": "Lane Thomas",
+          "bats": "R",
+          "expected_xwoba": 0.296,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your xwOBA is .342 against his .32 allowed. Be careful with breaking balls, where your .225 faces .193 allowed; your offspeed sample is small."
+        },
+        {
+          "player_id": 521692,
+          "name": "Salvador Perez",
+          "bats": "R",
+          "expected_xwoba": 0.277,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt the fastball: your xwOBA is .354 against his .32 allowed. Breaking balls are a tough matchup (.203 against .193 allowed); you are rest-suggested."
+        },
+        {
+          "player_id": 670224,
+          "name": "Kameron Misner",
+          "bats": "L",
+          "expected_xwoba": 0.277,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Look for a fastball: your xwOBA is .217 against .346 allowed to lefties. These pitch-group samples are small, so keep the approach simple and avoid chasing."
+        }
+      ],
+      "summary": "Davis Martin is the medium-confidence starter pick; the prediction puts him at 61%. Lefties should be ready for his fastball-heavy mix, while righties need discipline against the breaking ball. Jac Caglianone, Nick Loftin, Salvador Perez, and Carter Jensen are rest-suggested; Perez and Caglianone are included in these matchup plans, but the bench should weigh those cautions."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "position": "SS",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "position": "RF",
+          "bats": "S"
+        },
+        {
+          "slot": 6,
+          "player_id": 694378,
+          "name": "Jacob Gonzalez",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 691011,
+          "name": "Drew Romo",
+          "position": "C",
+          "bats": "S"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 545341,
+          "name": "Randal Grichuk",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "position": "3B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "position": "RF",
+          "bats": "S"
+        },
+        {
+          "slot": 6,
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 691011,
+          "name": "Drew Romo",
+          "position": "C",
+          "bats": "S"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.372,
+          "weakness": "Breaking balls (xwOBA 0.301) and offspeed (0.276) are weaker than fastballs; vs LHP xwOBA is 0.246, but that split is small.",
+          "how_to_pitch": "Use breaking balls and offspeed; avoid feeding him fastballs, which he handles well."
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.399,
+          "weakness": "Breaking-ball xwOBA is 0.35 versus 0.411 on fastballs; his vs-LHP xwOBA of 0.478 is a moderate sample.",
+          "how_to_pitch": "Prefer a right-hander; stay off fastballs and attack with breaking balls."
+        },
+        {
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.328,
+          "weakness": "Breaking-ball xwOBA is 0.289, with a 40.5% whiff rate; elevated strikeout rate at 31.3%.",
+          "how_to_pitch": "Get ahead, then expand with breaking balls; avoid predictable offspeed, which has a 0.384 xwOBA."
+        },
+        {
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.282,
+          "weakness": "No pitch-type profile available; xwOBA is 0.282 overall.",
+          "how_to_pitch": "Challenge him in the zone and make him earn his way on; do not give away free bases."
+        },
+        {
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.316,
+          "weakness": "Small overall sample; xwOBA is 0.239 vs LHP and 0.35 vs RHP.",
+          "how_to_pitch": "A left-hander is preferable from the available split; change locations and avoid a predictable pattern."
+        },
+        {
+          "player_id": 694378,
+          "name": "Jacob Gonzalez",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.28,
+          "weakness": "xwOBA is 0.232 vs LHP; moderate overall sample.",
+          "how_to_pitch": "Use the left-hander split as a guide, attack the zone, and avoid giving him free passes."
+        },
+        {
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.301,
+          "weakness": "xwOBA is 0.169 vs LHP, though that split is a small sample.",
+          "how_to_pitch": "A left-hander is favorable by the split; stay in the zone and make him put the ball in play."
+        },
+        {
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.27,
+          "weakness": "xwOBA is 0.248 vs LHP; moderate overall sample.",
+          "how_to_pitch": "Lean on the left-hander split and keep him off the bases; be alert to his speed."
+        },
+        {
+          "player_id": 691011,
+          "name": "Drew Romo",
+          "bats": "S",
+          "threat": "low",
+          "xwoba": 0.266,
+          "weakness": "Low overall xwOBA; moderate sample.",
+          "how_to_pitch": "Attack the zone and avoid giving him a free pass."
+        },
+        {
+          "player_id": 545341,
+          "name": "Randal Grichuk",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.392,
+          "weakness": "His vs-RHP xwOBA is 0.324, a small sample; strongest split is vs LHP at 0.433.",
+          "how_to_pitch": "Favor a right-hander; keep the ball out of the middle and use his chase tendency to finish outside the zone."
+        }
+      ],
+      "summary": "Miguel Vargas, Sam Antonacci, and Randal Grichuk are the main threats; Colson Montgomery brings power but also swing-and-miss. Prefer a right-hander overall: Vargas is much stronger against left-handers, while Antonacci\u2019s favorable split versus right-handers is supported by a moderate sample."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 672580,
+          "name": "Maikel Garcia",
+          "status": "out",
+          "reason": "Left hand muscle strain."
+        },
+        {
+          "player_id": 666142,
+          "name": "Cole Ragans",
+          "status": "out",
+          "reason": "Left elbow impingement."
+        },
+        {
+          "player_id": 608032,
+          "name": "Carlos Est\u00e9vez",
+          "status": "out",
+          "reason": "Left foot contusion."
+        },
+        {
+          "player_id": 686469,
+          "name": "Vinnie Pasquantino",
+          "status": "out",
+          "reason": "Right hamate fracture."
+        },
+        {
+          "player_id": 664728,
+          "name": "Kyle Isbel",
+          "status": "out",
+          "reason": "Left plantar fasciitis."
+        },
+        {
+          "player_id": 663697,
+          "name": "Jonathan India",
+          "status": "out",
+          "reason": "Left shoulder subluxation."
+        },
+        {
+          "player_id": 683232,
+          "name": "Nick Mears",
+          "status": "out",
+          "reason": "Right shoulder impingement."
+        },
+        {
+          "player_id": 663460,
+          "name": "Kris Bubic",
+          "status": "out",
+          "reason": "Left elbow soreness."
+        },
+        {
+          "player_id": 663704,
+          "name": "James McArthur",
+          "status": "out",
+          "reason": "Right elbow inflammation."
+        },
+        {
+          "player_id": 621381,
+          "name": "Matt Strahm",
+          "status": "limited",
+          "reason": "pitched yesterday (15 pitches)"
+        },
+        {
+          "player_id": 657756,
+          "name": "Connor Seabold",
+          "status": "limited",
+          "reason": "pitched yesterday (24 pitches)"
+        },
+        {
+          "player_id": 679883,
+          "name": "Luinder Avila",
+          "status": "limited",
+          "reason": "87 pitches over the last 3 days"
+        },
+        {
+          "player_id": 679845,
+          "name": "Nick Loftin",
+          "status": "rest_suggested",
+          "reason": "10 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 695600,
+          "name": "Carter Jensen",
+          "status": "rest_suggested",
+          "reason": "8 straight starts; a rest day is suggested after 6 for catchers (2026 data)."
+        },
+        {
+          "player_id": 521692,
+          "name": "Salvador Perez",
+          "status": "rest_suggested",
+          "reason": "13 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 695506,
+          "name": "Jac Caglianone",
+          "status": "rest_suggested",
+          "reason": "16 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Nine players are on the injured list and unavailable. Matt Strahm, Connor Seabold, and Luinder Avila are limited by recent workload; no players were flagged cleared with caution."
+    },
+    "manager_review": {
+      "approved": false,
+      "fixes": [
+        {
+          "to": "pitching_coach",
+          "instruction": "Replace Michael Wacha as the starter: he has 3 days of rest, below the required 4+. Do not use the placeholder plan; obtain an eligible starter or secure explicit bullpen-game approval, then submit a complete authorized plan."
+        }
+      ],
+      "key_decisions": [
+        "Keep the lineup built for Davis Martin, the medium-confidence starter pick at 61%; lefties should be ready for his fastball-heavy mix, while righties should avoid chasing breaking balls.",
+        "Start Jac Caglianone despite the rest suggestion because the plan reports sitting him costs 1.69 win-probability points; his projected matchup edge includes .42 fastball xwOBA.",
+        "Start John Rave in the third spot: he has a strong projected edge and .715 fastball xwOBA, but all pitch-group results are small-sample.",
+        "Keep Nick Loftin on the bench for the rest suggestion; the reported cost is 0.23 win-probability points, within the rest threshold.",
+        "Retain Lucas Erceg as closer and use rested setup arms ahead of him; reserve limited relievers for need."
+      ],
+      "keys_to_the_game": [
+        "Resolve the starting-pitcher assignment before first pitch; the current plan says Michael Wacha is not authorized to start.",
+        "Make Martin work; he averages 91 pitches per start and 5.8 innings per start.",
+        "Stay disciplined against Martin\u2019s breaking balls, especially with right-handed hitters, and have lefties ready for fastballs.",
+        "Against the White Sox threats, favor right-handers against Miguel Vargas and Randal Grichuk; use breaking balls and offspeed against Sam Antonacci.",
+        "Protect the bullpen workload by leaning on rested relievers and limiting Matt Strahm, Connor Seabold, and Luinder Avila."
+      ],
+      "summary": "The lineup is built around the medium-confidence Davis Martin prediction, using the fastball matchup edges while respecting the small-sample flags and rest suggestions. The plan cannot be approved because Michael Wacha has 3 days of rest against the 4+ day requirement; replace him with an eligible starter or obtain explicit bullpen-game approval and a complete authorized plan."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Stay ready for Martin\u2019s fastball\u2014and make him work",
+      "message": "Davis Martin is the medium-confidence starter pick at 61%. Lefties, be ready for fastballs; righties, stay disciplined and do not chase breaking balls out of the zone. John Rave has a strong projected edge, but all his pitch-group results are small-sample. Make Martin work: he averages 91 pitches per start and 5.8 innings per start. The White Sox bullpen arms to watch are Seranthony Dom\u00ednguez, Bryan Hudson, Grant Taylor, and Sean Newcomb; all are listed as available and rested.",
+      "reminders": [
+        "Lefties: look for fastballs.",
+        "Righties: make Martin land breaking balls for strikes.",
+        "Stay patient and extend Martin\u2019s outing.",
+        "Be ready for the listed White Sox bullpen arms."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Attack their threats with the right matchups",
+      "message": "The starter assignment is unresolved: Michael Wacha is not authorized to start, and the current plan requires escalation before first pitch. Use rested bullpen options in planned roles; Lucas Erceg remains the closer, with rested setup arms ahead of him. Favor right-handers against Miguel Vargas and Randal Grichuk; stay off Vargas\u2019s fastballs and attack with breaking balls. Use breaking balls and offspeed against Sam Antonacci; his favorable split versus LHP is small. Matt Strahm, Connor Seabold, and Luinder Avila are limited, so reserve them for need.",
+      "reminders": [
+        "Resolve the starter before first pitch; do not use Wacha as the starter.",
+        "Use rested setup arms before Erceg in a close late lead.",
+        "Use breaking balls and offspeed against Antonacci.",
+        "Limit the three workload-limited relievers."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Resolve the starter; retain the approved lineup and bullpen roles",
+      "message": "The plan is not approved: Michael Wacha has 3 days of rest against the 4+ day requirement. Obtain an eligible starter or explicit bullpen-game approval and a complete authorized plan before first pitch. The lineup is built for the medium-confidence Davis Martin prediction at 61%; lefties should be ready for fastballs and righties should avoid chasing breaking balls. Keep Jac Caglianone in despite the rest suggestion; the reported cost of sitting him is 1.69 win-probability points. Keep Nick Loftin on the bench for the rest suggestion. Lucas Erceg remains closer; lean on rested relievers and limit Matt Strahm, Connor Seabold, and Luinder Avila.",
+      "reminders": [
+        "Starter assignment remains unresolved; the current pitching plan is a placeholder.",
+        "Caglianone starts despite rest suggestion; Loftin rests.",
+        "Erceg closes, with rested setup arms ahead of him.",
+        "Limited relievers are available but should be reserved for need."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 2,
+    "open_issues": [
+      {
+        "owner": "pitching_coach",
+        "code": "starter_not_rested",
+        "message": "Starter Michael Wacha has 3 days of rest; 4+ needed."
+      }
+    ]
+  },
+  "usage": {
+    "seconds": 90.2,
+    "total": {
+      "model_steps": 30,
+      "gateway_cache_hits": 10,
+      "input_tokens": 173999,
+      "cached_tokens": 78597,
+      "output_tokens": 16080,
+      "cost_usd": 0.02264
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 2,
+        "input_tokens": 4384,
+        "cached_tokens": 0,
+        "output_tokens": 417,
+        "seconds": 0.6,
+        "cost_usd": 0.0
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 3,
+        "input_tokens": 20466,
+        "cached_tokens": 4568,
+        "output_tokens": 2367,
+        "seconds": 11.7,
+        "cost_usd": 0.00298
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 12117,
+        "cached_tokens": 4812,
+        "output_tokens": 1565,
+        "seconds": 0.8,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 3,
+        "model_steps": 13,
+        "gateway_cache_hits": 2,
+        "input_tokens": 83412,
+        "cached_tokens": 53195,
+        "output_tokens": 7850,
+        "seconds": 56.5,
+        "cost_usd": 0.00988
+      },
+      "bench_coach": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 24525,
+        "cached_tokens": 16022,
+        "output_tokens": 1973,
+        "seconds": 17.1,
+        "cost_usd": 0.00301
+      },
+      "manager": {
+        "calls": 3,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 21710,
+        "cached_tokens": 0,
+        "output_tokens": 1298,
+        "seconds": 14.2,
+        "cost_usd": 0.00499
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7385,
+        "cached_tokens": 0,
+        "output_tokens": 610,
+        "seconds": 5.0,
+        "cost_usd": 0.00178
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

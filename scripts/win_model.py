@@ -62,7 +62,7 @@ def hand(pid: int) -> tuple[str | None, str | None]:
 
 @lru_cache(maxsize=None)
 def matchup_x(batter: int, sp: int, d: str) -> float:
-    return matchup(batter, sp, d)["expected_xwoba"]
+    return matchup(batter, sp, d, weight=1.0)["expected_xwoba"]     # the raw engine, as in the original scoring
 
 
 @lru_cache(maxsize=1)
@@ -208,10 +208,10 @@ def scores(y: np.ndarray, p: np.ndarray) -> dict:
 # Stage 2: score the staff's plans against the real choices
 # ---------------------------------------------------------------------------
 
-def plan_cases() -> list[dict]:
+def plan_cases(folder: Path = PLANS) -> list[dict]:
     feats = {r["game_pk"]: r for r in json.loads(FEATURES.read_text(encoding="utf-8"))}
     cases = []
-    for run in sorted(PLANS.iterdir()):
+    for run in sorted(folder.iterdir()):
         f = run / "plan.json"
         if not f.exists():
             continue
@@ -550,6 +550,175 @@ def render(o: dict) -> str:
         f"| Matchup edge, the app's engine | {o['inputs']['coef'][3]:.3f} | {o['inputs']['z'][3]:.1f} |",
         "",
         f"Correlation between the matchup edge and the starter edge: {o['inputs']['corr_matchup_starter']:.2f}.",
+        "",
+    ]
+    return "\n".join(L)
+
+
+# ---------------------------------------------------------------------------
+# Before / after: the staff's own lineup (v1) vs the win-model lineup (v2)
+# ---------------------------------------------------------------------------
+
+COMPARE = ROOT / "evidence" / "tests" / "win_model_lineup.md"
+COMPARE_NOTES = ROOT / "evidence" / "tests" / "win_model_lineup_interpretation.md"
+
+
+def model_lineup_entries(case: dict, plan: dict) -> list[dict]:
+    """The lineup code builds (backend/engine/winmodel.py) for this game, re-created from the plan's inputs:
+    the scout's predicted starter and the Team Doctor's OUT list."""
+    from backend.engine import winmodel as wmod
+    s = plan["sections"]
+    out = {x["player_id"] for x in s["medical_report"]["statuses"] if x["status"] == "out"}
+    pred = s["opposing_pitchers_report"]["opposing_starter"]["player_id"]
+    ml = wmod.best_lineup(case["team_id"], case["date"], pred, out, home=case["home"])
+    return [hitter_entry(x["player_id"], x["slot"], case["date"], case["opp_sp"]["pid"]) for x in ml["lineup"]]
+
+
+def improved_prob(lineup: list[dict], opp_lineup: list[dict], d: str, opp_sp: int, our_sp: int, home: bool) -> float:
+    """The improved, most predictive lens: the same value model the lineup optimizer uses."""
+    from backend.engine import winmodel as wmod
+    rs = wmod.expected_runs([(e["slot"], e["pid"]) for e in lineup], d, opp_sp)
+    ra = wmod.expected_runs([(e["slot"], e["pid"]) for e in opp_lineup], d, our_sp)
+    return wmod.win_prob(rs, ra, home)
+
+
+def lens_prob(c: dict, lineup: list[dict], sp: dict, lens: str) -> float:
+    opp = c["opp_real"] if sp["pid"] == c["real"]["sp"]["pid"] else c["opp_vs_plan_sp"]
+    if lens == "improved":
+        return improved_prob(lineup, opp, c["date"], c["opp_sp"]["pid"], sp["pid"], c["home"])
+    P = Params()
+    rs = expected_runs(lineup, c["opp_sp"], c["date"], P, lens)
+    ra = expected_runs(opp, sp, c["date"], P, lens)
+    return win_prob(rs, ra, c["home"], P)
+
+
+def write_comparison() -> None:
+    load_constants()
+    v1 = {c["run"]: c for c in plan_cases(PLANS)}
+    v2 = {c["run"]: c for c in plan_cases(SAVE / "plans_v2")}
+    runs = sorted(set(v1) & set(v2))
+    rng = np.random.default_rng(SEED)
+    lenses = {"results": "Season stats (original lens, independent of the optimizer)",
+              "improved": "Improved predictive lens (what the optimizer maximizes)",
+              "matchup": "App's raw matchup engine (pitch-type detail)"}
+    rows = {k: {} for k in lenses}
+    adherence = 0
+    for run in runs:
+        a, b = v1[run], v2[run]
+        plan = json.loads((SAVE / "plans_v2" / run / "plan.json").read_text(encoding="utf-8"))
+        model = model_lineup_entries(b, plan)
+        same = [(e["slot"], e["pid"]) for e in model] == [(e["slot"], e["pid"]) for e in b["plan"]["lineup"]]
+        adherence += same
+        for lens in lenses:
+            real = lens_prob(a, a["real"]["lineup"], a["real"]["sp"], lens)
+            rows[lens][run] = {
+                "real": real,
+                "v1": lens_prob(a, a["plan"]["lineup"], a["plan"]["sp"], lens) - real,
+                "v2": lens_prob(b, b["plan"]["lineup"], b["plan"]["sp"], lens) - real,
+                "v1_lineup": lens_prob(a, a["plan"]["lineup"], a["real"]["sp"], lens) - real,
+                "v2_lineup": lens_prob(b, b["plan"]["lineup"], b["real"]["sp"], lens) - real,
+                "model_lineup": lens_prob(b, model, b["real"]["sp"], lens) - real,
+            }
+    out: dict = {"n": len(runs), "adherence": adherence / len(runs), "lenses": {}}
+    for lens, label in lenses.items():
+        r = rows[lens]
+        res = {"label": label}
+        for k in ("v1", "v2", "v1_lineup", "v2_lineup", "model_lineup"):
+            x = np.array([r[run][k] for run in runs])
+            res[k] = float(x.mean())
+            res[k + "_ci"] = boot_ci(x, rng)
+        diff = np.array([r[run]["v2"] - r[run]["v1"] for run in runs])
+        res["paired"] = float(diff.mean()); res["paired_ci"] = boot_ci(diff, rng)
+        res["v2_better_share"] = float((np.array([r[run]["v2"] for run in runs]) > 0.0005).mean())
+        out["lenses"][lens] = res
+
+    # How well does each lens predict real games? (every 2026 game, real lineups and starters)
+    from backend.engine import winmodel as wmod
+    games = json.loads(FEATURES.read_text(encoding="utf-8"))
+    y = np.array([g["home_win"] for g in games], float)
+    p_orig = np.array([win_prob(expected_runs(g["home"]["lineup"], g["away"]["sp"], g["date"], Params(), "results"),
+                                expected_runs(g["away"]["lineup"], g["home"]["sp"], g["date"], Params(), "results"),
+                                True, Params()) for g in games])
+    p_imp = np.array([improved_prob(g["home"]["lineup"], g["away"]["lineup"], g["date"], g["away"]["sp"]["pid"],
+                                    g["home"]["sp"]["pid"], True) for g in games])
+    flat = np.full(len(y), 0.54)
+    out["predictive"] = {"original": scores(y, p_orig), "improved": scores(y, p_imp), "flat_54": scores(y, flat)}
+    late = np.array([g["date"] >= "2026-07-01" for g in games])
+    out["predictive_jul_sep"] = {"original": scores(y[late], p_orig[late]), "improved": scores(y[late], p_imp[late]),
+                                 "flat_54": scores(y[late], flat[late])}
+    params = json.loads((ROOT / "data" / "lineup_params.json").read_text(encoding="utf-8"))
+    out["params"] = params
+    (SAVE / "comparison.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
+    text = render_comparison(out)
+    if COMPARE_NOTES.exists():
+        text += "\n" + COMPARE_NOTES.read_text(encoding="utf-8")
+    COMPARE.write_text(text, encoding="utf-8")
+    print(text)
+
+
+def render_comparison(o: dict) -> str:
+    p = o["params"]
+    vm = p["value_model"]
+    rng_ = lambda ci: f"{pct(ci[0])} to {pct(ci[1])}"  # noqa: E731
+    wins = lambda x: f"{162 * x:+.1f}"  # noqa: E731
+    L = [
+        "# The win-model lineup: before and after",
+        "",
+        f"Generated {datetime.now():%Y-%m-%d %H:%M} by `scripts/win_impact.py compare`. The same {o['n']} sampled games, "
+        "rebuilt by the full staff after two changes, both set by 2026 data rather than judgment:",
+        "",
+        f"1. **The lineup is built by code from the win model** (`backend/engine/winmodel.py`). The nine players, "
+        "their positions and the batting order are chosen to maximize expected runs against the predicted starter. "
+        f"The hitter and starter inputs are the ones that best predicted real 2026 results out of sample "
+        f"(`evidence/tests/value_model_search.md`): hitter {vm['hitter']} regressed at {vm['k_hitter']} PA, his "
+        f"{'own' if vm['platoon'] == 'own' else 'league'} platoon split, and starter {vm['pitcher']} allowed regressed "
+        f"at {vm['k_pitcher']} batters faced. The Bench Coach uses that lineup and plans the bench and the moves.",
+        "2. **Rest days are priced.** A hitter past the streak threshold showed no same-day fatigue cost in 2026 "
+        f"({p['fatigue_woba']:+.4f} wOBA, range {p['fatigue_ci'][0]:+.4f} to {p['fatigue_ci'][1]:+.4f}; "
+        "`evidence/tests/lineup_params.md`), so resting him is a pure cost today. The model rests him only on a day "
+        "when it costs at most 0.25 win-probability points.",
+        f"3. **The matchup score is shrunk toward season quality.** Its pitch-type detail showed no predictive value "
+        f"(worth {p['matchup_lambda_raw']:.2f} of a point of season value, range {p['matchup_lambda_ci'][0]:.2f} to "
+        f"{p['matchup_lambda_ci'][1]:.2f}), so the matchup score now keeps {p['matchup_lambda']:.0%} of it. "
+        "Hunt / beware stays in the hitter plans as scouting detail.",
+        "",
+        "Both versions are scored against the real manager's lineup and starter for the same game, with everything else "
+        "held fixed. Win probability edge per game; 95% ranges are bootstraps over the games.",
+        "",
+    ]
+    for lens, r in o["lenses"].items():
+        L += [
+            f"## {r['label']}",
+            "",
+            "| | Before (staff's own lineup) | After (win-model lineup) |",
+            "|---|---|---|",
+            f"| **Lineup + starter** | {pct(r['v1'])} ({rng_(r['v1_ci'])}) | **{pct(r['v2'])}** ({rng_(r['v2_ci'])}) |",
+            f"| Wins per 162 | {wins(r['v1'])} | **{wins(r['v2'])}** ({wins(r['v2_ci'][0])} to {wins(r['v2_ci'][1])}) |",
+            f"| Lineup alone | {pct(r['v1_lineup'])} ({rng_(r['v1_lineup_ci'])}) | {pct(r['v2_lineup'])} ({rng_(r['v2_lineup_ci'])}) |",
+            f"| Lineup alone, exactly as code built it | | {pct(r['model_lineup'])} ({rng_(r['model_lineup_ci'])}) |",
+            f"| Games where our plan is better | | {r['v2_better_share']:.0%} |",
+            f"| **Change, after minus before (paired)** | | **{pct(r['paired'])}** ({rng_(r['paired_ci'])}), "
+            f"{wins(r['paired'])} wins per 162 |",
+            "",
+        ]
+    pr, late = o["predictive"], o["predictive_jul_sep"]
+    L += [
+        f"The staff used the model lineup exactly (same nine, positions and order) in {o['adherence']:.0%} of games; "
+        "the rest are mostly Manager-requested changes in the fix loop.",
+        "",
+        "## Does the improved lens predict real games better?",
+        "",
+        "Each lens applied to every 2026 game with the real lineups and starters (lower Brier and log loss are better; "
+        "AUC 0.5 is a coin flip):",
+        "",
+        "| Lens | Brier, all games | Log loss, all games | AUC, all games | Brier, Jul-Sep | AUC, Jul-Sep |",
+        "|---|---|---|---|---|---|",
+        f"| 54% for every home team | {pr['flat_54']['brier']:.4f} | {pr['flat_54']['log_loss']:.4f} | 0.500 | "
+        f"{late['flat_54']['brier']:.4f} | 0.500 |",
+        f"| Original season-stats lens | {pr['original']['brier']:.4f} | {pr['original']['log_loss']:.4f} | "
+        f"{pr['original']['auc']:.3f} | {late['original']['brier']:.4f} | {late['original']['auc']:.3f} |",
+        f"| Improved lens (the optimizer's model) | {pr['improved']['brier']:.4f} | {pr['improved']['log_loss']:.4f} | "
+        f"{pr['improved']['auc']:.3f} | {late['improved']['brier']:.4f} | {late['improved']['auc']:.3f} |",
         "",
     ]
     return "\n".join(L)

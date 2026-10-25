@@ -1,0 +1,1108 @@
+{
+  "run_id": "2026-07-08_g823279_t135",
+  "status": "approved",
+  "game": {
+    "game_pk": 823279,
+    "season": 2026,
+    "game_date": "2026-07-08",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Petco Park",
+    "team": "San Diego Padres",
+    "team_id": 135,
+    "team_record_going_in": "45-46",
+    "opponent": "Arizona Diamondbacks",
+    "opponent_id": 109,
+    "opponent_record_going_in": "45-46",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 703615,
+        "name": "Jose Cabrera"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "position": "LF",
+          "bats": "R",
+          "reason": "Leads off with 0.0116 runs per PA above average; even matchup on the fastballs he is told to hunt. Plays despite the rest suggestion: resting costs 0.67 win-probability points."
+        },
+        {
+          "slot": 2,
+          "player_id": 657757,
+          "name": "Gavin Sheets",
+          "position": "RF",
+          "bats": "L",
+          "reason": "His 0.0111 runs per PA above average and batter edge against Cabrera support the two-hole; his fastball strength fits the attack plan, though Cabrera\u2019s lefty sample is small."
+        },
+        {
+          "slot": 3,
+          "player_id": 669134,
+          "name": "Luis Campusano",
+          "position": "C",
+          "bats": "R",
+          "reason": "Bats third with 0.0052 runs per PA above average and an even matchup; his hitter sample is moderate, and his right-handed split sample is small."
+        },
+        {
+          "slot": 4,
+          "player_id": 630105,
+          "name": "Jake Cronenworth",
+          "position": "SS",
+          "bats": "L",
+          "reason": "His 0.0026 runs per PA above average and batter edge against Cabrera merit the cleanup spot; his offspeed sample and Cabrera\u2019s lefty sample are small."
+        },
+        {
+          "slot": 5,
+          "player_id": 593428,
+          "name": "Xander Bogaerts",
+          "position": "DH",
+          "bats": "R",
+          "reason": "A 0.0008 runs per PA above average and an even matchup place him fifth; his fastball approach is preferable to breaking balls."
+        },
+        {
+          "slot": 6,
+          "player_id": 650859,
+          "name": "Luis Rengifo",
+          "position": "3B",
+          "bats": "S",
+          "reason": "His 0.0 runs per PA above average and batter edge make him a switch-hitting option here; his offspeed sample and Cabrera\u2019s lefty sample are small."
+        },
+        {
+          "slot": 7,
+          "player_id": 823550,
+          "name": "Sung-Mun Song",
+          "position": "2B",
+          "bats": "L",
+          "reason": "His runs per PA is below average, but his batter edge supports this spot; his breaking-ball and offspeed samples are small, as is Cabrera\u2019s lefty sample."
+        },
+        {
+          "slot": 8,
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "position": "CF",
+          "bats": "L",
+          "reason": "His -0.0033 runs per PA above average and batter edge keep him in the lineup; his 40 straight starts merit monitoring, but resting costs 100.00 win-probability points."
+        },
+        {
+          "slot": 9,
+          "player_id": 664034,
+          "name": "Ty France",
+          "position": "1B",
+          "bats": "R",
+          "reason": "His -0.0034 runs per PA above average and even matchup fit ninth; his fastball approach is preferable to breaking balls."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "role": "defensive_replacement",
+          "note": "Rest day per model; 40 straight starts, and resting costs 0.13 win-probability points."
+        },
+        {
+          "player_id": 609280,
+          "name": "Miguel Andujar",
+          "role": "pinch_hitter",
+          "note": "Top available bench bat after Machado; use against a left-handed reliever in a late, high-leverage spot."
+        },
+        {
+          "player_id": 687749,
+          "name": "Jase Bowen",
+          "role": "pinch_runner",
+          "note": "Fastest listed bench option; small sample, so reserve for a clear late-game running need."
+        },
+        {
+          "player_id": 660710,
+          "name": "Rodolfo Dur\u00e1n",
+          "role": "backup_catcher",
+          "note": "Catcher coverage if Campusano needs to leave the game."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later, runner in scoring position, facing a left-handed reliever",
+          "bench_player_id": 609280,
+          "replaces_player_id": 664034,
+          "reason": "Andujar is the highest-ranked bench bat with a platoon edge against a left-handed pitcher."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning, tying or go-ahead run aboard, with a clear base-stealing or extra-base opportunity",
+          "bench_player_id": 687749,
+          "replaces_player_id": 664034,
+          "reason": "Bowen offers the best listed bench speed; his hitting sample is small."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead, if Machado is available and the infield needs a defensive upgrade",
+          "bench_player_id": 592518,
+          "replaces_player_id": 650859,
+          "reason": "Machado provides an available third-base option after his modeled rest day."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Campusano exits or needs a late defensive replacement at catcher",
+          "bench_player_id": 660710,
+          "replaces_player_id": 669134,
+          "reason": "Dur\u00e1n is the other available catcher."
+        }
+      ],
+      "summary": "The model projects 4.59 expected runs and selects this exact nine against high-confidence starter Jose Cabrera. Machado gets the modeled rest day, costing 0.13 win-probability points; Cabrera averages 4.4 innings per start, so be ready for Arizona\u2019s bullpen."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 650633,
+        "name": "Michael King",
+        "throws": "R",
+        "reason": "Only ready option; matchup expected xwOBA was 0.303 against Nolan Arenado and 0.3 against Lourdes Gurriel Jr., while Ketel Marte was 0.345.",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 95,
+        "pitch_mix": [
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 27.0,
+            "vs_rhb_pct": 30.0,
+            "purpose": "Get ground balls and establish the bottom of the zone."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 33.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Change speeds below the zone, especially against Marte."
+          },
+          {
+            "pitch": "sweeper",
+            "vs_lhb_pct": 17.0,
+            "vs_rhb_pct": 21.0,
+            "purpose": "Move breaking stuff away from hitters and avoid predictable fastballs."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 17.0,
+            "vs_rhb_pct": 19.0,
+            "purpose": "Change eye level and use selectively to avoid over-reliance on fastballs."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 6.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Use as a secondary breaking look, particularly against right-handers."
+          }
+        ],
+        "keys": [
+          "Use changeups below the zone to disrupt Ketel Marte; he had expected xwOBA 0.345 and favored fastballs in the matchup data.",
+          "Keep breaking balls in play against Gabriel Moreno; his expected xwOBA was 0.346, with a batter edge in the matchup.",
+          "Change speeds against Corbin Carroll; expected xwOBA was 0.34, and the scouting report identifies offspeed as a relative weakness.",
+          "Attack Lourdes Gurriel Jr. and Nolan Arenado with strikes and edge work; matchup expected xwOBA was 0.3 and 0.303, respectively."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 670970,
+          "name": "Adrian Morejon",
+          "throws": "L",
+          "role": "setup",
+          "note": "Primary setup option; rested, with 14 holds."
+        },
+        {
+          "player_id": 606996,
+          "name": "Kyle Hart",
+          "throws": "L",
+          "role": "middle",
+          "note": "Available left-hander for middle innings and left-handed hitters."
+        },
+        {
+          "player_id": 593974,
+          "name": "Wandy Peralta",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Available for targeted left-handed matchups."
+        },
+        {
+          "player_id": 676760,
+          "name": "Ron Marinaccio",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available right-hander for middle relief."
+        },
+        {
+          "player_id": 695243,
+          "name": "Mason Miller",
+          "throws": "R",
+          "role": "closer",
+          "note": "Team\u2019s save leader with 23 saves; limited after pitching yesterday, use only if needed."
+        },
+        {
+          "player_id": 699134,
+          "name": "Bradgley Rodriguez",
+          "throws": "R",
+          "role": "setup",
+          "note": "Limited after pitching yesterday; use only if needed, behind rested options."
+        },
+        {
+          "player_id": 673513,
+          "name": "Yuki Matsui",
+          "throws": "L",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed or for one batter."
+        },
+        {
+          "player_id": 666745,
+          "name": "Jhony Brito",
+          "throws": "R",
+          "role": "long",
+          "note": "Limited after pitching yesterday; reserve for emergency length or only if needed."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use rested arms first; save the limited closer for a needed save chance.",
+          "pitcher_ids": [
+            670970,
+            676760,
+            695243
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use rested matchup options; deploy the limited closer only if the game is on the line.",
+          "pitcher_ids": [
+            670970,
+            593974,
+            695243
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Protect high-leverage arms and cover innings with rested middle relievers.",
+          "pitcher_ids": [
+            676760,
+            606996,
+            593974,
+            666745
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Preserve the closer and setup arm; use available length, with limited Brito only if needed.",
+          "pitcher_ids": [
+            606996,
+            676760,
+            666745,
+            593974
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Use rested relievers first for length; go to limited arms only if the game requires it.",
+          "pitcher_ids": [
+            606996,
+            676760,
+            670970,
+            666745
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Start with rested high-leverage arms; Mason Miller is limited and should be a last-resort save option.",
+          "pitcher_ids": [
+            670970,
+            676760,
+            593974,
+            695243
+          ]
+        }
+      ],
+      "summary": "Michael King is the only starter marked ready, and his season line includes a 3.52 ERA with 5.7 average innings per start. Lean on rested relievers before the four limited arms; Mason Miller remains the closer but should be reserved for need after pitching yesterday."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 703615,
+        "name": "Jose Cabrera",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "cutter",
+          "usage_pct": 27.8,
+          "velo": 89.7,
+          "whiff_pct": 20.0,
+          "note": "His most-used single pitch; the cutter has allowed a .398 xwOBA in a moderate sample."
+        },
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 26.8,
+          "velo": 93.4,
+          "whiff_pct": 13.0,
+          "note": "This fastball has allowed a .505 xwOBA in a moderate sample."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 16.6,
+          "velo": 83.5,
+          "whiff_pct": 46.2,
+          "note": "The sweeper misses bats, with a 46.2% whiff rate; its sample is small."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 13.2,
+          "velo": 86.2,
+          "whiff_pct": 35.7,
+          "note": "The curveball has a 35.7% whiff rate; its sample is small."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 7.8,
+          "velo": 93.0,
+          "whiff_pct": 25.0,
+          "note": "The sinker has allowed a .506 xwOBA, but its sample is small."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 7.8,
+          "velo": 86.7,
+          "whiff_pct": 25.0,
+          "note": "The changeup has allowed a .420 xwOBA; its sample is small."
+        }
+      ],
+      "how_to_attack": [
+        "Lefties: look for fastballs; he uses the fastball group 61.0% of the time and has allowed .509 xwOBA on it. His results against lefties are from a small sample.",
+        "Righties: hunt fastballs, which make up 64.4% of his mix; his fastball group has allowed .379 xwOBA against righties, versus .149 on breaking balls.",
+        "Stay patient for a pitch to drive: he has a 28.7% chase rate overall and has walked 8.3% of batters faced.",
+        "Be ready for a short start: he averages 4.4 innings per start and 68 pitches per start. The season line covers 13.1 innings across 3 starts."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 657757,
+          "name": "Gavin Sheets",
+          "expected_xwoba": 0.386,
+          "edge": "batter",
+          "note": "His .389 xwOBA against fastballs lines up with Cabrera allowing .509 to lefties; pitcher sample vs LHB is small."
+        },
+        {
+          "player_id": 630105,
+          "name": "Jake Cronenworth",
+          "expected_xwoba": 0.373,
+          "edge": "batter",
+          "note": "His .382 xwOBA against fastballs fits the .509 Cabrera allows to lefties; batter sample vs offspeed is small."
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "expected_xwoba": 0.367,
+          "edge": "batter",
+          "note": "Cabrera allows .509 xwOBA against lefties on fastballs, which account for 61.0% of his mix; pitcher sample vs LHB is small."
+        },
+        {
+          "player_id": 650859,
+          "name": "Luis Rengifo",
+          "expected_xwoba": 0.364,
+          "edge": "batter",
+          "note": "Cabrera\u2019s fastballs account for 61.0% of his mix against lefties; pitcher sample vs LHB is small."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 660710,
+          "name": "Rodolfo Dur\u00e1n",
+          "expected_xwoba": 0.276,
+          "edge": "pitcher",
+          "note": "Cabrera allows .149 xwOBA on breaking balls to righties, and Dur\u00e1n is at .232 against that group; pitcher sample vs RHB is small."
+        },
+        {
+          "player_id": 609280,
+          "name": "Miguel Andujar",
+          "expected_xwoba": 0.298,
+          "edge": "even",
+          "note": "Andujar is at .255 against breaking balls, while Cabrera allows .149 to righties; pitcher sample vs RHB is small."
+        },
+        {
+          "player_id": 687749,
+          "name": "Jase Bowen",
+          "expected_xwoba": 0.301,
+          "edge": "even",
+          "note": "Bowen\u2019s samples against right-handed pitching and both pitch groups are small; Cabrera\u2019s sample vs RHB is small too."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 623149,
+          "name": "Paul Sewald",
+          "throws": "R",
+          "note": "Available and rested; leads the listed relievers with 20 saves."
+        },
+        {
+          "player_id": 664199,
+          "name": "Taylor Clarke",
+          "throws": "R",
+          "note": "Available and rested; leads the listed relievers with 11 holds."
+        },
+        {
+          "player_id": 805299,
+          "name": "Brandyn Garcia",
+          "throws": "L",
+          "note": "Available and rested; the available left-handed reliever to watch, with 9 holds."
+        },
+        {
+          "player_id": 666661,
+          "name": "Juan Morillo",
+          "throws": "R",
+          "note": "Available and rested, with 9 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 657757,
+          "name": "Gavin Sheets",
+          "bats": "L",
+          "expected_xwoba": 0.386,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Sit fastballs: you're at .389 against them, and Cabrera allows .509 against lefties. Your .246 against offspeed is a reason to lay off; his sample vs lefties is small."
+        },
+        {
+          "player_id": 630105,
+          "name": "Jake Cronenworth",
+          "bats": "L",
+          "expected_xwoba": 0.373,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at .382 against them and Cabrera allows .509 to lefties. You're at .202 against offspeed; that sample is small, and his sample vs lefties is small."
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "bats": "L",
+          "expected_xwoba": 0.367,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs, where you're at .312 and Cabrera allows .509 against lefties. Your .294 against offspeed is close to his .420 allowed; his sample vs lefties is small."
+        },
+        {
+          "player_id": 650859,
+          "name": "Luis Rengifo",
+          "bats": "L",
+          "expected_xwoba": 0.364,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Look fastball first: Cabrera uses fastballs 61.0% against lefties and allows .509 on them; you're at .276 against that group. Your offspeed sample is small; his sample vs lefties is small."
+        },
+        {
+          "player_id": 823550,
+          "name": "Sung-Mun Song",
+          "bats": "L",
+          "expected_xwoba": 0.36,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .309 against them and Cabrera allows .509 to lefties. Your breaking-ball and offspeed samples are small; lay off breaking balls, where you're at .202 and he allows .413."
+        },
+        {
+          "player_id": 669134,
+          "name": "Luis Campusano",
+          "bats": "R",
+          "expected_xwoba": 0.333,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: you're at .396 against them and Cabrera allows .379 to righties. Your .282 against breaking balls faces .149 allowed; both your RHP and breaking-ball samples are small, as is his vs righties."
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "bats": "R",
+          "expected_xwoba": 0.33,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .388 against them, while Cabrera allows .379 to righties. Your .301 against breaking balls faces .149 allowed; his sample vs righties is small. Rest is suggested."
+        },
+        {
+          "player_id": 593428,
+          "name": "Xander Bogaerts",
+          "bats": "R",
+          "expected_xwoba": 0.314,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs, where you're at .352 and Cabrera allows .379 to righties. Your .266 against breaking balls faces .149 allowed; his sample vs righties is small."
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "bats": "R",
+          "expected_xwoba": 0.31,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: you're at .390 against them and Cabrera allows .379 to righties. Your .216 against breaking balls faces .149 allowed; his sample vs righties is small. Rest is suggested."
+        },
+        {
+          "player_id": 664034,
+          "name": "Ty France",
+          "bats": "R",
+          "expected_xwoba": 0.303,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look fastball early: you're at .307 against them and Cabrera allows .379 to righties. Your .275 against breaking balls faces .149 allowed; his sample vs righties is small."
+        },
+        {
+          "player_id": 687749,
+          "name": "Jase Bowen",
+          "bats": "R",
+          "expected_xwoba": 0.301,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .459 against them and Cabrera allows .379 to righties. Your fastball and breaking-ball samples are small, as are your RHP sample and his sample vs righties."
+        },
+        {
+          "player_id": 609280,
+          "name": "Miguel Andujar",
+          "bats": "R",
+          "expected_xwoba": 0.298,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: you're at .337 against them and Cabrera allows .379 to righties. Your .255 against breaking balls faces .149 allowed; his sample vs righties is small."
+        },
+        {
+          "player_id": 660710,
+          "name": "Rodolfo Dur\u00e1n",
+          "bats": "R",
+          "expected_xwoba": 0.276,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .271 against them and Cabrera allows .379 to righties. Your .232 against breaking balls faces .149 allowed; that batter sample and his sample vs righties are small."
+        }
+      ],
+      "summary": "Jose Cabrera is the likely starter with high confidence. He averages 4.4 innings per start, so be ready for Arizona\u2019s available bullpen, especially rested Paul Sewald and Taylor Clarke, with lefty Brandyn Garcia also available. The strongest matchup calls are for left-handed bats to attack his fastballs; his splits against both lefties and righties are small samples."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "position": "2B",
+          "bats": "S"
+        },
+        {
+          "slot": 2,
+          "player_id": 672695,
+          "name": "Geraldo Perdomo",
+          "position": "SS",
+          "bats": "S"
+        },
+        {
+          "slot": 3,
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 666971,
+          "name": "Lourdes Gurriel Jr.",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 596146,
+          "name": "Max Kepler",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 571448,
+          "name": "Nolan Arenado",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 656976,
+          "name": "Pavin Smith",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 694371,
+          "name": "Tommy Troy",
+          "position": "CF",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "position": "2B",
+          "bats": "S"
+        },
+        {
+          "slot": 2,
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 672695,
+          "name": "Geraldo Perdomo",
+          "position": "SS",
+          "bats": "S"
+        },
+        {
+          "slot": 5,
+          "player_id": 571448,
+          "name": "Nolan Arenado",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 666971,
+          "name": "Lourdes Gurriel Jr.",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 545121,
+          "name": "Ildemaro Vargas",
+          "position": "1B",
+          "bats": "S"
+        },
+        {
+          "slot": 8,
+          "player_id": 694371,
+          "name": "Tommy Troy",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 678489,
+          "name": "Jorge Barrosa",
+          "position": "CF",
+          "bats": "S"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "bats": "S",
+          "threat": "high",
+          "xwoba": 0.376,
+          "weakness": "Offspeed is his clearest opening; his xwOBA against it is 0.28.",
+          "how_to_pitch": "Mix offspeed below the zone; avoid predictable fastballs, which he hits well."
+        },
+        {
+          "player_id": 672695,
+          "name": "Geraldo Perdomo",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.328,
+          "weakness": "Limited damage on contact (hard-hit rate 30.5%); offspeed draws more chase.",
+          "how_to_pitch": "Stay out of the middle and use offspeed below the zone; don\u2019t give him free passes."
+        },
+        {
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.349,
+          "weakness": "Offspeed is his relative weakness; its pitch-type sample is moderate.",
+          "how_to_pitch": "Change speeds and get offspeed below the zone; don\u2019t mistake his strong results against left-handers for an easy matchup."
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.367,
+          "weakness": "Breaking balls are his weakest pitch type; offspeed sample is moderate.",
+          "how_to_pitch": "Work breaking balls in and out of the zone, and limit fastballs he handles well."
+        },
+        {
+          "player_id": 666971,
+          "name": "Lourdes Gurriel Jr.",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.276,
+          "weakness": "Low overall production; xwOBA is 0.288 vs LHP and 0.273 vs RHP.",
+          "how_to_pitch": "Challenge him with strikes early, then expand carefully rather than giving him free baserunners."
+        },
+        {
+          "player_id": 596146,
+          "name": "Max Kepler",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.359,
+          "weakness": "Small sample (25 PA); xwOBA is 0.263 vs LHP.",
+          "how_to_pitch": "Favor left-handed matchups and keep pitches down; treat the small sample cautiously."
+        },
+        {
+          "player_id": 571448,
+          "name": "Nolan Arenado",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.291,
+          "weakness": "Lower overall expected production; xwOBA is 0.279 vs RHP.",
+          "how_to_pitch": "Use a right-hander when possible and attack the edges instead of feeding him middle-in pitches."
+        },
+        {
+          "player_id": 656976,
+          "name": "Pavin Smith",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.261,
+          "weakness": "xwOBA is 0.1 vs LHP; his overall sample is moderate.",
+          "how_to_pitch": "Bring a left-hander if available and test him with strikes; avoid giving away walks."
+        },
+        {
+          "player_id": 694371,
+          "name": "Tommy Troy",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.305,
+          "weakness": "Moderate sample; xwOBA is 0.295 vs RHP.",
+          "how_to_pitch": "Keep the ball down and change eye level; don\u2019t let him turn on a predictable fastball."
+        },
+        {
+          "player_id": 545121,
+          "name": "Ildemaro Vargas",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.309,
+          "weakness": "xwOBA is 0.272 vs RHP compared with 0.384 vs LHP.",
+          "how_to_pitch": "Prefer a right-hander; avoid leaving hittable pitches to him from the left side."
+        },
+        {
+          "player_id": 678489,
+          "name": "Jorge Barrosa",
+          "bats": "S",
+          "threat": "low",
+          "xwoba": 0.211,
+          "weakness": "Low overall expected production; xwOBA is 0.196 vs RHP.",
+          "how_to_pitch": "Attack the zone and make him prove he can handle strikes."
+        }
+      ],
+      "summary": "Ketel Marte, Corbin Carroll, and Gabriel Moreno headline the order; Marte has the strongest overall xwOBA, while Moreno and Carroll also carry notable threats. The numbers favor a right-handed starter overall: Carroll\u2019s xwOBA is 0.348 vs RHP and 0.35 vs LHP, while Vargas and Smith are less effective against right-handers; Marte is the exception, with xwOBA 0.359 vs RHP and 0.418 vs LHP."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 666023,
+          "name": "Freddy Fermin",
+          "status": "out",
+          "reason": "Head contusion."
+        },
+        {
+          "player_id": 681190,
+          "name": "Randy V\u00e1squez",
+          "status": "out",
+          "reason": "Right ankle contusion."
+        },
+        {
+          "player_id": 592094,
+          "name": "Jason Adam",
+          "status": "out",
+          "reason": "Right shoulder strain."
+        },
+        {
+          "player_id": 688158,
+          "name": "David Morgan",
+          "status": "out",
+          "reason": "Left knee inflammation."
+        },
+        {
+          "player_id": 669093,
+          "name": "Jeremiah Estrada",
+          "status": "out",
+          "reason": "Right knee inflammation."
+        },
+        {
+          "player_id": 657656,
+          "name": "Ram\u00f3n Laureano",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 601713,
+          "name": "Nick Pivetta",
+          "status": "out",
+          "reason": "Right elbow inflammation."
+        },
+        {
+          "player_id": 663362,
+          "name": "Matt Waldron",
+          "status": "out",
+          "reason": "Right brachialis muscle injury."
+        },
+        {
+          "player_id": 605397,
+          "name": "Joe Musgrove",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 663773,
+          "name": "Bryan Hoeing",
+          "status": "out",
+          "reason": "Torn right elbow flexor tendon."
+        },
+        {
+          "player_id": 506433,
+          "name": "Yu Darvish",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 695243,
+          "name": "Mason Miller",
+          "status": "limited",
+          "reason": "pitched yesterday (14 pitches)"
+        },
+        {
+          "player_id": 699134,
+          "name": "Bradgley Rodriguez",
+          "status": "limited",
+          "reason": "pitched yesterday (13 pitches)"
+        },
+        {
+          "player_id": 673513,
+          "name": "Yuki Matsui",
+          "status": "limited",
+          "reason": "pitched yesterday (15 pitches)"
+        },
+        {
+          "player_id": 666745,
+          "name": "Jhony Brito",
+          "status": "limited",
+          "reason": "pitched yesterday (17 pitches)"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "status": "rest_suggested",
+          "reason": "15 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "The injured-list and restricted-list players above are out. Mason Miller, Bradgley Rodriguez, Yuki Matsui, and Jhony Brito are limited after pitching yesterday; no players are cleared with caution."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Keep Michael King as the starter: he is the only ready option, and Arizona\u2019s projected order favors a right-handed starter overall.",
+        "Use changeups below the zone against Ketel Marte, whose xwOBA is 0.376 and whose clearest opening is offspeed.",
+        "Build the lineup around left-handed fastball matchups: Gavin Sheets and Jake Cronenworth have batter edges, while Cabrera\u2019s sample against lefties is small.",
+        "Rest Manny Machado as planned; keep Fernando Tatis Jr. and Jackson Merrill in the lineup despite their rest suggestions, with their availability verified by the checker.",
+        "Favor rested bullpen arms before the limited relievers; Mason Miller pitched yesterday and is reserved for a needed high-leverage situation."
+      ],
+      "keys_to_the_game": [
+        "Make Jose Cabrera work: he averages 4.4 innings per start, and his season line covers 13.1 innings across 3 starts.",
+        "Attack Cabrera\u2019s fastballs with left-handed hitters, while staying patient and avoiding offspeed pitches that match up poorly for some hitters.",
+        "Keep Ketel Marte and Gabriel Moreno from driving the offense by changing speeds to Marte and mixing breaking balls to Moreno.",
+        "Protect the bullpen by leaning on rested options and using limited arms only when the game requires it."
+      ],
+      "summary": "Michael King starts against the expected Arizona order, while the offense targets Jose Cabrera\u2019s fastballs with its left-handed bats and prepares for an early bullpen entry. Rested relievers lead the plan; limited arms, including Mason Miller, are reserved for need."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Hunt Cabrera\u2019s fastballs; be ready for Arizona\u2019s bullpen",
+      "message": "Jose Cabrera is the high-confidence expected starter, and he averages 4.4 innings per start. Left-handed bats have the clearest matchup: Gavin Sheets and Jake Cronenworth, look for fastballs and be patient rather than chasing offspeed. Cabrera\u2019s results against lefties come from a small sample. If he exits early, be ready for rested relievers Paul Sewald and Taylor Clarke; Brandyn Garcia is the available left-hander to watch.",
+      "reminders": [
+        "Sit fastball first; lay off offspeed that misses your zone.",
+        "Stay patient\u2014Cabrera has a 28.7% chase rate overall.",
+        "Expect Arizona\u2019s bullpen early if Cabrera\u2019s start is short."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Change speeds to Marte; keep the bullpen plan flexible",
+      "message": "Michael King starts. Change speeds and work changeups below the zone to Ketel Marte; use breaking balls against Gabriel Moreno and change speeds against Corbin Carroll. Attack Lourdes Gurriel Jr. and Nolan Arenado with strikes and edge work. Lean on rested relievers first if King exits: Adrian Morejon is the primary setup option, with Kyle Hart, Wandy Peralta, and Ron Marinaccio available for matchup and middle relief. Mason Miller, Bradgley Rodriguez, Yuki Matsui, and Jhony Brito are limited after pitching yesterday; reserve them for need.",
+      "reminders": [
+        "King\u2019s planned pitch-count limit is 95.",
+        "Use rested arms before limited relievers.",
+        "Miller is a last-resort high-leverage option."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Run the approved plan: attack Cabrera, preserve rested relief",
+      "message": "The approved lineup targets Jose Cabrera\u2019s fastballs with left-handed bats; his sample against lefties is small, and he averages 4.4 innings per start. Michael King is the only ready starter. Rest Manny Machado as planned; Fernando Tatis Jr. and Jackson Merrill remain in the lineup despite rest suggestions. Lead with rested bullpen options and hold limited arms for need: Mason Miller, Bradgley Rodriguez, Yuki Matsui, and Jhony Brito pitched yesterday. The opposing starter projection is Jose Cabrera with high confidence.",
+      "reminders": [
+        "Prepare for an early Arizona bullpen entry.",
+        "Keep limited relievers behind rested options.",
+        "Manny Machado is resting; Tatis Jr. and Merrill are available in the lineup."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 0,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 36.7,
+    "total": {
+      "model_steps": 17,
+      "gateway_cache_hits": 10,
+      "input_tokens": 87579,
+      "cached_tokens": 24368,
+      "output_tokens": 9212,
+      "cost_usd": 0.01177
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 2,
+        "input_tokens": 4471,
+        "cached_tokens": 0,
+        "output_tokens": 486,
+        "seconds": 0.8,
+        "cost_usd": 0.0
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 3,
+        "input_tokens": 20406,
+        "cached_tokens": 4618,
+        "output_tokens": 2515,
+        "seconds": 11.7,
+        "cost_usd": 0.00301
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 12605,
+        "cached_tokens": 5068,
+        "output_tokens": 1612,
+        "seconds": 1.0,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 2,
+        "input_tokens": 14942,
+        "cached_tokens": 3279,
+        "output_tokens": 1135,
+        "seconds": 6.4,
+        "cost_usd": 0.00205
+      },
+      "bench_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 19981,
+        "cached_tokens": 11403,
+        "output_tokens": 2236,
+        "seconds": 12.0,
+        "cost_usd": 0.00306
+      },
+      "manager": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7555,
+        "cached_tokens": 0,
+        "output_tokens": 698,
+        "seconds": 7.3,
+        "cost_usd": 0.00186
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7619,
+        "cached_tokens": 0,
+        "output_tokens": 530,
+        "seconds": 4.8,
+        "cost_usd": 0.00179
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

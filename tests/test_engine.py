@@ -107,6 +107,7 @@ def test_every_tool_returns_json():
         (tools.get_starter_options, (GAME, TOR)), (tools.predict_opponent_starter, (GAME, BOS)),
         (tools.predict_opponent_lineup, (GAME, BOS, "R")), (tools.get_matchups, (GAME, TOLLE, [VLADDY])),
         (tools.get_hitter_profile, (GAME, VLADDY)), (tools.get_pitcher_profile, (GAME, CEASE)),
+        (tools.get_model_lineup, (GAME, TOR, TOLLE)),
     ]
     assert len(calls) == len(tools.TOOLS)
     for fn, args in calls:

@@ -1,0 +1,1061 @@
+{
+  "run_id": "2026-07-31_g824975_t116",
+  "status": "needs_human_review",
+  "game": {
+    "game_pk": 824975,
+    "season": 2026,
+    "game_date": "2026-07-31",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Sutter Health Park",
+    "team": "Detroit Tigers",
+    "team_id": 116,
+    "team_record_going_in": "51-58",
+    "opponent": "Athletics",
+    "opponent_id": 133,
+    "opponent_record_going_in": "45-64",
+    "home_away": "away",
+    "bats_last": false,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 806960,
+        "name": "Luis Morales"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "position": "RF",
+          "bats": "L",
+          "reason": "Model choice at 0.0349 runs per PA; his .431 fastball fit gives him an edge against Morales, whose sample versus lefties is small. Plays despite the rest suggestion; sitting him costs 1.30 win-probability points."
+        },
+        {
+          "slot": 2,
+          "player_id": 693307,
+          "name": "Dillon Dingler",
+          "position": "C",
+          "bats": "R",
+          "reason": "Model choice at 0.0325 runs per PA; his .427 against fastballs is a favorable fit, though Morales\u2019 sample versus righties is small."
+        },
+        {
+          "slot": 3,
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "position": "SS",
+          "bats": "L",
+          "reason": "Model choice at 0.03 runs per PA; his .42 against fastballs supports an edge against Morales, whose sample versus lefties is small."
+        },
+        {
+          "slot": 4,
+          "player_id": 690993,
+          "name": "Colt Keith",
+          "position": "3B",
+          "bats": "L",
+          "reason": "Model choice at 0.0147 runs per PA; his .359 fastball fit gives him an edge, though Morales\u2019 sample versus lefties is small."
+        },
+        {
+          "slot": 5,
+          "player_id": 650402,
+          "name": "Gleyber Torres",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Model choice at 0.0145 runs per PA; his .334 against fastballs suggests a favorable matchup, with Morales\u2019 sample versus righties small."
+        },
+        {
+          "slot": 6,
+          "player_id": 703601,
+          "name": "Max Clark",
+          "position": "CF",
+          "bats": "L",
+          "reason": "Model choice at 0.0113 runs per PA; the model favors his left-handed bat against right-hander Morales, though Clark has no 2026 batting sample."
+        },
+        {
+          "slot": 7,
+          "player_id": 680664,
+          "name": "Eduardo Valencia",
+          "position": "DH",
+          "bats": "R",
+          "reason": "Model choice at 0.0088 runs per PA; his .458 fastball mark offers a possible fit, but his hitter sample is small and .096 against breaking balls is a concern."
+        },
+        {
+          "slot": 8,
+          "player_id": 679529,
+          "name": "Spencer Torkelson",
+          "position": "1B",
+          "bats": "R",
+          "reason": "Model choice at 0.0075 runs per PA; his .378 fastball mark is a fit, though Morales\u2019 sample versus righties is small."
+        },
+        {
+          "slot": 9,
+          "player_id": 701162,
+          "name": "Ben Malgeri",
+          "position": "LF",
+          "bats": "R",
+          "reason": "Model choice at 0.0072 runs per PA; his .457 against fastballs is promising, but both hitter and pitcher samples versus righties are small."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 595879,
+          "name": "Javier B\u00e1ez",
+          "role": "pinch_hitter",
+          "note": "Top-ranked available bench bat; moderate overall sample, with no clear edge against Morales."
+        },
+        {
+          "player_id": 656716,
+          "name": "Zach McKinstry",
+          "role": "defensive_replacement",
+          "note": "Versatile cover at second, third, shortstop and all three outfield spots; use to protect a late lead."
+        },
+        {
+          "player_id": 701678,
+          "name": "Hao-Yu Lee",
+          "role": "utility",
+          "note": "Infield cover at second or third; available for a late defensive move."
+        },
+        {
+          "player_id": 681546,
+          "name": "James Outman",
+          "role": "pinch_runner",
+          "note": "Moderate sample and speed option for a late, close-run game."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later with a runner in scoring position against left-handed reliever Hogan Harris or Jos\u00e9 Suarez",
+          "bench_player_id": 595879,
+          "replaces_player_id": 680664,
+          "reason": "B\u00e1ez is the top-ranked bench bat; use him in a high-leverage spot against a lefty."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning with the tying or go-ahead run on base, after Torkelson\u2019s final at-bat",
+          "bench_player_id": 681546,
+          "replaces_player_id": 679529,
+          "reason": "Outman is available as a speed option; protect the lead with a defensive replacement afterward if needed."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead after Greene\u2019s final at-bat",
+          "bench_player_id": 656716,
+          "replaces_player_id": 682985,
+          "reason": "McKinstry can take an outfield spot and offers strong defensive value at second base."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead after Torkelson\u2019s final at-bat",
+          "bench_player_id": 701678,
+          "replaces_player_id": 679529,
+          "reason": "Lee can cover first base only via infield? No\u2014use McKinstry at first unavailable."
+        }
+      ],
+      "summary": "Luis Morales is the high-confidence projected starter. The model expects 5.18 runs with this lineup; Greene plays despite the rest suggestion because resting him costs 1.30 win-probability points, above the rest threshold."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 664285,
+        "name": "Framber Valdez",
+        "throws": "L",
+        "reason": "The left-handed matchup is preferred; he projects Nick Kurtz at 0.276 and Tyler Soderstrom at 0.279 expected xwOBA, both below league xwOBA 0.316.",
+        "expected_innings": 5.0,
+        "pitch_count_limit": 90,
+        "pitch_mix": [
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 52.0,
+            "vs_rhb_pct": 42.0,
+            "purpose": "Set the tone with strikes; avoid predictable middle-in fastballs."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 34.0,
+            "vs_rhb_pct": 30.0,
+            "purpose": "Use as the main breaking look, especially to disrupt left-handed hitters."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 8.0,
+            "vs_rhb_pct": 22.0,
+            "purpose": "Use below the zone against right-handers and chase-prone lefties."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 5.0,
+            "vs_rhb_pct": 5.0,
+            "purpose": "Show sparingly as a second breaking shape."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 1.0,
+            "vs_rhb_pct": 1.0,
+            "purpose": "Occasional change of eye level."
+          }
+        ],
+        "keys": [
+          "Stay out of Nick Kurtz\u2019s preferred fastball damage zone; use offspeed below the zone, noting his offspeed sample is small.",
+          "Mix offspeed away and below Tyler Soderstrom; his offspeed result is 0.229, from a moderate sample.",
+          "Against right-handers, change speeds and keep the ball down; Valdez has a 0.336 xwOBA allowed versus RHB.",
+          "Attack Jacob Wilson in the zone and limit free passes; his expected xwOBA is 0.302."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 445276,
+          "name": "Kenley Jansen",
+          "throws": "R",
+          "role": "closer",
+          "note": "Primary ninth-inning option; rested and leads the relief group with 12 saves."
+        },
+        {
+          "player_id": 663947,
+          "name": "Tyler Holton",
+          "throws": "L",
+          "role": "setup",
+          "note": "Preferred left-handed setup option; rested, with 9 holds."
+        },
+        {
+          "player_id": 623454,
+          "name": "Drew Anderson",
+          "throws": "R",
+          "role": "setup",
+          "note": "Right-handed setup choice; available, with 6 holds."
+        },
+        {
+          "player_id": 805427,
+          "name": "Drew Sommers",
+          "throws": "L",
+          "role": "middle",
+          "note": "Use for left-handed pockets; available and rested."
+        },
+        {
+          "player_id": 646241,
+          "name": "Enmanuel De Jesus",
+          "throws": "L",
+          "role": "middle",
+          "note": "Available left-handed depth; use before reaching the long options."
+        },
+        {
+          "player_id": 621097,
+          "name": "Jacob Waguespack",
+          "throws": "R",
+          "role": "long",
+          "note": "Available for multiple-inning coverage if the starter exits early."
+        },
+        {
+          "player_id": 680744,
+          "name": "Ty Madden",
+          "throws": "R",
+          "role": "long",
+          "note": "Available as additional length; preserve him for a longer bridge when possible."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the best matchup among the rested setup arms, then hand the ninth to Jansen.",
+          "pitcher_ids": [
+            663947,
+            623454,
+            445276
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use setup arms to cover the highest-leverage pocket; reserve Jansen for a save chance if the lead arrives.",
+          "pitcher_ids": [
+            623454,
+            663947,
+            445276
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Protect the leverage arms and use available length first.",
+          "pitcher_ids": [
+            680744,
+            621097,
+            646241
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use the long relievers to cover innings and avoid spending the closer.",
+          "pitcher_ids": [
+            621097,
+            680744,
+            646241
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Use length immediately, then bridge with available middle relief and keep the late-inning arms fresh.",
+          "pitcher_ids": [
+            621097,
+            680744,
+            646241,
+            805427,
+            663947,
+            623454,
+            445276
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use the setup arms before the closer, then match the next hitter pocket with left-handed relief.",
+          "pitcher_ids": [
+            623454,
+            663947,
+            445276,
+            805427,
+            646241
+          ]
+        }
+      ],
+      "summary": "Start Framber Valdez to take advantage of the left-handed matchup against the Athletics\u2019 leading threats, while keeping a close watch on right-handed contact. He has averaged 5.4 innings per start this season, so plan for the bullpen to cover the bridge and use Jansen to finish a close lead."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 806960,
+        "name": "Luis Morales",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 42.8,
+          "velo": 97.0,
+          "whiff_pct": 9.1,
+          "note": "His most-used pitch; hitters have produced a .49 xwOBA against it in a moderate sample."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 27.8,
+          "velo": 85.7,
+          "whiff_pct": 38.5,
+          "note": "His best whiff pitch; the .353 xwOBA allowed is from a moderate sample."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 12.7,
+          "velo": 96.3,
+          "whiff_pct": 18.8,
+          "note": "Limited sample, but opponents have managed a .272 xwOBA against it."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 9.0,
+          "velo": 89.2,
+          "whiff_pct": 14.3,
+          "note": "Limited sample; .468 xwOBA allowed and very little called-strike-plus-whiff activity."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 7.7,
+          "velo": 81.2,
+          "whiff_pct": 22.2,
+          "note": "Limited sample, with a .305 xwOBA allowed."
+        }
+      ],
+      "how_to_attack": [
+        "Be ready for the four-seam early: it is 42.8% of his arsenal, and he allows a .49 xwOBA against it in a moderate sample.",
+        "Lefties should expect fastballs most: he uses the fastball group 52.2% of the time against them; his sample versus left-handed hitters is small.",
+        "Righties should look for fastballs, too: he uses the fastball group 58.2% of the time against them; his sample versus right-handed hitters is small.",
+        "Make him prove he can land strikes: his overall walk rate is 17.1%, and his overall sample is moderate.",
+        "Don't chase the slider just because it is hard: it has a 38.5% whiff rate in a moderate sample."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "expected_xwoba": 0.438,
+          "edge": "batter",
+          "note": "Fastballs are a strong fit (.431 batter xwOBA), and Morales allows .573 to lefties; his sample versus lefties is small. Rest suggested."
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "expected_xwoba": 0.43,
+          "edge": "batter",
+          "note": "His .42 against fastballs matches up well with Morales allowing .573 to lefties; pitcher sample versus lefties is small."
+        },
+        {
+          "player_id": 690993,
+          "name": "Colt Keith",
+          "expected_xwoba": 0.407,
+          "edge": "batter",
+          "note": "Fastball-group fit (.359) against Morales\u2019 .573 allowed to lefties; pitcher sample versus lefties is small."
+        },
+        {
+          "player_id": 701162,
+          "name": "Ben Malgeri",
+          "expected_xwoba": 0.388,
+          "edge": "batter",
+          "note": "His .457 fastball-group mark is promising; both hitter and pitcher samples versus righties are small."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 701678,
+          "name": "Hao-Yu Lee",
+          "expected_xwoba": 0.323,
+          "edge": "even",
+          "note": "No clear edge; his .280 versus fastballs and .243 versus breaking balls are below Morales\u2019 respective .392 and .317 allowed to righties. Pitcher sample is small."
+        },
+        {
+          "player_id": 595879,
+          "name": "Javier B\u00e1ez",
+          "expected_xwoba": 0.334,
+          "edge": "even",
+          "note": "Even matchup; his .190 against breaking balls trails Morales\u2019 .317 allowed to righties. Pitcher sample versus righties is small."
+        },
+        {
+          "player_id": 680664,
+          "name": "Eduardo Valencia",
+          "expected_xwoba": 0.346,
+          "edge": "batter",
+          "note": "Tiny hitter sample; his .096 against breaking balls is a warning against Morales\u2019 breaking group. Pitcher sample versus righties is small."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 663687,
+          "name": "Hogan Harris",
+          "throws": "L",
+          "note": "Available lefty with 9 saves and 10 holds."
+        },
+        {
+          "player_id": 678022,
+          "name": "Jack Perkins",
+          "throws": "R",
+          "note": "Available and rested; has 3 saves and 2 holds."
+        },
+        {
+          "player_id": 660761,
+          "name": "Jos\u00e9 Suarez",
+          "throws": "L",
+          "note": "Available lefty with 1 save and 3 holds."
+        },
+        {
+          "player_id": 669620,
+          "name": "Brady Basso",
+          "throws": "L",
+          "note": "Available lefty; rested, with 1 hold."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "bats": "L",
+          "expected_xwoba": 0.438,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Sit fastballs: you're at .431 against them, and he allows .573 to lefties. Your .275 against offspeed is a reason to lay off; his sample versus lefties is small. Rest is suggested."
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "bats": "L",
+          "expected_xwoba": 0.43,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .42, and he allows .573 to lefties. Your .309 against breaking balls is close to his .327 allowed; his sample versus lefties is small."
+        },
+        {
+          "player_id": 690993,
+          "name": "Colt Keith",
+          "bats": "L",
+          "expected_xwoba": 0.407,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs: you're at .359 against them, while he allows .573 to lefties. Your .239 against offspeed is a cue to lay off; his sample versus lefties is small."
+        },
+        {
+          "player_id": 701162,
+          "name": "Ben Malgeri",
+          "bats": "R",
+          "expected_xwoba": 0.388,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: you're at .457 against them, and he allows .392 to righties. Both your right-handed sample and his sample versus righties are small; your .350 against breaking balls is below his .317 allowed."
+        },
+        {
+          "player_id": 693307,
+          "name": "Dillon Dingler",
+          "bats": "R",
+          "expected_xwoba": 0.381,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .427 against them, and he allows .392 to righties. Your .342 against breaking balls is just above his .317 allowed; his sample versus righties is small."
+        },
+        {
+          "player_id": 656716,
+          "name": "Zach McKinstry",
+          "bats": "L",
+          "expected_xwoba": 0.381,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Be ready for fastballs: you're at .308 against them, while he allows .573 to lefties. Your .289 against breaking balls is below his .327 allowed; his sample versus lefties is small."
+        },
+        {
+          "player_id": 650402,
+          "name": "Gleyber Torres",
+          "bats": "R",
+          "expected_xwoba": 0.352,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .334 against them, and he allows .392 to righties. Your .325 against breaking balls is slightly above his .317 allowed; his sample versus righties is small."
+        },
+        {
+          "player_id": 679529,
+          "name": "Spencer Torkelson",
+          "bats": "R",
+          "expected_xwoba": 0.347,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: you're at .378 against them, and he allows .392 to righties. Your .258 against breaking balls is below his .317 allowed; his sample versus righties is small."
+        },
+        {
+          "player_id": 680664,
+          "name": "Eduardo Valencia",
+          "bats": "R",
+          "expected_xwoba": 0.346,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .458 against them, and he allows .392 to righties. Your .096 against breaking balls is a warning; your samples across pitch groups and his sample versus righties are small."
+        },
+        {
+          "player_id": 681546,
+          "name": "James Outman",
+          "bats": "L",
+          "expected_xwoba": 0.337,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: you're at .240 against them, and he allows .573 to lefties. Your .182 against breaking balls is lower than his .327 allowed; his sample versus lefties is small."
+        },
+        {
+          "player_id": 595879,
+          "name": "Javier B\u00e1ez",
+          "bats": "R",
+          "expected_xwoba": 0.334,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .437 against them, and he allows .392 to righties. Your .190 against breaking balls is well below his .317 allowed; his sample versus righties is small."
+        },
+        {
+          "player_id": 701678,
+          "name": "Hao-Yu Lee",
+          "bats": "R",
+          "expected_xwoba": 0.323,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .280 against them, and he allows .392 to righties. Your .243 against breaking balls is below his .317 allowed; his sample versus righties is small."
+        }
+      ],
+      "summary": "Luis Morales is the high-confidence projected starter, with an 85% probability, and he has a moderate overall sample. Fastballs are the clearest target, especially for our left-handed hitters, but his results against both handedness groups come from small samples. Keep Riley Greene\u2019s rest suggestion in mind; available left-handed bullpen options include Hogan Harris and Jos\u00e9 Suarez."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 701762,
+          "name": "Nick Kurtz",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 805779,
+          "name": "Jacob Wilson",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 691016,
+          "name": "Tyler Soderstrom",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 666126,
+          "name": "Carlos Cortes",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 671732,
+          "name": "Lawrence Butler",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 641680,
+          "name": "Jonah Heim",
+          "position": "C",
+          "bats": "S"
+        },
+        {
+          "slot": 7,
+          "player_id": 622268,
+          "name": "Donovan Walton",
+          "position": "3B",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 703607,
+          "name": "Henry Bolte",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 643446,
+          "name": "Jeff McNeil",
+          "position": "2B",
+          "bats": "L"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 805779,
+          "name": "Jacob Wilson",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 701762,
+          "name": "Nick Kurtz",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 691016,
+          "name": "Tyler Soderstrom",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 641680,
+          "name": "Jonah Heim",
+          "position": "C",
+          "bats": "S"
+        },
+        {
+          "slot": 5,
+          "player_id": 695720,
+          "name": "Tommy White",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 643446,
+          "name": "Jeff McNeil",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 671732,
+          "name": "Lawrence Butler",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 703607,
+          "name": "Henry Bolte",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 675961,
+          "name": "Alika Williams",
+          "position": "2B",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 701762,
+          "name": "Nick Kurtz",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.375,
+          "weakness": "Offspeed pitches are his softer matchup; his xwOBA against them is 0.306.",
+          "how_to_pitch": "Use offspeed below the zone to seek chase and avoid giving him hittable fastballs or breaking balls."
+        },
+        {
+          "player_id": 805779,
+          "name": "Jacob Wilson",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.286,
+          "weakness": "No pitch-type profile was pulled; his overall xwOBA is 0.286.",
+          "how_to_pitch": "Attack the zone and change eye level; limit free passes."
+        },
+        {
+          "player_id": 691016,
+          "name": "Tyler Soderstrom",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.334,
+          "weakness": "Offspeed is his weakest pitch-type result (xwOBA 0.229); that sample is moderate.",
+          "how_to_pitch": "Mix offspeed away and below the zone; do not rely on fastballs."
+        },
+        {
+          "player_id": 666126,
+          "name": "Carlos Cortes",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.327,
+          "weakness": "Breaking balls are a weaker result (xwOBA 0.267; moderate sample); his split versus left-handers is small.",
+          "how_to_pitch": "Work breaking pitches carefully and change speeds; his fastball xwOBA is 0.372."
+        },
+        {
+          "player_id": 671732,
+          "name": "Lawrence Butler",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.312,
+          "weakness": "Offspeed is his weakest pitch-type result (xwOBA 0.283); sample is moderate.",
+          "how_to_pitch": "Change speeds and work below the zone; avoid predictable fastball locations."
+        },
+        {
+          "player_id": 641680,
+          "name": "Jonah Heim",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.306,
+          "weakness": "No pitch-type profile was pulled; his xwOBA is 0.333 versus left-handers and 0.283 versus right-handers.",
+          "how_to_pitch": "Prefer a right-hander and keep the ball down."
+        },
+        {
+          "player_id": 622268,
+          "name": "Donovan Walton",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.318,
+          "weakness": "His xwOBA versus left-handers is 0.189, versus 0.332 against right-handers.",
+          "how_to_pitch": "A left-hander has the better split; attack with strikes and avoid extending the at-bat."
+        },
+        {
+          "player_id": 703607,
+          "name": "Henry Bolte",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.292,
+          "weakness": "No pitch-type profile was pulled; his xwOBA is 0.31 versus left-handers and 0.281 versus right-handers.",
+          "how_to_pitch": "A right-hander has the better split; make him earn his way on."
+        },
+        {
+          "player_id": 643446,
+          "name": "Jeff McNeil",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.305,
+          "weakness": "His xwOBA is 0.28 versus left-handers and 0.312 versus right-handers.",
+          "how_to_pitch": "Prefer a left-hander and keep pitches out of the middle."
+        },
+        {
+          "player_id": 695720,
+          "name": "Tommy White",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.316,
+          "weakness": "His batting sample is small (50 PA); split xwOBA is 0.292 versus left-handers and 0.335 versus right-handers.",
+          "how_to_pitch": "Use the left-hander split, but treat the results cautiously given the small sample."
+        },
+        {
+          "player_id": 675961,
+          "name": "Alika Williams",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.234,
+          "weakness": "His xwOBA is 0.246 versus left-handers and 0.219 versus right-handers.",
+          "how_to_pitch": "Stay in the zone and challenge him; avoid giving away walks."
+        }
+      ],
+      "summary": "Nick Kurtz and Tyler Soderstrom lead the danger, with Kurtz the biggest power threat. A left-hander is preferable overall: Kurtz and Soderstrom have lower xwOBA versus left-handers, and Donovan Walton\u2019s split is notably weaker; keep in mind some split samples are moderate or small."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 681481,
+          "name": "Kerry Carpenter",
+          "status": "out",
+          "reason": "Left foot plantar fasciitis."
+        },
+        {
+          "player_id": 656427,
+          "name": "Jack Flaherty",
+          "status": "out",
+          "reason": "Right flexor inflammation."
+        },
+        {
+          "player_id": 676684,
+          "name": "Will Vest",
+          "status": "out",
+          "reason": "Right posterior elbow inflammation."
+        },
+        {
+          "player_id": 672761,
+          "name": "Wenceel P\u00e9rez",
+          "status": "out",
+          "reason": "Left orbital fracture."
+        },
+        {
+          "player_id": 572143,
+          "name": "Burch Smith",
+          "status": "out",
+          "reason": "Right shoulder inflammation."
+        },
+        {
+          "player_id": 676428,
+          "name": "Brant Hurter",
+          "status": "out",
+          "reason": "Lumbar spine inflammation."
+        },
+        {
+          "player_id": 434378,
+          "name": "Justin Verlander",
+          "status": "out",
+          "reason": "Left hip inflammation."
+        },
+        {
+          "player_id": 690544,
+          "name": "Bailey Horn",
+          "status": "out",
+          "reason": "Left elbow arthroscopy recovery."
+        },
+        {
+          "player_id": 678009,
+          "name": "Parker Meadows",
+          "status": "out",
+          "reason": "Left radius fracture."
+        },
+        {
+          "player_id": 700242,
+          "name": "Trey Sweeney",
+          "status": "out",
+          "reason": "Right shoulder strain."
+        },
+        {
+          "player_id": 695549,
+          "name": "Jackson Jobe",
+          "status": "out",
+          "reason": "Recovering from Tommy John surgery."
+        },
+        {
+          "player_id": 681857,
+          "name": "Reese Olson",
+          "status": "out",
+          "reason": "Right Shoulder Labral Repair."
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "status": "rest_suggested",
+          "reason": "24 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Kerry Carpenter, Jack Flaherty, Will Vest, Wenceel P\u00e9rez, Burch Smith, Brant Hurter, Justin Verlander, Bailey Horn, Parker Meadows, Trey Sweeney, Jackson Jobe, and Reese Olson are on the injured list and unavailable. Riley Greene is available, but a rest day is suggested because of his consecutive-start workload; no relievers are marked limited or unavailable."
+    },
+    "manager_review": {
+      "approved": false,
+      "fixes": [
+        {
+          "to": "bench_coach",
+          "instruction": "Remove the defensive substitution replacing Spencer Torkelson with Hao-Yu Lee at first base; the plan itself notes Lee cannot cover first, so use an eligible first baseman or drop that move."
+        }
+      ],
+      "key_decisions": [
+        "Keep Framber Valdez as the starter: the left-handed matchup projects Nick Kurtz at 0.276 and Tyler Soderstrom at 0.279 expected xwOBA, below league xwOBA 0.316.",
+        "Retain Riley Greene in the lineup despite the rest suggestion; the lineup plan says sitting him costs 1.30 win-probability points, and he has a .431 fastball fit against Morales.",
+        "Target Luis Morales\u2019 fastball, used 42.8% of the time, while making him prove he can throw strikes: his overall walk rate is 17.1% in a moderate sample.",
+        "Use Kenley Jansen to finish a close lead, with Tyler Holton and Drew Anderson as setup options; the pitching report identifies Jansen as rested with 12 saves."
+      ],
+      "keys_to_the_game": [
+        "Valdez should use offspeed below the zone to Nick Kurtz and mix offspeed away to Tyler Soderstrom; note the relevant samples are small or moderate as reported.",
+        "Make Morales work and avoid chasing his slider, which has a 38.5% whiff rate in a moderate sample.",
+        "Stay flexible with left-handed relief against the Athletics\u2019 left-handed threats, while preserving the rested late-inning arms for leverage.",
+        "Correct the late defensive plan at first base before the game; Hao-Yu Lee is not listed as able to cover that position."
+      ],
+      "summary": "The pitching and lineup plans fit the expected matchup: Valdez gets the left-handed look, while the hitters should hunt Morales\u2019 fastball and take care against the slider. Do not approve until the late defensive substitution for Torkelson is corrected, since the plan explicitly says Lee cannot play first base."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Hunt Morales\u2019 fastball; make him earn the zone",
+      "message": "Luis Morales is the high-confidence projected starter. Be ready for his four-seam fastball, his most-used pitch, and make him prove he can land strikes: his overall walk rate is 17.1% in a moderate sample. Do not chase the slider, which has a 38.5% whiff rate in a moderate sample. Riley Greene remains in the lineup despite the rest suggestion; stay disciplined against offspeed.",
+      "reminders": [
+        "Fastball group usage: 52.2% against left-handed hitters; that sample is small.",
+        "Fastball group usage: 58.2% against right-handed hitters; that sample is small.",
+        "Hogan Harris and Jos\u00e9 Suarez are available left-handed bullpen options."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Valdez sets the tone; attack their left-handed threats with offspeed",
+      "message": "Framber Valdez starts. Use offspeed below the zone to Nick Kurtz; his offspeed sample is small. Mix offspeed away and below Tyler Soderstrom; that result comes from a moderate sample. Attack Jacob Wilson in the zone and limit free passes. If Valdez exits early, use length first; in a close lead, bridge with a rested setup arm and hand the ninth to Kenley Jansen.",
+      "reminders": [
+        "Valdez planning target: 5.0 innings, with a 90 pitch-count limit.",
+        "Tyler Holton and Drew Anderson are setup options; Jansen is the primary ninth-inning option.",
+        "Use left-handed relief against left-handed pockets when the matchup calls for it."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Keep Greene in; correct the late first-base plan",
+      "message": "The approved matchup direction is Valdez starting, with Jansen to finish a close lead and Holton or Anderson as setup options. Greene stays in despite the rest suggestion: the lineup plan says sitting him costs 1.30 win-probability points, and he has a .431 fastball fit against Morales. The proposed late defensive move placing Hao-Yu Lee at first is not eligible\u2014Lee is listed as cover at second or third. Drop that move or use an eligible first baseman. Listed unavailable players remain out.",
+      "reminders": [
+        "Morales is the high-confidence projected starter; his handedness samples are small.",
+        "Valdez\u2019s plan: 5.0 expected innings and a 90 pitch-count limit.",
+        "Riley Greene is available with a rest suggestion; respect the workload caution."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 2,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 68.2,
+    "total": {
+      "model_steps": 26,
+      "gateway_cache_hits": 10,
+      "input_tokens": 145251,
+      "cached_tokens": 54060,
+      "output_tokens": 12274,
+      "cost_usd": 0.01959
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 2,
+        "input_tokens": 4345,
+        "cached_tokens": 0,
+        "output_tokens": 491,
+        "seconds": 0.5,
+        "cost_usd": 0.0
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 3,
+        "input_tokens": 19754,
+        "cached_tokens": 4371,
+        "output_tokens": 2512,
+        "seconds": 14.7,
+        "cost_usd": 0.00298
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 12530,
+        "cached_tokens": 5019,
+        "output_tokens": 1596,
+        "seconds": 0.9,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 2,
+        "input_tokens": 16516,
+        "cached_tokens": 3140,
+        "output_tokens": 1137,
+        "seconds": 6.5,
+        "cost_usd": 0.0024
+      },
+      "bench_coach": {
+        "calls": 3,
+        "model_steps": 10,
+        "gateway_cache_hits": 0,
+        "input_tokens": 63148,
+        "cached_tokens": 41530,
+        "output_tokens": 4266,
+        "seconds": 31.7,
+        "cost_usd": 0.00729
+      },
+      "manager": {
+        "calls": 3,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 21583,
+        "cached_tokens": 0,
+        "output_tokens": 1734,
+        "seconds": 16.0,
+        "cost_usd": 0.00518
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7375,
+        "cached_tokens": 0,
+        "output_tokens": 538,
+        "seconds": 5.0,
+        "cost_usd": 0.00174
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

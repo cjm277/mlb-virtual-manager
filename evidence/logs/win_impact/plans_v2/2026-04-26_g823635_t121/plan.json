@@ -1,0 +1,1053 @@
+{
+  "run_id": "2026-04-26_g823635_t121",
+  "status": "approved",
+  "game": {
+    "game_pk": 823635,
+    "season": 2026,
+    "game_date": "2026-04-26",
+    "game_number": 1,
+    "day_night": "day",
+    "venue": "Citi Field",
+    "team": "New York Mets",
+    "team_id": 121,
+    "team_record_going_in": "9-17",
+    "opponent": "Colorado Rockies",
+    "opponent_id": 115,
+    "opponent_record_going_in": "11-16",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game, blended with 2025 (24% weight on 2025).",
+    "weight_on_2025_stats": "24%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 500779,
+        "name": "Jose Quintana"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "position": "LF",
+          "bats": "L",
+          "reason": "Leads off with 0.0264 runs per PA vs average; his breaking-ball matchup is favorable, though Quintana\u2019s lefty sample is small."
+        },
+        {
+          "slot": 2,
+          "player_id": 682626,
+          "name": "Francisco Alvarez",
+          "position": "C",
+          "bats": "R",
+          "reason": "Bats second at 0.0209 runs per PA vs average; he has an edge hunting offspeed, but the pitch-group samples are small."
+        },
+        {
+          "slot": 3,
+          "player_id": 673357,
+          "name": "Luis Robert Jr.",
+          "position": "RF",
+          "bats": "R",
+          "reason": "Hits third at 0.0151 runs per PA vs average; his fastball matchup has an edge, with small pitch-group samples."
+        },
+        {
+          "slot": 4,
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "position": "3B",
+          "bats": "R",
+          "reason": "Cleans up at 0.0147 runs per PA vs average with a breaking-ball edge; plays despite the rest suggestion because resting him costs 0.56 win-probability points."
+        },
+        {
+          "slot": 5,
+          "player_id": 543760,
+          "name": "Marcus Semien",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Bats fifth at 0.0102 runs per PA vs average and has a listed edge; plays despite the rest suggestion because resting him costs 100.00 win-probability points."
+        },
+        {
+          "slot": 6,
+          "player_id": 620443,
+          "name": "Luis Torrens",
+          "position": "DH",
+          "bats": "R",
+          "reason": "Hits sixth at 0.007 runs per PA vs average; matchup is even, with a fastball approach advised."
+        },
+        {
+          "slot": 7,
+          "player_id": 668901,
+          "name": "Mark Vientos",
+          "position": "1B",
+          "bats": "R",
+          "reason": "Bats seventh at 0.0054 runs per PA vs average; matchup is even, with a breaking-ball edge noted in his approach."
+        },
+        {
+          "slot": 8,
+          "player_id": 621438,
+          "name": "Tyrone Taylor",
+          "position": "CF",
+          "bats": "R",
+          "reason": "Hits eighth at 0.002 runs per PA vs average; matchup is even, and his offspeed-group figure supports hunting strikes there."
+        },
+        {
+          "slot": 9,
+          "player_id": 677595,
+          "name": "Ronny Mauricio",
+          "position": "SS",
+          "bats": "S",
+          "reason": "Bats ninth at -0.0066 runs per PA vs average; Quintana has the matchup edge, and Mauricio\u2019s pitch-group samples are small."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 669004,
+          "name": "MJ Melendez",
+          "role": "pinch_hitter",
+          "note": "Top-ranked bench bat; small samples, with an edge against Quintana but breaking balls are a concern."
+        },
+        {
+          "player_id": 683146,
+          "name": "Brett Baty",
+          "role": "pinch_hitter",
+          "note": "Second-ranked bench bat; can cover first or third, with a listed edge against Quintana based on small samples."
+        },
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "role": "pinch_runner",
+          "note": "Third-ranked bench bat; use his speed late, and his pitch-group samples are small."
+        },
+        {
+          "player_id": 502054,
+          "name": "Tommy Pham",
+          "role": "pinch_hitter",
+          "note": "Fourth-ranked bench bat; platoon edge against lefties, but his pitch-group samples are small."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later, runner in scoring position against a right-handed reliever",
+          "bench_player_id": 669004,
+          "replaces_player_id": 677595,
+          "reason": "Use the highest-ranked bench bat in a high-leverage spot; his favorable matchup against Quintana comes from small samples."
+        },
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later against a left-handed reliever, with the pitcher due to face the bottom of the order",
+          "bench_player_id": 502054,
+          "replaces_player_id": 621438,
+          "reason": "Pham is the available right-handed bat with a platoon edge against lefties."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning, tying or go-ahead run on base",
+          "bench_player_id": 701807,
+          "replaces_player_id": 620443,
+          "reason": "Benge offers the bench\u2019s strongest listed speed option; keep him available for the bases."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Protecting a late lead after a pinch-hit substitution at first base",
+          "bench_player_id": 683146,
+          "replaces_player_id": 668901,
+          "reason": "Baty is the available bench option who can play first base."
+        }
+      ],
+      "summary": "The model lineup projects 4.9 expected runs and keeps its selected nine and batting order intact. Quintana is the high-confidence starter prediction; several listed batter-pitch matchup notes rely on small samples."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 690997,
+        "name": "Nolan McLean",
+        "throws": "R",
+        "reason": "Best ready option: 2.67 ERA and 0.24 xwOBA allowed; Rockies matchup estimates favor him, including 0.273 vs Hunter Goodman and 0.238 vs Brenton Doyle.",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 95,
+        "pitch_mix": [
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 34.0,
+            "vs_rhb_pct": 31.0,
+            "purpose": "Get early strikes and induce weak contact."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 15.0,
+            "vs_rhb_pct": 17.0,
+            "purpose": "Change the fastball look; elevate selectively."
+          },
+          {
+            "pitch": "sweeper",
+            "vs_lhb_pct": 18.0,
+            "vs_rhb_pct": 20.0,
+            "purpose": "Expand away from right-handed bats and vary breaking-ball shape."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 13.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Use for chase and put-away, especially with two strikes."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 15.0,
+            "vs_rhb_pct": 8.0,
+            "purpose": "Change speeds to left-handed hitters; use sparingly to righties."
+          },
+          {
+            "pitch": "cutter",
+            "vs_lhb_pct": 5.0,
+            "vs_rhb_pct": 9.0,
+            "purpose": "Occasional contact-management variation."
+          }
+        ],
+        "keys": [
+          "Against the left-handed heart, change speeds and avoid predictable fastballs; Julien and Rumfield\u2019s offspeed matchup samples are small.",
+          "Work offspeed away from Rumfield; the scouting report\u2019s offspeed evidence is small.",
+          "Use breaking balls below the zone to exploit Goodman\u2019s chase and whiffs, but keep them out of the heart.",
+          "Attack Tovar and Doyle with strikes; finish Doyle with breaking stuff, and remember the right-handed matchup sample is small."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 548384,
+          "name": "Brooks Raley",
+          "throws": "L",
+          "role": "setup",
+          "note": "Primary left-handed setup option; rested, with 3 holds."
+        },
+        {
+          "player_id": 642207,
+          "name": "Devin Williams",
+          "throws": "R",
+          "role": "closer",
+          "note": "Top late-inning choice with 2 saves; rested."
+        },
+        {
+          "player_id": 596133,
+          "name": "Luke Weaver",
+          "throws": "R",
+          "role": "setup",
+          "note": "Available bridge/setup option; rested, with 2 holds."
+        },
+        {
+          "player_id": 668964,
+          "name": "Tobias Myers",
+          "throws": "R",
+          "role": "long",
+          "note": "Long-relief option; rested, though he has thrown 40 pitches over the last 3 days."
+        },
+        {
+          "player_id": 623211,
+          "name": "Huascar Brazob\u00e1n",
+          "throws": "R",
+          "role": "middle",
+          "note": "Middle relief; rested, with 1 hold."
+        },
+        {
+          "player_id": 681810,
+          "name": "Austin Warren",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available depth option; rested."
+        },
+        {
+          "player_id": 605218,
+          "name": "Carl Edwards Jr.",
+          "throws": "R",
+          "role": "mop_up",
+          "note": "Use in low-leverage work; rested and has no recent appearances."
+        },
+        {
+          "player_id": 518886,
+          "name": "Craig Kimbrel",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available middle relief; rested, with 19 pitches over the last 3 days."
+        },
+        {
+          "player_id": 640455,
+          "name": "Sean Manaea",
+          "throws": "L",
+          "role": "long",
+          "note": "Limited after 61 pitches over the last 3 days; use only if needed, preferably for a short stint."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the rested setup arms to bridge to Williams for the save; favor Raley for left-handed pockets.",
+          "pitcher_ids": [
+            548384,
+            596133,
+            642207
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use Weaver or Raley for the highest-leverage pocket, then Williams if the game turns into a save chance.",
+          "pitcher_ids": [
+            596133,
+            548384,
+            642207
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Preserve the late-inning arms and use available middle relief first.",
+          "pitcher_ids": [
+            623211,
+            681810,
+            605218
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Save the top leverage arms; use long relief, then low-leverage depth.",
+          "pitcher_ids": [
+            668964,
+            623211,
+            605218,
+            640455
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Myers is the primary bridge; follow with Brazob\u00e1n and then depth, avoiding limited Manaea unless necessary.",
+          "pitcher_ids": [
+            668964,
+            623211,
+            681810,
+            640455
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use rested setup arms in order, keeping Manaea in reserve because he is limited.",
+          "pitcher_ids": [
+            596133,
+            548384,
+            642207,
+            623211
+          ]
+        }
+      ],
+      "summary": "Start McLean and target about six innings, leaning on his sinker and changing speeds against the left-handed bats. Use Raley and Weaver to bridge to Williams in close games; Manaea is available only with caution because of recent workload."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 500779,
+        "name": "Jose Quintana",
+        "throws": "L",
+        "confidence": "high",
+        "alternatives": [
+          "Chase Dollander"
+        ],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 27.9,
+          "velo": 90.1,
+          "whiff_pct": 22.1,
+          "note": "His four-seamer is part of a fastball-heavy mix; group xwOBA allowed is 0.353."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 26.4,
+          "velo": 90.2,
+          "whiff_pct": 2.9,
+          "note": "He uses the sinker often, with group xwOBA allowed of 0.446."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 22.8,
+          "velo": 85.6,
+          "whiff_pct": 28.1,
+          "note": "The changeup is his main offspeed pitch and gets the most whiffs in this arsenal."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 12.0,
+          "velo": 79.2,
+          "whiff_pct": 22.6,
+          "note": "The curveball adds a breaking look; group xwOBA allowed is 0.448."
+        },
+        {
+          "pitch": "slurve",
+          "usage_pct": 10.8,
+          "velo": 80.0,
+          "whiff_pct": 15.7,
+          "note": "The slurve rounds out his breaking-ball mix; group xwOBA allowed is 0.531."
+        }
+      ],
+      "how_to_attack": [
+        "Right-handed hitters can look for fastballs early: he uses the FB group 52.8% of the time against them and allows 0.426 xwOBA on it.",
+        "Be ready for changeups against righties: he throws offspeed 30.3% of the time to them, allowing 0.346 xwOBA.",
+        "Lefties should recognize breaking balls: he uses that group 38.6% of the time against them and allows 0.632 xwOBA; the sample vs LHB is small.",
+        "Stay patient and make him execute: his overall walk rate is 13.2%, and his average pitches per start is 81."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 669004,
+          "name": "MJ Melendez",
+          "expected_xwoba": 0.467,
+          "edge": "batter",
+          "note": "His fastball-group xwOBA is 0.763, but the breaking-ball figure is 0.031; all listed pitch-group samples are small."
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "expected_xwoba": 0.428,
+          "edge": "batter",
+          "note": "The breaking-ball group suits him best at 0.264, while Quintana allows 0.632 to lefties; pitcher sample vs LHB is small."
+        },
+        {
+          "player_id": 683146,
+          "name": "Brett Baty",
+          "expected_xwoba": 0.425,
+          "edge": "batter",
+          "note": "His breaking-ball xwOBA is 0.583 against 0.632 allowed; the matchup samples are small."
+        },
+        {
+          "player_id": 673357,
+          "name": "Luis Robert Jr.",
+          "expected_xwoba": 0.408,
+          "edge": "batter",
+          "note": "His fastball-group xwOBA is 0.477, while Quintana allows 0.426 to righties; pitch-group samples are small."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 677595,
+          "name": "Ronny Mauricio",
+          "expected_xwoba": 0.273,
+          "edge": "pitcher",
+          "note": "Small samples across his pitch groups; his fastball-group xwOBA is 0.206."
+        },
+        {
+          "player_id": 502054,
+          "name": "Tommy Pham",
+          "expected_xwoba": 0.307,
+          "edge": "even",
+          "note": "Small samples across pitch groups; his fastball-group xwOBA is 0.621, but offspeed is 0.179."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 622608,
+          "name": "Antonio Senzatela",
+          "throws": "R",
+          "note": "Available and rested; has 2 saves and 1 hold."
+        },
+        {
+          "player_id": 680767,
+          "name": "Victor Vodnik",
+          "throws": "R",
+          "note": "Available and rested; has 3 saves."
+        },
+        {
+          "player_id": 677955,
+          "name": "Jaden Hill",
+          "throws": "R",
+          "note": "Available and rested; leads this group with 5 holds."
+        },
+        {
+          "player_id": 657514,
+          "name": "Brennan Bernardino",
+          "throws": "L",
+          "note": "Available and rested; the available left-handed option has 1 hold."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 669004,
+          "name": "MJ Melendez",
+          "bats": "L",
+          "expected_xwoba": 0.467,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Your fastball-group xwOBA is 0.763 and he allows 0.407 to lefties; lay off breaking balls, where you are at 0.031 and he allows 0.632. Samples are small across these groups, including his results against lefties."
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "bats": "L",
+          "expected_xwoba": 0.428,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": null,
+          "approach": "Hunt breaking balls: you are at 0.264 against them and he allows 0.632 to lefties. Your offspeed sample is small, and his left-handed-batter sample is small."
+        },
+        {
+          "player_id": 683146,
+          "name": "Brett Baty",
+          "bats": "L",
+          "expected_xwoba": 0.425,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Hunt breaking balls, where you are at 0.583 and he allows 0.632 to lefties; be selective on fastballs, where your figure is 0.311. Your pitch-group samples and his left-handed-batter sample are small."
+        },
+        {
+          "player_id": 673357,
+          "name": "Luis Robert Jr.",
+          "bats": "R",
+          "expected_xwoba": 0.408,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs: you are at 0.477 against that group and he allows 0.426 to righties. Be cautious with offspeed (0.398 for you, 0.346 allowed); your pitch-group samples are small."
+        },
+        {
+          "player_id": 682626,
+          "name": "Francisco Alvarez",
+          "bats": "R",
+          "expected_xwoba": 0.367,
+          "edge": "batter",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Hunt offspeed: you are at 0.525 and he allows 0.346 to righties. Your breaking-ball figure is 0.281 against 0.379 allowed; your pitch-group samples are small."
+        },
+        {
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "bats": "R",
+          "expected_xwoba": 0.366,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "offspeed",
+          "approach": "Hunt breaking balls: you are at 0.42 and he allows 0.379 to righties; avoid chasing offspeed, where you are at 0.332 and he allows 0.346. Pitch-group samples are small; he has a rest suggestion."
+        },
+        {
+          "player_id": 543760,
+          "name": "Marcus Semien",
+          "bats": "R",
+          "expected_xwoba": 0.364,
+          "edge": "batter",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Look for offspeed: your group xwOBA is 0.583, though he allows 0.346 to righties. Your breaking-ball figure is 0.341 and he allows 0.379; pitch-group samples are small. He has a rest suggestion."
+        },
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "bats": "L",
+          "expected_xwoba": 0.363,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you are at 0.406 and he allows 0.407 to lefties; avoid breaking balls, where you are at 0.108 and he allows 0.632. Pitch-group samples are small, as is his sample against lefties."
+        },
+        {
+          "player_id": 668901,
+          "name": "Mark Vientos",
+          "bats": "R",
+          "expected_xwoba": 0.338,
+          "edge": "even",
+          "hunt": "breaking balls",
+          "beware": "offspeed",
+          "approach": "Sit on breaking balls: you are at 0.501 against them and he allows 0.379 to righties. Your offspeed figure is 0.234 and he allows 0.346; pitch-group samples are small."
+        },
+        {
+          "player_id": 621438,
+          "name": "Tyrone Taylor",
+          "bats": "R",
+          "expected_xwoba": 0.327,
+          "edge": "even",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Your offspeed-group xwOBA is 0.715 and he allows 0.346 to righties; hunt it when you get a strike. Your breaking-ball figure is 0.187 and he allows 0.379; pitch-group samples are small."
+        },
+        {
+          "player_id": 620443,
+          "name": "Luis Torrens",
+          "bats": "R",
+          "expected_xwoba": 0.324,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you are at 0.306 and he allows 0.426 to righties. Your breaking-ball figure is 0.123 and he allows 0.379; pitch-group samples are small."
+        },
+        {
+          "player_id": 502054,
+          "name": "Tommy Pham",
+          "bats": "R",
+          "expected_xwoba": 0.307,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Your fastball-group xwOBA is 0.621 and he allows 0.426 to righties; be wary of offspeed, where you are at 0.179 and he allows 0.346. Pitch-group samples are small."
+        },
+        {
+          "player_id": 677595,
+          "name": "Ronny Mauricio",
+          "bats": "R",
+          "expected_xwoba": 0.273,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Stay ready for fastballs: you are at 0.206 and he allows 0.426 to righties. Your breaking-ball figure is 0.134 and he allows 0.379; all your pitch-group samples are small."
+        }
+      ],
+      "summary": "Jose Quintana is the high-confidence starter prediction, with Chase Dollander the next alternative. His fastballs make up much of the mix, while righties should be alert for the changeup and lefties should expect breaking balls; Quintana's sample against lefties is small. Have the available bullpen arms in mind if his outing is short."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 666397,
+          "name": "Edouard Julien",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 687859,
+          "name": "Troy Johnston",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 678662,
+          "name": "Ezequiel Tovar",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 691720,
+          "name": "Kyle Karros",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 686668,
+          "name": "Brenton Doyle",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "position": "DH",
+          "bats": "L"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 666397,
+          "name": "Edouard Julien",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 687859,
+          "name": "Troy Johnston",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 678662,
+          "name": "Ezequiel Tovar",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 686668,
+          "name": "Brenton Doyle",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 691720,
+          "name": "Kyle Karros",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "position": "CF",
+          "bats": "L"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 666397,
+          "name": "Edouard Julien",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.345,
+          "weakness": "Offspeed pitches draw more whiffs (46.8%); that pitch sample is small.",
+          "how_to_pitch": "Change speeds and finish with offspeed below the zone; his offspeed results are based on a small sample."
+        },
+        {
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.321,
+          "weakness": "Chases often (40.3%) and has struggled against left-handers (xwOBA 0.194; small sample).",
+          "how_to_pitch": "When facing a left-hander, attack carefully with breaking balls off the plate; against other hands, avoid giving him fastballs to drive."
+        },
+        {
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.319,
+          "weakness": "Whiffs often (36.1%) and chases (38.7%); breaking-ball results show frequent whiffs (46.3%).",
+          "how_to_pitch": "Use breaking balls to expand the zone with two strikes, but keep them out of the heart; his power makes mistakes costly."
+        },
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.342,
+          "weakness": "Offspeed xwOBA is 0.245, but that pitch-type sample is small.",
+          "how_to_pitch": "Mix offspeed away rather than challenging him with fastballs; offspeed evidence is limited."
+        },
+        {
+          "player_id": 687859,
+          "name": "Troy Johnston",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.327,
+          "weakness": "Much less productive versus left-handers (xwOBA 0.218) than right-handers (0.344).",
+          "how_to_pitch": "Prefer a left-handed matchup and work away; against right-handers, limit hittable pitches."
+        },
+        {
+          "player_id": 678662,
+          "name": "Ezequiel Tovar",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.305,
+          "weakness": "Low on-base results (OBP 0.264) and little walk tendency (BB% 3.5%).",
+          "how_to_pitch": "Challenge the zone and make him earn a base; avoid free passes and change eye levels."
+        },
+        {
+          "player_id": 691720,
+          "name": "Kyle Karros",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.341,
+          "weakness": "Lower xwOBA against right-handers (0.316) than left-handers (0.408).",
+          "how_to_pitch": "Prefer a right-hander; against a left-hander, avoid predictable strikes and work carefully."
+        },
+        {
+          "player_id": 686668,
+          "name": "Brenton Doyle",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.268,
+          "weakness": "High strikeout rate (32.8%) and weaker against right-handers (xwOBA 0.254).",
+          "how_to_pitch": "A right-hander can attack the zone, then use breaking stuff to finish; do not give him a free pass."
+        },
+        {
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.299,
+          "weakness": "xwOBA is lower against left-handers (0.247) than right-handers (0.308).",
+          "how_to_pitch": "Use a left-handed matchup and keep the ball down; stay alert to his speed."
+        }
+      ],
+      "summary": "Moniak, Goodman, and Rumfield anchor the projected heart of the order, with Moniak\u2019s power especially concerning against right-handers and Goodman carrying power against either hand. A left-handed starter has the clearer matchup edge on Moniak and Troy Johnston, while a right-hander is preferable against Kyle Karros and Brenton Doyle; overall, the numbers favor a left-hander against their left-handed bats."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 596019,
+          "name": "Francisco Lindor",
+          "status": "out",
+          "reason": "Left calf strain."
+        },
+        {
+          "player_id": 593871,
+          "name": "Jorge Polanco",
+          "status": "out",
+          "reason": "Right wrist contusion."
+        },
+        {
+          "player_id": 676724,
+          "name": "Jared Young",
+          "status": "out",
+          "reason": "Left meniscus tear."
+        },
+        {
+          "player_id": 680702,
+          "name": "Joey Gerber",
+          "status": "out",
+          "reason": "Right finger blister."
+        },
+        {
+          "player_id": 621345,
+          "name": "A.J. Minter",
+          "status": "out",
+          "reason": "Left lat surgery."
+        },
+        {
+          "player_id": 663795,
+          "name": "Justin Hagenman",
+          "status": "out",
+          "reason": "Rib Fracture."
+        },
+        {
+          "player_id": 673380,
+          "name": "Dedniel N\u00fa\u00f1ez",
+          "status": "out",
+          "reason": "Tommy John surgery recovery."
+        },
+        {
+          "player_id": 656731,
+          "name": "Tylor Megill",
+          "status": "out",
+          "reason": "Right elbow sprain."
+        },
+        {
+          "player_id": 657585,
+          "name": "Reed Garrett",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 640455,
+          "name": "Sean Manaea",
+          "status": "limited",
+          "reason": "61 pitches over the last 3 days"
+        },
+        {
+          "player_id": 543760,
+          "name": "Marcus Semien",
+          "status": "rest_suggested",
+          "reason": "26 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "status": "rest_suggested",
+          "reason": "26 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Nine players are out on the injured list. Sean Manaea is limited by recent workload; there are no players cleared with caution."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Start Nolan McLean: the plan cites a 2.67 ERA and 0.24 xwOBA allowed, with favorable matchup estimates against Hunter Goodman and Brenton Doyle.",
+        "Build the offense around the high-confidence Jose Quintana prediction; Juan Soto has a 0.428 expected xwOBA and a favorable breaking-ball matchup, while noting the small left-handed-batter sample.",
+        "Use Brooks Raley and Luke Weaver to bridge close games to Devin Williams; keep Sean Manaea to a short stint only if needed because he is limited after 61 pitches over the last 3 days.",
+        "Keep Bo Bichette and Marcus Semien in the lineup despite their rest suggestions, as the lineup plan gives a reason for each to play."
+      ],
+      "keys_to_the_game": [
+        "McLean should change speeds against the left-handed heart of Colorado\u2019s order; the Julien and Rumfield offspeed evidence is small.",
+        "Keep breaking balls out of Hunter Goodman\u2019s heart of the zone and use them to expand with two strikes.",
+        "Be patient against Quintana: his overall walk rate is 13.2%, and his average pitches per start is 81.",
+        "Use the available rested late-inning arms in close games and avoid leaning on limited Manaea unless necessary."
+      ],
+      "summary": "The plan fits the high-confidence Quintana starter prediction and pairs McLean\u2019s approach with the projected Rockies lineup. Attack patiently at the plate, use the specified high-leverage bullpen path, and treat the small-sample matchup edges cautiously."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Stay patient; attack the pitch you\u2019re hunting",
+      "message": "Jose Quintana is the high-confidence starter prediction. Make him execute: his overall walk rate is 13.2%, and he averages 81 pitches per start. Juan Soto, look for breaking balls; Quintana\u2019s sample against left-handed hitters is small. Right-handed hitters, be alert for fastballs early and the changeup. The lineup is set, with Juan Soto leading off and Francisco Alvarez hitting second.",
+      "reminders": [
+        "Look for fastballs early from Quintana if you\u2019re right-handed.",
+        "Juan Soto: hunt breaking balls; the matchup sample is small.",
+        "Stay selective and make Quintana work."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "McLean sets the tone; finish with the rested late-inning arms",
+      "message": "Nolan McLean starts, with a target of about six innings and a 95-pitch limit. Change speeds against Colorado\u2019s left-handed bats; the offspeed evidence for Edouard Julien and TJ Rumfield is small. Use breaking balls to expand on Hunter Goodman with two strikes, but keep them out of the heart of the zone. Attack Ezequiel Tovar and Brenton Doyle with strikes. In a close game, bridge with Brooks Raley and Luke Weaver to Devin Williams. Sean Manaea is limited and should be used only if needed, preferably for a short stint.",
+      "reminders": [
+        "Change speeds to the left-handed heart; Julien and Rumfield evidence is small.",
+        "Keep breaking balls out of Goodman\u2019s heart; expand with two strikes.",
+        "Close late: Raley or Weaver to Williams; avoid leaning on limited Manaea."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Follow the approved plan: patient offense, McLean, and a defined late-game path",
+      "message": "The lineup is built around the high-confidence Jose Quintana prediction; keep Bo Bichette and Marcus Semien in despite their rest suggestions. Emphasize patience against Quintana and the small-sample caveat on his left-handed matchup. Nolan McLean starts with a target of about six innings and a 95-pitch limit. In close games, use Brooks Raley and Luke Weaver to bridge to Devin Williams. Sean Manaea is limited after 61 pitches over the last 3 days; reserve him for a short stint only if needed.",
+      "reminders": [
+        "Keep Bo Bichette and Marcus Semien in as planned despite rest suggestions.",
+        "Treat the Quintana left-handed matchup and Julien/Rumfield offspeed evidence as small samples.",
+        "Use Raley and Weaver to bridge to Williams; Manaea only if needed."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 0,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 35.8,
+    "total": {
+      "model_steps": 16,
+      "gateway_cache_hits": 10,
+      "input_tokens": 80541,
+      "cached_tokens": 16532,
+      "output_tokens": 8018,
+      "cost_usd": 0.01137
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 2,
+        "input_tokens": 4466,
+        "cached_tokens": 0,
+        "output_tokens": 349,
+        "seconds": 0.5,
+        "cost_usd": 0.0
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 3,
+        "input_tokens": 20282,
+        "cached_tokens": 4289,
+        "output_tokens": 2485,
+        "seconds": 11.3,
+        "cost_usd": 0.00307
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 12606,
+        "cached_tokens": 5067,
+        "output_tokens": 1506,
+        "seconds": 0.7,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 2,
+        "input_tokens": 17461,
+        "cached_tokens": 3006,
+        "output_tokens": 1238,
+        "seconds": 9.1,
+        "cost_usd": 0.00268
+      },
+      "bench_coach": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 11181,
+        "cached_tokens": 4170,
+        "output_tokens": 1100,
+        "seconds": 12.2,
+        "cost_usd": 0.00204
+      },
+      "manager": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7239,
+        "cached_tokens": 0,
+        "output_tokens": 790,
+        "seconds": 6.6,
+        "cost_usd": 0.00184
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7306,
+        "cached_tokens": 0,
+        "output_tokens": 550,
+        "seconds": 5.1,
+        "cost_usd": 0.00174
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

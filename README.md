@@ -62,6 +62,7 @@ Requires **Python 3.11+**. No other software is needed.
 | `SAFETY.md` | Threats, the defenses built for each, and the tests and screenshots that prove them |
 | `backend/budget.py` | Daily spending cap and free reuse of a recently built plan |
 | `scripts/win_impact.py`, `scripts/win_model.py` | Win model: is the staff's plan analytically more likely to win than the real manager's? 150 sampled 2026 games scored through expected runs and Pythagenpat (report: `evidence/tests/win_impact.md`) |
+| `backend/engine/winmodel.py`, `scripts/lineup_params.py`, `scripts/value_model_search.py` | The win model's lineup optimizer and how its inputs were chosen from 2026 data (reports: `evidence/tests/lineup_params.md`, `value_model_search.md`, `win_model_lineup.md`) |
 | `scripts/tokenomics.py` | Cost per game / month / season / league, the 100 and 10,000 users question, and the cost-cutting A/B test (report: `evidence/tests/phase8_tokenomics.md`) |
 | `frontend/public/teams/` | Ballpark photos (freely licensed, from Wikimedia Commons); photographer and license for each are in `credits.json` and shown in the app |
 | `scripts/` | One-time data build, data spot-checks, and predictor evaluation (graders do not need to run these) |

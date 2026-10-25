@@ -17,7 +17,9 @@ Two ways to grade a lineup, so the app isn't only graded on its own homework:
 Usage:
   python scripts/win_impact.py plans [--n-per-team 5] [--concurrency 4]   # build the sample plans (costs money)
   python scripts/win_impact.py features                                   # stage-1 data for every game (slow, free)
-  python scripts/win_impact.py report                                     # fit, score, bootstrap, write the report
+  python scripts/win_impact.py report                                     # score the staff's plans, write the report
+  python scripts/win_impact.py plans --version v2                         # rebuild the sample with the win-model lineup
+  python scripts/win_impact.py compare                                    # before (v1) vs after (v2), same games
 """
 
 from __future__ import annotations
@@ -61,17 +63,17 @@ def sample_games(n_per_team: int = 5) -> list[dict]:
     return chosen
 
 
-def build_plans(n_per_team: int, concurrency: int) -> None:
+def build_plans(n_per_team: int, concurrency: int, out: Path = PLANS, limit: int | None = None) -> None:
     from backend.agents.team import build_game_plan
 
-    config.RUNS_DIR = PLANS
-    games = sample_games(n_per_team)
+    config.RUNS_DIR = out
+    games = sample_games(n_per_team)[:limit]
     sem = asyncio.Semaphore(concurrency)
     done = {"n": 0, "cost": 0.0}
 
     async def one(g: dict) -> None:
         run_id = f"{g['game_date']}_g{g['game_pk']}_t{g['team_id']}"
-        if (PLANS / run_id / "plan.json").exists():
+        if (out / run_id / "plan.json").exists():
             return
         async with sem:
             try:
@@ -94,18 +96,24 @@ def build_plans(n_per_team: int, concurrency: int) -> None:
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
-    ap.add_argument("step", choices=["plans", "features", "report"])
+    ap.add_argument("step", choices=["plans", "features", "report", "compare"])
     ap.add_argument("--n-per-team", type=int, default=5)
     ap.add_argument("--concurrency", type=int, default=4)
+    ap.add_argument("--version", default="v1", help="v1 = plans/ (before the win-model lineup), v2 = plans_v2/ (after)")
+    ap.add_argument("--limit", type=int, help="only the first N sampled games (smoke test)")
     args = ap.parse_args()
     if args.step == "plans":
-        build_plans(args.n_per_team, args.concurrency)
+        build_plans(args.n_per_team, args.concurrency, PLANS if args.version == "v1" else SAVE / f"plans_{args.version}",
+                    args.limit)
     elif args.step == "features":
         from win_model import build_features
         build_features()
-    else:
+    elif args.step == "report":
         from win_model import write_report
         write_report()
+    else:
+        from win_model import write_comparison
+        write_comparison()
 
 
 if __name__ == "__main__":

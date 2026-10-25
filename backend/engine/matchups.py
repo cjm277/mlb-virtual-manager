@@ -11,10 +11,20 @@ How a score is built (all from data, no LLM):
      with the best combined number (the hitter's xwOBA vs it and the pitcher's xwOBA allowed with it) is the
      one to sit on; the worst is the one to lay off, if it is clearly worse (by .030 or more).
 Missing pieces fall back to the player's overall number vs that hand, then to league average.
+
+Shrink toward season quality (Phase 8+): on every 2026 start, the pitch-type part of this score (the difference
+between steps 2-4 and simply averaging the hitter's xwOBA vs this hand with the pitcher's xwOBA allowed to this
+side) did not predict how hitters actually did (scripts/lineup_params.py). So the expected xwOBA keeps only
+PITCH_TYPE_WEIGHT of that difference (from data/lineup_params.json; 0 on 2026 data). The pitch-group detail and
+hunt / beware stay in the output as scouting color for the hitter plans.
 """
 
 from __future__ import annotations
 
+import json
+from functools import lru_cache
+
+from backend import config
 from backend.engine.common import GROUP_NAMES, league_rates
 from backend.engine.hitting import batter_split
 from backend.engine.pitching import arsenal, pitcher_split, usage_by_group
@@ -23,6 +33,12 @@ from backend.engine.roster import player_info
 EDGE = 0.020  # xwOBA points either side of league average before we call it an edge
 HUNT_MIN_USAGE = 12.0
 BEWARE_GAP = 0.030
+
+
+@lru_cache(maxsize=1)
+def pitch_type_weight() -> float:
+    f = config.REPO_ROOT / "data" / "lineup_params.json"
+    return float(json.loads(f.read_text(encoding="utf-8")).get("matchup_lambda", 1.0)) if f.exists() else 1.0
 
 
 def batting_side(bat_side: str | None, pitch_hand: str | None) -> str:
@@ -42,7 +58,8 @@ def _pitcher_group_xwoba(pitcher_id: int, game_date: str, stand: str) -> dict[st
     return {g: s[0] / s[1] for g, s in sums.items() if s[1]}
 
 
-def matchup(batter_id: int, pitcher_id: int, game_date: str) -> dict:
+def matchup(batter_id: int, pitcher_id: int, game_date: str, weight: float | None = None) -> dict:
+    """weight: how much of the pitch-type detail to keep (None = the measured PITCH_TYPE_WEIGHT; 1.0 = raw)."""
     b, p = player_info(batter_id) or {}, player_info(pitcher_id) or {}
     hand = p.get("pitch_hand") or "R"
     side = batting_side(b.get("bat_side"), hand)
@@ -70,6 +87,9 @@ def matchup(batter_id: int, pitcher_id: int, game_date: str) -> dict:
     if p_vs_side["sample"]["flag"] == "small":
         flags.add(f"pitcher has a small sample vs {'LHB' if side == 'L' else 'RHB'}")
 
+    base = ((b_vs_hand["xwoba"] or league) + (p_vs_side["xwoba"] or league)) / 2
+    keep = pitch_type_weight() if weight is None else weight
+    expected = base + keep * (expected - base)
     diff = expected - league
     combined = {name: (v["batter_xwoba"] + v["pitcher_xwoba_allowed"]) / 2 for name, v in parts.items()
                 if v["pitcher_usage_pct"] >= HUNT_MIN_USAGE}

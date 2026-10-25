@@ -1,0 +1,1065 @@
+{
+  "run_id": "2026-08-29_g823665_t145",
+  "status": "needs_human_review",
+  "game": {
+    "game_pk": 823665,
+    "season": 2026,
+    "game_date": "2026-08-29",
+    "game_number": 1,
+    "day_night": "day",
+    "venue": "Target Field",
+    "team": "Chicago White Sox",
+    "team_id": 145,
+    "team_record_going_in": "71-63",
+    "opponent": "Minnesota Twins",
+    "opponent_id": 142,
+    "opponent_record_going_in": "64-71",
+    "home_away": "away",
+    "bats_last": false,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 641927,
+        "name": "Bailey Ober"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "position": "1B",
+          "bats": "L",
+          "reason": "A fastball fit against Ober; plays despite the rest suggestion, as sitting costs 1.67 win-probability points."
+        },
+        {
+          "slot": 2,
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "position": "2B",
+          "bats": "L",
+          "reason": "His .391 fastball-group mark gives him an edge against Ober\u2019s .338 allowed to lefties."
+        },
+        {
+          "slot": 3,
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "position": "RF",
+          "bats": "S",
+          "reason": "His .393 fastball-group mark compares well with Ober\u2019s .338 allowed to left-handed hitters."
+        },
+        {
+          "slot": 4,
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "position": "3B",
+          "bats": "R",
+          "reason": "His fastball matchup is favorable, with Ober allowing .391 to righties; plays despite the rest suggestion, as sitting costs 1.90 win-probability points."
+        },
+        {
+          "slot": 5,
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "position": "CF",
+          "bats": "L",
+          "reason": "No clear platoon edge, though Ober allows .399 to lefties on offspeed; plays despite the rest suggestion, as sitting costs 0.79 win-probability points."
+        },
+        {
+          "slot": 6,
+          "player_id": 643217,
+          "name": "Andrew Benintendi",
+          "position": "LF",
+          "bats": "L",
+          "reason": "No clear platoon edge; his .332 breaking-ball mark is above Ober\u2019s .277 allowed."
+        },
+        {
+          "slot": 7,
+          "player_id": 545341,
+          "name": "Randal Grichuk",
+          "position": "DH",
+          "bats": "R",
+          "reason": "No clear platoon edge; his pitch-group samples are small."
+        },
+        {
+          "slot": 8,
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "position": "SS",
+          "bats": "L",
+          "reason": "No clear platoon edge, and his .212 against breaking balls trails Ober\u2019s .277 allowed."
+        },
+        {
+          "slot": 9,
+          "player_id": 668670,
+          "name": "Jake Rogers",
+          "position": "C",
+          "bats": "R",
+          "reason": "Ober has the edge; the offspeed matchup sample is small."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "role": "pinch_hitter",
+          "note": "Highest-ranked bench bat; rest is suggested after 16 straight starts."
+        },
+        {
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "role": "pinch_runner",
+          "note": "Speed option for a slow runner in a close late game."
+        },
+        {
+          "player_id": 691011,
+          "name": "Drew Romo",
+          "role": "backup_catcher",
+          "note": "Reserve catcher; keep available if Rogers needs replacing."
+        },
+        {
+          "player_id": 686668,
+          "name": "Brenton Doyle",
+          "role": "defensive_replacement",
+          "note": "Outfield coverage for a late defensive change."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "Seventh inning or later, tie game or behind, with a left-handed reliever facing a left-handed starter due up.",
+          "bench_player_id": 805367,
+          "replaces_player_id": 695657,
+          "reason": "Meidroth is the highest-ranked bench bat and bats right-handed; use him against the lefty."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning in a close game, with a slow runner reaching base and a run worth prioritizing.",
+          "bench_player_id": 682668,
+          "replaces_player_id": 808959,
+          "reason": "Acu\u00f1a offers a speed option to improve the run-scoring chance."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late innings with a lead and a need for an outfield replacement.",
+          "bench_player_id": 686668,
+          "replaces_player_id": 671976,
+          "reason": "Doyle provides outfield coverage; make the change when Peters\u2019s spot is due up or covered."
+        }
+      ],
+      "summary": "The model projects 4.74 runs. The order leads with left-handed fastball-fit hitters as requested; Vargas, Murakami, and Peters remain despite rest suggestions because sitting them costs more than the rest-day threshold."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 607200,
+        "name": "Erick Fedde",
+        "throws": "R",
+        "reason": "No listed starter is ready, so use a bullpen game; Erick Fedde is available and rested for length, with expected xwOBA 0.311 against Royce Lewis and 0.316 against Luke Keaschall.",
+        "expected_innings": 4.0,
+        "pitch_count_limit": 70,
+        "pitch_mix": [
+          {
+            "pitch": "sweeper",
+            "vs_lhb_pct": 31.0,
+            "vs_rhb_pct": 45.0,
+            "purpose": "Use as the main breaking ball, especially to generate chase against Ryan Jeffers."
+          },
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 30.0,
+            "vs_rhb_pct": 30.0,
+            "purpose": "Work early in counts and keep the ball down."
+          },
+          {
+            "pitch": "cutter",
+            "vs_lhb_pct": 19.0,
+            "vs_rhb_pct": 24.0,
+            "purpose": "Change the fastball look and avoid predictable locations."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 20.0,
+            "vs_rhb_pct": 1.0,
+            "purpose": "Use below the zone to left-handed hitters, including Trevor Larnach."
+          }
+        ],
+        "keys": [
+          "Mix breaking balls to Ryan Jeffers; the scouting report gives his breaking-ball xwOBA as 0.316 and whiff rate as 28.8%.",
+          "Use offspeed below the zone to Trevor Larnach; his offspeed xwOBA is 0.242.",
+          "Keep the ball out of the heart against Kody Clemens and expand with breaking stuff only when ahead.",
+          "Avoid free baserunners to Luke Keaschall; his xwOBA is 0.314."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 656794,
+          "name": "Sean Newcomb",
+          "throws": "L",
+          "role": "setup",
+          "note": "Available left-handed leverage arm; favor him against left-handed bats."
+        },
+        {
+          "player_id": 663855,
+          "name": "Jordan Hicks",
+          "throws": "R",
+          "role": "setup",
+          "note": "Available leverage arm for high-pressure innings."
+        },
+        {
+          "player_id": 670950,
+          "name": "Trevor Richards",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available for middle relief and to bridge innings."
+        },
+        {
+          "player_id": 699823,
+          "name": "Tyler Davis",
+          "throws": "R",
+          "role": "closer",
+          "note": "Available; reserve for a close late lead."
+        },
+        {
+          "player_id": 656457,
+          "name": "Tyler Gilbert",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Available left-handed matchup option."
+        },
+        {
+          "player_id": 691799,
+          "name": "Grant Taylor",
+          "throws": "R",
+          "role": "setup",
+          "note": "Limited after pitching yesterday; use only if needed and prefer rested arms first."
+        },
+        {
+          "player_id": 663542,
+          "name": "Bryan Hudson",
+          "throws": "L",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed or for one batter."
+        },
+        {
+          "player_id": 696146,
+          "name": "Hagen Smith",
+          "throws": "L",
+          "role": "unavailable",
+          "note": "Unavailable after throwing 33 pitches yesterday."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use rested leverage arms first and Tyler Davis to finish; avoid limited relievers unless needed.",
+          "pitcher_ids": [
+            656794,
+            663855,
+            699823
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use the best rested matchup arms and hold Davis for the highest-leverage spot.",
+          "pitcher_ids": [
+            663855,
+            656794,
+            670950
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Preserve leverage arms with middle relief, then use the rested left-handed matchup option if needed.",
+          "pitcher_ids": [
+            670950,
+            656457,
+            691799
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use middle relief first, conserving leverage arms; turn to a limited reliever only if the game remains necessary to cover.",
+          "pitcher_ids": [
+            670950,
+            656457,
+            663542
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Fedde is assigned length for the bullpen game; if he exits early, bridge with rested middle relief and leverage arms.",
+          "pitcher_ids": [
+            670950,
+            656457,
+            663855,
+            656794
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use rested leverage arms in order and keep Davis for the highest-leverage inning.",
+          "pitcher_ids": [
+            663855,
+            656794,
+            670950,
+            699823
+          ]
+        }
+      ],
+      "summary": "No listed starter meets the four-day rest rule, so this is a bullpen game with available, rested Erick Fedde assigned the length role\u2014not an unsupported emergency opener. Taylor and Hudson are limited after pitching yesterday, and Hagen Smith is unavailable."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 641927,
+        "name": "Bailey Ober",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [
+          "Zebby Matthews"
+        ],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "changeup",
+          "usage_pct": 34.0,
+          "velo": 82.7,
+          "whiff_pct": 22.6,
+          "note": "His most-used pitch; changeup results against lefties give you a chance to drive it."
+        },
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 32.7,
+          "velo": 88.0,
+          "whiff_pct": 15.0,
+          "note": "A frequent offering, but it has been hit harder than his sweeper."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 17.1,
+          "velo": 82.3,
+          "whiff_pct": 12.8,
+          "note": "A breaking option he uses more often against right-handed hitters."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 12.1,
+          "velo": 76.1,
+          "whiff_pct": 41.9,
+          "note": "His sharpest miss bat; avoid chasing it."
+        }
+      ],
+      "how_to_attack": [
+        "Lefties: look for fastballs\u2014he uses the fastball group 35.6% of the time, and our left-handed hitters show stronger fastball numbers in these matchups.",
+        "Righties: be ready for breaking balls; he uses that group 39.2% of the time, but don\u2019t chase his sweeper.",
+        "Make him work: his average is 86 pitches per start and 5.4 innings per start.",
+        "Use the changeup tendency as a cue, especially from the left side: it is his most-used pitch overall at 34.0%. "
+      ],
+      "best_matchups": [
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "expected_xwoba": 0.36,
+          "edge": "batter",
+          "note": "Fastballs are his best group (.410 xwOBA) and Ober allows .338 against lefties."
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "expected_xwoba": 0.35,
+          "edge": "batter",
+          "note": "Strong fastball-group mark (.391 xwOBA); Ober allows .338 to lefties on fastballs."
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "expected_xwoba": 0.348,
+          "edge": "batter",
+          "note": "Fastballs fit his profile (.379 xwOBA), and Ober allows .391 against righties in that group."
+        },
+        {
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "expected_xwoba": 0.343,
+          "edge": "batter",
+          "note": "His fastball-group xwOBA is .393; Ober allows .338 to left-handed hitters."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 686668,
+          "name": "Brenton Doyle",
+          "expected_xwoba": 0.276,
+          "edge": "pitcher",
+          "note": "Breaking balls are a tough fit (.148 xwOBA), and Ober allows .249 to righties in that group."
+        },
+        {
+          "player_id": 668670,
+          "name": "Jake Rogers",
+          "expected_xwoba": 0.292,
+          "edge": "pitcher",
+          "note": "Ober\u2019s offspeed group has limited him (.099 xwOBA); the matchup sample is small."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 672782,
+          "name": "Yoendrys G\u00f3mez",
+          "throws": "R",
+          "note": "Available; leads this group with 20 saves."
+        },
+        {
+          "player_id": 702193,
+          "name": "Andrew Morris",
+          "throws": "R",
+          "note": "Available with 20 holds."
+        },
+        {
+          "player_id": 656546,
+          "name": "Jeff Hoffman",
+          "throws": "R",
+          "note": "Available with 16 holds."
+        },
+        {
+          "player_id": 621345,
+          "name": "A.J. Minter",
+          "throws": "L",
+          "note": "Available left-hander with 6 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "bats": "L",
+          "expected_xwoba": 0.36,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: you're at .410 against them, while Ober allows .338 to lefties. His breaking-ball allowance is .277; your .351 there makes it a less favorable lane."
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "bats": "L",
+          "expected_xwoba": 0.35,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt the fastball: your mark is .391 and Ober allows .338 to lefties. Breaking balls are less inviting (.309 for you, .277 allowed)."
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "bats": "R",
+          "expected_xwoba": 0.348,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: you're at .379 and Ober allows .391 to righties. Your .426 offspeed mark is based on a small sample; be cautious against that pitch group."
+        },
+        {
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "bats": "S",
+          "expected_xwoba": 0.343,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your .393 xwOBA compares well with Ober's .338 allowed to lefties. His breaking-ball group allows .277, so don't chase it."
+        },
+        {
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "bats": "L",
+          "expected_xwoba": 0.334,
+          "edge": "even",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Look for offspeed: you're at .311 and Ober allows .399 to lefties. Breaking balls are a tougher lane (.296 for you, .277 allowed)."
+        },
+        {
+          "player_id": 643217,
+          "name": "Andrew Benintendi",
+          "bats": "L",
+          "expected_xwoba": 0.329,
+          "edge": "even",
+          "hunt": "offspeed",
+          "beware": null,
+          "approach": "Be ready for offspeed: Ober uses it 40.1% to lefties and allows .399, though your mark is .266. Your breaking-ball number is .332 against his .277 allowed."
+        },
+        {
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "bats": "L",
+          "expected_xwoba": 0.317,
+          "edge": "even",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Look for offspeed: your .370 xwOBA is close to Ober's .399 allowed to lefties. Your .212 against breaking balls trails his .277 allowed."
+        },
+        {
+          "player_id": 545341,
+          "name": "Randal Grichuk",
+          "bats": "R",
+          "expected_xwoba": 0.302,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Sit fastballs: your .236 against them is based on a small sample, while Ober allows .391 to righties. Your offspeed and breaking-ball samples are also small."
+        },
+        {
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "bats": "R",
+          "expected_xwoba": 0.3,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .328 and Ober allows .391 to righties. Your .210 against breaking balls is below his .249 allowed."
+        },
+        {
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "bats": "R",
+          "expected_xwoba": 0.297,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: your .328 xwOBA compares with Ober's .391 allowed to righties. Your .210 offspeed number is from a small sample; avoid chasing breaking balls (.203 for you, .249 allowed)."
+        },
+        {
+          "player_id": 691011,
+          "name": "Drew Romo",
+          "bats": "S",
+          "expected_xwoba": 0.296,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .307 and Ober allows .338 to lefties. His breaking-ball group allows .277, against your .237."
+        },
+        {
+          "player_id": 668670,
+          "name": "Jake Rogers",
+          "bats": "R",
+          "expected_xwoba": 0.292,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt the fastball: your .303 xwOBA compares with Ober's .391 allowed to righties. Lay off offspeed; your .099 mark is from a small sample."
+        },
+        {
+          "player_id": 686668,
+          "name": "Brenton Doyle",
+          "bats": "R",
+          "expected_xwoba": 0.276,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Stay on fastballs: your .303 compares with Ober's .391 allowed to righties. Breaking balls are a poor fit (.148 for you against .249 allowed)."
+        }
+      ],
+      "summary": "Bailey Ober is the high-confidence starter, with Zebby Matthews the alternative; he works primarily with changeup and four-seam fastball. Left-handed hitters should hunt fastballs, while righties must avoid chasing his breaking ball group. Vargas, Murakami, and Meidroth are rest-suggested by the Team Doctor, so lineup decisions remain with the manager."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 807712,
+          "name": "Luke Keaschall",
+          "position": "RF",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 605137,
+          "name": "Josh Bell",
+          "position": "DH",
+          "bats": "S"
+        },
+        {
+          "slot": 3,
+          "player_id": 680777,
+          "name": "Ryan Jeffers",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 663616,
+          "name": "Trevor Larnach",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 686797,
+          "name": "Brooks Lee",
+          "position": "3B",
+          "bats": "S"
+        },
+        {
+          "slot": 8,
+          "player_id": 605170,
+          "name": "Victor Caratini",
+          "position": "CF",
+          "bats": "S"
+        },
+        {
+          "slot": 9,
+          "player_id": 701785,
+          "name": "Kaelen Culpepper",
+          "position": "SS",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 680777,
+          "name": "Ryan Jeffers",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 605137,
+          "name": "Josh Bell",
+          "position": "DH",
+          "bats": "S"
+        },
+        {
+          "slot": 4,
+          "player_id": 807712,
+          "name": "Luke Keaschall",
+          "position": "RF",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 686797,
+          "name": "Brooks Lee",
+          "position": "3B",
+          "bats": "S"
+        },
+        {
+          "slot": 7,
+          "player_id": 701785,
+          "name": "Kaelen Culpepper",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 605170,
+          "name": "Victor Caratini",
+          "position": "CF",
+          "bats": "S"
+        },
+        {
+          "slot": 9,
+          "player_id": 668952,
+          "name": "Ryan Kreidler",
+          "position": "2B",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 807712,
+          "name": "Luke Keaschall",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.314,
+          "weakness": "No clear pitch-type weakness available.",
+          "how_to_pitch": "Work carefully and avoid free baserunners; his xwOBA is 0.314."
+        },
+        {
+          "player_id": 605137,
+          "name": "Josh Bell",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.329,
+          "weakness": "No pitch-type profile available; xwOBA is 0.296 vs LHP and 0.344 vs RHP.",
+          "how_to_pitch": "Against a right-hander, change the look and avoid middle-in; his xwOBA is 0.344 vs RHP."
+        },
+        {
+          "player_id": 680777,
+          "name": "Ryan Jeffers",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.351,
+          "weakness": "Breaking balls: xwOBA 0.316 and whiff rate 28.8%; versus LHP, xwOBA 0.379 (moderate sample).",
+          "how_to_pitch": "Use breaking balls to get chase or miss, but do not assume a left-hander has the advantage; his xwOBA is 0.379 vs LHP."
+        },
+        {
+          "player_id": 663616,
+          "name": "Trevor Larnach",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.333,
+          "weakness": "Offspeed: xwOBA 0.242 and whiff rate 41.7%; vs LHP xwOBA 0.289, small sample.",
+          "how_to_pitch": "Mix offspeed below the zone; the platoon edge favors a left-hander, but that split is a small sample."
+        },
+        {
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.333,
+          "weakness": "Chases breaking balls (37.3%), though his xwOBA on them is 0.319; avoid treating them as an automatic out.",
+          "how_to_pitch": "Expand with breaking stuff only when ahead; keep the ball out of the heart because he has power."
+        },
+        {
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.315,
+          "weakness": "Breaking balls: xwOBA 0.264 and whiff rate 41.2%; vs RHP xwOBA 0.298.",
+          "how_to_pitch": "Favor breaking balls and offspeed; a right-hander has the better matchup by his split, while a left-hander should be cautious."
+        },
+        {
+          "player_id": 686797,
+          "name": "Brooks Lee",
+          "bats": "S",
+          "threat": "low",
+          "xwoba": 0.274,
+          "weakness": "xwOBA is 0.246 vs LHP and 0.287 vs RHP.",
+          "how_to_pitch": "Use the matchup split as a guide and challenge him; his overall xwOBA is 0.274."
+        },
+        {
+          "player_id": 605170,
+          "name": "Victor Caratini",
+          "bats": "S",
+          "threat": "low",
+          "xwoba": 0.319,
+          "weakness": "No pitch-type profile available; xwOBA is similar vs LHP (0.323) and RHP (0.317).",
+          "how_to_pitch": "Stay in the zone and avoid giving him a free pass; the splits show no clear hand advantage."
+        },
+        {
+          "player_id": 701785,
+          "name": "Kaelen Culpepper",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.331,
+          "weakness": "xwOBA is 0.251 vs LHP and 0.398 vs RHP; moderate sample.",
+          "how_to_pitch": "A left-hander appears preferable by the split, but treat it cautiously because the sample is moderate."
+        },
+        {
+          "player_id": 668952,
+          "name": "Ryan Kreidler",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.286,
+          "weakness": "No pitch-type profile available; xwOBA is 0.289 vs LHP and 0.284 vs RHP.",
+          "how_to_pitch": "Attack the zone and avoid free baserunners; his splits show no clear hand advantage."
+        }
+      ],
+      "summary": "Ryan Jeffers is the clearest threat, with Kody Clemens and Trevor Larnach adding power; use breaking balls against Jeffers and offspeed against Larnach. The split numbers do not support one preferred starter hand overall: Jeffers is stronger vs LHP, while Larnach and Kaelen Culpepper show better results vs RHP (Culpepper\u2019s split sample is moderate)."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 805326,
+          "name": "Tyler Schweitzer",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 623211,
+          "name": "Huascar Brazob\u00e1n",
+          "status": "out",
+          "reason": "Left lat strain."
+        },
+        {
+          "player_id": 663436,
+          "name": "Davis Martin",
+          "status": "out",
+          "reason": "Right middle finger blister."
+        },
+        {
+          "player_id": 669684,
+          "name": "Chris Murphy",
+          "status": "out",
+          "reason": "Left flexor strain."
+        },
+        {
+          "player_id": 663698,
+          "name": "Joey Bart",
+          "status": "out",
+          "reason": "Fifth metacarpal fracture in his left hand."
+        },
+        {
+          "player_id": 691019,
+          "name": "Kyle Teel",
+          "status": "out",
+          "reason": "Left ankle sprain."
+        },
+        {
+          "player_id": 673929,
+          "name": "Jordan Leasure",
+          "status": "out",
+          "reason": "Right flexor strain."
+        },
+        {
+          "player_id": 695020,
+          "name": "Tanner Murray",
+          "status": "out",
+          "reason": "Left shoulder dislocation."
+        },
+        {
+          "player_id": 681460,
+          "name": "Brooks Baldwin",
+          "status": "out",
+          "reason": "Right elbow sprain."
+        },
+        {
+          "player_id": 678024,
+          "name": "Mike Vasil",
+          "status": "out",
+          "reason": "Tommy John surgery recovery."
+        },
+        {
+          "player_id": 696146,
+          "name": "Hagen Smith",
+          "status": "out",
+          "reason": "threw 33 pitches yesterday"
+        },
+        {
+          "player_id": 691799,
+          "name": "Grant Taylor",
+          "status": "limited",
+          "reason": "pitched yesterday (27 pitches)"
+        },
+        {
+          "player_id": 663542,
+          "name": "Bryan Hudson",
+          "status": "limited",
+          "reason": "pitched yesterday (16 pitches)"
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "status": "rest_suggested",
+          "reason": "14 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "status": "rest_suggested",
+          "reason": "16 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "status": "rest_suggested",
+          "reason": "15 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "status": "rest_suggested",
+          "reason": "10 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "The injured/listed players and Hagen Smith are unavailable. Grant Taylor and Bryan Hudson are limited after pitching yesterday; no players were flagged cleared with caution."
+    },
+    "manager_review": {
+      "approved": false,
+      "fixes": [
+        {
+          "to": "pitching_coach",
+          "instruction": "Remove Grant Taylor (limited after pitching yesterday) from the blowout_lead scenario; use rested relievers only unless the game requires Taylor."
+        }
+      ],
+      "key_decisions": [
+        "Keep the high-confidence Bailey Ober matchup: left-handed hitters should hunt fastballs, while righties should avoid chasing his breaking-ball group.",
+        "Give Erick Fedde the length role in the bullpen game; target 4.0 innings with a 70-pitch limit, then use rested bullpen arms first.",
+        "Attack Ryan Jeffers with breaking balls; his breaking-ball xwOBA is 0.316 and whiff rate is 28.8%.",
+        "Use offspeed below the zone against Trevor Larnach; his offspeed xwOBA is 0.242.",
+        "Keep the rest-suggested fastball fits Munetaka Murakami, Miguel Vargas, and Tristan Peters in the lineup, as the lineup report says sitting them costs 1.67, 1.90, and 0.79 win-probability points, respectively."
+      ],
+      "keys_to_the_game": [
+        "Make Bailey Ober work; his average is 86 pitches per start and 5.4 innings per start.",
+        "Have left-handed hitters look for Ober\u2019s fastballs and right-handed hitters stay disciplined against breaking balls.",
+        "Keep Jeffers and Clemens from doing damage; use breaking balls to Jeffers and keep the ball out of the heart against Clemens.",
+        "Avoid free baserunners to Luke Keaschall and stay out of the heart against Josh Bell.",
+        "Preserve rested leverage arms; use limited relievers only when needed."
+      ],
+      "summary": "The lineup is built around the high-confidence Bailey Ober prediction, with left-handed fastball fits near the top. Erick Fedde is assigned length in a bullpen game, but the blowout-lead plan needs a change because it includes limited reliever Grant Taylor."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Be ready for Ober\u2019s fastball; make him work",
+      "message": "Bailey Ober is the high-confidence starter prediction. Left-handed hitters should hunt fastballs; right-handed hitters, stay disciplined against his breaking-ball group and don\u2019t chase the sweeper. Make him work\u2014his average is 86 pitches per start and 5.4 innings per start. Keep pressure on once Minnesota turns to its bullpen, especially Yoendrys G\u00f3mez, Andrew Morris, Jeff Hoffman, and left-hander A.J. Minter.",
+      "reminders": [
+        "Trust the fastball hunt from the left side.",
+        "Righties: don\u2019t chase breaking balls.",
+        "Stay patient and make Ober work."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Fedde sets the length; attack with purpose",
+      "message": "Erick Fedde has the length role in this bullpen game: target 4.0 innings with a 70-pitch limit. Use breaking balls to get Ryan Jeffers to chase or miss; mix offspeed below the zone to Trevor Larnach. Keep the ball out of the heart against Kody Clemens and avoid free baserunners to Luke Keaschall. Use rested bullpen arms first; Sean Newcomb and Jordan Hicks are leverage options, with Tyler Davis reserved to finish a close late lead. Grant Taylor and Bryan Hudson are limited after pitching yesterday; Hagen Smith is unavailable.",
+      "reminders": [
+        "Fedde: 4.0-inning target, 70-pitch limit.",
+        "Breaking balls to Jeffers; offspeed below the zone to Larnach.",
+        "Prefer rested relievers; use limited arms only if needed."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Execute the approved matchup plan and protect rested arms",
+      "message": "The lineup keeps rest-suggested Munetaka Murakami, Miguel Vargas, and Tristan Peters in place. Against high-confidence starter prediction Bailey Ober, emphasize fastballs to left-handed hitters and discipline against breaking balls for righties; make him work. Erick Fedde is assigned length, targeting 4.0 innings with a 70-pitch limit. Prioritize rested relievers; Grant Taylor and Bryan Hudson are limited, and Hagen Smith is unavailable. Use breaking balls to Ryan Jeffers and offspeed below the zone to Trevor Larnach. The blowout-lead scenario uses rested middle relief and the rested left-handed matchup option\u2014not limited Grant Taylor.",
+      "reminders": [
+        "Keep the lineup as approved despite rest suggestions.",
+        "Protect rested leverage arms; Taylor and Hudson are limited.",
+        "Use the corrected blowout-lead plan."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 2,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 76.6,
+    "total": {
+      "model_steps": 33,
+      "gateway_cache_hits": 11,
+      "input_tokens": 192688,
+      "cached_tokens": 97358,
+      "output_tokens": 17295,
+      "cost_usd": 0.02252
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 2,
+        "input_tokens": 4507,
+        "cached_tokens": 0,
+        "output_tokens": 428,
+        "seconds": 0.5,
+        "cost_usd": 0.0
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 2,
+        "input_tokens": 16799,
+        "cached_tokens": 2220,
+        "output_tokens": 2150,
+        "seconds": 10.8,
+        "cost_usd": 0.00283
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 3,
+        "input_tokens": 12240,
+        "cached_tokens": 4869,
+        "output_tokens": 1639,
+        "seconds": 0.8,
+        "cost_usd": 0.0
+      },
+      "pitching_coach": {
+        "calls": 2,
+        "model_steps": 10,
+        "gateway_cache_hits": 4,
+        "input_tokens": 56662,
+        "cached_tokens": 40313,
+        "output_tokens": 3986,
+        "seconds": 18.3,
+        "cost_usd": 0.00365
+      },
+      "bench_coach": {
+        "calls": 3,
+        "model_steps": 11,
+        "gateway_cache_hits": 0,
+        "input_tokens": 74521,
+        "cached_tokens": 49956,
+        "output_tokens": 6663,
+        "seconds": 43.4,
+        "cost_usd": 0.00924
+      },
+      "manager": {
+        "calls": 3,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 20908,
+        "cached_tokens": 0,
+        "output_tokens": 1891,
+        "seconds": 14.1,
+        "cost_usd": 0.00513
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7051,
+        "cached_tokens": 0,
+        "output_tokens": 538,
+        "seconds": 4.7,
+        "cost_usd": 0.00168
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

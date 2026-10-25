@@ -34,6 +34,7 @@ class PlanDeps:
     ledger: list[Any] = field(default_factory=list)
     # (agent name, its output) -> the code checker's problems with it; set by build_game_plan (see team.py)
     self_check: Callable[[str, Any], list[str]] | None = None
+    unavailable: set[int] = field(default_factory=set)      # the Team Doctor's OUT list, set once he reports
 
 
 def _call(ctx: RunContext[PlanDeps], name: str, args: dict, fn: Callable[[], Any]) -> Any:
@@ -152,6 +153,15 @@ def matchups(ctx: RunContext[PlanDeps], pitcher_id: int, batter_ids: list[int]) 
                  lambda: shape(tools.get_matchups(d.game_pk, pitcher_id, batter_ids)))
 
 
+def model_lineup(ctx: RunContext[PlanDeps], pitcher_id: int) -> dict:
+    """The lineup the win model rates best against this starter (players, positions, batting order), with each
+    hitter's runs per PA, the rest-day calls priced in win probability, and the bench ranked. Players the Team
+    Doctor lists as out are already excluded."""
+    d = ctx.deps
+    return _call(ctx, "model_lineup", {"pitcher_id": pitcher_id},
+                 lambda: tools.get_model_lineup(d.game_pk, d.team_id, pitcher_id, d.unavailable))
+
+
 ALL_TOOLS = {f.__name__: f for f in (game_context, roster_and_injuries, bullpen_status, hitters_overview,
                                      starter_options, predict_opponent_starter, predict_opponent_lineup,
-                                     hitter_profile, pitcher_profile, matchups)}
+                                     hitter_profile, pitcher_profile, matchups, model_lineup)}

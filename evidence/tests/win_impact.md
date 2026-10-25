@@ -1,6 +1,6 @@
 # Win model: is the staff's plan more likely to win than the manager's?
 
-Generated 2026-10-24 21:14 by `scripts/win_impact.py`. Per-game numbers: `evidence/logs/win_impact/results.json`; the plans and their audit trails: `evidence/logs/win_impact/plans/`.
+Generated 2026-10-24 22:02 by `scripts/win_impact.py`. Per-game numbers: `evidence/logs/win_impact/results.json`; the plans and their audit trails: `evidence/logs/win_impact/plans/`.
 
 **The question.** Given only what was known the day before the game, is the lineup and starting pitcher our staff chose analytically more likely to win than the lineup and starter the real manager chose? Both go through the same win model, with everything else held fixed: the opponent's real lineup and starter, both bullpens, and home field. Game results play no part in the comparison.
 
@@ -117,3 +117,5 @@ Correlation between the matchup edge and the starter edge: 0.53.
 - **No hand-picked games.** The sample is 5 per team, spread evenly over the season (seed 409).
 - **Results checked from two independent angles.** The model was re-run under 27 different settings and with 1,000 bootstrap resamples.
 - **Possibly hurt starters excluded.** Dropping the 47 plans that started a hitter who may have been hurt changes the overall result by less than 0.1 points.
+
+**Follow-up (done):** the win-model lineup and the matchup shrink were built and re-scored on the same 150 games. See `evidence/tests/win_model_lineup.md`: about +1.5 wins per 162 on the independent lens (+0.9 to +2.2).

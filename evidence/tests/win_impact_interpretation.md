@@ -27,3 +27,5 @@
 - **No hand-picked games.** The sample is 5 per team, spread evenly over the season (seed 409).
 - **Results checked from two independent angles.** The model was re-run under 27 different settings and with 1,000 bootstrap resamples.
 - **Possibly hurt starters excluded.** Dropping the 47 plans that started a hitter who may have been hurt changes the overall result by less than 0.1 points.
+
+**Follow-up (done):** the win-model lineup and the matchup shrink were built and re-scored on the same 150 games. See `evidence/tests/win_model_lineup.md`: about +1.5 wins per 162 on the independent lens (+0.9 to +2.2).

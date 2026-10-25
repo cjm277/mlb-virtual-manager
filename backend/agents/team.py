@@ -57,7 +57,7 @@ SPECS: dict[str, Spec] = {
                           ("predict_opponent_lineup", "hitters_overview", "hitter_profile")),
     "pitching_coach": Spec("Pitching Coach", PitchingPlan,
                            ("starter_options", "pitcher_profile", "bullpen_status", "matchups")),
-    "bench_coach": Spec("Bench Coach", LineupPlan, ("hitters_overview", "hitter_profile", "matchups")),
+    "bench_coach": Spec("Bench Coach", LineupPlan, ("model_lineup", "hitters_overview", "hitter_profile", "matchups")),
     "manager": Spec("Manager", ManagerReview, ()),
     "clubhouse_comms": Spec("Clubhouse Comms", CommsPackage, ()),
     # Not part of the build: the chat assistant that edits a finished plan (backend/chat.py).
@@ -341,6 +341,7 @@ async def build_game_plan(game_pk: int, team_id: int, notes: str | None = None,
     try:
         r["medical"] = await call("team_doctor", _tasks(r)["team_doctor"])
         stamp_rest_days(r["medical"], ctx)
+        deps.unavailable = {s.player_id for s in r["medical"].statuses if s.status == "out"}
         r["scout_pitchers"], r["scout_hitters"] = await asyncio.gather(
             call("scout_pitchers", _tasks(r)["scout_pitchers"]), call("scout_hitters", _tasks(r)["scout_hitters"]))
         stamp_probability(r["scout_pitchers"], ctx)

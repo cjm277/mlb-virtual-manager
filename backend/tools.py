@@ -205,5 +205,17 @@ def pitcher_role(player_id: int, game_date: str) -> dict:
     return {"starts": r["gs"] or 0, "saves": r["sv"] or 0, "holds": r["hld"] or 0}
 
 
+def get_model_lineup(game_pk: int, team_id: int, pitcher_id: int, unavailable: set[int] | None = None) -> dict:
+    """The lineup the win model rates best against this starter: nine players, positions and batting order that
+    maximize expected runs (hitter xwOBA, his platoon split, the starter's quality and depth), with each player's
+    runs per plate appearance, the rest-day decisions priced in win probability, and the bench ranked."""
+    from backend.engine.winmodel import best_lineup
+
+    g = _game(game_pk, team_id)
+    if not roster.player_info(pitcher_id):
+        raise ValueError(f"Unknown pitcher_id {pitcher_id}.")
+    return best_lineup(team_id, g["game_date"], pitcher_id, set(unavailable or ()), home=g["home_team_id"] == team_id)
+
+
 TOOLS = [get_game_context, get_roster_and_injuries, get_bullpen_status, get_hitter_profile, get_pitcher_profile,
-         get_hitters_overview, get_starter_options, predict_opponent_starter, predict_opponent_lineup, get_matchups]
+         get_hitters_overview, get_starter_options, predict_opponent_starter, predict_opponent_lineup, get_matchups, get_model_lineup]
