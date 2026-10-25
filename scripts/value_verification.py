@@ -22,6 +22,7 @@ Usage: python scripts/value_verification.py      (writes evidence/tests/value_ve
        python scripts/value_verification.py --known-starter    (add: lineup rebuilt for the starter who actually
                                                                 pitched, as MLB's announced probables would allow;
                                                                 run after the full run, which does not keep it)
+       python scripts/value_verification.py --lineup-valuation (add: value of the lineup insight alone to one club)
 """
 
 from __future__ import annotations
@@ -1004,7 +1005,7 @@ def render(o: dict) -> str:
         "illustration, not a market quote.",
         "",
     ]
-    return "\n".join(L + render_known(o))
+    return "\n".join(L + render_known(o) + render_lineup_valuation(o))
 
 
 # ---------------------------------------------------------------------------
@@ -1185,9 +1186,153 @@ def render_known(o: dict) -> list[str]:
         f"- **Where it matters:** the gain concentrates where expected, in the {K['n'] - K['hand_right']} games where the "
         "guess had the wrong hand. Even there it is a few tenths of a win per 162 such games, and they are under a tenth of "
         "the schedule.",
-        "- **Recommendation:** use MLB's announced probable starters for near-term games when they are available, and keep "
-        "the rotation model as the fallback for games further out. It costs little and removes a known error. Its value in "
-        "wins is too small to claim, so it is a correctness fix, not a selling point. Not built; it needs the user's go-ahead.",
+        "- **Decision: not adopted. The app is deliberately predictive.** It keeps predicting the opposing starter from "
+        "the rotation and does not read MLB's announced probables. Given how little knowing the starter adds, that choice "
+        "costs about nothing in wins.",
+        "",
+    ]
+    return L
+
+
+# ---------------------------------------------------------------------------
+# Valuation to an MLB team: the lineup insight only (offense + defense), starter choice excluded
+# ---------------------------------------------------------------------------
+
+DISCOUNT = 0.08
+MODEL_COST_PER_SEASON = 3.14        # $ of model calls per team-season incl. chat (Phase 8)
+
+
+def lineup_valuation(saved: dict) -> dict:
+    wm.load_constants()
+    rng = np.random.default_rng(SEED)
+    S = {"hitter": season_hitter, "pitcher": season_pitcher, "defense": season_defense}
+    cases = load_cases("v3")
+    n = len(cases)
+    off = split_lineup(cases, S)["offense"]
+    k = np.array([wp_per_run_allowed(c, S) for c in cases])
+    T = [defense_terms(c) for c in cases]
+    cnt = np.array([t["count"] for t in T]); rat = np.array([t["rating"] for t in T]); frm = np.array([t["framing"] for t in T])
+    hit = hitter_calibration()
+    rel = defense_reliability(rng)
+    cal = defense_calibration(rng)
+
+    def parts(idx, hs, a, s, fs, wf):
+        fielding = k[idx] * ((cnt[idx] * a).sum(1) + (rat[idx] * s).sum(1))
+        framing = k[idx] * fs * wf * frm[idx]
+        return {"offense": float((hs * off[idx]).mean()), "fielding": float(fielding.mean()),
+                "framing": float(framing.mean())}
+
+    a0 = np.array([cal[b]["intercept"] for b in BUCKETS]); s0 = np.array([cal[b]["slope"] for b in BUCKETS])
+    point = parts(np.arange(n), hit["slope"], a0, s0, rel["framing"]["slope"], CATCHER_WORKLOAD[1])
+    sims = []
+    for _ in range(BOOT):
+        j = rng.integers(0, 1000)
+        a = np.array([cal[b]["draws"][j][0] for b in BUCKETS]); s = np.array([cal[b]["draws"][j][1] for b in BUCKETS])
+        sims.append(parts(rng.integers(0, n, n), rng.choice(hit["draws"]), a, s, rng.uniform(*rel["framing"]["ci"]),
+                          rng.uniform(CATCHER_WORKLOAD[0], CATCHER_WORKLOAD[2])))
+    ci = lambda f: np.percentile([f(x) for x in sims], [2.5, 97.5]).tolist()  # noqa: E731
+    W = 162 * sum(point.values())
+    lo, hi = [162 * x for x in ci(lambda x: sum(x.values()))]
+    floor = 162 * point["framing"]          # fielding and offense at zero; framing after the workload cut
+    out = {
+        "wins": {"lineup": [W, lo, hi], "offense": [162 * point["offense"], *[162 * x for x in ci(lambda x: x["offense"])]],
+                 "defense": [162 * (point["fielding"] + point["framing"]),
+                             *[162 * x for x in ci(lambda x: x["fielding"] + x["framing"])]],
+                 "fielding": 162 * point["fielding"], "framing": 162 * point["framing"], "floor": floor,
+                 "starter_extra": 162 * saved["verified"]["parts"]["starter"]},
+        "market": {str(p): {"low": lo * p, "expected": W * p, "high": hi * p, "floor": floor * p} for p in DOLLARS_PER_WIN},
+        "playoffs": {"typical": {"expected": typical_team_gain(W), "floor": typical_team_gain(floor)},
+                     "bubble": {"expected": playoff_odds([84], W)[84]["gain"], "floor": playoff_odds([84], floor)[84]["gain"]}},
+    }
+    year1 = {"expected": W * DOLLARS_PER_WIN[1], "floor": floor * DOLLARS_PER_WIN[1]}
+    # Seasons valued at the end of each season, discounted at 8%; the edge decays as rivals copy it.
+    out["npv"] = {name: {case: sum(v * r ** t / (1 + DISCOUNT) ** (t + 1) for t in range(3)) for case, v in year1.items()}
+                  for name, r in DECAY.items()}
+    out["year1"] = year1
+    out["license"] = {"expected": [LICENSE_SHARE[0] * year1["expected"], LICENSE_SHARE[1] * year1["expected"]],
+                      "floor": [LICENSE_SHARE[0] * year1["floor"], LICENSE_SHARE[1] * year1["floor"]]}
+    return out
+
+
+def render_lineup_valuation(o: dict) -> list[str]:
+    if "lineup_valuation" not in o:
+        return []
+    V = o["lineup_valuation"]
+    Wn = V["wins"]
+    M = V["market"]
+    P = V["playoffs"]
+    r = lambda v: f"{v[0]:+.2f} ({v[1]:+.2f} to {v[2]:+.2f})"  # noqa: E731
+    L = [
+        "## Valuation to an MLB team (lineup insight)",
+        "",
+        "What the program is worth to one club for its **lineup insight alone**: which nine to play, where to play them, "
+        "and in what order, counting offense and defense. The starter-choice piece is left out and listed separately as "
+        "an extra. All figures use the verified (calibrated) estimate from Check 5 on the 150 v3 plans, the lineup as "
+        "built, against the real managers. They are a first-mover value: one team using it while the others manage as "
+        "today. No LLM calls; the app is unchanged.",
+        "",
+        "**Wins per 162 games:**",
+        "",
+        "| Piece | Wins | 95% range |",
+        "|---|---|---|",
+        f"| Offense (who bats, and the batting order) | {Wn['offense'][0]:+.2f} | {Wn['offense'][1]:+.2f} to {Wn['offense'][2]:+.2f} |",
+        f"| Defense (fielding {Wn['fielding']:+.2f} + catcher framing {Wn['framing']:+.2f}) | {Wn['defense'][0]:+.2f} | "
+        f"{Wn['defense'][1]:+.2f} to {Wn['defense'][2]:+.2f} |",
+        f"| **Lineup insight, total** | **{Wn['lineup'][0]:+.2f}** | **{Wn['lineup'][1]:+.2f} to {Wn['lineup'][2]:+.2f}** |",
+        f"| Conservative floor: framing only (after the catcher-workload cut), fielding and offense at zero | "
+        f"{Wn['floor']:+.2f} | |",
+        f"| *Extra, not included above: the starter choice (after the season replay)* | *{Wn['starter_extra']:+.2f}* | |",
+        "",
+        "The floor exists because the direct check on these same plans' fielders, scored on what they did after the game, "
+        "did not confirm the fielding gain (Check 1). The calibration across all 2026 fielders does confirm it.",
+        "",
+        "**Annual value at market prices** (free-agent $ per win, $M per season):",
+        "",
+        "| $ per win | Low (95% low end) | Expected | High (95% high end) | Floor |",
+        "|---|---|---|---|---|",
+        *[f"| ${float(p):.0f}M | ${v['low']:.1f}M | **${v['expected']:.1f}M** | ${v['high']:.1f}M | ${v['floor']:.1f}M |"
+          for p, v in M.items()],
+        "",
+        "**Playoff-revenue view** (12-team format simulation as in Check 6; $30M per berth to the club after revenue sharing, "
+        "with the $15M-$50M range in brackets):",
+        "",
+        "| Team | Playoff odds added, expected | $ per season, expected | Playoff odds added, floor | $ per season, floor |",
+        "|---|---|---|---|---|",
+        *[f"| {lab} | {100 * P[key]['expected']:+.1f} pts | ${30 * P[key]['expected']:.1f}M (${15 * P[key]['expected']:.1f}M-"
+          f"${50 * P[key]['expected']:.1f}M) | {100 * P[key]['floor']:+.1f} pts | ${30 * P[key]['floor']:.1f}M |"
+          for key, lab in (("typical", "Typical team (talent drawn from the league spread)"), ("bubble", "Bubble team (84-win talent)"))],
+        "",
+        "The market price and the playoff-revenue view are two readings of the same wins, so they are not added together. "
+        "The market price is the ceiling, because it reflects what clubs pay for a win in free agency. The playoff view "
+        "counts one revenue channel only.",
+        "",
+        f"**3-season head start, net present value** at {DISCOUNT:.0%}, valued at $10M per win, each season discounted "
+        "from its end. The edge decays as rivals copy it:",
+        "",
+        "| Copying speed | NPV, expected | NPV, floor |",
+        "|---|---|---|",
+        *[f"| {name} | ${v['expected']:.1f}M | ${v['floor']:.1f}M |" for name, v in V["npv"].items()],
+        "",
+        f"**A modest license price:** {LICENSE_SHARE[0]:.0%}-{LICENSE_SHARE[1]:.0%} of year-1 value is "
+        f"${V['license']['expected'][0]:.1f}M-${V['license']['expected'][1]:.1f}M a season at the expected value, and "
+        f"${V['license']['floor'][0]:.2f}M-${V['license']['floor'][1]:.2f}M at the floor. That compares with about "
+        f"${MODEL_COST_PER_SEASON:.2f} a season in model calls per team (Phase 8). It is an illustration, not a market "
+        "quote. A club pays only a slice because the methods are public and its own analysts could rebuild much of this, "
+        "and the price falls as rivals adopt similar tools.",
+        "",
+        "**Suggested report wording:**",
+        "",
+        f"> \"Valued on its lineup insight alone (who plays, where, and in what order, counting offense and defense), the "
+        f"program adds about **{Wn['lineup'][0]:+.1f} wins a season** to a single club that adopts it first (95% range "
+        f"{Wn['lineup'][1]:+.1f} to {Wn['lineup'][2]:+.1f}). Almost all of that comes from defensive alignment, including "
+        f"putting the best pitch-framer behind the plate. At free-agent prices of $8-12M per win, that is roughly "
+        f"**${M['8.0']['expected']:.0f}-{M['12.0']['expected']:.0f}M a season**. The most conservative reading, counting "
+        f"only catcher framing, is about {Wn['floor']:+.1f} wins, or ${M['10.0']['floor']:.0f}M. Rivals can copy the "
+        f"approach, so the edge is temporary. Over a three-season head start it is worth roughly "
+        f"${min(v['expected'] for v in V['npv'].values()):.0f}-{max(v['expected'] for v in V['npv'].values()):.0f}M in "
+        f"present value, against about ${MODEL_COST_PER_SEASON:.0f} a season in model costs. The starter-choice "
+        f"recommendations add about {Wn['starter_extra']:+.1f} wins on top. Because wins are zero-sum, the gain exists only "
+        "while other clubs don't use the same approach.\"",
         "",
     ]
     return L
@@ -1203,6 +1348,11 @@ if __name__ == "__main__":
         sys.stdout.reconfigure(encoding="utf-8")
         saved = json.loads(OUT_JSON.read_text(encoding="utf-8"))
         saved["known_starter"] = known_starter(saved)
+        write(saved)
+    elif "--lineup-valuation" in sys.argv:  # extension: value of the lineup insight alone, to one club
+        sys.stdout.reconfigure(encoding="utf-8")
+        saved = json.loads(OUT_JSON.read_text(encoding="utf-8"))
+        saved["lineup_valuation"] = lineup_valuation(saved)
         write(saved)
     else:
         main()

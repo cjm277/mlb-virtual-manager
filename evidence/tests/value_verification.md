@@ -1,6 +1,6 @@
 # Is the win model really worth +2.4 wins a season? A verification
 
-Generated 2026-10-25 00:14 by `scripts/value_verification.py` (no LLM calls, no new plans; the same 150 v3 plans as `win_model_defense.md`). Numbers: `evidence/logs/win_impact/value_verification.json`. Wins are per 162 games; a win-probability point per game is 1.6 wins a season.
+Generated 2026-10-25 00:21 by `scripts/value_verification.py` (no LLM calls, no new plans; the same 150 v3 plans as `win_model_defense.md`). Numbers: `evidence/logs/win_impact/value_verification.json`. Wins are per 162 games; a win-probability point per game is 1.6 wins a season.
 
 ## The claim, split into its pieces (season-stats lens, as reported)
 
@@ -186,7 +186,53 @@ Edge vs the real manager in wins per 162, with 95% ranges. "Verified" is the cal
   - In 22 of the 36 misses, the wrong guess throws with the same hand, so the platoon-driven lineup barely changes.
   - The lineup's offense is a small part of the edge anyway. Most of the edge is defense and the starter, which don't depend on who pitches against us.
 - **Where it matters:** the gain concentrates where expected, in the 14 games where the guess had the wrong hand. Even there it is a few tenths of a win per 162 such games, and they are under a tenth of the schedule.
-- **Recommendation:** use MLB's announced probable starters for near-term games when they are available, and keep the rotation model as the fallback for games further out. It costs little and removes a known error. Its value in wins is too small to claim, so it is a correctness fix, not a selling point. Not built; it needs the user's go-ahead.
+- **Decision: not adopted. The app is deliberately predictive.** It keeps predicting the opposing starter from the rotation and does not read MLB's announced probables. Given how little knowing the starter adds, that choice costs about nothing in wins.
+
+## Valuation to an MLB team (lineup insight)
+
+What the program is worth to one club for its **lineup insight alone**: which nine to play, where to play them, and in what order, counting offense and defense. The starter-choice piece is left out and listed separately as an extra. All figures use the verified (calibrated) estimate from Check 5 on the 150 v3 plans, the lineup as built, against the real managers. They are a first-mover value: one team using it while the others manage as today. No LLM calls; the app is unchanged.
+
+**Wins per 162 games:**
+
+| Piece | Wins | 95% range |
+|---|---|---|
+| Offense (who bats, and the batting order) | +0.07 | -0.05 to +0.19 |
+| Defense (fielding +0.79 + catcher framing +0.29) | +1.08 | +0.81 to +1.45 |
+| **Lineup insight, total** | **+1.15** | **+0.86 to +1.54** |
+| Conservative floor: framing only (after the catcher-workload cut), fielding and offense at zero | +0.29 | |
+| *Extra, not included above: the starter choice (after the season replay)* | *+0.22* | |
+
+The floor exists because the direct check on these same plans' fielders, scored on what they did after the game, did not confirm the fielding gain (Check 1). The calibration across all 2026 fielders does confirm it.
+
+**Annual value at market prices** (free-agent $ per win, $M per season):
+
+| $ per win | Low (95% low end) | Expected | High (95% high end) | Floor |
+|---|---|---|---|---|
+| $8M | $6.9M | **$9.2M** | $12.3M | $2.3M |
+| $10M | $8.6M | **$11.5M** | $15.4M | $2.9M |
+| $12M | $10.3M | **$13.8M** | $18.4M | $3.5M |
+
+**Playoff-revenue view** (12-team format simulation as in Check 6; $30M per berth to the club after revenue sharing, with the $15M-$50M range in brackets):
+
+| Team | Playoff odds added, expected | $ per season, expected | Playoff odds added, floor | $ per season, floor |
+|---|---|---|---|---|
+| Typical team (talent drawn from the league spread) | +3.7 pts | $1.1M ($0.6M-$1.9M) | +0.9 pts | $0.3M |
+| Bubble team (84-win talent) | +6.1 pts | $1.8M ($0.9M-$3.1M) | +1.5 pts | $0.4M |
+
+The market price and the playoff-revenue view are two readings of the same wins, so they are not added together. The market price is the ceiling, because it reflects what clubs pay for a win in free agency. The playoff view counts one revenue channel only.
+
+**3-season head start, net present value** at 8%, valued at $10M per win, each season discounted from its end. The edge decays as rivals copy it:
+
+| Copying speed | NPV, expected | NPV, floor |
+|---|---|---|
+| Fast copying (edge halves each season, like Moneyball's OBP edge) | $17.8M | $4.5M |
+| Slow copying (edge keeps 75% each season) | $23.1M | $5.9M |
+
+**A modest license price:** 10%-20% of year-1 value is $1.1M-$2.3M a season at the expected value, and $0.29M-$0.59M at the floor. That compares with about $3.14 a season in model calls per team (Phase 8). It is an illustration, not a market quote. A club pays only a slice because the methods are public and its own analysts could rebuild much of this, and the price falls as rivals adopt similar tools.
+
+**Suggested report wording:**
+
+> "Valued on its lineup insight alone (who plays, where, and in what order, counting offense and defense), the program adds about **+1.1 wins a season** to a single club that adopts it first (95% range +0.9 to +1.5). Almost all of that comes from defensive alignment, including putting the best pitch-framer behind the plate. At free-agent prices of $8-12M per win, that is roughly **$9-14M a season**. The most conservative reading, counting only catcher framing, is about +0.3 wins, or $3M. Rivals can copy the approach, so the edge is temporary. Over a three-season head start it is worth roughly $18-23M in present value, against about $3 a season in model costs. The starter-choice recommendations add about +0.2 wins on top. Because wins are zero-sum, the gain exists only while other clubs don't use the same approach."
 
 ## What it means
 
