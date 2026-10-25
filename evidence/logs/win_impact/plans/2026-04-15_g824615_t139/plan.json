@@ -1,0 +1,1068 @@
+{
+  "run_id": "2026-04-15_g824615_t139",
+  "status": "approved",
+  "game": {
+    "game_pk": 824615,
+    "season": 2026,
+    "game_date": "2026-04-15",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Rate Field",
+    "team": "Tampa Bay Rays",
+    "team_id": 139,
+    "team_record_going_in": "9-7",
+    "opponent": "Chicago White Sox",
+    "opponent_id": 145,
+    "opponent_record_going_in": "6-11",
+    "home_away": "away",
+    "bats_last": false,
+    "stats_basis": "2026 season through the day before the game, blended with 2025 (50% weight on 2025).",
+    "weight_on_2025_stats": "50%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 656457,
+        "name": "Tyler Gilbert"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 802415,
+          "name": "Chandler Simpson",
+          "position": "LF",
+          "bats": "L",
+          "reason": "Strong on-base profile and speed; matchup edge, but Gilbert's split sample and Simpson's breaking-ball sample are small."
+        },
+        {
+          "slot": 2,
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "position": "DH",
+          "bats": "R",
+          "reason": "Top on-base bat; matchup is even (0.314 expected xwOBA), so honor the suggested rest and save his workload for a better matchup."
+        },
+        {
+          "slot": 3,
+          "player_id": 666018,
+          "name": "Jonathan Aranda",
+          "position": "1B",
+          "bats": "L",
+          "reason": "Established power bat with a batter edge (0.345 expected xwOBA); keep him in despite the rest suggestion and move rest to a weaker matchup."
+        },
+        {
+          "slot": 4,
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "position": "3B",
+          "bats": "R",
+          "reason": "Best matchup edge (0.385 expected xwOBA); keep him in despite the rest suggestion and move rest to a weaker matchup."
+        },
+        {
+          "slot": 5,
+          "player_id": 663743,
+          "name": "Nick Fortes",
+          "position": "C",
+          "bats": "R",
+          "reason": "Regular catcher with a moderate sample; even matchup (0.304 expected xwOBA)."
+        },
+        {
+          "slot": 6,
+          "player_id": 641584,
+          "name": "Jake Fraley",
+          "position": "RF",
+          "bats": "L",
+          "reason": "Moderate sample and fastball-group fit; matchup is even (0.318 expected xwOBA)."
+        },
+        {
+          "slot": 7,
+          "player_id": 670764,
+          "name": "Taylor Walls",
+          "position": "SS",
+          "bats": "S",
+          "reason": "On-base option with an even matchup (0.336 expected xwOBA); switch-hitting keeps the order balanced."
+        },
+        {
+          "slot": 8,
+          "player_id": 810938,
+          "name": "Ben Williamson",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Moderate-sample right-handed option; even matchup (0.328 expected xwOBA), and he has started at second base."
+        },
+        {
+          "slot": 9,
+          "player_id": 676356,
+          "name": "Jonny DeLuca",
+          "position": "CF",
+          "bats": "R",
+          "reason": "Started in center field and offers a right-handed look; matchup is even (0.32 expected xwOBA), though his overall sample is small."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 676439,
+          "name": "Hunter Feduccia",
+          "role": "backup_catcher",
+          "note": "Backup catcher; small pitch-group samples make his even matchup less reliable."
+        },
+        {
+          "player_id": 656775,
+          "name": "Cedric Mullins",
+          "role": "defensive_replacement",
+          "note": "Use late for center-field defense; matchup is even (0.302 expected xwOBA)."
+        },
+        {
+          "player_id": 680700,
+          "name": "Richie Palacios",
+          "role": "utility",
+          "note": "Utility coverage at second; matchup favors Gilbert (0.297 expected xwOBA) and his sample is small."
+        },
+        {
+          "player_id": 668723,
+          "name": "Ryan Vilade",
+          "role": "pinch_hitter",
+          "note": "Available right-handed bat, but matchup favors Gilbert (0.275 expected xwOBA) and his sample is small."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later, runner in scoring position, and a left-handed reliever faces Jonny DeLuca",
+          "bench_player_id": 668723,
+          "replaces_player_id": 676356,
+          "reason": "Use the right-handed bat for a late matchup change; Vilade's small-sample overall numbers warrant caution."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning with the tying or go-ahead run on base and Yandy D\u00edaz in the game",
+          "bench_player_id": 680700,
+          "replaces_player_id": 650490,
+          "reason": "Palacios's speed gives a running threat; he can also cover second base afterward."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead, with a ball-hit or defensive situation calling for a stronger center fielder",
+          "bench_player_id": 656775,
+          "replaces_player_id": 676356,
+          "reason": "Mullins has the stronger center-field defensive record in the overview."
+        }
+      ],
+      "summary": "Tyler Gilbert is the medium-confidence starter prediction; he uses fastballs heavily against right-handed hitters, while both of his side splits are small. Rest Yandy D\u00edaz today because his matchup is even; keep Aranda and Caminero in despite their rest suggestions because each has a batter edge, and move their rest to a weaker matchup."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 571927,
+        "name": "Steven Matz",
+        "throws": "L",
+        "reason": "Only ready option; his xwoba_allowed is 0.29, and matchups project pitcher edges on Murakami (0.358 expected xwOBA, small-sample inputs), Montgomery (0.273), and Benintendi (0.21).",
+        "expected_innings": 5.0,
+        "pitch_count_limit": 90,
+        "pitch_mix": [
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 60.0,
+            "vs_rhb_pct": 47.0,
+            "purpose": "Establish the fastball and work the edges; avoid leaving it in Murakami\u2019s preferred zone."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 14.0,
+            "vs_rhb_pct": 31.0,
+            "purpose": "Change speeds and get swings below the zone."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 24.0,
+            "vs_rhb_pct": 20.0,
+            "purpose": "Use as the main breaking option, especially to Murakami and Vargas."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 2.0,
+            "vs_rhb_pct": 2.0,
+            "purpose": "Show it sparingly; its profile is small."
+          }
+        ],
+        "keys": [
+          "Murakami\u2019s matchup inputs are small samples; his breaking-ball and offspeed whiffs were also small-sample results, so use those pitches below the zone without assuming the split is settled.",
+          "Favor breaking balls to Vargas; his breaking-ball xwOBA was 0.254, compared with 0.337 against fastballs.",
+          "Change speeds and finish Montgomery below the zone; his offspeed chase rate was 50.8%.",
+          "Work carefully to Meidroth and Quero, staying on the edges and avoiding a predictable pattern."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 687330,
+          "name": "Kevin Kelly",
+          "throws": "R",
+          "role": "closer",
+          "note": "Primary late-inning option; leads the available group with 2 saves."
+        },
+        {
+          "player_id": 693855,
+          "name": "Ian Seymour",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Use for left-handed pockets, including Murakami or Montgomery."
+        },
+        {
+          "player_id": 643377,
+          "name": "Griffin Jax",
+          "throws": "R",
+          "role": "setup",
+          "note": "First setup choice; rested and available."
+        },
+        {
+          "player_id": 642121,
+          "name": "Cole Sulser",
+          "throws": "R",
+          "role": "middle",
+          "note": "Middle-inning bridge; rested and available."
+        },
+        {
+          "player_id": 669947,
+          "name": "Jesse Scholtens",
+          "throws": "R",
+          "role": "long",
+          "note": "Long relief and bulk innings if Matz exits early."
+        },
+        {
+          "player_id": 641329,
+          "name": "Bryan Baker",
+          "throws": "R",
+          "role": "setup",
+          "note": "Limited after pitching yesterday; use only if needed."
+        },
+        {
+          "player_id": 685801,
+          "name": "Hunter Bigge",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; prefer rested options first."
+        },
+        {
+          "player_id": 669438,
+          "name": "Mason Englert",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed."
+        },
+        {
+          "player_id": 672782,
+          "name": "Yoendrys G\u00f3mez",
+          "throws": "R",
+          "role": "unavailable",
+          "note": "Unavailable after throwing 30 pitches yesterday."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the rested setup arms to bridge to Kelly; avoid limited arms unless necessary.",
+          "pitcher_ids": [
+            643377,
+            693855,
+            687330
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use best rested matchups first; save Kelly for the highest-leverage finish.",
+          "pitcher_ids": [
+            693855,
+            643377,
+            687330
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Preserve late-inning arms and cover the remaining frames with rested middle and long relief.",
+          "pitcher_ids": [
+            642121,
+            669947,
+            693855
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Prioritize innings and conserve the leverage group.",
+          "pitcher_ids": [
+            669947,
+            642121,
+            685801
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Scholtens handles length; follow with rested middle relief, keeping limited arms behind them.",
+          "pitcher_ids": [
+            669947,
+            642121,
+            643377,
+            693855
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use available rested arms in order, keeping Kelly for the highest-leverage spot; limited arms only if needed.",
+          "pitcher_ids": [
+            643377,
+            693855,
+            642121,
+            687330,
+            641329
+          ]
+        }
+      ],
+      "summary": "Start Matz, the only ready option, and plan for about five innings with a 90-pitch ceiling. Murakami remains the key threat, and several hitter-versus-pitcher inputs are flagged small; prioritize rested bullpen arms and use limited relievers only if needed."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 656457,
+        "name": "Tyler Gilbert",
+        "throws": "L",
+        "confidence": "medium",
+        "alternatives": [
+          "Sean Burke",
+          "Anthony Kay"
+        ],
+        "probability_pct": 61,
+        "probability_basis": "Right 61% of the time in 1,220 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "sinker",
+          "usage_pct": 40.7,
+          "velo": 89.6,
+          "whiff_pct": 7.5,
+          "note": "His most-used pitch; the profile shows a .533 xwOBA allowed."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 26.2,
+          "velo": 80.0,
+          "whiff_pct": 22.5,
+          "note": "His primary breaking ball; profile xwOBA allowed is .215."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 23.1,
+          "velo": 86.7,
+          "whiff_pct": 27.9,
+          "note": "Gets swings and misses, but profile xwOBA allowed is .556."
+        },
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 6.1,
+          "velo": 90.5,
+          "whiff_pct": 22.4,
+          "note": "A secondary fastball; profile xwOBA allowed is .359."
+        },
+        {
+          "pitch": "splitter",
+          "usage_pct": 3.9,
+          "velo": 83.0,
+          "whiff_pct": 19.2,
+          "note": "A rarely used offspeed pitch; profile xwOBA allowed is .423."
+        }
+      ],
+      "how_to_attack": [
+        "Be ready for fastballs: Gilbert uses the FB group 88.2% of the time against right-handed hitters.",
+        "Left-handed hitters should expect a more balanced mix: 52.9% fastballs and 47.1% breaking balls.",
+        "Right-handed hitters should attack the fastball group; Gilbert allows .346 xwOBA on it, versus .423 on offspeed.",
+        "Do not assume the early season results tell the whole story: his combined profile is moderate, but his splits against both sides are flagged small."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "expected_xwoba": 0.385,
+          "edge": "batter",
+          "note": "Strong fastball-group result (.44) against the group Gilbert uses 88.2% against righties."
+        },
+        {
+          "player_id": 802415,
+          "name": "Chandler Simpson",
+          "expected_xwoba": 0.348,
+          "edge": "batter",
+          "note": "His fastball-group xwOBA is .352; Gilbert allows .526 to left-handed hitters in that group. Pitcher split sample is small."
+        },
+        {
+          "player_id": 666018,
+          "name": "Jonathan Aranda",
+          "expected_xwoba": 0.345,
+          "edge": "batter",
+          "note": "Fastball-group xwOBA is .304 against a .526 allowed mark; Gilbert's lefty split sample is small."
+        },
+        {
+          "player_id": 670764,
+          "name": "Taylor Walls",
+          "expected_xwoba": 0.336,
+          "edge": "even",
+          "note": "His fastball-group xwOBA is .355 against .346 allowed; both hitter group samples and Gilbert's righty split are small."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 680700,
+          "name": "Richie Palacios",
+          "expected_xwoba": 0.297,
+          "edge": "pitcher",
+          "note": "His breaking-ball group xwOBA is .29, while Gilbert allows .227 to lefties; both split samples are small."
+        },
+        {
+          "player_id": 668723,
+          "name": "Ryan Vilade",
+          "expected_xwoba": 0.275,
+          "edge": "pitcher",
+          "note": "His fastball-group xwOBA is .172 against .346 allowed; his sample is small."
+        },
+        {
+          "player_id": 656775,
+          "name": "Cedric Mullins",
+          "expected_xwoba": 0.302,
+          "edge": "even",
+          "note": "His breaking-ball-group xwOBA is .161 against .227 allowed; Gilbert's lefty split sample is small."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 622554,
+          "name": "Seranthony Dom\u00ednguez",
+          "throws": "R",
+          "note": "Available and rested; leads the listed relievers with 3 saves."
+        },
+        {
+          "player_id": 673929,
+          "name": "Jordan Leasure",
+          "throws": "R",
+          "note": "Available and rested; has 3 holds."
+        },
+        {
+          "player_id": 656794,
+          "name": "Sean Newcomb",
+          "throws": "L",
+          "note": "Available and rested; left-handed option with 1 hold."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "bats": "R",
+          "expected_xwoba": 0.385,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Sit fastball: your xwOBA against them is .44, and Gilbert allows .346 to righties. His offspeed allowance is .423, but he uses that group 7.5% against righties; his RHB split sample is small."
+        },
+        {
+          "player_id": 802415,
+          "name": "Chandler Simpson",
+          "bats": "L",
+          "expected_xwoba": 0.348,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt the fastball group: you're at .352 against it, and Gilbert allows .526 to lefties. Lay off breaking balls, where you're at .266 and he allows .227; both your breaking-ball sample and his LHB split are small."
+        },
+        {
+          "player_id": 666018,
+          "name": "Jonathan Aranda",
+          "bats": "L",
+          "expected_xwoba": 0.345,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for a fastball you can drive: your xwOBA is .304 against them, while Gilbert allows .526 to lefties. Breaking balls have been a tougher group for you (.308) and Gilbert allows .227; samples are small for your breaking-ball results and his LHB split."
+        },
+        {
+          "player_id": 670764,
+          "name": "Taylor Walls",
+          "bats": "R",
+          "expected_xwoba": 0.336,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Sit fastballs: you're at .355 against them and Gilbert allows .346 to righties. Your pitch-group samples and Gilbert's RHB split are small, so stay disciplined rather than leaning too hard on those numbers."
+        },
+        {
+          "player_id": 676439,
+          "name": "Hunter Feduccia",
+          "bats": "L",
+          "expected_xwoba": 0.334,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt the fastball group, where you're at .504 and Gilbert allows .526 to lefties. Lay off breaking balls: you're at .035 and he allows .227; your group samples and his LHB split are small."
+        },
+        {
+          "player_id": 810938,
+          "name": "Ben Williamson",
+          "bats": "R",
+          "expected_xwoba": 0.328,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Look for the fastball group: you're at .318 and Gilbert allows .346 to righties. Your pitch-group samples and his RHB split are small, so avoid chasing his less-used pitches."
+        },
+        {
+          "player_id": 676356,
+          "name": "Jonny DeLuca",
+          "bats": "R",
+          "expected_xwoba": 0.32,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Sit fastball: you're at .324 against it and Gilbert allows .346 to righties. Your pitch-group samples and his RHB split are small, so treat the offspeed and breaking-ball results cautiously."
+        },
+        {
+          "player_id": 641584,
+          "name": "Jake Fraley",
+          "bats": "L",
+          "expected_xwoba": 0.318,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .412 and Gilbert allows .526 to lefties. Avoid expanding on breaking balls, where you're at .069 and he allows .227; your group samples and his LHB split are small."
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "bats": "R",
+          "expected_xwoba": 0.314,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Stay ready for the fastball group: you're at .27 and Gilbert allows .346 to righties. You have a .451 mark against offspeed, but he uses that group only 7.5% against righties; your offspeed sample and his RHB split are small."
+        },
+        {
+          "player_id": 663743,
+          "name": "Nick Fortes",
+          "bats": "R",
+          "expected_xwoba": 0.304,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Key on fastballs: you're at .265 against them, and Gilbert allows .346 to righties. Your breaking-ball result is .241 versus .125 allowed, but he uses that group only 4.3% against righties; group samples and his RHB split are small."
+        },
+        {
+          "player_id": 656775,
+          "name": "Cedric Mullins",
+          "bats": "L",
+          "expected_xwoba": 0.302,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for the fastball group: you're at .272 and Gilbert allows .526 to lefties. Be careful with breaking balls, where you're at .161 and he allows .227; Gilbert's LHB split sample is small."
+        },
+        {
+          "player_id": 680700,
+          "name": "Richie Palacios",
+          "bats": "L",
+          "expected_xwoba": 0.297,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Your fastball-group xwOBA is .137, while Gilbert allows .526 to lefties, so hunt that group. Your breaking-ball mark is .29 against .227 allowed; your group samples and his LHB split are small."
+        },
+        {
+          "player_id": 668723,
+          "name": "Ryan Vilade",
+          "bats": "R",
+          "expected_xwoba": 0.275,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Stay on the fastball group: your xwOBA is .172 and Gilbert allows .346 to righties. Your pitch-group samples and his RHB split are small, so do not overread the .52 offspeed result."
+        }
+      ],
+      "summary": "Tyler Gilbert is the medium-confidence starter call, with Sean Burke and Anthony Kay as alternatives; Gilbert joined the active roster today, and his 2026 line is 1.0 inning. Righties should be ready for a fastball-heavy mix, while lefties should expect more breaking balls; the split samples against both sides are small. Chicago has rested late-inning options in Seranthony Dom\u00ednguez, Jordan Leasure, and lefty Sean Newcomb."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "position": "SS",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 643217,
+          "name": "Andrew Benintendi",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 677592,
+          "name": "Everson Pereira",
+          "position": "RF",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 700337,
+          "name": "Edgar Quero",
+          "position": "C",
+          "bats": "S"
+        },
+        {
+          "slot": 9,
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "position": "LF",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 677592,
+          "name": "Everson Pereira",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 700337,
+          "name": "Edgar Quero",
+          "position": "C",
+          "bats": "S"
+        },
+        {
+          "slot": 6,
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "position": "SS",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 695020,
+          "name": "Tanner Murray",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 656537,
+          "name": "Derek Hill",
+          "position": "RF",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.295,
+          "weakness": "No pitch-type profile; overall xwOBA is 0.295.",
+          "how_to_pitch": "Work the edges and avoid giving him a middle-of-the-plate pitch."
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.373,
+          "weakness": "Breaking balls drew a 51.9% whiff rate (small sample); offspeed drew a 52.6% whiff rate (small sample).",
+          "how_to_pitch": "Use breaking balls and offspeed below the zone; avoid feeding his fastball strength."
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.319,
+          "weakness": "Fastballs had an xwOBA of 0.337; breaking balls were 0.254.",
+          "how_to_pitch": "Favor breaking balls; stay alert because he has handled offspeed well."
+        },
+        {
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.305,
+          "weakness": "Offspeed chase rate was 50.8%; breaking-ball whiff rate was 43.5%.",
+          "how_to_pitch": "Change speeds and make him chase offspeed below the zone; breaking balls can miss bats."
+        },
+        {
+          "player_id": 643217,
+          "name": "Andrew Benintendi",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.287,
+          "weakness": "Against LHP, xwOBA was 0.133 (small sample); breaking-ball whiff rate was 43.1%.",
+          "how_to_pitch": "A left-hander can challenge him, while a breaking ball below the zone is another option."
+        },
+        {
+          "player_id": 677592,
+          "name": "Everson Pereira",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.319,
+          "weakness": "Small sample; 40.6% strikeout rate.",
+          "how_to_pitch": "Get ahead and expand with breaking pitches once he is behind; the available sample is small."
+        },
+        {
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.188,
+          "weakness": "Small sample; 45.4% strikeout rate.",
+          "how_to_pitch": "Attack the zone early, then use chase pitches with two strikes; the available sample is small."
+        },
+        {
+          "player_id": 700337,
+          "name": "Edgar Quero",
+          "bats": "S",
+          "threat": "low",
+          "xwoba": 0.27,
+          "weakness": "No pitch-type profile; overall xwOBA is 0.27.",
+          "how_to_pitch": "Stay in the strike zone and avoid giving him a predictable pattern."
+        },
+        {
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.247,
+          "weakness": "xwOBA is 0.22 against LHP; no pitch-type profile.",
+          "how_to_pitch": "A left-hander has the better matchup; keep the ball down and control the running game."
+        },
+        {
+          "player_id": 695020,
+          "name": "Tanner Murray",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.227,
+          "weakness": "Small sample; xwOBA is 0.184 against LHP.",
+          "how_to_pitch": "Attack the zone, especially if facing him with a left-hander; the available sample is small."
+        },
+        {
+          "player_id": 656537,
+          "name": "Derek Hill",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.316,
+          "weakness": "xwOBA is 0.258 against RHP versus 0.358 against LHP.",
+          "how_to_pitch": "Prefer a right-hander and work carefully; his split favors facing a left-hander."
+        }
+      ],
+      "summary": "Munetaka Murakami is the main power threat; Colson Montgomery and Miguel Vargas add danger behind him. Prefer a left-handed starter if relying on the listed splits: Andrew Benintendi\u2019s xwOBA is 0.133 against LHP (small sample), and Luisangel Acu\u00f1a\u2019s is 0.22 against LHP; account for Derek Hill\u2019s stronger listed split against LHP."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 686752,
+          "name": "Ryan Pepiot",
+          "status": "out",
+          "reason": "Right hip inflammation."
+        },
+        {
+          "player_id": 671212,
+          "name": "Joe Boyle",
+          "status": "out",
+          "reason": "Right elbow strain."
+        },
+        {
+          "player_id": 664076,
+          "name": "Garrett Cleavinger",
+          "status": "out",
+          "reason": "Right calf tightness."
+        },
+        {
+          "player_id": 621051,
+          "name": "Steven Wilson",
+          "status": "out",
+          "reason": "Lumbar disc inflammation."
+        },
+        {
+          "player_id": 670955,
+          "name": "Edwin Uceta",
+          "status": "out",
+          "reason": "Right shoulder impingement."
+        },
+        {
+          "player_id": 666158,
+          "name": "Gavin Lux",
+          "status": "out",
+          "reason": "Right shoulder impingement."
+        },
+        {
+          "player_id": 655889,
+          "name": "Manuel Rodr\u00edguez",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 672782,
+          "name": "Yoendrys G\u00f3mez",
+          "status": "out",
+          "reason": "threw 30 pitches yesterday"
+        },
+        {
+          "player_id": 641329,
+          "name": "Bryan Baker",
+          "status": "limited",
+          "reason": "pitched yesterday (6 pitches)"
+        },
+        {
+          "player_id": 685801,
+          "name": "Hunter Bigge",
+          "status": "limited",
+          "reason": "pitched yesterday (22 pitches)"
+        },
+        {
+          "player_id": 669438,
+          "name": "Mason Englert",
+          "status": "limited",
+          "reason": "pitched yesterday (12 pitches)"
+        },
+        {
+          "player_id": 666018,
+          "name": "Jonathan Aranda",
+          "status": "rest_suggested",
+          "reason": "16 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "status": "rest_suggested",
+          "reason": "16 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "status": "rest_suggested",
+          "reason": "16 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "The listed injured players and Yoendrys G\u00f3mez are unavailable; Bryan Baker, Hunter Bigge, and Mason Englert are limited after pitching yesterday. Jonathan Aranda, Junior Caminero, and Yandy D\u00edaz are available, but a rest day is suggested for each."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Start Steven Matz, the only ready option, for an expected 5.0 innings with a 90-pitch limit; his xwoba_allowed is 0.29, with projected pitcher edges against Murakami, Montgomery, and Benintendi.",
+        "Use a sinker/changeup/curveball mix to keep Chicago off balance; use breaking balls against Vargas and change speeds below the zone to Montgomery. Murakami\u2019s matchup inputs and his breaking-ball/off-speed whiff results are small samples, so avoid overconfidence.",
+        "Rest Yandy D\u00edaz as suggested and retain Jonathan Aranda and Junior Caminero for their Gilbert matchup edges: 0.345 and 0.385 expected xwOBA, respectively. Gilbert is the medium-confidence starter prediction, and his side-split samples are small.",
+        "Use rested Griffin Jax, Ian Seymour, and Kevin Kelly in leverage spots; Bryan Baker, Hunter Bigge, and Mason Englert are limited after pitching yesterday, while Yoendrys G\u00f3mez is unavailable.",
+        "Target Gilbert\u2019s fastball group: he uses it 88.2% against right-handed hitters; the left-handed split is more balanced, and Gilbert\u2019s splits against both sides are flagged small."
+      ],
+      "keys_to_the_game": [
+        "Stay disciplined against Gilbert and hunt the fastball group rather than chasing breaking balls; the split samples are small.",
+        "Keep Murakami from getting comfortable: vary speeds and use breaking balls and offspeed below the zone, recognizing the underlying samples are small.",
+        "Favor breaking balls to Vargas and change speeds below the zone to Montgomery.",
+        "Get five innings from Matz if possible, then lean on rested relievers and protect limited arms.",
+        "Use the planned defensive and pinch-running substitutions to improve run prevention and create late pressure."
+      ],
+      "summary": "The plan fits together: Matz starts against a Chicago lineup with several left-handed threats, and the lineup is built for the medium-confidence Gilbert prediction while respecting Yandy D\u00edaz\u2019s rest suggestion. Work Gilbert\u2019s fastball group, stay cautious with small-sample splits, and rely on rested bullpen arms before considering limited relievers."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Hunt Gilbert\u2019s fastball; stay disciplined",
+      "message": "Tyler Gilbert is the medium-confidence starter prediction. Right-handed hitters should be ready for a fastball-heavy mix; left-handed hitters should expect a more balanced mix. Both side-split samples are small, so stay disciplined and don\u2019t chase breaking balls. Junior Caminero and Jonathan Aranda have batter edges, with expected xwOBA of 0.385 and 0.345, respectively. Chicago\u2019s rested late-inning options include Seranthony Dom\u00ednguez, Jordan Leasure, and left-hander Sean Newcomb.",
+      "reminders": [
+        "Hunt the fastball group; avoid expanding on breaking balls.",
+        "Treat Gilbert\u2019s side-split data cautiously: samples are small.",
+        "Be ready for Chicago\u2019s rested bullpen late."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Change speeds, attack carefully, trust the rested arms",
+      "message": "Steven Matz starts as the only ready option; target 5.0 innings with a 90-pitch limit. Use the sinker, changeup, and curveball to vary looks. Murakami is the main threat: use breaking balls and offspeed below the zone, but his matchup inputs and whiff results are small samples. Favor breaking balls to Vargas and change speeds below the zone to Montgomery. If Matz exits on schedule, use rested leverage arms: Griffin Jax and Ian Seymour to bridge to closer Kevin Kelly. Bryan Baker, Hunter Bigge, and Mason Englert are limited; Yoendrys G\u00f3mez is unavailable.",
+      "reminders": [
+        "Keep pitches to Murakami below the zone; small samples call for caution.",
+        "Favor breaking balls to Vargas; change speeds to Montgomery.",
+        "Use rested relievers first; limited arms only if needed."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Execute the approved plan; preserve the rested arms",
+      "message": "Start Steven Matz for an expected 5.0 innings with a 90-pitch limit, then prioritize rested leverage arms. Gilbert is the medium-confidence starter prediction; his side splits are small, so reinforce discipline and fastball hunting. Yandy D\u00edaz rests as suggested; Jonathan Aranda and Junior Caminero remain in for their matchup edges. Use the planned late defensive and pinch-running substitutions. Bryan Baker, Hunter Bigge, and Mason Englert are limited, and Yoendrys G\u00f3mez is unavailable.",
+      "reminders": [
+        "Protect Matz\u2019s 90-pitch limit and plan for bullpen coverage.",
+        "Keep Aranda and Caminero in; honor D\u00edaz\u2019s rest suggestion.",
+        "Use planned late substitutions and avoid limited arms unless needed."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 0,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 48.6,
+    "total": {
+      "model_steps": 18,
+      "gateway_cache_hits": 0,
+      "input_tokens": 99883,
+      "cached_tokens": 41350,
+      "output_tokens": 8843,
+      "cost_usd": 0.01696
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4364,
+        "cached_tokens": 0,
+        "output_tokens": 526,
+        "seconds": 5.8,
+        "cost_usd": 0.00114
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 20023,
+        "cached_tokens": 10486,
+        "output_tokens": 2489,
+        "seconds": 15.1,
+        "cost_usd": 0.00336
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 12544,
+        "cached_tokens": 5029,
+        "output_tokens": 1583,
+        "seconds": 16.6,
+        "cost_usd": 0.0024
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 18710,
+        "cached_tokens": 6706,
+        "output_tokens": 1204,
+        "seconds": 9.1,
+        "cost_usd": 0.00314
+      },
+      "bench_coach": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 29708,
+        "cached_tokens": 19129,
+        "output_tokens": 2049,
+        "seconds": 17.1,
+        "cost_usd": 0.00352
+      },
+      "manager": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7168,
+        "cached_tokens": 0,
+        "output_tokens": 444,
+        "seconds": 4.2,
+        "cost_usd": 0.00166
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7366,
+        "cached_tokens": 0,
+        "output_tokens": 548,
+        "seconds": 4.7,
+        "cost_usd": 0.00175
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

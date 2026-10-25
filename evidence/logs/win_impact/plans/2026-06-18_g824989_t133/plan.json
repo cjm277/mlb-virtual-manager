@@ -1,0 +1,1029 @@
+{
+  "run_id": "2026-06-18_g824989_t133",
+  "status": "approved",
+  "game": {
+    "game_pk": 824989,
+    "season": 2026,
+    "game_date": "2026-06-18",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Sutter Health Park",
+    "team": "Athletics",
+    "team_id": 133,
+    "team_record_going_in": "36-38",
+    "opponent": "Los Angeles Angels",
+    "opponent_id": 108,
+    "opponent_record_going_in": "30-45",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 667755,
+        "name": "Jos\u00e9 Soriano"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 666126,
+          "name": "Carlos Cortes",
+          "position": "RF",
+          "bats": "L",
+          "reason": "Leads the available hitters with expected xwOBA 0.351 and a batter edge; hunt fastballs."
+        },
+        {
+          "slot": 2,
+          "player_id": 691016,
+          "name": "Tyler Soderstrom",
+          "position": "LF",
+          "bats": "L",
+          "reason": "Expected xwOBA 0.327 with an even edge; his established sample supports a top-of-order spot."
+        },
+        {
+          "slot": 3,
+          "player_id": 669127,
+          "name": "Shea Langeliers",
+          "position": "C",
+          "bats": "R",
+          "reason": "Power bat with an even matchup; hunt fastballs and avoid Soriano\u2019s breaking-ball strength."
+        },
+        {
+          "slot": 4,
+          "player_id": 671732,
+          "name": "Lawrence Butler",
+          "position": "CF",
+          "bats": "L",
+          "reason": "Expected xwOBA 0.322 and a platoon advantage; fastballs are his best target."
+        },
+        {
+          "slot": 5,
+          "player_id": 643446,
+          "name": "Jeff McNeil",
+          "position": "2B",
+          "bats": "L",
+          "reason": "Established hitter with an even matchup; his contact profile fits behind the power bats."
+        },
+        {
+          "slot": 6,
+          "player_id": 641680,
+          "name": "Jonah Heim",
+          "position": "DH",
+          "bats": "S",
+          "reason": "Even matchup; his RHP and pitch-group samples are small."
+        },
+        {
+          "slot": 7,
+          "player_id": 805779,
+          "name": "Jacob Wilson",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Regular shortstop; matchup favors Soriano, so look for fastballs and stay off breaking balls."
+        },
+        {
+          "slot": 8,
+          "player_id": 703607,
+          "name": "Henry Bolte",
+          "position": "1B",
+          "bats": "R",
+          "reason": "OBP of 0.381; matchup favors Soriano and some pitch-group samples are small."
+        },
+        {
+          "slot": 9,
+          "player_id": 691777,
+          "name": "Max Muncy",
+          "position": "3B",
+          "bats": "R",
+          "reason": "Matchup favors Soriano, but his regular third-base starts keep him in the field; breaking balls are the danger."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 687515,
+          "name": "Colby Thomas",
+          "role": "pinch_hitter",
+          "note": "Reserve outfielder; expected xwOBA 0.231 with a pitcher edge and small pitch-group samples."
+        },
+        {
+          "player_id": 675961,
+          "name": "Alika Williams",
+          "role": "utility",
+          "note": "Infield cover; expected xwOBA 0.239 with a pitcher edge and small samples."
+        },
+        {
+          "player_id": 680869,
+          "name": "Zack Gelof",
+          "role": "pinch_runner",
+          "note": "Resting today; expected xwOBA 0.282 with a pitcher edge, and his sprint_speed is 28.8."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later against a left-handed reliever, with a runner in scoring position",
+          "bench_player_id": 687515,
+          "replaces_player_id": 691777,
+          "reason": "Use the right-handed bat in a leverage spot; his xwOBA_vs_LHP is 0.31."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning, tying or go-ahead run on base",
+          "bench_player_id": 680869,
+          "replaces_player_id": 641680,
+          "reason": "Gelof brings speed; sprint_speed is 28.8."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead, protecting a ground ball at shortstop",
+          "bench_player_id": 675961,
+          "replaces_player_id": 805779,
+          "reason": "Williams has 2 outs above average at SS in 2026."
+        }
+      ],
+      "summary": "Jos\u00e9 Soriano is the medium-confidence starter prediction. Nick Kurtz is unavailable because the Team Doctor lists him as out; Gelof sits today with a pitcher-favored matchup."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 695611,
+        "name": "Gage Jump",
+        "throws": "L",
+        "reason": "Only ready starter; his expected xwOBA is 0.292 against Zach Neto and 0.291 against Nolan Schanuel, though the left-handed hitter matchup sample is small.",
+        "expected_innings": 5.0,
+        "pitch_count_limit": 90,
+        "pitch_mix": [
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 40.0,
+            "vs_rhb_pct": 48.0,
+            "purpose": "Establish strikes; vary location and avoid predictable fastballs to Neto."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 22.0,
+            "vs_rhb_pct": 24.0,
+            "purpose": "Use as a chase pitch beneath the zone, especially to right-handed hitters."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 12.0,
+            "vs_rhb_pct": 13.0,
+            "purpose": "Use below the zone against right-handed power, particularly Adell; his offspeed matchup sample is small."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 17.0,
+            "vs_rhb_pct": 9.0,
+            "purpose": "Change eye level and attack left-handed hitters carefully."
+          },
+          {
+            "pitch": "sweeper",
+            "vs_lhb_pct": 9.0,
+            "vs_rhb_pct": 6.0,
+            "purpose": "Mix sparingly as a secondary breaking look."
+          }
+        ],
+        "keys": [
+          "Against Neto, mix breaking balls below the zone; matchup expected xwOBA is 0.292, but the offspeed sample is small.",
+          "Against Adell, favor offspeed below the zone; the offspeed matchup sample is small, so do not over-rely on it.",
+          "Keep fastballs from becoming predictable to the right-handed core; Adell's matchup fastball xwOBA is 0.497.",
+          "Work in the zone to Guzman, but treat his small matchup sample cautiously."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 663687,
+          "name": "Hogan Harris",
+          "throws": "L",
+          "role": "closer",
+          "note": "Primary late-inning option; available and rested, with 6 saves and 10 holds."
+        },
+        {
+          "player_id": 686993,
+          "name": "Justin Sterner",
+          "throws": "R",
+          "role": "setup",
+          "note": "First setup option; available and rested, with 12 holds."
+        },
+        {
+          "player_id": 665660,
+          "name": "Elvis Alvarado",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available bridge option; rested."
+        },
+        {
+          "player_id": 686930,
+          "name": "Mason Barnett",
+          "throws": "R",
+          "role": "long",
+          "note": "Available for length or a lower-leverage bridge."
+        },
+        {
+          "player_id": 605130,
+          "name": "Scott Barlow",
+          "throws": "R",
+          "role": "setup",
+          "note": "Limited after pitching yesterday (17 pitches); use only if needed or for one batter."
+        },
+        {
+          "player_id": 678022,
+          "name": "Jack Perkins",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after 85 pitches over the last 3 days; use only if needed."
+        },
+        {
+          "player_id": 665622,
+          "name": "Luis Medina",
+          "throws": "R",
+          "role": "unavailable",
+          "note": "Unavailable under the bullpen workload rules."
+        },
+        {
+          "player_id": 660761,
+          "name": "Jos\u00e9 Suarez",
+          "throws": "L",
+          "role": "unavailable",
+          "note": "Unavailable under the bullpen workload rules."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the rested setup arm before Harris; keep limited arms out unless the matchup requires them.",
+          "pitcher_ids": [
+            686993,
+            663687
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use the best rested matchup arms, saving Harris for the highest-leverage spot.",
+          "pitcher_ids": [
+            686993,
+            663687,
+            665660
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Cover the middle innings with available depth and preserve the leverage arms.",
+          "pitcher_ids": [
+            686930,
+            665660,
+            686993
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use the long reliever first and avoid spending the closer or setup arms.",
+          "pitcher_ids": [
+            686930,
+            665660
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Use Barnett for length, then Alvarado; turn to Sterner if the game stays close.",
+          "pitcher_ids": [
+            686930,
+            665660,
+            686993
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use the rested setup arm first, then Harris; keep the limited relievers as last resorts.",
+          "pitcher_ids": [
+            686993,
+            663687,
+            665660
+          ]
+        }
+      ],
+      "summary": "Start Gage Jump, the only option ready to start, and target about five innings with a 90-pitch limit. The bullpen is short two unavailable arms; protect the rested high-leverage options and reserve limited relievers for need-based use."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 667755,
+        "name": "Jos\u00e9 Soriano",
+        "throws": "R",
+        "confidence": "medium",
+        "alternatives": [],
+        "probability_pct": 61,
+        "probability_basis": "Right 61% of the time in 1,220 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "sinker",
+          "usage_pct": 25.6,
+          "velo": 96.6,
+          "whiff_pct": 24.3,
+          "note": "Hard sinker; his fastball group allowed 0.466 xwOBA to left-handed hitters."
+        },
+        {
+          "pitch": "knuckle curve",
+          "usage_pct": 25.4,
+          "velo": 85.4,
+          "whiff_pct": 45.4,
+          "note": "Big whiff pitch; breaking balls allowed 0.25 xwOBA to left-handed hitters."
+        },
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 23.5,
+          "velo": 97.4,
+          "whiff_pct": 19.2,
+          "note": "Firm four-seamer; part of the fastball group he uses most against lefties."
+        },
+        {
+          "pitch": "splitter",
+          "usage_pct": 20.2,
+          "velo": 92.4,
+          "whiff_pct": 44.4,
+          "note": "His high-whiff splitter contributes to a 30.3% offspeed mix against left-handed hitters."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 5.3,
+          "velo": 90.2,
+          "whiff_pct": 32.3,
+          "note": "Secondary breaker, with less usage than his curve."
+        }
+      ],
+      "how_to_attack": [
+        "Lefties: look fastball early; he uses the fastball group 47.1% of the time, allowing 0.466 xwOBA against left-handed hitters.",
+        "Righties: be ready for breaking balls; he uses that group 39.9% of the time and allows 0.247 xwOBA.",
+        "Don't chase the splitter/off-speed offerings; against lefties, he uses offspeed 30.3% and allows 0.195 xwOBA.",
+        "Stay disciplined: his overall whiff rate is 33.0%, and he has a 32.0% chase rate."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 666126,
+          "name": "Carlos Cortes",
+          "expected_xwoba": 0.351,
+          "edge": "batter",
+          "note": "Fastball target: .426 batter xwOBA against the group, while Soriano allows .466 to lefties."
+        },
+        {
+          "player_id": 691016,
+          "name": "Tyler Soderstrom",
+          "expected_xwoba": 0.327,
+          "edge": "even",
+          "note": "Fastballs are the best fit: .386 batter xwOBA against them, versus .466 allowed to lefties."
+        },
+        {
+          "player_id": 669127,
+          "name": "Shea Langeliers",
+          "expected_xwoba": 0.323,
+          "edge": "even",
+          "note": "Fastball target: .425 against the group; Soriano allows .334 to righties."
+        },
+        {
+          "player_id": 671732,
+          "name": "Lawrence Butler",
+          "expected_xwoba": 0.322,
+          "edge": "even",
+          "note": "Fastballs offer the clearest opening: .344 batter xwOBA against them, against .466 allowed to lefties."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 687515,
+          "name": "Colby Thomas",
+          "expected_xwoba": 0.231,
+          "edge": "pitcher",
+          "note": "Fastballs are the relative target, but his .186 xwOBA against them is from a small sample."
+        },
+        {
+          "player_id": 675961,
+          "name": "Alika Williams",
+          "expected_xwoba": 0.239,
+          "edge": "pitcher",
+          "note": "His pitch-group samples are small; Soriano's breaking-ball group has the edge."
+        },
+        {
+          "player_id": 691777,
+          "name": "Max Muncy",
+          "expected_xwoba": 0.264,
+          "edge": "pitcher",
+          "note": "Soriano leans breaking balls to righties; Muncy's .188 against them trails .247 allowed."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 696147,
+          "name": "Sam Bachman",
+          "throws": "R",
+          "note": "Available; has 11 holds."
+        },
+        {
+          "player_id": 666171,
+          "name": "Ryan Zeferjahn",
+          "throws": "R",
+          "note": "Available; has 2 saves and 5 holds."
+        },
+        {
+          "player_id": 681217,
+          "name": "Chase Silseth",
+          "throws": "R",
+          "note": "Available; has 6 holds."
+        },
+        {
+          "player_id": 608718,
+          "name": "Brent Suter",
+          "throws": "L",
+          "note": "Available left-hander; could be used against left-handed hitters."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 666126,
+          "name": "Carlos Cortes",
+          "bats": "L",
+          "expected_xwoba": 0.351,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at .426 against them and Soriano allows .466 to lefties. Your offspeed .327 is above his .195 allowed, but fastballs are the better target."
+        },
+        {
+          "player_id": 691016,
+          "name": "Tyler Soderstrom",
+          "bats": "L",
+          "expected_xwoba": 0.327,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at .386 against them and Soriano allows .466 to lefties. Your offspeed .221 is near his .195 allowed, so don't give away at-bats chasing it."
+        },
+        {
+          "player_id": 669127,
+          "name": "Shea Langeliers",
+          "bats": "R",
+          "expected_xwoba": 0.323,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .425 and he allows .334 to righties. Your breaking-ball mark is .302 against his .247 allowed; your offspeed sample is small."
+        },
+        {
+          "player_id": 671732,
+          "name": "Lawrence Butler",
+          "bats": "L",
+          "expected_xwoba": 0.322,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .344 against them and Soriano allows .466 to lefties. Lay off breaking balls, where you're at .231 and he allows .25."
+        },
+        {
+          "player_id": 643446,
+          "name": "Jeff McNeil",
+          "bats": "L",
+          "expected_xwoba": 0.316,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at .324 against them and Soriano allows .466 to lefties. Your offspeed .244 is close to his .195 allowed, so make him prove it in the zone."
+        },
+        {
+          "player_id": 641680,
+          "name": "Jonah Heim",
+          "bats": "S",
+          "expected_xwoba": 0.313,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: you're at .341 and Soriano allows .466 to lefties. Your RHP and pitch-group samples are small; your offspeed mark is .233 against his .195 allowed."
+        },
+        {
+          "player_id": 805779,
+          "name": "Jacob Wilson",
+          "bats": "R",
+          "expected_xwoba": 0.284,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for a fastball: you're at .298 against them and he allows .334 to righties. Breaking balls are a tougher fit, with your .273 against his .247 allowed."
+        },
+        {
+          "player_id": 680869,
+          "name": "Zack Gelof",
+          "bats": "R",
+          "expected_xwoba": 0.282,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .334 against them and he allows .334 to righties. Your breaking-ball .198 trails his .247 allowed; offspeed results are a small sample."
+        },
+        {
+          "player_id": 703607,
+          "name": "Henry Bolte",
+          "bats": "R",
+          "expected_xwoba": 0.276,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look fastball: you're at .265 against them and he allows .334 to righties. Your breaking-ball sample is small; that group allowed .247 to righties."
+        },
+        {
+          "player_id": 691777,
+          "name": "Max Muncy",
+          "bats": "R",
+          "expected_xwoba": 0.264,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .293 against them and he allows .334 to righties. Breaking balls are the danger; you're at .188 against his .247 allowed."
+        },
+        {
+          "player_id": 675961,
+          "name": "Alika Williams",
+          "bats": "R",
+          "expected_xwoba": 0.239,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .328 against them and he allows .334 to righties. All your pitch-group and RHP samples are small; breaking balls are .0 against his .247 allowed."
+        },
+        {
+          "player_id": 687515,
+          "name": "Colby Thomas",
+          "bats": "R",
+          "expected_xwoba": 0.231,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .186 against them and he allows .334 to righties. Your pitch-group and RHP samples are small; breaking balls are .198 against his .247 allowed."
+        }
+      ],
+      "summary": "Jos\u00e9 Soriano is the medium-confidence starter prediction; he attacks lefties with a mix featuring fastballs and offspeed, and righties with more breaking balls. Left-handed hitters have the clearer fastball opportunity, while righties should be selective against his curve and slider. Nick Kurtz is excluded from hitter plans because the Team Doctor lists him as out."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 685133,
+          "name": "Wade Meckler",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "position": "RF",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 694384,
+          "name": "Nolan Schanuel",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 694203,
+          "name": "Denzer Guzman",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 663611,
+          "name": "Nick Madrigal",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 622268,
+          "name": "Donovan Walton",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 681351,
+          "name": "Logan O'Hoppe",
+          "position": "C",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "position": "RF",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 5,
+          "player_id": 694203,
+          "name": "Denzer Guzman",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 694384,
+          "name": "Nolan Schanuel",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 663611,
+          "name": "Nick Madrigal",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 642350,
+          "name": "Jose Siri",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 681351,
+          "name": "Logan O'Hoppe",
+          "position": "C",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.321,
+          "weakness": "Breaking balls (xwOBA 0.237); versus left-handers his xwOBA is 0.342.",
+          "how_to_pitch": "Mix breaking balls below the zone; avoid predictable fastballs, which he handles well."
+        },
+        {
+          "player_id": 685133,
+          "name": "Wade Meckler",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.328,
+          "weakness": "Lower xwOBA versus left-handers (0.252); no profile pitch-type weakness available.",
+          "how_to_pitch": "With a left-hander, challenge carefully; otherwise vary location and keep him from getting comfortable."
+        },
+        {
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.332,
+          "weakness": "Offspeed xwOBA is 0.224; versus right-handers his xwOBA is 0.305 (offspeed sample moderate).",
+          "how_to_pitch": "Favor offspeed below the zone and avoid feeding fastballs; his fastball xwOBA is 0.39."
+        },
+        {
+          "player_id": 694384,
+          "name": "Nolan Schanuel",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.315,
+          "weakness": "Lower xwOBA versus left-handers (0.269).",
+          "how_to_pitch": "Use a left-hander when practical and attack the edges; he is more productive against right-handers."
+        },
+        {
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.307,
+          "weakness": "Lower xwOBA versus right-handers (0.276).",
+          "how_to_pitch": "Prefer a right-hander and change speeds; his numbers are stronger against left-handers."
+        },
+        {
+          "player_id": 694203,
+          "name": "Denzer Guzman",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.254,
+          "weakness": "Small sample; xwOBA versus left-handers is 0.179, also small.",
+          "how_to_pitch": "Work in the zone and make him prove he can handle quality strikes; treat the small sample cautiously."
+        },
+        {
+          "player_id": 663611,
+          "name": "Nick Madrigal",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.291,
+          "weakness": "Small sample; xwOBA versus left-handers is 0.196, also small.",
+          "how_to_pitch": "Use a left-hander and attack the zone, but do not overread the small sample."
+        },
+        {
+          "player_id": 622268,
+          "name": "Donovan Walton",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.315,
+          "weakness": "Lower xwOBA versus left-handers (0.218); moderate sample.",
+          "how_to_pitch": "A left-hander is the better matchup; work the edges and avoid giving him a predictable pitch."
+        },
+        {
+          "player_id": 681351,
+          "name": "Logan O'Hoppe",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.285,
+          "weakness": "Lower xwOBA versus left-handers (0.272).",
+          "how_to_pitch": "Use a left-hander when available and attack with changing locations."
+        },
+        {
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.346,
+          "weakness": "Lower xwOBA versus left-handers (0.311); versus right-handers his xwOBA is 0.369 (moderate sample).",
+          "how_to_pitch": "A left-hander is the preferable matchup; avoid assuming breaking balls are a weakness."
+        },
+        {
+          "player_id": 642350,
+          "name": "Jose Siri",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.365,
+          "weakness": "Small overall sample; breaking-ball xwOBA is 0.174 (small sample) and chase rate is 62.8%.",
+          "how_to_pitch": "Use breaking balls off the plate to draw chase; the pitch-type evidence is small, so stay cautious."
+        }
+      ],
+      "summary": "Zach Neto, Jo Adell, Vaughn Grissom, and Jose Siri are the main threats; Grissom and Siri\u2019s samples are moderate and small, respectively. Prefer a right-handed starter if choosing by the heart of the order: Adell\u2019s xwOBA is 0.305 versus right-handers and 0.399 versus left-handers; Grissom also has a higher xwOBA versus right-handers, while Neto and Siri fare better versus left-handers."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 667670,
+          "name": "Brent Rooker",
+          "status": "out",
+          "reason": "Bone bruise in left knee."
+        },
+        {
+          "player_id": 621139,
+          "name": "Brooks Kriske",
+          "status": "out",
+          "reason": "Right shoulder impingement."
+        },
+        {
+          "player_id": 622663,
+          "name": "Luis Severino",
+          "status": "out",
+          "reason": "Right should strain."
+        },
+        {
+          "player_id": 672016,
+          "name": "Denzel Clarke",
+          "status": "out",
+          "reason": "Mid foot bone bruise in right foot."
+        },
+        {
+          "player_id": 680684,
+          "name": "Gunnar Hoglund",
+          "status": "out",
+          "reason": "Sprained right knee."
+        },
+        {
+          "player_id": 605130,
+          "name": "Scott Barlow",
+          "status": "limited",
+          "reason": "pitched yesterday (17 pitches)"
+        },
+        {
+          "player_id": 678022,
+          "name": "Jack Perkins",
+          "status": "limited",
+          "reason": "85 pitches over the last 3 days"
+        },
+        {
+          "player_id": 665622,
+          "name": "Luis Medina",
+          "status": "out",
+          "reason": "threw 45 pitches yesterday"
+        },
+        {
+          "player_id": 660761,
+          "name": "Jos\u00e9 Suarez",
+          "status": "out",
+          "reason": "threw 43 pitches yesterday"
+        },
+        {
+          "player_id": 701762,
+          "name": "Nick Kurtz",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 680869,
+          "name": "Zack Gelof",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Five players are on the injured list. Scott Barlow and Jack Perkins are limited, while Luis Medina and Jos\u00e9 Suarez are unavailable under the bullpen workload rules; no players are flagged cleared with caution."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Keep Gage Jump as the starter: he is the only ready starter, with a 90-pitch limit and a target of about five innings.",
+        "The Angels starter, Jos\u00e9 Soriano, is a medium-confidence prediction; stack left-handed hitters near the top, led by Carlos Cortes at expected xwOBA 0.351 with a batter edge.",
+        "Use a fastball-first plan against Soriano\u2019s left-handed matchups: he allows 0.466 xwOBA to lefties on the fastball group; avoid chasing offspeed, where he allows 0.195.",
+        "Protect the rested leverage arms: Justin Sterner is first setup option and Hogan Harris is the closer; Scott Barlow and Jack Perkins are limited, while Luis Medina and Jos\u00e9 Suarez are unavailable."
+      ],
+      "keys_to_the_game": [
+        "Lefties should hunt Soriano\u2019s fastballs and stay disciplined against offspeed; the starter prediction is medium confidence.",
+        "Against Zach Neto and Jo Adell, vary pitches and avoid predictable fastballs; favor breaking balls below the zone to Neto and offspeed below the zone to Adell, while respecting the small matchup samples.",
+        "Get length from Jump and turn to the available rested bullpen; preserve limited relievers for need-based use.",
+        "Make the most of the top of the order, especially Cortes, Soderstrom, Langeliers, and Butler, while staying selective against Soriano\u2019s breaking-ball strength to righties."
+      ],
+      "summary": "The plan is coherent and the checker found no issues, so approve it. Start Jump with a 90-pitch limit, attack the medium-confidence Soriano prediction with a fastball-hunting left-handed lineup, and protect the rested leverage arms while accounting for limited and unavailable relievers."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Hunt Soriano\u2019s fastball; make him earn the offspeed",
+      "message": "Jos\u00e9 Soriano is a medium-confidence starter prediction. Lefties, look fastball early: his fastball group allows 0.466 xwOBA to left-handed hitters. Carlos Cortes leads the order with expected xwOBA 0.351 and a batter edge. Stay disciplined against offspeed; Soriano allows 0.195 xwOBA against lefties in that group. Righties should be ready for breaking balls and avoid chasing them. If the Angels turn to their bullpen, watch for Sam Bachman, Ryan Zeferjahn, Chase Silseth, and left-hander Brent Suter.",
+      "reminders": [
+        "Lefties: hunt fastballs; do not chase offspeed.",
+        "Righties: be selective against breaking balls.",
+        "Soriano\u2019s starter status is a medium-confidence prediction."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Jump sets the tone; attack Neto and Adell with variation",
+      "message": "Gage Jump starts as the only ready starter, with a 90-pitch limit and a target of about five innings. Keep fastballs from becoming predictable to Zach Neto; mix breaking balls below the zone. Against Jo Adell, favor offspeed below the zone and avoid feeding fastballs. Those matchup samples are small, so stay flexible. Justin Sterner is the first setup option and Hogan Harris the closer; both are rested. Use Scott Barlow and Jack Perkins only if needed because they are limited. Luis Medina and Jos\u00e9 Suarez are unavailable.",
+      "reminders": [
+        "Change locations and avoid predictable fastballs to Neto.",
+        "Use offspeed below the zone to Adell; the matchup sample is small.",
+        "Preserve rested leverage arms; limited relievers are need-based only."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Approved plan: fastball-hunting lineup, protected leverage arms",
+      "message": "Keep the planned order led by Carlos Cortes, Tyler Soderstrom, Shea Langeliers, and Lawrence Butler. Soriano is a medium-confidence starter prediction; emphasize fastballs to lefties and discipline against offspeed. Gage Jump is the only ready starter, with a 90-pitch limit and a target of about five innings. Use rested Justin Sterner first in setup and Hogan Harris as closer; Scott Barlow and Jack Perkins are limited, while Luis Medina and Jos\u00e9 Suarez are unavailable. Nick Kurtz is out; Zack Gelof is resting today and remains available for the planned late pinch-run role.",
+      "reminders": [
+        "Maintain the 90-pitch limit for Jump and target about five innings.",
+        "Protect rested leverage arms; use limited relievers only as needed.",
+        "Nick Kurtz is out; Gelof is available despite the rest suggestion."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 0,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 40.3,
+    "total": {
+      "model_steps": 18,
+      "gateway_cache_hits": 0,
+      "input_tokens": 94246,
+      "cached_tokens": 39785,
+      "output_tokens": 8167,
+      "cost_usd": 0.01577
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4132,
+        "cached_tokens": 0,
+        "output_tokens": 343,
+        "seconds": 4.3,
+        "cost_usd": 0.001
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 19640,
+        "cached_tokens": 10204,
+        "output_tokens": 2310,
+        "seconds": 16.3,
+        "cost_usd": 0.00325
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 12608,
+        "cached_tokens": 5056,
+        "output_tokens": 1661,
+        "seconds": 13.2,
+        "cost_usd": 0.00244
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 16537,
+        "cached_tokens": 6638,
+        "output_tokens": 1127,
+        "seconds": 10.3,
+        "cost_usd": 0.00268
+      },
+      "bench_coach": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 27618,
+        "cached_tokens": 17887,
+        "output_tokens": 1772,
+        "seconds": 10.8,
+        "cost_usd": 0.00319
+      },
+      "manager": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 6788,
+        "cached_tokens": 0,
+        "output_tokens": 373,
+        "seconds": 3.6,
+        "cost_usd": 0.00154
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 6923,
+        "cached_tokens": 0,
+        "output_tokens": 581,
+        "seconds": 5.1,
+        "cost_usd": 0.00168
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

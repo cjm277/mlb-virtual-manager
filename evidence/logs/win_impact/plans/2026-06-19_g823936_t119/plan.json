@@ -1,0 +1,1020 @@
+{
+  "run_id": "2026-06-19_g823936_t119",
+  "status": "approved",
+  "game": {
+    "game_pk": 823936,
+    "season": 2026,
+    "game_date": "2026-06-19",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "UNIQLO Field at Dodger Stadium",
+    "team": "Los Angeles Dodgers",
+    "team_id": 119,
+    "team_record_going_in": "48-27",
+    "opponent": "Baltimore Orioles",
+    "opponent_id": 110,
+    "opponent_record_going_in": "35-41",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 694346,
+        "name": "Trey Gibson"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Leadoff on his on-base profile and low strikeout rate; matchup expected xwOBA 0.363, though Gibson\u2019s right-handed sample is small."
+        },
+        {
+          "slot": 2,
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "position": "3B",
+          "bats": "L",
+          "reason": "Strong established bat with a batter edge at expected xwOBA 0.416; hunt fastballs, where his xwOBA is 0.502."
+        },
+        {
+          "slot": 3,
+          "player_id": 687221,
+          "name": "Dalton Rushing",
+          "position": "C",
+          "bats": "L",
+          "reason": "His expected xwOBA is 0.419 with a batter edge; breaking-ball results and Gibson\u2019s left-handed sample are small."
+        },
+        {
+          "slot": 4,
+          "player_id": 681624,
+          "name": "Andy Pages",
+          "position": "CF",
+          "bats": "R",
+          "reason": "Power option with a batter edge at expected xwOBA 0.366; Gibson\u2019s right-handed sample is small."
+        },
+        {
+          "slot": 5,
+          "player_id": 669899,
+          "name": "Ryan Ward",
+          "position": "1B",
+          "bats": "L",
+          "reason": "Fills first base while Freeman rests; his strong matchup and pitch-group results are small-sample, so he bats outside the top four."
+        },
+        {
+          "slot": 6,
+          "player_id": 669743,
+          "name": "Alex Call",
+          "position": "RF",
+          "bats": "R",
+          "reason": "On-base option with expected xwOBA 0.342; his breaking-ball result and Gibson\u2019s right-handed sample are small."
+        },
+        {
+          "slot": 7,
+          "player_id": 500743,
+          "name": "Miguel Rojas",
+          "position": "DH",
+          "bats": "R",
+          "reason": "Provides a right-handed option with expected xwOBA 0.352; his right-handed and breaking-ball samples are small."
+        },
+        {
+          "slot": 8,
+          "player_id": 690976,
+          "name": "Alex Freeland",
+          "position": "2B",
+          "bats": "S",
+          "reason": "Available at second base and has a batter edge at expected xwOBA 0.359; Gibson\u2019s left-handed sample is small."
+        },
+        {
+          "slot": 9,
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "position": "LF",
+          "bats": "S",
+          "reason": "Available left-handed look near the bottom; matchup is even at expected xwOBA 0.317 and his relevant samples are small."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "role": "pinch_hitter",
+          "note": "Rest him today as requested after 30 straight starts; retain as an emergency bat."
+        },
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "role": "pinch_hitter",
+          "note": "Rest him today as requested after 10 straight starts; retain as an emergency bat."
+        },
+        {
+          "player_id": 642020,
+          "name": "Chuckie Robinson",
+          "role": "backup_catcher",
+          "note": "Backup catcher; his pitcher-edge matchup is expected xwOBA 0.24, with small samples."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning with the tying or go-ahead run in scoring position against a right-handed reliever",
+          "bench_player_id": 518692,
+          "replaces_player_id": 669899,
+          "reason": "Use Freeman only for a high-leverage spot after resting him; Ward\u2019s matchup evidence is small-sample."
+        },
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning with the tying or go-ahead run in scoring position against a right-handed reliever",
+          "bench_player_id": 663656,
+          "replaces_player_id": 669743,
+          "reason": "Tucker is held out for rest but can be used if the game turns on one plate appearance."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late inning protecting a lead, if Rushing must leave the game",
+          "bench_player_id": 642020,
+          "replaces_player_id": 687221,
+          "reason": "Robinson is the available backup catcher to finish the game behind the plate."
+        }
+      ],
+      "summary": "Freeman and Tucker both rest today as directed. Ward covers first base despite small-sample matchup results; the top of the order pairs Betts and Muncy with Rushing\u2019s favorable but small-sample matchup. Trey Gibson is the high-confidence predicted starter."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 808967,
+        "name": "Yoshinobu Yamamoto",
+        "throws": "R",
+        "reason": "Best fit: expected xwOBA is 0.312 against Ward, 0.277 against O'Neill and 0.267 against Mayo; his season xwoba_allowed is 0.287.",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 100,
+        "pitch_mix": [
+          {
+            "pitch": "splitter",
+            "vs_lhb_pct": 30.0,
+            "vs_rhb_pct": 23.0,
+            "purpose": "Use as the main offspeed weapon; keep it below the barrel and away from Alonso's damage zone."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 28.0,
+            "purpose": "Elevate selectively and avoid predictable strikes to the left-handed bats."
+          },
+          {
+            "pitch": "cutter",
+            "vs_lhb_pct": 15.0,
+            "vs_rhb_pct": 14.0,
+            "purpose": "Change the fastball look and work in on right-handed hitters."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 16.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Show it early for a strike, then bury it when ahead."
+          },
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 10.0,
+            "vs_rhb_pct": 12.0,
+            "purpose": "Get ground-ball contact and keep the ball out of the middle."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 4.0,
+            "vs_rhb_pct": 8.0,
+            "purpose": "Use sparingly as a chase pitch, especially against right-handers."
+          }
+        ],
+        "keys": [
+          "Use the splitter and breaking balls to limit Alonso; matchup data shows expected xwOBA 0.341, so keep the pitch out of his damage zone.",
+          "Attack Ward with breaking balls; his expected xwOBA is 0.312, and the matchup marks his edge even.",
+          "Mix the offspeed pitch against Basallo rather than feeding fastballs; the matchup expected xwOBA is 0.344 with a batter edge.",
+          "Stay sharp to the left-handers; the matchup is even for Henderson, Cowser and Holliday, and their breaking-ball/off-speed samples have flags where noted."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 681911,
+          "name": "Alex Vesia",
+          "throws": "L",
+          "role": "setup",
+          "note": "Available; use for left-handed pockets and high-leverage work."
+        },
+        {
+          "player_id": 656945,
+          "name": "Tanner Scott",
+          "throws": "L",
+          "role": "closer",
+          "note": "Available; lead the late-inning leverage plan."
+        },
+        {
+          "player_id": 694361,
+          "name": "Will Klein",
+          "throws": "R",
+          "role": "setup",
+          "note": "Available; primary right-handed bridge to the late innings."
+        },
+        {
+          "player_id": 595014,
+          "name": "Blake Treinen",
+          "throws": "R",
+          "role": "setup",
+          "note": "Available; deploy in leverage against the heart of the order."
+        },
+        {
+          "player_id": 669165,
+          "name": "Kyle Hurt",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available; cover middle innings or a matchup pocket."
+        },
+        {
+          "player_id": 683618,
+          "name": "Edgardo Henriquez",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available; use for middle relief and keep leverage options fresh."
+        },
+        {
+          "player_id": 676263,
+          "name": "Jack Dreyer",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Available; target left-handed hitters when the matchup calls for it."
+        },
+        {
+          "player_id": 642546,
+          "name": "Jonathan Hern\u00e1ndez",
+          "throws": "R",
+          "role": "long",
+          "note": "Available; provide length if the starter exits early or the game opens up."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the rested setup arms to bridge into Scott for the final high-leverage outs; match left-handers with Vesia or Dreyer.",
+          "pitcher_ids": [
+            694361,
+            595014,
+            681911,
+            656945
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use the best matchup first, preserving Scott for the highest-leverage late pocket if the game remains close.",
+          "pitcher_ids": [
+            595014,
+            681911,
+            694361,
+            656945
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Use middle relief to cover innings and protect the leverage arms.",
+          "pitcher_ids": [
+            669165,
+            683618,
+            642546
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Prioritize length and save the closer and setup arms.",
+          "pitcher_ids": [
+            642546,
+            669165,
+            683618
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Use Hern\u00e1ndez for length, then turn to middle relief; reserve the leverage group for a close game.",
+          "pitcher_ids": [
+            642546,
+            669165,
+            683618,
+            676263
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use the available matchup arms in sequence; hold Scott for the highest-leverage situation.",
+          "pitcher_ids": [
+            694361,
+            681911,
+            595014,
+            656945
+          ]
+        }
+      ],
+      "summary": "Start Yamamoto and let him work toward six innings, with a 100-pitch ceiling. Lean on his splitter and breaking pitches against the heart of Baltimore's order, then use the rested bullpen with Scott closing."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 694346,
+        "name": "Trey Gibson",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [
+          "Trevor Rogers"
+        ],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "sinker",
+          "usage_pct": 31.2,
+          "velo": 94.6,
+          "whiff_pct": 15.6,
+          "note": "His most-used pitch; it has allowed a .355 xwOBA."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 21.7,
+          "velo": 91.5,
+          "whiff_pct": 18.2,
+          "note": "A frequent fastball with a .455 xwOBA allowed."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 16.7,
+          "velo": 87.8,
+          "whiff_pct": 16.7,
+          "note": "His slider has allowed a .306 xwOBA."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 15.1,
+          "velo": 83.8,
+          "whiff_pct": 30.0,
+          "note": "The curve gets whiffs, but has allowed a .482 xwOBA."
+        },
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 13.8,
+          "velo": 95.6,
+          "whiff_pct": 10.0,
+          "note": "His four-seamer has allowed a .379 xwOBA."
+        }
+      ],
+      "how_to_attack": [
+        "Left-handed hitters: look to do damage on fastballs; he uses them 59.7% of the time against lefties and allows a .461 xwOBA against them.",
+        "Right-handed hitters: be ready for fastballs, which make up 73.4% of his mix; breaking balls have allowed a .571 xwOBA, but his sample versus righties is small.",
+        "Control the strike zone: his overall walk rate is 13.5%, with a 28.8% chase rate.",
+        "Make him work early; he has averaged 87 pitches per start and 4.8 innings per start."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 687221,
+          "name": "Dalton Rushing",
+          "expected_xwoba": 0.419,
+          "edge": "batter",
+          "note": "Hunts breaking balls well (.498 xwOBA) against a pitch group Gibson uses 40.3% of the time to lefties; both samples are flagged small."
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "expected_xwoba": 0.416,
+          "edge": "batter",
+          "note": "Strong fastball results (.502 xwOBA) align with the 59.7% fastball share to lefties; Gibson's lefty sample is small."
+        },
+        {
+          "player_id": 669899,
+          "name": "Ryan Ward",
+          "expected_xwoba": 0.411,
+          "edge": "batter",
+          "note": "His .646 xwOBA against breaking balls stands out, but his batter and pitcher samples are small."
+        },
+        {
+          "player_id": 681624,
+          "name": "Andy Pages",
+          "expected_xwoba": 0.366,
+          "edge": "batter",
+          "note": "His expected xwOBA is above league xwOBA, though the pitcher\u2019s right-handed sample is small."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 642020,
+          "name": "Chuckie Robinson",
+          "expected_xwoba": 0.24,
+          "edge": "pitcher",
+          "note": "His .082 xwOBA against both pitch groups is based on small samples, as is Gibson\u2019s sample versus righties."
+        },
+        {
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "expected_xwoba": 0.317,
+          "edge": "even",
+          "note": "The result is near league xwOBA; his handedness and pitch-group samples are small."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 664854,
+          "name": "Ryan Helsley",
+          "throws": "R",
+          "note": "Available and rested; leads this group with 7 saves."
+        },
+        {
+          "player_id": 669330,
+          "name": "Tyler Wells",
+          "throws": "R",
+          "note": "Available and rested with 8 holds."
+        },
+        {
+          "player_id": 664991,
+          "name": "Grant Wolfram",
+          "throws": "L",
+          "note": "Available left-hander with 7 holds."
+        },
+        {
+          "player_id": 666974,
+          "name": "Yennier Cano",
+          "throws": "R",
+          "note": "Available and rested with 5 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 687221,
+          "name": "Dalton Rushing",
+          "bats": "L",
+          "expected_xwoba": 0.419,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": null,
+          "approach": "Hunt breaking balls: you\u2019re at .498 against them, and he allows .344; his fastballs draw a .374 from you while he allows .461. Both samples are small."
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "bats": "L",
+          "expected_xwoba": 0.416,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you\u2019re at .502 against them and he allows .461. Be selective with breaking balls (.293 for you, .344 allowed); his left-handed sample is small."
+        },
+        {
+          "player_id": 669899,
+          "name": "Ryan Ward",
+          "bats": "L",
+          "expected_xwoba": 0.411,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Hunt breaking balls: you\u2019re at .646 against them and he allows .344; fastballs are .249 for you against .461 allowed. Your samples and his left-handed sample are small."
+        },
+        {
+          "player_id": 681624,
+          "name": "Andy Pages",
+          "bats": "R",
+          "expected_xwoba": 0.366,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Hunt breaking balls: you\u2019re at .293 against them, while he allows .571; his fastballs are used 73.4% and he allows .335. His right-handed sample is small."
+        },
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "bats": "R",
+          "expected_xwoba": 0.363,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Hunt breaking balls: you\u2019re at .262 against them, compared with .571 allowed; fastballs are .352 for you and .335 allowed. His right-handed sample is small."
+        },
+        {
+          "player_id": 690976,
+          "name": "Alex Freeland",
+          "bats": "L",
+          "expected_xwoba": 0.359,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you\u2019re at .324 against them and he allows .461; breaking balls are .276 for you against .344 allowed. His left-handed sample is small."
+        },
+        {
+          "player_id": 500743,
+          "name": "Miguel Rojas",
+          "bats": "R",
+          "expected_xwoba": 0.352,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Hunt breaking balls: you\u2019re at .212 against them, while he allows .571; fastballs are .340 for you and .335 allowed. Your right-handed and breaking-ball samples, and his right-handed sample, are small."
+        },
+        {
+          "player_id": 669743,
+          "name": "Alex Call",
+          "bats": "R",
+          "expected_xwoba": 0.342,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Hunt breaking balls: you\u2019re at .293 against them and he allows .571; fastballs are .284 for you against .335 allowed. Your breaking-ball sample and his right-handed sample are small."
+        },
+        {
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "bats": "L",
+          "expected_xwoba": 0.317,
+          "edge": "even",
+          "hunt": "breaking balls",
+          "beware": null,
+          "approach": "Your breaking-ball mark is .308 against .344 allowed, while your fastball mark is .162 against .461 allowed. Your samples versus righties and fastballs, and his left-handed sample, are small."
+        },
+        {
+          "player_id": 642020,
+          "name": "Chuckie Robinson",
+          "bats": "R",
+          "expected_xwoba": 0.24,
+          "edge": "pitcher",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Both groups are .082 for you, while he allows .571 on breaking balls and .335 on fastballs. Your pitch-group samples and his right-handed sample are small."
+        }
+      ],
+      "summary": "Trey Gibson is the high-confidence likely starter, with Trevor Rogers the alternative. His profile shows modest strikeouts and walks, and his average start has been 4.8 innings, so prepare to see Baltimore\u2019s available bullpen. Freddie Freeman and Kyle Tucker have rest suggestions; the Bench Coach should decide whether they play."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 621493,
+          "name": "Taylor Ward",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 683002,
+          "name": "Gunnar Henderson",
+          "position": "SS",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 694212,
+          "name": "Samuel Basallo",
+          "position": "C",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 665750,
+          "name": "Leody Taveras",
+          "position": "RF",
+          "bats": "S"
+        },
+        {
+          "slot": 6,
+          "player_id": 681297,
+          "name": "Colton Cowser",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 691723,
+          "name": "Coby Mayo",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 641933,
+          "name": "Tyler O'Neill",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 702616,
+          "name": "Jackson Holliday",
+          "position": "2B",
+          "bats": "L"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 621493,
+          "name": "Taylor Ward",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 683002,
+          "name": "Gunnar Henderson",
+          "position": "SS",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 694212,
+          "name": "Samuel Basallo",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 691723,
+          "name": "Coby Mayo",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 641933,
+          "name": "Tyler O'Neill",
+          "position": "RF",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 665750,
+          "name": "Leody Taveras",
+          "position": "CF",
+          "bats": "S"
+        },
+        {
+          "slot": 8,
+          "player_id": 669236,
+          "name": "Jeremiah Jackson",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 702616,
+          "name": "Jackson Holliday",
+          "position": "C",
+          "bats": "L"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 621493,
+          "name": "Taylor Ward",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.354,
+          "weakness": "Breaking balls (xwOBA 0.265); xwOBA vs RHP is 0.34 versus 0.397 vs LHP (85 PA, moderate sample).",
+          "how_to_pitch": "Favor breaking balls; don't give him easy fastballs, and avoid free passes."
+        },
+        {
+          "player_id": 683002,
+          "name": "Gunnar Henderson",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.31,
+          "weakness": "Breaking-ball xwOBA is 0.268; vs LHP xwOBA is 0.271 versus 0.324 vs RHP (93 PA, moderate sample).",
+          "how_to_pitch": "Mix breaking balls in and challenge less with fastballs; the split favors facing him with a left-hander."
+        },
+        {
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.373,
+          "weakness": "Breaking-ball xwOBA is 0.295 versus 0.416 on fastballs; vs LHP xwOBA is 0.342 versus 0.384 vs RHP.",
+          "how_to_pitch": "Use breaking balls to get weaker contact; avoid fastballs in his damage zone."
+        },
+        {
+          "player_id": 694212,
+          "name": "Samuel Basallo",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.341,
+          "weakness": "Breaking-ball xwOBA is 0.296; vs LHP xwOBA is 0.237 (51 PA, small sample) versus 0.372 vs RHP.",
+          "how_to_pitch": "Lean on breaking pitches, especially with a left-hander; treat the lefty split cautiously because its sample is small."
+        },
+        {
+          "player_id": 665750,
+          "name": "Leody Taveras",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.306,
+          "weakness": "Modest overall xwOBA; the overview shows 0.277 vs LHP and 0.317 vs RHP.",
+          "how_to_pitch": "Use the platoon edge: prefer a left-hander, and make him earn his way on."
+        },
+        {
+          "player_id": 681297,
+          "name": "Colton Cowser",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.32,
+          "weakness": "xwOBA vs LHP is 0.066 versus 0.342 vs RHP (177 PA, moderate sample).",
+          "how_to_pitch": "Prefer a left-hander and work carefully; the split is stark, but the sample is moderate."
+        },
+        {
+          "player_id": 691723,
+          "name": "Coby Mayo",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.293,
+          "weakness": "xwOBA vs RHP is 0.255 versus 0.389 vs LHP (197 PA overall, moderate sample).",
+          "how_to_pitch": "Prefer a right-hander; stay disciplined with location and don't feed the favorable lefty split."
+        },
+        {
+          "player_id": 641933,
+          "name": "Tyler O'Neill",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.274,
+          "weakness": "Overall xwOBA is 0.274; split is 0.237 vs LHP and 0.3 vs RHP.",
+          "how_to_pitch": "A left-hander is preferable; attack the zone while staying out of the middle."
+        },
+        {
+          "player_id": 702616,
+          "name": "Jackson Holliday",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.32,
+          "weakness": "xwOBA vs LHP is 0.202 versus 0.341 vs RHP (92 PA, moderate sample).",
+          "how_to_pitch": "Prefer a left-hander and use breaking balls; his lefty split sample is moderate."
+        },
+        {
+          "player_id": 669236,
+          "name": "Jeremiah Jackson",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.294,
+          "weakness": "Overall xwOBA is 0.294; vs RHP it is 0.282 versus 0.324 vs LHP (182 PA, moderate sample).",
+          "how_to_pitch": "Keep the ball down and favor a right-hander, while avoiding walks."
+        }
+      ],
+      "summary": "The heart of the order is Ward, Henderson, Alonso and Basallo; Alonso is their strongest overall xwOBA threat, while Ward and Basallo show notable hand splits. A left-hander is preferable against Cowser and Holliday, but no single hand has a clear advantage across the full lineup; Basallo's lefty split is from a small sample."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 669257,
+          "name": "Will Smith",
+          "status": "out",
+          "reason": "Neck inflammation."
+        },
+        {
+          "player_id": 607192,
+          "name": "Tyler Glasnow",
+          "status": "out",
+          "reason": "Low back spasms."
+        },
+        {
+          "player_id": 605483,
+          "name": "Blake Snell",
+          "status": "out",
+          "reason": "Left elbow loose bodies."
+        },
+        {
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "status": "out",
+          "reason": "Left hamstring strain."
+        },
+        {
+          "player_id": 571771,
+          "name": "Enrique Hern\u00e1ndez",
+          "status": "out",
+          "reason": "Left oblique strain."
+        },
+        {
+          "player_id": 676508,
+          "name": "Ben Casparius",
+          "status": "out",
+          "reason": "Right shoulder inflammation."
+        },
+        {
+          "player_id": 621242,
+          "name": "Edwin D\u00edaz",
+          "status": "out",
+          "reason": "Right elbow loose bodies."
+        },
+        {
+          "player_id": 592779,
+          "name": "Brock Stewart",
+          "status": "out",
+          "reason": "Left foot bone spur."
+        },
+        {
+          "player_id": 689017,
+          "name": "Landon Knack",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 676272,
+          "name": "Bobby Miller",
+          "status": "out",
+          "reason": "Right shoulder soreness."
+        },
+        {
+          "player_id": 623465,
+          "name": "Evan Phillips",
+          "status": "out",
+          "reason": "Right forearm discomfort."
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "status": "rest_suggested",
+          "reason": "30 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "status": "rest_suggested",
+          "reason": "10 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "The listed injured-list players are unavailable for this game. No active relievers are marked limited or unavailable, and no 2027 health-note caution applies."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Rest Freeman and Tucker as requested; the Team Doctor flagged 30 straight starts for Freeman and 10 straight starts for Tucker, while retaining both for late pinch-hit spots.",
+        "Build the order around the high-confidence prediction that Trey Gibson starts: Muncy and Rushing lead the matchup group, with expected xwOBA 0.416 and 0.419; both profiles include small-sample caveats.",
+        "Start Yoshinobu Yamamoto, whose season xwoba_allowed is 0.287; the plan targets six innings with a 100-pitch ceiling and uses the splitter and breaking pitches against Baltimore\u2019s heart of the order.",
+        "Keep Ryan Ward fifth at first base: his expected xwOBA is 0.411, but both batter and pitcher samples are small, so the plan avoids over-relying on that matchup.",
+        "Use the available leverage arms to bridge to Tanner Scott in a close late lead, with Vesia or Dreyer available for left-handed pockets."
+      ],
+      "keys_to_the_game": [
+        "Make Gibson work early; he has averaged 87 pitches per start and 4.8 innings per start.",
+        "Hunt Gibson\u2019s fastballs with the left-handed bats, while respecting the small-sample flags on several favorable matchup reads.",
+        "Yamamoto should keep Baltimore\u2019s best threats off the middle of the plate, especially Alonso, using the planned splitter and breaking-ball mix.",
+        "Get through the heart of Baltimore\u2019s order with matchup-aware relief, then reserve Scott for the highest-leverage late outs."
+      ],
+      "summary": "The checker found no issues, and the plan is coherent: rest Freeman and Tucker, attack the likely starter Gibson with the strongest matchups, and start Yamamoto against Baltimore\u2019s projected lineup. Let Yamamoto work toward six innings within the 100-pitch ceiling, then use the available bullpen by leverage and matchup."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Work Gibson early; be ready for Baltimore\u2019s bullpen",
+      "message": "Trey Gibson is the high-confidence predicted starter. Make him work early, stay selective, and look to do damage on fastballs, especially from the left side. Muncy should hunt fastballs; Rushing should hunt breaking balls, though both matchup reads include small-sample caveats. Gibson has averaged 87 pitches per start and 4.8 innings per start, so be ready for Baltimore\u2019s available bullpen, including Ryan Helsley.",
+      "reminders": [
+        "Stay disciplined; Gibson\u2019s overall walk rate is 13.5%.",
+        "Muncy: hunt fastballs; be selective with breaking balls.",
+        "Rushing: hunt breaking balls; both relevant samples are small."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Yamamoto attacks the heart; bullpen follows leverage",
+      "message": "Yoshinobu Yamamoto starts, with a target of six innings and a 100-pitch ceiling. Keep the ball out of the middle against Baltimore\u2019s heart, especially Pete Alonso: use the splitter and breaking pitches, away from his damage zone. After Yamamoto, use matchup-aware relief; Vesia or Dreyer can handle left-handed pockets, with Scott reserved for the highest-leverage late outs.",
+      "reminders": [
+        "Favor breaking balls to Taylor Ward and Pete Alonso; avoid easy fastballs.",
+        "Treat Basallo\u2019s left-handed split cautiously; it is a small sample.",
+        "Use Hern\u00e1ndez for length if the starter exits early; protect leverage arms in a blowout."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Approved plan: rest key bats, then manage by matchup and leverage",
+      "message": "Freeman and Tucker rest as requested and remain available for late pinch-hit spots; the Team Doctor flagged their consecutive-start workload. Gibson is the high-confidence predicted starter, so build the early attack around Muncy and Rushing while respecting the small-sample flags. Ward stays at first base, but the evidence is small-sample. Yamamoto targets six innings within a 100-pitch ceiling; bridge by matchup and reserve Scott for the highest-leverage late outs.",
+      "reminders": [
+        "Freeman and Tucker are available, not out; use them only in the planned high-leverage spots.",
+        "Vesia or Dreyer are options for left-handed pockets.",
+        "The listed injured players are unavailable; do not use them."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 1,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 62.1,
+    "total": {
+      "model_steps": 21,
+      "gateway_cache_hits": 0,
+      "input_tokens": 113994,
+      "cached_tokens": 44908,
+      "output_tokens": 9288,
+      "cost_usd": 0.01936
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4463,
+        "cached_tokens": 0,
+        "output_tokens": 368,
+        "seconds": 4.1,
+        "cost_usd": 0.00108
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 21214,
+        "cached_tokens": 12802,
+        "output_tokens": 1998,
+        "seconds": 12.9,
+        "cost_usd": 0.00294
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 11878,
+        "cached_tokens": 4694,
+        "output_tokens": 1644,
+        "seconds": 13.6,
+        "cost_usd": 0.00235
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 18871,
+        "cached_tokens": 6828,
+        "output_tokens": 1262,
+        "seconds": 10.4,
+        "cost_usd": 0.00318
+      },
+      "bench_coach": {
+        "calls": 2,
+        "model_steps": 6,
+        "gateway_cache_hits": 0,
+        "input_tokens": 37067,
+        "cached_tokens": 20584,
+        "output_tokens": 2672,
+        "seconds": 28.3,
+        "cost_usd": 0.00504
+      },
+      "manager": {
+        "calls": 2,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 13584,
+        "cached_tokens": 0,
+        "output_tokens": 843,
+        "seconds": 11.4,
+        "cost_usd": 0.00314
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 6917,
+        "cached_tokens": 0,
+        "output_tokens": 501,
+        "seconds": 4.5,
+        "cost_usd": 0.00163
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

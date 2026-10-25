@@ -1,0 +1,1077 @@
+{
+  "run_id": "2026-09-10_g823413_t117",
+  "status": "approved",
+  "game": {
+    "game_pk": 823413,
+    "season": 2026,
+    "game_date": "2026-09-10",
+    "game_number": 1,
+    "day_night": "day",
+    "venue": "Citizens Bank Park",
+    "team": "Houston Astros",
+    "team_id": 117,
+    "team_record_going_in": "74-72",
+    "opponent": "Philadelphia Phillies",
+    "opponent_id": 143,
+    "opponent_record_going_in": "82-64",
+    "home_away": "away",
+    "bats_last": false,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 554430,
+        "name": "Zack Wheeler"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "position": "DH",
+          "bats": "L",
+          "reason": "Keep him in despite the rest suggestion: expected xwOBA is 0.382 with a batter edge; move his rest to a weaker matchup."
+        },
+        {
+          "slot": 2,
+          "player_id": 666211,
+          "name": "Taylor Trammell",
+          "position": "LF",
+          "bats": "L",
+          "reason": "His even matchup at 0.308 expected xwOBA and left-handed bat fit near the top; hunt fastballs."
+        },
+        {
+          "slot": 3,
+          "player_id": 572233,
+          "name": "Christian Walker",
+          "position": "1B",
+          "bats": "R",
+          "reason": "Established middle-order power bat; expected xwOBA is 0.269, and he should look for fastballs."
+        },
+        {
+          "slot": 4,
+          "player_id": 701358,
+          "name": "Cam Smith",
+          "position": "RF",
+          "bats": "R",
+          "reason": "Keep his regular bat in the heart of the order; his fastball xwOBA is 0.341 despite a pitcher edge overall."
+        },
+        {
+          "slot": 5,
+          "player_id": 662139,
+          "name": "Daulton Varsho",
+          "position": "CF",
+          "bats": "L",
+          "reason": "His even matchup at 0.301 expected xwOBA adds a left-handed bat; look for fastballs."
+        },
+        {
+          "slot": 6,
+          "player_id": 673237,
+          "name": "Yainer Diaz",
+          "position": "C",
+          "bats": "R",
+          "reason": "Regular catcher with an expected xwOBA of 0.281; hunt fastballs and avoid breaking balls."
+        },
+        {
+          "slot": 7,
+          "player_id": 514888,
+          "name": "Jose Altuve",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Keep the established second baseman in; expected xwOBA is 0.252 with a pitcher edge, so target fastballs."
+        },
+        {
+          "slot": 8,
+          "player_id": 669397,
+          "name": "Nick Allen",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Starts at shortstop while Pe\u00f1a rests; Wheeler has the edge at 0.233 expected xwOBA, so keep the approach simple."
+        },
+        {
+          "slot": 9,
+          "player_id": 664774,
+          "name": "LaMonte Wade Jr.",
+          "position": "3B",
+          "bats": "L",
+          "reason": "Starts at third in Paredes's place; matchup is a pitcher edge at 0.29 expected xwOBA, so target fastballs."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 670623,
+          "name": "Isaac Paredes",
+          "role": "pinch_hitter",
+          "note": "Rest him today against a pitcher-edge matchup at 0.278 expected xwOBA."
+        },
+        {
+          "player_id": 665161,
+          "name": "Jeremy Pe\u00f1a",
+          "role": "utility",
+          "note": "Rest him today against a pitcher-edge matchup at 0.285 expected xwOBA."
+        },
+        {
+          "player_id": 676369,
+          "name": "Nelson Vel\u00e1zquez",
+          "role": "pinch_hitter",
+          "note": "Late right-handed bat; matchup sample versus RHP and pitch groups is small."
+        },
+        {
+          "player_id": 543877,
+          "name": "Christian V\u00e1zquez",
+          "role": "backup_catcher",
+          "note": "Backup catcher; Wheeler has the edge in this matchup."
+        },
+        {
+          "player_id": 678489,
+          "name": "Jorge Barrosa",
+          "role": "pinch_runner",
+          "note": "Speed option for a late close game; can cover the outfield defensively."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later, tying or go-ahead run in scoring position against a right-handed reliever",
+          "bench_player_id": 670623,
+          "replaces_player_id": 664774,
+          "reason": "Use Paredes's established bat for Wade in a high-leverage spot."
+        },
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later, tying or go-ahead run in scoring position against a left-handed reliever",
+          "bench_player_id": 676369,
+          "replaces_player_id": 572233,
+          "reason": "Use a right-handed bat, while recognizing Vel\u00e1zquez's matchup sample is small."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "7th inning or later, go-ahead run on base",
+          "bench_player_id": 678489,
+          "replaces_player_id": 572233,
+          "reason": "Barrosa offers a speed option; adjust the defense after the move."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late in a close game while protecting a lead at shortstop",
+          "bench_player_id": 665161,
+          "replaces_player_id": 669397,
+          "reason": "Use Pe\u00f1a for a late defensive move after his planned rest."
+        }
+      ],
+      "summary": "Rest Paredes and Pe\u00f1a against pitcher-edge matchups of 0.278 and 0.285 expected xwOBA; Wade fills third and Allen takes shortstop. Alvarez stays because he has a clear batter edge at 0.382, so move his rest to a weaker matchup."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 664299,
+        "name": "Cristian Javier",
+        "throws": "R",
+        "reason": "Choose Javier over Blanco: Javier's expected xwOBA allowed is 0.34 versus Blanco's 0.354, and Javier's matchups project Harper at 0.352 and Schwarber at 0.316.",
+        "expected_innings": 4.0,
+        "pitch_count_limit": 80,
+        "pitch_mix": [
+          {
+            "pitch": "sweeper",
+            "vs_lhb_pct": 35.0,
+            "vs_rhb_pct": 35.0,
+            "purpose": "Lead with his best breaking offering; disrupt timing and target chase."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 35.0,
+            "vs_rhb_pct": 40.0,
+            "purpose": "Use selectively for strikes and elevation; do not let hitters sit on it."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Change speeds, especially to left-handed bats."
+          },
+          {
+            "pitch": "cutter",
+            "vs_lhb_pct": 5.0,
+            "vs_rhb_pct": 10.0,
+            "purpose": "Show sparingly to vary looks."
+          }
+        ],
+        "keys": [
+          "Attack Schwarber with sweepers rather than feeding his fastball strength; his matchup projection is 0.316 expected xwOBA.",
+          "Mix changeups and sweepers to Harper; Javier's matchup projection is 0.352 expected xwOBA.",
+          "Use breaking balls against Turner; his breaking-ball xwOBA is 0.219 in the matchup report.",
+          "Keep the ball out of Bohm's middle-in fastball path; his projected expected xwOBA is 0.358."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 623352,
+          "name": "Josh Hader",
+          "throws": "L",
+          "role": "closer",
+          "note": "Primary ninth-inning option; rested and leads the staff with 24 saves."
+        },
+        {
+          "player_id": 650556,
+          "name": "Bryan Abreu",
+          "throws": "R",
+          "role": "setup",
+          "note": "First setup choice; rested with 14 holds."
+        },
+        {
+          "player_id": 656986,
+          "name": "Bennett Sousa",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Use for left-handed pockets, especially if Harper or Schwarber is due."
+        },
+        {
+          "player_id": 699044,
+          "name": "Miguel Ullola",
+          "throws": "R",
+          "role": "long",
+          "note": "Available for multiple innings or to cover a starter exit."
+        },
+        {
+          "player_id": 687911,
+          "name": "Bryan King",
+          "throws": "L",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed or for one batter."
+        },
+        {
+          "player_id": 660853,
+          "name": "Enyel De Los Santos",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; prefer rested options and use only if needed."
+        },
+        {
+          "player_id": 805123,
+          "name": "AJ Blubaugh",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed and avoid extended work."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use Abreu for the key bridge, then Hader to close; bring in Sousa for a dangerous left-handed pocket if needed.",
+          "pitcher_ids": [
+            650556,
+            656986,
+            623352
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use Abreu for the highest-leverage pocket, then Hader if the game stays tight; avoid spending limited arms first.",
+          "pitcher_ids": [
+            650556,
+            623352,
+            656986
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Save the top leverage arms; use Ullola for length, then available middle relief if needed.",
+          "pitcher_ids": [
+            699044,
+            656986,
+            650556
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Use Ullola to cover length and preserve Hader and Abreu; turn to limited arms only if the game demands it.",
+          "pitcher_ids": [
+            699044,
+            656986,
+            687911,
+            660853,
+            805123
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Ullola takes the bulk innings, with Abreu and Sousa covering the highest-risk pockets; limited relievers are fallback only.",
+          "pitcher_ids": [
+            699044,
+            650556,
+            656986,
+            660853,
+            687911,
+            805123
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use Abreu first, then Hader; hold Sousa for left-handed threats and use Ullola for length if needed.",
+          "pitcher_ids": [
+            650556,
+            623352,
+            656986,
+            699044
+          ]
+        }
+      ],
+      "summary": "Start Cristian Javier, with a short leash given his 4.0 average innings per start. His sweeper is the primary weapon, while the plan keeps limited relievers out of the first call and reserves rested leverage arms for close situations."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 554430,
+        "name": "Zack Wheeler",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 36.0,
+          "velo": 95.2,
+          "whiff_pct": 30.2,
+          "note": "His most-used pitch; keep the barrel ready for firm velocity."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 15.7,
+          "velo": 94.8,
+          "whiff_pct": 11.9,
+          "note": "A firm fastball look with less swing-and-miss."
+        },
+        {
+          "pitch": "splitter",
+          "usage_pct": 15.4,
+          "velo": 87.4,
+          "whiff_pct": 45.1,
+          "note": "His strongest swing-and-miss weapon; track it down before committing."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 14.0,
+          "velo": 81.3,
+          "whiff_pct": 37.1,
+          "note": "A sharp breaking look that can draw swings and misses."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 10.3,
+          "velo": 90.8,
+          "whiff_pct": 20.7,
+          "note": "Firm velocity, but he has allowed a .334 xwOBA on it."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 8.5,
+          "velo": 79.9,
+          "whiff_pct": 46.8,
+          "note": "High-miss pitch; usage is moderate sample."
+        }
+      ],
+      "how_to_attack": [
+        "Lefties: expect fastballs 60.5% of the time; be ready to hit one early in the count.",
+        "Righties: expect fastballs 64.3% of the time, with breaking balls at 28.8%; stay disciplined against the breaking ball.",
+        "Left-handed bats showed the better matchup overall: Wheeler allowed a .301 xwOBA to lefties versus .228 to righties.",
+        "Do not chase the splitter or curveball below the zone; both drew high whiff rates."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "expected_xwoba": 0.382,
+          "edge": "batter",
+          "note": "Best matchup in the group; he brings a .479 xwOBA against fastballs and .521 against breaking balls."
+        },
+        {
+          "player_id": 666211,
+          "name": "Taylor Trammell",
+          "expected_xwoba": 0.308,
+          "edge": "even",
+          "note": "Fastballs are his best fit, with a .373 xwOBA against that group."
+        },
+        {
+          "player_id": 662139,
+          "name": "Daulton Varsho",
+          "expected_xwoba": 0.301,
+          "edge": "even",
+          "note": "He has a .306 xwOBA against fastballs; avoid leaning into the breaking ball."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 669397,
+          "name": "Nick Allen",
+          "expected_xwoba": 0.233,
+          "edge": "pitcher",
+          "note": "Wheeler holds the edge; Allen's breaking-ball xwOBA is .153."
+        },
+        {
+          "player_id": 543877,
+          "name": "Christian V\u00e1zquez",
+          "expected_xwoba": 0.235,
+          "edge": "pitcher",
+          "note": "Wheeler holds the edge; V\u00e1zquez has a .155 xwOBA against breaking balls."
+        },
+        {
+          "player_id": 514888,
+          "name": "Jose Altuve",
+          "expected_xwoba": 0.252,
+          "edge": "pitcher",
+          "note": "Wheeler holds the edge; Altuve's xwOBA is .215 against breaking balls."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 661395,
+          "name": "Jhoan Duran",
+          "throws": "R",
+          "note": "Closer with 30 saves; limited after pitching yesterday (14 pitches)."
+        },
+        {
+          "player_id": 689147,
+          "name": "Orion Kerkering",
+          "throws": "R",
+          "note": "Available and rested; has 17 holds."
+        },
+        {
+          "player_id": 548384,
+          "name": "Brooks Raley",
+          "throws": "L",
+          "note": "Available left-hander with 16 holds."
+        },
+        {
+          "player_id": 621237,
+          "name": "Jos\u00e9 Alvarado",
+          "throws": "L",
+          "note": "Available left-hander with 14 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "bats": "L",
+          "expected_xwoba": 0.382,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "offspeed",
+          "approach": "Hunt breaking balls: your xwOBA is .521 and Wheeler allows .294 to lefties on them. Lay off offspeed early; your .356 is above his .262 allowed."
+        },
+        {
+          "player_id": 666211,
+          "name": "Taylor Trammell",
+          "bats": "L",
+          "expected_xwoba": 0.308,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Sit fastballs: your xwOBA is .373 and Wheeler allows .319 to lefties. Your offspeed mark is .206 against his .262 allowed, so don't expand there."
+        },
+        {
+          "player_id": 662139,
+          "name": "Daulton Varsho",
+          "bats": "L",
+          "expected_xwoba": 0.301,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your .306 xwOBA is close to Wheeler's .319 allowed to lefties. Avoid chasing breaking balls, where your .252 is below his .294 allowed."
+        },
+        {
+          "player_id": 664774,
+          "name": "LaMonte Wade Jr.",
+          "bats": "L",
+          "expected_xwoba": 0.29,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hunt fastballs: your .329 xwOBA is slightly above Wheeler's .319 allowed to lefties. Your offspeed sample is small; it shows .201 against his .262 allowed, so avoid treating that result as settled."
+        },
+        {
+          "player_id": 665161,
+          "name": "Jeremy Pe\u00f1a",
+          "bats": "R",
+          "expected_xwoba": 0.285,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your .380 xwOBA is above Wheeler's .255 allowed to righties. His breaking balls are tougher, allowing .212 against your .229."
+        },
+        {
+          "player_id": 673237,
+          "name": "Yainer Diaz",
+          "bats": "R",
+          "expected_xwoba": 0.281,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastball: your .333 xwOBA tops Wheeler's .255 allowed to righties. His breaking ball allows .212 against your .284; your offspeed result is a small sample."
+        },
+        {
+          "player_id": 701358,
+          "name": "Cam Smith",
+          "bats": "R",
+          "expected_xwoba": 0.28,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .341 xwOBA is above Wheeler's .255 allowed to righties. Be selective on breaking balls; your .321 meets his .212 allowed."
+        },
+        {
+          "player_id": 670623,
+          "name": "Isaac Paredes",
+          "bats": "R",
+          "expected_xwoba": 0.278,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit on fastballs: your .356 xwOBA is above Wheeler's .255 allowed to righties. His breaking-ball .212 allowed is below your .249 mark, so don't chase it."
+        },
+        {
+          "player_id": 572233,
+          "name": "Christian Walker",
+          "bats": "R",
+          "expected_xwoba": 0.269,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for a fastball: your .318 xwOBA beats Wheeler's .255 allowed to righties. His breaking-ball .212 allowed is tougher than your .253 mark."
+        },
+        {
+          "player_id": 676369,
+          "name": "Nelson Vel\u00e1zquez",
+          "bats": "R",
+          "expected_xwoba": 0.266,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs, where your .327 xwOBA is above Wheeler's .255 allowed to righties. Your fastball, breaking-ball, and offspeed results versus RHP are small samples."
+        },
+        {
+          "player_id": 678489,
+          "name": "Jorge Barrosa",
+          "bats": "S",
+          "expected_xwoba": 0.264,
+          "edge": "pitcher",
+          "hunt": "offspeed",
+          "beware": "breaking balls",
+          "approach": "Hunt offspeed: your .312 xwOBA is above Wheeler's .262 allowed to lefties, but that is a small sample. Avoid breaking balls, where your .116 is well below his .294 allowed."
+        },
+        {
+          "player_id": 514888,
+          "name": "Jose Altuve",
+          "bats": "R",
+          "expected_xwoba": 0.252,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your .297 xwOBA is above Wheeler's .255 allowed to righties. His breaking-ball .212 allowed is close to your .215, so don't force that pitch."
+        },
+        {
+          "player_id": 543877,
+          "name": "Christian V\u00e1zquez",
+          "bats": "R",
+          "expected_xwoba": 0.235,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: your .267 xwOBA is just above Wheeler's .255 allowed to righties. His breaking-ball .212 allowed is above your .155; your offspeed result is a small sample."
+        },
+        {
+          "player_id": 669397,
+          "name": "Nick Allen",
+          "bats": "R",
+          "expected_xwoba": 0.233,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastball: your .256 xwOBA is near Wheeler's .255 allowed to righties. His breaking-ball .212 allowed is above your .153, so lay off it."
+        }
+      ],
+      "summary": "Zack Wheeler is the high-confidence expected starter. His fastball groups dominate the mix, while the splitter and curveball bring substantial swing-and-miss; left-handed hitters have the better overall matchup. Yordan Alvarez has the clearest individual edge, but he is rest-suggested; the manager should weigh that when setting the lineup."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "position": "3B",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 669016,
+          "name": "Brandon Marsh",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 702222,
+          "name": "Justin Crawford",
+          "position": "CF",
+          "bats": "L"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "position": "2B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 624641,
+          "name": "Edmundo Sosa",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "position": "3B",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 656537,
+          "name": "Derek Hill",
+          "position": "CF",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.371,
+          "weakness": "Breaking balls are his clearest weakness; he has a 0.312 xwOBA against them.",
+          "how_to_pitch": "Lean on breaking balls and avoid feeding him fastballs, against which he has a 0.423 xwOBA."
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.294,
+          "weakness": "Breaking balls; his xwOBA against them is 0.238. His offspeed sample is moderate.",
+          "how_to_pitch": "Use breaking balls to get him chasing; avoid relying on fastballs, where his xwOBA is 0.337."
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.389,
+          "weakness": "Offspeed is his clearest weakness, with a 0.33 xwOBA; he is much stronger against right-handers (0.428 xwOBA) than left-handers (0.327 xwOBA).",
+          "how_to_pitch": "Prefer a left-handed matchup and mix in offspeed; do not challenge him with fastballs, where his xwOBA is 0.43."
+        },
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.306,
+          "weakness": "Offspeed is his clearest relative weakness (0.264 xwOBA), but that sample is moderate and he rarely whiffs.",
+          "how_to_pitch": "Change speeds and locate carefully; do not expect swings and misses, as his overall whiff rate is 7.5%."
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.322,
+          "weakness": "No clear hand split: his xwOBA is 0.317 versus left-handers and 0.324 versus right-handers.",
+          "how_to_pitch": "Keep him off the middle of the plate and make him earn his way on; the available data shows no strong hand advantage."
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.329,
+          "weakness": "His xwOBA is lower against left-handers (0.31) than right-handers (0.334).",
+          "how_to_pitch": "Favor a left-handed matchup when practical and keep pitches down; avoid giving him free bases."
+        },
+        {
+          "player_id": 669016,
+          "name": "Brandon Marsh",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.307,
+          "weakness": "Struggles against left-handers: 0.229 xwOBA versus 0.331 against right-handers.",
+          "how_to_pitch": "A left-handed matchup is preferred; expand carefully with breaking stuff rather than giving him a hittable fastball."
+        },
+        {
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.318,
+          "weakness": "No clear hand split; his xwOBA is 0.323 versus left-handers and 0.317 versus right-handers.",
+          "how_to_pitch": "Attack the edges and vary locations; the numbers do not show a meaningful hand preference."
+        },
+        {
+          "player_id": 702222,
+          "name": "Justin Crawford",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.28,
+          "weakness": "Little hand split, with a 0.275 xwOBA versus left-handers and 0.281 versus right-handers.",
+          "how_to_pitch": "Stay out of the middle and make him prove he can drive the ball; avoid giving him an easy path to use his speed."
+        },
+        {
+          "player_id": 624641,
+          "name": "Edmundo Sosa",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.334,
+          "weakness": "No pronounced hand split; xwOBA is 0.343 versus left-handers and 0.322 versus right-handers.",
+          "how_to_pitch": "Work the edges and avoid leaving pitches in his pull-side power area."
+        },
+        {
+          "player_id": 656537,
+          "name": "Derek Hill",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.287,
+          "weakness": "The overall xwOBA is modest and his strikeout rate is 33.0%.",
+          "how_to_pitch": "Get ahead, then use breaking or offspeed below the zone to test his swing decisions."
+        }
+      ],
+      "summary": "The heart of the order is Schwarber and Harper, with Turner setting the table; Schwarber\u2019s power remains dangerous, while Harper is markedly less effective against left-handers. Prefer a left-handed starter if the choice is driven by these matchup numbers, particularly to limit Harper and Marsh, but Schwarber is stronger against left-handers (0.4 xwOBA) than right-handers (0.354)."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 681347,
+          "name": "Mike Burrows",
+          "status": "out",
+          "reason": "not stated"
+        },
+        {
+          "player_id": 595345,
+          "name": "Steven Okert",
+          "status": "out",
+          "reason": "Right hamstring strain."
+        },
+        {
+          "player_id": 694728,
+          "name": "Brice Matthews",
+          "status": "out",
+          "reason": "Left knee sprain."
+        },
+        {
+          "player_id": 681293,
+          "name": "Spencer Arrighetti",
+          "status": "out",
+          "reason": "Right foot nerve irritation."
+        },
+        {
+          "player_id": 621043,
+          "name": "Carlos Correa",
+          "status": "out",
+          "reason": "Left ankle tendon injury."
+        },
+        {
+          "player_id": 621121,
+          "name": "Lance McCullers Jr.",
+          "status": "out",
+          "reason": "Right shoulder inflammation."
+        },
+        {
+          "player_id": 687888,
+          "name": "Brandon Walter",
+          "status": "out",
+          "reason": "Left elbow surgery recovery."
+        },
+        {
+          "player_id": 687911,
+          "name": "Bryan King",
+          "status": "limited",
+          "reason": "pitched yesterday (20 pitches)"
+        },
+        {
+          "player_id": 660853,
+          "name": "Enyel De Los Santos",
+          "status": "limited",
+          "reason": "pitched yesterday (7 pitches)"
+        },
+        {
+          "player_id": 805123,
+          "name": "AJ Blubaugh",
+          "status": "limited",
+          "reason": "pitched yesterday (15 pitches)"
+        },
+        {
+          "player_id": 670623,
+          "name": "Isaac Paredes",
+          "status": "rest_suggested",
+          "reason": "30 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 665161,
+          "name": "Jeremy Pe\u00f1a",
+          "status": "rest_suggested",
+          "reason": "17 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Seven players are on the injured list and unavailable. Bryan King, Enyel De Los Santos, and AJ Blubaugh are limited after pitching yesterday; no players are cleared with caution."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Start Cristian Javier despite the scouting preference for a left-handed starter: his expected xwOBA allowed is 0.34 versus Blanco's 0.354, and his projections against Harper and Schwarber are 0.352 and 0.316.",
+        "Keep Yordan Alvarez in the lineup despite the rest suggestion; his expected xwOBA is 0.382 with a batter edge, the clearest matchup advantage.",
+        "Rest Isaac Paredes and Jeremy Pe\u00f1a against pitcher-edge matchups; LaMonte Wade Jr. and Nick Allen fill their spots, while Wade's offspeed sample is small.",
+        "Use Javier's sweeper as the primary weapon and limit him to 80 pitches; the plan expects 4.0 innings and targets the Phillies' fastball strengths with varied pitches.",
+        "Preserve rested leverage arms for close situations and treat Bryan King, Enyel De Los Santos, and AJ Blubaugh as limited after pitching yesterday."
+      ],
+      "keys_to_the_game": [
+        "Keep Schwarber off fastballs and use sweepers against his strength; his projected expected xwOBA is 0.316.",
+        "Mix changeups and sweepers to Harper, whose matchup projection is 0.352; favor left-handed relief when practical.",
+        "Stay disciplined against Wheeler's splitter and curveball, which have high whiff rates; attack fastballs early when the opportunity is there.",
+        "Get strong innings from the rested leverage group and avoid extended work from the limited relievers.",
+        "Take advantage of the left-handed bats in the lineup while Alvarez supplies the strongest individual matchup edge."
+      ],
+      "summary": "The checker found no issues, and the plan is coherent: start Cristian Javier with a sweeper-led approach, use the left-handed lineup advantage against high-confidence expected starter Zack Wheeler, and keep limited relievers out of the first call. Alvarez plays despite the rest suggestion because his matchup is the clearest edge; Paredes and Pe\u00f1a get their rest."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Be ready for Wheeler\u2019s fastball; don\u2019t chase the put-away stuff",
+      "message": "Zack Wheeler is the high-confidence expected starter. Left-handed bats have had the better matchup overall, and Yordan Alvarez brings the clearest individual edge. Be ready for fastballs early, but stay disciplined against the splitter and curveball\u2014both can miss bats. If he changes speeds, make him bring the ball into the zone rather than expanding.",
+      "reminders": [
+        "Alvarez: hunt breaking balls; lay off offspeed early.",
+        "Trammell and Varsho: look for fastballs; avoid chasing breaking balls.",
+        "Watch for Jhoan Duran, who is limited after pitching yesterday; Kerkering, Raley, and Alvarado are available."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Javier leads with the sweeper; change speeds to their left-handed threats",
+      "message": "Cristian Javier starts with an 80-pitch limit; the plan expects 4.0 innings. Lead with the sweeper, mix changeups to Harper, and keep Schwarber off fastballs\u2014use sweepers against his strength. Keep the ball out of Bohm\u2019s middle-in fastball path. For close late innings, Abreu is the setup choice and Hader the closer; use Sousa for dangerous left-handed pockets. Ullola is the length option.",
+      "reminders": [
+        "Turner: use breaking balls; avoid relying on fastballs.",
+        "Prefer left-handed relief for Harper or Marsh when practical.",
+        "King, De Los Santos, and Blubaugh are limited after pitching yesterday; avoid extended work."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Execute the approved matchup plan and protect the rested leverage group",
+      "message": "Keep Alvarez in despite the rest suggestion for his clear matchup edge; Paredes and Pe\u00f1a rest against pitcher-edge matchups, with Wade and Allen starting. Javier starts over Blanco, capped at 80 pitches, with the sweeper as his primary weapon. Preserve Abreu and Hader for close situations; limited relievers are not first-call options. Seven players are unavailable, and King, De Los Santos, and Blubaugh are limited after pitching yesterday.",
+      "reminders": [
+        "Wade\u2019s offspeed sample is small; don\u2019t overread it.",
+        "Use Pe\u00f1a late for defense at shortstop if protecting a close lead.",
+        "Alvarez and Pe\u00f1a are rest-suggested but available; Paredes is rested as planned."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 1,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 65.6,
+    "total": {
+      "model_steps": 23,
+      "gateway_cache_hits": 0,
+      "input_tokens": 137161,
+      "cached_tokens": 63209,
+      "output_tokens": 10465,
+      "cost_usd": 0.02129
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4369,
+        "cached_tokens": 0,
+        "output_tokens": 362,
+        "seconds": 4.2,
+        "cost_usd": 0.00105
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 20571,
+        "cached_tokens": 10661,
+        "output_tokens": 2352,
+        "seconds": 15.0,
+        "cost_usd": 0.00337
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 12985,
+        "cached_tokens": 5243,
+        "output_tokens": 1731,
+        "seconds": 15.6,
+        "cost_usd": 0.00252
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 23203,
+        "cached_tokens": 12976,
+        "output_tokens": 1141,
+        "seconds": 15.0,
+        "cost_usd": 0.00288
+      },
+      "bench_coach": {
+        "calls": 2,
+        "model_steps": 7,
+        "gateway_cache_hits": 0,
+        "input_tokens": 54053,
+        "cached_tokens": 34329,
+        "output_tokens": 2873,
+        "seconds": 22.6,
+        "cost_usd": 0.00607
+      },
+      "manager": {
+        "calls": 2,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 14553,
+        "cached_tokens": 0,
+        "output_tokens": 1491,
+        "seconds": 12.5,
+        "cost_usd": 0.00366
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7427,
+        "cached_tokens": 0,
+        "output_tokens": 515,
+        "seconds": 4.5,
+        "cost_usd": 0.00174
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

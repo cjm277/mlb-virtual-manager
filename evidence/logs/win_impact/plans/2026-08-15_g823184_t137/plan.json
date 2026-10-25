@@ -1,0 +1,1091 @@
+{
+  "run_id": "2026-08-15_g823184_t137",
+  "status": "approved",
+  "game": {
+    "game_pk": 823184,
+    "season": 2026,
+    "game_date": "2026-08-15",
+    "game_number": 1,
+    "day_night": "day",
+    "venue": "Oracle Park",
+    "team": "San Francisco Giants",
+    "team_id": 137,
+    "team_record_going_in": "50-72",
+    "opponent": "Colorado Rockies",
+    "opponent_id": 115,
+    "opponent_record_going_in": "49-73",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 547179,
+        "name": "Michael Lorenzen"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 701852,
+          "name": "Drew Cavanaugh",
+          "position": "C",
+          "bats": "L",
+          "reason": "Best available catcher on-base profile (OBP .362) and batter edge (expected_xwoba 0.358) against the right-hander."
+        },
+        {
+          "slot": 2,
+          "player_id": 687551,
+          "name": "Drew Gilbert",
+          "position": "CF",
+          "bats": "L",
+          "reason": "Batter edge (expected_xwoba 0.36) with established center-field starts; hunt fastballs in the zone."
+        },
+        {
+          "slot": 3,
+          "player_id": 805811,
+          "name": "Bryce Eldridge",
+          "position": "DH",
+          "bats": "L",
+          "reason": "Strong power profile (SLG .438) and batter edge (expected_xwoba 0.371); stay selective on breaking balls."
+        },
+        {
+          "slot": 4,
+          "player_id": 682674,
+          "name": "Victor Bericoto",
+          "position": "LF",
+          "bats": "R",
+          "reason": "Power option (SLG .486) with expected_xwoba 0.338; matchup pitch-group samples are small."
+        },
+        {
+          "slot": 5,
+          "player_id": 642715,
+          "name": "Willy Adames",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Established shortstop with an even matchup (expected_xwoba 0.314); look for fastballs."
+        },
+        {
+          "slot": 6,
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "position": "1B",
+          "bats": "L",
+          "reason": "Keep his clear batter edge (expected_xwoba 0.367) despite the rest suggestion; attack fastballs."
+        },
+        {
+          "slot": 7,
+          "player_id": 683766,
+          "name": "Christian Koss",
+          "position": "3B",
+          "bats": "R",
+          "reason": "Established third-base starts; matchup leans pitcher (expected_xwoba 0.292)."
+        },
+        {
+          "slot": 8,
+          "player_id": 806367,
+          "name": "Turner Hill",
+          "position": "RF",
+          "bats": "L",
+          "reason": "Listed as an outfield option, but hitting and matchup samples are small."
+        },
+        {
+          "slot": 9,
+          "player_id": 678545,
+          "name": "Osleivis Basabe",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Start him rather than rest: despite 12 straight starts and an even matchup (expected_xwoba 0.333), second base has no other established eligible option."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 808982,
+          "name": "Jung Hoo Lee",
+          "role": "defensive_replacement",
+          "note": "Sit for workload rest despite his batter edge (expected_xwoba 0.358); retain him for a late defensive option."
+        },
+        {
+          "player_id": 813841,
+          "name": "Jonah Cox",
+          "role": "pinch_runner",
+          "note": "Late speed option; his hitting and pitch-group samples are small."
+        },
+        {
+          "player_id": 671083,
+          "name": "Buddy Kennedy",
+          "role": "utility",
+          "note": "Third-base depth; expected_xwoba 0.25 matchup leans pitcher, and the sample is small."
+        },
+        {
+          "player_id": 668800,
+          "name": "Andrew Knizner",
+          "role": "backup_catcher",
+          "note": "Backup catcher; his hitting sample is small."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning with the tying or go-ahead run aboard and a chance to take an extra base.",
+          "bench_player_id": 813841,
+          "replaces_player_id": 682674,
+          "reason": "Use Cox's speed in a high-leverage running spot; his hitting sample is small."
+        },
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning against a left-handed reliever with a key plate appearance due.",
+          "bench_player_id": 808982,
+          "replaces_player_id": 806367,
+          "reason": "Lee provides an established left-handed bat in that situation."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead while protecting right field.",
+          "bench_player_id": 808982,
+          "replaces_player_id": 806367,
+          "reason": "Lee has extensive right-field starts and can replace Hill defensively."
+        }
+      ],
+      "summary": "Basabe starts at second base because he is the only available hitter with listed second-base starts; the even matchup (expected_xwoba 0.333) means this is an appropriate rest opportunity, but there is no eligible alternative. Devers stays in for his clear batter edge (expected_xwoba 0.367); Lee sits for workload rest despite a batter edge (expected_xwoba 0.358)."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 657277,
+        "name": "Logan Webb",
+        "throws": "R",
+        "reason": "Only ready option; predicted lineup matchups are solid overall, with pitcher edges against Jordan Beck (0.244 expected xwOBA) and Ezequiel Tovar (0.286).",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 95,
+        "pitch_mix": [
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 28.0,
+            "vs_rhb_pct": 30.0,
+            "purpose": "Get early contact and work inside without leaving it over the plate."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 30.0,
+            "vs_rhb_pct": 18.0,
+            "purpose": "Change speeds, especially against left-handed bats and Mickey Moniak."
+          },
+          {
+            "pitch": "sweeper",
+            "vs_lhb_pct": 22.0,
+            "vs_rhb_pct": 18.0,
+            "purpose": "Use as a chase pitch; vary its location and avoid predictable sequences."
+          },
+          {
+            "pitch": "cutter",
+            "vs_lhb_pct": 12.0,
+            "vs_rhb_pct": 17.0,
+            "purpose": "Change the fastball look and keep hitters from sitting on the sinker."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 8.0,
+            "vs_rhb_pct": 17.0,
+            "purpose": "Elevate selectively and avoid predictable fastball counts."
+          }
+        ],
+        "keys": [
+          "Predicted lineup: make Cole Carrigg earn the fastball; vary location and use breaking balls to change his eye level.",
+          "Use offspeed below the zone to Mickey Moniak; the scouting report flags breaking balls as a pitch to avoid against him.",
+          "Willi Castro has a 0.191 xwOBA against offspeed and 0.453 against fastballs in the matchup report; avoid predictable fastballs.",
+          "Keep the ball out of the middle against Troy Johnston, whose matchup report lists fastballs as his hunt pitch."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 676775,
+          "name": "Keaton Winn",
+          "throws": "R",
+          "role": "setup",
+          "note": "Available; primary late-inning setup option."
+        },
+        {
+          "player_id": 656529,
+          "name": "Sam Hentges",
+          "throws": "L",
+          "role": "setup",
+          "note": "Available; use for key left-handed hitters, especially when the matchup calls for a lefty."
+        },
+        {
+          "player_id": 681916,
+          "name": "Dylan Smith",
+          "throws": "R",
+          "role": "closer",
+          "note": "Available; lead late-inning save option."
+        },
+        {
+          "player_id": 694918,
+          "name": "Blade Tidwell",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available; use in the middle innings or when a fresh arm is needed."
+        },
+        {
+          "player_id": 693313,
+          "name": "Carson Seymour",
+          "throws": "R",
+          "role": "long",
+          "note": "Available; cover multiple innings if the starter exits early."
+        },
+        {
+          "player_id": 664141,
+          "name": "JT Brubaker",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed, preferably for one batter."
+        },
+        {
+          "player_id": 665665,
+          "name": "Reiver Sanmartin",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Limited after pitching yesterday; use only if needed, preferably for one batter."
+        },
+        {
+          "player_id": 671345,
+          "name": "Jason Foley",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed."
+        },
+        {
+          "player_id": 805345,
+          "name": "Trent Harris",
+          "throws": "R",
+          "role": "unavailable",
+          "note": "Unavailable after throwing 41 pitches yesterday."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the rested right-handers to protect the lead, then turn to Dylan Smith to close.",
+          "pitcher_ids": [
+            676775,
+            681916
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use the best available matchup arm first; save Smith for a lead if one develops.",
+          "pitcher_ids": [
+            656529,
+            676775,
+            681916
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Preserve the high-leverage arms; use middle relief and finish with a fresh arm if needed.",
+          "pitcher_ids": [
+            694918,
+            693313,
+            676775
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Save high-leverage arms and let the long reliever cover innings.",
+          "pitcher_ids": [
+            693313,
+            694918
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Use the long reliever first, then bridge with available middle relief; limited arms are emergency options.",
+          "pitcher_ids": [
+            693313,
+            694918,
+            676775,
+            664141,
+            671345
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use available rested arms before limited relievers; reserve the closer for a leverage spot.",
+          "pitcher_ids": [
+            676775,
+            656529,
+            681916,
+            694918,
+            665665
+          ]
+        }
+      ],
+      "summary": "Logan Webb is the only ready starter and brings a 3.59 ERA with a 6.3 average innings per start. The predicted lineup has no clear across-the-order hand preference, so vary Webb\u2019s mix and avoid predictable fastballs; protect limited relievers for need-only spots."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 547179,
+        "name": "Michael Lorenzen",
+        "throws": "R",
+        "confidence": "high",
+        "alternatives": [
+          "Gabriel Hughes"
+        ],
+        "probability_pct": 85,
+        "probability_basis": "Right 85% of the time in 3,526 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "changeup",
+          "usage_pct": 20.7,
+          "velo": 84.6,
+          "whiff_pct": 29.2,
+          "note": "His most-used offspeed pitch; it misses bats."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 20.0,
+          "velo": 93.3,
+          "whiff_pct": 9.4,
+          "note": "A frequent fastball with limited whiff."
+        },
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 18.9,
+          "velo": 94.0,
+          "whiff_pct": 8.8,
+          "note": "Another frequent fastball; look to do damage when it stays in the zone."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 14.2,
+          "velo": 90.1,
+          "whiff_pct": 15.0,
+          "note": "Adds another fastball look."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 11.2,
+          "velo": 82.7,
+          "whiff_pct": 23.8,
+          "note": "His main breaking ball by usage."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 7.9,
+          "velo": 86.2,
+          "whiff_pct": 22.9,
+          "note": "A secondary breaking pitch; usage sample flagged moderate."
+        },
+        {
+          "pitch": "sweeper",
+          "usage_pct": 7.0,
+          "velo": 82.4,
+          "whiff_pct": 31.6,
+          "note": "His highest-whiff pitch; usage sample flagged moderate."
+        }
+      ],
+      "how_to_attack": [
+        "Lefties: be ready for fastballs, which make up 52.0% of his mix; he allows .454 xwOBA against that group.",
+        "Righties: expect fastballs most often (54.8%), but breaking balls are 34.0% of his mix.",
+        "Left-handed hitters have a .395 xwOBA against him; look to attack fastballs in the zone.",
+        "His changeup has a 29.2% whiff rate; stay disciplined on offspeed below the zone.",
+        "He averages 87 pitches per start and 4.6 innings per start; be ready for the bullpen early."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 805811,
+          "name": "Bryce Eldridge",
+          "expected_xwoba": 0.371,
+          "edge": "batter",
+          "note": "His .380 xwOBA against fastballs pairs well with Lorenzen allowing .454 to lefties."
+        },
+        {
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "expected_xwoba": 0.367,
+          "edge": "batter",
+          "note": "His .344 xwOBA against fastballs pairs well with Lorenzen allowing .454 to lefties."
+        },
+        {
+          "player_id": 813841,
+          "name": "Jonah Cox",
+          "expected_xwoba": 0.365,
+          "edge": "batter",
+          "note": "His .615 xwOBA against fastballs leads his pitch-group numbers; sample is small."
+        },
+        {
+          "player_id": 687551,
+          "name": "Drew Gilbert",
+          "expected_xwoba": 0.36,
+          "edge": "batter",
+          "note": "His .369 xwOBA against fastballs pairs well with Lorenzen allowing .454 to lefties."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 671083,
+          "name": "Buddy Kennedy",
+          "expected_xwoba": 0.25,
+          "edge": "pitcher",
+          "note": "His .021 xwOBA against fastballs is a concern; Lorenzen uses them 54.8% of the time to righties. Sample is small."
+        },
+        {
+          "player_id": 683766,
+          "name": "Christian Koss",
+          "expected_xwoba": 0.292,
+          "edge": "pitcher",
+          "note": "His .178 xwOBA against breaking balls is a concern; Lorenzen allows .320 against that group to righties."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 605447,
+          "name": "Jordan Romano",
+          "throws": "R",
+          "note": "Available and rested; has 12 saves."
+        },
+        {
+          "player_id": 675848,
+          "name": "Juan Mejia",
+          "throws": "R",
+          "note": "Available and rested; has 8 holds."
+        },
+        {
+          "player_id": 623474,
+          "name": "Jimmy Herget",
+          "throws": "R",
+          "note": "Available and rested; has 7 holds."
+        },
+        {
+          "player_id": 656786,
+          "name": "Parker Mushinski",
+          "throws": "L",
+          "note": "Available left-hander; has 1 hold."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 805811,
+          "name": "Bryce Eldridge",
+          "bats": "L",
+          "expected_xwoba": 0.371,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: his xwOBA against them is .380, while Lorenzen allows .454 to lefties. Be selective on breaking balls; Eldridge is at .292 and Lorenzen allows .341."
+        },
+        {
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "bats": "L",
+          "expected_xwoba": 0.367,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs: his xwOBA against them is .344, while Lorenzen allows .454 to lefties. Be selective on offspeed; Devers is at .352 and Lorenzen allows .302."
+        },
+        {
+          "player_id": 813841,
+          "name": "Jonah Cox",
+          "bats": "R",
+          "expected_xwoba": 0.365,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "His .615 against fastballs is from a small sample; Lorenzen allows .346 to righties on fastballs. His .013 against breaking balls is also a small sample, and Lorenzen allows .320."
+        },
+        {
+          "player_id": 687551,
+          "name": "Drew Gilbert",
+          "bats": "L",
+          "expected_xwoba": 0.36,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs: Gilbert is at .369 against them, and Lorenzen allows .454 to lefties. Avoid chasing offspeed; Gilbert is at .284 and Lorenzen allows .302."
+        },
+        {
+          "player_id": 701852,
+          "name": "Drew Cavanaugh",
+          "bats": "L",
+          "expected_xwoba": 0.358,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs: Cavanaugh is at .330 and Lorenzen allows .454 to lefties. Cavanaugh's .290 against offspeed is a small sample; Lorenzen allows .302."
+        },
+        {
+          "player_id": 808982,
+          "name": "Jung Hoo Lee",
+          "bats": "L",
+          "expected_xwoba": 0.358,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Look for fastballs: Lee is at .327 and Lorenzen allows .454 to lefties. Be selective on offspeed; Lee is at .333 and Lorenzen allows .302."
+        },
+        {
+          "player_id": 806367,
+          "name": "Turner Hill",
+          "bats": "L",
+          "expected_xwoba": 0.352,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "offspeed",
+          "approach": "Hill's pitch-group numbers are small samples; his .315 against fastballs matches up with Lorenzen allowing .454 to lefties. Lorenzen allows .302 against offspeed."
+        },
+        {
+          "player_id": 682674,
+          "name": "Victor Bericoto",
+          "bats": "R",
+          "expected_xwoba": 0.338,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Bericoto's pitch-group numbers are small samples. His .359 against breaking balls compares with Lorenzen allowing .320 to righties; against fastballs he's at .261 while Lorenzen allows .346."
+        },
+        {
+          "player_id": 678545,
+          "name": "Osleivis Basabe",
+          "bats": "R",
+          "expected_xwoba": 0.333,
+          "edge": "even",
+          "hunt": "breaking balls",
+          "beware": null,
+          "approach": "Basabe's pitch-group numbers are small samples. Against breaking balls he's at .326 and Lorenzen allows .320 to righties; fastballs are more frequent at 54.8%."
+        },
+        {
+          "player_id": 642715,
+          "name": "Willy Adames",
+          "bats": "R",
+          "expected_xwoba": 0.314,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: Adames is at .324 and Lorenzen allows .346 to righties. Adames is at .247 against breaking balls, and Lorenzen allows .320."
+        },
+        {
+          "player_id": 668800,
+          "name": "Andrew Knizner",
+          "bats": "R",
+          "expected_xwoba": 0.31,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": null,
+          "approach": "Knizner's breaking-ball and offspeed results are small samples. Against fastballs he's at .320, and Lorenzen allows .346 to righties."
+        },
+        {
+          "player_id": 683766,
+          "name": "Christian Koss",
+          "bats": "R",
+          "expected_xwoba": 0.292,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Koss's results against righties and breaking balls are small samples. Against fastballs he's at .281 and Lorenzen allows .346; avoid expanding on breaking balls, where Koss is at .178 and Lorenzen allows .320."
+        },
+        {
+          "player_id": 671083,
+          "name": "Buddy Kennedy",
+          "bats": "R",
+          "expected_xwoba": 0.25,
+          "edge": "pitcher",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Kennedy's pitch-group numbers are small samples. Against breaking balls he's at .351 and Lorenzen allows .320 to righties; against fastballs Kennedy is at .021 and Lorenzen allows .346."
+        }
+      ],
+      "summary": "Michael Lorenzen is the high-confidence starter prediction, with Gabriel Hughes the alternative. Left-handed hitters have the stronger matchup outlook; attack fastballs in the zone and stay patient against offspeed. Lorenzen averages 4.6 innings per start, so the available bullpen may matter. Devers, Lee and Basabe are rest-suggested; lineup decisions remain with the manager."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "position": "CF",
+          "bats": "S"
+        },
+        {
+          "slot": 3,
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 650489,
+          "name": "Willi Castro",
+          "position": "2B",
+          "bats": "S"
+        },
+        {
+          "slot": 6,
+          "player_id": 687859,
+          "name": "Troy Johnston",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 7,
+          "player_id": 687597,
+          "name": "Jordan Beck",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 8,
+          "player_id": 678662,
+          "name": "Ezequiel Tovar",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 664954,
+          "name": "Brett Sullivan",
+          "position": "C",
+          "bats": "L"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "position": "LF",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "position": "CF",
+          "bats": "S"
+        },
+        {
+          "slot": 3,
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 650489,
+          "name": "Willi Castro",
+          "position": "2B",
+          "bats": "S"
+        },
+        {
+          "slot": 5,
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 6,
+          "player_id": 687597,
+          "name": "Jordan Beck",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 687859,
+          "name": "Troy Johnston",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 678662,
+          "name": "Ezequiel Tovar",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 664954,
+          "name": "Brett Sullivan",
+          "position": "C",
+          "bats": "L"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.318,
+          "weakness": "No clear split weakness; xwoba is 0.331 vs LHP and 0.313 vs RHP.",
+          "how_to_pitch": "Keep him off the barrel and vary location; avoid giving him a straight path to run."
+        },
+        {
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "bats": "S",
+          "threat": "high",
+          "xwoba": 0.335,
+          "weakness": "Breaking balls draw a 34.1% whiff rate; chase rises to 45.4% vs LHP (moderate sample).",
+          "how_to_pitch": "Use breaking balls to get him to chase, especially when batting left-handed; be careful with offspeed he handles well."
+        },
+        {
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.295,
+          "weakness": "Offspeed xwoba is 0.209 (moderate sample); vs LHP xwoba is 0.206 (small sample).",
+          "how_to_pitch": "Mix in offspeed and expand below the zone; avoid breaking balls, which he hits hard."
+        },
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.321,
+          "weakness": "Breaking-ball xwoba is 0.283; his xwoba is 0.286 vs LHP versus 0.336 vs RHP.",
+          "how_to_pitch": "Favor breaking balls and, when available, the left-handed matchup; don\u2019t challenge him with fastballs."
+        },
+        {
+          "player_id": 650489,
+          "name": "Willi Castro",
+          "bats": "S",
+          "threat": "medium",
+          "xwoba": 0.307,
+          "weakness": "Offspeed xwoba is 0.199 and breaking-ball xwoba is 0.256; his xwoba is 0.226 vs LHP and 0.348 vs RHP.",
+          "how_to_pitch": "Lean on offspeed and breaking pitches, particularly from a left-hander; avoid predictable fastballs."
+        },
+        {
+          "player_id": 687859,
+          "name": "Troy Johnston",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.323,
+          "weakness": "His xwoba is 0.251 vs LHP compared with 0.344 vs RHP.",
+          "how_to_pitch": "Prefer a left-handed matchup and attack the zone; don\u2019t give him a comfortable look to the opposite split."
+        },
+        {
+          "player_id": 687597,
+          "name": "Jordan Beck",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.248,
+          "weakness": "His xwoba is 0.206 vs RHP compared with 0.302 vs LHP.",
+          "how_to_pitch": "Favor a right-handed matchup and make him earn his way on; avoid leaving pitches in the middle."
+        },
+        {
+          "player_id": 678662,
+          "name": "Ezequiel Tovar",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.275,
+          "weakness": "No pronounced hand split; xwoba is 0.262 vs LHP and 0.28 vs RHP.",
+          "how_to_pitch": "Work the edges and make him elevate a pitch to do damage."
+        },
+        {
+          "player_id": 664954,
+          "name": "Brett Sullivan",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.279,
+          "weakness": "xwoba is 0.24 vs LHP compared with 0.291 vs RHP.",
+          "how_to_pitch": "A left-handed matchup is preferable; stay ahead and avoid giving him a hittable fastball."
+        }
+      ],
+      "summary": "These are predicted lineups, based on recent starts. Carrigg, Rumfield and Moniak are the main threats; target Moniak with offspeed and Castro with offspeed or breaking pitches. The numbers favor a left-handed starter against Johnston, Beck and Sullivan, but not against every hitter, so there is no clear across-the-order hand preference."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 656305,
+          "name": "Matt Chapman",
+          "status": "out",
+          "reason": "Abdominal strain."
+        },
+        {
+          "player_id": 686790,
+          "name": "Trevor McDonald",
+          "status": "out",
+          "reason": "Right elbow strain."
+        },
+        {
+          "player_id": 691740,
+          "name": "Daniel Susac",
+          "status": "out",
+          "reason": "Left knee patella fracture."
+        },
+        {
+          "player_id": 657424,
+          "name": "Matt Gage",
+          "status": "out",
+          "reason": "Left elbow strain."
+        },
+        {
+          "player_id": 683679,
+          "name": "Jesus Rodriguez",
+          "status": "out",
+          "reason": "Right elbow neuritis."
+        },
+        {
+          "player_id": 669477,
+          "name": "Casey Schmitt",
+          "status": "out",
+          "reason": "Left knee meniscus tear."
+        },
+        {
+          "player_id": 666711,
+          "name": "Joel Peguero",
+          "status": "out",
+          "reason": "Left hamstring strain."
+        },
+        {
+          "player_id": 664056,
+          "name": "Harrison Bader",
+          "status": "out",
+          "reason": "Left plantar fasciitis."
+        },
+        {
+          "player_id": 666931,
+          "name": "Jared Oliva",
+          "status": "out",
+          "reason": "Left wrist hamate fracture."
+        },
+        {
+          "player_id": 676130,
+          "name": "Jos\u00e9 Butt\u00f3",
+          "status": "out",
+          "reason": "Right arm fatigue."
+        },
+        {
+          "player_id": 806185,
+          "name": "Hayden Birdsong",
+          "status": "out",
+          "reason": "Tommy John surgery."
+        },
+        {
+          "player_id": 805345,
+          "name": "Trent Harris",
+          "status": "out",
+          "reason": "threw 41 pitches yesterday"
+        },
+        {
+          "player_id": 664141,
+          "name": "JT Brubaker",
+          "status": "limited",
+          "reason": "pitched yesterday (16 pitches)"
+        },
+        {
+          "player_id": 665665,
+          "name": "Reiver Sanmartin",
+          "status": "limited",
+          "reason": "pitched yesterday (5 pitches)"
+        },
+        {
+          "player_id": 671345,
+          "name": "Jason Foley",
+          "status": "limited",
+          "reason": "pitched yesterday (12 pitches)"
+        },
+        {
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 678545,
+          "name": "Osleivis Basabe",
+          "status": "rest_suggested",
+          "reason": "12 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 808982,
+          "name": "Jung Hoo Lee",
+          "status": "rest_suggested",
+          "reason": "16 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "The injured list sidelines Matt Chapman, Trevor McDonald, Daniel Susac, Matt Gage, Jesus Rodriguez, Casey Schmitt, Joel Peguero, Harrison Bader, Jared Oliva, Jos\u00e9 Butt\u00f3, and Hayden Birdsong. Trent Harris is unavailable after throwing 41 pitches yesterday; JT Brubaker, Reiver Sanmartin, and Jason Foley are limited after pitching yesterday."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Keep Logan Webb as the starter: he is the only ready option, and the predicted lineup has no clear across-the-order hand preference.",
+        "Start a left-handed-heavy lineup against the high-confidence Michael Lorenzen prediction; left-handed hitters have a .395 xwOBA against him, and he allows .454 xwOBA to that group.",
+        "Keep Rafael Devers in despite the rest suggestion because his expected_xwoba is 0.367; rest-suggested Jung Hoo Lee sits, while Osleivis Basabe starts at second with no established eligible alternative.",
+        "Use rested bullpen arms first and treat JT Brubaker, Reiver Sanmartin, and Jason Foley as limited; Trent Harris is unavailable."
+      ],
+      "keys_to_the_game": [
+        "Webb: use offspeed below the zone to Mickey Moniak and avoid breaking balls against him, which the scouting report says he hits hard.",
+        "Make Cole Carrigg earn the fastball; vary location and use breaking balls to draw chase.",
+        "Attack Lorenzen\u2019s fastballs in the zone, but stay disciplined against his changeup, which has a 29.2% whiff rate.",
+        "Be ready for Colorado\u2019s bullpen early: Lorenzen averages 4.6 innings per start.",
+        "Protect the bullpen workload by relying on rested arms before turning to limited relievers."
+      ],
+      "summary": "The checker found no issues, and the plan fits together: Webb faces a predicted lineup without a clear overall handedness preference, while our lineup targets Lorenzen\u2019s reported vulnerability to left-handed hitters. Use the rested bullpen first, and preserve the limited relievers for need-only situations."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "See the fastball; make Lorenzen prove the changeup",
+      "message": "Michael Lorenzen is the high-confidence starter prediction. Left-handed hitters have a .395 xwOBA against him, and he allows .454 xwOBA to that group. Hunt fastballs in the zone, but stay disciplined against his changeup, which has a 29.2% whiff rate. Be ready for Colorado\u2019s bullpen early: Lorenzen averages 4.6 innings per start.",
+      "reminders": [
+        "Drew Cavanaugh leads off; Bryce Eldridge and Rafael Devers bring left-handed power.",
+        "Eldridge: hunt fastballs and be selective on breaking balls.",
+        "Late against a left-handed reliever, Jung Hoo Lee is the pinch-hit option."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Vary the mix, attack their weak spots",
+      "message": "Logan Webb starts; he is the only ready option. The predicted lineup has no clear across-the-order hand preference, so vary locations and avoid predictable fastballs. Use offspeed below the zone to Mickey Moniak and avoid breaking balls against him. Make Cole Carrigg earn the fastball with changing locations and breaking balls to draw chase. Lean offspeed or breaking pitches to Willi Castro, and keep the ball out of the middle against Troy Johnston.",
+      "reminders": [
+        "Expected outing: 6.0 innings; pitch-count limit: 95.",
+        "Rested late options: Keaton Winn for setup and Dylan Smith to close a lead.",
+        "Sam Hentges is the left-handed setup option; use rested arms before limited relievers."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Keep the plan disciplined; preserve the rested bullpen",
+      "message": "The approved lineup starts left-handed-heavy against the high-confidence Michael Lorenzen prediction. Keep Rafael Devers in despite the rest suggestion; Jung Hoo Lee sits, and Osleivis Basabe starts at second with no established eligible alternative. Logan Webb is the only ready starter. Use rested bullpen arms first; keep JT Brubaker, Reiver Sanmartin, and Jason Foley for need-only situations, and Trent Harris is unavailable.",
+      "reminders": [
+        "Lorenzen averages 4.6 innings per start; prepare for Colorado\u2019s bullpen early.",
+        "Webb\u2019s pitch-count limit is 95.",
+        "Use Lee late for right-field defense or as a pinch hitter against a left-handed reliever."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 2,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 94.5,
+    "total": {
+      "model_steps": 28,
+      "gateway_cache_hits": 0,
+      "input_tokens": 179148,
+      "cached_tokens": 89087,
+      "output_tokens": 15390,
+      "cost_usd": 0.02749
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4509,
+        "cached_tokens": 0,
+        "output_tokens": 527,
+        "seconds": 10.5,
+        "cost_usd": 0.00117
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 5,
+        "gateway_cache_hits": 0,
+        "input_tokens": 32483,
+        "cached_tokens": 20288,
+        "output_tokens": 4479,
+        "seconds": 23.6,
+        "cost_usd": 0.00508
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 12261,
+        "cached_tokens": 4884,
+        "output_tokens": 1647,
+        "seconds": 11.9,
+        "cost_usd": 0.0024
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 14563,
+        "cached_tokens": 6785,
+        "output_tokens": 1151,
+        "seconds": 8.9,
+        "cost_usd": 0.00227
+      },
+      "bench_coach": {
+        "calls": 3,
+        "model_steps": 11,
+        "gateway_cache_hits": 0,
+        "input_tokens": 86622,
+        "cached_tokens": 57130,
+        "output_tokens": 4921,
+        "seconds": 36.8,
+        "cost_usd": 0.0095
+      },
+      "manager": {
+        "calls": 3,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 21462,
+        "cached_tokens": 0,
+        "output_tokens": 2154,
+        "seconds": 18.1,
+        "cost_usd": 0.00537
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7248,
+        "cached_tokens": 0,
+        "output_tokens": 511,
+        "seconds": 4.1,
+        "cost_usd": 0.00171
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

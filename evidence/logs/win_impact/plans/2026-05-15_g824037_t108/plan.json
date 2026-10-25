@@ -1,0 +1,1038 @@
+{
+  "run_id": "2026-05-15_g824037_t108",
+  "status": "approved",
+  "game": {
+    "game_pk": 824037,
+    "season": 2026,
+    "game_date": "2026-05-15",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Angel Stadium",
+    "team": "Los Angeles Angels",
+    "team_id": 108,
+    "team_record_going_in": "16-28",
+    "opponent": "Los Angeles Dodgers",
+    "opponent_id": 119,
+    "opponent_record_going_in": "26-18",
+    "home_away": "home",
+    "bats_last": true,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 680736,
+        "name": "Justin Wrobleski"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Best established on-base fit among available options, with a batter edge (0.343); pitch-group samples are small."
+        },
+        {
+          "slot": 2,
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "position": "3B",
+          "bats": "R",
+          "reason": "Batter edge (0.355) against both main pitch groups, though matchup samples are small."
+        },
+        {
+          "slot": 3,
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "position": "RF",
+          "bats": "R",
+          "reason": "Strong batter edge (0.418) and fastball fit; samples versus LHP and pitch groups are small."
+        },
+        {
+          "slot": 4,
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Everyday shortstop with an even matchup (0.322); keep him in and move rest to a weaker matchup soon."
+        },
+        {
+          "slot": 5,
+          "player_id": 694384,
+          "name": "Nolan Schanuel",
+          "position": "1B",
+          "bats": "L",
+          "reason": "Regular first baseman; matchup leans pitcher (0.269), with small left-handed samples."
+        },
+        {
+          "slot": 6,
+          "player_id": 681351,
+          "name": "Logan O'Hoppe",
+          "position": "C",
+          "bats": "R",
+          "reason": "Regular catcher with an even matchup (0.301); starts ahead of the backup catcher."
+        },
+        {
+          "slot": 7,
+          "player_id": 666139,
+          "name": "Josh Lowe",
+          "position": "LF",
+          "bats": "L",
+          "reason": "Established left fielder; matchup leans pitcher (0.195), with small left-handed samples."
+        },
+        {
+          "slot": 8,
+          "player_id": 660162,
+          "name": "Yo\u00e1n Moncada",
+          "position": "DH",
+          "bats": "S",
+          "reason": "Takes DH as requested; matchup leans pitcher (0.248), with small samples."
+        },
+        {
+          "slot": 9,
+          "player_id": 669326,
+          "name": "Bryce Teodosio",
+          "position": "CF",
+          "bats": "R",
+          "reason": "Manager-requested CF; his own overall sample is small, but CF defense is a strength."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "role": "pinch_hitter",
+          "note": "Rest day after 33 straight starts; matchup is even (0.327)."
+        },
+        {
+          "player_id": 624585,
+          "name": "Jorge Soler",
+          "role": "pinch_hitter",
+          "note": "Rest day after 22 straight starts; despite a batter edge (0.343), preserve the requested rest."
+        },
+        {
+          "player_id": 624428,
+          "name": "Adam Frazier",
+          "role": "utility",
+          "note": "Left-handed infield and outfield cover; matchup leans pitcher (0.291)."
+        },
+        {
+          "player_id": 665861,
+          "name": "Sebasti\u00e1n Rivero",
+          "role": "backup_catcher",
+          "note": "Catcher insurance; both matchup and hitter samples are small."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning with a key at-bat against a right-handed reliever",
+          "bench_player_id": 545361,
+          "replaces_player_id": 669326,
+          "reason": "Use Trout's established bat if a high-leverage plate appearance comes up."
+        },
+        {
+          "kind": "pinch_hit",
+          "situation": "Late inning with runners aboard against a left-handed reliever",
+          "bench_player_id": 624585,
+          "replaces_player_id": 660162,
+          "reason": "Soler's bat offers a late option, though his favorable starter matchup samples are small."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead with a defensive replacement available",
+          "bench_player_id": 624428,
+          "replaces_player_id": 666176,
+          "reason": "Use Frazier as available outfield cover to protect a lead."
+        }
+      ],
+      "summary": "Mike Trout rests as requested with an even starter matchup (0.327); Jorge Soler also rests despite a batter edge (0.343), honoring the manager's call. Adell plays RF and Teodosio CF, while Moncada takes DH; Wrobleski remains a medium-confidence starter prediction."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 667755,
+        "name": "Jos\u00e9 Soriano",
+        "throws": "R",
+        "reason": "Best ready option: his xwoba_allowed is 0.308 and k_pct is 28.4; matchup expected_xwoba is 0.293 against Teoscar Hern\u00e1ndez and 0.27 against Miguel Rojas, with pitcher edges.",
+        "expected_innings": 6.0,
+        "pitch_count_limit": 95,
+        "pitch_mix": [
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 26.0,
+            "vs_rhb_pct": 28.0,
+            "purpose": "Establish the fastball low and keep it out of the heart of the plate."
+          },
+          {
+            "pitch": "knuckle curve",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 27.0,
+            "purpose": "Use as a breaking-ball weapon, especially when hitters are looking fastball."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 22.0,
+            "vs_rhb_pct": 25.0,
+            "purpose": "Change the fastball look and challenge selectively with location."
+          },
+          {
+            "pitch": "splitter",
+            "vs_lhb_pct": 23.0,
+            "vs_rhb_pct": 16.0,
+            "purpose": "Finish below the zone for chase or weak contact."
+          },
+          {
+            "pitch": "slider",
+            "vs_lhb_pct": 4.0,
+            "vs_rhb_pct": 4.0,
+            "purpose": "Show sparingly as an additional breaking look."
+          }
+        ],
+        "keys": [
+          "Soriano is right-handed; use location and specific execution, not a broad lineup-hand advantage. Scouting favors a right-hander against Teoscar Hern\u00e1ndez and Miguel Rojas, but a left-hander against Andy Pages and Hyeseong Kim.",
+          "Against Max Muncy, mix curve and splitter locations; his matchup expected_xwoba is 0.379, a batter edge, and he hunts fastballs.",
+          "Vary locations to Freddie Freeman; his matchup expected_xwoba is 0.361, a batter edge, and the matchup flags his offspeed sample as small.",
+          "Use offspeed below the zone to test Dalton Rushing's chase; the scouting report flags that read as small-sample."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 696147,
+          "name": "Sam Bachman",
+          "throws": "R",
+          "role": "setup",
+          "note": "First high-leverage bridge; has 7 holds and is rested."
+        },
+        {
+          "player_id": 681217,
+          "name": "Chase Silseth",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available for middle innings and right-handed pockets."
+        },
+        {
+          "player_id": 666171,
+          "name": "Ryan Zeferjahn",
+          "throws": "R",
+          "role": "closer",
+          "note": "Use to finish a close game; has 1 save and is rested."
+        },
+        {
+          "player_id": 608718,
+          "name": "Brent Suter",
+          "throws": "L",
+          "role": "lefty_specialist",
+          "note": "Use for a left-handed pocket, especially Freeman or Muncy."
+        },
+        {
+          "player_id": 666201,
+          "name": "Alek Manoah",
+          "throws": "R",
+          "role": "long",
+          "note": "Cover multiple innings if Soriano exits early."
+        },
+        {
+          "player_id": 820862,
+          "name": "Jos\u00e9 Fermin",
+          "throws": "R",
+          "role": "middle",
+          "note": "Available for middle relief or an extra-inning bridge."
+        },
+        {
+          "player_id": 489446,
+          "name": "Kirby Yates",
+          "throws": "R",
+          "role": "setup",
+          "note": "Use as a late-inning bridge or high-leverage option."
+        },
+        {
+          "player_id": 815083,
+          "name": "Mitch Farris",
+          "throws": "L",
+          "role": "middle",
+          "note": "Available for left-handed hitters or middle relief."
+        },
+        {
+          "player_id": 696270,
+          "name": "Ryan Johnson",
+          "throws": "R",
+          "role": "mop_up",
+          "note": "Save for a low-leverage inning or when protecting the main bullpen."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use the setup arms to bridge to Zeferjahn for the finish.",
+          "pitcher_ids": [
+            696147,
+            489446,
+            666171
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Use matchup relievers and setup arms; keep Zeferjahn for a save situation if a lead develops.",
+          "pitcher_ids": [
+            608718,
+            696147,
+            489446,
+            666171
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Preserve late leverage arms; cover with middle relief and finish with Johnson if needed.",
+          "pitcher_ids": [
+            681217,
+            820862,
+            696270
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Save the closer and setup arms; use low-leverage and long relief to cover innings.",
+          "pitcher_ids": [
+            696270,
+            681217,
+            666201,
+            820862
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Manoah takes the bulk innings, followed by middle relief; use leverage arms only if the game tightens.",
+          "pitcher_ids": [
+            666201,
+            681217,
+            820862,
+            696147
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use middle relief first, then the left-hander for a favorable pocket; reserve the closer for highest leverage.",
+          "pitcher_ids": [
+            820862,
+            608718,
+            696147,
+            666171
+          ]
+        }
+      ],
+      "summary": "Start Jos\u00e9 Soriano, with a 95-pitch limit and a target of six innings. Keep the plan matchup-specific: the scouting report favors a right-hander against Teoscar Hern\u00e1ndez and Miguel Rojas but a left-hander against Andy Pages and Hyeseong Kim, so emphasize location and execution. Bachman and Yates bridge to Zeferjahn in close late situations."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 680736,
+        "name": "Justin Wrobleski",
+        "throws": "L",
+        "confidence": "medium",
+        "alternatives": [],
+        "probability_pct": 61,
+        "probability_basis": "Right 61% of the time in 1,220 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 51.4,
+          "velo": 93.6,
+          "whiff_pct": 14.1,
+          "note": "His lead pitch; right-handed hitters see fastballs 56.0% of the time."
+        },
+        {
+          "pitch": "slider",
+          "usage_pct": 33.1,
+          "velo": 85.6,
+          "whiff_pct": 20.4,
+          "note": "His main breaking ball, used heavily against both sides."
+        },
+        {
+          "pitch": "curveball",
+          "usage_pct": 7.0,
+          "velo": 74.8,
+          "whiff_pct": 10.5,
+          "note": "Small sample; a slower change of pace."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 5.0,
+          "velo": 92.6,
+          "whiff_pct": 0.0,
+          "note": "Small sample; limited use."
+        }
+      ],
+      "how_to_attack": [
+        "Right-handers: look fastball early; he uses fastballs 56.0% of the time against them.",
+        "Be ready for the slider; breaking balls account for 41.9% of his mix against righties.",
+        "Left-handers: expect a fastball-heavy approach, with FB at 61.4% and breaking balls at 38.6%; results vs lefties are a small sample.",
+        "His overall xwOBA allowed is 0.324; right-handed hitters\u2019 group results give several chances to attack fastballs."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "expected_xwoba": 0.418,
+          "edge": "batter",
+          "note": "Strong fastball group number; small sample vs LHP and versus the pitch groups."
+        },
+        {
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "expected_xwoba": 0.355,
+          "edge": "batter",
+          "note": "Positive numbers against both fastballs and breaking balls; small samples across groups."
+        },
+        {
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "expected_xwoba": 0.343,
+          "edge": "batter",
+          "note": "Breaking-ball group is a strength; small sample vs LHP and pitch groups."
+        },
+        {
+          "player_id": 624585,
+          "name": "Jorge Soler",
+          "expected_xwoba": 0.343,
+          "edge": "batter",
+          "note": "Breaking-ball group stands out; small sample vs LHP and pitch groups."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 666139,
+          "name": "Josh Lowe",
+          "expected_xwoba": 0.195,
+          "edge": "pitcher",
+          "note": "Low group results against both main pitch types; both player and pitcher lefty samples are small."
+        },
+        {
+          "player_id": 660162,
+          "name": "Yo\u00e1n Moncada",
+          "expected_xwoba": 0.248,
+          "edge": "pitcher",
+          "note": "Limited results against fastballs and breaking balls; small sample vs LHP and pitch groups."
+        },
+        {
+          "player_id": 665861,
+          "name": "Sebasti\u00e1n Rivero",
+          "expected_xwoba": 0.233,
+          "edge": "pitcher",
+          "note": "Very small hitter samples; fastball group is a weak spot."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 595014,
+          "name": "Blake Treinen",
+          "throws": "R",
+          "note": "Available and rested; leads the available group with 5 holds."
+        },
+        {
+          "player_id": 694361,
+          "name": "Will Klein",
+          "throws": "R",
+          "note": "Available and rested; has 4 holds."
+        },
+        {
+          "player_id": 676263,
+          "name": "Jack Dreyer",
+          "throws": "L",
+          "note": "Available and rested; left-handed option with 3 holds."
+        },
+        {
+          "player_id": 656945,
+          "name": "Tanner Scott",
+          "throws": "L",
+          "note": "Limited after pitching yesterday; has 4 saves and 4 holds."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "bats": "R",
+          "expected_xwoba": 0.327,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastball: your group xwOBA is 0.491 against his 0.314 allowed. Your breaking-ball number is 0.149 against 0.326 allowed; rest is suggested."
+        },
+        {
+          "player_id": 687093,
+          "name": "Vaughn Grissom",
+          "bats": "R",
+          "expected_xwoba": 0.343,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": null,
+          "approach": "Look for the breaking ball: your group xwOBA is 0.399 against his 0.326 allowed. Your fastball number is 0.355 against 0.314 allowed; these group samples are small."
+        },
+        {
+          "player_id": 672724,
+          "name": "Oswald Peraza",
+          "bats": "R",
+          "expected_xwoba": 0.355,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": null,
+          "approach": "Hunt breaking balls: your group xwOBA is 0.396 against his 0.326 allowed, with 0.401 against fastballs versus 0.314 allowed. Samples are small."
+        },
+        {
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "bats": "R",
+          "expected_xwoba": 0.418,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastball: your group xwOBA is 0.597 against his 0.314 allowed. Your breaking-ball xwOBA is 0.442 against 0.326 allowed; your samples are small, and rest is suggested."
+        },
+        {
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "bats": "R",
+          "expected_xwoba": 0.322,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your group xwOBA is 0.424 against his 0.314 allowed. Be careful with breaking balls: your 0.200 is below his 0.326 allowed; samples are small, and rest is suggested."
+        },
+        {
+          "player_id": 624585,
+          "name": "Jorge Soler",
+          "bats": "R",
+          "expected_xwoba": 0.343,
+          "edge": "batter",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Hunt breaking balls: your group xwOBA is 0.426 against his 0.326 allowed; your fastball number is 0.336 against 0.314 allowed. These samples are small; rest is suggested."
+        },
+        {
+          "player_id": 694384,
+          "name": "Nolan Schanuel",
+          "bats": "L",
+          "expected_xwoba": 0.269,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your group xwOBA is 0.303 against his 0.392 allowed to lefties. Your breaking-ball number is 0.073 against 0.213 allowed; the left-handed samples are small."
+        },
+        {
+          "player_id": 681351,
+          "name": "Logan O'Hoppe",
+          "bats": "R",
+          "expected_xwoba": 0.301,
+          "edge": "even",
+          "hunt": "breaking balls",
+          "beware": null,
+          "approach": "Stay ready for breaking balls: your group xwOBA is 0.284 against his 0.326 allowed; your fastball number is 0.292 against 0.314 allowed. These samples are small."
+        },
+        {
+          "player_id": 660162,
+          "name": "Yo\u00e1n Moncada",
+          "bats": "S",
+          "expected_xwoba": 0.248,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your group xwOBA is 0.228 against his 0.314 allowed. Your breaking-ball number is 0.130 against 0.326 allowed; samples are small."
+        },
+        {
+          "player_id": 666139,
+          "name": "Josh Lowe",
+          "bats": "L",
+          "expected_xwoba": 0.195,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your group xwOBA is 0.088 against his 0.392 allowed to lefties. Your breaking-ball number is 0.033 against 0.213 allowed; both left-handed samples are small."
+        },
+        {
+          "player_id": 624428,
+          "name": "Adam Frazier",
+          "bats": "L",
+          "expected_xwoba": 0.291,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: your group xwOBA is 0.276 against his 0.392 allowed to lefties. Your breaking-ball number is 0.233 against 0.213 allowed; left-handed samples are small."
+        },
+        {
+          "player_id": 665861,
+          "name": "Sebasti\u00e1n Rivero",
+          "bats": "R",
+          "expected_xwoba": 0.233,
+          "edge": "pitcher",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Your small-sample breaking-ball xwOBA is 0.302 against his 0.326 allowed; fastball xwOBA is 0.032 against 0.314 allowed. Treat the matchup data cautiously."
+        },
+        {
+          "player_id": 669326,
+          "name": "Bryce Teodosio",
+          "bats": "R",
+          "expected_xwoba": 0.273,
+          "edge": "pitcher",
+          "hunt": "breaking balls",
+          "beware": null,
+          "approach": "Your small-sample breaking-ball xwOBA is 0.240 against his 0.326 allowed, while your fastball number is 0.232 against 0.314 allowed. Stay patient and avoid expanding."
+        }
+      ],
+      "summary": "Justin Wrobleski is the medium-confidence starter prediction (61%); his main weapons are a 4-seam fastball and slider. Attack fastballs with the right-handed bats, but account for his 0.215 wOBA allowed to righties and small sample against lefties. Mike Trout, Jorge Soler, Jo Adell, and Zach Neto have rest suggestions; the manager decides whether to sit them. Blake Treinen, Will Klein, and Jack Dreyer are available and rested; Tanner Scott is limited."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 669257,
+          "name": "Will Smith",
+          "position": "DH",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 4,
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "position": "3B",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 681624,
+          "name": "Andy Pages",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 687221,
+          "name": "Dalton Rushing",
+          "position": "C",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 808975,
+          "name": "Hyeseong Kim",
+          "position": "SS",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 500743,
+          "name": "Miguel Rojas",
+          "position": "2B",
+          "bats": "R"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 669257,
+          "name": "Will Smith",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "position": "1B",
+          "bats": "L"
+        },
+        {
+          "slot": 3,
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 681624,
+          "name": "Andy Pages",
+          "position": "CF",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 500743,
+          "name": "Miguel Rojas",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "position": "3B",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 687221,
+          "name": "Dalton Rushing",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 9,
+          "player_id": 669289,
+          "name": "Santiago Espinal",
+          "position": "2B",
+          "bats": "R"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.384,
+          "weakness": "No clear pitch-type weakness; his splits by pitcher hand are nearly even.",
+          "how_to_pitch": "Mix locations and avoid predictable patterns; he has shown no clear handedness edge."
+        },
+        {
+          "player_id": 669257,
+          "name": "Will Smith",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.366,
+          "weakness": "Breaking balls: xwoba 0.252; his vs-LHP xwoba 0.288 is from a small sample.",
+          "how_to_pitch": "Favor breaking balls and avoid living on fastballs; his fastball xwoba is 0.419."
+        },
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.331,
+          "weakness": "Stronger against LHP (xwoba 0.359) than RHP (xwoba 0.322).",
+          "how_to_pitch": "Favor right-handed pitching if available and work carefully; avoid assuming a small split."
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.415,
+          "weakness": "Breaking balls: xwoba 0.317, below his fastball xwoba 0.463.",
+          "how_to_pitch": "Use breaking balls rather than challenge him with fastballs; breaking-ball sample is moderate."
+        },
+        {
+          "player_id": 681624,
+          "name": "Andy Pages",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.355,
+          "weakness": "Lower xwoba vs LHP (0.307) than vs RHP (0.368).",
+          "how_to_pitch": "A left-handed starter may have the edge; keep pitches out of his damage area."
+        },
+        {
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.32,
+          "weakness": "Higher strikeout rate: 28.5%; xwoba vs RHP is 0.299, lower than 0.384 vs LHP.",
+          "how_to_pitch": "Prefer a right-hander and use strike-zone pressure; do not give him easy pitches to drive."
+        },
+        {
+          "player_id": 687221,
+          "name": "Dalton Rushing",
+          "bats": "L",
+          "threat": "medium",
+          "xwoba": 0.367,
+          "weakness": "High chase rate against offspeed (43.8%), but the sample is small.",
+          "how_to_pitch": "Use offspeed below the zone to tempt chase; treat that pitch-type read cautiously because its sample is small."
+        },
+        {
+          "player_id": 808975,
+          "name": "Hyeseong Kim",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.309,
+          "weakness": "Lower xwoba vs LHP (0.199) than vs RHP (0.321).",
+          "how_to_pitch": "A left-handed starter may limit him; attack the zone and make him earn his way on."
+        },
+        {
+          "player_id": 500743,
+          "name": "Miguel Rojas",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.318,
+          "weakness": "Lower xwoba vs RHP (0.26) than vs LHP (0.368).",
+          "how_to_pitch": "Prefer a right-hander and challenge him in the zone."
+        },
+        {
+          "player_id": 669289,
+          "name": "Santiago Espinal",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.269,
+          "weakness": "Small overall sample; xwoba 0.269.",
+          "how_to_pitch": "Attack the zone, but keep the evaluation tentative because his sample is small."
+        }
+      ],
+      "summary": "The order's main threats are Max Muncy and Freddie Freeman, with Dalton Rushing also showing power; Rushing's profile is based on a moderate overall sample. The splits favor a right-handed starter against Andy Pages, Teoscar Hern\u00e1ndez, and Miguel Rojas, while Kyle Tucker is stronger against left-handers; there is no clear overall hand preference across the full projected order."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 519141,
+          "name": "Drew Pomeranz",
+          "status": "out",
+          "reason": "Left elbow inflammation."
+        },
+        {
+          "player_id": 518595,
+          "name": "Travis d'Arnaud",
+          "status": "out",
+          "reason": "Right foot plantar fasciitis."
+        },
+        {
+          "player_id": 579328,
+          "name": "Yusei Kikuchi",
+          "status": "out",
+          "reason": "Left shoulder inflammation."
+        },
+        {
+          "player_id": 596112,
+          "name": "Robert Stephenson",
+          "status": "out",
+          "reason": "Right elbow inflammation."
+        },
+        {
+          "player_id": 690829,
+          "name": "Ben Joyce",
+          "status": "out",
+          "reason": "Right shoulder inflammation."
+        },
+        {
+          "player_id": 680570,
+          "name": "Grayson Rodriguez",
+          "status": "out",
+          "reason": "Right shoulder inflammation."
+        },
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "status": "rest_suggested",
+          "reason": "33 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 624585,
+          "name": "Jorge Soler",
+          "status": "rest_suggested",
+          "reason": "22 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "status": "rest_suggested",
+          "reason": "40 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Six players are on the injured list and unavailable for this game. No relievers are marked limited or unavailable by the workload rules, and no 2027 health-note cautions apply."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Start Jos\u00e9 Soriano: his xwoba_allowed is 0.308 and k_pct is 28.4; scouting also gives him pitcher edges against Teoscar Hern\u00e1ndez and Miguel Rojas.",
+        "Keep the lineup built for the medium-confidence Justin Wrobleski prediction (61%): Vaughn Grissom, Oswald Peraza, and Jo Adell have batter edges, with Jo Adell at 0.418; those pitch-group samples are small.",
+        "Honor the rest suggestions for Mike Trout and Jorge Soler, while keeping Jo Adell and Zach Neto in the lineup for their matchups; Jo Adell\u2019s samples versus LHP and pitch groups are small.",
+        "Use breaking balls against Will Smith and Max Muncy, whose breaking-ball xwoba figures are 0.252 and 0.317; Muncy\u2019s breaking-ball sample is moderate.",
+        "Bridge a close game with Sam Bachman and Kirby Yates to Ryan Zeferjahn; Tanner Scott is limited after pitching yesterday."
+      ],
+      "keys_to_the_game": [
+        "Soriano should locate the sinker and curve, vary looks to Freddie Freeman, and avoid predictable patterns.",
+        "Work breaking balls against Will Smith and Max Muncy instead of challenging them with fastballs.",
+        "Right-handed hitters should be ready for Wrobleski\u2019s fastball, while staying prepared for his slider; the left-handed matchup results are a small sample.",
+        "Use offspeed below the zone to test Dalton Rushing\u2019s chase, treating that read cautiously because the sample is small.",
+        "Preserve the late leverage arms in low-leverage situations and use Zeferjahn to finish a close lead."
+      ],
+      "summary": "Start Soriano with a 95-pitch limit and a target of six innings, using location and matchup-specific sequencing against the Dodgers\u2019 projected order. The lineup targets Wrobleski\u2019s main pitches, while honoring the requested rest for Trout and Soler; use Bachman and Yates to bridge close games to Zeferjahn."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Be ready for Wrobleski\u2019s fastball\u2014and stay alert for the slider",
+      "message": "Justin Wrobleski is the medium-confidence starter prediction (61%), led by his four-seam fastball and slider. Right-handed hitters: look for the fastball early, but be ready for the slider. Vaughn Grissom and Oswald Peraza can look to attack breaking balls; those matchup samples are small. Jo Adell\u2019s fastball fit stands out, but his samples versus left-handers and pitch groups are small. Blake Treinen, Will Klein, and Jack Dreyer are available and rested; Tanner Scott is limited after pitching yesterday.",
+      "reminders": [
+        "Stay patient and avoid expanding against the slider.",
+        "Mike Trout and Jorge Soler are resting; both remain late pinch-hit options.",
+        "Treat left-handed matchup results as a small sample."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Soriano sets the tone; attack their damage bats with intent",
+      "message": "Jos\u00e9 Soriano starts with a 95-pitch limit and a target of six innings. Locate the sinker and curve, vary looks to Freddie Freeman, and avoid predictable patterns. Use breaking balls against Will Smith and Max Muncy rather than challenging them with fastballs; Muncy\u2019s breaking-ball sample is moderate. Test Dalton Rushing with offspeed below the zone, but treat that chase read cautiously because the sample is small. In a close game, Sam Bachman and Kirby Yates bridge to Ryan Zeferjahn; preserve leverage arms in low-leverage spots.",
+      "reminders": [
+        "Keep pitches out of the heart of the plate.",
+        "Use matchup relievers and setup arms in close late situations.",
+        "If Soriano exits early, Alek Manoah is the bulk-innings option."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Approved plan: honor the rests and protect late leverage",
+      "message": "Jos\u00e9 Soriano starts; the plan sets a 95-pitch limit and a six-inning target. Keep the lineup built for the medium-confidence Justin Wrobleski prediction (61%): Vaughn Grissom, Oswald Peraza, and Jo Adell have batter edges, with small pitch-group samples. Mike Trout and Jorge Soler rest as requested; Jo Adell and Zach Neto remain in the lineup despite rest suggestions. For a close game, use Sam Bachman and Kirby Yates to bridge to Ryan Zeferjahn. Tanner Scott is limited after pitching yesterday. Six players are unavailable, as listed by the Team Doctor.",
+      "reminders": [
+        "Use Trout late against a right-handed reliever; Soler late against a left-handed reliever.",
+        "Use Adam Frazier as an available outfield defensive replacement to protect a lead.",
+        "Preserve late leverage arms in low-leverage situations."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 1,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 62.3,
+    "total": {
+      "model_steps": 27,
+      "gateway_cache_hits": 0,
+      "input_tokens": 165978,
+      "cached_tokens": 84419,
+      "output_tokens": 12204,
+      "cost_usd": 0.0241
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4335,
+        "cached_tokens": 0,
+        "output_tokens": 258,
+        "seconds": 4.8,
+        "cost_usd": 0.001
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 16750,
+        "cached_tokens": 7137,
+        "output_tokens": 2344,
+        "seconds": 15.1,
+        "cost_usd": 0.00324
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 12202,
+        "cached_tokens": 4854,
+        "output_tokens": 1516,
+        "seconds": 13.4,
+        "cost_usd": 0.00232
+      },
+      "pitching_coach": {
+        "calls": 2,
+        "model_steps": 6,
+        "gateway_cache_hits": 0,
+        "input_tokens": 34579,
+        "cached_tokens": 17246,
+        "output_tokens": 2493,
+        "seconds": 20.6,
+        "cost_usd": 0.00506
+      },
+      "bench_coach": {
+        "calls": 2,
+        "model_steps": 10,
+        "gateway_cache_hits": 0,
+        "input_tokens": 77179,
+        "cached_tokens": 55182,
+        "output_tokens": 3717,
+        "seconds": 24.9,
+        "cost_usd": 0.00736
+      },
+      "manager": {
+        "calls": 2,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 13811,
+        "cached_tokens": 0,
+        "output_tokens": 1289,
+        "seconds": 11.1,
+        "cost_usd": 0.00341
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 7122,
+        "cached_tokens": 0,
+        "output_tokens": 587,
+        "seconds": 5.5,
+        "cost_usd": 0.00172
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}

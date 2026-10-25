@@ -1,0 +1,1048 @@
+{
+  "run_id": "2026-07-21_g822871_t145",
+  "status": "approved",
+  "game": {
+    "game_pk": 822871,
+    "season": 2026,
+    "game_date": "2026-07-21",
+    "game_number": 1,
+    "day_night": "night",
+    "venue": "Globe Life Field",
+    "team": "Chicago White Sox",
+    "team_id": 145,
+    "team_record_going_in": "53-46",
+    "opponent": "Texas Rangers",
+    "opponent_id": 140,
+    "opponent_record_going_in": "50-50",
+    "home_away": "away",
+    "bats_last": false,
+    "stats_basis": "2026 season through the day before the game.",
+    "weight_on_2025_stats": "0%"
+  },
+  "manager_notes": null,
+  "sections": {
+    "lineup_card": {
+      "opposing_starter_assumed": {
+        "player_id": 677958,
+        "name": "Kumar Rocker"
+      },
+      "lineup": [
+        {
+          "slot": 1,
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "position": "LF",
+          "bats": "L",
+          "reason": "Top on-base option with an established batter edge; hunt fastballs and stay disciplined against breaking balls."
+        },
+        {
+          "slot": 2,
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "position": "1B",
+          "bats": "L",
+          "reason": "Strong on-base and power profile with a batter edge; attack fastballs, but avoid the slider."
+        },
+        {
+          "slot": 3,
+          "player_id": 545341,
+          "name": "Randal Grichuk",
+          "position": "DH",
+          "bats": "R",
+          "reason": "Power threat with an even matchup; breaking-ball sample against right-handers is small, so be selective."
+        },
+        {
+          "slot": 4,
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "position": "RF",
+          "bats": "S",
+          "reason": "Batter edge and fastball fit; breaking-ball and offspeed samples are small, so keep expectations measured."
+        },
+        {
+          "slot": 5,
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "position": "CF",
+          "bats": "L",
+          "reason": "Established center fielder with an even matchup; target fastballs and avoid expanding against breaking balls."
+        },
+        {
+          "slot": 6,
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "position": "2B",
+          "bats": "R",
+          "reason": "Reliable on-base skills and strong defense; Rocker has the edge, especially against breaking balls."
+        },
+        {
+          "slot": 7,
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "position": "SS",
+          "bats": "R",
+          "reason": "Available shortstop replacement; matchup favors Rocker, so attack the fastball and lay off breaking balls."
+        },
+        {
+          "slot": 8,
+          "player_id": 700337,
+          "name": "Edgar Quero",
+          "position": "C",
+          "bats": "S",
+          "reason": "Regular catcher with an even matchup; look for fastballs and respect breaking balls."
+        },
+        {
+          "slot": 9,
+          "player_id": 691011,
+          "name": "Drew Romo",
+          "position": "3B",
+          "bats": "S",
+          "reason": "Even matchup, with a small offspeed sample; prioritize fastball recognition."
+        }
+      ],
+      "bench": [
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "role": "utility",
+          "note": "Rest today after 23 straight starts; matchup graded even, making this a reasonable rest day."
+        },
+        {
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "role": "defensive_replacement",
+          "note": "Rest today after 14 straight starts; matchup graded even at 0.329, so move his rest to today."
+        },
+        {
+          "player_id": 678577,
+          "name": "Junior Perez",
+          "role": "pinch_runner",
+          "note": "Late speed option; his overall and matchup samples are small."
+        }
+      ],
+      "substitutions": [
+        {
+          "kind": "pinch_hit",
+          "situation": "7th inning or later against a left-handed reliever in a key plate appearance",
+          "bench_player_id": 678246,
+          "replaces_player_id": 682668,
+          "reason": "Vargas is available off the bench and brings an established bat; he rests against today's even matchup."
+        },
+        {
+          "kind": "pinch_run",
+          "situation": "Late inning with the tying or go-ahead run on base",
+          "bench_player_id": 678577,
+          "replaces_player_id": 545341,
+          "reason": "Use Perez for a speed opportunity; his hitting samples are small."
+        },
+        {
+          "kind": "defensive",
+          "situation": "Late lead after Acu\u00f1a's final plate appearance",
+          "bench_player_id": 695657,
+          "replaces_player_id": 682668,
+          "reason": "Montgomery is the available shortstop replacement; preserve the rest-day plan unless the game situation warrants it."
+        }
+      ],
+      "summary": "Rocker is the medium-confidence starter prediction. Vargas and Colson Montgomery sit as requested, with both facing even matchups; Vargas\u2019s rest follows 23 straight starts and Montgomery\u2019s follows 14 straight starts. Left-handed hitters should hunt fastballs and avoid chasing Rocker\u2019s slider."
+    },
+    "pitching_plan": {
+      "starter": {
+        "player_id": 702273,
+        "name": "Noah Schultz",
+        "throws": "L",
+        "reason": "Best ready option: Jonathan Cannon has no 2026 starts and a small sample; Schultz has 11 starts and a better matchup case despite elevated xwOBA allowed.",
+        "expected_innings": 5.0,
+        "pitch_count_limit": 85,
+        "pitch_mix": [
+          {
+            "pitch": "sinker",
+            "vs_lhb_pct": 15.0,
+            "vs_rhb_pct": 15.0,
+            "purpose": "Change eye level and avoid predictable fastballs."
+          },
+          {
+            "pitch": "4-seam fastball",
+            "vs_lhb_pct": 20.0,
+            "vs_rhb_pct": 20.0,
+            "purpose": "Establish the pitch without living in the zone."
+          },
+          {
+            "pitch": "sweeper",
+            "vs_lhb_pct": 25.0,
+            "vs_rhb_pct": 25.0,
+            "purpose": "Use breaking movement against Pederson and Jung; keep it out of the middle."
+          },
+          {
+            "pitch": "cutter",
+            "vs_lhb_pct": 20.0,
+            "vs_rhb_pct": 20.0,
+            "purpose": "Vary fastball shape and disrupt timing."
+          },
+          {
+            "pitch": "changeup",
+            "vs_lhb_pct": 15.0,
+            "vs_rhb_pct": 20.0,
+            "purpose": "Show speed separation, especially against right-handed hitters."
+          },
+          {
+            "pitch": "curveball",
+            "vs_lhb_pct": 5.0,
+            "vs_rhb_pct": 0.0,
+            "purpose": "Occasional change of look; usage sample is small."
+          }
+        ],
+        "keys": [
+          "Joc Pederson's expected xwOBA is 0.358; his breaking-ball xwOBA is 0.177, but those matchup samples are small\u2014mix breakers rather than serving steady fastballs.",
+          "Josh Jung's expected xwOBA is 0.382; lean breaking, while recognizing his offspeed sample is small.",
+          "Elias D\u00edaz's expected xwOBA is 0.395 and he hunts fastballs; use changeups carefully, since his samples are small.",
+          "Schultz's xwOBA allowed is 0.37; stay ahead and limit walks, with his left-handed split based on a small sample."
+        ]
+      },
+      "bullpen": [
+        {
+          "player_id": 691799,
+          "name": "Grant Taylor",
+          "throws": "R",
+          "role": "closer",
+          "note": "Available and rested; lead late option behind the limited closer."
+        },
+        {
+          "player_id": 663542,
+          "name": "Bryan Hudson",
+          "throws": "L",
+          "role": "setup",
+          "note": "Available and rested; primary left-handed setup option."
+        },
+        {
+          "player_id": 622554,
+          "name": "Seranthony Dom\u00ednguez",
+          "throws": "R",
+          "role": "setup",
+          "note": "12 saves; limited after pitching yesterday, use only if needed."
+        },
+        {
+          "player_id": 656794,
+          "name": "Sean Newcomb",
+          "throws": "L",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; prefer rested arms first."
+        },
+        {
+          "player_id": 663855,
+          "name": "Jordan Hicks",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; use only if needed."
+        },
+        {
+          "player_id": 669684,
+          "name": "Chris Murphy",
+          "throws": "L",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; reserve for need or a favorable matchup."
+        },
+        {
+          "player_id": 670950,
+          "name": "Trevor Richards",
+          "throws": "R",
+          "role": "middle",
+          "note": "Limited after pitching yesterday; avoid unless the game requires him."
+        },
+        {
+          "player_id": 805326,
+          "name": "Tyler Schweitzer",
+          "throws": "L",
+          "role": "long",
+          "note": "Available and rested; cover multiple innings if the starter exits early or the game opens up."
+        }
+      ],
+      "scenarios": [
+        {
+          "scenario": "close_late_lead",
+          "plan": "Use rested arms first, saving the limited closer for a critical need.",
+          "pitcher_ids": [
+            663542,
+            691799,
+            622554
+          ]
+        },
+        {
+          "scenario": "close_late_tied_or_trailing",
+          "plan": "Bridge with the available rested relievers; hold limited arms unless leverage demands them.",
+          "pitcher_ids": [
+            663542,
+            691799,
+            622554
+          ]
+        },
+        {
+          "scenario": "blowout_lead",
+          "plan": "Use rested middle/long coverage and keep the highest-leverage options fresh.",
+          "pitcher_ids": [
+            805326,
+            663542,
+            691799
+          ]
+        },
+        {
+          "scenario": "blowout_deficit",
+          "plan": "Prioritize innings from the long reliever and preserve the late-inning group.",
+          "pitcher_ids": [
+            805326,
+            663542
+          ]
+        },
+        {
+          "scenario": "starter_early_exit",
+          "plan": "Start with the rested long reliever, then use rested leverage arms; turn to limited relievers only if needed.",
+          "pitcher_ids": [
+            805326,
+            663542,
+            691799,
+            656794,
+            622554
+          ]
+        },
+        {
+          "scenario": "extra_innings",
+          "plan": "Use available rested relievers in sequence; reserve limited pitchers for a critical matchup.",
+          "pitcher_ids": [
+            663542,
+            691799,
+            805326,
+            622554
+          ]
+        }
+      ],
+      "summary": "Start Noah Schultz and keep the plan efficient: vary the breaking ball and changeup, especially against Texas\u2019s right-handed threats. The bullpen has three rested choices; manage five limited arms cautiously and preserve Seranthony Dom\u00ednguez for a critical spot."
+    },
+    "opposing_pitchers_report": {
+      "opposing_starter": {
+        "player_id": 677958,
+        "name": "Kumar Rocker",
+        "throws": "R",
+        "confidence": "medium",
+        "alternatives": [],
+        "probability_pct": 61,
+        "probability_basis": "Right 61% of the time in 1,220 similar 2026 predictions (he started, or pitched the bulk innings after an opener)."
+      },
+      "arsenal": [
+        {
+          "pitch": "slider",
+          "usage_pct": 37.6,
+          "velo": 83.2,
+          "whiff_pct": 40.4,
+          "note": "His primary breaking ball; it misses bats and has held hitters to a low xwOBA."
+        },
+        {
+          "pitch": "sinker",
+          "usage_pct": 30.9,
+          "velo": 94.3,
+          "whiff_pct": 9.4,
+          "note": "A frequent fastball with modest swing-and-miss; hitters have done damage against it."
+        },
+        {
+          "pitch": "cutter",
+          "usage_pct": 14.7,
+          "velo": 90.3,
+          "whiff_pct": 22.4,
+          "note": "Adds another fastball look; hitters have produced against it."
+        },
+        {
+          "pitch": "4-seam fastball",
+          "usage_pct": 11.2,
+          "velo": 94.4,
+          "whiff_pct": 22.2,
+          "note": "Less frequent than the sinker, but still part of his fastball mix."
+        },
+        {
+          "pitch": "changeup",
+          "usage_pct": 5.3,
+          "velo": 88.7,
+          "whiff_pct": 24.3,
+          "note": "A rare offering, with hitters producing against it."
+        }
+      ],
+      "how_to_attack": [
+        "Lefties: sit fastball early; he uses fastballs 52.9% of the time against left-handed hitters, and allows a .466 xwOBA against that group.",
+        "Righties: expect fastballs most often; he uses them 62.3% of the time, but be ready to recognize the slider within his 37.7% breaking-ball share.",
+        "Make him work: Rocker averages 84 pitches per start and 4.8 innings per start.",
+        "Avoid chasing the slider: it makes up 37.6% of his arsenal and has a 40.4% whiff rate."
+      ],
+      "best_matchups": [
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "expected_xwoba": 0.37,
+          "edge": "batter",
+          "note": "Fastball fit stands out: .442 xwOBA against fastballs versus Rocker's .466 allowed to lefties; beware his breaking ball."
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "expected_xwoba": 0.368,
+          "edge": "batter",
+          "note": "Strong fastball fit: .415 xwOBA against fastballs, while Rocker allows .466 to lefties on that group."
+        },
+        {
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "expected_xwoba": 0.358,
+          "edge": "batter",
+          "note": "Fastball fit is favorable: .388 xwOBA against fastballs versus .466 allowed to lefties; breaking-ball and offspeed samples are small."
+        },
+        {
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "expected_xwoba": 0.333,
+          "edge": "even",
+          "note": "Fastball group is the better target: .338 xwOBA against it versus Rocker's .466 allowed to lefties."
+        }
+      ],
+      "toughest_matchups": [
+        {
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "expected_xwoba": 0.287,
+          "edge": "pitcher",
+          "note": "Rocker has the edge; Meidroth is at .206 against breaking balls, which Rocker allows at .261 to righties."
+        },
+        {
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "expected_xwoba": 0.293,
+          "edge": "pitcher",
+          "note": "Rocker has the edge; Acu\u00f1a is at .203 against breaking balls, and Rocker allows .261 to righties on them."
+        },
+        {
+          "player_id": 700337,
+          "name": "Edgar Quero",
+          "expected_xwoba": 0.3,
+          "edge": "even",
+          "note": "The tool grades this even; his group xwOBA figures are modest against both fastballs and breaking balls."
+        }
+      ],
+      "bullpen_to_watch": [
+        {
+          "player_id": 656641,
+          "name": "Jacob Latz",
+          "throws": "L",
+          "note": "Available lefty with 19 saves; he could be important late."
+        },
+        {
+          "player_id": 596001,
+          "name": "Jakob Junis",
+          "throws": "R",
+          "note": "Available right-hander with 12 holds; likely a setup option."
+        },
+        {
+          "player_id": 641302,
+          "name": "Tyler Alexander",
+          "throws": "L",
+          "note": "Available lefty with 8 holds; another late-inning option."
+        },
+        {
+          "player_id": 668390,
+          "name": "Cole Winn",
+          "throws": "R",
+          "note": "Available right-hander with 8 holds; could cover a leverage inning."
+        }
+      ],
+      "hitter_plans": [
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "bats": "L",
+          "expected_xwoba": 0.37,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: you're at .442 against them and Rocker allows .466 to lefties. Lay off the slider look; you're at .311 against breaking balls, and he allows .167."
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "bats": "L",
+          "expected_xwoba": 0.368,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .415 against them and Rocker allows .466 to lefties. Don't give away the breaking ball; you're at .357 against it, while he allows .167."
+        },
+        {
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "bats": "S",
+          "expected_xwoba": 0.358,
+          "edge": "batter",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .388 against them and Rocker allows .466 to lefties. Your breaking-ball and offspeed samples are small; you're at .370 against breaking balls, while he allows .167."
+        },
+        {
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "bats": "L",
+          "expected_xwoba": 0.333,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Sit fastballs: you're at .338 against them and Rocker allows .466 to lefties. Be selective against breaking balls; you're at .280 and he allows .167."
+        },
+        {
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "bats": "L",
+          "expected_xwoba": 0.329,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .309 against them and Rocker allows .466 to lefties. Avoid expanding against breaking balls; you're at .262 and he allows .167."
+        },
+        {
+          "player_id": 545341,
+          "name": "Randal Grichuk",
+          "bats": "R",
+          "expected_xwoba": 0.305,
+          "edge": "even",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Look for a breaking ball to drive: you're at .425 against them and Rocker allows .261 to righties. Your samples against right-handed pitching and breaking balls are small; don't sit fastball, where you're at .256 and he allows .309."
+        },
+        {
+          "player_id": 700337,
+          "name": "Edgar Quero",
+          "bats": "S",
+          "expected_xwoba": 0.3,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt a fastball: you're at .253 against them and Rocker allows .466 to lefties. Your breaking-ball sample is small; you're at .241 against them, and he allows .167."
+        },
+        {
+          "player_id": 691011,
+          "name": "Drew Romo",
+          "bats": "S",
+          "expected_xwoba": 0.3,
+          "edge": "even",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Look for fastballs: you're at .329 against them and Rocker allows .466 to lefties. Your offspeed sample is small; breaking balls have been tougher, at .151 against them, while he allows .167."
+        },
+        {
+          "player_id": 682668,
+          "name": "Luisangel Acu\u00f1a",
+          "bats": "R",
+          "expected_xwoba": 0.293,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Attack the fastball if you get it: you're at .351 against fastballs and Rocker allows .309 to righties. Lay off breaking balls, where you're at .203 and he allows .261."
+        },
+        {
+          "player_id": 805367,
+          "name": "Chase Meidroth",
+          "bats": "R",
+          "expected_xwoba": 0.287,
+          "edge": "pitcher",
+          "hunt": "fastballs",
+          "beware": "breaking balls",
+          "approach": "Hunt fastballs: you're at .330 against them and Rocker allows .309 to righties. Be patient on breaking balls; you're at .206 and he allows .261."
+        },
+        {
+          "player_id": 678577,
+          "name": "Junior Perez",
+          "bats": "R",
+          "expected_xwoba": 0.336,
+          "edge": "even",
+          "hunt": "breaking balls",
+          "beware": "fastballs",
+          "approach": "Your samples against righties and both pitch groups are small. You\u2019re at .605 against breaking balls and .247 against fastballs; Rocker allows .261 and .309 to righties, respectively."
+        }
+      ],
+      "summary": "Kumar Rocker is the medium-confidence starter prediction, based on a 61% probability; no alternative was listed. Left-handed hitters should look for fastballs, while all hitters must respect his slider. He averages 4.8 innings per start, so be ready for an available bullpen that includes lefty Jacob Latz."
+    },
+    "opposing_hitters_report": {
+      "lineup_vs_rhp": [
+        {
+          "slot": 1,
+          "player_id": 592626,
+          "name": "Joc Pederson",
+          "position": "DH",
+          "bats": "L"
+        },
+        {
+          "slot": 2,
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 673962,
+          "name": "Josh Jung",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 607043,
+          "name": "Brandon Nimmo",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 669394,
+          "name": "Jake Burger",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 677649,
+          "name": "Ezequiel Duran",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 694497,
+          "name": "Evan Carter",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 553869,
+          "name": "Elias D\u00edaz",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 670032,
+          "name": "Nicky Lopez",
+          "position": "2B",
+          "bats": "L"
+        }
+      ],
+      "lineup_vs_lhp": [
+        {
+          "slot": 1,
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "position": "LF",
+          "bats": "R"
+        },
+        {
+          "slot": 2,
+          "player_id": 679822,
+          "name": "Justin Foscue",
+          "position": "2B",
+          "bats": "R"
+        },
+        {
+          "slot": 3,
+          "player_id": 673962,
+          "name": "Josh Jung",
+          "position": "3B",
+          "bats": "R"
+        },
+        {
+          "slot": 4,
+          "player_id": 607043,
+          "name": "Brandon Nimmo",
+          "position": "RF",
+          "bats": "L"
+        },
+        {
+          "slot": 5,
+          "player_id": 677649,
+          "name": "Ezequiel Duran",
+          "position": "SS",
+          "bats": "R"
+        },
+        {
+          "slot": 6,
+          "player_id": 669394,
+          "name": "Jake Burger",
+          "position": "1B",
+          "bats": "R"
+        },
+        {
+          "slot": 7,
+          "player_id": 696030,
+          "name": "Alejandro Osuna",
+          "position": "CF",
+          "bats": "L"
+        },
+        {
+          "slot": 8,
+          "player_id": 553869,
+          "name": "Elias D\u00edaz",
+          "position": "C",
+          "bats": "R"
+        },
+        {
+          "slot": 9,
+          "player_id": 670032,
+          "name": "Nicky Lopez",
+          "position": "DH",
+          "bats": "L"
+        }
+      ],
+      "hitters": [
+        {
+          "player_id": 592626,
+          "name": "Joc Pederson",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.358,
+          "weakness": "Breaking balls have been less productive than fastballs.",
+          "how_to_pitch": "Mix breaking balls in; avoid challenging him with steady fastballs."
+        },
+        {
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.316,
+          "weakness": "His xwOBA is lower against left-handed pitching.",
+          "how_to_pitch": "Work carefully and use the lefty matchup when available."
+        },
+        {
+          "player_id": 673962,
+          "name": "Josh Jung",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.346,
+          "weakness": "Breaking balls have been less productive than fastballs.",
+          "how_to_pitch": "Lean on breaking stuff; be wary of facing him with a left-hander, where his split is stronger."
+        },
+        {
+          "player_id": 607043,
+          "name": "Brandon Nimmo",
+          "bats": "L",
+          "threat": "high",
+          "xwoba": 0.372,
+          "weakness": "His xwOBA is lower against left-handed pitching; offspeed results show a moderate sample.",
+          "how_to_pitch": "Prefer a left-handed matchup and vary speeds; his offspeed chase rate is notable, but that data is moderate-sample."
+        },
+        {
+          "player_id": 669394,
+          "name": "Jake Burger",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.31,
+          "weakness": "His strikeout rate is elevated.",
+          "how_to_pitch": "Change eye levels and make him earn the pitch; don\u2019t give him a hittable mistake."
+        },
+        {
+          "player_id": 677649,
+          "name": "Ezequiel Duran",
+          "bats": "R",
+          "threat": "medium",
+          "xwoba": 0.304,
+          "weakness": "His xwOBA is similar against either pitching hand.",
+          "how_to_pitch": "Attack the zone and keep him from using his speed on the bases."
+        },
+        {
+          "player_id": 694497,
+          "name": "Evan Carter",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.291,
+          "weakness": "His xwOBA against left-handed pitching is 0.137.",
+          "how_to_pitch": "A left-hander is a strong option; avoid free passes given his speed."
+        },
+        {
+          "player_id": 553869,
+          "name": "Elias D\u00edaz",
+          "bats": "R",
+          "threat": "low",
+          "xwoba": 0.29,
+          "weakness": "His xwOBA against right-handed pitching is 0.245.",
+          "how_to_pitch": "A right-hander has the better split; stay disciplined because his xwOBA against left-handed pitching is 0.353."
+        },
+        {
+          "player_id": 670032,
+          "name": "Nicky Lopez",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.263,
+          "weakness": "His slugging is modest.",
+          "how_to_pitch": "Get ahead and challenge him in the zone; don\u2019t allow a free pass."
+        },
+        {
+          "player_id": 679822,
+          "name": "Justin Foscue",
+          "bats": "R",
+          "threat": "high",
+          "xwoba": 0.352,
+          "weakness": "Offspeed results are weaker, but that sample is small.",
+          "how_to_pitch": "Use offspeed below the zone; treat that weakness cautiously because the sample is small."
+        },
+        {
+          "player_id": 696030,
+          "name": "Alejandro Osuna",
+          "bats": "L",
+          "threat": "low",
+          "xwoba": 0.303,
+          "weakness": "His slugging is low.",
+          "how_to_pitch": "Attack the zone and make him hit his way on."
+        }
+      ],
+      "summary": "Pederson, Nimmo and Jung are the main threats, with Foscue adding power in the left-hander lineup. No starter hand is an obvious overall preference: Jung and Foscue have stronger xwOBA splits against left-handers, while Nimmo and Carter are weaker there."
+    },
+    "medical_report": {
+      "statuses": [
+        {
+          "player_id": 677592,
+          "name": "Everson Pereira",
+          "status": "out",
+          "reason": "Concussion."
+        },
+        {
+          "player_id": 656457,
+          "name": "Tyler Gilbert",
+          "status": "out",
+          "reason": "Left shoulder impingement."
+        },
+        {
+          "player_id": 669720,
+          "name": "Austin Hays",
+          "status": "out",
+          "reason": "Left calf strain."
+        },
+        {
+          "player_id": 673929,
+          "name": "Jordan Leasure",
+          "status": "out",
+          "reason": "Right flexor strain."
+        },
+        {
+          "player_id": 695020,
+          "name": "Tanner Murray",
+          "status": "out",
+          "reason": "Left shoulder dislocation."
+        },
+        {
+          "player_id": 681460,
+          "name": "Brooks Baldwin",
+          "status": "out",
+          "reason": "Right elbow sprain."
+        },
+        {
+          "player_id": 678024,
+          "name": "Mike Vasil",
+          "status": "out",
+          "reason": "Tommy John surgery recovery."
+        },
+        {
+          "player_id": 622554,
+          "name": "Seranthony Dom\u00ednguez",
+          "status": "limited",
+          "reason": "pitched yesterday (17 pitches)"
+        },
+        {
+          "player_id": 656794,
+          "name": "Sean Newcomb",
+          "status": "limited",
+          "reason": "pitched yesterday (20 pitches)"
+        },
+        {
+          "player_id": 663855,
+          "name": "Jordan Hicks",
+          "status": "limited",
+          "reason": "pitched yesterday (19 pitches)"
+        },
+        {
+          "player_id": 669684,
+          "name": "Chris Murphy",
+          "status": "limited",
+          "reason": "pitched yesterday (15 pitches)"
+        },
+        {
+          "player_id": 670950,
+          "name": "Trevor Richards",
+          "status": "limited",
+          "reason": "pitched yesterday (18 pitches)"
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "status": "rest_suggested",
+          "reason": "23 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        },
+        {
+          "player_id": 695657,
+          "name": "Colson Montgomery",
+          "status": "rest_suggested",
+          "reason": "14 straight starts; a rest day is suggested after 10 for position players (2026 data)."
+        }
+      ],
+      "summary": "Seven players are on the injured list and unavailable. Five relievers are limited after pitching yesterday; plan bullpen usage with those workload cautions in mind."
+    },
+    "manager_review": {
+      "approved": true,
+      "fixes": [],
+      "key_decisions": [
+        "Keep Noah Schultz as the starter; the plan cites his 11 starts and a better matchup case than Jonathan Cannon, who has no 2026 starts and a small sample.",
+        "Use breaking balls against Joc Pederson and Josh Jung, while recognizing the matchup samples are small; Pederson\u2019s breaking-ball xwOBA is 0.177 and Jung\u2019s expected xwOBA is 0.382.",
+        "Build the lineup for the medium-confidence Kumar Rocker prediction: Sam Antonacci and Munetaka Murakami lead off with batter edges and fastball fits.",
+        "Rest Miguel Vargas and Colson Montgomery as planned; both are available off the bench, with the rest suggestions reflecting 23 straight starts and 14 straight starts, respectively.",
+        "Protect the bullpen workload: favor rested arms first and reserve limited Seranthony Dom\u00ednguez for a critical need."
+      ],
+      "keys_to_the_game": [
+        "Have left-handed hitters look for Rocker\u2019s fastballs and avoid chasing his slider, which makes up 37.6% of his arsenal and has a 40.4% whiff rate.",
+        "Make Rocker work; he averages 84 pitches per start and 4.8 innings per start, so be ready for the Texas bullpen.",
+        "Schultz should vary his breaking pitches and changeup against Texas\u2019s right-handed threats, stay ahead, and limit walks.",
+        "Use rested bullpen arms first, keeping the five relievers who pitched yesterday in mind as limited."
+      ],
+      "summary": "The plan fits together: Schultz starts against Texas, while the lineup is set for the medium-confidence Rocker prediction. The checker found no issues; stay disciplined against Rocker\u2019s slider and manage the bullpen cautiously after yesterday\u2019s workloads."
+    },
+    "hitters_briefing": {
+      "audience": "hitters",
+      "headline": "Stay selective against Rocker; attack the fastball",
+      "message": "Kumar Rocker is the medium-confidence starter prediction. Left-handed hitters, look for fastballs; all hitters, avoid chasing the slider, which makes up 37.6% of his arsenal and has a 40.4% whiff rate. Make him work: he averages 84 pitches per start and 4.8 innings per start, so be ready for the Texas bullpen. Sam Antonacci and Munetaka Murakami lead off with batter edges and fastball fits.",
+      "reminders": [
+        "Hunt fastballs; don\u2019t expand for the slider.",
+        "Be ready for Texas relievers after Rocker exits.",
+        "Jacob Latz is an available lefty to watch late."
+      ]
+    },
+    "pitchers_briefing": {
+      "audience": "pitchers",
+      "headline": "Schultz sets the tone; vary looks and protect the bullpen",
+      "message": "Noah Schultz starts. Stay ahead, limit walks, and vary breaking balls and the changeup against Texas\u2019s right-handed threats. Mix breaking balls against Joc Pederson and Josh Jung; those matchup samples are small, so don\u2019t treat them as guarantees. Use rested arms first: Bryan Hudson and Grant Taylor are available, and Tyler Schweitzer can cover multiple innings. Keep limited relievers in reserve, especially Seranthony Dom\u00ednguez, for a critical need.",
+      "reminders": [
+        "Use the planned 85-pitch limit as a guide.",
+        "Favor rested relievers; five arms are limited after pitching yesterday.",
+        "Reserve Seranthony Dom\u00ednguez for a critical spot."
+      ]
+    },
+    "coaches_briefing": {
+      "audience": "coaches",
+      "headline": "Execute the Rocker matchup and manage workloads",
+      "message": "The lineup is built for the medium-confidence Kumar Rocker prediction: Sam Antonacci and Munetaka Murakami lead off, while Miguel Vargas and Colson Montgomery rest and remain available off the bench. Hitters should hunt fastballs and avoid chasing Rocker\u2019s slider. Noah Schultz starts; vary breaking pitches and changeup, staying ahead against Texas\u2019s right-handed threats. Prioritize rested bullpen arms and reserve limited Seranthony Dom\u00ednguez for a critical need. Vargas\u2019s and Montgomery\u2019s rest suggestions follow 23 straight starts and 14 straight starts, respectively.",
+      "reminders": [
+        "Keep the approved lineup and rest plan unless game situation warrants a change.",
+        "Use rested relievers first; five relievers are limited after yesterday\u2019s work.",
+        "Use the suggested bench options selectively in late-game situations."
+      ]
+    }
+  },
+  "packets": {
+    "hitters": [
+      "lineup_card",
+      "opposing_pitchers_report",
+      "hitters_briefing"
+    ],
+    "pitchers": [
+      "pitching_plan",
+      "opposing_hitters_report",
+      "pitchers_briefing"
+    ],
+    "coaches": [
+      "lineup_card",
+      "pitching_plan",
+      "opposing_pitchers_report",
+      "opposing_hitters_report",
+      "medical_report",
+      "manager_review",
+      "hitters_briefing",
+      "pitchers_briefing",
+      "coaches_briefing"
+    ]
+  },
+  "checker": {
+    "fix_rounds": 1,
+    "open_issues": []
+  },
+  "usage": {
+    "seconds": 54.2,
+    "total": {
+      "model_steps": 22,
+      "gateway_cache_hits": 0,
+      "input_tokens": 124002,
+      "cached_tokens": 51669,
+      "output_tokens": 9628,
+      "cost_usd": 0.02031
+    },
+    "by_agent": {
+      "team_doctor": {
+        "calls": 1,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 4302,
+        "cached_tokens": 0,
+        "output_tokens": 404,
+        "seconds": 4.6,
+        "cost_usd": 0.00106
+      },
+      "scout_pitchers": {
+        "calls": 1,
+        "model_steps": 4,
+        "gateway_cache_hits": 0,
+        "input_tokens": 18929,
+        "cached_tokens": 10216,
+        "output_tokens": 2189,
+        "seconds": 14.1,
+        "cost_usd": 0.00304
+      },
+      "scout_hitters": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 12616,
+        "cached_tokens": 5060,
+        "output_tokens": 1642,
+        "seconds": 13.5,
+        "cost_usd": 0.00243
+      },
+      "pitching_coach": {
+        "calls": 1,
+        "model_steps": 3,
+        "gateway_cache_hits": 0,
+        "input_tokens": 20259,
+        "cached_tokens": 6516,
+        "output_tokens": 1282,
+        "seconds": 9.6,
+        "cost_usd": 0.00352
+      },
+      "bench_coach": {
+        "calls": 2,
+        "model_steps": 7,
+        "gateway_cache_hits": 0,
+        "input_tokens": 47723,
+        "cached_tokens": 29877,
+        "output_tokens": 2680,
+        "seconds": 19.7,
+        "cost_usd": 0.00551
+      },
+      "manager": {
+        "calls": 2,
+        "model_steps": 2,
+        "gateway_cache_hits": 0,
+        "input_tokens": 13355,
+        "cached_tokens": 0,
+        "output_tokens": 912,
+        "seconds": 9.1,
+        "cost_usd": 0.00313
+      },
+      "clubhouse_comms": {
+        "calls": 1,
+        "model_steps": 1,
+        "gateway_cache_hits": 0,
+        "input_tokens": 6818,
+        "cached_tokens": 0,
+        "output_tokens": 519,
+        "seconds": 4.9,
+        "cost_usd": 0.00162
+      }
+    },
+    "pricing_source": "genai-prices 'GPT-6 Luna' (OpenAI list price, verified 2026-10-12)"
+  }
+}
