@@ -35,7 +35,7 @@ def test_tired_hitters_rest_only_when_it_is_cheap(monkeypatch):
     assert r["rest_decisions"]                                     # Toronto had tired regulars that day
     monkeypatch.setattr(winmodel, "REST_MAX_COST", 0.0)            # never worth it -> nobody sits for rest
     plays = tools.get_model_lineup(GAME, TOR, PERKINS)
-    assert all(": plays;" in note for note in plays["rest_decisions"])
+    assert all(": plays;" in note for note in plays["rest_decisions"] if "catch today" not in note)
 
 
 def test_matchup_score_keeps_only_the_measured_pitch_type_share(monkeypatch):
@@ -77,3 +77,26 @@ def test_model_lineup_counts_defense():
     assert r["defense_runs_saved_per_game"] == pytest.approx(sum(s["defense_runs_per_game"] for s in r["lineup"]), abs=0.02)
     dh = next(s for s in r["lineup"] if s["position"] == "DH")
     assert dh["defense_runs_per_game"] == 0.0
+
+
+# --- Marcel projection and the catcher workload cap --------------------------------------------------------------
+
+def test_marcel_pools_2025_so_a_strong_track_record_is_not_pulled_to_average():
+    """By August the old fade gave 2025 no weight; Marcel keeps it (weight 0.75), so Vladdy's value moves up."""
+    winmodel.set_version("fade")
+    old = winmodel.hitter_value(VLADDY, "2026-08-12")
+    winmodel.set_version("marcel")
+    new = winmodel.hitter_value(VLADDY, "2026-08-12")
+    assert winmodel.params()["version"] == "marcel" and new > old
+
+
+def test_catcher_cap_keeps_a_tired_catcher_from_catching():
+    d, team = "2026-08-12", TOR
+    recent = winmodel.recent_catcher_starts(team, d)
+    sp = PERKINS
+    capped = {p for p, n in recent.items() if n >= winmodel.CATCHER_MAX_STARTS}
+    lineup = winmodel.best_lineup(team, d, sp)["lineup"]
+    catcher = next(x["player_id"] for x in lineup if x["position"] == "C")
+    assert catcher not in capped
+    free = winmodel.best_lineup(team, d, sp, catcher_recent={})["lineup"]       # no history: no cap applies
+    assert any(x["position"] == "C" for x in free)

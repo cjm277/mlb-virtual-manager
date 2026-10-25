@@ -1,10 +1,12 @@
 """The win model and the lineup it rates best (no LLM).
 
 Each hitter's plate appearances are valued with the inputs that best predicted 2026 results out of sample
-(scripts/value_model_search.py, data/lineup_params.json): his xwOBA regressed toward league average, his own
-platoon split vs this starter's hand (regressed toward the league split), and the starter's wOBA allowed. Plate
-appearances per batting-order slot, the starter's usual depth, and a league-average bullpen turn that into
-expected runs; Pythagenpat turns runs into win probability.
+(scripts/projection_search.py, data/lineup_params.json "projection"). Marcel-style: each player's 2026-to-date
+counts are pooled with his 2025 counts (2025 weighted 0.75), then regressed toward league average. That gives his
+xwOBA, his own platoon split vs this starter's hand (regressed toward the league split), and the starter's wOBA
+allowed. Plate appearances per batting-order slot, the starter's usual depth, and a league-average bullpen turn that
+into expected runs; Pythagenpat turns runs into win probability. (Before the Marcel search the model used the app's
+six-week 2025 fade instead; set_version("fade") restores it for comparisons.)
 
 Defense (backend/engine/defense.py): each fielder's runs saved per game at his position (multi-year Outs Above
 Average at that position, catcher framing), worth one run allowed per rated run (measured on 2026 games).
@@ -14,6 +16,11 @@ on defense against the opposing starter. Only players who have started at a posi
 it. A hitter past the rest-day threshold costs nothing extra today (2026 data shows no same-day fatigue cost;
 scripts/lineup_params.py), so he is rested only on a day when sitting him costs at most REST_MAX_COST
 win-probability points: the cheapest days, chosen by the numbers.
+
+Catcher workload: a catcher who caught CATCHER_MAX_STARTS of his team's last CATCHER_WINDOW games doesn't catch
+today (he may still DH or play another position he plays). That caps any catcher at 70% of games, inside what 2026
+catchers actually sustained (no main catcher above 75% of his team's games; 90th percentile 68%). Without it the
+optimizer caught the best framer in 76% of games, more than any real workload.
 """
 
 from __future__ import annotations
@@ -34,14 +41,66 @@ WOBA_SCALE = 1.20
 PYTH = 0.287
 HOME_LOGIT = 0.16
 REST_MAX_COST = 0.0025       # rest a tired hitter only if it costs at most 0.25 win-probability points today
-PLATOON_PRIOR_PA = 400       # a hitter's own platoon split is trusted halfway at this many PA vs that hand
+PLATOON_PRIOR_PA = 400       # fade version: a hitter's own platoon split is trusted halfway at this many PA
 AVG_PA = sum(SLOT_PA.values()) / 9      # plate appearances per lineup spot, to put offense in runs per game
+CATCHER_MAX_STARTS, CATCHER_WINDOW = 7, 10      # at most 7 of the team's last 10 games behind the plate
+
+VERSION = "marcel"           # "marcel" (projection_search.py) or "fade" (the earlier value_model_search.py model)
+
+
+def set_version(v: str) -> None:
+    """Switch the hitter/starter projection (for before/after comparisons) and clear every cached value."""
+    global VERSION
+    VERSION = v
+    for f in (params, hitter_value, platoon, starter_quality):
+        f.cache_clear()
 
 
 @lru_cache(maxsize=1)
 def params() -> dict:
     p = json.loads((config.REPO_ROOT / "data" / "lineup_params.json").read_text(encoding="utf-8"))
-    return p["value_model"] | {"calibration": p.get("season_value_slope", 1.0)}
+    if VERSION == "marcel" and "projection" in p:
+        pr = p["projection"]
+        return {"version": "marcel", "hitter": pr["hitter"], "k_hitter": pr["k_hitter"], "w_hitter": pr["w2025_hitter"],
+                "platoon": "own", "platoon_pa": pr["platoon_pa"], "w_platoon": pr["platoon_w2025"],
+                "pitcher": pr["pitcher"], "k_pitcher": pr["k_pitcher"], "w_pitcher": pr["w2025_pitcher"],
+                "calibration": pr["calibration_slope"]}
+    return p["value_model"] | {"version": "fade", "calibration": p.get("season_value_slope", 1.0)}
+
+
+# Raw counts (wOBA numerator, xwOBA numerator, PA) for the Marcel pool: 2026 before the date, and 2025.
+def _bat_counts(pid: int, d: str, hand: str | None) -> tuple[tuple, tuple]:
+    cond, args = ("batter_id = ? AND p_throws = ?", [pid, hand]) if hand else ("batter_id = ?", [pid])
+    q = "SELECT COALESCE(SUM(woba_num), 0) n, COALESCE(SUM(xwoba_num), 0) x, COALESCE(SUM(woba_den), 0) w FROM "
+    a = db.one(q + f"statcast_batter_game WHERE {cond} AND game_date < ?", *args, d)
+    b = db.one(q + f"statcast_batter_season WHERE season = 2025 AND {cond}", *args)
+    return (a["n"], a["x"], a["w"]), (b["n"], b["x"], b["w"])
+
+
+def _pit_counts(pid: int, d: str) -> tuple[tuple, tuple]:
+    q = "SELECT COALESCE(SUM(woba_num), 0) n, COALESCE(SUM(xwoba_num), 0) x, COALESCE(SUM(woba_den), 0) w FROM "
+    a = db.one(q + "statcast_pitcher_game WHERE pitcher_id = ? AND game_date < ?", pid, d)
+    b = db.one(q + "statcast_pitcher_season WHERE season = 2025 AND pitcher_id = ?", pid)
+    return (a["n"], a["x"], a["w"]), (b["n"], b["x"], b["w"])
+
+
+def _pool(cur: tuple, prior: tuple, w25: float) -> tuple[float, float, float]:
+    return tuple(c + w25 * p for c, p in zip(cur, prior))
+
+
+def _rate(pool: tuple, metric: str) -> float | None:
+    """wOBA, xwOBA (put on the wOBA scale) or their average from pooled counts; None with no plate appearances."""
+    lg = league()
+    if pool[2] <= 0:
+        return None
+    w, x = pool[0] / pool[2], pool[1] / pool[2] - lg["xwoba"] + lg["woba"]
+    return {"woba": w, "xwoba": x, "blend": (w + x) / 2}[metric]
+
+
+def _marcel(cur: tuple, prior: tuple, w25: float, k: float, metric: str) -> float:
+    pool = _pool(cur, prior, w25)
+    r, lg = _rate(pool, metric), league()["woba"]
+    return lg if r is None else (r * pool[2] + lg * k) / (pool[2] + k)
 
 
 @lru_cache(maxsize=1)
@@ -74,6 +133,8 @@ def _shrink(v: float | None, n: float, k: float, to: float) -> float:
 def hitter_value(pid: int, d: str) -> float:
     """His expected wOBA against a league-average pitcher, before platoon."""
     p, lg = params(), league()
+    if p["version"] == "marcel":
+        return _marcel(*_bat_counts(pid, d, None), p["w_hitter"], p["k_hitter"], p["hitter"])
     r = batter_split(pid, d, keys=["woba", "xwoba"])
     n = r["sample"]["pa"]
     w = _shrink(r["woba"], n, p["k_hitter"], lg["woba"])
@@ -88,8 +149,16 @@ def platoon(pid: int, d: str, throws: str) -> float:
     bats = (roster.player_info(pid) or {}).get("bat_side")
     has_edge = batting_side(bats, throws) != throws
     lg_adj = lg["platoon_edge"] if has_edge else lg["platoon_no_edge"]
-    if params()["platoon"] != "own":
+    p = params()
+    if p["platoon"] != "own":
         return lg_adj
+    if p["version"] == "marcel":
+        split = _pool(*_bat_counts(pid, d, throws), p["w_platoon"])
+        overall = _pool(*_bat_counts(pid, d, None), p["w_platoon"])
+        s, o = _rate(split, "woba"), _rate(overall, "woba")
+        if s is None or o is None:
+            return lg_adj
+        return ((s - o) * split[2] + lg_adj * p["platoon_pa"]) / (split[2] + p["platoon_pa"])
     overall = batter_split(pid, d, keys=["woba"])
     split = batter_split(pid, d, throws, keys=["woba"])
     if overall["woba"] is None or split["woba"] is None:
@@ -102,6 +171,8 @@ def platoon(pid: int, d: str, throws: str) -> float:
 def starter_quality(pid: int, d: str) -> float:
     """wOBA (or xwOBA) he allows, regressed toward league."""
     p, lg = params(), league()
+    if p["version"] == "marcel":
+        return _marcel(*_pit_counts(pid, d), p["w_pitcher"], p["k_pitcher"], p["pitcher"])
     r = pitcher_split(pid, d)
     n = r["sample"]["batters_faced"]
     w = _shrink(r["woba"], n, p["k_pitcher"], lg["woba"])
@@ -182,11 +253,36 @@ def _order(d: str, sp_id: int, nine: dict[str, int]) -> list[tuple[int, int, str
     return [(slot, pid, pos) for slot, (pos, pid) in enumerate(ranked, start=1)]
 
 
-def best_lineup(team_id: int, d: str, sp_id: int, unavailable: set[int] = frozenset(), home: bool | None = None) -> dict:
-    """The lineup the win model rates best against starter sp_id, with every number behind it."""
+def recent_catcher_starts(team_id: int, d: str) -> dict[int, int]:
+    """Games each player started at catcher among the team's last CATCHER_WINDOW games before d."""
+    pks = [r["game_pk"] for r in db.rows(
+        "SELECT DISTINCT game_pk, game_date FROM batting_lines WHERE team_id = ? AND game_date < ? "
+        "ORDER BY game_date DESC, game_pk DESC LIMIT ?", team_id, d, CATCHER_WINDOW)]
+    if not pks:
+        return {}
+    marks = ",".join("?" * len(pks))
+    return {r["player_id"]: r["n"] for r in db.rows(
+        f"SELECT player_id, COUNT(*) n FROM batting_lines WHERE team_id = ? AND is_starter = 1 AND start_position = 'C' "
+        f"AND game_pk IN ({marks}) GROUP BY 1", team_id, *pks)}
+
+
+def best_lineup(team_id: int, d: str, sp_id: int, unavailable: set[int] = frozenset(), home: bool | None = None,
+                catcher_recent: dict[int, int] | None = None, catcher_cap: bool = True) -> dict:
+    """The lineup the win model rates best against starter sp_id, with every number behind it.
+    catcher_recent overrides the catcher history read from the database (a season replay passes its own choices)."""
     hitters = [r for r in roster.active_roster(team_id, d) if not roster.is_pitcher(r) and r["player_id"] not in unavailable]
     values = {r["player_id"]: pa_runs(r["player_id"], d, sp_id) for r in hitters}
     elig = {r["player_id"]: eligible_positions(r["player_id"], d) for r in hitters}
+    capped_notes = []
+    if catcher_cap:
+        recent = recent_catcher_starts(team_id, d) if catcher_recent is None else catcher_recent
+        capped = {p for p in elig if "C" in elig[p] and recent.get(p, 0) >= CATCHER_MAX_STARTS}
+        if capped and any("C" in elig[p] for p in elig if p not in capped):      # never leave nobody to catch
+            for p in capped:
+                elig[p] = elig[p] - {"C"}
+                capped_notes.append(f"{roster.player_name(p)}: caught {recent[p]} of the team's last {CATCHER_WINDOW} "
+                                    f"games, so he doesn't catch today (catchers are capped at {CATCHER_MAX_STARTS} of "
+                                    f"{CATCHER_WINDOW}, about the most any 2026 catcher sustained); he can still DH")
     glove = {p: {pos: defense.runs_saved(p, pos, d) for pos in elig[p]} for p in values}
     tired = {r["player_id"]: workload.rest_check(team_id, r["player_id"], d, r["position"]) for r in hitters}
 
@@ -204,7 +300,7 @@ def best_lineup(team_id: int, d: str, sp_id: int, unavailable: set[int] = frozen
     if full is None:
         raise ValueError("No legal lineup: not enough available hitters to cover every position.")
     net, order = full
-    rested, rest_notes = set(), []
+    rested, rest_notes = set(), list(capped_notes)
     lg_runs = league()["rpg"]
     for pid in [p for _, p, _ in order if tired[p]["rest_suggested"]]:
         alt = build(rested | {pid})
@@ -236,7 +332,8 @@ def best_lineup(team_id: int, d: str, sp_id: int, unavailable: set[int] = frozen
                           "positions": sorted(elig[p] - {"DH"}),
                           "best_defense_runs_per_game": round(max([glove[p][x] for x in elig[p] - {"DH"}] or [0.0]), 3)}
                          for p in sorted(values, key=lambda p: -values[p]) if p not in in_lineup],
-        "how": ("Win model: hitter xwOBA regressed toward league, his own platoon split vs this starter's hand, the "
-                "starter's quality and usual depth, PA by batting-order slot, plus each fielder's runs saved at his "
-                "position (multi-year Outs Above Average there; catcher framing). Maximized over legal positions."),
+        "how": ("Win model: hitter xwOBA (2026 to date pooled with 2025, regressed toward league), his own platoon "
+                "split vs this starter's hand, the starter's quality (same pooling) and usual depth, PA by batting-order "
+                "slot, plus each fielder's runs saved at his position (multi-year Outs Above Average there; catcher "
+                "framing). Maximized over legal positions; no catcher catches more than 7 of 10 games."),
     }
