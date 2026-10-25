@@ -100,3 +100,21 @@ def test_catcher_cap_keeps_a_tired_catcher_from_catching():
     assert catcher not in capped
     free = winmodel.best_lineup(team, d, sp, catcher_recent={})["lineup"]       # no history: no cap applies
     assert any(x["position"] == "C" for x in free)
+
+
+def test_cautious_pricing_never_amplifies_a_thin_record(monkeypatch):
+    """The optimizer prices a fielder at E[result | rating, experience group] fitted on 2025 (slope capped at 1); the
+    verification lenses keep the raw rating."""
+    cal = defense._params()["defense_caution"]
+    assert all(c["slope"] <= 1.0 for c in cal.values())
+    pid, pos = next((r["player_id"], r["position"]) for r in db.rows(
+        """SELECT player_id, position FROM fielding_by_position WHERE season = 2025 AND innings BETWEEN 20 AND 250
+           AND position NOT IN ('C', 'DH', 'P') AND fielding_runs_prevented > 1""")
+        if defense.experience_group(r["player_id"], r["position"], 2025) == "part-time")
+    raw = defense.runs_saved(pid, pos, DATE)
+    monkeypatch.setattr(defense, "CAUTION", "calibrated")
+    c = cal["part-time"]
+    assert defense.runs_saved(pid, pos, DATE, priced=True) == pytest.approx(c["intercept"] + c["slope"] * raw)
+    monkeypatch.setattr(defense, "CAUTION", "strict")
+    assert defense.runs_saved(pid, pos, DATE, priced=True) == pytest.approx(c["mean"])
+    assert defense.runs_saved(pid, pos, DATE) == raw                       # lenses: unchanged

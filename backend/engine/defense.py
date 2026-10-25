@@ -89,15 +89,41 @@ def framing_per_game(pid: int, last_season: int, settings: dict | None = None) -
     return PITCHES_PER_GAME * runs / (pitches + s["k_pitches"]) if pitches else 0.0
 
 
-def runs_saved(pid: int, pos: str, game_date: str, w: dict | None = None) -> float:
-    """Runs this player saves per game at this position (positive = better than average), as measured."""
+def experience_group(pid: int, pos: str, last_season: int) -> str:
+    """How established he is at this position from the three seasons before (pre-game information only)."""
+    inn = sum(_history(pid, pos).get(last_season - i, (0.0, 0.0))[1] for i in range(3))
+    return "established" if inn >= 300 else "part-time" if inn > 0 else "new"
+
+
+# How the optimizer prices a fielder's thin record (scripts/defense_caution.py, fitted on 2025 outcomes):
+#   None        the rating as is
+#   calibrated  E[result | rating, experience group]: intercept + slope x rating, slope capped at 1
+#   strict      established as calibrated; part-time and new fielders at their group's average, no own credit
+CAUTION: str | None = None          # tested on every 2026 game; neither variant helped (value_at_scale.md)
+
+
+def _priced(pid: int, pos: str, season: int) -> float:
+    r = fielding_per_game(pid, pos, season)
+    cal = _params().get("defense_caution")
+    if not CAUTION or not cal:
+        return r
+    g = experience_group(pid, pos, season)
+    c = cal[g]
+    if CAUTION == "strict" and g != "established":
+        return c["mean"]
+    return c["intercept"] + c["slope"] * r
+
+
+def runs_saved(pid: int, pos: str, game_date: str, w: dict | None = None, priced: bool = False) -> float:
+    """Runs this player saves per game at this position (positive = better than average), as measured.
+    priced=True applies CAUTION (the optimizer); the default is the raw rating (what the lenses score with)."""
     w = weights() if w is None else w
     season = rating_season(game_date)
     if pos == "DH":
         return 0.0
     if pos == "C":
         return w["framing"] * framing_per_game(pid, season)
-    return w["fielding"] * fielding_per_game(pid, pos, season)
+    return w["fielding"] * (_priced(pid, pos, season) if priced else fielding_per_game(pid, pos, season))
 
 
 def team_runs_saved(fielders: list[tuple[int, str]], game_date: str, w: dict | None = None) -> float:

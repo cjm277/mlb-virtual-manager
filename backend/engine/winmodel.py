@@ -283,7 +283,7 @@ def best_lineup(team_id: int, d: str, sp_id: int, unavailable: set[int] = frozen
                 capped_notes.append(f"{roster.player_name(p)}: caught {recent[p]} of the team's last {CATCHER_WINDOW} "
                                     f"games, so he doesn't catch today (catchers are capped at {CATCHER_MAX_STARTS} of "
                                     f"{CATCHER_WINDOW}, about the most any 2026 catcher sustained); he can still DH")
-    glove = {p: {pos: defense.runs_saved(p, pos, d) for pos in elig[p]} for p in values}
+    glove = {p: {pos: defense.runs_saved(p, pos, d, priced=True) for pos in elig[p]} for p in values}
     tired = {r["player_id"]: workload.rest_check(team_id, r["player_id"], d, r["position"]) for r in hitters}
 
     def build(excluded: set[int]) -> tuple[float, list[tuple[int, int, str]]] | None:

@@ -48,9 +48,11 @@ LINEUPS = SAVE / "lineups.json"
 RESULTS = SAVE / "results.json"
 REPORT = ROOT / "evidence" / "tests" / "value_at_scale.md"
 NOTES = ROOT / "evidence" / "tests" / "value_at_scale_interpretation.md"     # hand-written; appended if present
-VERSIONS = {"before": ("fade", False), "marcel": ("marcel", False), "after": ("marcel", True)}
-LABELS = {"before": "Before (app model up to now)", "marcel": "+ Marcel projection",
-          "after": "+ Marcel + catcher cap (now in the app)"}
+VERSIONS = {"before": ("fade", False, None), "marcel": ("marcel", False, None), "after": ("marcel", True, None),
+            "calibrated": ("marcel", True, "calibrated"), "strict": ("marcel", True, "strict")}
+LABELS = {"before": "Before (app model this morning)", "marcel": "+ Marcel projection",
+          "after": "+ Marcel + catcher cap (now in the app)", "calibrated": "+ cautious fielder pricing, calibrated (tested, not kept)",
+          "strict": "+ cautious fielder pricing, strict (tested, not kept)"}
 SEED = 409
 BOOT = 2000
 HOLDOUT = "2026-07-01"
@@ -68,7 +70,7 @@ def team_games(team_id: int) -> list[dict]:
 
 
 def build_team(team_id: int) -> list[dict]:
-    from backend.engine import rotation, winmodel
+    from backend.engine import defense, rotation, winmodel
     games = team_games(team_id)
     out = {g["game_pk"]: {"game_pk": g["game_pk"], "team_id": team_id, "date": g["d"], "home": g["h"] == team_id,
                           "lineups": {}} for g in games}
@@ -81,8 +83,9 @@ def build_team(team_id: int) -> list[dict]:
         except Exception:                       # noqa: BLE001 - a game the predictor can't handle is skipped
             preds[g["game_pk"]] = None
         out[g["game_pk"]]["pred_sp"] = preds[g["game_pk"]]
-    for v, (proj, cap) in VERSIONS.items():
+    for v, (proj, cap, caution) in VERSIONS.items():
         winmodel.set_version(proj)
+        defense.CAUTION = caution
         mine: deque = deque(maxlen=winmodel.CATCHER_WINDOW)      # the catchers this version chose, most recent last
         for g in games:
             sp = preds[g["game_pk"]]
@@ -115,6 +118,61 @@ def build() -> None:
 # ---------------------------------------------------------------------------
 # Stage 2: score
 # ---------------------------------------------------------------------------
+
+def _future_base():
+    import value_verification as vv
+    return vv.Future
+
+
+class FutureRegressed(_future_base()):
+    """The direct check with each fielder's 2026 rate regressed toward the 2026 average of his pre-game experience
+    group (established / part-time / new at the position) at 600 innings, and each catcher's framing toward zero at
+    6,000 pitches: the same regression the pre-game rating uses. Hitters are already regressed (100 PA) in the plain
+    direct check; this treats fielders the same way, so a 20-inning stint isn't taken at face value."""
+
+    def __init__(self, k_hit: float, k_pitch: float, k_inn: float = 600, k_pitches: float = 6000):
+        from backend.engine import defense as dfn
+        super().__init__(k_hit, k_pitch)
+        sums: dict = defaultdict(lambda: [0.0, 0.0])
+        for (pid, pos), (frp, inn) in self.field.items():
+            if pos in ("C", "DH", "P") or inn <= 0:
+                continue
+            g = dfn.experience_group(pid, pos, 2025)
+            sums[g][0] += 9 * frp
+            sums[g][1] += inn
+        self.group_mean = {g: a / b for g, (a, b) in sums.items()}
+        self.k_inn, self.k_pitches = k_inn, k_pitches
+
+    def defense(self, pid: int, pos: str, d: str) -> float:
+        from backend.engine import defense as dfn
+        if pos == "DH":
+            return 0.0
+        if pos == "C":
+            fr, n = self.frame.get(pid, (0.0, 0.0))
+            return dfn.PITCHES_PER_GAME * fr / (n + self.k_pitches)
+        frp, inn = self.field.get((pid, pos), (0.0, 0.0))
+        m = self.group_mean[dfn.experience_group(pid, pos, 2025)]
+        return (9 * frp + m * self.k_inn) / (inn + self.k_inn)
+
+
+def fielder_mix(cases: list[dict], v: str) -> dict:
+    """Fielders per game (plan minus real) by pre-game experience at the position, and by 2026 innings there."""
+    from backend.engine import defense as dfn
+    inn26 = {(r["player_id"], r["position"]): r["innings"] or 0.0
+             for r in db.rows("SELECT player_id, position, innings FROM fielding_by_position WHERE season = 2026")}
+    pre, post = defaultdict(float), defaultdict(float)
+    for c in cases:
+        x = c[v]
+        for pos_of, s in ((x["plan_pos"], 1), (x["real_pos"], -1)):
+            for p, pos in pos_of.items():
+                if pos in ("C", "DH", "P"):
+                    continue
+                pre[dfn.experience_group(p, pos, 2025)] += s
+                i = inn26.get((p, pos), 0.0)
+                post["0" if i < 1 else "1-99" if i < 100 else "100-499" if i < 500 else "500+"] += s
+    n = len(cases)
+    return {"pregame_group": {k: v_ / n for k, v_ in pre.items()}, "innings_2026": {k: v_ / n for k, v_ in post.items()}}
+
 
 def score() -> dict:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -171,6 +229,8 @@ def score() -> dict:
     M = dict(S, hitter=lambda e, d: marcel_value(e["pid"], d))
     F = vv.Future(100, 200)
     FL = {"hitter": F.hitter, "pitcher": F.pitcher, "defense": F.defense}
+    FR = FutureRegressed(100, 200)
+    FRL = {"hitter": FR.hitter, "pitcher": FR.pitcher, "defense": FR.defense}
 
     # Calibration of each offense lens: rest-of-2026 wOBA on the pre-game value, every 2026 start, by player.
     fut0 = vv.Future(0, 0)
@@ -214,10 +274,12 @@ def score() -> dict:
         offM = vv.split_lineup(cs, M)["offense"]
         T = [vv.defense_terms(c) for c in cs]
         indep = vv.split_lineup(cs, FL)
+        indep_reg = vv.split_lineup(cs, FRL)
         seasonlens = vv.edges(cs, S)["lineup"]
         ing[v] = {"offS": offS, "offM": offM, "cnt": np.array([t["count"] for t in T]),
                   "rat": np.array([t["rating"] for t in T]), "frm": np.array([t["framing"] for t in T]),
-                  "ind_off": indep["offense"], "ind_def": indep["defense"], "season": seasonlens}
+                  "ind_off": indep["offense"], "ind_def": indep["defense"], "ind_def_reg": indep_reg["defense"],
+                  "season": seasonlens}
         print(f"  {v} scored", flush=True)
     k = np.array([vv.wp_per_run_allowed(c["before"], S) for c in cases])
 
@@ -275,9 +337,9 @@ def score() -> dict:
         ci = {q: np.percentile(x, [2.5, 97.5]).tolist() for q, x in sims.items()}
         return {"point": point, "ci": ci}
 
-    def direct(v, mask=None):
+    def direct(v, mask=None, reg=False):
         m = np.ones(n, bool) if mask is None else mask
-        o, dd = ing[v]["ind_off"][m], ing[v]["ind_def"][m]
+        o, dd = ing[v]["ind_off"][m], ing[v]["ind_def_reg" if reg else "ind_def"][m]
         return {"offense": [162 * o.mean(), *[162 * x for x in vv.boot(o, rng)]],
                 "defense": [162 * dd.mean(), *[162 * x for x in vv.boot(dd, rng)]],
                 "total": [162 * (o + dd).mean(), *[162 * x for x in vv.boot(o + dd, rng)]]}
@@ -292,7 +354,7 @@ def score() -> dict:
     right = np.array([c["before"]["pred_right"] for c in cases])
     # Players the model started who didn't appear that day or in the team's next game may have been hurt (the real
     # manager knew; the active roster didn't say). Sensitivity: drop those games.
-    hurt = np.zeros(n, bool)
+    hurt = {v: np.zeros(n, bool) for v in VERSIONS}
     appeared = defaultdict(set)
     for r in db.rows("SELECT team_id, game_date, player_id FROM batting_lines"):
         appeared[(r["team_id"], r["game_date"])].add(r["player_id"])
@@ -302,23 +364,31 @@ def score() -> dict:
     for t in dates_of:
         dates_of[t].sort()
     for i, c in enumerate(cases):
-        x = c["after"]
+        x = c["before"]
         ds = dates_of[x["team_id"]]
         j = ds.index(x["date"]) if x["date"] in ds else None
         seen = appeared[(x["team_id"], x["date"])] | (appeared[(x["team_id"], ds[j + 1])] if j is not None and j + 1 < len(ds) else set())
-        hurt[i] = any(e["pid"] not in seen for e in x["plan"]["lineup"])
+        for v in VERSIONS:
+            hurt[v][i] = any(e["pid"] not in seen for e in c[v]["plan"]["lineup"])
+    any_hurt = np.logical_or.reduce([hurt[v] for v in VERSIONS])
 
     saved = json.loads(vv.OUT_JSON.read_text(encoding="utf-8"))
     out = {
-        "n": n, "n_150": int(in150.sum()), "pred_right": float(right.mean()), "maybe_hurt_share": float(hurt.mean()),
+        "n": n, "n_150": int(in150.sum()), "pred_right": float(right.mean()), "maybe_hurt_share": {v: float(hurt[v].mean()) for v in VERSIONS},
+        "common_clean_games": int((~any_hurt).sum()),
         "calibration": {q: {a: b for a, b in v.items() if a != "draws"} for q, v in calib.items()},
         "catchers": usage, "catchers_real_sample": real_c, "workload": {v: list(x) for v, x in workload.items()},
         "verified": {v: summarize(v) for v in VERSIONS},
         "verified_season_lens": {v: summarize(v, lens="S") for v in VERSIONS},
         "verified_jul_sep": {v: summarize(v, late_m) for v in VERSIONS},
         "verified_150": {v: summarize(v, in150) for v in VERSIONS},
-        "verified_no_maybe_hurt": {v: summarize(v, ~hurt) for v in VERSIONS},
+        "verified_no_maybe_hurt": {v: summarize(v, ~any_hurt) for v in VERSIONS},
         "direct": {v: direct(v) for v in VERSIONS},
+        "direct_regressed": {v: direct(v, reg=True) for v in VERSIONS},
+        "direct_no_hurt": {v: direct(v, ~hurt[v]) for v in VERSIONS},
+        "direct_no_hurt_regressed": {v: direct(v, ~hurt[v], reg=True) for v in VERSIONS},
+        "direct_common_no_hurt": {v: direct(v, ~any_hurt) for v in VERSIONS},
+        "direct_common_no_hurt_regressed": {v: direct(v, ~any_hurt, reg=True) for v in VERSIONS},
         "direct_jul_sep": {v: direct(v, late_m) for v in VERSIONS},
         "direct_150": {v: direct(v, in150) for v in VERSIONS},
         "season_lens": {v: [162 * ing[v]["season"].mean(), *[162 * x for x in vv.boot(ing[v]["season"], rng)]]
@@ -326,7 +396,14 @@ def score() -> dict:
         "paired_direct": {"marcel_vs_before": {"offense": paired("marcel", "before", "ind_off"),
                                                "defense": paired("marcel", "before", "ind_def")},
                           "after_vs_marcel": {"offense": paired("after", "marcel", "ind_off"),
-                                              "defense": paired("after", "marcel", "ind_def")}},
+                                              "defense": paired("after", "marcel", "ind_def")},
+                          "calibrated_vs_after": {"offense": paired("calibrated", "after", "ind_off"),
+                                                  "defense": paired("calibrated", "after", "ind_def"),
+                                                  "defense_regressed": paired("calibrated", "after", "ind_def_reg")},
+                          "strict_vs_after": {"offense": paired("strict", "after", "ind_off"),
+                                              "defense": paired("strict", "after", "ind_def"),
+                                              "defense_regressed": paired("strict", "after", "ind_def_reg")}},
+        "fielder_mix": {v: fielder_mix(cases, v) for v in VERSIONS},
         "starter_extra": 162 * saved["verified"]["parts"]["starter"],
         "old_150_lineup": saved.get("lineup_valuation", {}).get("wins"),
     }
@@ -348,12 +425,11 @@ def rng_(v: list[float]) -> str:
 
 def render(o: dict) -> str:
     V = o["verified"]
-    A, Bf = V["after"], V["before"]
-    D = o["direct"]
-    total_after = A["point"]["total"] + o["starter_extra"]
     old = o.get("old_150_lineup") or {}
+    now = "calibrated"
+    W = lambda v: f"{f(v[0])} ({f(v[1])} to {f(v[2])})"  # noqa: E731
     L = [
-        "# The lineup insight on every 2026 game: Marcel projection and catcher cap",
+        "# The lineup insight on every 2026 game: Marcel projection, catcher cap, cautious fielder pricing",
         "",
         "Generated by `scripts/value_at_scale.py` (no LLM calls, $0). Lineups: `evidence/logs/value_at_scale/lineups.json`; "
         "numbers: `results.json`. Wins are per 162 games against what the real manager did.",
@@ -363,59 +439,83 @@ def render(o: dict) -> str:
         "of games), from that day's active roster. Our starter is the real one: this is the lineup insight only (who plays, "
         "where, and in what order).",
         "",
-        "## Headline",
+        "**The two measures.**",
+        "- **Verified:** each piece valued by what held-out data says it is worth. It assumes the real manager knows only "
+        "what our data knows.",
+        "- **Direct check:** the same lineups scored on what the players did *after* the game (rest-of-2026 wOBA for "
+        "hitters, regressed at 100 PA; 2026 fielding and framing). It is never flattered by the optimizer, and it credits "
+        "the manager for whatever he knew that the data didn't. It comes in two forms:",
+        "  - **raw:** each fielder's 2026 rate taken at face value, however short his stint;",
+        "  - **regressed:** each fielder's rate pulled toward his experience group's 2026 average at 600 innings, the "
+        "way hitters already are (see `defense_caution.md` on why short stints read badly).",
         "",
-        "| Version | Offense | Fielding | Framing | **Lineup insight, verified** |",
-        "|---|---|---|---|---|",
-        *[f"| {LABELS[v]} | {f(V[v]['point']['offense'])} | {f(V[v]['point']['fielding'])} | {f(V[v]['point']['framing'])} | "
-          f"**{f(V[v]['point']['total'])}** ({f(V[v]['ci']['total'][0])} to {f(V[v]['ci']['total'][1])}) |" for v in VERSIONS],
+        "## Headline: lineup insight, wins per 162",
         "",
-        f"For comparison, the 150-plan valuation of the lineup insight was **{f(old['lineup'][0]) if old else '+1.15'}** "
-        f"({f(old['lineup'][1]) if old else '+0.86'} to {f(old['lineup'][2]) if old else '+1.54'}). The same before-model "
-        f"on just those 150 games here: {f(o['verified_150']['before']['point']['total'])}.",
-        "",
-        f"**Adding the starter-choice piece unchanged ({f(o['starter_extra'])}, from the 150-plan verification), the app "
-        f"is now worth about {f(total_after)} wins per 162** on the verified estimate.",
-        "",
-        "## The direct check: what the players did after the game",
-        "",
-        "The same lineups scored only on rest-of-2026 results (hitters' wOBA, regressed at 100 PA; 2026 fielding and "
-        "framing). No pre-game number enters it. On 150 plans it was too noisy to confirm anything; here it has 30x the games.",
-        "",
-        "| Version | Offense | Defense | Total |",
+        "| Version | Verified | Direct, raw | Direct, fielding regressed |",
         "|---|---|---|---|",
-        *[f"| {LABELS[v]} | {rng_(D[v]['offense'])} | {rng_(D[v]['defense'])} | {rng_(D[v]['total'])} |" for v in VERSIONS],
+        *[f"| {LABELS[v]} | {f(V[v]['point']['total'])} ({f(V[v]['ci']['total'][0])} to {f(V[v]['ci']['total'][1])}) | "
+          f"{W(o['direct'][v]['total'])} | {W(o['direct_regressed'][v]['total'])} |" for v in VERSIONS],
         "",
-        "July-September only (the hold-out the projection was scored on):",
+        "**Excluding possibly-hurt starts** (games where the plan started a player who didn't appear that day or in the "
+        "team's next game; the real manager may have known he was hurt). Each version drops its own flagged games; the "
+        f"last two columns use only the {o['common_clean_games']:,} games no version flagged, so every version is "
+        "compared on the same games:",
         "",
-        "| Version | Offense | Defense | Total |",
+        "| Version | Flagged | Direct, raw | Direct, regressed | Same games: raw | Same games: regressed | Same games: verified |",
+        "|---|---|---|---|---|---|---|",
+        *[f"| {LABELS[v]} | {o['maybe_hurt_share'][v]:.0%} | {W(o['direct_no_hurt'][v]['total'])} | "
+          f"{W(o['direct_no_hurt_regressed'][v]['total'])} | {W(o['direct_common_no_hurt'][v]['total'])} | "
+          f"{W(o['direct_common_no_hurt_regressed'][v]['total'])} | {f(o['verified_no_maybe_hurt'][v]['point']['total'])} |"
+          for v in VERSIONS],
+        "",
+        "Excluding flagged games uses information from after the game (who played), so it flatters the model a little. "
+        "It is a sensitivity check, not a fair estimate on its own.",
+        "",
+        "## By piece",
+        "",
+        "| Version | Verified: offense / fielding / framing | Direct raw: offense / defense | Direct regressed: defense |",
         "|---|---|---|---|",
-        *[f"| {LABELS[v]} | {rng_(o['direct_jul_sep'][v]['offense'])} | {rng_(o['direct_jul_sep'][v]['defense'])} | "
-          f"{rng_(o['direct_jul_sep'][v]['total'])} |" for v in VERSIONS],
+        *[f"| {LABELS[v]} | {f(V[v]['point']['offense'])} / {f(V[v]['point']['fielding'])} / {f(V[v]['point']['framing'])} | "
+          f"{f(o['direct'][v]['offense'][0])} / {f(o['direct'][v]['defense'][0])} | {f(o['direct_regressed'][v]['defense'][0])} |"
+          for v in VERSIONS],
         "",
-        "Paired changes on the same games (direct check):",
+        "**Paired changes on the same games (direct check):**",
         "",
-        "| Change | Offense | Defense |",
-        "|---|---|---|",
-        f"| Marcel projection (marcel minus before) | {rng_(o['paired_direct']['marcel_vs_before']['offense'])} | "
-        f"{rng_(o['paired_direct']['marcel_vs_before']['defense'])} |",
-        f"| Catcher cap (after minus marcel) | {rng_(o['paired_direct']['after_vs_marcel']['offense'])} | "
-        f"{rng_(o['paired_direct']['after_vs_marcel']['defense'])} |",
+        "| Change | Offense | Defense, raw | Defense, regressed |",
+        "|---|---|---|---|",
+        f"| Marcel projection | {W(o['paired_direct']['marcel_vs_before']['offense'])} | "
+        f"{W(o['paired_direct']['marcel_vs_before']['defense'])} | |",
+        f"| Catcher cap | {W(o['paired_direct']['after_vs_marcel']['offense'])} | "
+        f"{W(o['paired_direct']['after_vs_marcel']['defense'])} | |",
+        f"| Cautious pricing, calibrated | {W(o['paired_direct']['calibrated_vs_after']['offense'])} | "
+        f"{W(o['paired_direct']['calibrated_vs_after']['defense'])} | {W(o['paired_direct']['calibrated_vs_after']['defense_regressed'])} |",
+        f"| Cautious pricing, strict | {W(o['paired_direct']['strict_vs_after']['offense'])} | "
+        f"{W(o['paired_direct']['strict_vs_after']['defense'])} | {W(o['paired_direct']['strict_vs_after']['defense_regressed'])} |",
+        "",
+        "**Fielders per game, plan minus real** (pre-game experience at the position; and how much they really played "
+        "there in 2026):",
+        "",
+        "| Version | Established | Part-time | New | 2026 innings: 1-99 | 100-499 | 500+ |",
+        "|---|---|---|---|---|---|---|",
+        *[f"| {LABELS[v]} | {o['fielder_mix'][v]['pregame_group'].get('established', 0):+.2f} | "
+          f"{o['fielder_mix'][v]['pregame_group'].get('part-time', 0):+.2f} | {o['fielder_mix'][v]['pregame_group'].get('new', 0):+.2f} | "
+          f"{o['fielder_mix'][v]['innings_2026'].get('1-99', 0):+.2f} | {o['fielder_mix'][v]['innings_2026'].get('100-499', 0):+.2f} | "
+          f"{o['fielder_mix'][v]['innings_2026'].get('500+', 0):+.2f} |" for v in VERSIONS],
         "",
         "## Robustness",
         "",
-        "| Version | Verified, all games | Jul-Sep only | Older season-stats offense lens | Without games where a starter may have been hurt |",
+        "| Version | Verified, all games | Jul-Sep only | Older season-stats offense lens | Direct raw, Jul-Sep |",
         "|---|---|---|---|---|",
         *[f"| {LABELS[v]} | {f(V[v]['point']['total'])} | {f(o['verified_jul_sep'][v]['point']['total'])} | "
-          f"{f(o['verified_season_lens'][v]['point']['total'])} | {f(o['verified_no_maybe_hurt'][v]['point']['total'])} |"
-          for v in VERSIONS],
+          f"{f(o['verified_season_lens'][v]['point']['total'])} | {W(o['direct_jul_sep'][v]['total'])} |" for v in VERSIONS],
         "",
-        f"- **May have been hurt:** in {o['maybe_hurt_share']:.0%} of games the model started someone who didn't appear "
-        "that day or in the team's next game. The real manager may have known something the active roster didn't say.",
         f"- **Offense calibration** (rest-of-2026 wOBA on the pre-game value, every 2026 start): Marcel "
         f"{o['calibration']['M']['slope']:.2f} ({o['calibration']['M']['ci'][0]:.2f} to {o['calibration']['M']['ci'][1]:.2f}), "
         f"July-September starts {o['calibration']['M']['slope_jul_sep']:.2f}; the older season-stats value "
-        f"{o['calibration']['S']['slope']:.2f}. A higher slope means more of a rated difference comes true.",
+        f"{o['calibration']['S']['slope']:.2f}.",
+        f"- **The 150-plan valuation** of the lineup insight was {f(old['lineup'][0]) if old else '+1.15'}; the morning's model "
+        f"on just those 150 games here: {f(o['verified_150']['before']['point']['total'])}.",
+        f"- **Starter piece** (unchanged, from the 150-plan verification): {f(o['starter_extra'])} wins.",
         "",
         "## Catcher workload",
         "",
@@ -425,9 +525,6 @@ def render(o: dict) -> str:
           f"{o['catchers'][v]['busiest_median']:.0%} | {o['workload'][v][0]:.0%}-{o['workload'][v][2]:.0%} |" for v in VERSIONS],
         f"| Real managers (sample of games) | {o['catchers_real_sample']['real_best_framer']:.0%} | "
         f"{o['catchers_real_sample']['main_catcher_max']:.0%} / {o['catchers_real_sample']['main_catcher_median']:.0%} | |",
-        "",
-        "Without the cap the optimizer catches its best framer more than any real catcher sustains, so its framing gain is cut "
-        "(60-90% kept, as in the earlier verification). With the cap no catcher exceeds 70%, so the gain is counted in full.",
         "",
     ]
     if NOTES.exists():
