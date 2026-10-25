@@ -217,5 +217,15 @@ def get_model_lineup(game_pk: int, team_id: int, pitcher_id: int, unavailable: s
     return best_lineup(team_id, g["game_date"], pitcher_id, set(unavailable or ()), home=g["home_team_id"] == team_id)
 
 
+def get_model_starter(game_pk: int, team_id: int, unavailable: set[int] | None = None) -> dict:
+    """The season-aware rotation rule's starter for this game: the best rested starter (4+ days of rest) who has made
+    no more than two starts beyond his fair rotation share, so off-days go to the best starters. Also returns who is
+    on turn and every rotation starter's rest, starts, fair share and runs vs an average starter."""
+    from backend.engine import starter_rule
+
+    g = _game(game_pk, team_id)
+    return starter_rule.recommend(team_id, g["game_date"], set(unavailable or ()))
+
+
 TOOLS = [get_game_context, get_roster_and_injuries, get_bullpen_status, get_hitter_profile, get_pitcher_profile,
-         get_hitters_overview, get_starter_options, predict_opponent_starter, predict_opponent_lineup, get_matchups, get_model_lineup]
+         get_hitters_overview, get_starter_options, predict_opponent_starter, predict_opponent_lineup, get_matchups, get_model_lineup, get_model_starter]

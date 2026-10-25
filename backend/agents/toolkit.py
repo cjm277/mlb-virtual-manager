@@ -162,6 +162,14 @@ def model_lineup(ctx: RunContext[PlanDeps], pitcher_id: int) -> dict:
                  lambda: tools.get_model_lineup(d.game_pk, d.team_id, pitcher_id, d.unavailable))
 
 
+def model_starter(ctx: RunContext[PlanDeps]) -> dict:
+    """The season-aware rotation rule's starter for this game (best rested starter within two starts of his fair
+    share), who is on turn, and every rotation starter's rest, starts and runs vs an average starter. Players the
+    Team Doctor lists as out are already excluded."""
+    d = ctx.deps
+    return _call(ctx, "model_starter", {}, lambda: tools.get_model_starter(d.game_pk, d.team_id, d.unavailable))
+
+
 ALL_TOOLS = {f.__name__: f for f in (game_context, roster_and_injuries, bullpen_status, hitters_overview,
                                      starter_options, predict_opponent_starter, predict_opponent_lineup,
-                                     hitter_profile, pitcher_profile, matchups, model_lineup)}
+                                     hitter_profile, pitcher_profile, matchups, model_lineup, model_starter)}

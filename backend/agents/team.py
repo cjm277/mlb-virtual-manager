@@ -56,7 +56,7 @@ SPECS: dict[str, Spec] = {
     "scout_hitters": Spec("Advance Scout (hitters)", HittersScoutingReport,
                           ("predict_opponent_lineup", "hitters_overview", "hitter_profile")),
     "pitching_coach": Spec("Pitching Coach", PitchingPlan,
-                           ("starter_options", "pitcher_profile", "bullpen_status", "matchups")),
+                           ("model_starter", "starter_options", "pitcher_profile", "bullpen_status", "matchups")),
     "bench_coach": Spec("Bench Coach", LineupPlan, ("model_lineup", "hitters_overview", "hitter_profile", "matchups")),
     "manager": Spec("Manager", ManagerReview, ()),
     "clubhouse_comms": Spec("Clubhouse Comms", CommsPackage, ()),
