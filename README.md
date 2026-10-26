@@ -71,6 +71,7 @@ Requires **Python 3.11+**. No other software is needed.
 | `evidence/user_test/` | The real-user session: write-up and screenshots |
 | `evidence/tests/phase10_fresh_clone.md` | Fresh-clone dry run: setup timed step by step |
 | `report.html`, `scripts/build_report.py` | The project report (self-contained HTML), and the script that builds it from `evidence/` |
+| `slides.html`, `scripts/build_slides.py` | The slide deck (reveal.js from a CDN, images embedded; arrow keys to move, F for full screen) |
 | `scripts/tokenomics.py` | Cost per game / month / season / league, the 100 and 10,000 users question, and the cost-cutting A/B test (report: `evidence/tests/phase8_tokenomics.md`) |
 | `frontend/public/teams/` | Ballpark photos (freely licensed, from Wikimedia Commons); photographer and license for each are in `credits.json` and shown in the app |
 | `scripts/` | One-time data build, data spot-checks, and predictor evaluation (graders do not need to run these) |

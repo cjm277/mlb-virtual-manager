@@ -92,3 +92,8 @@ Each phase section includes the phase name, the prompt typed, any follow-up prom
 - Prompt typed: "Let's gooooo, I'm fired up. We're close now here bud. Keep er firing with phase 11: Phase 11: Report * Key elements include: a self-contained `report.html` with all 8 sections in order, embedded screenshots, and an agent diagram. Check the page count in print preview (10-15 pages). * Rule: every number in it traces back to a file in `evidence/`. Make sense? Get er done and let me know if we're ready for phase 12"
 - Follow-up prompt: None yet.
 - What was lacking after the first: The prompt didn't name sources for the competitor comparison, or say how the number rule would be checked. The vibe coder wrote a short web-checked competitor scan, a value summary and a code-generated safety-limits file into `evidence/`. It built the report with a script whose citations fail the build if a cited file is missing, and confirmed that all 202 numbers in the report appear in `evidence/`. Printed on letter paper, the report is 11 pages.
+
+## Phase 12 - Slides, video, submit
+
+- Prompt typed: "This is unreal boss, let's keep this rig rolling. Time for phase 12: Slides, video, submit Key elements: * Slides: `slides.html` in reveal.js, 10 slides max, with embedded images. * Let's not do a video, that is not necessary and would take a while, I think we're confident this thing will work so we don't need the video as backup * do a final dry run Get after it and let me know if you think we're ready to submit and if there's anything else you need from me"
+- Follow-up prompt: None yet.
