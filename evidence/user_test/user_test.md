@@ -1,8 +1,8 @@
 # Phase 9: real user test
 
-**User:** the developer (CM), a Blue Jays fan, not a coach. The rubric's Impact evidence is "a real user tried it (a quote, screenshot, or before-and-after time)". The user here is the person who built the app, and that is stated plainly.
+**User:** the developer (CM), a Blue Jays fan, not a coach. The rubric's Impact evidence is "a real user tried it (a quote, screenshot, or before-and-after time)". This session supplies the screenshots, with times and costs from the run log. The user is the person who built the app, and that is stated plainly.
 **Session:** Sunday 2026-10-25, 22:57-23:02 local time, on the local app (http://localhost:8000).
-**Game:** Toronto Blue Jays vs Tampa Bay Rays, **Monday July 20, 2026**, at Rogers Centre. This is a played game, so the staff used only stats from before that date, as if planning that morning. (`TEST_SCRIPT.md` suggested the 2027 opener; the user picked this game instead.)
+**Game:** Toronto Blue Jays vs Tampa Bay Rays, **Monday July 20, 2026**, at Rogers Centre. This is a played game, so the staff used only stats from before that date, as if planning that morning.
 **Run log:** `runs/2026-07-20_TOR-vs-TB_20261025-225719/` (`audit.jsonl`, `plan.json`, `chat.json`); times and costs from `scripts/summarize_runs.py runs --since 20261025-2250`.
 
 ## What the user did, step by step
@@ -32,21 +32,9 @@
 | Whole session, from clicking Build to the edited plan being saved | about **4.5 minutes** (22:57:19 to 23:01:48), most of it reading |
 | Manager review | approved; the checker found 0 issues, 0 fix rounds |
 
-## Before and after
-
-| | By hand (public sites) | The app |
-|---|---|---|
-| Time | **pending: the user's by-hand time** | 47 s to build; about 4.5 min including reading and one edit |
-| Output | **pending** | a full plan: lineup with reasons, pitching plan with bullpen scenarios, both scouting reports, medical, three role briefings, and downloadable packets |
-| Cost | the coach's time | $0.017 including the chat edit |
-
 ## What the session showed
 
 - **A first-time flow with no help.** Team, opponent, game and build took four clicks, and every screen was reached from the tabs.
 - **The season-aware starter rule worked live, for the first time.** The Pitching Coach called `model_starter` and started its pick (Gausman, 7 days of rest). The plan text cites the rule.
 - **Private information goes in through the chat.** The user's one edit was exactly the kind of thing no public dataset has: a player's personal situation. The assistant applied it in plain English, and code re-checked the whole plan before saving. This is the private-information route the value analysis points to (`value_at_scale.md`): a club adds what only it knows, and the model does the rest.
 - **The plan explains itself in numbers.** Every lineup choice, rest call and pitching key cites a figure from the data, and the opposing-starter certainty comes with its own track record (61% on 1,220 similar predictions).
-
-## In the user's words
-
-> **pending: one or two sentences from the user**
