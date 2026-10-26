@@ -1,0 +1,47 @@
+Phase 10 final dry run on 2026-10-26 00:19:34 (LAPTOP)
+Folder: C:\Users\conra\AppData\Local\Temp\p10 (brand new); .env one level above the clone; pip cache disabled; python: Python 3.14.7
+
+=== 1. git clone https://github.com/cjm277/mlb-virtual-manager.git  (start +0s)
+
+--- exit 0, 4.7 s
+commit: 7bb2156 Phase 12: slides.html (reveal.js, 10 slides, embedded screenshots, agent diagram, value chart)
+
+=== 3a. python -m venv .venv  (start +5s)
+
+--- exit 0, 3.1 s
+
+=== 3b. .venv/Scripts/python -m pip install -r requirements.txt  (start +8s)
+[notice] To update, run: C:\Users\conra\AppData\Local\Temp\p10\mlb-virtual-manager\.venv\Scripts\python.exe -m pip 
+install --upgrade pip
+--- exit 0, 43.8 s
+
+=== 4. .venv/Scripts/python -m backend.config  (start +52s)
+Loaded .env from:
+  - C:\Users\conra\AppData\Local\Temp\p10\.env
+PORTKEY_API_KEY: found (value hidden)
+Model: gpt-6-luna
+--- exit 0, 0.1 s
+
+=== 5. .venv/Scripts/python app.py  (start +52s)
+app answered after 2.5 s
+
+##### SETUP TIME (clone -> app answering): 54.4 s #####
+
+=== 6. Use the app: open, pick, build, dropdown edit, chat, download packets  (start +54s)
+PASS  Open the app  (0.0 s)  home page + 2 script/style files loaded
+PASS  Pick team, opponent and game  (0.0 s)  30 teams; TOR vs BOS has 26 games; picked 2027-05-03 (game 854184)
+PASS  Build game plan  (9.2 s)  status approved; 7 staff seen working (bench_coach, clubhouse_comms, manager, pitching_coach, scout_hitters, scout_pitchers, team_doctor); 17 model calls, $0.0000, 8.3 s; starter Dylan Cease
+PASS  Edit with the dropdowns  (0.5 s)  swapped slots 1 and 2; new leadoff Kazuma Okamoto; re-checked by code: 0 issue(s); edited=True
+PASS  Chat with the assistant coach  (0.7 s)  assistant replied (answered): Kirk is hitting cleanup in the current plan. His solid on-base profile and low strikeout rate support the spot...
+PASS  Download packets (ZIP)  (1.5 s)  ZIP 87 KB, 31 files, folders ['coaches', 'hitters', 'pitchers']
+ALL STEPS PASSED in 12.0 s
+--- exit 0, 12.4 s
+
+=== 7. Automated tests on the clean clone: .venv/Scripts/python -m pytest -q  (start +67s)
+........................................................................ [ 58%]
+...................................................                      [100%]
+123 passed in 9.52s
+--- exit 0, 11.3 s
+
+##### TOTAL: 78.1 s #####
+(.env copy removed)

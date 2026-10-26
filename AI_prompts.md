@@ -97,3 +97,4 @@ Each phase section includes the phase name, the prompt typed, any follow-up prom
 
 - Prompt typed: "This is unreal boss, let's keep this rig rolling. Time for phase 12: Slides, video, submit Key elements: * Slides: `slides.html` in reveal.js, 10 slides max, with embedded images. * Let's not do a video, that is not necessary and would take a while, I think we're confident this thing will work so we don't need the video as backup * do a final dry run Get after it and let me know if you think we're ready to submit and if there's anything else you need from me"
 - Follow-up prompt: None yet.
+- What was lacking after the first: Nothing material. The prompt named the deck format, the slide limit and the final check, and dropped the optional video. The vibe coder built the slides from the same evidence as the report, with reveal.js from a CDN as the assignment suggests. It ran a last fresh-clone dry run on the submission commit (`evidence/tests/phase12_final_check.md`).
