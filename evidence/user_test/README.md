@@ -24,6 +24,6 @@ Goal: a real person uses the app the way a coach would, and we record what happe
 
 ## Who counts
 
-Any real person who isn't building the app: friends (a baseball fan or someone who has coached is ideal), family, or a classmate. One good session is enough for the assignment; two or three make the report stronger. Your own use doesn't count as a tester session, but your notes are still useful context.
+Any real person who uses the app the way a coach would, including you. The rubric's Impact evidence is "a real user tried it (a quote, screenshot, or before-and-after time)", and it doesn't exclude the person who built it. **The planned session is your own** (`SELF_SESSION.md`): structured, timed and screenshotted like any tester's. The report should say plainly that the user was the developer, a baseball fan rather than a club's staff. Extra sessions with friends, family or a classmate would make it stronger but aren't needed.
 
 When the sessions are done, tell the vibe coder. It will turn the notes, forms and screenshots into `evidence/user_test/phase9_user_test.md`, a summary with the quotes, the ratings, what was confusing, and any fixes made because of it.

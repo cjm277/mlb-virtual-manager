@@ -4,6 +4,8 @@ Usage:
   python scripts/summarize_runs.py                      # every run in runs/
   python scripts/summarize_runs.py evidence/logs        # saved evidence runs
   python scripts/summarize_runs.py runs --out evidence/logs/phase4_runs.md
+  python scripts/summarize_runs.py runs --since 16:40      # only runs started today at or after 16:40
+  python scripts/summarize_runs.py runs --since 20261025-1640
 """
 
 from __future__ import annotations
@@ -37,8 +39,16 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("folder", nargs="?", default=str(ROOT / "runs"))
     ap.add_argument("--out")
+    ap.add_argument("--since", help="HH:MM (today) or YYYYMMDD-HHMM: only runs started at or after it")
     args = ap.parse_args()
-    rows = [r for d in sorted(Path(args.folder).iterdir()) if d.is_dir() and (r := load(d))]
+    since = None
+    if args.since:
+        from datetime import date
+        since = (date.today().strftime("%Y%m%d-") + args.since.replace(":", "") if ":" in args.since
+                 else args.since).ljust(15, "0")
+    started = lambda d: d.name.rsplit("_", 1)[-1]  # noqa: E731  run folders end in _YYYYMMDD-HHMMSS
+    rows = [r for d in sorted(Path(args.folder).iterdir(), key=started)
+            if d.is_dir() and (since is None or started(d) >= since) and (r := load(d))]
     lines = ["| Game | Status | Fix rounds | Checker issues caught | Model calls | Tool calls (refused) | "
              "Input tokens (cached) | Output tokens | Cost (list price) | Time |",
              "|---|---|---|---|---|---|---|---|---|---|"]

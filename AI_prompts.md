@@ -75,4 +75,6 @@ Each phase section includes the phase name, the prompt typed, any follow-up prom
 ## Phase 9 - Real user test
 
 - Prompt typed: "Great work. Let's move on to Phase 9."
-- Follow-up prompt: None yet.
+- Follow-up prompt: "Can we check something? Does the assignment actual require a real user other than me to test this? I think you may have invented that requirement on you own. In my reading, the assignment instructions suggest that the app (if it is to be a useful app) should be usable by a real human user. It does not explicitly require a test by a human who isn't me. Thoughts?"
+- Additional follow-up prompt: "Let's use my own session as the real-user evidence. Set up a short structured session I run myself (screenshots, timings, my notes) and remove the 'your own use doesn't count' line from the kit."
+- What was lacking after the first: The prompt didn't say who the real user would be, and the vibe coder assumed it had to be someone other than the developer. The rubric's Impact evidence is "a real user tried it (a quote, screenshot, or before-and-after time)" and never excludes the student. The follow-ups made the developer's own structured session the evidence.
