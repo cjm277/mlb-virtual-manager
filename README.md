@@ -65,6 +65,11 @@ Requires **Python 3.11+**. No other software is needed.
 | `scripts/win_impact.py`, `scripts/win_model.py` | Win model: is the staff's plan analytically more likely to win than the real manager's? 150 sampled 2026 games scored through expected runs and Pythagenpat (report: `evidence/tests/win_impact.md`) |
 | `backend/engine/winmodel.py`, `scripts/lineup_params.py`, `scripts/value_model_search.py` | The win model's lineup optimizer and how its inputs were chosen from 2026 data (reports: `evidence/tests/lineup_params.md`, `value_model_search.md`, `win_model_lineup.md`) |
 | `backend/engine/defense.py`, `scripts/fetch_defense.py`, `scripts/defense_rating_search.py`, `scripts/defense_params.py` | Defense in the win model: multi-year Outs Above Average by position and catcher framing, how the rating and its weight were chosen (reports: `evidence/tests/defense_rating_search.md`, `defense_params.md`, `win_model_defense.md`) |
+| `scripts/projection_search.py` | The Marcel-style projection the win model uses (each player's 2026 numbers pooled with his 2025, chosen on a July-September hold-out; report: `evidence/tests/projection_search.md`) |
+| `scripts/value_at_scale.py`, `scripts/direct_check_*.py`, `scripts/defense_caution.py` | The lineup insight's value, scored on every 2026 game (report: `evidence/tests/value_at_scale.md`) |
+| `backend/engine/starter_rule.py`, `scripts/starter_rule_replay.py` | The season-aware starter rule (the Pitching Coach's `model_starter` tool) and its full-season replay (report: `evidence/tests/starter_rule.md`) |
+| `evidence/user_test/` | The real-user session: write-up and screenshots |
+| `evidence/tests/phase10_fresh_clone.md` | Fresh-clone dry run: setup timed step by step |
 | `scripts/tokenomics.py` | Cost per game / month / season / league, the 100 and 10,000 users question, and the cost-cutting A/B test (report: `evidence/tests/phase8_tokenomics.md`) |
 | `frontend/public/teams/` | Ballpark photos (freely licensed, from Wikimedia Commons); photographer and license for each are in `credits.json` and shown in the app |
 | `scripts/` | One-time data build, data spot-checks, and predictor evaluation (graders do not need to run these) |

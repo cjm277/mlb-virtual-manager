@@ -85,3 +85,4 @@ Each phase section includes the phase name, the prompt typed, any follow-up prom
 
 - Prompt typed: "We're almost there boss, here we go with phase 10: Fresh-clone dry run * Key point: clone into a brand-new folder, put `.env` one level above it, follow the README exactly, and time it. * Evidence: proof the setup takes under 10 minutes. Let's get this done and let me know if we can move on to phase 11"
 - Follow-up prompt: None yet.
+- What was lacking after the first: The prompt did not say what folder to clone into. The first try, in a very deep folder, failed because of Windows' 260-character path limit. The README now tells Windows users to clone into a short folder, and how to enable long paths if git complains. In a normal short folder, setup took about 53 seconds (`evidence/tests/phase10_fresh_clone.md`).
