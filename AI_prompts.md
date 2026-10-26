@@ -80,3 +80,8 @@ Each phase section includes the phase name, the prompt typed, any follow-up prom
 - Additional follow-up prompt: "Alright big chief, we can move to phase 9 now: Real user test * Here's what I need: a short test script. 1. Build a mini scouting report and lineup by hand from Baseball Savant with the time taken and flawed decision making that a human might be subject to. Time it, capped at about 20 minutes. 2. Then have our app do the same. Time that too. 3. Capture a quote and a screenshot. * Evidence: `user_test.md` with the before-and-after time. That's what lifts the Impact section to full credit. Alright go do it; let me know if any clarifications and if you think we are ready for phase 10."
 - Additional follow-up prompt: "Alright I've run my personal test. Screenshots attached. Save the screenshots to the right place and let me know if we're ready for phase 10" (12 screenshots of the session attached).
 - What was lacking after the first: The prompt didn't say who the real user would be, and the vibe coder assumed it had to be someone other than the developer. The rubric's Impact evidence is "a real user tried it (a quote, screenshot, or before-and-after time)" and never excludes the student. The follow-ups made the developer's own structured session the evidence.
+
+## Phase 10 - Fresh-clone dry run
+
+- Prompt typed: "We're almost there boss, here we go with phase 10: Fresh-clone dry run * Key point: clone into a brand-new folder, put `.env` one level above it, follow the README exactly, and time it. * Evidence: proof the setup takes under 10 minutes. Let's get this done and let me know if we can move on to phase 11"
+- Follow-up prompt: None yet.
