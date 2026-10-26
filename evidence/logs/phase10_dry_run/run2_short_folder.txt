@@ -1,0 +1,67 @@
+Phase 10 fresh-clone dry run on 2026-10-25 23:24:25 (LAPTOP)
+Folder: C:\Users\conra\AppData\Local\Temp\p10 (brand new); .env placed one level above the clone; pip cache disabled
+python on PATH: C:\Python314\python.exe Python 3.14.7
+
+=== 1. git clone https://github.com/cjm277/mlb-virtual-manager.git  (start +0s)
+Updating files:  96% (1324/1379)
+Updating files:  97% (1338/1379)
+Updating files:  98% (1352/1379)
+Updating files:  99% (1366/1379)
+Updating files: 100% (1379/1379)
+Updating files: 100% (1379/1379), done.
+--- exit 0, 4.7 s
+
+=== 2. API key: .env is one folder above the clone (README: 'looks for .env in this folder first, then in the folder above'); nothing to copy
+
+=== 3a. python -m venv .venv  (start +5s)
+
+--- exit 0, 3.8 s
+
+=== 3b. .venv/Scripts/python -m pip install -r requirements.txt  (start +9s)
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[notice] A new release of pip is available: 26.2.1 -> 26.2.2
+[notice] To update, run: C:\Users\conra\AppData\Local\Temp\p10\mlb-virtual-manager\.venv\Scripts\python.exe -m pip 
+install --upgrade pip
+--- exit 0, 43.1 s
+
+=== 4. .venv/Scripts/python -m backend.config  (start +52s)
+Loaded .env from:
+  - C:\Users\conra\AppData\Local\Temp\p10\.env
+PORTKEY_API_KEY: found (value hidden)
+Model: gpt-6-luna
+--- exit 0, 0.1 s
+
+=== 5. .venv/Scripts/python app.py  (start +52s)
+home page http://localhost:8000/ answered 200: False, after 302.6 s
+
+##### SETUP TIME (clone -> app answering): 354.4 s = 5.9 min #####
+GET /api/teams: 30 teams
+GET /api/games (TOR vs BOS): 26 games
+GET /api/health: ok=True, model=gpt-6-luna, api_key_found=True
+(app stopped)
+
+=== 6a. .venv/Scripts/python run_plan.py --team TOR --opp BOS --list  (start +357s)
+2027-08-16  game 1  away  Fenway Park  (2027)
+2027-08-17  game 1  away  Fenway Park  (2027)
+2027-08-18  game 1  away  Fenway Park  (2027)
+2027-09-06  game 1  home  Rogers Centre  (2027)
+2027-09-07  game 1  home  Rogers Centre  (2027)
+2027-09-08  game 1  home  Rogers Centre  (2027)
+--- exit 0, 0.6 s
+
+=== 6b. .venv/Scripts/python run_plan.py --team TOR --opp BOS --date 2027-05-03  (start +357s)
+  8. Myles Straw              CF  (R)
+  9. Andrés Giménez           SS  (L)
+Tokens: 102,940 input (41,673 cached), 9,745 output over 17 model calls (0 answered from Portkey's cache)
+Cost: $0.0180 at list price  |  Time: 64.7s
+Plan:  runs/2027-05-03_TOR-vs-BOS_20261025-233025/plan.json
+Audit: runs/2027-05-03_TOR-vs-BOS_20261025-233025/audit.jsonl
+--- exit 0, 67.6 s
+
+##### TOTAL incl. first plan: 425 s = 7.1 min #####
+(.env copy removed)
+
+=== 5 (re-measured). .venv/Scripts/python app.py -> http://127.0.0.1:8000/ answered 200: True, after 1.2 s
+    (a request to http://localhost:8000/ from PowerShell took 2.1 s (ok): it tries IPv6 first, which is why the first poll with a 2 s timeout never succeeded; a browser handles this transparently)

@@ -1,0 +1,64 @@
+Phase 10 fresh-clone dry run on 2026-10-25 23:18:14 (LAPTOP)
+Folder: <scratch>\phase10 (brand new); .env placed one level above the clone; pip cache disabled
+python on PATH: C:\Python314\python.exe Python 3.14.7
+
+=== 1. git clone https://github.com/cjm277/mlb-virtual-manager.git  (start +0s)
+    + FullyQualifiedErrorId : NativeCommandError
+fatal: cannot create directory at 
+'evidence/logs/phase8_tokenomics/C_self_check_compact/2026-09-08_t141_C_self_check_compact_r1': Filename too long
+warning: Clone succeeded, but checkout failed.
+You can inspect what was checked out with 'git status'
+and retry with 'git restore --source=HEAD :/'
+--- exit 128, 4.2 s
+
+=== 2. API key: .env is one folder above the clone (README: 'looks for .env in this folder first, then in the folder above'); nothing to copy
+
+=== 3a. python -m venv .venv  (start +4s)
+
+--- exit 0, 3.7 s
+
+=== 3b. .venv/Scripts/python -m pip install -r requirements.txt  (start +8s)
+    + FullyQualifiedErrorId : NativeCommandError
+[notice] A new release of pip is available: 26.2.1 -> 26.2.2
+[notice] To update, run: C:\Users\conra\AppData\Local\Temp\claude\C--Users-conra-OneDrive-Desktop-AI-Foundations\4f8d16
+df-a575-4cb6-8c6e-c38da404a864\scratchpad\phase10\mlb-virtual-manager\.venv\Scripts\python.exe -m pip install 
+--upgrade pip
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
+--- exit 1, 0.9 s
+
+=== 4. .venv/Scripts/python -m backend.config  (start +9s)
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\conra\AppData\Local\Temp\claude\C--Users-conra-OneDrive-Desktop-AI-Foundations\4f8d16df-a575-4cb6-8c6e
+-c38da404a864\scratchpad\phase10\mlb-virtual-manager\backend\config.py", line 20, in <module>
+    from dotenv import load_dotenv  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'dotenv'
+--- exit 1, 0.1 s
+
+=== 5. .venv/Scripts/python app.py  (start +9s)
+home page http://localhost:8000/ answered 200: False, after 302.5 s
+
+##### SETUP TIME (clone -> app answering): 311.6 s = 5.2 min #####
+API check error: Unable to connect to the remote server
+(app stopped)
+
+=== 6a. .venv/Scripts/python run_plan.py --team TOR --opp BOS --list  (start +316s)
+At C:\Users\conra\AppData\Local\Temp\claude\C--Users-conra-OneDrive-Desktop-AI-Foundations\4f8d16df-a575-4cb6-8c6e-c38d
+a404a864\scratchpad\dryrun.ps1:56 char:81
++ ... S --list' { .venv/Scripts/python run_plan.py --team TOR --opp BOS --l ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\conra\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+--- exit 2, 0.5 s
+
+=== 6b. .venv/Scripts/python run_plan.py --team TOR --opp BOS --date 2027-05-03  (start +316s)
+At C:\Users\conra\AppData\Local\Temp\claude\C--Users-conra-OneDrive-Desktop-AI-Foundations\4f8d16df-a575-4cb6-8c6e-c38d
+a404a864\scratchpad\dryrun.ps1:57 char:92
++ ... 27-05-03' { .venv/Scripts/python run_plan.py --team TOR --opp BOS --d ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\conra\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+--- exit 2, 0.1 s
+
+##### TOTAL incl. first plan: 316.3 s = 5.3 min #####
+(.env copy removed)
