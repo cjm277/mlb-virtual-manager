@@ -12,6 +12,7 @@ Requires **Python 3.11+**. No other software is needed.
    git clone https://github.com/cjm277/mlb-virtual-manager.git
    cd mlb-virtual-manager
    ```
+   On Windows, clone into a folder with a short path, such as `Downloads`. If git reports "Filename too long" (some saved logs have long names, and Windows limits a full path to 260 characters), run `git config --global core.longpaths true` and clone again.
 2. **Add your API key.** The app looks for a `.env` file in this folder first, then in the folder above it. Copy `.env.example` and fill in `PORTKEY_API_KEY`.
 3. **Create a virtual environment and install packages.**
    ```bash
